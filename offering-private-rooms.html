@@ -13,7 +13,7 @@
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <!-- Main site stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=1.5" />
+  <link rel="stylesheet" href="styles.css?v=1.7" />
 
   <style>
     /* ==========================================
@@ -194,48 +194,116 @@
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="header-container">
-      <a href="index.html" class="logo" aria-label="Self Storage India Home">
-        <img src="https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo-300x63.png" alt="Self Storage India – Creating Extra Space" />
-      </a>
+    <!-- Navigation Bar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Brand Logo -->
+            <a href="index.html" class="brand-logo">
+                <img src="https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo.png" alt="Self Storage India Logo" class="brand-logo-img">
+            </a>
 
-      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+            <!-- Central Nav Links -->
+            <nav class="nav-links" id="navLinks">
+                <div class="mobile-drawer-header">
+                    <span class="mobile-drawer-title">Menu</span>
+                    <button class="mobile-drawer-close" onclick="closeMobileMenu()" aria-label="Close menu">
+                        <span class="material-symbols-rounded">close</span>
+                    </button>
+                </div>
 
-      <nav class="main-navigation">
-        <a href="index.html">Storage</a>
-        
-        <!-- Locations dropdown -->
-        <div class="nav-item-dropdown">
-          <a href="#" class="dropdown-trigger">Locations <i class="fa-solid fa-chevron-down" style="font-size: 11px;"></i></a>
-          <div class="dropdown-menu">
-            <a href="self-storage-gurugram.html">Gurugram</a>
-            <a href="self-storage-delhi.html">Delhi</a>
-            <a href="self-storage-noida.html">Noida</a>
-          </div>
+                <!-- Storage Dropdown -->
+                <div class="nav-item-dropdown">
+                    <a href="#" class="nav-link">Storage <span class="material-symbols-rounded dropdown-arrow">keyboard_arrow_down</span></a>
+                    <div class="dropdown-menu shadow-md">
+                        <a href="household-goods-storage.html" class="dropdown-item">
+                            <span class="material-symbols-rounded dropdown-icon">home</span>
+                            <div class="dropdown-info">
+                                <h6>For Home</h6>
+                                <p>Store household items &amp; furniture</p>
+                            </div>
+                        </a>
+                        <a href="business-storage.html" class="dropdown-item">
+                            <span class="material-symbols-rounded dropdown-icon">business</span>
+                            <div class="dropdown-info">
+                                <h6>For Business</h6>
+                                <p>Corporate archiving &amp; inventory</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Locations Dropdown -->
+                <div class="nav-item-dropdown">
+                    <a href="#" class="nav-link">Locations <span class="material-symbols-rounded dropdown-arrow">keyboard_arrow_down</span></a>
+                    <div class="dropdown-menu shadow-md">
+                        <a href="self-storage-gurugram.html" class="dropdown-item">
+                            <span class="material-symbols-rounded dropdown-icon">location_on</span>
+                            <div class="dropdown-info">
+                                <h6>Gurugram</h6>
+                                <p>Sector 34, Honda Chowk</p>
+                            </div>
+                        </a>
+                        <a href="self-storage-delhi.html" class="dropdown-item">
+                            <span class="material-symbols-rounded dropdown-icon">location_on</span>
+                            <div class="dropdown-info">
+                                <h6>Delhi</h6>
+                                <p>Sector 28, Dwarka</p>
+                            </div>
+                        </a>
+                        <a href="self-storage-noida.html" class="dropdown-item">
+                            <span class="material-symbols-rounded dropdown-icon">location_on</span>
+                            <div class="dropdown-info">
+                                <h6>Noida</h6>
+                                <p>Sector 59, Noida</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Offerings Dropdown -->
+                <div class="nav-item-dropdown">
+                    <a href="#" class="nav-link active">Offerings <span class="material-symbols-rounded dropdown-arrow">keyboard_arrow_down</span></a>
+                    <div class="dropdown-menu shadow-md">
+                        <a href="offering-private-rooms.html" class="dropdown-item active">
+                            <span class="material-symbols-rounded dropdown-icon">meeting_room</span>
+                            <div class="dropdown-info">
+                                <h6>Private Rooms</h6>
+                                <p>Lockable modular space units</p>
+                            </div>
+                        </a>
+                        <a href="offering-box-storage.html" class="dropdown-item">
+                            <span class="material-symbols-rounded dropdown-icon">package_2</span>
+                            <div class="dropdown-info">
+                                <h6>Box Storage</h6>
+                                <p>Small items &amp; document files</p>
+                            </div>
+                        </a>
+                        <a href="offering-box-storage.html" class="dropdown-item">
+                            <span class="material-symbols-rounded dropdown-icon">luggage</span>
+                            <div class="dropdown-info">
+                                <h6>Luggage Storage</h6>
+                                <p>Travelers &amp; transient luggage</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="https://selfstorageindia.com/blog/" class="nav-link">Blogs</a>
+            </nav>
+
+            <!-- Actions & CTA -->
+            <div class="nav-actions">
+                <a href="tel:+919090206090" class="phone-link">
+                    <span class="material-symbols-rounded">call</span>
+                    +91-9090206090
+                </a>
+                <button class="btn btn-primary" onclick="openQuoteModal()">Get Free Quote</button>
+                <button class="mobile-nav-toggle" id="mobileNavToggle" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu">
+                    <span class="material-symbols-rounded">menu</span>
+                </button>
+            </div>
         </div>
-
-        <!-- Offerings dropdown (active) -->
-        <div class="nav-item-dropdown">
-          <a href="#" class="dropdown-trigger-offerings">Offerings <i class="fa-solid fa-chevron-down" style="font-size: 11px;"></i></a>
-          <div class="dropdown-menu-offerings">
-            <a href="offering-private-rooms.html" class="active-offering">Private Rooms</a>
-            <a href="offering-box-storage.html">Box Storage</a>
-            <a href="#">Luggage Storage</a>
-          </div>
-        </div>
-
-        <a href="index.html#blogs">Blogs</a>
-        <a href="tel:+919090206090">+91-9090206090</a>
-        <a href="index.html#calculator" class="calculator-button">Storage Calculator</a>
-      </nav>
-    </div>
-  </header>
+    </header>
 
   <!-- ==================================================
        GLOBAL DESIGN SYSTEM FOR OFFERING PAGES
@@ -2542,42 +2610,56 @@
     </section>
   </section>
 
+  <!-- Footer Section -->
   <footer class="site-footer">
-    <div class="footer-container">
+      <div class="footer-container">
+          <nav class="footer-nav" aria-label="Footer navigation">
+              <a href="household-goods-storage.html">For Home</a>
+              <a href="business-storage.html">For Business</a>
+              <a href="self-storage-delhi.html">Locations</a>
+              <a href="https://selfstorageindia.com/blog/">Blogs</a>
+              <a href="#" onclick="openQuoteModal()">Contact Us</a>
+          </nav>
 
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="/about-us">About Us</a>
-        <a href="/benefits">Benefits</a>
-        <a href="self-storage-delhi.html">Locations</a>
-        <a href="/terms-and-conditions">Terms And Conditions</a>
-        <a href="/privacy-policy">Privacy Policy</a>
-      </nav>
+          <div class="footer-socials" aria-label="Social media links">
+              <a href="#" aria-label="Facebook">
+                  <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="X / Twitter">
+                  <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="Instagram">
+                  <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="Pinterest">
+                  <i class="fa-brands fa-pinterest-p" aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="YouTube">
+                  <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+              </a>
+          </div>
 
-      <div class="footer-socials" aria-label="Social media links">
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <div class="footer-logos">
+              <a href="index.html" class="footer-logo footer-logo-primary">
+                  <img src="https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo-300x63.png" alt="Self Storage India Logo - Private Lockable Storage Rooms &amp; Warehouses" loading="lazy">
+              </a>
+
+              <a href="index.html" class="footer-logo footer-logo-warehouse">
+                  <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/ss_warehouse_white_bg_449_60-1-300x40.webp" alt="Self Storage Warehouse Division Official Logo" loading="lazy">
+              </a>
+
+              <div class="footer-logo footer-logo-member">
+                  <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/Logo_SSAMember-Reflex_kiztzz-300x198.webp" alt="Self Storage Association Asia Official Member Certification Badge" loading="lazy">
+              </div>
+          </div>
+
+          <p class="footer-copyright">
+              Copyright – ©2026, SelfStorage India, All Rights Reserved.
+          </p>
       </div>
-
-      <div class="footer-logos">
-        <a href="index.html" class="footer-logo footer-logo-primary">
-          <img src="https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo-300x63.png" alt="Self Storage India">
-        </a>
-        <a href="index.html" class="footer-logo footer-logo-warehouse">
-          <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/ss_warehouse_white_bg_449_60-1-300x40.webp" alt="Self Storage Warehouse">
-        </a>
-        <div class="footer-logo footer-logo-member">
-          <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/Logo_SSAMember-Reflex_kiztzz-300x198.webp" alt="Self Storage Association Member">
-        </div>
-      </div>
-
-      <p class="footer-copyright">
-        Copyright – ©2023, SelfStorage India, All Rights Reserved.
-      </p>
-    </div>
   </footer>
 
   <script>

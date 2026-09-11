@@ -4294,9 +4294,9 @@ h3 {
 
 /* Site Footer */
 .site-footer {
-    background-color: #0D2D6B;
+    background: linear-gradient(135deg, #186CEC 0%, #0F52BA 100%);
     padding: 50px 24px 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     position: relative;
     width: 100%;
     box-sizing: border-box;
