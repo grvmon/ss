@@ -5017,12 +5017,6 @@ h3 {
     padding: 28px 20px;
     text-align: center;
     position: relative;
-    transition: transform 200ms ease, box-shadow 200ms ease;
-}
-.process-step-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(24, 108, 236, 0.08);
-    border-color: var(--primary);
 }
 .process-step-number {
     width: 44px;
