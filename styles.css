@@ -428,7 +428,7 @@ h3 {
     background-color: var(--primary-light);
     border-color: var(--primary);
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(24, 108, 236, 0.1);
+    box-shadow: 0 6px 16px rgba(24, 108, 236, 0.12);
 }
 
 .btn-tertiary {
@@ -522,7 +522,7 @@ h3 {
     background: none;
     border: none;
     box-shadow: none;
-    margin-bottom: var(--space-sm);
+    margin-bottom: 6px;
 }
 
 .hero-tagline-accent {
@@ -535,17 +535,19 @@ h3 {
 }
 
 .hero-main-title {
-    font-size: clamp(1.3rem, 2vw, 1.7rem); /* Reduced font size further by 20% */
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
     line-height: 1.15;
     white-space: nowrap;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .hero-paragraph {
-    font-size: 18px; /* Set to exactly 18px */
+    font-size: 18px;
     color: var(--text-secondary);
-    margin-bottom: var(--space-md); /* Reduced bottom margin to frame the ideal-list line */
-    margin-top: var(--space-xs);
-    max-width: 600px; /* 550-650px width limit for readability */
+    margin-bottom: var(--space-md);
+    margin-top: 0;
+    max-width: 600px;
     line-height: 1.6;
 }
 
@@ -568,9 +570,9 @@ h3 {
 .hero-chips .chip {
     font-size: 0.82rem;
     font-weight: 600;
-    color: #065F46; /* Readable emerald font */
-    background-color: #ECFDF5; /* Soft emerald success background tint */
-    border: 1px solid rgba(16, 185, 129, 0.22);
+    color: var(--primary);
+    background-color: var(--primary-light);
+    border: 1px solid rgba(24, 108, 236, 0.18);
     padding: 6px 14px;
     border-radius: 20px;
     display: inline-flex;
@@ -580,15 +582,15 @@ h3 {
 }
 
 .hero-chips .chip span {
-    color: var(--success);
+    color: var(--primary);
 }
 
 .hero-chips .chip:hover {
-    background-color: var(--success);
+    background-color: var(--primary);
     color: #ffffff;
-    border-color: var(--success);
+    border-color: var(--primary);
     transform: translateY(-2px);
-    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    box-shadow: 0 4px 14px rgba(24, 108, 236, 0.25);
 }
 
 .hero-chips .chip:hover span {
@@ -748,7 +750,7 @@ h3 {
 
 /* Hero Trust Key Features Strip (Positioned directly above As Seen On) */
 .hero-trust-strip {
-    background-color: #f8fafc;
+    background-color: var(--surface);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     padding: 28px 0;
@@ -763,7 +765,7 @@ h3 {
 
 /* Trusted & Featured In Media Logos */
 .trust-bar {
-    background-color: #f8fafc;
+    background-color: var(--surface);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     padding: 24px 0;
@@ -954,7 +956,7 @@ h3 {
     display: flex;
     align-items: flex-start;
     gap: 14px;
-    background-color: #FAFBFC;
+    background-color: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius-card);
     padding: 16px;
@@ -1612,7 +1614,7 @@ h3 {
 /* Editorial bottom CTA banner */
 .editorial-cta {
     margin-top: var(--space-3xl);
-    background-color: #f8fafc;
+    background-color: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius-card);
     padding: var(--space-2xl) var(--space-xl);
@@ -1700,7 +1702,7 @@ h3 {
 
 .calc-section {
     padding: var(--space-section) 0;
-    background-color: #fafbfc;
+    background-color: var(--surface);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
 }
@@ -2337,7 +2339,7 @@ h3 {
 }
 
 .map-wrapper {
-    background-color: #f8fafc;
+    background-color: var(--surface);
     border-radius: 12px;
     border: 1px solid var(--border);
     padding: var(--space-md);
@@ -2628,7 +2630,7 @@ h3 {
 
 /* Featured Card overrides */
 .offering-card.featured-card {
-    background-color: #F8FAFC; /* Soft blue-tinted background */
+    background-color: var(--surface); /* Soft blue-tinted background */
     border-color: rgba(37, 99, 235, 0.35); /* Subtle blue border */
     box-shadow: 0 10px 30px rgba(37, 99, 235, 0.06); /* Slightly stronger shadow */
 }
@@ -2658,8 +2660,8 @@ h3 {
 }
 
 .btn-offering-primary:hover {
-    background-color: var(--accent-hover); /* Darker orange hover */
-    box-shadow: 0 8px 20px rgba(217, 119, 6, 0.25);
+    background-color: var(--accent-hover);
+    box-shadow: 0 8px 20px rgba(255, 150, 0, 0.28);
 }
 
 .btn-offering-primary:hover span {
@@ -2712,8 +2714,8 @@ h3 {
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    background-color: #EEF5FF;
-    color: #186CEC;
+    background-color: var(--primary-light);
+    color: var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2723,8 +2725,8 @@ h3 {
 }
 
 .trust-strip-item:hover .trust-icon-circle {
-    background-color: #EEF5FF;
-    color: #186CEC;
+    background-color: var(--primary-light);
+    color: var(--primary);
     box-shadow: none;
 }
 
@@ -2997,7 +2999,7 @@ h3 {
 }
 
 .cta-box {
-    background-color: #f8fafc; /* Light Gray surface */
+    background-color: var(--surface); /* Light Gray surface */
     border: 1px solid var(--border);
     color: var(--text);
     border-radius: 12px;
@@ -3205,7 +3207,7 @@ h3 {
 
 /* Bottom FAQ CTA Support Box */
 .faq-cta {
-    background-color: #f8fafc;
+    background-color: var(--surface);
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: var(--space-xl) var(--space-2xl);
@@ -4116,7 +4118,7 @@ h3 {
 
 #self-storage-ncr {
     background-color: var(--surface);
-    padding: 56px 0;
+    padding: var(--space-section) 0;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
 }
@@ -4189,7 +4191,7 @@ h3 {
 
 /* Facility Photo Gallery Strip */
 .gallery-strip-section {
-    padding: var(--space-section) 0;
+    padding: 40px 0 var(--space-section);
     background-color: #ffffff;
     border-top: 1px solid var(--border);
 }
@@ -4197,11 +4199,11 @@ h3 {
 .gallery-strip-header {
     text-align: center;
     max-width: 600px;
-    margin: 0 auto 32px;
+    margin: 0 auto 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .gallery-strip-header h2 {
@@ -4477,7 +4479,7 @@ h3 {
    ========================================== */
 .calc-banner-section {
     width: 100%;
-    background-color: #FAFBFC;
+    background-color: var(--surface);
     padding: var(--space-section) 0;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
@@ -4611,7 +4613,7 @@ h3 {
 .btn-calc-orange:hover {
     background-color: var(--accent-hover);
     transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(245, 158, 11, 0.32);
+    box-shadow: 0 6px 18px rgba(255, 150, 0, 0.32);
     color: #FFFFFF;
 }
 
