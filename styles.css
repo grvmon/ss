@@ -4848,14 +4848,7 @@ h3 {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
-}
-
-.household-need__card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(37, 99, 235, 0.35);
-    box-shadow: 0 20px 35px rgba(37, 99, 235, 0.12);
 }
 
 .household-need__img-box {
@@ -4872,11 +4865,6 @@ h3 {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.household-need__card:hover .household-need__img-box img {
-    transform: scale(1.06);
 }
 
 .household-need__card-body {
@@ -4893,11 +4881,6 @@ h3 {
     font-weight: 700;
     color: var(--slate-900, #0f172a);
     margin-bottom: 8px;
-    transition: color 0.3s ease;
-}
-
-.household-need__card:hover .household-need__card-title {
-    color: var(--primary, #2563eb);
 }
 
 .household-need__card-desc {
