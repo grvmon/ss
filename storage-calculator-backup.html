@@ -1,0 +1,266 @@
+<!-- STORAGE SIZE CALCULATOR BACKUP COMPONENT
+     Self Storage India — Preserved for future use
+     To re-integrate: Copy this section into index.html (or any landing page), and ensure app.js includes Section 2 interactive calculator logic.
+-->
+
+<section id="calculator" class="calc-section">
+    <div class="container">
+        <div class="section-header-centered">
+            <span class="calc-tag">
+                <span class="material-symbols-rounded" style="font-size: 1.15rem; margin-right: 4px; vertical-align: middle;">calculate</span>
+                Storage Size Calculator
+            </span>
+            <h2>Find the Perfect Storage Space<br>in Under 60 Seconds</h2>
+            <p>Answer a few simple questions and we'll recommend the ideal storage unit based on the items you want to store.</p>
+        </div>
+
+        <div class="calc-container">
+            <!-- Left Column: Illustrated Storage Unit (fills dynamically) -->
+            <div class="calc-visual-column">
+                <div class="storage-unit-box shadow-md">
+                    <div class="unit-header">
+                        <span class="material-symbols-rounded">door_sliding</span>
+                        <h4>Your Virtual Storage Unit</h4>
+                    </div>
+                    <div class="unit-room-visual">
+                        <!-- The fill overlays -->
+                        <div class="unit-fill-progress" id="unit-fill"></div>
+                        <div class="unit-fill-percentage" id="unit-fill-percent">0% Full</div>
+                        <!-- Illustrated boxes that show up when items are added -->
+                        <div class="unit-grid-items" id="unit-items-display"></div>
+                    </div>
+                </div>
+
+                <!-- Live Result Card -->
+                <div class="live-result-card shadow-lg">
+                    <div class="result-header">
+                        <span class="badge-dot"></span>
+                        <h5>Recommended Space</h5>
+                    </div>
+                    <div class="result-value" id="calc-result-size">0 sq ft</div>
+                    <ul class="result-details">
+                        <li>
+                            <span class="material-symbols-rounded check-icon">check_circle</span>
+                            <span id="calc-result-desc">Select items to calculate space</span>
+                        </li>
+                        <li>
+                            <span class="material-symbols-rounded check-icon">check_circle</span>
+                            <span id="calc-result-price">Estimated Monthly Plan: Starting from ₹1,200</span>
+                        </li>
+                    </ul>
+                    <button class="btn btn-calc-transparent full-width" onclick="openQuoteModal()">View Storage Options</button>
+                </div>
+            </div>
+
+            <!-- Right Column: Interactive Item Grid -->
+            <div class="calc-items-column">
+                <div class="calc-items-grid">
+                    <!-- Item 1: Sofa -->
+                    <div class="calc-item-card" data-item="sofa" data-volume="15">
+                        <div class="card-icon-title">
+                            <div class="calc-icon-box theme-blue">
+                                <span class="material-symbols-rounded">weekend</span>
+                            </div>
+                            <span>Sofa</span>
+                        </div>
+                        <div class="card-controls">
+                            <button class="control-btn minus" onclick="updateItemQty('sofa', -1)" aria-label="Decrease quantity">—</button>
+                            <span class="qty-display" id="qty-sofa">0</span>
+                            <button class="control-btn plus" onclick="updateItemQty('sofa', 1)" aria-label="Increase quantity">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Bed -->
+                    <div class="calc-item-card" data-item="bed" data-volume="20">
+                        <div class="card-icon-title">
+                            <div class="calc-icon-box theme-blue">
+                                <span class="material-symbols-rounded">bed</span>
+                            </div>
+                            <span>Bed</span>
+                        </div>
+                        <div class="card-controls">
+                            <button class="control-btn minus" onclick="updateItemQty('bed', -1)" aria-label="Decrease quantity">—</button>
+                            <span class="qty-display" id="qty-bed">0</span>
+                            <button class="control-btn plus" onclick="updateItemQty('bed', 1)" aria-label="Increase quantity">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Dining Table -->
+                    <div class="calc-item-card" data-item="table" data-volume="10">
+                        <div class="card-icon-title">
+                            <div class="calc-icon-box theme-blue">
+                                <span class="material-symbols-rounded">table_restaurant</span>
+                            </div>
+                            <span>Dining Table</span>
+                        </div>
+                        <div class="card-controls">
+                            <button class="control-btn minus" onclick="updateItemQty('table', -1)" aria-label="Decrease quantity">—</button>
+                            <span class="qty-display" id="qty-table">0</span>
+                            <button class="control-btn plus" onclick="updateItemQty('table', 1)" aria-label="Increase quantity">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: Chair -->
+                    <div class="calc-item-card" data-item="chair" data-volume="3">
+                        <div class="card-icon-title">
+                            <div class="calc-icon-box theme-blue">
+                                <span class="material-symbols-rounded">chair</span>
+                            </div>
+                            <span>Chair</span>
+                        </div>
+                        <div class="card-controls">
+                            <button class="control-btn minus" onclick="updateItemQty('chair', -1)" aria-label="Decrease quantity">—</button>
+                            <span class="qty-display" id="qty-chair">0</span>
+                            <button class="control-btn plus" onclick="updateItemQty('chair', 1)" aria-label="Increase quantity">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: Wardrobe -->
+                    <div class="calc-item-card" data-item="wardrobe" data-volume="15">
+                        <div class="card-icon-title">
+                            <div class="calc-icon-box theme-blue">
+                                <span class="material-symbols-rounded">dresser</span>
+                            </div>
+                            <span>Wardrobe</span>
+                        </div>
+                        <div class="card-controls">
+                            <button class="control-btn minus" onclick="updateItemQty('wardrobe', -1)" aria-label="Decrease quantity">—</button>
+                            <span class="qty-display" id="qty-wardrobe">0</span>
+                            <button class="control-btn plus" onclick="updateItemQty('wardrobe', 1)" aria-label="Increase quantity">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Item 6: Boxes -->
+                    <div class="calc-item-card" data-item="boxes" data-volume="2">
+                        <div class="card-icon-title">
+                            <div class="calc-icon-box theme-blue">
+                                <span class="material-symbols-rounded">inventory_2</span>
+                            </div>
+                            <span>Boxes</span>
+                        </div>
+                        <div class="card-controls">
+                            <button class="control-btn minus" onclick="updateItemQty('boxes', -1)" aria-label="Decrease quantity">—</button>
+                            <span class="qty-display" id="qty-boxes">0</span>
+                            <button class="control-btn plus" onclick="updateItemQty('boxes', 1)" aria-label="Increase quantity">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Item 7: Suitcases -->
+                    <div class="calc-item-card" data-item="luggage" data-volume="3">
+                        <div class="card-icon-title">
+                            <div class="calc-icon-box theme-blue">
+                                <span class="material-symbols-rounded">luggage</span>
+                            </div>
+                            <span>Suitcases</span>
+                        </div>
+                        <div class="card-controls">
+                            <button class="control-btn minus" onclick="updateItemQty('luggage', -1)" aria-label="Decrease quantity">—</button>
+                            <span class="qty-display" id="qty-luggage">0</span>
+                            <button class="control-btn plus" onclick="updateItemQty('luggage', 1)" aria-label="Increase quantity">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Item 8: TV -->
+                    <div class="calc-item-card" data-item="tv" data-volume="4">
+                        <div class="card-icon-title">
+                            <div class="calc-icon-box theme-blue">
+                                <span class="material-symbols-rounded">tv</span>
+                            </div>
+                            <span>TV</span>
+                        </div>
+                        <div class="card-controls">
+                            <button class="control-btn minus" onclick="updateItemQty('tv', -1)" aria-label="Decrease quantity">—</button>
+                            <span class="qty-display" id="qty-tv">0</span>
+                            <button class="control-btn plus" onclick="updateItemQty('tv', 1)" aria-label="Increase quantity">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Item 9: Documents -->
+                    <div class="calc-item-card" data-item="folder" data-volume="1">
+                        <div class="card-icon-title">
+                            <div class="calc-icon-box theme-blue">
+                                <span class="material-symbols-rounded">folder</span>
+                            </div>
+                            <span>Documents</span>
+                        </div>
+                        <div class="card-controls">
+                            <button class="control-btn minus" onclick="updateItemQty('folder', -1)" aria-label="Decrease quantity">—</button>
+                            <span class="qty-display" id="qty-folder">0</span>
+                            <button class="control-btn plus" onclick="updateItemQty('folder', 1)" aria-label="Increase quantity">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Item 10: Appliances -->
+                    <div class="calc-item-card" data-item="appliances" data-volume="12">
+                        <div class="card-icon-title">
+                            <div class="calc-icon-box theme-blue">
+                                <span class="material-symbols-rounded">kitchen</span>
+                            </div>
+                            <span>Appliances</span>
+                        </div>
+                        <div class="card-controls">
+                            <button class="control-btn minus" onclick="updateItemQty('appliances', -1)" aria-label="Decrease quantity">—</button>
+                            <span class="qty-display" id="qty-appliances">0</span>
+                            <button class="control-btn plus" onclick="updateItemQty('appliances', 1)" aria-label="Increase quantity">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Item 11: Bicycle -->
+                    <div class="calc-item-card" data-item="bicycle" data-volume="8">
+                        <div class="card-icon-title">
+                            <div class="calc-icon-box theme-blue">
+                                <span class="material-symbols-rounded">pedal_bike</span>
+                            </div>
+                            <span>Bicycle</span>
+                        </div>
+                        <div class="card-controls">
+                            <button class="control-btn minus" onclick="updateItemQty('bicycle', -1)" aria-label="Decrease quantity">—</button>
+                            <span class="qty-display" id="qty-bicycle">0</span>
+                            <button class="control-btn plus" onclick="updateItemQty('bicycle', 1)" aria-label="Increase quantity">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Item 12: Business Inventory -->
+                    <div class="calc-item-card" data-item="inventory" data-volume="25">
+                        <div class="card-icon-title">
+                            <div class="calc-icon-box theme-blue">
+                                <span class="material-symbols-rounded">warehouse</span>
+                            </div>
+                            <span>Business Stock</span>
+                        </div>
+                        <div class="card-controls">
+                            <button class="control-btn minus" onclick="updateItemQty('inventory', -1)" aria-label="Decrease quantity">—</button>
+                            <span class="qty-display" id="qty-inventory">0</span>
+                            <button class="control-btn plus" onclick="updateItemQty('inventory', 1)" aria-label="Increase quantity">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust Section / Reassurance Cards -->
+        <div class="calc-trust-grid">
+            <div class="trust-card">
+                <span class="material-symbols-rounded">check_circle</span>
+                <div>
+                    <h4>Free Size Recommendation</h4>
+                    <p>We'll recommend the right storage size based on your belongings.</p>
+                </div>
+            </div>
+            <div class="trust-card">
+                <span class="material-symbols-rounded">check_circle</span>
+                <div>
+                    <h4>Pay Only For What You Need</h4>
+                    <p>No oversized units or unnecessary costs.</p>
+                </div>
+            </div>
+            <div class="trust-card">
+                <span class="material-symbols-rounded">check_circle</span>
+                <div>
+                    <h4>Upgrade Anytime</h4>
+                    <p>Need more space later? Changing storage size is easy.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

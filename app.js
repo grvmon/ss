@@ -2,15 +2,35 @@
    SELF STORAGE INDIA — SECTION 1: HERO SECTION REDESIGN INTERACTIVE LOGIC
    ========================================================================== */
 
-// 1. Navbar Scroll Transition
-window.addEventListener('scroll', () => {
+// 1. Navbar Scroll Transition & Mobile Menu
+function updateNavbarScroll() {
     const navbar = document.getElementById('navbar');
-    if (window.scrollY > 20) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+    if (navbar) {
+        if (window.scrollY > 20) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     }
-});
+}
+
+window.addEventListener('scroll', updateNavbarScroll);
+document.addEventListener('DOMContentLoaded', updateNavbarScroll);
+updateNavbarScroll();
+
+function toggleMobileMenu() {
+    const navLinks = document.getElementById('navLinks');
+    const overlay = document.getElementById('mobileNavOverlay');
+    if (navLinks) navLinks.classList.toggle('mobile-open');
+    if (overlay) overlay.classList.toggle('active');
+}
+
+function closeMobileMenu() {
+    const navLinks = document.getElementById('navLinks');
+    const overlay = document.getElementById('mobileNavOverlay');
+    if (navLinks) navLinks.classList.remove('mobile-open');
+    if (overlay) overlay.classList.remove('active');
+}
 
 // 2. Quote Modal Toggle Functions
 function openQuoteModal() {
