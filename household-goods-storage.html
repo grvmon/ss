@@ -1408,11 +1408,12 @@
                 }
                 .seo-details-section h2 {
                     color: var(--primary);
-                    font-size: 1.6rem;
-                    font-weight: 700;
-                    margin-top: 24px;
+                    font-size: clamp(1.3rem, 2vw, 1.7rem);
+                    font-weight: 600;
+                    margin-top: 28px;
                     margin-bottom: 12px;
                     line-height: 1.3;
+                    letter-spacing: -0.01em;
                 }
                 .seo-details-section h2:first-of-type {
                     margin-top: 0;
@@ -1629,17 +1630,34 @@
                 </div>
             </div>
         </section>
+
+        <!-- Bottom Call-To-Action Banner Section -->
+        <section class="testimonials-cta-section">
+            <div class="container">
+                <div class="cta-box">
+                    <h2>Ready to Claim Your Household Storage Space in Delhi NCR?</h2>
+                    <p>Get an instant price quote or talk to our storage experts today. Clean, secure, lockable rooms with flexible monthly plans.</p>
+                    <div class="cta-actions">
+                        <button class="btn btn-accent btn-large" onclick="openQuoteModal()">Get Free Quote</button>
+                        <a href="tel:+919810012345" class="btn btn-secondary btn-large" style="text-decoration: none;">
+                            <span class="material-symbols-rounded">call</span>
+                            <span>Call Us Now</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer Section -->
     <footer class="site-footer">
         <div class="footer-container">
             <nav class="footer-nav" aria-label="Footer navigation">
-                <a href="/about-us">About Us</a>
-                <a href="/benefits">Benefits</a>
+                <a href="household-goods-storage.html">For Home</a>
+                <a href="business-storage.html">For Business</a>
                 <a href="self-storage-delhi.html">Locations</a>
-                <a href="/terms-and-conditions">Terms And Conditions</a>
-                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="https://selfstorageindia.com/blog/">Blogs</a>
+                <a href="#" onclick="openQuoteModal()">Contact Us</a>
             </nav>
 
             <div class="footer-socials" aria-label="Social media links">
