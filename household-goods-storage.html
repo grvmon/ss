@@ -53,23 +53,30 @@
             </a>
 
             <!-- Central Nav Links -->
-            <nav class="nav-links">
+            <nav class="nav-links" id="navLinks">
+                <div class="mobile-drawer-header">
+                    <span class="mobile-drawer-title">Menu</span>
+                    <button class="mobile-drawer-close" onclick="closeMobileMenu()" aria-label="Close menu">
+                        <span class="material-symbols-rounded">close</span>
+                    </button>
+                </div>
+
                 <!-- Storage Dropdown -->
                 <div class="nav-item-dropdown">
                     <a href="#" class="nav-link active">Storage <span class="material-symbols-rounded dropdown-arrow">keyboard_arrow_down</span></a>
                     <div class="dropdown-menu shadow-md">
-                        <a href="household-goods-storage.html" class="dropdown-item">
+                        <a href="household-goods-storage.html" class="dropdown-item active">
                             <span class="material-symbols-rounded dropdown-icon">home</span>
                             <div class="dropdown-info">
                                 <h6>For Home</h6>
-                                <p>Store household items & furniture</p>
+                                <p>Store household items &amp; furniture</p>
                             </div>
                         </a>
                         <a href="business-storage.html" class="dropdown-item">
                             <span class="material-symbols-rounded dropdown-icon">business</span>
                             <div class="dropdown-info">
                                 <h6>For Business</h6>
-                                <p>Corporate archiving & inventory</p>
+                                <p>Corporate archiving &amp; inventory</p>
                             </div>
                         </a>
                     </div>
@@ -118,14 +125,14 @@
                             <span class="material-symbols-rounded dropdown-icon">package_2</span>
                             <div class="dropdown-info">
                                 <h6>Box Storage</h6>
-                                <p>Small items & document files</p>
+                                <p>Small items &amp; document files</p>
                             </div>
                         </a>
-                        <a href="#" class="dropdown-item">
+                        <a href="offering-box-storage.html" class="dropdown-item">
                             <span class="material-symbols-rounded dropdown-icon">luggage</span>
                             <div class="dropdown-info">
                                 <h6>Luggage Storage</h6>
-                                <p>Travelers & transient luggage</p>
+                                <p>Travelers &amp; transient luggage</p>
                             </div>
                         </a>
                     </div>
@@ -140,671 +147,157 @@
                     <span class="material-symbols-rounded">call</span>
                     +91-9090206090
                 </a>
-                <button class="btn btn-primary" onclick="openQuoteModal()">Calculate Storage Space</button>
+                <button class="btn btn-primary" onclick="openQuoteModal()">Get Free Quote</button>
+                <button class="mobile-nav-toggle" id="mobileNavToggle" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu">
+                    <span class="material-symbols-rounded">menu</span>
+                </button>
             </div>
         </div>
     </header>
 
-    <main style="padding-top: 100px;">
-        <!-- ==========================================
-             SCOPED SELF-STORAGE HOMEPAGE SECTION (FOR HOME)
-             ========================================== -->
-        <div class="self-storage-homepage-section">
-            <style>
-                /* Scoped styles strictly matching prompt specifications */
-                .self-storage-homepage-section {
-                    background-color: #ffffff;
-                    padding: 50px 0;
-                    width: 100%;
-                    box-sizing: border-box;
-                    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-                }
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileMenu()"></div>
 
-                .self-storage-homepage-section * {
-                    box-sizing: border-box;
-                }
+    <!-- Main Hero Container (Uniform with Homepage) -->
+    <main class="hero-container">
+        <!-- Background graphics -->
+        <div class="bg-shape-grid"></div>
+        <div class="bg-shape-glow"></div>
+        <div class="bg-blueprint-pattern"></div>
 
-                .self-storage-homepage-section__hero {
-                    max-width: 1140px;
-                    margin: 0 auto;
-                    padding: 0 24px;
-                    display: flex;
-                    flex-direction: row-reverse; /* Swap image to left, content to right */
-                    align-items: center;
-                    justify-content: space-between;
-                    gap: 60px;
-                }
+        <section class="hero-content-wrapper">
+            <!-- Left Info Block -->
+            <div class="hero-text-block">
+                <div class="badge-accent-wrapper">
+                    <span class="hero-tagline-accent">HOUSEHOLD GOODS &amp; FURNITURE STORAGE</span>
+                </div>
+                <h1 class="hero-main-title">
+                    Household Goods Storage Solutions in <span class="accent-text">Delhi/NCR</span>
+                </h1>
+                <p class="hero-paragraph">
+                    Store your 1BHK, 2BHK, 3BHK furniture, home appliances, luggage, and personal belongings in clean, pest-controlled, private lockable storage rooms.
+                </p>
+                <p class="hero-paragraph">
+                    Enjoy 24/7 CCTV security, personal key access, and convenient door-to-door pickup across Delhi, Gurugram, and Noida with complete peace of mind.
+                </p>
 
-                .self-storage-homepage-section__content {
-                    flex: 1 1 52%;
-                    max-width: 580px;
-                    text-align: left;
-                }
-
-                .self-storage-homepage-section__eyebrow {
-                    display: inline-block;
-                    font-size: 12px;
-                    font-weight: 700;
-                    color: #F97316; /* Brand Orange */
-                    letter-spacing: 2px;
-                    text-transform: uppercase;
-                    margin-bottom: 12px;
-                }
-
-                .self-storage-homepage-section__title {
-                    font-size: 38px;
-                    font-weight: 800;
-                    color: #2563EB; /* Brand Primary Blue */
-                    margin: 0 0 16px;
-                    line-height: 1.25;
-                    letter-spacing: -0.5px;
-                }
-
-                .self-storage-homepage-section__text {
-                    font-size: 15.5px;
-                    color: #4b5563;
-                    line-height: 1.7;
-                    margin: 0 0 28px;
-                    max-width: 520px;
-                }
-
-                .self-storage-homepage-section__cta {
-                    display: inline-flex;
-                    align-items: center;
-                    background-color: #F97316;
-                    color: #ffffff;
-                    font-weight: 700;
-                    font-size: 15px;
-                    padding: 14px 30px;
-                    border-radius: 30px;
-                    text-decoration: none;
-                    box-shadow: 0 4px 14px rgba(249, 115, 22, 0.2);
-                    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-                }
-
-                .self-storage-homepage-section__cta:hover {
-                    background-color: #e0610d;
-                    transform: translateY(-3px);
-                    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
-                }
-
-                .self-storage-homepage-section__cta-arrow {
-                    margin-left: 8px;
-                    transition: transform 0.3s ease;
-                    font-size: 17px;
-                    line-height: 1;
-                }
-
-                .self-storage-homepage-section__cta:hover .self-storage-homepage-section__cta-arrow {
-                    transform: translateX(4px);
-                }
-
-                .self-storage-homepage-section__image-container {
-                    flex: 1 1 40%;
-                    max-width: 460px;
-                    border-radius: 28px;
-                    overflow: hidden;
-                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-                }
-
-                .self-storage-homepage-section__image {
-                    width: 100%;
-                    height: auto;
-                    aspect-ratio: 4 / 3;
-                    object-fit: cover;
-                    display: block;
-                    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-                }
-
-                .self-storage-homepage-section__image-container:hover .self-storage-homepage-section__image {
-                    transform: scale(1.03);
-                }
-
-                /* Media strip */
-                .self-storage-homepage-section__media {
-                    background-color: #ffffff;
-                    border-top: 1px solid #f3f4f6;
-                    border-bottom: 1px solid #f3f4f6;
-                    padding: 30px 24px;
-                    margin-top: 50px;
-                    width: 100%;
-                }
-
-                .self-storage-homepage-section__media-container {
-                    max-width: 1240px;
-                    margin: 0 auto;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 16px;
-                }
-
-                .self-storage-homepage-section__media-label {
-                    font-size: 13px;
-                    font-weight: 800;
-                    color: #4b5563;
-                    margin: 0;
-                    text-transform: uppercase;
-                    letter-spacing: 1.5px;
-                }
-
-                .ssi-private-trust-logo {
-                  display: inline-flex;
-                  align-items: center;
-                  justify-content: center;
-                  background-color: #ffffff;
-                  border: 1.5px solid #eef2fa;
-                  border-radius: 8px;
-                  width: 90px;
-                  height: 48px;
-                  cursor: default;
-                  transition: transform 0.2s ease;
-                  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-                  flex-shrink: 0;
-                }
-
-                .ssi-private-trust-logo:hover {
-                  transform: scale(1.05);
-                }
-
-                .ssi-private-trust-logo.pti {
-                  font-family: serif;
-                }
-
-                .ssi-private-trust-logo.pti .pti-wrapper {
-                  display: flex;
-                  align-items: center;
-                  gap: 6px;
-                }
-
-                .ssi-private-trust-logo.pti .pti-grid {
-                  display: grid;
-                  grid-template-columns: repeat(3, 3px);
-                  gap: 2px;
-                  flex-shrink: 0;
-                }
-
-                .ssi-private-trust-logo.pti .pti-grid span {
-                  width: 3px;
-                  height: 3px;
-                  background-color: #c8102e;
-                  display: block;
-                }
-
-                .ssi-private-trust-logo.pti .pti-text {
-                  color: #c8102e;
-                  font-weight: 900;
-                  font-size: 16px;
-                  letter-spacing: 0.2px;
-                  line-height: 1;
-                }
-
-                .ssi-private-trust-logo.pti .pti-sub {
-                  font-size: 5px;
-                  font-family: sans-serif;
-                  color: #555555;
-                  text-transform: uppercase;
-                  display: block;
-                  margin-top: 1px;
-                  letter-spacing: 0px;
-                }
-
-                .ssi-private-trust-logo.theweek {
-                  font-family: 'Poppins', sans-serif;
-                }
-
-                .ssi-private-trust-logo.theweek .theweek-box {
-                  background-color: #d52b1e;
-                  color: #ffffff;
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  justify-content: center;
-                  width: 36px;
-                  height: 36px;
-                  border-radius: 4px;
-                  line-height: 1;
-                }
-
-                .ssi-private-trust-logo.theweek .theweek-main {
-                  font-size: 6px;
-                  font-weight: 900;
-                  letter-spacing: 0.2px;
-                  margin-bottom: 2px;
-                  text-align: center;
-                }
-
-                .ssi-private-trust-logo.theweek .theweek-sub {
-                  font-size: 7px;
-                  font-weight: 900;
-                  background-color: #ffffff;
-                  color: #d52b1e;
-                  padding: 1px 3px;
-                  border-radius: 1px;
-                }
-
-                .ssi-private-trust-logo.toi {
-                  font-family: serif;
-                }
-
-                .ssi-private-trust-logo.toi .toi-box {
-                  background: linear-gradient(180deg, #f03e3e 0%, #a20808 100%);
-                  color: #ffffff;
-                  font-weight: 900;
-                  font-size: 16px;
-                  font-style: italic;
-                  padding: 6px 10px;
-                  border-radius: 4px;
-                  line-height: 1;
-                  letter-spacing: 0.5px;
-                  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-                }
-
-                .ssi-private-trust-logo.republic {
-                  font-family: 'Inter', sans-serif;
-                }
-
-                .ssi-private-trust-logo.republic .republic-box {
-                  background-color: #0c1c24;
-                  color: #ffffff;
-                  display: inline-flex;
-                  align-items: center;
-                  justify-content: center;
-                  font-size: 16px;
-                  font-weight: 900;
-                  width: 36px;
-                  height: 36px;
-                  border-radius: 4px;
-                  position: relative;
-                }
-
-                .ssi-private-trust-logo.republic .republic-plus {
-                  color: #8cd65b;
-                  font-size: 12px;
-                  position: absolute;
-                  top: 4px;
-                  right: 4px;
-                  font-weight: 900;
-                  line-height: 1;
-                }
-
-                .ssi-private-trust-logo.et {
-                  font-family: serif;
-                }
-
-                .ssi-private-trust-logo.et .et-box {
-                  background-color: #e31b23;
-                  color: #ffffff;
-                  font-weight: 900;
-                  font-size: 18px;
-                  padding: 4px 8px;
-                  border-radius: 4px;
-                  line-height: 1;
-                  letter-spacing: 0.5px;
-                }
-
-                .ssi-private-trust-logo.iss {
-                  font-family: 'Inter', sans-serif;
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  justify-content: center;
-                  line-height: 1;
-                }
-
-                .ssi-private-trust-logo.iss .iss-main {
-                  color: #005fa9;
-                  font-weight: 900;
-                  font-size: 18px;
-                  letter-spacing: -0.5px;
-                }
-
-                .ssi-private-trust-logo.iss .iss-sub {
-                  font-size: 4px;
-                  color: #005fa9;
-                  font-weight: 800;
-                  text-transform: uppercase;
-                  margin-top: 2px;
-                  letter-spacing: 0.2px;
-                }
-
-                .self-storage-homepage-section__logos {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 16px;
-                    flex-wrap: wrap;
-                }
-
-                /* Responsive design */
-                @media (max-width: 1024px) {
-                    .self-storage-homepage-section__hero {
-                        gap: 40px;
-                    }
-                    .self-storage-homepage-section__title {
-                        font-size: 36px;
-                    }
-                    .self-storage-homepage-section__media-container {
-                        flex-direction: column;
-                        align-items: flex-start;
-                        gap: 24px;
-                    }
-                    .self-storage-homepage-section__logos {
-                        width: 100%;
-                        justify-content: flex-start;
-                        overflow-x: auto;
-                        padding-bottom: 10px;
-                        gap: 40px;
-                        -webkit-overflow-scrolling: touch;
-                    }
-                    .self-storage-homepage-section__logo {
-                        flex-shrink: 0;
-                    }
-                }
-
-                @media (max-width: 768px) {
-                    .self-storage-homepage-section {
-                        padding: 50px 0;
-                    }
-                    .self-storage-homepage-section__hero {
-                        flex-direction: column;
-                        text-align: center;
-                        gap: 40px;
-                    }
-                    .self-storage-homepage-section__content {
-                        flex: 1 1 100%;
-                        text-align: center;
-                    }
-                    .self-storage-homepage-section__text {
-                        margin-left: auto;
-                        margin-right: auto;
-                    }
-                    .self-storage-homepage-section__image-container {
-                        flex: 1 1 100%;
-                        width: 100%;
-                        max-width: 480px;
-                        margin: 0 auto;
-                    }
-                }
-            </style>
-
-            <div class="self-storage-homepage-section__hero">
-                <!-- LEFT COLUMN: CONTENT -->
-                <div class="self-storage-homepage-section__content">
-                    <span class="self-storage-homepage-section__eyebrow">SELF STORAGE MADE SIMPLE</span>
-                    <h1 class="self-storage-homepage-section__title">Household Goods Storage in Delhi NCR</h1>
-                    <p class="self-storage-homepage-section__text">
-                        Secure your belongings in a personal storage room with your own lock and key. Enjoy 24/7 access, top-notch security, and affordable rates for complete peace of mind!<br><br>
-                        Whether you are moving houses, renovating your home, traveling abroad, or simply need more space, our pest-controlled facilities and flexible plans ensure your valuables are safe and accessible.
-                    </p>
-                    <a href="index.html#calculator" class="self-storage-homepage-section__cta">
-                        Find Your Storage Space <span class="self-storage-homepage-section__cta-arrow">→</span>
-                    </a>
+                <p class="hero-ideal-list">
+                    <strong>Ideal for:</strong> 1BHK–3BHK Furniture • Home Appliances • Luggage • Renovation Goods • Relocation Storage
+                </p>
+                
+                <!-- CTA buttons group -->
+                <div class="hero-action-buttons">
+                    <button class="btn btn-primary btn-large" onclick="openQuoteModal()">Get Free Quote</button>
+                    <a href="#locations" class="btn btn-secondary btn-large">Explore Facilities</a>
                 </div>
 
-                <!-- RIGHT COLUMN: IMAGE -->
-                <div class="self-storage-homepage-section__image-container">
-                    <img src="images/storage-facility.jpg" alt="Secure, premium self storage facility showing clean private storage units" class="self-storage-homepage-section__image">
+                <!-- Trust Indicators Directly Below CTA -->
+                <div class="hero-trust-indicators">
+                    <div class="trust-indicator-item">
+                        <div class="stars">★★★★★ 4.9</div>
+                        <div class="label">Google Rating</div>
+                    </div>
+                    <div class="trust-divider"></div>
+                    <div class="trust-indicator-item">
+                        <div class="count">5,000+</div>
+                        <div class="label">Customers</div>
+                    </div>
+                    <div class="trust-divider"></div>
+                    <div class="trust-indicator-item">
+                        <div class="count">3</div>
+                        <div class="label">NCR Facilities</div>
+                    </div>
                 </div>
             </div>
 
-            <!-- MEDIA / TRUST STRIP -->
-            <div class="self-storage-homepage-section__media">
-                <div class="self-storage-homepage-section__media-container">
-                    <h2 class="self-storage-homepage-section__media-label">As seen on</h2>
-                    <div class="self-storage-homepage-section__logos">
-                        
-                        <!-- PTI LOGO -->
-                        <span class="ssi-private-trust-logo pti">
-                          <div class="pti-wrapper">
+            <!-- Right Visual -->
+            <div class="hero-visual-block">
+                <div class="hero-visual-wrapper shadow-lg">
+                    <div class="hero-visual-img-container">
+                        <img src="assets/home_storage_new.webp" alt="Household Goods Storage Units in Delhi NCR - Self Storage India" class="hero-visual-img" fetchpriority="high">
+                    </div>
+                    
+                    <!-- Floating Badge 1 (Security Overlay) -->
+                    <div class="floating-badge badge-1 shadow-md">
+                        <div class="badge-icon-box">
+                            <span class="material-symbols-rounded">videocam</span>
+                        </div>
+                        <div class="badge-content">
+                            <h4>24×7 Surveillance</h4>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Badge 2 (Lock Overlay) -->
+                    <div class="floating-badge badge-2 shadow-md">
+                        <div class="badge-icon-box">
+                            <span class="material-symbols-rounded">lock</span>
+                        </div>
+                        <div class="badge-content">
+                            <h4>Own Lock &amp; Key</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Media / Trust Strip (As Seen On) -->
+        <div class="media-trust-strip">
+            <div class="media-trust-container">
+                <span class="media-trust-label">As seen on</span>
+                <div class="media-trust-logos">
+                    <!-- PTI LOGO -->
+                    <span class="ssi-private-trust-logo pti">
+                        <div class="pti-wrapper">
                             <div class="pti-grid">
-                              <span></span><span></span><span></span>
-                              <span></span><span></span><span></span>
-                              <span></span><span></span><span></span>
+                                <span></span><span></span><span></span>
+                                <span></span><span></span><span></span>
+                                <span></span><span></span><span></span>
                             </div>
                             <div>
-                              <div class="pti-text">PTI</div>
-                              <div class="pti-sub">Press Trust of India</div>
+                                <div class="pti-text">PTI</div>
+                                <div class="pti-sub">Press Trust of India</div>
                             </div>
-                          </div>
-                        </span>
-                        
-                        <!-- THE WEEK LOGO -->
-                        <span class="ssi-private-trust-logo theweek">
-                          <div class="theweek-box">
+                        </div>
+                    </span>
+                    <!-- THE WEEK LOGO -->
+                    <span class="ssi-private-trust-logo theweek">
+                        <div class="theweek-box">
                             <div class="theweek-main">THE WEEK</div>
                             <div class="theweek-sub">LIVE</div>
-                          </div>
-                        </span>
-                        
-                        <!-- TOI LOGO -->
-                        <span class="ssi-private-trust-logo toi">
-                          <div class="toi-box">TOI</div>
-                        </span>
-                        
-                        <!-- REPUBLIC LOGO -->
-                        <span class="ssi-private-trust-logo republic" title="Republic World">
-                          <div class="republic-box">
+                        </div>
+                    </span>
+                    <!-- TOI LOGO -->
+                    <span class="ssi-private-trust-logo toi">
+                        <div class="toi-box">TOI</div>
+                    </span>
+                    <!-- REPUBLIC LOGO -->
+                    <span class="ssi-private-trust-logo republic" title="Republic World">
+                        <div class="republic-box">
                             R<span class="republic-plus">+</span>
-                          </div>
-                        </span>
-                        
-                        <!-- ET LOGO -->
-                        <span class="ssi-private-trust-logo et">
-                          <div class="et-box">ET</div>
-                        </span>
-                        
-                        <!-- ISS LOGO -->
-                        <span class="ssi-private-trust-logo iss">
-                          <div class="iss-main">ISS</div>
-                          <div class="iss-sub">Inside Self-Storage</div>
-                        </span>
-
-                    </div>
+                        </div>
+                    </span>
+                    <!-- ET LOGO -->
+                    <span class="ssi-private-trust-logo et">
+                        <div class="et-box">ET</div>
+                    </span>
+                    <!-- ISS LOGO -->
+                    <span class="ssi-private-trust-logo iss">
+                        <div class="iss-main">ISS</div>
+                        <div class="iss-sub">Inside Self-Storage</div>
+                    </span>
                 </div>
             </div>
         </div>
 
         <!-- ==========================================
-             SECTION 3, HOUSEHOLD STORAGE INTRO
-             ========================================== -->
-        <section class="household-intro">
-            <style>
-                .household-intro {
-                    background-color: #ffffff;
-                    padding: 40px 0 10px;
-                    width: 100%;
-                    box-sizing: border-box;
-                }
-                .household-intro__container {
-                    max-width: 1140px;
-                    margin: 0 auto;
-                    padding: 0 24px;
-                }
-                .household-intro__heading {
-                    font-family: var(--font-heading);
-                    font-size: clamp(1.3rem, 2vw, 1.7rem);
-                    font-weight: 600;
-                    color: var(--text);
-                    line-height: 1.3;
-                    margin-bottom: 16px;
-                    text-align: center;
-                }
-                .household-intro__text {
-                    font-size: 16px;
-                    color: #4b5563;
-                    line-height: 1.75;
-                    margin: 0 auto 20px;
-                    text-align: center;
-                    max-width: 960px;
-                }
-                .household-intro__text a {
-                    color: #F97316;
-                    text-decoration: none;
-                    font-weight: 600;
-                }
-                .household-intro__text a:hover {
-                    text-decoration: underline;
-                }
-            </style>
-            <div class="household-intro__container">
-                <h2 class="household-intro__heading">Household Goods Storage in Self Storage India</h2>
-                <p class="household-intro__text">
-                    Our houses always go through changes, whether that’s seasonal changes, people changes, or structural changes. All of these call for a need to ensure household items are undamaged safe. A household goods storage facility, such as Self Storage India, can provide top-notch services for all your home needs. <a href="index.html">With Self Storage India’s</a> affordable storage options, you can continue to live your life happily and instantaneously incorporate unexpected changes.
-                </p>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             SECTION 4, WHY THERE IS A NEED FOR HOUSEHOLD STORAGE
+             SECTION 3, WHY THERE IS A NEED FOR HOUSEHOLD STORAGE
              ========================================== -->
         <section class="household-need">
-            <style>
-                .household-need {
-                    background-color: #FAFCFF;
-                    padding: 20px 24px 40px;
-                    width: 100%;
-                    box-sizing: border-box;
-                    font-family: 'Inter', sans-serif;
-                }
-
-                .household-need__container {
-                    max-width: 1140px;
-                    margin: 0 auto;
-                }
-
-                .household-need__header {
-                    text-align: center;
-                    margin-bottom: 60px;
-                }
-
-                .household-need__heading {
-                    font-family: var(--font-heading);
-                    font-size: clamp(1.3rem, 2vw, 1.7rem);
-                    font-weight: 600;
-                    color: var(--text);
-                    line-height: 1.25;
-                    margin-bottom: 12px;
-                }
-
-                .household-need__subtitle {
-                    font-size: 16px;
-                    color: #5f6c7b;
-                    font-weight: 400;
-                }
-
-                .household-need__grid {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    row-gap: 100px;
-                    column-gap: 40px;
-                    width: 100%;
-                }
-
-                .household-need__card {
-                    position: relative;
-                    background-color: #ffffff;
-                    border: 2px solid #2563EB;
-                    border-radius: 24px;
-                    padding: 110px 24px 30px;
-                    text-align: center;
-                    box-sizing: border-box;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-                    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.03);
-                }
-
-                .household-need__card:hover {
-                    transform: translateY(-8px);
-                    border-color: #F97316;
-                    box-shadow: 0 20px 40px rgba(249, 115, 22, 0.12);
-                }
-
-                .household-need__img-box {
-                    position: absolute;
-                    top: -65px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    width: 155px;
-                    height: 155px;
-                    border-radius: 20px;
-                    overflow: hidden;
-                    border: 5px solid #ffffff;
-                    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.12);
-                    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-                }
-
-                .household-need__card:hover .household-need__img-box {
-                    transform: translateX(-50%) translateY(-5px) scale(1.03);
-                    box-shadow: 0 15px 30px rgba(249, 115, 22, 0.2);
-                }
-
-                .household-need__img-box img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    display: block;
-                }
-
-                .household-need__card-title {
-                    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-                    font-size: 22px;
-                    font-weight: 700;
-                    color: #2563EB;
-                    margin-bottom: 14px;
-                    transition: color 0.3s ease;
-                }
-
-                .household-need__card:hover .household-need__card-title {
-                    color: #F97316;
-                }
-
-                .household-need__card-desc {
-                    font-size: 14.5px;
-                    color: #374151;
-                    line-height: 1.6;
-                    max-width: 280px;
-                }
-
-                @media (max-width: 1024px) {
-                    .household-need__grid {
-                        gap: 30px;
-                    }
-                    .household-need__card {
-                        padding-top: 100px;
-                    }
-                    .household-need__img-box {
-                        width: 135px;
-                        height: 135px;
-                        top: -55px;
-                    }
-                    .household-need__heading {
-                        font-size: 30px;
-                    }
-                }
-
-                @media (max-width: 768px) {
-                    .household-need {
-                        padding: 60px 20px;
-                    }
-                    .household-need__grid {
-                        grid-template-columns: 1fr;
-                        gap: 80px;
-                        margin-top: 40px;
-                    }
-                    .household-need__header {
-                        margin-bottom: 70px;
-                    }
-                }
-            </style>
-
             <div class="household-need__container">
-                <div class="household-need__header">
-                    <h2 class="household-need__heading">Why There is a Need for Household Storage?</h2>
-                    <p class="household-need__subtitle">Here are some scenarios where you are likely to encounter the need for household goods storage.</p>
+                <div class="section-header-centered">
+                    <span class="calc-tag">WHY CHOOSE HOUSEHOLD STORAGE</span>
+                    <h2>Why There is a Need for Household Storage?</h2>
+                    <p>Here are common scenarios where you are likely to encounter the need for household goods storage.</p>
                 </div>
 
                 <div class="household-need__grid">
@@ -865,85 +358,10 @@
             </div>
         </section>
 
-        <!-- Household Storage Unit Size & Pricing Guide -->
+        <!-- ==========================================
+             SECTION 4, HOUSEHOLD SIZE & PRICING GUIDE
+             ========================================== -->
         <section class="household-pricing-guide">
-            <style>
-                .household-pricing-guide {
-                    padding: 50px 0;
-                    background-color: #ffffff;
-                }
-                .pricing-table-container {
-                    max-width: 1140px;
-                    margin: 0 auto;
-                    padding: 0 24px;
-                }
-                .pricing-table-grid {
-                    display: grid;
-                    grid-template-columns: repeat(4, 1fr);
-                    gap: 20px;
-                    margin-top: 32px;
-                }
-                .pricing-card {
-                    background: #FAFCFF;
-                    border: 1px solid var(--border);
-                    border-radius: 16px;
-                    padding: 24px 20px;
-                    text-align: center;
-                    display: flex;
-                    flex-direction: column;
-                    transition: transform 200ms ease, border-color 200ms ease;
-                }
-                .pricing-card:hover {
-                    transform: translateY(-4px);
-                    border-color: var(--primary);
-                    box-shadow: 0 10px 24px rgba(24, 108, 236, 0.1);
-                }
-                .pricing-card-badge {
-                    font-size: 0.75rem;
-                    font-weight: 700;
-                    color: var(--primary);
-                    background: var(--primary-light);
-                    padding: 4px 12px;
-                    border-radius: 20px;
-                    display: inline-block;
-                    margin: 0 auto 12px;
-                    text-transform: uppercase;
-                }
-                .pricing-card h3 {
-                    font-size: 1.2rem;
-                    font-weight: 600;
-                    color: var(--text);
-                    margin-bottom: 6px;
-                }
-                .pricing-sqft {
-                    font-size: 0.9rem;
-                    color: var(--text-secondary);
-                    margin-bottom: 16px;
-                }
-                .pricing-item-list {
-                    list-style: none;
-                    padding: 0;
-                    margin: 0 0 20px;
-                    text-align: left;
-                    font-size: 0.85rem;
-                    color: var(--text-secondary);
-                }
-                .pricing-item-list li {
-                    margin-bottom: 8px;
-                    display: flex;
-                    align-items: center;
-                    gap: 6px;
-                }
-                .pricing-item-list .check {
-                    color: var(--primary);
-                    font-size: 1rem;
-                }
-                @media (max-width: 900px) {
-                    .pricing-table-grid {
-                        grid-template-columns: repeat(2, 1fr);
-                    }
-                }
-            </style>
             <div class="pricing-table-container">
                 <div class="section-header-centered">
                     <span class="calc-tag">HOUSEHOLD SIZE &amp; SPACE GUIDE</span>
@@ -1003,9 +421,8 @@
         </section>
 
         <!-- ==========================================
-             SECTION 4.1, OUR STORAGE SOLUTIONS
+             SECTION 5, OUR OFFERINGS
              ========================================== -->
-        <!-- Our Offerings Section -->
         <section id="offerings" class="offerings-section">
             <div class="container">
                 <div class="section-header-centered">
@@ -1071,7 +488,7 @@
                             <span class="offering-badge">Best for Travellers</span>
                         </div>
                         <div class="offering-content">
-                            <h3 class="offering-title">Luggage & Box Storage</h3>
+                            <h3 class="offering-title">Luggage &amp; Box Storage</h3>
                             <p class="offering-desc">Store luggage, boxes and seasonal belongings securely with affordable short-term or long-term plans.</p>
                             <div class="offering-divider"></div>
                             <ul class="offering-highlights">
@@ -1094,8 +511,8 @@
                             <span class="material-symbols-rounded">lock</span>
                         </div>
                         <div class="trust-text">
-                            <h4>Own Lock & Key</h4>
-                            <p>Complete control & personal lock.</p>
+                            <h4>Own Lock &amp; Key</h4>
+                            <p>Complete control &amp; personal lock.</p>
                         </div>
                     </div>
                     <div class="trust-strip-item">
@@ -1104,7 +521,7 @@
                         </div>
                         <div class="trust-text">
                             <h4>24/7 CCTV Monitoring</h4>
-                            <p>Continuous surveillance & site security.</p>
+                            <p>Continuous surveillance &amp; site security.</p>
                         </div>
                     </div>
                     <div class="trust-strip-item">
@@ -1130,71 +547,9 @@
         </section>
 
         <!-- ==========================================
-             SECTION 4.15, HOW HOUSEHOLD STORAGE WORKS (4-STEP PROCESS)
+             SECTION 6, HOW HOUSEHOLD STORAGE WORKS (4-STEP PROCESS)
              ========================================== -->
         <section class="household-process-section">
-            <style>
-                .household-process-section {
-                    padding: 50px 0;
-                    background-color: #FAFCFF;
-                    border-top: 1px solid var(--border);
-                    border-bottom: 1px solid var(--border);
-                }
-                .process-grid {
-                    display: grid;
-                    grid-template-columns: repeat(4, 1fr);
-                    gap: 24px;
-                    margin-top: 36px;
-                }
-                .process-step-card {
-                    background: #ffffff;
-                    border: 1px solid var(--border);
-                    border-radius: 16px;
-                    padding: 28px 20px;
-                    text-align: center;
-                    position: relative;
-                    transition: transform 200ms ease, box-shadow 200ms ease;
-                }
-                .process-step-card:hover {
-                    transform: translateY(-4px);
-                    box-shadow: 0 12px 28px rgba(24, 108, 236, 0.08);
-                    border-color: var(--primary);
-                }
-                .process-step-number {
-                    width: 44px;
-                    height: 44px;
-                    border-radius: 50%;
-                    background: var(--primary-light);
-                    color: var(--primary);
-                    font-size: 1.1rem;
-                    font-weight: 700;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin: 0 auto 16px;
-                }
-                .process-step-card h3 {
-                    font-size: 1.1rem;
-                    font-weight: 600;
-                    color: var(--text);
-                    margin-bottom: 10px;
-                }
-                .process-step-card p {
-                    font-size: 0.88rem;
-                    color: var(--text-secondary);
-                    line-height: 1.55;
-                }
-                @media (max-width: 900px) {
-                    .process-grid {
-                        grid-template-columns: repeat(2, 1fr);
-                    }
-                }
-                @media (max-width: 550px) {
-                    .process-grid {
-                        grid-template-columns: 1fr;
-                    }
-                }
-            </style>
             <div class="container">
                 <div class="section-header-centered">
                     <span class="calc-tag">EASY 4-STEP PROCESS</span>
@@ -1225,10 +580,10 @@
                 </div>
             </div>
         </section>
-<!-- ==========================================
-             SECTION 4.2, STORAGE CALCULATOR
+
+        <!-- ==========================================
+             SECTION 7, STORAGE CALCULATOR
              ========================================== -->
-        <!-- Storage Calculator Section -->
         <section id="calculator" class="calc-section">
             <div class="container">
                 <div class="section-header-centered">
@@ -1241,7 +596,7 @@
                 </div>
 
                 <div class="calc-container">
-                    <!-- Left Column: Illustrated Storage Unit (fills dynamically) -->
+                    <!-- Left Column: Illustrated Storage Unit -->
                     <div class="calc-visual-column">
                         <div class="storage-unit-box shadow-md">
                             <div class="unit-header">
@@ -1249,10 +604,8 @@
                                 <h4>Your Virtual Storage Unit</h4>
                             </div>
                             <div class="unit-room-visual">
-                                <!-- The fill overlays -->
                                 <div class="unit-fill-progress" id="unit-fill"></div>
                                 <div class="unit-fill-percentage" id="unit-fill-percent">0% Full</div>
-                                <!-- Illustrated boxes that show up when items are added -->
                                 <div class="unit-grid-items" id="unit-items-display"></div>
                             </div>
                         </div>
@@ -1446,7 +799,7 @@
                                 </div>
                             </div>
 
-                            <!-- Item 12: Business Inventory -->
+                            <!-- Item 12: Business Stock -->
                             <div class="calc-item-card" data-item="inventory" data-volume="25">
                                 <div class="card-icon-title">
                                     <div class="calc-icon-box theme-blue">
@@ -1464,7 +817,7 @@
                     </div>
                 </div>
 
-                <!-- Trust Section / Reassurance Cards -->
+                <!-- Reassurance Cards -->
                 <div class="calc-trust-grid">
                     <div class="trust-card">
                         <span class="material-symbols-rounded">check_circle</span>
@@ -1492,7 +845,7 @@
         </section>
 
         <!-- ==========================================
-             SECTION 4.3, TESTIMONIALS
+             SECTION 8, TESTIMONIALS
              ========================================== -->
         <section id="testimonials" class="testimonials-section">
             <div class="container">
@@ -1561,9 +914,8 @@
             </div>
         </section>
 
-
         <!-- ==========================================
-             SECTION 4.4, OUR LOCATIONS
+             SECTION 9, OUR LOCATIONS
              ========================================== -->
         <section id="locations" class="locations-section">
             <div class="container">
@@ -1650,76 +1002,10 @@
             </div>
         </section>
 
-        <!-- Localized NCR Coverage Footprint Grid -->
+        <!-- ==========================================
+             SECTION 10, LOCALIZED NCR COVERAGE
+             ========================================== -->
         <section class="household-coverage-section">
-            <style>
-                .household-coverage-section {
-                    padding: 50px 0;
-                    background-color: #ffffff;
-                    border-top: 1px solid var(--border);
-                }
-                .coverage-grid {
-                    display: grid;
-                    grid-template-columns: repeat(4, 1fr);
-                    gap: 20px;
-                    margin-top: 32px;
-                }
-                .coverage-card {
-                    background: #FAFCFF;
-                    border: 1px solid var(--border);
-                    border-radius: 16px;
-                    padding: 24px 20px;
-                }
-                .coverage-card-header {
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                    margin-bottom: 14px;
-                }
-                .coverage-icon-box {
-                    width: 36px;
-                    height: 36px;
-                    border-radius: 8px;
-                    background: var(--primary-light);
-                    color: var(--primary);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-                .coverage-card h3 {
-                    font-size: 1.05rem;
-                    font-weight: 600;
-                    color: var(--text);
-                    margin: 0;
-                }
-                .coverage-list {
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 8px;
-                }
-                .coverage-pill {
-                    font-size: 0.8rem;
-                    color: var(--text-secondary);
-                    background: #ffffff;
-                    border: 1px solid var(--border);
-                    padding: 4px 10px;
-                    border-radius: 12px;
-                    font-weight: 500;
-                }
-                @media (max-width: 900px) {
-                    .coverage-grid {
-                        grid-template-columns: repeat(2, 1fr);
-                    }
-                }
-                @media (max-width: 550px) {
-                    .coverage-grid {
-                        grid-template-columns: 1fr;
-                    }
-                }
-            </style>
             <div class="container">
                 <div class="section-header-centered">
                     <span class="calc-tag">NCR SERVICE AREA</span>
@@ -1797,7 +1083,9 @@
             </div>
         </section>
 
-        <!-- Facility Photo Gallery Strip -->
+        <!-- ==========================================
+             SECTION 11, FACILITY GALLERY STRIP
+             ========================================== -->
         <section class="gallery-strip-section">
             <div class="container">
                 <div class="gallery-strip-header">
@@ -1826,72 +1114,9 @@
         </section>
 
         <!-- ==========================================
-             SECTION 5, HOUSEHOLD STORAGE DETAILS (SEO CONTENT)
+             SECTION 12, HOUSEHOLD STORAGE DETAILS (SEO CONTENT)
              ========================================== -->
         <section class="seo-details-section">
-            <style>
-                .seo-details-section {
-                    padding: 30px 0;
-                    background-color: #F8FAFC;
-                    border-top: 1px solid var(--border);
-                    border-bottom: 1px solid var(--border);
-                    color: var(--text-muted);
-                    font-family: 'Inter', sans-serif;
-                }
-                .seo-details-section__container {
-                    max-width: 1140px;
-                    margin: 0 auto;
-                    padding: 0 var(--space-xl);
-                    text-align: left;
-                }
-                .seo-details-section h2 {
-                    color: var(--primary);
-                    font-size: clamp(1.3rem, 2vw, 1.7rem);
-                    font-weight: 600;
-                    margin-top: 28px;
-                    margin-bottom: 12px;
-                    line-height: 1.3;
-                    letter-spacing: -0.01em;
-                }
-                .seo-details-section h2:first-of-type {
-                    margin-top: 0;
-                }
-                .seo-details-section h3 {
-                    color: var(--primary);
-                    font-size: 1.3rem;
-                    font-weight: 600;
-                    margin-top: 20px;
-                    margin-bottom: 10px;
-                }
-                .seo-details-section p {
-                    font-size: 15px;
-                    line-height: 1.65;
-                    margin-bottom: 12px;
-                    color: #4B5563; /* Refined dark grey body text */
-                }
-                .seo-details-section ul {
-                    margin-bottom: 16px;
-                    padding-left: 16px;
-                }
-                .seo-details-section li {
-                    font-size: 15px;
-                    line-height: 1.6;
-                    margin-bottom: 8px;
-                    color: #4B5563;
-                    list-style-type: disc;
-                }
-                @media (max-width: 768px) {
-                    .seo-details-section {
-                        padding: 40px 0;
-                    }
-                    .seo-details-section h2 {
-                        font-size: 1.5rem;
-                    }
-                    .seo-details-section h3 {
-                        font-size: 1.25rem;
-                    }
-                }
-            </style>
             <div class="seo-details-section__container">
                 <h2>Household Goods Storage in NCR</h2>
                 <p>When you're looking for space to store your household goods, finding a reliable and secure solution is important. Whether you're dealing with a home renovation, relocating to a new city, or simply decluttering to make more room, the need for extra storage can arise unexpectedly. That's where Self Storage India comes in, offering top-notch storage facilities tailored to meet your specific needs.</p>
@@ -1968,16 +1193,18 @@
             </div>
         </section>
 
-        <!-- FAQ Section -->
+        <!-- ==========================================
+             SECTION 13, FREQUENTLY ASKED QUESTIONS
+             ========================================== -->
         <section id="faq" class="faq-section">
             <div class="container">
                 <div class="section-header-centered">
-                    <span class="calc-tag">QUESTIONS & ANSWERS</span>
+                    <span class="calc-tag">QUESTIONS &amp; ANSWERS</span>
                     <h2>Frequently Asked Questions</h2>
                     <p>Find answers to common questions about space options, security parameters, flexibility, and booking details.</p>
                 </div>
 
-                <!-- Center Accordion Container (max-width: 800px) -->
+                <!-- Center Accordion Container -->
                 <div class="faq-accordions-centered-container">
                     <!-- Accordion 1 -->
                     <div class="faq-accordion-item shadow-sm">
@@ -2055,6 +1282,7 @@
                             <p>We offer a wide range of unit sizes, from small lockers for personal items or documents, up to large rooms capable of storing 3BHK+ households or business stocks.</p>
                         </div>
                     </div>
+
                     <!-- Accordion 8 -->
                     <div class="faq-accordion-item shadow-sm">
                         <button class="faq-trigger" onclick="toggleFaq(this)">
@@ -2064,23 +1292,6 @@
                         <div class="faq-content-box">
                             <p>Simply request a callback, use our online size calculator, or visit one of our facilities. Our storage specialists will help you select the perfect unit and arrange your move-in.</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Bottom Call-To-Action Banner Section -->
-        <section class="testimonials-cta-section">
-            <div class="container">
-                <div class="cta-box">
-                    <h2>Ready to Claim Your Household Storage Space in Delhi NCR?</h2>
-                    <p>Get an instant price quote or talk to our storage experts today. Clean, secure, lockable rooms with flexible monthly plans.</p>
-                    <div class="cta-actions">
-                        <button class="btn btn-accent btn-large" onclick="openQuoteModal()">Get Free Quote</button>
-                        <a href="tel:+919810012345" class="btn btn-secondary btn-large" style="text-decoration: none;">
-                            <span class="material-symbols-rounded">call</span>
-                            <span>Call Us Now</span>
-                        </a>
                     </div>
                 </div>
             </div>
