@@ -4814,7 +4814,7 @@ h3 {
 .household-need,
 .business-need {
     background-color: #FAFCFF;
-    padding: 60px 0;
+    padding: var(--space-section) 0;
     width: 100%;
     box-sizing: border-box;
     border-top: 1px solid var(--border);
@@ -4916,7 +4916,7 @@ h3 {
 /* 2. Household & Business Pricing & Size Guide */
 .household-pricing-guide,
 .business-pricing-guide {
-    padding: 60px 0;
+    padding: var(--space-section) 0;
     background-color: #ffffff;
 }
 .pricing-table-container {
@@ -5016,7 +5016,7 @@ h3 {
 /* 3. How Business & Household Storage Works Process */
 .household-process-section,
 .business-process-section {
-    padding: 60px 0;
+    padding: var(--space-section) 0;
     background-color: #FAFCFF;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
@@ -5142,7 +5142,7 @@ h3 {
 
 /* 5. Deep SEO Content Details Section */
 .seo-details-section {
-    padding: 50px 0;
+    padding: var(--space-section) 0;
     background-color: #F8FAFC;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
