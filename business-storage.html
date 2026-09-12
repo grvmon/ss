@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Storage & Office Archive Storage in Delhi NCR | Self Storage India</title>
+
     <!-- Primary Meta Tags -->
     <meta name="description" content="Rent secure business & office document storage in Delhi, Gurugram & Noida. Commercial inventory, office furniture & archive files with 24/7 CCTV & pickup.">
     <meta name="keywords" content="business storage delhi ncr, office archive storage gurugram, commercial warehouse storage noida, document storage delhi, inventory storage ncr">
@@ -98,51 +99,16 @@
                             <span class="material-symbols-rounded dropdown-icon">home</span>
                             <div class="dropdown-info">
                                 <h6>For Home</h6>
-                                <p>Store household items & furniture</p>
+                                <p>Furniture, 1BHK-3BHK &amp; personal items</p>
                             </div>
                         </a>
-                        <a href="business-storage.html" class="dropdown-item">
-                            <span class="material-symbols-rounded dropdown-icon">business</span>
+                        <a href="business-storage.html" class="dropdown-item active">
+                            <span class="material-symbols-rounded dropdown-icon">corporate_fare</span>
                             <div class="dropdown-info">
                                 <h6>For Business</h6>
-                                <p>Corporate archiving & inventory</p>
+                                <p>Commercial inventory &amp; office archives</p>
                             </div>
                         </a>
-                    </div>
-                </div>
-
-                <!-- Locations Dropdown -->
-                <div class="nav-item-dropdown">
-                    <a href="#" class="nav-link">Locations <span class="material-symbols-rounded dropdown-arrow">keyboard_arrow_down</span></a>
-                    <div class="dropdown-menu shadow-md">
-                        <a href="self-storage-gurugram.html" class="dropdown-item">
-                            <span class="material-symbols-rounded dropdown-icon">location_on</span>
-                            <div class="dropdown-info">
-                                <h6>Gurugram</h6>
-                                <p>Sector 34, Honda Chowk</p>
-                            </div>
-                        </a>
-                        <a href="self-storage-delhi.html" class="dropdown-item">
-                            <span class="material-symbols-rounded dropdown-icon">location_on</span>
-                            <div class="dropdown-info">
-                                <h6>Delhi</h6>
-                                <p>Sector 28, Dwarka</p>
-                            </div>
-                        </a>
-                        <a href="self-storage-noida.html" class="dropdown-item">
-                            <span class="material-symbols-rounded dropdown-icon">location_on</span>
-                            <div class="dropdown-info">
-                                <h6>Noida</h6>
-                                <p>Sector 59, Noida</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Offerings Dropdown -->
-                <div class="nav-item-dropdown">
-                    <a href="#" class="nav-link">Offerings <span class="material-symbols-rounded dropdown-arrow">keyboard_arrow_down</span></a>
-                    <div class="dropdown-menu shadow-md">
                         <a href="offering-private-rooms.html" class="dropdown-item">
                             <span class="material-symbols-rounded dropdown-icon">meeting_room</span>
                             <div class="dropdown-info">
@@ -154,14 +120,14 @@
                             <span class="material-symbols-rounded dropdown-icon">package_2</span>
                             <div class="dropdown-info">
                                 <h6>Box Storage</h6>
-                                <p>Small items & document files</p>
+                                <p>Small items &amp; document files</p>
                             </div>
                         </a>
-                        <a href="#" class="dropdown-item">
+                        <a href="offering-box-storage.html" class="dropdown-item">
                             <span class="material-symbols-rounded dropdown-icon">luggage</span>
                             <div class="dropdown-info">
                                 <h6>Luggage Storage</h6>
-                                <p>Travelers & transient luggage</p>
+                                <p>Travelers &amp; transient luggage</p>
                             </div>
                         </a>
                     </div>
@@ -176,602 +142,371 @@
                     <span class="material-symbols-rounded">call</span>
                     +91-9090206090
                 </a>
-                <button class="btn btn-primary" onclick="openQuoteModal()">Calculate Storage Space</button>
+                <button class="btn btn-primary" onclick="openQuoteModal()">Get Free Quote</button>
+                <button class="mobile-nav-toggle" id="mobileNavToggle" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu">
+                    <span class="material-symbols-rounded">menu</span>
+                </button>
             </div>
         </div>
     </header>
 
-    <main style="padding-top: 100px;">
-        <!-- ==========================================
-             SCOPED SELF-STORAGE HOMEPAGE SECTION (FOR HOME)
-             ========================================== -->
-        <div class="self-storage-homepage-section">
-            <style>
-                /* Scoped styles strictly matching prompt specifications */
-                .self-storage-homepage-section {
-                    background-color: #ffffff;
-                    padding: 50px 0 0 0;
-                    width: 100%;
-                    box-sizing: border-box;
-                    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-                }
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileMenu()"></div>
 
-                .self-storage-homepage-section * {
-                    box-sizing: border-box;
-                }
-
-                .self-storage-homepage-section__hero {
-                    max-width: 1140px;
-                    margin: 0 auto;
-                    padding: 0 24px;
-                    display: flex;
-                    flex-direction: row-reverse; /* Swap image to left, content to right */
-                    align-items: center;
-                    justify-content: space-between;
-                    gap: 60px;
-                }
-
-                .self-storage-homepage-section__content {
-                    flex: 1 1 52%;
-                    max-width: 580px;
-                    text-align: left;
-                }
-
-                .self-storage-homepage-section__eyebrow {
-                    display: inline-block;
-                    font-size: 12px;
-                    font-weight: 700;
-                    color: #F97316; /* Brand Orange */
-                    letter-spacing: 2px;
-                    text-transform: uppercase;
-                    margin-bottom: 12px;
-                }
-
-                .self-storage-homepage-section__title {
-                    font-size: 38px;
-                    font-weight: 800;
-                    color: #2563EB; /* Brand Primary Blue */
-                    margin: 0 0 16px;
-                    line-height: 1.25;
-                    letter-spacing: -0.5px;
-                }
-
-                .self-storage-homepage-section__text {
-                    font-size: 15.5px;
-                    color: #4b5563;
-                    line-height: 1.7;
-                    margin: 0 0 24px;
-                    max-width: 520px;
-                }
-
-                .self-storage-homepage-section__grid {
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-                    gap: 16px;
-                    margin-bottom: 32px;
-                    max-width: 520px;
-                }
-
-                .self-storage-homepage-section__grid-item {
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                    font-size: 14.5px;
-                    font-weight: 600;
-                    color: #1e3a8a;
-                }
-
-                .self-storage-homepage-section__grid-icon {
-                    color: #10B981; /* Success Green check circle */
-                    font-size: 20px;
-                    font-variation-settings: 'FILL' 1;
-                }
-
-                .self-storage-homepage-section__cta {
-                    display: inline-flex;
-                    align-items: center;
-                    background-color: #F97316;
-                    color: #ffffff;
-                    font-weight: 700;
-                    font-size: 15px;
-                    padding: 14px 30px;
-                    border-radius: 30px;
-                    text-decoration: none;
-                    box-shadow: 0 4px 14px rgba(249, 115, 22, 0.2);
-                    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-                }
-
-                .self-storage-homepage-section__cta:hover {
-                    background-color: #e0610d;
-                    transform: translateY(-3px);
-                    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
-                }
-
-                .self-storage-homepage-section__cta-arrow {
-                    margin-left: 8px;
-                    transition: transform 0.3s ease;
-                    font-size: 17px;
-                    line-height: 1;
-                }
-
-                .self-storage-homepage-section__cta:hover .self-storage-homepage-section__cta-arrow {
-                    transform: translateX(4px);
-                }
-
-                .self-storage-homepage-section__image-container {
-                    flex: 1 1 40%;
-                    max-width: 460px;
-                    border-radius: 28px;
-                    overflow: hidden;
-                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-                }
-
-                .self-storage-homepage-section__image {
-                    width: 100%;
-                    height: auto;
-                    aspect-ratio: 4 / 3;
-                    object-fit: cover;
-                    display: block;
-                    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-                    transform: scale(1.15) translate(-4%, -4%); /* Zoom and shift to crop the top-left watermark */
-                }
-
-                .self-storage-homepage-section__image-container:hover .self-storage-homepage-section__image {
-                    transform: scale(1.22) translate(-4%, -4%);
-                }
-
-                /* Media strip */
-                .self-storage-homepage-section__media {
-                    background-color: #ffffff;
-                    border-top: 1px solid #f3f4f6;
-                    border-bottom: 1px solid #f3f4f6;
-                    padding: 30px 24px;
-                    margin-top: 50px;
-                    width: 100%;
-                }
-
-                .self-storage-homepage-section__media-container {
-                    max-width: 1240px;
-                    margin: 0 auto;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    gap: 50px;
-                }
-
-                .self-storage-homepage-section__media-label {
-                    font-size: 20px;
-                    font-weight: 800;
-                    color: #2563EB;
-                    margin: 0;
-                    white-space: nowrap;
-                    text-transform: uppercase;
-                    letter-spacing: 0.5px;
-                }
-
-                .self-storage-homepage-section__logos {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    flex-grow: 1;
-                    gap: 30px;
-                }
-
-                .self-storage-homepage-section__logo-link {
-                    display: block;
-                    text-decoration: none;
-                }
-
-                .self-storage-homepage-section__logo {
-                    height: 48px;
-                    width: auto;
-                    max-width: 130px;
-                    object-fit: contain;
-                    opacity: 0.9;
-                    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-                    display: block;
-                }
-
-                .self-storage-homepage-section__logo:hover {
-                    opacity: 1;
-                    transform: scale(1.06);
-                }
-
-                /* Responsive design */
-                @media (max-width: 1024px) {
-                    .self-storage-homepage-section__hero {
-                        gap: 40px;
-                    }
-                    .self-storage-homepage-section__title {
-                        font-size: 36px;
-                    }
-                    .self-storage-homepage-section__media-container {
-                        flex-direction: column;
-                        align-items: flex-start;
-                        gap: 24px;
-                    }
-                    .self-storage-homepage-section__logos {
-                        width: 100%;
-                        justify-content: flex-start;
-                        overflow-x: auto;
-                        padding-bottom: 10px;
-                        gap: 40px;
-                        -webkit-overflow-scrolling: touch;
-                    }
-                    .self-storage-homepage-section__logo {
-                        flex-shrink: 0;
-                    }
-                }
-
-                @media (max-width: 768px) {
-                    .self-storage-homepage-section {
-                        padding: 50px 0;
-                    }
-                    .self-storage-homepage-section__hero {
-                        flex-direction: column;
-                        text-align: center;
-                        gap: 40px;
-                    }
-                    .self-storage-homepage-section__content {
-                        flex: 1 1 100%;
-                        text-align: center;
-                    }
-                    .self-storage-homepage-section__text {
-                        margin-left: auto;
-                        margin-right: auto;
-                    }
-                    .self-storage-homepage-section__image-container {
-                        flex: 1 1 100%;
-                        width: 100%;
-                        max-width: 480px;
-                        margin: 0 auto;
-                    }
-                    .self-storage-homepage-section__grid {
-                        grid-template-columns: 1fr;
-                        gap: 12px;
-                        margin-left: auto;
-                        margin-right: auto;
-                        width: fit-content;
-                        text-align: left;
-                    }
-                }
-            </style>
-
-            <div class="self-storage-homepage-section__hero">
-                <!-- LEFT COLUMN: CONTENT -->
-                <div class="self-storage-homepage-section__content">
-                    <span class="self-storage-homepage-section__eyebrow">BUSINESS STORAGE SOLUTIONS</span>
-                    <h1 class="self-storage-homepage-section__title">Business Storage in Delhi NCR</h1>
-                    <p class="self-storage-homepage-section__text">
-                        Optimize your commercial space and simplify logistics in NCR. Safely store document archives, retail inventory, corporate files, and office assets in our secure, pest-controlled facilities. Enjoy flexible monthly scaling and full GST compliance.
-                    </p>
-                    
-                    <!-- Trust Checklist Grid -->
-                    <div class="self-storage-homepage-section__grid">
-                        <div class="self-storage-homepage-section__grid-item">
-                            <span class="material-symbols-rounded self-storage-homepage-section__grid-icon">check_circle</span>
-                            <span>GST Invoicing & Input Credit</span>
-                        </div>
-                        <div class="self-storage-homepage-section__grid-item">
-                            <span class="material-symbols-rounded self-storage-homepage-section__grid-icon">check_circle</span>
-                            <span>24/7 CCTV & Guards</span>
-                        </div>
-                        <div class="self-storage-homepage-section__grid-item">
-                            <span class="material-symbols-rounded self-storage-homepage-section__grid-icon">check_circle</span>
-                            <span>Climate & Pest Control</span>
-                        </div>
-                        <div class="self-storage-homepage-section__grid-item">
-                            <span class="material-symbols-rounded self-storage-homepage-section__grid-icon">check_circle</span>
-                            <span>Authorized Team Access</span>
-                        </div>
-                    </div>
-
-
-                </div>
-
-                <!-- RIGHT COLUMN: IMAGE -->
-                <div class="self-storage-homepage-section__image-container">
-                    <img src="assets/business_storage_racks.jpg" alt="Secure commercial warehouse storage racks" class="self-storage-homepage-section__image" width="884" height="688" decoding="async">
-                </div>
-            </div>
-
-            <!-- MEDIA / TRUST STRIP -->
-            <div class="self-storage-homepage-section__media">
-                <div class="self-storage-homepage-section__media-container">
-                    <h2 class="self-storage-homepage-section__media-label">As seen on</h2>
-                    <div class="self-storage-homepage-section__logos">
-                        <a href="#" class="self-storage-homepage-section__logo-link">
-                            <img src="images/media/pti.png" alt="PTI" class="self-storage-homepage-section__logo" decoding="async" loading="lazy" width="48" height="48">
-                        </a>
-                        <a href="#" class="self-storage-homepage-section__logo-link">
-                            <img src="images/media/the-week.png" alt="THE WEEK" class="self-storage-homepage-section__logo" decoding="async" loading="lazy" width="48" height="48">
-                        </a>
-                        <a href="#" class="self-storage-homepage-section__logo-link">
-                            <img src="images/media/toi.png" alt="TOI" class="self-storage-homepage-section__logo" decoding="async" loading="lazy" width="48" height="48">
-                        </a>
-                        <a href="#" class="self-storage-homepage-section__logo-link">
-                            <img src="images/media/rplus.png" alt="R+" class="self-storage-homepage-section__logo" decoding="async" loading="lazy" width="48" height="48">
-                        </a>
-                        <a href="#" class="self-storage-homepage-section__logo-link">
-                            <img src="images/media/economic-times.png" alt="Economic Times" class="self-storage-homepage-section__logo" decoding="async" loading="lazy" width="48" height="48">
-                        </a>
-                        <a href="#" class="self-storage-homepage-section__logo-link">
-                            <img src="images/media/iss.png" alt="Inside Self-Storage" class="self-storage-homepage-section__logo" decoding="async" loading="lazy" width="48" height="48">
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <!-- Mobile Navigation Drawer -->
+    <aside class="mobile-nav-drawer" id="mobileNavDrawer">
+        <div class="drawer-header">
+            <a href="index.html" class="drawer-logo">
+                <img src="https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo.png" alt="Self Storage India Logo" width="180" height="51" decoding="async">
+            </a>
+            <button class="drawer-close" onclick="closeMobileMenu()" aria-label="Close menu">
+                <span class="material-symbols-rounded">close</span>
+            </button>
         </div>
 
+        <div class="drawer-body">
+            <nav class="drawer-nav">
+                <div class="drawer-nav-group">
+                    <div class="drawer-nav-group-title">Storage Options</div>
+                    <a href="household-goods-storage.html" class="drawer-nav-item">
+                        <span class="material-symbols-rounded">home</span>
+                        For Home
+                    </a>
+                    <a href="business-storage.html" class="drawer-nav-item active">
+                        <span class="material-symbols-rounded">corporate_fare</span>
+                        For Business
+                    </a>
+                    <a href="offering-private-rooms.html" class="drawer-nav-item">
+                        <span class="material-symbols-rounded">meeting_room</span>
+                        Private Rooms
+                    </a>
+                    <a href="offering-box-storage.html" class="drawer-nav-item">
+                        <span class="material-symbols-rounded">package_2</span>
+                        Box Storage
+                    </a>
+                    <a href="offering-box-storage.html" class="drawer-nav-item">
+                        <span class="material-symbols-rounded">luggage</span>
+                        Luggage Storage
+                    </a>
+                </div>
+
+                <div class="drawer-nav-group">
+                    <a href="https://selfstorageindia.com/blog/" class="drawer-nav-item">
+                        <span class="material-symbols-rounded">article</span>
+                        Blogs
+                    </a>
+                </div>
+            </nav>
+
+            <div class="drawer-cta-wrapper">
+                <a href="tel:+919090206090" class="drawer-phone">
+                    <span class="material-symbols-rounded">call</span>
+                    +91-9090206090
+                </a>
+                <button class="btn btn-primary full-width" onclick="closeMobileMenu(); openQuoteModal();">Get Free Quote</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Body Container -->
+    <main>
+        <!-- Main Hero Container (Uniform with Household Storage & Homepage) -->
+        <section class="hero-container">
+            <!-- Background graphics -->
+            <div class="bg-shape-grid"></div>
+            <div class="bg-shape-glow"></div>
+            <div class="bg-blueprint-pattern"></div>
+
+            <section class="hero-content-wrapper">
+                <!-- Left Info Block -->
+                <div class="hero-text-block">
+                    <div class="badge-accent-wrapper">
+                        <span class="hero-tagline-accent">BUSINESS STORAGE &amp; OFFICE ARCHIVE STORAGE</span>
+                    </div>
+                    <h1 class="hero-main-title">
+                        Secure Business Storage Solutions in <span class="accent-text">Delhi/NCR</span>
+                    </h1>
+                    <p class="hero-paragraph">
+                        Store commercial inventory, office furniture, legal archives, IT servers, and e-commerce stock in clean, climate-managed, private lockable warehouse units.
+                    </p>
+                    <p class="hero-paragraph">
+                        Enjoy 24/7 CCTV surveillance, 100% private key access, full GST tax invoicing, and seamless doorstep inventory pickup across Delhi, Gurugram, and Noida.
+                    </p>
+
+                    <p class="hero-ideal-list">
+                        <strong>Ideal for:</strong> Commercial Inventory • Office Furniture • Document Archives • E-commerce Stock • IT Hardware Storage
+                    </p>
+                    
+                    <!-- CTA buttons group -->
+                    <div class="hero-action-buttons">
+                        <button class="btn btn-primary btn-large" onclick="openQuoteModal()">Get Free Quote</button>
+                        <a href="#locations" class="btn btn-secondary btn-large">Explore Facilities</a>
+                    </div>
+
+                    <!-- Trust Indicators Directly Below CTA -->
+                    <div class="hero-trust-indicators">
+                        <div class="trust-indicator-item">
+                            <div class="stars">★★★★★</div>
+                            <span class="count">4.9/5 Rating</span>
+                            <span class="label">1,200+ Verified Reviews</span>
+                        </div>
+                        <div class="trust-divider"></div>
+                        <div class="trust-indicator-item">
+                            <span class="count">10,000+</span>
+                            <span class="label">Satisfied Clients</span>
+                        </div>
+                        <div class="trust-divider"></div>
+                        <div class="trust-indicator-item">
+                            <span class="count">Own Key</span>
+                            <span class="label">100% Private Access</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Block -->
+                <div class="hero-visual-block">
+                    <div class="hero-visual-img-container">
+                        <img src="assets/business_storage_racks.jpg" alt="Self Storage India Commercial Warehouse Storage Racks & Business Inventory Units" class="hero-visual-img" fetchpriority="high" width="884" height="688" decoding="async">
+                    </div>
+                    
+                    <!-- Floating Badge 1 (Surveillance Overlay) -->
+                    <div class="floating-badge badge-1 shadow-md">
+                        <div class="badge-icon-box">
+                            <span class="material-symbols-rounded">videocam</span>
+                        </div>
+                        <div class="badge-content">
+                            <h4>24×7 Surveillance</h4>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Badge 2 (GST Invoice Overlay) -->
+                    <div class="floating-badge badge-2 shadow-md">
+                        <div class="badge-icon-box">
+                            <span class="material-symbols-rounded">receipt_long</span>
+                        </div>
+                        <div class="badge-content">
+                            <h4>GST Invoices Ready</h4>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge 3 (Climate Control Overlay) -->
+                    <div class="floating-badge badge-3 shadow-md">
+                        <div class="badge-icon-box">
+                            <span class="material-symbols-rounded">thermostat</span>
+                        </div>
+                        <div class="badge-content">
+                            <h4>Climate-Managed Records</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
         <!-- ==========================================
-             SECTION 3, HOUSEHOLD STORAGE INTRO
+             SECTION 2, OFFERINGS / TRUST STRIP
              ========================================== -->
-        <section class="household-intro">
-            <style>
-                .household-intro {
-                    background-color: #ffffff;
-                    padding: 30px 0 10px;
-                    width: 100%;
-                    box-sizing: border-box;
-                }
-                .household-intro__container {
-                    max-width: 1140px;
-                    margin: 0 auto;
-                    padding: 0 24px;
-                }
-                .household-intro__heading {
-                    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-                    font-size: 32px;
-                    font-weight: 700;
-                    color: #2563EB;
-                    line-height: 1.3;
-                    margin-bottom: 20px;
-                    text-align: center;
-                }
-                .household-intro__text {
-                    font-size: 16px;
-                    color: #4b5563;
-                    line-height: 1.75;
-                    margin: 0 auto 20px;
-                    text-align: center;
-                    max-width: 960px;
-                }
-                .household-intro__text a {
-                    color: #F97316;
-                    text-decoration: none;
-                    font-weight: 600;
-                }
-                .household-intro__text a:hover {
-                    text-decoration: underline;
-                }
-            </style>
-            <div class="household-intro__container">
-                <h2 class="household-intro__heading">Business Storage in Self Storage India</h2>
-                <p class="household-intro__text">
-                    Running a business is challenging. Most importantly, it requires constant budgetary revisions to ensure goals are met with minimum expenses. Skyrocketing rental costs and increasing inflation rates are adding to the worry, making it imperative that companies consider leasing a business storage unit.<br><br>
-                    Companies tend to think of self-storage as a personal investment; individuals looking at freeing up their homes. However, there is a range of benefits for companies as well. Now, more than ever, offices need to be spacious and clean. Instead of cramming files of papers or excess inventory in limited spaces, businesses can use storage spaces.<br><br>
-                    With <a href="https://selfstorageindia.com/">Self Storage India</a>, businesses can choose a size as per their needs from our Gurugram or Noida warehouses. Here are compelling reasons why a business storage unit can make a massive difference to your business.
-                </p>
+        <section class="trust-strip">
+            <div class="trust-strip-grid">
+                <div class="trust-strip-item">
+                    <span class="material-symbols-rounded">meeting_room</span>
+                    <span>Private Lockable Rooms</span>
+                </div>
+                <div class="trust-strip-item">
+                    <span class="material-symbols-rounded">shelves</span>
+                    <span>Pallet &amp; Heavy Racking</span>
+                </div>
+                <div class="trust-strip-item">
+                    <span class="material-symbols-rounded">local_shipping</span>
+                    <span>Doorstep Inventory Logistics</span>
+                </div>
+                <div class="trust-strip-item">
+                    <span class="material-symbols-rounded">verified_user</span>
+                    <span>24/7 CCTV &amp; Security</span>
+                </div>
             </div>
         </section>
 
         <!-- ==========================================
-             SECTION 4, WHY THERE IS A NEED FOR BUSINESS STORAGE
+             SECTION 3, WHEN DO YOU NEED BUSINESS STORAGE?
              ========================================== -->
-        <section class="household-need">
-            <style>
-                .household-need {
-                    background-color: #FAFCFF;
-                    padding: 20px 24px 40px;
-                    width: 100%;
-                    box-sizing: border-box;
-                    font-family: 'Inter', sans-serif;
-                }
-
-                .household-need__container {
-                    max-width: 1140px;
-                    margin: 0 auto;
-                }
-
-                .household-need__header {
-                    text-align: center;
-                    margin-bottom: 60px;
-                }
-
-                .household-need__heading {
-                    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-                    font-size: 32px;
-                    font-weight: 700;
-                    color: #2563EB;
-                    line-height: 1.25;
-                    margin-bottom: 12px;
-                }
-
-                .household-need__subtitle {
-                    font-size: 16px;
-                    color: #5f6c7b;
-                    font-weight: 400;
-                }
-
-                .household-need__grid {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    row-gap: 100px;
-                    column-gap: 40px;
-                    width: 100%;
-                }
-
-                .household-need__card {
-                    position: relative;
-                    background-color: #ffffff;
-                    border: 2px solid #2563EB;
-                    border-radius: 24px;
-                    padding: 110px 24px 30px;
-                    text-align: center;
-                    box-sizing: border-box;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-                    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.03);
-                }
-
-                .household-need__card:hover {
-                    transform: translateY(-8px);
-                    border-color: #F97316;
-                    box-shadow: 0 20px 40px rgba(249, 115, 22, 0.12);
-                }
-
-                .household-need__img-box {
-                    position: absolute;
-                    top: -65px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    width: 155px;
-                    height: 155px;
-                    border-radius: 20px;
-                    overflow: hidden;
-                    border: 5px solid #ffffff;
-                    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.12);
-                    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-                }
-
-                .household-need__card:hover .household-need__img-box {
-                    transform: translateX(-50%) scale(1.05);
-                    box-shadow: 0 15px 35px rgba(249, 115, 22, 0.2);
-                }
-
-                .household-need__img-box img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-
-                .household-need__card-title {
-                    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-                    font-size: 20px;
-                    font-weight: 700;
-                    color: #1E293B;
-                    margin-bottom: 12px;
-                }
-
-                .household-need__card:hover .household-need__card-title {
-                    color: #F97316;
-                }
-
-                .household-need__card-desc {
-                    font-size: 14.5px;
-                    color: #64748B;
-                    line-height: 1.6;
-                    max-width: 280px;
-                }
-
-                @media (max-width: 1024px) {
-                    .household-need__grid {
-                        gap: 30px;
-                    }
-                    .household-need__card {
-                        padding-top: 100px;
-                    }
-                    .household-need__img-box {
-                        width: 135px;
-                        height: 135px;
-                        top: -55px;
-                    }
-                    .household-need__heading {
-                        font-size: 30px;
-                    }
-                }
-
-                @media (max-width: 768px) {
-                    .household-need {
-                        padding: 60px 20px;
-                    }
-                    .household-need__grid {
-                        grid-template-columns: 1fr;
-                        gap: 80px;
-                        margin-top: 40px;
-                    }
-                    .household-need__header {
-                        margin-bottom: 70px;
-                    }
-                }
-            </style>
-
+        <section class="household-need__section">
             <div class="household-need__container">
-                <div class="household-need__header">
-                    <h2 class="household-need__heading">Why There is a Need for Business Storage?</h2>
-                    <p class="household-need__subtitle">Here are some scenarios where you are likely to encounter the need for business storage.</p>
+                <div class="section-header-centered">
+                    <span class="calc-tag">BUSINESS USE CASES</span>
+                    <h2>When Do You Need Business Storage?</h2>
+                    <p>Here are common scenarios where companies encounter the need for commercial and document storage.</p>
                 </div>
 
                 <div class="household-need__grid">
-                    <!-- CARD 1: RELOCATION -->
+                    <!-- CARD 1: COMMERCIAL INVENTORY -->
                     <div class="household-need__card">
                         <div class="household-need__img-box">
-                            <img src="assets/scen_relocation.png" alt="Relocation scenario" decoding="async" loading="lazy">
+                            <img src="assets/business_storage_new.webp" alt="Commercial Inventory and E-Commerce Warehousing Storage Units" loading="lazy" width="900" height="904" decoding="async">
                         </div>
-                        <h3 class="household-need__card-title">Relocation</h3>
-                        <p class="household-need__card-desc">Use household storage for a smooth transition when switching homes.</p>
+                        <div class="household-need__card-body">
+                            <h3 class="household-need__card-title">Commercial Inventory</h3>
+                            <p class="household-need__card-desc">Store seasonal stock, e-commerce goods, and overstock inventory safely without expensive commercial leases.</p>
+                        </div>
                     </div>
 
-                    <!-- CARD 2: TRAVELLING ABROAD -->
+                    <!-- CARD 2: DOCUMENT ARCHIVES -->
                     <div class="household-need__card">
                         <div class="household-need__img-box">
-                            <img src="assets/scen_travel_v4.jpg" alt="Indian professional packing suitcases and labelled household storage boxes before travelling abroad for work, study, or sabbatical" loading="lazy" width="1200" height="896" decoding="async">
+                            <img src="assets/scen_travel_v4.jpg" alt="Confidential Office Document Archives and Audit Record File Storage" loading="lazy" width="1200" height="896" decoding="async">
                         </div>
-                        <h3 class="household-need__card-title">Travelling Abroad</h3>
-                        <p class="household-need__card-desc">Secure your home items with our storage while you travel abroad, worry-free.</p>
+                        <div class="household-need__card-body">
+                            <h3 class="household-need__card-title">Office Document Archives</h3>
+                            <p class="household-need__card-desc">Secure physical files, financial records, and legal archives in confidential, climate-managed storage rooms.</p>
+                        </div>
                     </div>
 
-                    <!-- CARD 3: SAFETY -->
+                    <!-- CARD 3: OFFICE FURNITURE & IT HARDWARE -->
                     <div class="household-need__card">
                         <div class="household-need__img-box">
-                            <img src="assets/scen_safety.png" alt="Safety scenario" decoding="async" loading="lazy">
+                            <img src="assets/scen_home_office_v3.jpg" alt="Office Furniture, Workstation Desks, and IT Server Hardware Storage" loading="lazy" width="1200" height="896" decoding="async">
                         </div>
-                        <h3 class="household-need__card-title">Safety</h3>
-                        <p class="household-need__card-desc">Choose our storage solutions for the ultimate safety of your household items.</p>
+                        <div class="household-need__card-body">
+                            <h3 class="household-need__card-title">Office Furniture &amp; IT Equipment</h3>
+                            <p class="household-need__card-desc">Keep desks, ergonomic chairs, monitors, and IT hardware protected during office moves or workplace restructuring.</p>
+                        </div>
                     </div>
 
-                    <!-- CARD 4: HOME OFFICE NEEDS -->
+                    <!-- CARD 4: BUSINESS RELOCATION -->
                     <div class="household-need__card">
                         <div class="household-need__img-box">
-                            <img src="assets/scen_home_office.png" alt="Home Office Needs scenario" decoding="async" loading="lazy">
+                            <img src="assets/scen_relocation_v3.jpg" alt="Commercial Office Relocation and Lease Transition Storage" loading="lazy" width="1200" height="896" decoding="async">
                         </div>
-                        <h3 class="household-need__card-title">Home Office Needs</h3>
-                        <p class="household-need__card-desc">Expand your home office space by safely storing extra items with us.</p>
+                        <div class="household-need__card-body">
+                            <h3 class="household-need__card-title">Business Relocation</h3>
+                            <p class="household-need__card-desc">Use commercial storage for a smooth transition when switching office premises or waiting for new lease handovers.</p>
+                        </div>
                     </div>
 
-                    <!-- CARD 5: RENOVATION -->
+                    <!-- CARD 5: OFFICE RENOVATION -->
                     <div class="household-need__card">
                         <div class="household-need__img-box">
-                            <img src="assets/scen_renovation.png" alt="Renovation scenario" decoding="async" loading="lazy">
+                            <img src="assets/scen_renovation_v3.jpg" alt="Protected Office Furniture During Workplace Remodeling and Painting" loading="lazy" width="1200" height="896" decoding="async">
                         </div>
-                        <h3 class="household-need__card-title">Renovation</h3>
-                        <p class="household-need__card-desc">Store your items safely with us during home renovations or refurbishing.</p>
+                        <div class="household-need__card-body">
+                            <h3 class="household-need__card-title">Office Renovation</h3>
+                            <p class="household-need__card-desc">Keep office furniture and electronics dust-free and damage-free during office remodeling, tiling, or painting.</p>
+                        </div>
                     </div>
 
-                    <!-- CARD 6: DOWNSIZING -->
+                    <!-- CARD 6: DOWNSIZING & EXCESS EQUIPMENT -->
                     <div class="household-need__card">
                         <div class="household-need__img-box">
-                            <img src="assets/scen_downsizing.png" alt="Downsizing scenario" decoding="async" loading="lazy">
+                            <img src="assets/scen_downsizing_v3.jpg" alt="Corporate Office Downsizing and Equipment Storage" loading="lazy" width="1200" height="896" decoding="async">
                         </div>
-                        <h3 class="household-need__card-title">Downsizing</h3>
-                        <p class="household-need__card-desc">Simplify downsizing by storing excess items with our convenient solutions.</p>
+                        <div class="household-need__card-body">
+                            <h3 class="household-need__card-title">Downsizing &amp; Excess Stock</h3>
+                            <p class="household-need__card-desc">Optimize prime office real estate costs by storing excess equipment, spare workstations, and archives outside your office.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ==========================================
-             SECTION 4.1, OUR STORAGE SOLUTIONS
+             MEDIA TRUST BAR (AS SEEN ON LOGOS)
              ========================================== -->
-        <!-- Our Offerings Section -->
+        <section class="trust-bar">
+            <div class="trust-bar-container">
+                <span class="trust-title">As seen on</span>
+                <div class="trust-logos-grid">
+                    <div class="logo-item" title="Press Trust of India">
+                        <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/ptinews.jpeg" alt="Press Trust of India PTI News Feature - Self Storage India" loading="lazy" width="48" height="48" decoding="async">
+                    </div>
+                    <div class="logo-item" title="The Week Live">
+                        <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/The-Week-Logo-300x300.png" alt="The Week Magazine Coverage - Self Storage India" loading="lazy" width="48" height="48" decoding="async">
+                    </div>
+                    <div class="logo-item" title="Times of India">
+                        <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/TOI-Logo-300x300.png" alt="Times of India TOI Press Feature - Self Storage India" loading="lazy" width="48" height="48" decoding="async">
+                    </div>
+                    <div class="logo-item" title="Republic World">
+                        <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/Radiusplus-Logo.png" alt="Republic World Radius Plus Media Feature - Self Storage India" loading="lazy" width="48" height="48" decoding="async">
+                    </div>
+                    <div class="logo-item" title="The Economic Times">
+                        <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/ET-Logo.png" alt="The Economic Times ET News Feature - Self Storage India" loading="lazy" width="48" height="48" decoding="async">
+                    </div>
+                    <div class="logo-item" title="Inside Self Storage">
+                        <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/ISS-Logo.png" alt="Inside Self Storage ISS Global Member Badge - Self Storage India" loading="lazy" width="48" height="48" decoding="async">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECTION 4, BUSINESS SIZE & CAPACITY GUIDE
+             ========================================== -->
+        <section class="household-pricing-guide">
+            <div class="pricing-table-container">
+                <div class="section-header-centered">
+                    <span class="calc-tag">BUSINESS SIZE &amp; SPACE GUIDE</span>
+                    <h2>Find the Right Storage Unit for Your Business</h2>
+                    <p>Compare popular commercial storage unit sizes to pick the exact space you need for office furniture, inventory, or document files.</p>
+                </div>
+                <div class="pricing-table-grid">
+                    <div class="pricing-card">
+                        <span class="pricing-card-badge">Files &amp; Document Archives</span>
+                        <h3>Small Archive Locker</h3>
+                        <div class="pricing-sqft">25 – 45 sq. ft.</div>
+                        <ul class="pricing-item-list">
+                            <li><span class="material-symbols-rounded check">check_circle</span> 50–100 Document Archive Boxes</li>
+                            <li><span class="material-symbols-rounded check">check_circle</span> Audit Files &amp; Legal Records</li>
+                            <li><span class="material-symbols-rounded check">check_circle</span> Small IT Hardware &amp; Samples</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="openQuoteModal()" style="margin-top: auto; width: 100%;">Get Quote</button>
+                    </div>
+
+                    <div class="pricing-card">
+                        <span class="pricing-card-badge">Small Office (5–10 Workstations)</span>
+                        <h3>Medium Office Unit</h3>
+                        <div class="pricing-sqft">60 – 100 sq. ft.</div>
+                        <ul class="pricing-item-list">
+                            <li><span class="material-symbols-rounded check">check_circle</span> 8–10 Office Desks &amp; Chairs</li>
+                            <li><span class="material-symbols-rounded check">check_circle</span> Conference Table &amp; Printers</li>
+                            <li><span class="material-symbols-rounded check">check_circle</span> 30+ Inventory Stock Cartons</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="openQuoteModal()" style="margin-top: auto; width: 100%;">Get Quote</button>
+                    </div>
+
+                    <div class="pricing-card" style="border-color: var(--primary); background: #FFFFFF;">
+                        <span class="pricing-card-badge" style="background: var(--accent); color: #fff;">Most Popular (E-Commerce &amp; Retail)</span>
+                        <h3>Large Commercial Unit</h3>
+                        <div class="pricing-sqft">120 – 200 sq. ft.</div>
+                        <ul class="pricing-item-list">
+                            <li><span class="material-symbols-rounded check">check_circle</span> Complete 15–20 Desk Office Furniture</li>
+                            <li><span class="material-symbols-rounded check">check_circle</span> Pallet Racks &amp; Bulk E-Commerce Inventory</li>
+                            <li><span class="material-symbols-rounded check">check_circle</span> Exhibition Booths &amp; Event Hardware</li>
+                        </ul>
+                        <button class="btn btn-accent" onclick="openQuoteModal()" style="margin-top: auto; width: 100%;">Get Quote</button>
+                    </div>
+
+                    <div class="pricing-card">
+                        <span class="pricing-card-badge">Enterprise Warehouse</span>
+                        <h3>Bulk Warehouse Suite</h3>
+                        <div class="pricing-sqft">250+ sq. ft.</div>
+                        <ul class="pricing-item-list">
+                            <li><span class="material-symbols-rounded check">check_circle</span> Full Corporate Floor Assets</li>
+                            <li><span class="material-symbols-rounded check">check_circle</span> Industrial Palletized Warehousing</li>
+                            <li><span class="material-symbols-rounded check">check_circle</span> Custom Racking &amp; Dedicated Bay</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="openQuoteModal()" style="margin-top: auto; width: 100%;">Get Quote</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECTION 5, OUR OFFERINGS
+             ========================================== -->
         <section id="offerings" class="offerings-section">
             <div class="container">
                 <div class="section-header-centered">
                     <span class="calc-tag">OUR STORAGE SOLUTIONS</span>
-                    <h2>Storage Solutions for Every Need</h2>
-                    <p>Whether you're storing household belongings, business inventory, or travel luggage, choose a secure storage solution designed around your lifestyle.</p>
+                    <h2>Commercial Storage Solutions Tailored for Growth</h2>
+                    <p>Whether you're storing office furniture, retail merchandise, or legal records, choose a secure storage solution designed for business efficiency.</p>
                 </div>
 
                 <!-- 3 Premium Product Cards -->
@@ -823,331 +558,259 @@
                         </div>
                     </div>
 
-                    <!-- Card 3: Luggage & Box Storage -->
+                    <!-- Card 3: Box & Luggage Storage -->
                     <div class="offering-card" onclick="openQuoteModal()">
                         <div class="offering-image-container">
-                            <img src="assets/luggage_storage_new.webp" alt="Luggage and Box Storage Rooms" class="offering-image" width="900" height="940" decoding="async" loading="lazy">
+                            <img src="assets/luggage_storage_new.webp" alt="Box and Luggage Storage Solutions" class="offering-image" width="900" height="940" decoding="async" loading="lazy">
                             <div class="offering-image-overlay"></div>
-                            <span class="offering-badge">Best for Travellers</span>
+                            <span class="offering-badge">Flexible &amp; Compact</span>
                         </div>
                         <div class="offering-content">
-                            <h3 class="offering-title">Luggage & Box Storage</h3>
-                            <p class="offering-desc">Store luggage, boxes and seasonal belongings securely with affordable short-term or long-term plans.</p>
+                            <h3 class="offering-title">Box &amp; Luggage Storage</h3>
+                            <p class="offering-desc">Ideal for small items, document boxes, seasonal gear or temporary luggage storage with convenient pickup options.</p>
                             <div class="offering-divider"></div>
                             <ul class="offering-highlights">
-                                <li><span class="material-symbols-rounded check-icon">check</span> Short and long-term plans</li>
-                                <li><span class="material-symbols-rounded check-icon">check</span> Affordable pricing</li>
-                                <li><span class="material-symbols-rounded check-icon">check</span> Easy item retrieval</li>
-                                <li><span class="material-symbols-rounded check-icon">check</span> Safe packing environment</li>
+                                <li><span class="material-symbols-rounded check-icon">check</span> Pay only for space used</li>
+                                <li><span class="material-symbols-rounded check-icon">check</span> Doorstep pickup service</li>
+                                <li><span class="material-symbols-rounded check-icon">check</span> Secure barcode tracking</li>
+                                <li><span class="material-symbols-rounded check-icon">check</span> Short or long-term options</li>
                             </ul>
                             <button class="btn btn-offering-primary">
-                                View Luggage Storage <span class="material-symbols-rounded">arrow_forward</span>
+                                Learn More <span class="material-symbols-rounded">arrow_forward</span>
                             </button>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Bottom Trust Strip (4 items) -->
-                <div class="offerings-trust-strip">
-                    <div class="trust-strip-item">
-                        <div class="trust-icon-circle shadow-sm">
-                            <span class="material-symbols-rounded">lock</span>
+        <!-- ==========================================
+             SECTION 6, ESTIMATE YOUR BUSINESS STORAGE SPACE
+             ========================================== -->
+        <section class="calc-section">
+            <div class="calc-container">
+                <div class="section-header-centered">
+                    <span class="calc-tag">SPACE ESTIMATOR</span>
+                    <h2>Estimate Your Business Storage Space</h2>
+                    <p>Select your commercial items below to calculate the recommended storage unit size for your company.</p>
+                </div>
+
+                <div class="calc-box shadow-lg">
+                    <div class="calc-form-grid">
+                        <div class="calc-input-card">
+                            <div class="calc-icon-title">
+                                <span class="material-symbols-rounded">folder_zip</span>
+                                <div>
+                                    <h4>Document Archive Boxes</h4>
+                                    <p>Standard file cartons (1.5 cu ft)</p>
+                                </div>
+                            </div>
+                            <div class="calc-counter-wrapper">
+                                <button type="button" class="counter-btn" onclick="updateCalc('docBoxes', -10)">-</button>
+                                <span class="counter-val" id="val-docBoxes">0</span>
+                                <button type="button" class="counter-btn" onclick="updateCalc('docBoxes', 10)">+</button>
+                            </div>
                         </div>
-                        <div class="trust-text">
-                            <h4>Own Lock & Key</h4>
-                            <p>Complete control & personal lock.</p>
+
+                        <div class="calc-input-card">
+                            <div class="calc-icon-title">
+                                <span class="material-symbols-rounded">desk</span>
+                                <div>
+                                    <h4>Office Desks &amp; Tables</h4>
+                                    <p>Workstation desks &amp; tables</p>
+                                </div>
+                            </div>
+                            <div class="calc-counter-wrapper">
+                                <button type="button" class="counter-btn" onclick="updateCalc('officeDesks', -1)">-</button>
+                                <span class="counter-val" id="val-officeDesks">0</span>
+                                <button type="button" class="counter-btn" onclick="updateCalc('officeDesks', 1)">+</button>
+                            </div>
+                        </div>
+
+                        <div class="calc-input-card">
+                            <div class="calc-icon-title">
+                                <span class="material-symbols-rounded">chair</span>
+                                <div>
+                                    <h4>Executive Chairs</h4>
+                                    <p>Ergonomic office chairs</p>
+                                </div>
+                            </div>
+                            <div class="calc-counter-wrapper">
+                                <button type="button" class="counter-btn" onclick="updateCalc('officeChairs', -1)">-</button>
+                                <span class="counter-val" id="val-officeChairs">0</span>
+                                <button type="button" class="counter-btn" onclick="updateCalc('officeChairs', 1)">+</button>
+                            </div>
+                        </div>
+
+                        <div class="calc-input-card">
+                            <div class="calc-icon-title">
+                                <span class="material-symbols-rounded">shelves</span>
+                                <div>
+                                    <h4>Storage Racks &amp; Cabinets</h4>
+                                    <p>Metal shelving &amp; file cupboards</p>
+                                </div>
+                            </div>
+                            <div class="calc-counter-wrapper">
+                                <button type="button" class="counter-btn" onclick="updateCalc('racks', -1)">-</button>
+                                <span class="counter-val" id="val-racks">0</span>
+                                <button type="button" class="counter-btn" onclick="updateCalc('racks', 1)">+</button>
+                            </div>
+                        </div>
+
+                        <div class="calc-input-card">
+                            <div class="calc-icon-title">
+                                <span class="material-symbols-rounded">inventory_2</span>
+                                <div>
+                                    <h4>Inventory Stock Cartons</h4>
+                                    <p>Medium commercial goods boxes</p>
+                                </div>
+                            </div>
+                            <div class="calc-counter-wrapper">
+                                <button type="button" class="counter-btn" onclick="updateCalc('stockBoxes', -5)">-</button>
+                                <span class="counter-val" id="val-stockBoxes">0</span>
+                                <button type="button" class="counter-btn" onclick="updateCalc('stockBoxes', 5)">+</button>
+                            </div>
+                        </div>
+
+                        <div class="calc-input-card">
+                            <div class="calc-icon-title">
+                                <span class="material-symbols-rounded">dns</span>
+                                <div>
+                                    <h4>IT Servers &amp; Hardware</h4>
+                                    <p>Server racks, monitors &amp; printers</p>
+                                </div>
+                            </div>
+                            <div class="calc-counter-wrapper">
+                                <button type="button" class="counter-btn" onclick="updateCalc('itEquipment', -1)">-</button>
+                                <span class="counter-val" id="val-itEquipment">0</span>
+                                <button type="button" class="counter-btn" onclick="updateCalc('itEquipment', 1)">+</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="trust-strip-item">
-                        <div class="trust-icon-circle shadow-sm">
-                            <span class="material-symbols-rounded">videocam</span>
+
+                    <div class="calc-result-bar">
+                        <div class="result-text-group">
+                            <span class="res-label">RECOMMENDED STORAGE SIZE</span>
+                            <h3 id="calc-result-size">0 sq. ft.</h3>
+                            <p id="calc-result-desc">Add commercial items above to see your estimated room size.</p>
                         </div>
-                        <div class="trust-text">
-                            <h4>24/7 CCTV Monitoring</h4>
-                            <p>Continuous surveillance & site security.</p>
-                        </div>
-                    </div>
-                    <div class="trust-strip-item">
-                        <div class="trust-icon-circle shadow-sm">
-                            <span class="material-symbols-rounded">calendar_today</span>
-                        </div>
-                        <div class="trust-text">
-                            <h4>Flexible Monthly Plans</h4>
-                            <p>No long contracts, scale anytime.</p>
-                        </div>
-                    </div>
-                    <div class="trust-strip-item">
-                        <div class="trust-icon-circle shadow-sm">
-                            <span class="material-symbols-rounded">star</span>
-                        </div>
-                        <div class="trust-text">
-                            <h4>Trusted by 5,000+ Customers</h4>
-                            <p>Consistent 5-star Google reviews.</p>
-                        </div>
+                        <button class="btn btn-accent btn-large" onclick="openQuoteModal()">Get Exact Quote</button>
                     </div>
                 </div>
             </div>
         </section>
-<!-- ==========================================
-             SECTION 4.2, STORAGE CALCULATOR
+
+        <!-- ==========================================
+             SECTION 7, HOW BUSINESS STORAGE WORKS
              ========================================== -->
-        <!-- Storage Calculator Section -->
-        <section id="calculator" class="calc-section">
+        <section class="works-section">
             <div class="container">
                 <div class="section-header-centered">
-                    <span class="calc-tag">
-                        <span class="material-symbols-rounded" style="font-size: 1.15rem; margin-right: 4px; vertical-align: middle;">calculate</span>
-                        Storage Size Calculator
-                    </span>
-                    <h2>Find the Perfect Storage Space<br>in Under 60 Seconds</h2>
-                    <p>Answer a few simple questions and we'll recommend the ideal storage unit based on the items you want to store.</p>
+                    <span class="calc-tag">SIMPLE PROCESS</span>
+                    <h2>How Business Storage Works</h2>
+                    <p>Four easy steps to secure extra commercial space for your company in Delhi NCR.</p>
                 </div>
 
-                <div class="calc-container">
-                    <!-- Left Column: Illustrated Storage Unit (fills dynamically) -->
-                    <div class="calc-visual-column">
-                        <div class="storage-unit-box shadow-md">
-                            <div class="unit-header">
-                                <span class="material-symbols-rounded">door_sliding</span>
-                                <h4>Your Virtual Storage Unit</h4>
-                            </div>
-                            <div class="unit-room-visual">
-                                <!-- The fill overlays -->
-                                <div class="unit-fill-progress" id="unit-fill"></div>
-                                <div class="unit-fill-percentage" id="unit-fill-percent">0% Full</div>
-                                <!-- Illustrated boxes that show up when items are added -->
-                                <div class="unit-grid-items" id="unit-items-display"></div>
-                            </div>
-                        </div>
+                <div class="works-grid">
+                    <div class="work-step-card">
+                        <div class="step-num">01</div>
+                        <h3>Choose Unit Size</h3>
+                        <p>Select the ideal storage room size for your office files, inventory, or furniture with flexible monthly terms.</p>
+                    </div>
 
-                        <!-- Live Result Card -->
-                        <div class="live-result-card shadow-lg">
-                            <div class="result-header">
-                                <span class="badge-dot"></span>
-                                <h5>Recommended Space</h5>
-                            </div>
-                            <div class="result-value" id="calc-result-size">0 sq ft</div>
-                            <ul class="result-details">
-                                <li>
-                                    <span class="material-symbols-rounded check-icon">check_circle</span>
-                                    <span id="calc-result-desc">Select items to calculate space</span>
-                                </li>
-                                <li>
-                                    <span class="material-symbols-rounded check-icon">check_circle</span>
-                                    <span id="calc-result-price">Estimated Monthly Plan: Starting from ₹1,200</span>
-                                </li>
+                    <div class="work-step-card">
+                        <div class="step-num">02</div>
+                        <h3>Doorstep Pickup</h3>
+                        <p>Our logistics team handles professional packing, inventory tagging, and transport directly from your office premises.</p>
+                    </div>
+
+                    <div class="work-step-card">
+                        <div class="step-num">03</div>
+                        <h3>Secured Storage</h3>
+                        <p>Items are safely stored inside your private, climate-controlled, 24/7 CCTV-monitored warehouse unit.</p>
+                    </div>
+
+                    <div class="work-step-card">
+                        <div class="step-num">04</div>
+                        <h3>Access &amp; Invoicing</h3>
+                        <p>Access your storage room anytime with your key and receive monthly GST invoices for easy tax compliance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECTION 8, LOCATIONS ACROSS NCR
+             ========================================== -->
+        <section id="locations" class="facility-locations-section">
+            <div class="container">
+                <div class="section-header-centered">
+                    <span class="calc-tag">OUR WAREHOUSE LOCATIONS</span>
+                    <h2>Storage Warehouses Across Delhi NCR</h2>
+                    <p>Conveniently located facilities offering 24/7 security, drive-up loading docks, and easy access.</p>
+                </div>
+
+                <div class="facility-grid">
+                    <!-- Gurugram Facility Card -->
+                    <div class="facility-card shadow-md">
+                        <div class="facility-img-wrapper">
+                            <img src="assets/gurugram_storage.webp" alt="Self Storage Warehouse Facility in Gurugram" loading="lazy" width="774" height="502" decoding="async">
+                            <span class="facility-badge">Primary Hub</span>
+                        </div>
+                        <div class="facility-card-body">
+                            <h3>Gurugram Facility</h3>
+                            <p class="facility-address"><span class="material-symbols-rounded">location_on</span> Near NH-8 Highway &amp; Pace City 1, Sector 37, Gurugram, Haryana 122001</p>
+                            <ul class="facility-features">
+                                <li><span class="material-symbols-rounded">check</span> 24/7 CCTV &amp; Security Guards</li>
+                                <li><span class="material-symbols-rounded">check</span> Drive-up Loading Docks</li>
+                                <li><span class="material-symbols-rounded">check</span> Private Lock &amp; Key Rooms</li>
                             </ul>
-                            <button class="btn btn-calc-transparent full-width" onclick="openQuoteModal()">View Storage Options</button>
-                        </div>
-                    </div>
-
-                    <!-- Right Column: Interactive Item Grid -->
-                    <div class="calc-items-column">
-                        <div class="calc-items-grid">
-                            <!-- Item 1: Sofa -->
-                            <div class="calc-item-card" data-item="sofa" data-volume="15">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">weekend</span>
-                                    </div>
-                                    <span>Sofa</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button class="control-btn minus" onclick="updateItemQty('sofa', -1)" aria-label="Decrease quantity">&minus;</button>
-                                    <span class="qty-display" id="qty-sofa">0</span>
-                                    <button class="control-btn plus" onclick="updateItemQty('sofa', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Item 2: Bed -->
-                            <div class="calc-item-card" data-item="bed" data-volume="20">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">bed</span>
-                                    </div>
-                                    <span>Bed</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button class="control-btn minus" onclick="updateItemQty('bed', -1)" aria-label="Decrease quantity">&minus;</button>
-                                    <span class="qty-display" id="qty-bed">0</span>
-                                    <button class="control-btn plus" onclick="updateItemQty('bed', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Item 3: Dining Table -->
-                            <div class="calc-item-card" data-item="table" data-volume="10">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">table_restaurant</span>
-                                    </div>
-                                    <span>Dining Table</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button class="control-btn minus" onclick="updateItemQty('table', -1)" aria-label="Decrease quantity">&minus;</button>
-                                    <span class="qty-display" id="qty-table">0</span>
-                                    <button class="control-btn plus" onclick="updateItemQty('table', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Item 4: Chair -->
-                            <div class="calc-item-card" data-item="chair" data-volume="3">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">chair</span>
-                                    </div>
-                                    <span>Chair</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button class="control-btn minus" onclick="updateItemQty('chair', -1)" aria-label="Decrease quantity">&minus;</button>
-                                    <span class="qty-display" id="qty-chair">0</span>
-                                    <button class="control-btn plus" onclick="updateItemQty('chair', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Item 5: Wardrobe -->
-                            <div class="calc-item-card" data-item="wardrobe" data-volume="15">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">dresser</span>
-                                    </div>
-                                    <span>Wardrobe</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button class="control-btn minus" onclick="updateItemQty('wardrobe', -1)" aria-label="Decrease quantity">&minus;</button>
-                                    <span class="qty-display" id="qty-wardrobe">0</span>
-                                    <button class="control-btn plus" onclick="updateItemQty('wardrobe', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Item 6: Boxes -->
-                            <div class="calc-item-card" data-item="boxes" data-volume="2">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">inventory_2</span>
-                                    </div>
-                                    <span>Boxes</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button class="control-btn minus" onclick="updateItemQty('boxes', -1)" aria-label="Decrease quantity">&minus;</button>
-                                    <span class="qty-display" id="qty-boxes">0</span>
-                                    <button class="control-btn plus" onclick="updateItemQty('boxes', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Item 7: Suitcases -->
-                            <div class="calc-item-card" data-item="luggage" data-volume="3">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">luggage</span>
-                                    </div>
-                                    <span>Suitcases</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button class="control-btn minus" onclick="updateItemQty('luggage', -1)" aria-label="Decrease quantity">&minus;</button>
-                                    <span class="qty-display" id="qty-luggage">0</span>
-                                    <button class="control-btn plus" onclick="updateItemQty('luggage', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Item 8: TV -->
-                            <div class="calc-item-card" data-item="tv" data-volume="4">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">tv</span>
-                                    </div>
-                                    <span>TV</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button class="control-btn minus" onclick="updateItemQty('tv', -1)" aria-label="Decrease quantity">&minus;</button>
-                                    <span class="qty-display" id="qty-tv">0</span>
-                                    <button class="control-btn plus" onclick="updateItemQty('tv', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Item 9: Documents -->
-                            <div class="calc-item-card" data-item="folder" data-volume="1">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">folder</span>
-                                    </div>
-                                    <span>Documents</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button class="control-btn minus" onclick="updateItemQty('folder', -1)" aria-label="Decrease quantity">&minus;</button>
-                                    <span class="qty-display" id="qty-folder">0</span>
-                                    <button class="control-btn plus" onclick="updateItemQty('folder', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Item 10: Appliances -->
-                            <div class="calc-item-card" data-item="appliances" data-volume="12">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">kitchen</span>
-                                    </div>
-                                    <span>Appliances</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button class="control-btn minus" onclick="updateItemQty('appliances', -1)" aria-label="Decrease quantity">&minus;</button>
-                                    <span class="qty-display" id="qty-appliances">0</span>
-                                    <button class="control-btn plus" onclick="updateItemQty('appliances', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Item 11: Bicycle -->
-                            <div class="calc-item-card" data-item="bicycle" data-volume="8">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">pedal_bike</span>
-                                    </div>
-                                    <span>Bicycle</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button class="control-btn minus" onclick="updateItemQty('bicycle', -1)" aria-label="Decrease quantity">&minus;</button>
-                                    <span class="qty-display" id="qty-bicycle">0</span>
-                                    <button class="control-btn plus" onclick="updateItemQty('bicycle', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Item 12: Business Inventory -->
-                            <div class="calc-item-card" data-item="inventory" data-volume="25">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">warehouse</span>
-                                    </div>
-                                    <span>Business Stock</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button class="control-btn minus" onclick="updateItemQty('inventory', -1)" aria-label="Decrease quantity">&minus;</button>
-                                    <span class="qty-display" id="qty-inventory">0</span>
-                                    <button class="control-btn plus" onclick="updateItemQty('inventory', 1)" aria-label="Increase quantity">+</button>
-                                </div>
+                            <div class="facility-card-actions">
+                                <a href="self-storage-gurugram.html" class="btn btn-secondary">Facility Details</a>
+                                <button class="btn btn-primary" onclick="openQuoteModal()">Book Unit</button>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Trust Section / Reassurance Cards -->
-                <div class="calc-trust-grid">
-                    <div class="trust-card">
-                        <span class="material-symbols-rounded">check_circle</span>
-                        <div>
-                            <h4>Free Size Recommendation</h4>
-                            <p>We'll recommend the right storage size based on your belongings.</p>
+                    <!-- Noida Facility Card -->
+                    <div class="facility-card shadow-md">
+                        <div class="facility-img-wrapper">
+                            <img src="assets/noida_storage.webp" alt="Self Storage Warehouse Facility in Noida" loading="lazy" width="780" height="512" decoding="async">
+                            <span class="facility-badge">Express Logistics Hub</span>
+                        </div>
+                        <div class="facility-card-body">
+                            <h3>Noida Facility</h3>
+                            <p class="facility-address"><span class="material-symbols-rounded">location_on</span> Sector 63, Noida, Uttar Pradesh 201301</p>
+                            <ul class="facility-features">
+                                <li><span class="material-symbols-rounded">check</span> Fire Safety &amp; Pest Control</li>
+                                <li><span class="material-symbols-rounded">check</span> Easy Freight Elevator Access</li>
+                                <li><span class="material-symbols-rounded">check</span> Doorstep Transport Service</li>
+                            </ul>
+                            <div class="facility-card-actions">
+                                <a href="self-storage-noida.html" class="btn btn-secondary">Facility Details</a>
+                                <button class="btn btn-primary" onclick="openQuoteModal()">Book Unit</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="trust-card">
-                        <span class="material-symbols-rounded">check_circle</span>
-                        <div>
-                            <h4>Pay Only For What You Need</h4>
-                            <p>No oversized units or unnecessary costs.</p>
+
+                    <!-- Delhi Facility Card -->
+                    <div class="facility-card shadow-md">
+                        <div class="facility-img-wrapper">
+                            <img src="assets/dwarka_storage.webp" alt="Self Storage Warehouse Facility in Delhi" loading="lazy" width="774" height="500" decoding="async">
+                            <span class="facility-badge">Capital City Hub</span>
                         </div>
-                    </div>
-                    <div class="trust-card">
-                        <span class="material-symbols-rounded">check_circle</span>
-                        <div>
-                            <h4>Upgrade Anytime</h4>
-                            <p>Need more space later? Changing storage size is easy.</p>
+                        <div class="facility-card-body">
+                            <h3>Delhi Facility</h3>
+                            <p class="facility-address"><span class="material-symbols-rounded">location_on</span> Rajokri / Dwarka Link Road, New Delhi 110037</p>
+                            <ul class="facility-features">
+                                <li><span class="material-symbols-rounded">check</span> 24/7 Gated Access</li>
+                                <li><span class="material-symbols-rounded">check</span> Climate-Managed Units</li>
+                                <li><span class="material-symbols-rounded">check</span> Flexible Monthly Subscriptions</li>
+                            </ul>
+                            <div class="facility-card-actions">
+                                <a href="self-storage-delhi.html" class="btn btn-secondary">Facility Details</a>
+                                <button class="btn btn-primary" onclick="openQuoteModal()">Book Unit</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1155,166 +818,49 @@
         </section>
 
         <!-- ==========================================
-             SECTION 4.3, TESTIMONIALS
+             SECTION 9, TESTIMONIALS
              ========================================== -->
-        <section id="testimonials" class="testimonials-section">
-            <style>
-                .testimonials-section {
-                    border-bottom: none !important;
-                    padding-bottom: 20px !important;
-                }
-                .locations-section {
-                    padding-top: 20px !important;
-                }
-            </style>
+        <section class="testimonials-section">
             <div class="container">
                 <div class="section-header-centered">
-                    <span class="calc-tag" style="color: var(--accent); border-color: rgba(245, 158, 11, 0.35);">★★★★★ TRUSTED BY THOUSANDS</span>
-                    <h2>Stories from Our Customers.</h2>
-                    <p>More than 5,000 customers across Delhi NCR have trusted Self Storage India to securely store their furniture, household items, luggage, and business inventory. Here's what they have to say.</p>
+                    <span class="calc-tag">CLIENT REVIEWS</span>
+                    <h2>Trusted by Businesses Across Delhi NCR</h2>
+                    <p>Here is what corporate clients and business owners say about storing with Self Storage India.</p>
                 </div>
 
-                <!-- Testimonial Cards Carousel / Grid -->
                 <div class="testimonials-grid">
-                    <!-- Card 1: Nitin Gupta -->
                     <div class="testimonial-card shadow-sm">
-                        <span class="material-symbols-rounded quote-icon">format_quote</span>
-                        <div class="rating-stars">★★★★★</div>
-                        <p class="testimonial-text">"We used Self Storage India during our office relocation. The facility was secure, easy to access, and made the entire transition for our team completely stress-free."</p>
-                        <div class="testimonial-profile">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150" alt="Nitin Gupta" class="profile-img" decoding="async" loading="lazy">
-                            <div class="profile-info">
-                                <h4>Nitin Gupta</h4>
-                                <p>Noida</p>
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"Storing 5 years of financial audit files and legal records with Self Storage India saved us over ₹60,000 per month compared to renting extra office space in Cyber City."</p>
+                        <div class="client-info">
+                            <img src="assets/client_nandini.webp" alt="Nandini Roy - Operations Director" class="client-avatar" width="200" height="200" loading="lazy" decoding="async">
+                            <div>
+                                <h4>Nandini Roy</h4>
+                                <p>Operations Director, FinTech Solutions</p>
                             </div>
-                        </div>
-                        <div class="testimonial-footer">
-                            <span class="storage-badge">Business Storage</span>
-                            <span class="verified-badge"><span class="material-symbols-rounded">verified</span> Verified Business</span>
                         </div>
                     </div>
 
-                    <!-- Card 2: Aarav Mehta -->
                     <div class="testimonial-card shadow-sm">
-                        <span class="material-symbols-rounded quote-icon">format_quote</span>
-                        <div class="rating-stars">★★★★★</div>
-                        <p class="testimonial-text">"Storing our e-commerce inventory here saved us thousands in warehouse leases. The flexibility to upgrade space on a monthly basis is a lifesaver for small businesses."</p>
-                        <div class="testimonial-profile">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150" alt="Aarav Mehta" class="profile-img" decoding="async" loading="lazy">
-                            <div class="profile-info">
-                                <h4>Aarav Mehta</h4>
-                                <p>Gurugram</p>
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"Their pallet racking and doorstep logistics team handle our e-commerce inventory effortlessly during peak festive sale seasons. GST invoices are always delivered on time."</p>
+                        <div class="client-info">
+                            <img src="assets/client_nitin.webp" alt="Nitin Mehta - Founder" class="client-avatar" width="200" height="200" loading="lazy" decoding="async">
+                            <div>
+                                <h4>Nitin Mehta</h4>
+                                <p>Founder, Crafts &amp; Living E-Commerce</p>
                             </div>
-                        </div>
-                        <div class="testimonial-footer">
-                            <span class="storage-badge">Inventory Storage</span>
-                            <span class="verified-badge"><span class="material-symbols-rounded">verified</span> Verified Business</span>
                         </div>
                     </div>
 
-                    <!-- Card 3: Priya Sharma -->
                     <div class="testimonial-card shadow-sm">
-                        <span class="material-symbols-rounded quote-icon">format_quote</span>
-                        <div class="rating-stars">★★★★★</div>
-                        <p class="testimonial-text">"The document archiving rooms are clean, pest-controlled, and highly secure. Perfect for keeping our corporate records compliant without overcrowding our workspace."</p>
-                        <div class="testimonial-profile">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150" alt="Priya Sharma" class="profile-img" decoding="async" loading="lazy">
-                            <div class="profile-info">
-                                <h4>Priya Sharma</h4>
-                                <p>Delhi</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-footer">
-                            <span class="storage-badge">Document Storage</span>
-                            <span class="verified-badge"><span class="material-symbols-rounded">verified</span> Verified Business</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- ==========================================
-             SECTION 4.4, OUR LOCATIONS
-             ========================================== -->
-        <section id="locations" class="locations-section">
-            <div class="container">
-                <div class="section-header-centered">
-                    <span class="loc-tag-vibrant">OUR LOCATIONS</span>
-                    <h2>Storage Facilities Across Delhi NCR</h2>
-                    <p>Conveniently located storage facilities across Delhi NCR, making it easy to store, access and retrieve your belongings whenever you need them.</p>
-                </div>
-
-                <!-- 3 Location Cards -->
-                <div class="locations-grid">
-                    <!-- Location Card 1: Delhi -->
-                    <div class="location-card shadow-sm" id="loc-card-delhi" onclick="openQuoteModal()">
-                        <div class="loc-image-container">
-                            <img src="assets/dwarka_storage.webp" alt="Self Storage Delhi Dwarka Facility" class="loc-image" width="774" height="500" decoding="async" loading="lazy">
-                            <div class="loc-badge">
-                                <span class="material-symbols-rounded">location_on</span>
-                                <span>Delhi</span>
-                            </div>
-                        </div>
-                        <div class="loc-details">
-                            <h3>Selfstorage Dwarka</h3>
-                            <p class="loc-address">Sector 28, Dwarka, Delhi</p>
-                            <div class="loc-chips">
-                                <span class="chip">✓ 24/7 Security</span>
-                                <span class="chip">✓ CCTV Monitoring</span>
-                                <span class="chip">✓ Pest Control</span>
-                            </div>
-                            <div class="loc-explore-link">
-                                <span>Explore Facility</span>
-                                <span class="material-symbols-rounded explore-arrow">arrow_right_alt</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Location Card 2: Gurugram -->
-                    <div class="location-card shadow-sm" id="loc-card-gurugram" onclick="openQuoteModal()">
-                        <div class="loc-image-container">
-                            <img src="assets/gurugram_storage.webp" alt="Self Storage Gurugram Facility" class="loc-image" width="774" height="500" decoding="async" loading="lazy">
-                            <div class="loc-badge">
-                                <span class="material-symbols-rounded">location_on</span>
-                                <span>Gurugram</span>
-                            </div>
-                        </div>
-                        <div class="loc-details">
-                            <h3>Selfstorage Gurugram</h3>
-                            <p class="loc-address">Sector 34, Honda Chowk, Gurugram</p>
-                            <div class="loc-chips">
-                                <span class="chip">✓ 24/7 Security</span>
-                                <span class="chip">✓ CCTV Monitoring</span>
-                                <span class="chip">✓ Pest Control</span>
-                            </div>
-                            <div class="loc-explore-link">
-                                <span>Explore Facility</span>
-                                <span class="material-symbols-rounded explore-arrow">arrow_right_alt</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Location Card 3: Noida -->
-                    <div class="location-card shadow-sm" id="loc-card-noida" onclick="openQuoteModal()">
-                        <div class="loc-image-container">
-                            <img src="assets/noida_storage.webp" alt="Self Storage Noida Facility" class="loc-image" width="780" height="512" decoding="async" loading="lazy">
-                            <div class="loc-badge">
-                                <span class="material-symbols-rounded">location_on</span>
-                                <span>Noida</span>
-                            </div>
-                        </div>
-                        <div class="loc-details">
-                            <h3>Selfstorage Noida</h3>
-                            <p class="loc-address">Sector 59, Noida</p>
-                            <div class="loc-chips">
-                                <span class="chip">✓ 24/7 Security</span>
-                                <span class="chip">✓ CCTV Monitoring</span>
-                                <span class="chip">✓ Pest Control</span>
-                            </div>
-                            <div class="loc-explore-link">
-                                <span>Explore Facility</span>
-                                <span class="material-symbols-rounded explore-arrow">arrow_right_alt</span>
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"When we shifted our 30-workstation corporate office in Noida, Self Storage India kept all our desks, chairs, and IT servers safe for 2 months without a single scratch."</p>
+                        <div class="client-info">
+                            <img src="assets/client_roselin.webp" alt="Roselin Joseph - Corporate Admin Lead" class="client-avatar" width="200" height="200" loading="lazy" decoding="async">
+                            <div>
+                                <h4>Roselin Joseph</h4>
+                                <p>Corporate Admin Lead, Global Media</p>
                             </div>
                         </div>
                     </div>
@@ -1323,201 +869,64 @@
         </section>
 
         <!-- ==========================================
-             SECTION 5, BUSINESS STORAGE DETAILS (SEO CONTENT)
+             SECTION 10, FAQ SECTION
              ========================================== -->
-        <section class="seo-details-section">
-            <style>
-                .seo-details-section {
-                    padding: 40px 0;
-                    background-color: #ffffff;
-                    border-top: 1px solid var(--border);
-                    border-bottom: 1px solid var(--border);
-                    color: var(--text-muted);
-                    font-family: 'Inter', sans-serif;
-                }
-                .seo-details-section__container {
-                    max-width: 1140px;
-                    margin: 0 auto;
-                    padding: 0 24px;
-                    text-align: left;
-                }
-                .seo-details-section h2 {
-                    color: var(--primary);
-                    font-size: 1.6rem;
-                    font-weight: 700;
-                    margin-top: 24px;
-                    margin-bottom: 12px;
-                    line-height: 1.3;
-                }
-                .seo-details-section h2:first-of-type {
-                    margin-top: 0;
-                }
-                .seo-details-section h3 {
-                    color: var(--primary);
-                    font-size: 1.3rem;
-                    font-weight: 600;
-                    margin-top: 20px;
-                    margin-bottom: 10px;
-                }
-                .seo-details-section p {
-                    font-size: 15px;
-                    line-height: 1.65;
-                    margin-bottom: 12px;
-                    color: #4B5563; /* Refined dark grey body text */
-                }
-                .seo-details-section ul {
-                    margin-bottom: 16px;
-                    padding-left: 16px;
-                }
-                .seo-details-section li {
-                    font-size: 15px;
-                    line-height: 1.6;
-                    margin-bottom: 8px;
-                    color: #4B5563;
-                    list-style-type: disc;
-                }
-                @media (max-width: 768px) {
-                    .seo-details-section {
-                        padding: 20px 0;
-                    }
-                    .seo-details-section__container {
-                        padding: 0 var(--space-xl);
-                    }
-                    .seo-details-section h2 {
-                        font-size: 1.4rem;
-                    }
-                    .seo-details-section h3 {
-                        font-size: 1.2rem;
-                    }
-                }
-            </style>
-            <div class="seo-details-section__container">
-                <h2>Business Storage Solutions in NCR</h2>
-                <p>If you need a smart way to manage your business space, our business storage solutions in NCR offer exactly that: space to grow without the clutter. Whether you’re looking to free up your office or store important equipment, our commercial storage NCR options are built to keep your business organized and running smoothly.</p>
-                <p>Self Storage India offers secure business storage facilities equipped with advanced security measures, ensuring that your assets are always in safe hands. Plus, we make it affordable. With affordable business storage in Delhi NCR, you don’t have to break the bank to keep your business clutter-free and efficient.</p>
-                <p>From storing extra inventory to safeguarding sensitive documents, we’ve got flexible solutions designed to meet your unique needs. It’s time to give your business the space it deserves, with our reliable and cost-effective storage options.</p>
-
-                <h2>Why Choose Commercial Storage in NCR?</h2>
-                <p>Choosing commercial storage in NCR offers businesses a practical solution to manage space efficiently. Whether you need to store excess inventory or important documents, commercial storage gives you the flexibility to scale your business without the need for additional office or warehouse space. This is especially useful for growing businesses that need extra room but aren’t ready for a full expansion.</p>
-                <p>One of the key benefits of commercial storage in NCR is its accessibility. With storage facilities located across the region, you can easily access your stored items whenever needed.</p>
-                <p>Security is another important reason to choose commercial storage. Storage facilities in NCR offer secure environments with 24/7 monitoring, ensuring that your valuable assets are protected. This peace of mind allows you to focus on your business without worrying about the safety of your items.</p>
-                <p>Instead of investing in larger office spaces or warehouses, businesses can opt for affordable storage options that fit their budget and specific needs. This flexibility makes commercial storage a smart choice for businesses of all sizes.</p>
-
-                <h2>Office Equipment Storage | Maximizing Workspace Efficiency</h2>
-                <p>Efficient office spaces are key to productive business operations, but clutter from unused equipment can get in the way. That’s where office equipment storage comes in. Self Storage India provides an organized way to store your office equipment, from furniture to electronics, allowing you to maximize your workspace without the clutter.</p>
-                <p>By utilizing off-site storage, businesses can free up valuable office space for daily operations, meetings, or even expanding teams. Whether you have extra desks, computers, or outdated equipment that’s no longer in use, we provide secure and accessible storage options tailored to your needs.</p>
-                <p>Our facilities are designed to ensure your equipment stays in good condition with proper protection against dust, damage, or theft. Plus, with flexible plans, our office equipment storage is affordable for businesses of all sizes.</p>
-                <p>Maximize your workspace efficiency and keep your office running smoothly with our dedicated storage solutions. It’s the easy way to create more room without sacrificing important equipment.</p>
-
-                <h2>Key Considerations for Secure Business Storage</h2>
-                <p>When choosing secure business storage, there are several key factors to consider to ensure the safety and accessibility of your valuable assets. First, security measures should be a top priority. Look for storage facilities that offer 24/7 surveillance, access control systems, and alarm systems. This helps protect your office equipment, inventory, or documents from theft or damage.</p>
-                <p>Second, consider the accessibility of the storage unit. Your business might need regular access to stored items, so it’s important that the facility offers flexible hours and easy entry. Third, the condition of the facility matters. Ensure that the storage unit is clean and well-maintained.</p>
-                <p>Lastly, consider the cost and flexibility of the storage solutions. The best business storage is not only secure but also affordable and scalable, allowing your storage needs to grow as your business expands. By keeping these key considerations in mind, you can find the right secure business storage solution that offers peace of mind and convenience for your company’s needs.</p>
-
-                <h2>Affordable Business Storage in Delhi NCR</h2>
-                <p>Self Storage India offers cost-effective solutions that help businesses manage their extra inventory, documents, or office equipment without breaking the bank. Whether you're a small business needing temporary storage or a larger company looking for long-term options, we have flexible plans to suit your budget.</p>
-                <p>Our business storage solutions are not only affordable but also designed to provide maximum convenience. Located across key areas of Delhi NCR, our storage facilities are easily accessible, making it simple to retrieve items whenever needed. We offer a variety of storage unit sizes, so you only pay for the space you actually need, helping you save on unnecessary costs.</p>
-                <p>Security is also a top priority for us. Our secure business storage facilities feature 24/7 monitoring, ensuring that your assets are well-protected. Whether it's office equipment storage, files, or seasonal stock, your items will be safe and easily available when you need them.</p>
-                <p>With our affordable business storage options in Delhi NCR, you can focus on growing your business while we take care of the extra space. Choose a hassle-free, budget-friendly solution to keep your workspace organized and efficient, allowing you to save money while gaining peace of mind.</p>
-                <p>Choose <a href="https://selfstorageindia.com/">Self Storage India</a> for reliable, secure, and affordable storage solutions that perfectly fit your business needs. Contact us today to discover how we can help you free up space and keep your operations running smoothly!</p>
-            </div>
-        </section>
-        
-        <!-- FAQ Section -->
-        <section id="faq" class="faq-section">
+        <section class="faq-section">
             <div class="container">
                 <div class="section-header-centered">
-                    <span class="calc-tag">FAQ'S</span>
-                    <h2>Frequently Asked Questions About our Business and Commercial Storage</h2>
+                    <span class="calc-tag">FREQUENTLY ASKED QUESTIONS</span>
+                    <h2>Business Storage FAQs</h2>
+                    <p>Got questions about storing your commercial inventory or office files? Find quick answers below.</p>
                 </div>
 
-                <!-- Center Accordion Container (max-width: 800px) -->
-                <div class="faq-accordions-centered-container">
-                    <!-- Accordion 1 -->
-                    <div class="faq-accordion-item shadow-sm">
-                        <button class="faq-trigger" onclick="toggleFaq(this)">
-                            <span>What types of business items can I store?</span>
-                            <span class="material-symbols-rounded accordion-arrow">add</span>
+                <div class="faq-accordion-wrapper">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>Do you provide GST tax invoices for business storage rentals?</span>
+                            <span class="material-symbols-rounded faq-icon">expand_more</span>
                         </button>
-                        <div class="faq-content-box">
-                            <p>You can store office furniture, files, paperwork, marketing collateral, trade show displays, e-commerce stock, business equipment, and unused electronics. Perishable, toxic, or hazardous goods are strictly prohibited.</p>
+                        <div class="faq-answer">
+                            <p>Yes, absolutely. We issue official GST tax invoices for all corporate and business storage subscriptions, allowing your business to claim input tax credits easily.</p>
                         </div>
                     </div>
 
-                    <!-- Accordion 2 -->
-                    <div class="faq-accordion-item shadow-sm">
-                        <button class="faq-trigger" onclick="toggleFaq(this)">
-                            <span>Is the storage facility secure for my business assets?</span>
-                            <span class="material-symbols-rounded accordion-arrow">add</span>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>How secure are our confidential office document archives?</span>
+                            <span class="material-symbols-rounded faq-icon">expand_more</span>
                         </button>
-                        <div class="faq-content-box">
-                            <p>Yes, we provide 24/7 security with CCTV surveillance, gated biometric entries, pest-controlled facilities, and fire safety systems, ensuring complete security for your valuable commercial items.</p>
+                        <div class="faq-answer">
+                            <p>Your document archive boxes are stored inside private, lockable units with 24/7 CCTV surveillance, pest control, and climate management. Only your authorized company representatives hold the key.</p>
                         </div>
                     </div>
 
-                    <!-- Accordion 3 -->
-                    <div class="faq-accordion-item shadow-sm">
-                        <button class="faq-trigger" onclick="toggleFaq(this)">
-                            <span>Can I scale my storage space as my business grows?</span>
-                            <span class="material-symbols-rounded accordion-arrow">add</span>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>Can we access our commercial inventory during business hours?</span>
+                            <span class="material-symbols-rounded faq-icon">expand_more</span>
                         </button>
-                        <div class="faq-content-box">
-                            <p>Absolutely. You can easily upgrade to a larger unit or downscale to a smaller space depending on your stock volume, seasons, or workflow without any hassle.</p>
+                        <div class="faq-answer">
+                            <p>Yes. You can access your business storage room anytime during operating hours to retrieve stock, add new inventory, or check files. Drive-up loading bays and freight elevators are available.</p>
                         </div>
                     </div>
 
-                    <!-- Accordion 4 -->
-                    <div class="faq-accordion-item shadow-sm">
-                        <button class="faq-trigger" onclick="toggleFaq(this)">
-                            <span>Do you offer delivery and pick-up services?</span>
-                            <span class="material-symbols-rounded accordion-arrow">add</span>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>Do you offer doorstep pickup and transport for business goods?</span>
+                            <span class="material-symbols-rounded faq-icon">expand_more</span>
                         </button>
-                        <div class="faq-content-box">
-                            <p>Yes, we provide door-to-door packing, pickup, and delivery services across Delhi NCR, making stock transport to our facilities fully seamless.</p>
+                        <div class="faq-answer">
+                            <p>Yes, our professional logistics team provides door-to-door pickup from your office or commercial facility across Delhi, Gurugram, and Noida, including packing and inventory tagging.</p>
                         </div>
                     </div>
 
-                    <!-- Accordion 5 -->
-                    <div class="faq-accordion-item shadow-sm">
-                        <button class="faq-trigger" onclick="toggleFaq(this)">
-                            <span>Is there a long-term contract required for business storage?</span>
-                            <span class="material-symbols-rounded accordion-arrow">add</span>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>Is climate-managed storage available for sensitive IT servers &amp; files?</span>
+                            <span class="material-symbols-rounded faq-icon">expand_more</span>
                         </button>
-                        <div class="faq-content-box">
-                            <p>No. We offer flexible monthly plans that do not tie you down to long-term commercial lease agreements or lock-in periods.</p>
-                        </div>
-                    </div>
-
-                    <!-- Accordion 6 -->
-                    <div class="faq-accordion-item shadow-sm">
-                        <button class="faq-trigger" onclick="toggleFaq(this)">
-                            <span>Can my team members access the storage unit independently?</span>
-                            <span class="material-symbols-rounded accordion-arrow">add</span>
-                        </button>
-                        <div class="faq-content-box">
-                            <p>Yes, you can authorize specific employees or logistics partners to access your unit, and manage security authorizations directly with our facility reception.</p>
-                        </div>
-                    </div>
-
-                    <!-- Accordion 7 -->
-                    <div class="faq-accordion-item shadow-sm">
-                        <button class="faq-trigger" onclick="toggleFaq(this)">
-                            <span>Do you provide GST invoices for tax inputs?</span>
-                            <span class="material-symbols-rounded accordion-arrow">add</span>
-                        </button>
-                        <div class="faq-content-box">
-                            <p>Yes, all storage rents are billed with standard GST-compliant tax invoices, allowing you to easily claim Input Tax Credit (ITC) for business operational expenses.</p>
-                        </div>
-                    </div>
-
-                    <!-- Accordion 8 -->
-                    <div class="faq-accordion-item shadow-sm">
-                        <button class="faq-trigger" onclick="toggleFaq(this)">
-                            <span>Are the document archive units climate-controlled?</span>
-                            <span class="material-symbols-rounded accordion-arrow">add</span>
-                        </button>
-                        <div class="faq-content-box">
-                            <p>Yes, we offer climate-managed units that protect sensitive documents, files, records, and IT servers from humidity, moisture, and extreme temperature variations.</p>
+                        <div class="faq-answer">
+                            <p>Yes, we offer climate-managed units that protect sensitive documents, files, records, and IT hardware from humidity, moisture, and extreme temperature variations.</p>
                         </div>
                     </div>
                 </div>
@@ -1559,15 +968,15 @@
 
             <div class="footer-logos">
                 <a href="index.html" class="footer-logo footer-logo-primary">
-                    <img src="https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo-300x63.png" alt="Self Storage India Logo - Private Lockable Storage Rooms &amp; Warehouses" loading="lazy" decoding="async" width="240" height="50">
+                    <img src="https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo-300x63.png" alt="Self Storage India Logo - Private Lockable Storage Rooms &amp; Warehouses" loading="lazy" width="240" height="50" decoding="async">
                 </a>
 
                 <a href="index.html" class="footer-logo footer-logo-warehouse">
-                    <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/ss_warehouse_white_bg_449_60-1-300x40.webp" alt="Self Storage Warehouse Division Official Logo" loading="lazy" decoding="async" width="240" height="32">
+                    <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/ss_warehouse_white_bg_449_60-1-300x40.webp" alt="Self Storage Warehouse Division Official Logo" loading="lazy" width="240" height="32" decoding="async">
                 </a>
 
                 <div class="footer-logo footer-logo-member">
-                    <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/Logo_SSAMember-Reflex_kiztzz-300x198.webp" alt="Self Storage Association Asia Official Member Certification Badge" loading="lazy" decoding="async" width="120" height="79">
+                    <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/Logo_SSAMember-Reflex_kiztzz-300x198.webp" alt="Self Storage Association Asia Official Member Certification Badge" loading="lazy" width="120" height="79" decoding="async">
                 </div>
             </div>
 
@@ -1596,10 +1005,10 @@
                 <div class="form-group">
                     <label for="storage-size">Est. Storage Needs</label>
                     <select id="storage-size">
-                        <option>Locker (Small items, files)</option>
-                        <option>Small Room (1BHK furniture)</option>
-                        <option>Medium Room (2BHK furniture)</option>
-                        <option>Large Room (3BHK+ / Business stock)</option>
+                        <option>Archive Locker (Files, Document boxes)</option>
+                        <option>Medium Unit (5–10 Desk Office)</option>
+                        <option>Large Unit (15–20 Desk Office / Stock)</option>
+                        <option>Warehouse Suite (Palletized stock / Bulk)</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-accent full-width" style="height: 52px; font-size: 0.95rem;">Calculate Estimate</button>
