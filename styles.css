@@ -5213,6 +5213,74 @@ h3 {
     list-style-type: disc;
 }
 
+/* Location SEO Blog & Article Section Styling */
+.ssi-delhi-seo-section {
+    background-color: #f8fafc;
+    padding: 56px 24px;
+    border-top: 1px solid var(--border);
+}
+
+.ssi-noida-blog {
+    font-family: var(--font-body);
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 15px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.ssi-noida-blog h2.article-main-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 20px;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+}
+
+.ssi-noida-blog h2.article-section-title {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 32px 0 14px 0;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ssi-noida-blog h2.article-section-title::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 18px;
+    background: var(--primary);
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.ssi-noida-blog p {
+    margin-bottom: 18px;
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.ssi-noida-blog ul {
+    margin-bottom: 22px;
+    padding-left: 24px;
+}
+
+.ssi-noida-blog li {
+    margin-bottom: 10px;
+    color: #334155;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
 
 
 
