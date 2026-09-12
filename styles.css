@@ -4810,8 +4810,9 @@ h3 {
    HOUSEHOLD GOODS STORAGE SPECIFIC SECTIONS
    ========================================== */
 
-/* 1. Household Storage Needs Grid */
-.household-need {
+/* 1. Household & Business Storage Needs Grid */
+.household-need,
+.business-need {
     background-color: #FAFCFF;
     padding: 60px 0;
     width: 100%;
@@ -4820,13 +4821,15 @@ h3 {
     border-bottom: 1px solid var(--border);
 }
 
-.household-need__container {
+.household-need__container,
+.business-need__container {
     max-width: 1140px;
     margin: 0 auto;
     padding: 0 24px;
 }
 
-.household-need__grid {
+.household-need__grid,
+.business-need__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 28px;
@@ -4834,7 +4837,8 @@ h3 {
     margin-top: 40px;
 }
 
-.household-need__card {
+.household-need__card,
+.business-need__card {
     position: relative;
     background-color: #ffffff;
     border: 1px solid rgba(226, 232, 240, 0.9);
@@ -4845,7 +4849,8 @@ h3 {
     box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
 }
 
-.household-need__img-box {
+.household-need__img-box,
+.business-need__img-box {
     width: 100%;
     height: 200px;
     overflow: hidden;
@@ -4854,14 +4859,16 @@ h3 {
     flex-shrink: 0;
 }
 
-.household-need__img-box img {
+.household-need__img-box img,
+.business-need__img-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-.household-need__card-body {
+.household-need__card-body,
+.business-need__card-body {
     padding: 22px 24px 26px;
     display: flex;
     flex-direction: column;
@@ -4869,7 +4876,8 @@ h3 {
     text-align: left;
 }
 
-.household-need__card-title {
+.household-need__card-title,
+.business-need__card-title {
     font-family: var(--font-heading);
     font-size: 1.2rem;
     font-weight: 700;
@@ -4877,7 +4885,8 @@ h3 {
     margin-bottom: 8px;
 }
 
-.household-need__card-desc {
+.household-need__card-desc,
+.business-need__card-desc {
     font-size: 0.93rem;
     color: var(--slate-600, #475569);
     line-height: 1.6;
@@ -4885,31 +4894,28 @@ h3 {
 }
 
 @media (max-width: 992px) {
-    .household-need__grid {
+    .household-need__grid,
+    .business-need__grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
     }
 }
 
 @media (max-width: 640px) {
-    .household-need__grid {
+    .household-need__grid,
+    .business-need__grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    .household-need__img-box {
+    .household-need__img-box,
+    .business-need__img-box {
         height: 180px;
     }
 }
 
-@media (max-width: 640px) {
-    .household-need__grid {
-        grid-template-columns: 1fr;
-        gap: 75px;
-    }
-}
-
-/* 2. Household Pricing & Size Guide */
-.household-pricing-guide {
+/* 2. Household & Business Pricing & Size Guide */
+.household-pricing-guide,
+.business-pricing-guide {
     padding: 60px 0;
     background-color: #ffffff;
 }
@@ -4991,8 +4997,9 @@ h3 {
     }
 }
 
-/* 3. How Household Storage Works Process */
-.household-process-section {
+/* 3. How Business & Household Storage Works Process */
+.household-process-section,
+.business-process-section {
     padding: 60px 0;
     background-color: #FAFCFF;
     border-top: 1px solid var(--border);
