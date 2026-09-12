@@ -1026,28 +1026,43 @@ h3 {
 /* Location Header Badges Single Row */
 .loc-badges-row {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    gap: 8px 12px;
-    margin-top: 16px;
+    gap: 8px;
+    margin: 16px auto 0 auto;
     width: 100%;
     max-width: 1100px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.loc-badges-row::-webkit-scrollbar {
+    display: none;
 }
 
 .loc-badge-pill {
     background: #ffffff;
     border: 1px solid #cbd5e1;
     color: #1e293b;
-    padding: 5px 13px;
+    padding: 4px 10px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.03);
     white-space: nowrap;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .loc-badges-row {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
 }
 
 /* When Self Storage Makes Sense Section */
