@@ -39,33 +39,7 @@
   <!-- Main site stylesheet -->
   <link rel="stylesheet" href="styles.css?v=2.9" />
 
-  <style>
-    :root {
-      --primary: #2864df;
-      --primary-hover: #1e4ebf;
-      --accent: #ef8a22;
-      --accent-hover: #d97718;
-      --text: #1e293b;
-      --text-secondary: #475569;
-      --border: #e2e8f0;
-      --font-heading: 'Plus Jakarta Sans', sans-serif;
-      --font-body: 'Inter', sans-serif;
-    }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: var(--font-body);
-      background: #ffffff;
-      color: var(--text);
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-      padding-top: 80px;
-    }
 
     /* ==========================================================================
        REDESIGNED "SELF STORAGE IN NOIDA" SECTION (ssi-delhi-) - ONE FOLD COMPACT
@@ -520,6 +494,117 @@
       }
     }
   </style>
+  <!-- Google Structured Data (JSON-LD) Schemas -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SelfStorage",
+    "name": "Self Storage India - Noida Facility",
+    "image": "https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo.png",
+    "@id": "https://selfstorageindia.com/self-storage-noida.html#facility",
+    "url": "https://selfstorageindia.com/self-storage-noida.html",
+    "telephone": "+919810012345",
+    "priceRange": "₹₹",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sector 59",
+      "addressLocality": "Noida",
+      "addressRegion": "Uttar Pradesh",
+      "postalCode": "201301",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 28.6083,
+      "longitude": 77.3688
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "09:30",
+      "closes": "18:30"
+    },
+    "sameAs": [
+      "https://www.facebook.com/selfstorageindia",
+      "https://www.instagram.com/selfstorageindia"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What items can I store in the Noida self storage facility?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can store household furniture, appliances, office inventory, business archives, seasonal gear, and personal belongings. Hazardous, flammable, illegal, or perishable items are strictly prohibited."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How secure is the Noida warehouse?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our Sector 59 Noida facility features 24/7 CCTV surveillance, biometric access control, fire suppression systems, and round-the-clock physical security guards."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I access my stored items whenever I need?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, storage unit access is available during facility operating hours (Monday to Saturday, 9:30 AM to 6:30 PM) with advance notification for seamless retrieval."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the storage rooms climate controlled and pest controlled?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, all storage rooms undergo monthly professional pest control treatments and feature optimal moisture/humidity protection to keep your belongings pristine."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://selfstorageindia.com/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Locations",
+        "item": "https://selfstorageindia.com/#locations"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Noida",
+        "item": "https://selfstorageindia.com/self-storage-noida.html"
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
