@@ -176,73 +176,119 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 </head>
 <body class="light-theme">
-    <!-- Navbar Header -->
+    <!-- Top Banner & Header Navigation -->
     <header class="navbar" id="navbar">
-        <div class="navbar-container">
+        <div class="nav-container">
+            <!-- Brand Logo -->
             <a href="index.html" class="brand-logo" aria-label="Self Storage India Home">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo.png" alt="Self Storage India Logo" class="brand-logo-img" fetchpriority="high" width="240" height="68" decoding="async">
             </a>
 
-            <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
-                <div class="nav-item has-dropdown">
-                    <a href="javascript:void(0)" class="nav-link">Storage <span class="material-symbols-rounded dropdown-icon">expand_more</span></a>
-                    <div class="dropdown-menu">
+            <!-- Central Nav Links -->
+            <nav class="nav-links" id="navLinks">
+                <div class="mobile-drawer-header">
+                    <span class="mobile-drawer-title">Menu</span>
+                    <button class="mobile-drawer-close" onclick="closeMobileMenu()" aria-label="Close menu">
+                        <span class="material-symbols-rounded">close</span>
+                    </button>
+                </div>
+
+                <!-- Storage Dropdown -->
+                <div class="nav-item-dropdown">
+                    <a href="javascript:void(0)" class="nav-link">Storage <span class="material-symbols-rounded dropdown-arrow">keyboard_arrow_down</span></a>
+                    <div class="dropdown-menu shadow-md">
                         <a href="household-goods-storage.html" class="dropdown-item">
-                            <div class="dropdown-icon-wrapper"><span class="material-symbols-rounded">home</span></div>
-                            <div class="dropdown-text-wrapper"><h6>For Home</h6><p>Private units for household goods</p></div>
+                            <span class="material-symbols-rounded dropdown-icon">home</span>
+                            <div class="dropdown-info">
+                                <h6>For Home</h6>
+                                <p>Store household items &amp; furniture</p>
+                            </div>
                         </a>
                         <a href="business-storage.html" class="dropdown-item">
-                            <div class="dropdown-icon-wrapper"><span class="material-symbols-rounded">inventory_2</span></div>
-                            <div class="dropdown-text-wrapper"><h6>For Business</h6><p>Commercial stock &amp; document storage</p></div>
+                            <span class="material-symbols-rounded dropdown-icon">business</span>
+                            <div class="dropdown-info">
+                                <h6>For Business</h6>
+                                <p>Corporate archiving &amp; inventory</p>
+                            </div>
                         </a>
                     </div>
                 </div>
 
-                <div class="nav-item has-dropdown">
-                    <a href="javascript:void(0)" class="nav-link">Locations <span class="material-symbols-rounded dropdown-icon">expand_more</span></a>
-                    <div class="dropdown-menu">
+                <!-- Locations Dropdown -->
+                <div class="nav-item-dropdown">
+                    <a href="javascript:void(0)" class="nav-link">Locations <span class="material-symbols-rounded dropdown-arrow">keyboard_arrow_down</span></a>
+                    <div class="dropdown-menu shadow-md">
                         <a href="self-storage-gurugram.html" class="dropdown-item">
-                            <div class="dropdown-icon-wrapper"><span class="material-symbols-rounded">location_on</span></div>
-                            <div class="dropdown-text-wrapper"><h6>Gurugram</h6><p>NH-8 &amp; Golf Course Ext.</p></div>
+                            <span class="material-symbols-rounded dropdown-icon">location_on</span>
+                            <div class="dropdown-info">
+                                <h6>Gurugram</h6>
+                                <p>Sector 34, Honda Chowk</p>
+                            </div>
                         </a>
                         <a href="self-storage-delhi.html" class="dropdown-item">
-                            <div class="dropdown-icon-wrapper"><span class="material-symbols-rounded">location_on</span></div>
-                            <div class="dropdown-text-wrapper"><h6>Delhi</h6><p>Dwarka Sector 28</p></div>
+                            <span class="material-symbols-rounded dropdown-icon">location_on</span>
+                            <div class="dropdown-info">
+                                <h6>Delhi</h6>
+                                <p>Sector 28, Dwarka</p>
+                            </div>
                         </a>
                         <a href="self-storage-noida.html" class="dropdown-item">
-                            <div class="dropdown-icon-wrapper"><span class="material-symbols-rounded">location_on</span></div>
-                            <div class="dropdown-text-wrapper"><h6>Noida</h6><p>Sector 59 Industrial Area</p></div>
+                            <span class="material-symbols-rounded dropdown-icon">location_on</span>
+                            <div class="dropdown-info">
+                                <h6>Noida</h6>
+                                <p>Sector 59, Noida</p>
+                            </div>
                         </a>
                     </div>
                 </div>
 
-                <div class="nav-item has-dropdown">
-                    <a href="javascript:void(0)" class="nav-link">Offerings <span class="material-symbols-rounded dropdown-icon">expand_more</span></a>
-                    <div class="dropdown-menu">
+                <!-- Offerings Dropdown -->
+                <div class="nav-item-dropdown">
+                    <a href="javascript:void(0)" class="nav-link">Offerings <span class="material-symbols-rounded dropdown-arrow">keyboard_arrow_down</span></a>
+                    <div class="dropdown-menu shadow-md">
                         <a href="offering-private-rooms.html" class="dropdown-item">
-                            <div class="dropdown-icon-wrapper"><span class="material-symbols-rounded">door_back</span></div>
-                            <div class="dropdown-text-wrapper"><h6>Private Rooms</h6><p>Dedicated lockable storage units</p></div>
+                            <span class="material-symbols-rounded dropdown-icon">meeting_room</span>
+                            <div class="dropdown-info">
+                                <h6>Private Rooms</h6>
+                                <p>Lockable modular space units</p>
+                            </div>
                         </a>
                         <a href="offering-box-storage.html" class="dropdown-item">
-                            <div class="dropdown-icon-wrapper"><span class="material-symbols-rounded">package_2</span></div>
-                            <div class="dropdown-text-wrapper"><h6>Box Storage</h6><p>Pay-per-box flexible storage</p></div>
+                            <span class="material-symbols-rounded dropdown-icon">package_2</span>
+                            <div class="dropdown-info">
+                                <h6>Box Storage</h6>
+                                <p>Small items &amp; document files</p>
+                            </div>
+                        </a>
+                        <a href="offering-box-storage.html" class="dropdown-item">
+                            <span class="material-symbols-rounded dropdown-icon">luggage</span>
+                            <div class="dropdown-info">
+                                <h6>Luggage Storage</h6>
+                                <p>Travelers &amp; transient luggage</p>
+                            </div>
                         </a>
                     </div>
                 </div>
-
+                
                 <a href="https://selfstorageindia.com/blog/" class="nav-link active">Blogs</a>
-                <a href="tel:+919090206090" class="nav-link phone-link"><span class="material-symbols-rounded">call</span> +91-9090206090</a>
             </nav>
 
+            <!-- Actions & CTA -->
             <div class="nav-actions">
-                <button class="btn btn-accent get-quote-btn" onclick="openQuoteModal()">Get Quote</button>
-                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
-                    <span class="material-symbols-rounded hamburger-icon">menu</span>
-                    <span class="material-symbols-rounded close-icon">close</span>
+                <a href="tel:+919090206090" class="phone-link">
+                    <span class="material-symbols-rounded">call</span>
+                    +91-9090206090
+                </a>
+                <button class="btn btn-primary" onclick="openQuoteModal()">Get Free Quote</button>
+                <button class="mobile-nav-toggle" id="mobileNavToggle" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu">
+                    <span class="material-symbols-rounded">menu</span>
                 </button>
             </div>
         </div>
     </header>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileMenu()"></div>
 
     <main class="blog-detail-container">
         <!-- Breadcrumbs -->
@@ -730,7 +776,7 @@
                 <div class="sidebar-widget" style="background: linear-gradient(135deg, #EFF6FF 0%, #FFFFFF 100%);">
                     <h3 class="sidebar-widget-title"><span class="material-symbols-rounded" style="font-size: 18px; vertical-align: middle;">calculate</span> Size Calculator</h3>
                     <p style="font-size: 0.9rem; color: #475569; margin-bottom: 16px;">Calculate exact square footage needed for your inventory, office furniture, or cartons.</p>
-                    <a href="storage-calculator.html" class="btn btn-outline" style="width: 100%; text-align: center; display: block; text-decoration: none;">Launch Calculator</a>
+                    <a href="storage-calculator.html" class="btn btn-tertiary" style="width: 100%; text-align: center; display: block; text-decoration: none;">Launch Calculator</a>
                 </div>
 
                 <!-- Sidebar Widget 3: Related Solutions -->
@@ -759,50 +805,77 @@
             </nav>
 
             <div class="footer-socials" aria-label="Social media links">
-                <a href="https://www.facebook.com/selfstorageindia" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://x.com/selfstorageind" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://www.linkedin.com/company/selfstorageindia" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://www.instagram.com/selfstorageindia" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/selfstorageindia" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                </a>
+                <a href="https://x.com/selfstorageind" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
+                    <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/selfstorageindia" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/selfstorageindia" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.pinterest.com/selfstorageindia/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+                    <i class="fa-brands fa-pinterest-p" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.youtube.com/@selfstorageindia" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                </a>
             </div>
 
-            <p class="copyright">&copy; 2026 Self Storage India. All rights reserved.</p>
+            <div class="footer-logos">
+                <a href="index.html" class="footer-logo footer-logo-primary">
+                    <img src="https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo-300x63.png" alt="Self Storage India Logo - Private Lockable Storage Rooms &amp; Warehouses" loading="lazy" decoding="async" width="240" height="50">
+                </a>
+
+                <a href="index.html" class="footer-logo footer-logo-warehouse">
+                    <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/ss_warehouse_white_bg_449_60-1-300x40.webp" alt="Self Storage Warehouse Division Official Logo" loading="lazy" decoding="async" width="240" height="32">
+                </a>
+
+                <div class="footer-logo footer-logo-member">
+                    <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/Logo_SSAMember-Reflex_kiztzz-300x198.webp" alt="Self Storage Association Asia Official Member Certification Badge" loading="lazy" decoding="async" width="120" height="79">
+                </div>
+            </div>
+
+            <p class="footer-copyright">
+                Copyright – ©2026, SelfStorage India, All Rights Reserved.
+            </p>
         </div>
     </footer>
 
-    <!-- Instant Quote Modal -->
-    <div id="quoteModal" class="modal-backdrop" aria-hidden="true">
-        <div class="modal-dialog card shadow-xl" role="dialog" aria-labelledby="modalTitle">
-            <button class="modal-close-btn" onclick="closeQuoteModal()" aria-label="Close modal">
-                <span class="material-symbols-rounded">close</span>
-            </button>
+    <!-- Quote Modal -->
+    <div id="quote-modal" class="modal-overlay" onclick="closeQuoteModal(event)">
+        <div class="modal-card shadow-lg" onclick="event.stopPropagation()">
             <div class="modal-header">
-                <h3 id="modalTitle">Get Instant Quote</h3>
-                <p>Fill out the form below and our storage specialist will contact you within 15 minutes.</p>
+                <h2>Calculate Storage Needs</h2>
+                <button class="modal-close" onclick="closeQuoteModal()"><span class="material-symbols-rounded">close</span></button>
             </div>
-            <form id="quoteForm" onsubmit="handleFormSubmit(event)">
+            <form class="modal-form" onsubmit="handleFormSubmit(event)">
                 <div class="form-group">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" class="form-input" placeholder="e.g. Rahul Sharma" required>
+                    <label for="user-name">Full Name</label>
+                    <input type="text" id="user-name" required placeholder="Aarav Sharma">
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" class="form-input" placeholder="e.g. 9876543210" required>
+                    <label for="user-phone">Phone Number</label>
+                    <input type="tel" id="user-phone" required placeholder="+91 98765 43210">
                 </div>
                 <div class="form-group">
-                    <label for="storageType">Storage Requirement</label>
-                    <select id="storageType" class="form-input" required>
-                        <option value="business">Business / Commercial Storage</option>
-                        <option value="household">Household Goods Storage</option>
-                        <option value="private-room">Private Lockable Room</option>
-                        <option value="box">Box &amp; Luggage Storage</option>
+                    <label for="storage-size">Est. Storage Needs</label>
+                    <select id="storage-size">
+                        <option>Locker (Small items, files)</option>
+                        <option>Small Room (1BHK furniture)</option>
+                        <option>Medium Room (2BHK furniture)</option>
+                        <option>Large Room (3BHK+ / Business stock)</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Submit Request</button>
+                <button type="submit" class="btn btn-accent full-width" style="height: 52px; font-size: 0.95rem;">Calculate Estimate</button>
             </form>
         </div>
     </div>
 
-    <!-- Success Toast Notification -->
+    <!-- Success Toast -->
     <div id="toast" class="toast-notification shadow-lg">
         <span class="material-symbols-rounded toast-icon">check_circle</span>
         <div class="toast-content">
@@ -811,8 +884,7 @@
         </div>
     </div>
 
-    <!-- Back to Top Button -->
-    <button id="backToTopBtn" class="back-to-top-btn" aria-label="Back to top">
+    <button class="back-to-top" type="button" aria-label="Back to top" id="backToTopBtn">
         <span class="material-symbols-rounded" aria-hidden="true">keyboard_arrow_up</span>
     </button>
 
