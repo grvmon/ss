@@ -14,15 +14,23 @@ function updateNavbarScroll() {
     }
 }
 
-window.addEventListener('scroll', updateNavbarScroll);
+window.addEventListener('scroll', updateNavbarScroll, { passive: true });
 document.addEventListener('DOMContentLoaded', updateNavbarScroll);
 updateNavbarScroll();
 
 function toggleMobileMenu() {
     const navLinks = document.getElementById('navLinks');
     const overlay = document.getElementById('mobileNavOverlay');
-    if (navLinks) navLinks.classList.toggle('mobile-open');
-    if (overlay) overlay.classList.toggle('active');
+    if (!navLinks) return;
+    
+    const isOpen = navLinks.classList.contains('mobile-open');
+    if (isOpen) {
+        closeMobileMenu();
+    } else {
+        navLinks.classList.add('mobile-open');
+        if (overlay) overlay.classList.add('active');
+        document.body.classList.add('no-scroll');
+    }
 }
 
 function closeMobileMenu() {
@@ -30,6 +38,7 @@ function closeMobileMenu() {
     const overlay = document.getElementById('mobileNavOverlay');
     if (navLinks) navLinks.classList.remove('mobile-open');
     if (overlay) overlay.classList.remove('active');
+    document.body.classList.remove('no-scroll');
 }
 
 // 2. Quote Modal Toggle Functions
@@ -251,8 +260,21 @@ function toggleFaq(trigger) {
     }
 }
 
-// 6. Scroll Reveal Observer for Why Self Storage
+// 6. Scroll Reveal Observer & Mobile Nav Link Auto-Close
 document.addEventListener('DOMContentLoaded', () => {
+    // Auto-close mobile menu when clicking nav links
+    const navLinks = document.getElementById('navLinks');
+    if (navLinks) {
+        const links = navLinks.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 900) {
+                    closeMobileMenu();
+                }
+            });
+        });
+    }
+
     const revealOptions = {
         root: null,
         threshold: 0.12,
@@ -285,7 +307,7 @@ if (backToTopBtn) {
         } else {
             backToTopBtn.classList.remove('show');
         }
-    });
+    }, { passive: true });
 
     backToTopBtn.addEventListener('click', () => {
         window.scrollTo({
