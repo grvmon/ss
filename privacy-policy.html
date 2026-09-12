@@ -60,6 +60,12 @@
         {
           "@type": "ListItem",
           "position": 2,
+          "name": "Legal & Compliance",
+          "item": "https://selfstorageindia.com/legal/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
           "name": "Privacy Policy",
           "item": "https://selfstorageindia.com/privacy-policy/"
         }
@@ -74,9 +80,300 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
     <link rel="stylesheet" href="styles.css?v=3.6">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <style>
+        /* Executive Legal Document Layout & Typography Overrides */
+        .legal-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        .legal-header-box {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 36px 40px;
+            margin-bottom: 32px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        .legal-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #0F172A;
+            letter-spacing: -0.02em;
+            margin: 0 0 12px 0;
+            line-height: 1.25;
+        }
+
+        .legal-subtitle {
+            font-size: 1.05rem;
+            color: #475569;
+            line-height: 1.6;
+            margin: 0 0 24px 0;
+            max-width: 900px;
+        }
+
+        .legal-meta-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding-top: 20px;
+            border-top: 1px solid #F1F5F9;
+        }
+
+        .legal-meta-pills {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 0.875rem;
+            color: #64748B;
+        }
+
+        .legal-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-weight: 500;
+            color: #334155;
+        }
+
+        .legal-action-btn {
+            background: #FFFFFF;
+            border: 1px solid #CBD5E1;
+            color: #334155;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
+        }
+
+        .legal-action-btn:hover {
+            background: #F8FAFC;
+            border-color: #94A3B8;
+            color: #0F172A;
+        }
+
+        /* Two-Column Grid: Sticky Index Rail + Main Legal Doc */
+        .legal-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        @media (max-width: 991px) {
+            .legal-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+
+        /* Sticky Left Index Rail */
+        .legal-toc-rail {
+            position: sticky;
+            top: 96px;
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 24px;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+
+        .legal-toc-heading {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #64748B;
+            margin: 0 0 16px 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .legal-toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .legal-toc-list a {
+            display: block;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            color: #475569;
+            text-decoration: none;
+            line-height: 1.4;
+            transition: all 0.15s ease;
+        }
+
+        .legal-toc-list a:hover {
+            background: #F8FAFC;
+            color: #0F172A;
+        }
+
+        .legal-toc-list a.active-toc-link {
+            background: #EFF6FF;
+            color: #1D4ED8;
+            font-weight: 600;
+        }
+
+        /* Main Legal Content Column */
+        .legal-doc-body {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 40px 48px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            color: #334155;
+            font-size: 0.975rem;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 767px) {
+            .legal-doc-body {
+                padding: 24px 20px;
+            }
+            .legal-header-box {
+                padding: 24px 20px;
+            }
+            .legal-title {
+                font-size: 1.75rem;
+            }
+        }
+
+        .legal-section {
+            margin-bottom: 44px;
+            padding-bottom: 36px;
+            border-bottom: 1px solid #F1F5F9;
+        }
+
+        .legal-section:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .legal-section-num {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #2563EB;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+        }
+
+        .legal-section-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0F172A;
+            margin: 0 0 16px 0;
+            line-height: 1.35;
+        }
+
+        .legal-doc-body p {
+            margin: 0 0 16px 0;
+            color: #334155;
+        }
+
+        .legal-doc-body h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #1E293B;
+            margin: 24px 0 12px 0;
+        }
+
+        .legal-doc-body ul, .legal-doc-body ol {
+            padding-left: 24px;
+            margin: 0 0 20px 0;
+        }
+
+        .legal-doc-body li {
+            margin-bottom: 10px;
+            color: #334155;
+        }
+
+        .legal-note-box {
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-left: 3px solid #3B82F6;
+            border-radius: 6px;
+            padding: 16px 20px;
+            margin: 20px 0;
+            font-size: 0.925rem;
+            color: #334155;
+        }
+
+        .legal-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        .legal-table th {
+            background: #F8FAFC;
+            color: #0F172A;
+            font-weight: 600;
+            text-align: left;
+            padding: 12px 16px;
+            border: 1px solid #E2E8F0;
+        }
+
+        .legal-table td {
+            padding: 12px 16px;
+            border: 1px solid #E2E8F0;
+            color: #334155;
+        }
+
+        .legal-table tr:nth-child(even) td {
+            background: #FAFAFA;
+        }
+
+        /* Print Media Styles */
+        @media print {
+            .navbar, .footer, .back-to-top, #scroll-progress-bar, .legal-toc-rail, .legal-action-btn, #quote-modal, #toast {
+                display: none !important;
+            }
+            .legal-wrapper {
+                max-width: 100% !important;
+                padding: 0 !important;
+            }
+            .legal-grid {
+                display: block !important;
+            }
+            .legal-doc-body, .legal-header-box {
+                border: none !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+            }
+        }
+    </style>
 </head>
 <body class="light-theme">
-    <div id="scroll-progress-bar" style="position: fixed; top: 0; left: 0; height: 3px; background: #FF6B00; width: 0%; z-index: 2000; transition: width 0.1s ease-out;"></div>
+    <div id="scroll-progress-bar" style="position: fixed; top: 0; left: 0; height: 3px; background: #2563EB; width: 0%; z-index: 2000; transition: width 0.1s ease-out;"></div>
     
     <!-- Top Header Navigation -->
     <header class="navbar" id="navbar">
@@ -192,278 +489,279 @@
     <!-- Mobile Drawer Overlay -->
     <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileMenu()"></div>
 
-    <main class="blog-detail-container">
-        <!-- Breadcrumbs -->
-        <ol class="ssi-breadcrumb" aria-label="Breadcrumb navigation">
+    <!-- Main Legal Document Container -->
+    <main class="legal-wrapper">
+        <!-- Breadcrumb Navigation -->
+        <ol class="ssi-breadcrumb" aria-label="Breadcrumb navigation" style="margin-bottom: 20px;">
             <li><a href="index.html"><span class="material-symbols-rounded" style="font-size: 14px;">home</span> Home</a></li>
             <li class="bc-sep">/</li>
             <li class="bc-current">Privacy Policy</li>
         </ol>
 
-        <!-- Page Header -->
-        <header class="blog-header">
-            <span class="blog-category-badge"><span class="material-symbols-rounded" style="font-size: 16px;">shield</span> Data Protection &amp; Confidentiality Policy</span>
-            <h1 class="blog-title" style="font-weight: 600;">Privacy Policy</h1>
-            <p class="lead-intro" style="font-size: 1.05rem; color: #475569; max-width: 840px; margin-top: 8px;">
-                Your privacy is our priority. Discover how Self Storage India collects, processes, secures, and respects your personal data, online activities, and facility access records across Delhi NCR.
+        <!-- Executive Legal Header -->
+        <div class="legal-header-box">
+            <h1 class="legal-title">Privacy Policy</h1>
+            <p class="legal-subtitle">
+                At Self Storage India, your privacy is our priority. This Privacy Policy details how Private Storage Solutions Pvt. Ltd. collects, protects, processes, and respects your personal data, online activities, and facility access security records.
             </p>
             
-            <div class="blog-meta-row" style="margin-top: 20px; padding-bottom: 20px; border-bottom: 1px solid #E2E8F0;">
-                <div class="blog-author-info">
-                    <div style="width: 44px; height: 44px; border-radius: 50%; background: #0B3C5D; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 700;">
-                        <span class="material-symbols-rounded" style="font-size: 24px;">lock</span>
-                    </div>
-                    <div class="blog-author-text">
-                        <span class="blog-author-name" style="color: #0f172a; font-weight: 600;">Self Storage India Data Protection Desk</span>
-                        <span class="blog-publish-date">Version 4.2 • Last Updated: Sep 12, 2026 • Applies to Online &amp; NCR Operations • <span style="color: #059669; font-weight: 600;"><span class="material-symbols-rounded" style="font-size: 14px; vertical-align: middle;">verified</span> Verified Data Policy</span></span>
-                    </div>
+            <div class="legal-meta-bar">
+                <div class="legal-meta-pills">
+                    <span class="legal-pill"><span class="material-symbols-rounded" style="font-size: 16px;">shield</span> Data Protection Policy</span>
+                    <span class="legal-pill"><span class="material-symbols-rounded" style="font-size: 16px;">calendar_today</span> Last Updated: September 12, 2026</span>
+                    <span class="legal-pill"><span class="material-symbols-rounded" style="font-size: 16px;">verified</span> Version 4.2 (NCR Operations)</span>
                 </div>
 
-                <div class="blog-share-buttons">
-                    <button type="button" onclick="window.print()" class="share-btn" aria-label="Print Policy" title="Print privacy policy" style="cursor: pointer; border: 1px solid #CBD5E1; background: #FFF; padding: 6px 12px; border-radius: 6px; display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: #334155;">
-                        <span class="material-symbols-rounded" style="font-size: 18px;">print</span> Print Policy
+                <div>
+                    <button type="button" onclick="window.print()" class="legal-action-btn">
+                        <span class="material-symbols-rounded" style="font-size: 16px;">print</span> Print Policy
                     </button>
                 </div>
             </div>
-        </header>
+        </div>
 
-        <!-- Main Layout Grid -->
-        <div class="blog-layout-grid">
-            <!-- Left Column: Article Body -->
-            <article class="article-content">
-                
-                <!-- Executive Policy Summary Box -->
-                <div class="key-takeaways-box" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-left: 4px solid #0B3C5D; border-radius: 12px; padding: 24px; margin: 28px 0;">
-                    <div class="key-takeaways-title" style="color: #0F172A; font-size: 1.05rem; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-                        <span class="material-symbols-rounded" style="color: #FF6B00; font-size: 20px;">privacy_tip</span> Core Data Protection Promises
-                    </div>
-                    <ul class="key-takeaways-list" style="margin: 0; padding-left: 20px; color: #334155; line-height: 1.7; font-size: 0.95rem;">
-                        <li><strong>Zero Third-Party Data Selling:</strong> We never sell, rent, trade, or share your personal data with external telemarketers or ad brokers.</li>
-                        <li><strong>Strict Identity &amp; Access Purpose:</strong> Personal information and KYC documents are collected strictly for lease agreement compliance, billing, and facility gate security.</li>
-                        <li><strong>Encrypted Digital Storage:</strong> Digital data, account credentials, and communication logs are protected behind multi-layered encryption protocols.</li>
-                        <li><strong>Physical Facility Privacy:</strong> 24/7 CCTV surveillance footage and gate access logs are retained strictly for safety compliance and law enforcement verification.</li>
-                        <li><strong>Global Rights Compliance:</strong> Full recognition of user data rights including CCPA (California Consumer Privacy Act) and GDPR (General Data Protection Regulation).</li>
+        <!-- Document Grid -->
+        <div class="legal-grid">
+            <!-- Left Sticky Index Rail -->
+            <aside class="legal-toc-rail" aria-label="Document Sections">
+                <div class="legal-toc-heading">
+                    <span class="material-symbols-rounded" style="font-size: 18px;">format_list_bulleted</span> Document Sections
+                </div>
+                <nav>
+                    <ul class="legal-toc-list">
+                        <li><a href="#sec1" class="toc-link">1. Scope &amp; Consent</a></li>
+                        <li><a href="#sec2" class="toc-link">2. Information We Collect</a></li>
+                        <li><a href="#sec3" class="toc-link">3. How We Use Data</a></li>
+                        <li><a href="#sec4" class="toc-link">4. Server Log Files</a></li>
+                        <li><a href="#sec5" class="toc-link">5. Cookies &amp; Tracking</a></li>
+                        <li><a href="#sec6" class="toc-link">6. Third-Party Networks</a></li>
+                        <li><a href="#sec7" class="toc-link">7. CCTV &amp; Gate Security</a></li>
+                        <li><a href="#sec8" class="toc-link">8. CCPA Privacy Rights</a></li>
+                        <li><a href="#sec9" class="toc-link">9. GDPR Data Rights</a></li>
+                        <li><a href="#sec10" class="toc-link">10. Children's Information</a></li>
+                        <li><a href="#sec11" class="toc-link">11. Encryption &amp; Security</a></li>
+                        <li><a href="#sec12" class="toc-link">12. Policy Updates</a></li>
+                        <li><a href="#sec13" class="toc-link">13. Data Protection Desk</a></li>
                     </ul>
-                </div>
+                </nav>
+            </aside>
 
-                <!-- Table of Contents -->
-                <div class="toc-box">
-                    <div class="toc-title">
-                        <span class="material-symbols-rounded">format_list_bulleted</span> Table of Contents
-                    </div>
-                    <ol class="toc-list">
-                        <li><a href="#sec1">1. Introduction, Scope &amp; User Consent</a></li>
-                        <li><a href="#sec2">2. Personal Information We Collect</a></li>
-                        <li><a href="#sec3">3. How We Use Your Information</a></li>
-                        <li><a href="#sec4">4. Log Files, IP Addresses &amp; Technical Analytics</a></li>
-                        <li><a href="#sec5">5. Cookies, Web Beacons &amp; Tracking Technologies</a></li>
-                        <li><a href="#sec6">6. Third-Party Privacy Policies &amp; Ad Networks</a></li>
-                        <li><a href="#sec7">7. Physical Facility Security &amp; CCTV Data Policy</a></li>
-                        <li><a href="#sec8">8. California Consumer Privacy Act (CCPA) Rights</a></li>
-                        <li><a href="#sec9">9. General Data Protection Regulation (GDPR) Rights</a></li>
-                        <li><a href="#sec10">10. Children's Online Privacy Protection (COPPA)</a></li>
-                        <li><a href="#sec11">11. Data Security, Encryption &amp; Retention Protocols</a></li>
-                        <li><a href="#sec12">12. Updates to This Privacy Policy</a></li>
-                        <li><a href="#sec13">13. Data Protection Officer &amp; Contact Information</a></li>
-                    </ol>
-                </div>
-
-                <!-- Section 1 -->
-                <h2 id="sec1" style="font-weight: 600;">1. Introduction, Scope &amp; User Consent</h2>
-                <p>At <strong>Self Storage India</strong> (operated by Private Storage Solutions Pvt. Ltd., accessible from <a href="https://selfstorageindia.com/" style="color: #2864df; font-weight: 600;">https://selfstorageindia.com</a>), one of our main priorities is the privacy, security, and confidentiality of our visitors, customers, and corporate partners. This Privacy Policy document outlines the types of information collected, recorded, and processed by Self Storage India and how we utilize it.</p>
-                <p>This Privacy Policy applies to our online activities and is valid for visitors to our website with regard to the information that they shared and/or collected in Self Storage India. This policy is also applicable to operational personal data provided during space rental onboarding, facility entry, and customer support interactions across our Delhi NCR facilities (Gurugram, Delhi Dwarka, Noida).</p>
+            <!-- Main Text Column -->
+            <article class="legal-doc-body">
                 
-                <!-- Callout Box -->
-                <div style="background: #EFF6FF; border: 1px solid #BFDBFE; border-left: 4px solid #2563EB; border-radius: 8px; padding: 18px; margin: 24px 0;">
-                    <div style="display: flex; align-items: center; gap: 8px; font-weight: 700; color: #1E40AF; margin-bottom: 6px;">
-                        <span class="material-symbols-rounded">check_circle</span> Formal Consent Statement
-                    </div>
-                    <p style="margin: 0; font-size: 0.925rem; color: #1E3A8A; line-height: 1.6;">
-                        By using our website, requesting a storage quote, submitting an inquiry, or executing a lease agreement with Self Storage India, you hereby consent to our Privacy Policy and agree to its terms and conditions.
+                <!-- Section 1 -->
+                <section id="sec1" class="legal-section">
+                    <span class="legal-section-num">Section 1</span>
+                    <h2 class="legal-section-title">Introduction, Scope &amp; User Consent</h2>
+                    <p>
+                        At <strong>Self Storage India</strong> (operated by Private Storage Solutions Pvt. Ltd., accessible from <a href="https://selfstorageindia.com/" style="color: #2563EB; font-weight: 600;">https://selfstorageindia.com</a>), one of our main priorities is the privacy, security, and confidentiality of our visitors, customers, and corporate partners. This Privacy Policy document outlines the types of information collected, recorded, and processed by Self Storage India and how we utilize it.
                     </p>
-                </div>
+                    <p>
+                        This policy applies to our online activities and is valid for visitors to our website with regard to information shared and/or collected on Self Storage India. This policy also governs operational personal data collected during space rental onboarding, gate security checks, and customer support across our Delhi NCR facilities (Gurugram, Delhi Dwarka, Noida).
+                    </p>
+
+                    <div class="legal-note-box">
+                        <strong>Formal User Consent:</strong> By accessing our website, requesting a storage estimate, submitting an inquiry, or executing a lease agreement with Self Storage India, you hereby consent to our Privacy Policy and agree to its terms and conditions.
+                    </div>
+                </section>
 
                 <!-- Section 2 -->
-                <h2 id="sec2" style="font-weight: 600;">2. Personal Information We Collect</h2>
-                <p>The personal information that you are asked to provide, and the explicit reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your information:</p>
-
-                <h3 style="font-weight: 600; font-size: 1.15rem; color: #0f172a; margin-top: 20px;">Categories of Data Collected</h3>
-                <ul style="padding-left: 20px; line-height: 1.7; color: #334155;">
-                    <li><strong>Direct Inquiries &amp; Communications:</strong> If you contact us directly via phone, email, contact forms, or live chat, we may receive additional information about you such as your name, email address, phone number, city, the contents of your message, attached inventory files, and any other information you choose to provide.</li>
-                    <li><strong>Account &amp; Lease Registration Info:</strong> When you register for a storage account or sign a rental lease, we ask for contact and identity details including your full legal name, company name, residential address, business address, email address, mobile number, and alternate emergency contacts.</li>
-                    <li><strong>KYC &amp; Legal Verification Documents:</strong> For lease agreement compliance and security gate authorization, we collect government-issued identification (Aadhaar Card, Passport, PAN Card, Voter ID) and corporate incorporation documents (GSTIN certificate, Certificate of Incorporation).</li>
-                    <li><strong>Billing &amp; Payment Records:</strong> Transaction details, bank transfer records, billing addresses, and payment confirmation IDs. Note: Full credit card numbers or UPI PINs are processed via PCI-DSS compliant banking gateways and are never stored on our servers.</li>
-                </ul>
+                <section id="sec2" class="legal-section">
+                    <span class="legal-section-num">Section 2</span>
+                    <h2 class="legal-section-title">Personal Information We Collect</h2>
+                    <p>
+                        The personal information you are asked to provide, and the explicit reasons why you are asked to provide it, are made clear at the point of collection:
+                    </p>
+                    <ul>
+                        <li><strong>Direct Inquiries &amp; Communications:</strong> When you contact us directly via phone, email, web forms, or live chat, we receive information such as your name, email address, phone number, location, message contents, attached inventory files, and any other details you choose to provide.</li>
+                        <li><strong>Account &amp; Lease Registration Info:</strong> When you register for a storage unit or sign a rental agreement, we collect contact details including your legal name, company name, residential address, business address, email address, mobile number, and emergency contacts.</li>
+                        <li><strong>KYC Verification Documents:</strong> For lease agreement compliance and gate authorization, we collect government-issued identity proof (Aadhaar Card, Passport, PAN Card, Voter ID) and corporate incorporation documents (GSTIN Certificate, Certificate of Incorporation).</li>
+                        <li><strong>Billing &amp; Financial Records:</strong> Transaction details, bank transfer records, billing addresses, and payment IDs. Note: Credit card numbers or UPI PINs are processed via PCI-DSS compliant banking gateways and are never stored on our servers.</li>
+                    </ul>
+                </section>
 
                 <!-- Section 3 -->
-                <h2 id="sec3" style="font-weight: 600;">3. How We Use Your Information</h2>
-                <p>Self Storage India uses the collected information in various lawful ways to deliver high-quality storage services, including to:</p>
+                <section id="sec3" class="legal-section">
+                    <span class="legal-section-num">Section 3</span>
+                    <h2 class="legal-section-title">How We Use Your Information</h2>
+                    <p>
+                        Self Storage India processes collected information in compliance with Indian data privacy standards for legitimate operational purposes:
+                    </p>
 
-                <div class="article-table-wrapper" style="margin: 20px 0;">
-                    <table class="article-table" style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                    <table class="legal-table">
                         <thead>
-                            <tr style="background: #0B3C5D; color: #FFFFFF; text-align: left;">
-                                <th style="padding: 12px 16px; font-weight: 600;">Purpose of Data Processing</th>
-                                <th style="padding: 12px 16px; font-weight: 600;">Operational Activity &amp; Description</th>
+                            <tr>
+                                <th>Purpose of Processing</th>
+                                <th>Operational Description</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr style="border-bottom: 1px solid #E2E8F0;">
-                                <td style="padding: 12px 16px;"><strong>Service Provision &amp; Booking</strong></td>
-                                <td style="padding: 12px 16px;">Provide, operate, manage, and maintain our self-storage rooms, lockers, box storage, and warehouse facility operations.</td>
+                            <tr>
+                                <td><strong>Service Delivery &amp; Management</strong></td>
+                                <td>Operate, manage, and maintain our self-storage rooms, lockers, box storage, and warehouse facility infrastructure.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid #E2E8F0; background: #F8FAFC;">
-                                <td style="padding: 12px 16px;"><strong>Customer Communication &amp; Support</strong></td>
-                                <td style="padding: 12px 16px;">Communicate with you directly or through customer support advisors for billing, service updates, rental reminders, and quote requests.</td>
+                            <tr>
+                                <td><strong>Customer Support &amp; Billing</strong></td>
+                                <td>Communicate directly or through support representatives for invoice delivery, payment reminders, service updates, and quote requests.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid #E2E8F0;">
-                                <td style="padding: 12px 16px;"><strong>Identity Verification &amp; Security</strong></td>
-                                <td style="padding: 12px 16px;">Verify customer identity (KYC), authorize facility entrance cards, manage nominated representatives, and prevent unauthorized unit access.</td>
+                            <tr>
+                                <td><strong>KYC &amp; Facility Gate Security</strong></td>
+                                <td>Verify customer identity, authorize access cards, manage designated nominees, and prevent unauthorized unit entry.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid #E2E8F0; background: #F8FAFC;">
-                                <td style="padding: 12px 16px;"><strong>Website Optimization &amp; Analytics</strong></td>
-                                <td style="padding: 12px 16px;">Analyze site traffic trends, understand user navigation patterns, and improve digital storage calculators and room selection tools.</td>
+                            <tr>
+                                <td><strong>Digital Optimization &amp; Analytics</strong></td>
+                                <td>Analyze website navigation trends, evaluate storage calculator usage, and improve digital customer interfaces.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid #E2E8F0;">
-                                <td style="padding: 12px 16px;"><strong>Fraud Prevention &amp; Legal Compliance</strong></td>
-                                <td style="padding: 12px 16px;">Detect and prevent fraudulent activities, financial irregularities, security breaches, and fulfill statutory accounting and police audit requirements.</td>
+                            <tr>
+                                <td><strong>Fraud Prevention &amp; Legal Compliance</strong></td>
+                                <td>Detect and prevent fraudulent transactions, unauthorized access attempt, and fulfill statutory tax and police audit duties.</td>
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                </section>
 
                 <!-- Section 4 -->
-                <h2 id="sec4" style="font-weight: 600;">4. Log Files, IP Addresses &amp; Technical Analytics</h2>
-                <p>Self Storage India follows a standard procedure of using web server log files. These files log visitors when they visit websites. All professional web hosting services perform this as part of infrastructure management and hosting analytics.</p>
-                <p>The information collected by log files includes Internet Protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and the number of clicks. <strong>These details are not linked to any information that is personally identifiable.</strong> The purpose of this information is strictly for analyzing web performance, administering the site, tracking user movement on the website, and gathering broad demographic insight.</p>
+                <section id="sec4" class="legal-section">
+                    <span class="legal-section-num">Section 4</span>
+                    <h2 class="legal-section-title">Log Files, IP Addresses &amp; Technical Analytics</h2>
+                    <p>
+                        Self Storage India follows a standard procedure of using server log files. These files log visitors when they visit websites. All hosting companies perform this as part of infrastructure management and analytics.
+                    </p>
+                    <p>
+                        The information collected by log files includes Internet Protocol (IP) addresses, browser type, Internet Service Provider (ISP), date/time stamp, referring/exit pages, and click counts. <strong>These details are not linked to any personally identifiable information.</strong> The purpose of this data is strictly for analyzing technical trends, site administration, and gathering broad demographic insights.
+                    </p>
+                </section>
 
                 <!-- Section 5 -->
-                <h2 id="sec5" style="font-weight: 600;">5. Cookies, Web Beacons &amp; Tracking Technologies</h2>
-                <p>Like almost all modern websites, Self Storage India uses 'cookies'. Cookies are small text files stored on your browser to record user preferences, optimize session performance, and customize webpage content based on visitor browser type and browsing history.</p>
+                <section id="sec5" class="legal-section">
+                    <span class="legal-section-num">Section 5</span>
+                    <h2 class="legal-section-title">Cookies, Web Beacons &amp; Tracking Technologies</h2>
+                    <p>
+                        Like almost all modern web applications, Self Storage India uses 'cookies'. Cookies are small data files stored on your device to record visitor preferences, optimize session responsiveness, and personalize webpage content based on browser type.
+                    </p>
 
-                <h3 style="font-weight: 600; font-size: 1.15rem; color: #0f172a; margin-top: 20px;">Types of Cookies Used</h3>
-                <ul style="padding-left: 20px; line-height: 1.7; color: #334155;">
-                    <li><strong>Essential Functional Cookies:</strong> Required for site navigation, quote calculator calculations, modal form submissions, and secure session management.</li>
-                    <li><strong>Performance &amp; Analytics Cookies:</strong> Web analytics tools (such as Google Analytics / GTM) collect aggregated, anonymous data to measure visitor engagement and site performance.</li>
-                    <li><strong>Advertising &amp; Remarketing Cookies:</strong> Third-party ad networks (such as Google Ads, Meta Pixel) may place cookies to measure ad campaign effectiveness and serve relevant storage solutions when you visit other websites.</li>
-                </ul>
+                    <h4>Types of Cookies Used</h4>
+                    <ul>
+                        <li><strong>Essential Functional Cookies:</strong> Necessary for website navigation, calculator operations, quote form submissions, and secure session state.</li>
+                        <li><strong>Analytics &amp; Performance Cookies:</strong> Aggregated, non-identifiable traffic measurement via tools such as Google Analytics and Google Tag Manager.</li>
+                        <li><strong>Advertising &amp; Remarketing Cookies:</strong> Third-party ad networks (Google Ads, Meta Pixel) place cookies to evaluate ad performance and display relevant storage options across web networks.</li>
+                    </ul>
 
-                <p>You can choose to disable or selectively turn off cookies through your individual browser settings (Chrome, Safari, Firefox, Edge). Detailed information about cookie management with specific web browsers can be found on their respective official websites.</p>
+                    <p>
+                        You may choose to disable cookies through your individual browser options. Instructions for managing cookies on specific web browsers can be found on their respective official websites.
+                    </p>
+                </section>
 
                 <!-- Section 6 -->
-                <h2 id="sec6" style="font-weight: 600;">6. Third-Party Privacy Policies &amp; Ad Networks</h2>
-                <p>Self Storage India’s Privacy Policy does not apply to external websites, third-party advertisers, or linked platforms. Thus, we strongly advise you to consult the respective Privacy Policies of these third-party services for detailed information regarding their data practices and opt-out instructions.</p>
-                <p>Third-party ad servers or ad networks use technologies like cookies, JavaScript, or Web Beacons in their respective advertisements that appear on Self Storage India, which are sent directly to users' browsers. They automatically receive your IP address when this occurs. Self Storage India has no access to or control over cookies used by third-party advertisers.</p>
+                <section id="sec6" class="legal-section">
+                    <span class="legal-section-num">Section 6</span>
+                    <h2 class="legal-section-title">Third-Party Privacy Policies &amp; Ad Networks</h2>
+                    <p>
+                        Self Storage India’s Privacy Policy does not apply to external websites, advertisers, or third-party links. We advise you to consult the respective Privacy Policies of these third-party ad servers for detailed information regarding their data practices and opt-out instructions.
+                    </p>
+                    <p>
+                        Third-party ad servers or networks use technologies like cookies, JavaScript, or Web Beacons in their advertisements on Self Storage India, which are sent directly to users' browsers. They automatically receive your IP address when this occurs. Self Storage India has no access to or control over cookies utilized by third-party advertisers.
+                    </p>
+                </section>
 
                 <!-- Section 7 -->
-                <h2 id="sec7" style="font-weight: 600;">7. Physical Facility Security &amp; CCTV Data Policy</h2>
-                <p>In addition to digital privacy, Self Storage India maintains strict physical data and security management rules across all storage facilities in Gurugram, Delhi Dwarka, and Noida:</p>
-                <ul style="padding-left: 20px; line-height: 1.7; color: #334155;">
-                    <li><strong>24/7 CCTV Recording:</strong> Common hallways, loading bays, entry gates, and building perimeters are continuously recorded by high-definition CCTV security cameras for safety and loss prevention.</li>
-                    <li><strong>Video Footage Confidentiality:</strong> CCTV footage is stored securely on encrypted physical servers. Video logs are never published or shared with third parties, except when requested by statutory law enforcement agencies, police audits, or formal court orders.</li>
-                    <li><strong>Visitor &amp; Vehicle Access Logs:</strong> Gate logbooks and digital visitor management systems capture visitor names, contact numbers, vehicle registration numbers, and entry/exit timestamps to safeguard facility integrity.</li>
-                </ul>
+                <section id="sec7" class="legal-section">
+                    <span class="legal-section-num">Section 7</span>
+                    <h2 class="legal-section-title">Physical Facility Security &amp; CCTV Data Policy</h2>
+                    <p>
+                        In addition to digital security, Self Storage India maintains strict physical data and security management protocols across all NCR facilities:
+                    </p>
+                    <ul>
+                        <li><strong>24/7 High-Definition CCTV Recording:</strong> Common hallways, loading bays, perimeter gates, and elevators are continuously monitored and recorded for loss prevention and safety.</li>
+                        <li><strong>CCTV Video Confidentiality:</strong> Footage is stored on secure encrypted physical recorders. Video logs are never published or shared with third parties, except upon formal demand by statutory law enforcement agencies, police investigations, or court orders.</li>
+                        <li><strong>Gate Access &amp; Visitor Registers:</strong> Digital gate logs capture visitor names, mobile numbers, vehicle numbers, and entry/exit timestamps to protect stored belongings.</li>
+                    </ul>
+                </section>
 
                 <!-- Section 8 -->
-                <h2 id="sec8" style="font-weight: 600;">8. California Consumer Privacy Act (CCPA) Rights</h2>
-                <p>Under the California Consumer Privacy Act (CCPA), among other rights, California consumers have the right to request that a business that collects a consumer's personal data disclose the categories and specific pieces of personal data collected, request deletion of personal data, and request that personal data not be sold.</p>
-
-                <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-left: 4px solid #FF6B00; border-radius: 8px; padding: 18px; margin: 20px 0;">
-                    <div style="font-weight: 700; color: #0F172A; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
-                        <span class="material-symbols-rounded" style="color: #FF6B00;">do_not_distribute</span> CCPA Notice: We Do Not Sell Personal Data
-                    </div>
-                    <p style="margin: 0; font-size: 0.925rem; color: #334155; line-height: 1.6;">
-                        Self Storage India does not sell personal data to third parties. If you submit a CCPA data request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.
+                <section id="sec8" class="legal-section">
+                    <span class="legal-section-num">Section 8</span>
+                    <h2 class="legal-section-title">California Consumer Privacy Act (CCPA) Rights</h2>
+                    <p>
+                        Under the California Consumer Privacy Act (CCPA), among other rights, California consumers have the right to request that a business disclose the categories and specific pieces of personal data collected, request deletion of personal data, and request that personal data not be sold.
                     </p>
-                </div>
+
+                    <div class="legal-note-box">
+                        <strong>Zero Data Selling Commitment:</strong> Self Storage India does not sell, rent, or trade personal data to third parties. If you submit a CCPA request, we have one month to respond to you.
+                    </div>
+                </section>
 
                 <!-- Section 9 -->
-                <h2 id="sec9" style="font-weight: 600;">9. General Data Protection Regulation (GDPR) Rights</h2>
-                <p>We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following rights under GDPR standards:</p>
-                <ul style="padding-left: 20px; line-height: 1.7; color: #334155;">
-                    <li><strong>The Right to Access:</strong> You have the right to request copies of your personal data. We may charge a nominal administrative fee for this service if requests are repetitive.</li>
-                    <li><strong>The Right to Rectification:</strong> You have the right to request that we correct any information you believe is inaccurate or complete information you believe is incomplete.</li>
-                    <li><strong>The Right to Erasure:</strong> You have the right to request that we erase your personal data under certain conditions, provided statutory tax and legal lease retention periods have elapsed.</li>
-                    <li><strong>The Right to Restrict Processing:</strong> You have the right to request that we restrict the processing of your personal data under certain conditions.</li>
-                    <li><strong>The Right to Object to Processing:</strong> You have the right to object to our processing of your personal data under certain conditions.</li>
-                    <li><strong>The Right to Data Portability:</strong> You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.</li>
-                </ul>
-                <p>If you make a formal request, we have <strong>one (1) month</strong> to respond to you. If you would like to exercise any of these rights, please contact our Data Protection Officer.</p>
+                <section id="sec9" class="legal-section">
+                    <span class="legal-section-num">Section 9</span>
+                    <h2 class="legal-section-title">General Data Protection Regulation (GDPR) Rights</h2>
+                    <p>
+                        Every user is entitled to the following data protection rights under GDPR standards:
+                    </p>
+                    <ul>
+                        <li><strong>The Right to Access:</strong> Request copies of your personal data. A small administrative fee may apply for repeated requests.</li>
+                        <li><strong>The Right to Rectification:</strong> Request correction of inaccurate information or completion of incomplete records.</li>
+                        <li><strong>The Right to Erasure:</strong> Request erasure of personal data under certain conditions, subject to statutory tax and legal lease retention laws.</li>
+                        <li><strong>The Right to Restrict Processing:</strong> Request restriction of personal data processing under specified conditions.</li>
+                        <li><strong>The Right to Object to Processing:</strong> Object to processing of your personal data under specified conditions.</li>
+                        <li><strong>The Right to Data Portability:</strong> Request transfer of collected data to another organization or directly to you.</li>
+                    </ul>
+                    <p>
+                        If you make a formal data request, we have <strong>one (1) month</strong> to respond.
+                    </p>
+                </section>
 
                 <!-- Section 10 -->
-                <h2 id="sec10" style="font-weight: 600;">10. Children's Online Privacy Protection (COPPA)</h2>
-                <p>Another key priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their children's online activity.</p>
-                <p><strong>Self Storage India does not knowingly collect any Personally Identifiable Information from children under the age of 13.</strong> If you believe that your child has provided this kind of information on our website, we strongly encourage you to contact us immediately, and we will make our best efforts to promptly remove such information from our records.</p>
+                <section id="sec10" class="legal-section">
+                    <span class="legal-section-num">Section 10</span>
+                    <h2 class="legal-section-title">Children's Online Privacy Protection (COPPA)</h2>
+                    <p>
+                        Protecting children online is an important priority. We encourage parents and guardians to monitor and guide their online activity.
+                    </p>
+                    <p>
+                        <strong>Self Storage India does not knowingly collect any Personally Identifiable Information from children under the age of 13.</strong> If you believe your child has provided such information on our website, please contact us immediately, and we will promptly purge such data from our records.
+                    </p>
+                </section>
 
                 <!-- Section 11 -->
-                <h2 id="sec11" style="font-weight: 600;">11. Data Security, Encryption &amp; Retention Protocols</h2>
-                <p>To safeguard your personal information against accidental loss, unauthorized access, alteration, or disclosure, Self Storage India enforces administrative, technical, and physical security measures:</p>
-                <ul style="padding-left: 20px; line-height: 1.7; color: #334155;">
-                    <li><strong>TLS/SSL Encryption:</strong> All data transmissions over our website are encrypted using standard Transport Layer Security (TLS/SSL) technology.</li>
-                    <li><strong>Restricted Staff Access:</strong> Access to customer KYC records, contract documents, and account databases is strictly restricted to authorized staff members on a need-to-know basis.</li>
-                    <li><strong>Data Retention Period:</strong> We retain personal data for as long as your storage lease account remains active, and subsequently for the statutory retention periods prescribed under Indian tax, corporate, and contract law.</li>
-                </ul>
+                <section id="sec11" class="legal-section">
+                    <span class="legal-section-num">Section 11</span>
+                    <h2 class="legal-section-title">Encryption, Data Security &amp; Retention Standards</h2>
+                    <p>
+                        Self Storage India implements administrative, technical, and physical security measures to protect your personal data:
+                    </p>
+                    <ul>
+                        <li><strong>TLS/SSL Encryption:</strong> All data transmissions over our website are encrypted using industry-standard TLS/SSL protocols.</li>
+                        <li><strong>Restricted Staff Access:</strong> Access to customer KYC records, lease agreements, and account databases is strictly limited to authorized personnel on a need-to-know basis.</li>
+                        <li><strong>Data Retention Duration:</strong> Data is retained for the duration of active account occupancy, and thereafter for statutory periods prescribed by Indian corporate, tax, and contract regulations.</li>
+                    </ul>
+                </section>
 
                 <!-- Section 12 -->
-                <h2 id="sec12" style="font-weight: 600;">12. Updates to This Privacy Policy</h2>
-                <p>Self Storage India reserves the right to update or modify this Privacy Policy at any time to reflect operational changes, legal updates, or service enhancements. When changes are made, the revised policy will be posted on this page with an updated "Last Updated" date at the top of the page. We encourage visitors to review this policy periodically.</p>
+                <section id="sec12" class="legal-section">
+                    <span class="legal-section-num">Section 12</span>
+                    <h2 class="legal-section-title">Updates to This Privacy Policy</h2>
+                    <p>
+                        Self Storage India reserves the right to update or modify this Privacy Policy at any time to reflect operational changes, technical enhancements, or legal requirements. Updated versions will be published on this page with a revised "Last Updated" date.
+                    </p>
+                </section>
 
                 <!-- Section 13 -->
-                <h2 id="sec13" style="font-weight: 600;">13. Data Protection Officer &amp; Contact Information</h2>
-                <p>If you have additional questions, require more information about our Privacy Policy, or wish to exercise your data protection rights, please contact our Data Protection Officer:</p>
-
-                <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; margin: 28px 0;">
-                    <div style="font-weight: 700; font-size: 1.1rem; color: #0B3C5D; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-                        <span class="material-symbols-rounded">admin_panel_settings</span> Data Protection Desk Contact Details
+                <section id="sec13" class="legal-section">
+                    <span class="legal-section-num">Section 13</span>
+                    <h2 class="legal-section-title">Data Protection Officer &amp; Contact Desk</h2>
+                    <p>
+                        If you have questions regarding this Privacy Policy or wish to exercise your data protection rights, please contact our Compliance Officer:
+                    </p>
+                    <div class="legal-note-box" style="border-left-color: #0F172A;">
+                        <p style="margin: 0 0 6px 0;"><strong>Corporate Entity:</strong> Private Storage Solutions Pvt. Ltd. (Self Storage India)</p>
+                        <p style="margin: 0 0 6px 0;"><strong>Registered Head Office:</strong> Plot No. 34, Sector 34, Gurugram, Haryana 122001, India</p>
+                        <p style="margin: 0 0 6px 0;"><strong>Privacy Email:</strong> <a href="mailto:support@selfstorageindia.com" style="color: #2563EB; font-weight: 600;">support@selfstorageindia.com</a> / <a href="mailto:info@selfstorageindia.com" style="color: #2563EB; font-weight: 600;">info@selfstorageindia.com</a></p>
+                        <p style="margin: 0;"><strong>Helpline Phone:</strong> <a href="tel:+919090206090" style="color: #0F172A; font-weight: 600;">+91-9090206090</a> (Mon–Sat, 9:00 AM – 7:00 PM IST)</p>
                     </div>
-                    <p style="margin: 0 0 8px 0; color: #334155; font-size: 0.95rem;"><strong>Entity:</strong> Private Storage Solutions Pvt. Ltd. (Self Storage India)</p>
-                    <p style="margin: 0 0 8px 0; color: #334155; font-size: 0.95rem;"><strong>Registered Head Office:</strong> Plot No. 34, Sector 34, Gurugram, Haryana 122001, India</p>
-                    <p style="margin: 0 0 8px 0; color: #334155; font-size: 0.95rem;"><strong>Privacy &amp; Data Email:</strong> <a href="mailto:support@selfstorageindia.com" style="color: #2864df; font-weight: 600;">support@selfstorageindia.com</a> / <a href="mailto:info@selfstorageindia.com" style="color: #2864df; font-weight: 600;">info@selfstorageindia.com</a></p>
-                    <p style="margin: 0; color: #334155; font-size: 0.95rem;"><strong>Helpline Phone:</strong> <a href="tel:+919090206090" style="color: #0B3C5D; font-weight: 600;">+91-9090206090</a> (Mon-Sat, 9:00 AM - 7:00 PM IST)</p>
-                </div>
-
-                <!-- Call to Action Banner -->
-                <div class="in-article-cta" style="margin-top: 40px;">
-                    <h3>Questions About Your Data &amp; Security?</h3>
-                    <p>Our dedicated storage advisors are available to guide you through space options, lease terms, and facility security measures.</p>
-                    <button class="btn btn-accent" onclick="openQuoteModal()" style="height: 48px; padding: 0 28px; font-weight: 600;">Contact Storage Specialist</button>
-                </div>
+                </section>
 
             </article>
-
-            <!-- Right Column: Sticky Sidebar -->
-            <aside class="blog-sidebar">
-                <div class="sticky-sidebar-card" style="position: sticky; top: 100px; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);">
-                    <h3 style="font-size: 1.1rem; font-weight: 700; color: #0B3C5D; margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
-                        <span class="material-symbols-rounded" style="color: #FF6B00;">toc</span> Policy Navigation
-                    </h3>
-                    
-                    <nav class="sidebar-nav">
-                        <ul class="toc-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem;">
-                            <li><a href="#sec1" style="color: #475569; text-decoration: none;">1. Introduction &amp; Consent</a></li>
-                            <li><a href="#sec2" style="color: #475569; text-decoration: none;">2. Information We Collect</a></li>
-                            <li><a href="#sec3" style="color: #475569; text-decoration: none;">3. How We Use Data</a></li>
-                            <li><a href="#sec4" style="color: #475569; text-decoration: none;">4. Log Files &amp; Analytics</a></li>
-                            <li><a href="#sec5" style="color: #475569; text-decoration: none;">5. Cookies &amp; Tracking</a></li>
-                            <li><a href="#sec6" style="color: #475569; text-decoration: none;">6. Third-Party Policies</a></li>
-                            <li><a href="#sec7" style="color: #475569; text-decoration: none;">7. CCTV &amp; Facility Security</a></li>
-                            <li><a href="#sec8" style="color: #475569; text-decoration: none;">8. CCPA Privacy Rights</a></li>
-                            <li><a href="#sec9" style="color: #475569; text-decoration: none;">9. GDPR Data Rights</a></li>
-                            <li><a href="#sec10" style="color: #475569; text-decoration: none;">10. Children's Information</a></li>
-                            <li><a href="#sec11" style="color: #475569; text-decoration: none;">11. Data Security &amp; SSL</a></li>
-                            <li><a href="#sec12" style="color: #475569; text-decoration: none;">12. Policy Updates</a></li>
-                            <li><a href="#sec13" style="color: #475569; text-decoration: none;">13. Contact Officer</a></li>
-                        </ul>
-                    </nav>
-
-                    <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #E2E8F0; text-align: center;">
-                        <span style="font-size: 0.85rem; color: #64748B; display: block; margin-bottom: 12px;">Have privacy or legal queries?</span>
-                        <a href="tel:+919090206090" class="btn btn-outline full-width" style="display: flex; align-items: center; justify-content: center; gap: 6px; height: 44px; font-size: 0.9rem; text-decoration: none; border-color: #0B3C5D; color: #0B3C5D; border-radius: 8px; font-weight: 600;">
-                            <span class="material-symbols-rounded" style="font-size: 18px;">call</span> Speak to Advisor
-                        </a>
-                    </div>
-                </div>
-            </aside>
         </div>
     </main>
 
@@ -503,7 +801,7 @@
 
             <div class="footer-logos">
                 <a href="index.html" class="footer-logo footer-logo-primary">
-                    <img src="https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo-300x63.png" alt="Self Storage India Logo - Private Lockable Storage Rooms & Warehouses" loading="lazy" decoding="async" width="240" height="50">
+                    <img src="https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo-300x63.png" alt="Self Storage India Logo - Private Lockable Storage Rooms &amp; Warehouses" loading="lazy" decoding="async" width="240" height="50">
                 </a>
 
                 <a href="index.html" class="footer-logo footer-logo-warehouse">
@@ -519,7 +817,6 @@
                 Copyright – ©2026, SelfStorage India, All Rights Reserved.
             </p>
         </div>
-
     </footer>
 
     <!-- Quote Modal -->
@@ -576,25 +873,24 @@
     });
 
     document.addEventListener('DOMContentLoaded', () => {
+        const links = document.querySelectorAll('.legal-toc-list .toc-link');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const id = entry.target.getAttribute('id');
                     if (!id) return;
-                    document.querySelectorAll('.toc-list a, .sidebar-nav a').forEach(link => {
+                    links.forEach(link => {
                         if (link.getAttribute('href') === '#' + id) {
-                            link.style.fontWeight = '700';
-                            link.style.color = '#FF6B00';
+                            link.classList.add('active-toc-link');
                         } else {
-                            link.style.fontWeight = '400';
-                            link.style.color = '#475569';
+                            link.classList.remove('active-toc-link');
                         }
                     });
                 }
             });
         }, { rootMargin: '-20% 0px -70% 0px' });
 
-        document.querySelectorAll('article h2[id]').forEach(h2 => observer.observe(h2));
+        document.querySelectorAll('.legal-doc-body .legal-section[id]').forEach(section => observer.observe(section));
     });
     </script>
 </body>
