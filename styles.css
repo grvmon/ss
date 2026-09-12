@@ -1005,6 +1005,7 @@ h3 {
     align-items: center;
 }
 
+.section-header-centered h1,
 .section-header-centered h2 {
     font-size: clamp(1.3rem, 2vw, 1.7rem);
     font-weight: 600;
