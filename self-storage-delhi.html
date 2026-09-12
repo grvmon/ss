@@ -827,6 +827,8 @@
         </div>
     </header>
 
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileMenu()"></div>
+
   <!-- Redesigned "Self Storage in Delhi" Section -->
   <section class="ssi-delhi-section" id="delhi-info">
     <div class="ssi-delhi-container">
@@ -1184,64 +1186,43 @@
       </div>
   </footer>
 
-  <script>
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navigation = document.querySelector(".main-navigation");
+    <!-- Quote Modal -->
+    <div id="quote-modal" class="modal-overlay" onclick="closeQuoteModal(event)">
+        <div class="modal-card shadow-lg" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2>Calculate Storage Needs</h2>
+                <button class="modal-close" onclick="closeQuoteModal()"><span class="material-symbols-rounded">close</span></button>
+            </div>
+            <form class="modal-form" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="user-name">Full Name</label>
+                    <input type="text" id="user-name" required placeholder="Aarav Sharma">
+                </div>
+                <div class="form-group">
+                    <label for="user-phone">Phone Number</label>
+                    <input type="tel" id="user-phone" required placeholder="+91 98765 43210">
+                </div>
+                <div class="form-group">
+                    <label for="storage-size">Est. Storage Needs</label>
+                    <select id="storage-size">
+                        <option>Locker (Small items, files)</option>
+                        <option>Small Room (1BHK furniture)</option>
+                        <option>Medium Room (2BHK furniture)</option>
+                        <option>Large Room (3BHK+ / Business stock)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-accent full-width" style="height: 52px; font-size: 0.95rem;">Calculate Estimate</button>
+            </form>
+        </div>
+    </div>
 
-    menuToggle.addEventListener("click", function () {
-      const isOpen = navigation.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", isOpen);
-    });
+    <!-- Success Toast -->
+    <div id="toast" class="toast">Thank you! Our friendly space expert will call you shortly.</div>
 
-    // Locations Dropdown click handling
-    const dropdownTrigger = document.querySelector(".dropdown-trigger");
-    const dropdownMenu = document.querySelector(".dropdown-menu");
-    if (dropdownTrigger && dropdownMenu) {
-      dropdownTrigger.addEventListener("click", function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        const isVisible = dropdownMenu.classList.contains("show");
-        if (isVisible) {
-          dropdownMenu.classList.remove("show");
-          dropdownMenu.style.display = "none";
-        } else {
-          dropdownMenu.classList.add("show");
-          dropdownMenu.style.display = "block";
-        }
-      });
+    <button class="back-to-top" type="button" aria-label="Back to top" id="backToTopBtn">
+        <span class="material-symbols-rounded" aria-hidden="true">keyboard_arrow_up</span>
+    </button>
 
-      document.addEventListener("click", function (e) {
-        if (!dropdownTrigger.contains(e.target) && !dropdownMenu.contains(e.target)) {
-          dropdownMenu.classList.remove("show");
-          dropdownMenu.style.display = "";
-        }
-      });
-    }
-
-    // Offerings Dropdown click handling
-    const offeringsTrigger = document.querySelector(".dropdown-trigger-offerings");
-    const offeringsMenu = document.querySelector(".dropdown-menu-offerings");
-    if (offeringsTrigger && offeringsMenu) {
-      offeringsTrigger.addEventListener("click", function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        const isVisible = offeringsMenu.classList.contains("show");
-        if (isVisible) {
-          offeringsMenu.classList.remove("show");
-          offeringsMenu.style.display = "none";
-        } else {
-          offeringsMenu.classList.add("show");
-          offeringsMenu.style.display = "block";
-        }
-      });
-
-      document.addEventListener("click", function (e) {
-        if (!offeringsTrigger.contains(e.target) && !offeringsMenu.contains(e.target)) {
-          offeringsMenu.classList.remove("show");
-          offeringsMenu.style.display = "";
-        }
-      });
-    }
-  </script>
+    <script src="app.js"></script>
 </body>
 </html>
