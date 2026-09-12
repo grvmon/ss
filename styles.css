@@ -1023,6 +1023,33 @@ h3 {
     color: var(--text-secondary) !important;
 }
 
+/* Location Header Badges Single Row */
+.loc-badges-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px 12px;
+    margin-top: 16px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.loc-badge-pill {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #1e293b;
+    padding: 5px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    white-space: nowrap;
+}
+
 /* When Self Storage Makes Sense Section */
 .sense-section {
     padding: var(--space-section) 0;
