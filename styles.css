@@ -5312,7 +5312,7 @@ h3 {
 
 .ssi-delhi-section {
   background-color: var(--ssi-delhi-light);
-  padding: 24px 24px 36px 24px; 
+  padding: 100px 24px 36px 24px; 
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -5644,7 +5644,7 @@ h3 {
 
 @media (max-width: 991px) {
   .ssi-delhi-section {
-    padding: 30px 18px 45px 18px;
+    padding: 90px 18px 45px 18px;
   }
 
   .ssi-delhi-title {
