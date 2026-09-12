@@ -229,14 +229,14 @@ function blurLocCard(locKey) {
 function toggleFaq(trigger) {
     const item = trigger.parentElement;
     const content = trigger.nextElementSibling;
-    const arrow = trigger.querySelector('.accordion-arrow');
 
     // Close other items
-    const allItems = document.querySelectorAll('.faq-accordion-item');
+    const allItems = document.querySelectorAll('.faq-accordion-item, .faq-item');
     allItems.forEach(otherItem => {
         if (otherItem !== item && otherItem.classList.contains('active')) {
             otherItem.classList.remove('active');
-            otherItem.querySelector('.faq-content-box').style.maxHeight = null;
+            const otherContent = otherItem.querySelector('.faq-content-box, .faq-answer');
+            if (otherContent) otherContent.style.maxHeight = null;
         }
     });
 
@@ -244,10 +244,10 @@ function toggleFaq(trigger) {
     const isActive = item.classList.contains('active');
     if (isActive) {
         item.classList.remove('active');
-        content.style.maxHeight = null;
+        if (content) content.style.maxHeight = null;
     } else {
         item.classList.add('active');
-        content.style.maxHeight = content.scrollHeight + "px";
+        if (content) content.style.maxHeight = content.scrollHeight + "px";
     }
 }
 
