@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Storage & Office Archive Storage in Delhi NCR | Self Storage India</title>
-
-    <!-- Primary Meta Tags -->
+    <!-- Primary Meta & SEO Tags -->
     <meta name="description" content="Rent secure business & office document storage in Delhi, Gurugram & Noida. Commercial inventory, office furniture & archive files with 24/7 CCTV & pickup.">
     <meta name="keywords" content="business storage delhi ncr, office archive storage gurugram, commercial warehouse storage noida, document storage delhi, inventory storage ncr">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://selfstorageindia.com/business-storage/">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph / Facebook SEO Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://selfstorageindia.com/business-storage/">
     <meta property="og:title" content="Business Storage & Office Archive Storage in Delhi NCR | Self Storage India">
@@ -19,16 +17,43 @@
     <meta property="og:image" content="https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo.png">
     <meta property="og:site_name" content="Self Storage India">
 
-    <!-- Twitter Card -->
+    <!-- Twitter Card SEO Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Business Storage & Office Archive Storage in Delhi NCR | Self Storage India">
     <meta name="twitter:description" content="Secure commercial storage, document archives & inventory warehousing in Delhi NCR. Private lockable storage units.">
     <meta name="twitter:image" content="https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo.png">
 
-    <!-- Official Favicons -->
+    <!-- Schema.org JSON-LD Structured Data for Household Storage Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Household Goods Storage Services",
+      "serviceType": "Self Storage & Household Goods Warehousing",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Self Storage India",
+        "image": "https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo.png",
+        "telephone": "+91-9090206090",
+        "priceRange": "₹1200 - ₹15000",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Delhi NCR",
+          "addressCountry": "IN"
+        }
+      },
+      "areaServed": ["Delhi", "Gurugram", "Noida", "Faridabad", "Ghaziabad"],
+      "description": "Secure, private, and pest-controlled household goods and furniture storage facilities across Delhi NCR with 24/7 surveillance and door-to-door pickup."
+    }
+    </script>
+
+    <!-- Official Self Storage India Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+    <!-- Preload Real Hero Facility Image for LCP Speed -->
+    <link rel="preload" as="image" href="assets/business_storage_racks.jpg" fetchpriority="high">
 
     <!-- Fonts pairing: Plus Jakarta Sans (Headings) & Inter (Body UI) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,46 +64,6 @@
     <link rel="stylesheet" href="styles.css?v=2.9">
     <!-- Font Awesome CDN for footer social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-
-    <!-- Structured Data: Service & LocalBusiness Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Service",
-          "@id": "https://selfstorageindia.com/business-storage/#service",
-          "name": "Business Storage & Office Document Archive Storage",
-          "provider": {
-            "@type": "LocalBusiness",
-            "name": "Self Storage India",
-            "url": "https://selfstorageindia.com/",
-            "telephone": "+91-9910545544",
-            "priceRange": "₹₹"
-          },
-          "areaServed": ["Delhi", "Gurugram", "Noida", "Delhi NCR"],
-          "description": "Secure commercial inventory, office furniture, document archive and palletized warehouse storage services in Delhi NCR."
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://selfstorageindia.com/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Business Storage",
-              "item": "https://selfstorageindia.com/business-storage/"
-            }
-          ]
-        }
-      ]
-    }
-    </script>
 </head>
 <body class="light-theme">
     <!-- Navigation Bar -->
@@ -90,7 +75,14 @@
             </a>
 
             <!-- Central Nav Links -->
-            <nav class="nav-links">
+            <nav class="nav-links" id="navLinks">
+                <div class="mobile-drawer-header">
+                    <span class="mobile-drawer-title">Menu</span>
+                    <button class="mobile-drawer-close" onclick="closeMobileMenu()" aria-label="Close menu">
+                        <span class="material-symbols-rounded">close</span>
+                    </button>
+                </div>
+
                 <!-- Storage Dropdown -->
                 <div class="nav-item-dropdown">
                     <a href="#" class="nav-link active">Storage <span class="material-symbols-rounded dropdown-arrow">keyboard_arrow_down</span></a>
@@ -99,16 +91,51 @@
                             <span class="material-symbols-rounded dropdown-icon">home</span>
                             <div class="dropdown-info">
                                 <h6>For Home</h6>
-                                <p>Furniture, 1BHK-3BHK &amp; personal items</p>
+                                <p>Store household items &amp; furniture</p>
                             </div>
                         </a>
                         <a href="business-storage.html" class="dropdown-item active">
-                            <span class="material-symbols-rounded dropdown-icon">corporate_fare</span>
+                            <span class="material-symbols-rounded dropdown-icon">business</span>
                             <div class="dropdown-info">
                                 <h6>For Business</h6>
-                                <p>Commercial inventory &amp; office archives</p>
+                                <p>Corporate archiving &amp; inventory</p>
                             </div>
                         </a>
+                    </div>
+                </div>
+
+                <!-- Locations Dropdown -->
+                <div class="nav-item-dropdown">
+                    <a href="#" class="nav-link">Locations <span class="material-symbols-rounded dropdown-arrow">keyboard_arrow_down</span></a>
+                    <div class="dropdown-menu shadow-md">
+                        <a href="self-storage-gurugram.html" class="dropdown-item">
+                            <span class="material-symbols-rounded dropdown-icon">location_on</span>
+                            <div class="dropdown-info">
+                                <h6>Gurugram</h6>
+                                <p>Sector 34, Honda Chowk</p>
+                            </div>
+                        </a>
+                        <a href="self-storage-delhi.html" class="dropdown-item">
+                            <span class="material-symbols-rounded dropdown-icon">location_on</span>
+                            <div class="dropdown-info">
+                                <h6>Delhi</h6>
+                                <p>Sector 28, Dwarka</p>
+                            </div>
+                        </a>
+                        <a href="self-storage-noida.html" class="dropdown-item">
+                            <span class="material-symbols-rounded dropdown-icon">location_on</span>
+                            <div class="dropdown-info">
+                                <h6>Noida</h6>
+                                <p>Sector 59, Noida</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Offerings Dropdown -->
+                <div class="nav-item-dropdown">
+                    <a href="#" class="nav-link">Offerings <span class="material-symbols-rounded dropdown-arrow">keyboard_arrow_down</span></a>
+                    <div class="dropdown-menu shadow-md">
                         <a href="offering-private-rooms.html" class="dropdown-item">
                             <span class="material-symbols-rounded dropdown-icon">meeting_room</span>
                             <div class="dropdown-info">
@@ -153,123 +180,68 @@
     <!-- Mobile Drawer Overlay -->
     <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileMenu()"></div>
 
-    <!-- Mobile Navigation Drawer -->
-    <aside class="mobile-nav-drawer" id="mobileNavDrawer">
-        <div class="drawer-header">
-            <a href="index.html" class="drawer-logo">
-                <img src="https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo.png" alt="Self Storage India Logo" width="180" height="51" decoding="async">
-            </a>
-            <button class="drawer-close" onclick="closeMobileMenu()" aria-label="Close menu">
-                <span class="material-symbols-rounded">close</span>
-            </button>
-        </div>
-
-        <div class="drawer-body">
-            <nav class="drawer-nav">
-                <div class="drawer-nav-group">
-                    <div class="drawer-nav-group-title">Storage Options</div>
-                    <a href="household-goods-storage.html" class="drawer-nav-item">
-                        <span class="material-symbols-rounded">home</span>
-                        For Home
-                    </a>
-                    <a href="business-storage.html" class="drawer-nav-item active">
-                        <span class="material-symbols-rounded">corporate_fare</span>
-                        For Business
-                    </a>
-                    <a href="offering-private-rooms.html" class="drawer-nav-item">
-                        <span class="material-symbols-rounded">meeting_room</span>
-                        Private Rooms
-                    </a>
-                    <a href="offering-box-storage.html" class="drawer-nav-item">
-                        <span class="material-symbols-rounded">package_2</span>
-                        Box Storage
-                    </a>
-                    <a href="offering-box-storage.html" class="drawer-nav-item">
-                        <span class="material-symbols-rounded">luggage</span>
-                        Luggage Storage
-                    </a>
-                </div>
-
-                <div class="drawer-nav-group">
-                    <a href="https://selfstorageindia.com/blog/" class="drawer-nav-item">
-                        <span class="material-symbols-rounded">article</span>
-                        Blogs
-                    </a>
-                </div>
-            </nav>
-
-            <div class="drawer-cta-wrapper">
-                <a href="tel:+919090206090" class="drawer-phone">
-                    <span class="material-symbols-rounded">call</span>
-                    +91-9090206090
-                </a>
-                <button class="btn btn-primary full-width" onclick="closeMobileMenu(); openQuoteModal();">Get Free Quote</button>
-            </div>
-        </div>
-    </aside>
-
     <!-- Main Body Container -->
     <main>
-        <!-- Main Hero Container (Uniform with Household Storage & Homepage) -->
+        <!-- Main Hero Container (Uniform with Homepage) -->
         <section class="hero-container">
-            <!-- Background graphics -->
-            <div class="bg-shape-grid"></div>
-            <div class="bg-shape-glow"></div>
-            <div class="bg-blueprint-pattern"></div>
+        <!-- Background graphics -->
+        <div class="bg-shape-grid"></div>
+        <div class="bg-shape-glow"></div>
+        <div class="bg-blueprint-pattern"></div>
 
-            <section class="hero-content-wrapper">
-                <!-- Left Info Block -->
-                <div class="hero-text-block">
-                    <div class="badge-accent-wrapper">
-                        <span class="hero-tagline-accent">BUSINESS STORAGE &amp; OFFICE ARCHIVE STORAGE</span>
-                    </div>
-                    <h1 class="hero-main-title">
-                        Secure Business Storage Solutions in <span class="accent-text">Delhi/NCR</span>
-                    </h1>
-                    <p class="hero-paragraph">
-                        Store commercial inventory, office furniture, legal archives, IT servers, and e-commerce stock in clean, climate-managed, private lockable warehouse units.
-                    </p>
-                    <p class="hero-paragraph">
-                        Enjoy 24/7 CCTV surveillance, 100% private key access, full GST tax invoicing, and seamless doorstep inventory pickup across Delhi, Gurugram, and Noida.
-                    </p>
+        <section class="hero-content-wrapper">
+            <!-- Left Info Block -->
+            <div class="hero-text-block">
+                <div class="badge-accent-wrapper">
+                    <span class="hero-tagline-accent">BUSINESS STORAGE &amp; OFFICE ARCHIVE STORAGE</span>
+                </div>
+                <h1 class="hero-main-title">
+                    Secure Business Storage Solutions in <span class="accent-text">Delhi/NCR</span>
+                </h1>
+                <p class="hero-paragraph">
+                    Store commercial inventory, office furniture, legal archives, IT servers, and e-commerce stock in clean, climate-managed, private lockable warehouse units.
+                </p>
+                <p class="hero-paragraph">
+                    Enjoy 24/7 CCTV surveillance, 100% private key access, full GST tax invoicing, and seamless doorstep inventory pickup across Delhi, Gurugram, and Noida.
+                </p>
 
-                    <p class="hero-ideal-list">
-                        <strong>Ideal for:</strong> Commercial Inventory • Office Furniture • Document Archives • E-commerce Stock • IT Hardware Storage
-                    </p>
-                    
-                    <!-- CTA buttons group -->
-                    <div class="hero-action-buttons">
-                        <button class="btn btn-primary btn-large" onclick="openQuoteModal()">Get Free Quote</button>
-                        <a href="#locations" class="btn btn-secondary btn-large">Explore Facilities</a>
-                    </div>
-
-                    <!-- Trust Indicators Directly Below CTA -->
-                    <div class="hero-trust-indicators">
-                        <div class="trust-indicator-item">
-                            <div class="stars">★★★★★</div>
-                            <span class="count">4.9/5 Rating</span>
-                            <span class="label">1,200+ Verified Reviews</span>
-                        </div>
-                        <div class="trust-divider"></div>
-                        <div class="trust-indicator-item">
-                            <span class="count">10,000+</span>
-                            <span class="label">Satisfied Clients</span>
-                        </div>
-                        <div class="trust-divider"></div>
-                        <div class="trust-indicator-item">
-                            <span class="count">Own Key</span>
-                            <span class="label">100% Private Access</span>
-                        </div>
-                    </div>
+                <p class="hero-ideal-list">
+                    <strong>Ideal for:</strong> Commercial Inventory • Office Furniture • Document Archives • E-commerce Stock • IT Hardware Storage
+                </p>
+                
+                <!-- CTA buttons group -->
+                <div class="hero-action-buttons">
+                    <button class="btn btn-primary btn-large" onclick="openQuoteModal()">Get Free Quote</button>
+                    <a href="#locations" class="btn btn-secondary btn-large">Explore Facilities</a>
                 </div>
 
-                <!-- Right Visual Block -->
-                <div class="hero-visual-block">
+                <!-- Trust Indicators Directly Below CTA -->
+                <div class="hero-trust-indicators">
+                    <div class="trust-indicator-item">
+                        <div class="stars">★★★★★ 4.9</div>
+                        <div class="label">Google Rating</div>
+                    </div>
+                    <div class="trust-divider"></div>
+                    <div class="trust-indicator-item">
+                        <div class="count">5,000+</div>
+                        <div class="label">Customers</div>
+                    </div>
+                    <div class="trust-divider"></div>
+                    <div class="trust-indicator-item">
+                        <div class="count">3</div>
+                        <div class="label">NCR Facilities</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Visual -->
+            <div class="hero-visual-block">
+                <div class="hero-visual-wrapper shadow-lg">
                     <div class="hero-visual-img-container">
                         <img src="assets/business_storage_racks.jpg" alt="Self Storage India Commercial Warehouse Storage Racks & Business Inventory Units" class="hero-visual-img" fetchpriority="high" width="884" height="688" decoding="async">
                     </div>
                     
-                    <!-- Floating Badge 1 (Surveillance Overlay) -->
+                    <!-- Floating Badge 1 (Security Overlay) -->
                     <div class="floating-badge badge-1 shadow-md">
                         <div class="badge-icon-box">
                             <span class="material-symbols-rounded">videocam</span>
@@ -279,61 +251,82 @@
                         </div>
                     </div>
                     
-                    <!-- Floating Badge 2 (GST Invoice Overlay) -->
+                    <!-- Floating Badge 2 (Lock Overlay) -->
                     <div class="floating-badge badge-2 shadow-md">
                         <div class="badge-icon-box">
-                            <span class="material-symbols-rounded">receipt_long</span>
+                            <span class="material-symbols-rounded">lock</span>
                         </div>
                         <div class="badge-content">
                             <h4>GST Invoices Ready</h4>
                         </div>
                     </div>
 
-                    <!-- Floating Badge 3 (Climate Control Overlay) -->
+                    <!-- Floating Badge 3 (Cleanliness & Pest Control Overlay) -->
                     <div class="floating-badge badge-3 shadow-md">
                         <div class="badge-icon-box">
-                            <span class="material-symbols-rounded">thermostat</span>
+                            <span class="material-symbols-rounded">cleaning_services</span>
                         </div>
                         <div class="badge-content">
                             <h4>Climate-Managed Records</h4>
                         </div>
                     </div>
                 </div>
-            </section>
-        </section>
-
-        <!-- ==========================================
-             SECTION 2, OFFERINGS / TRUST STRIP
-             ========================================== -->
-        <section class="trust-strip">
-            <div class="trust-strip-grid">
-                <div class="trust-strip-item">
-                    <span class="material-symbols-rounded">meeting_room</span>
-                    <span>Private Lockable Rooms</span>
-                </div>
-                <div class="trust-strip-item">
-                    <span class="material-symbols-rounded">shelves</span>
-                    <span>Pallet &amp; Heavy Racking</span>
-                </div>
-                <div class="trust-strip-item">
-                    <span class="material-symbols-rounded">local_shipping</span>
-                    <span>Doorstep Inventory Logistics</span>
-                </div>
-                <div class="trust-strip-item">
-                    <span class="material-symbols-rounded">verified_user</span>
-                    <span>24/7 CCTV &amp; Security</span>
-                </div>
             </div>
         </section>
+    </section>
+
+    <!-- Trust Key Features Strip (4 items) -->
+    <section class="hero-trust-strip">
+        <div class="offerings-trust-strip">
+            <div class="trust-strip-item">
+                <div class="trust-icon-circle">
+                    <span class="material-symbols-rounded">lock</span>
+                </div>
+                <div class="trust-text">
+                    <h4>GST Invoices Ready</h4>
+                    <p>Personal lock &amp; full control.</p>
+                </div>
+            </div>
+            <div class="trust-strip-item">
+                <div class="trust-icon-circle">
+                    <span class="material-symbols-rounded">videocam</span>
+                </div>
+                <div class="trust-text">
+                    <h4>24/7 CCTV Monitoring</h4>
+                    <p>24/7 round-the-clock security.</p>
+                </div>
+            </div>
+            <div class="trust-strip-item">
+                <div class="trust-icon-circle">
+                    <span class="material-symbols-rounded">calendar_today</span>
+                </div>
+                <div class="trust-text">
+                    <h4>Flexible Monthly Plans</h4>
+                    <p>Zero long-term contract locks.</p>
+                </div>
+            </div>
+            <div class="trust-strip-item">
+                <div class="trust-icon-circle">
+                    <span class="material-symbols-rounded">star</span>
+                </div>
+                <div class="trust-text">
+                    <h4>Trusted by 5,000+ Customers</h4>
+                    <p>5-star rated Google reviews.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
         <!-- ==========================================
-             SECTION 3, WHEN DO YOU NEED BUSINESS STORAGE?
+             SECTION 3, WHY THERE IS A NEED FOR HOUSEHOLD STORAGE
              ========================================== -->
-        <section class="household-need__section">
+        <section class="household-need">
             <div class="household-need__container">
                 <div class="section-header-centered">
-                    <span class="calc-tag">BUSINESS USE CASES</span>
-                    <h2>When Do You Need Business Storage?</h2>
+                    <span class="calc-tag">WHY CHOOSE HOUSEHOLD STORAGE</span>
+                    <h2>Why There is a Need for Household Storage?</h2>
                     <p>Here are common scenarios where companies encounter the need for commercial and document storage.</p>
                 </div>
 
@@ -393,7 +386,7 @@
                         </div>
                     </div>
 
-                    <!-- CARD 6: DOWNSIZING & EXCESS EQUIPMENT -->
+                    <!-- CARD 6: DOWNSIZING & EXCESS STOCK -->
                     <div class="household-need__card">
                         <div class="household-need__img-box">
                             <img src="assets/scen_downsizing_v3.jpg" alt="Corporate Office Downsizing and Equipment Storage" loading="lazy" width="1200" height="896" decoding="async">
@@ -407,9 +400,7 @@
             </div>
         </section>
 
-        <!-- ==========================================
-             MEDIA TRUST BAR (AS SEEN ON LOGOS)
-             ========================================== -->
+        <!-- Trusted & Featured In Media Logos -->
         <section class="trust-bar">
             <div class="trust-bar-container">
                 <span class="trust-title">As seen on</span>
@@ -437,12 +428,12 @@
         </section>
 
         <!-- ==========================================
-             SECTION 4, BUSINESS SIZE & CAPACITY GUIDE
+             SECTION 4, HOUSEHOLD SIZE & PRICING GUIDE
              ========================================== -->
         <section class="household-pricing-guide">
             <div class="pricing-table-container">
                 <div class="section-header-centered">
-                    <span class="calc-tag">BUSINESS SIZE &amp; SPACE GUIDE</span>
+                    <span class="calc-tag">BUSINESS SIZE &amp; CAPACITY GUIDE</span>
                     <h2>Find the Right Storage Unit for Your Business</h2>
                     <p>Compare popular commercial storage unit sizes to pick the exact space you need for office furniture, inventory, or document files.</p>
                 </div>
@@ -558,25 +549,25 @@
                         </div>
                     </div>
 
-                    <!-- Card 3: Box & Luggage Storage -->
+                    <!-- Card 3: Luggage & Box Storage -->
                     <div class="offering-card" onclick="openQuoteModal()">
                         <div class="offering-image-container">
-                            <img src="assets/luggage_storage_new.webp" alt="Box and Luggage Storage Solutions" class="offering-image" width="900" height="940" decoding="async" loading="lazy">
+                            <img src="assets/luggage_storage_new.webp" alt="Luggage and Box Storage Rooms" class="offering-image" width="900" height="940" decoding="async" loading="lazy">
                             <div class="offering-image-overlay"></div>
-                            <span class="offering-badge">Flexible &amp; Compact</span>
+                            <span class="offering-badge">Best for Travellers</span>
                         </div>
                         <div class="offering-content">
-                            <h3 class="offering-title">Box &amp; Luggage Storage</h3>
-                            <p class="offering-desc">Ideal for small items, document boxes, seasonal gear or temporary luggage storage with convenient pickup options.</p>
+                            <h3 class="offering-title">Luggage &amp; Box Storage</h3>
+                            <p class="offering-desc">Store luggage, boxes and seasonal belongings securely with affordable short-term or long-term plans.</p>
                             <div class="offering-divider"></div>
                             <ul class="offering-highlights">
-                                <li><span class="material-symbols-rounded check-icon">check</span> Pay only for space used</li>
-                                <li><span class="material-symbols-rounded check-icon">check</span> Doorstep pickup service</li>
-                                <li><span class="material-symbols-rounded check-icon">check</span> Secure barcode tracking</li>
-                                <li><span class="material-symbols-rounded check-icon">check</span> Short or long-term options</li>
+                                <li><span class="material-symbols-rounded check-icon">check</span> Short and long-term plans</li>
+                                <li><span class="material-symbols-rounded check-icon">check</span> Affordable pricing</li>
+                                <li><span class="material-symbols-rounded check-icon">check</span> Easy item retrieval</li>
+                                <li><span class="material-symbols-rounded check-icon">check</span> Safe packing environment</li>
                             </ul>
                             <button class="btn btn-offering-primary">
-                                Learn More <span class="material-symbols-rounded">arrow_forward</span>
+                                View Luggage Storage <span class="material-symbols-rounded">arrow_forward</span>
                             </button>
                         </div>
                     </div>
@@ -585,282 +576,273 @@
         </section>
 
         <!-- ==========================================
-             SECTION 6, ESTIMATE YOUR BUSINESS STORAGE SPACE
+             SECTION 6, HOW HOUSEHOLD STORAGE WORKS (4-STEP PROCESS)
              ========================================== -->
-        <section class="calc-section">
-            <div class="calc-container">
-                <div class="section-header-centered">
-                    <span class="calc-tag">SPACE ESTIMATOR</span>
-                    <h2>Estimate Your Business Storage Space</h2>
-                    <p>Select your commercial items below to calculate the recommended storage unit size for your company.</p>
-                </div>
-
-                <div class="calc-box shadow-lg">
-                    <div class="calc-form-grid">
-                        <div class="calc-input-card">
-                            <div class="calc-icon-title">
-                                <span class="material-symbols-rounded">folder_zip</span>
-                                <div>
-                                    <h4>Document Archive Boxes</h4>
-                                    <p>Standard file cartons (1.5 cu ft)</p>
-                                </div>
-                            </div>
-                            <div class="calc-counter-wrapper">
-                                <button type="button" class="counter-btn" onclick="updateCalc('docBoxes', -10)">-</button>
-                                <span class="counter-val" id="val-docBoxes">0</span>
-                                <button type="button" class="counter-btn" onclick="updateCalc('docBoxes', 10)">+</button>
-                            </div>
-                        </div>
-
-                        <div class="calc-input-card">
-                            <div class="calc-icon-title">
-                                <span class="material-symbols-rounded">desk</span>
-                                <div>
-                                    <h4>Office Desks &amp; Tables</h4>
-                                    <p>Workstation desks &amp; tables</p>
-                                </div>
-                            </div>
-                            <div class="calc-counter-wrapper">
-                                <button type="button" class="counter-btn" onclick="updateCalc('officeDesks', -1)">-</button>
-                                <span class="counter-val" id="val-officeDesks">0</span>
-                                <button type="button" class="counter-btn" onclick="updateCalc('officeDesks', 1)">+</button>
-                            </div>
-                        </div>
-
-                        <div class="calc-input-card">
-                            <div class="calc-icon-title">
-                                <span class="material-symbols-rounded">chair</span>
-                                <div>
-                                    <h4>Executive Chairs</h4>
-                                    <p>Ergonomic office chairs</p>
-                                </div>
-                            </div>
-                            <div class="calc-counter-wrapper">
-                                <button type="button" class="counter-btn" onclick="updateCalc('officeChairs', -1)">-</button>
-                                <span class="counter-val" id="val-officeChairs">0</span>
-                                <button type="button" class="counter-btn" onclick="updateCalc('officeChairs', 1)">+</button>
-                            </div>
-                        </div>
-
-                        <div class="calc-input-card">
-                            <div class="calc-icon-title">
-                                <span class="material-symbols-rounded">shelves</span>
-                                <div>
-                                    <h4>Storage Racks &amp; Cabinets</h4>
-                                    <p>Metal shelving &amp; file cupboards</p>
-                                </div>
-                            </div>
-                            <div class="calc-counter-wrapper">
-                                <button type="button" class="counter-btn" onclick="updateCalc('racks', -1)">-</button>
-                                <span class="counter-val" id="val-racks">0</span>
-                                <button type="button" class="counter-btn" onclick="updateCalc('racks', 1)">+</button>
-                            </div>
-                        </div>
-
-                        <div class="calc-input-card">
-                            <div class="calc-icon-title">
-                                <span class="material-symbols-rounded">inventory_2</span>
-                                <div>
-                                    <h4>Inventory Stock Cartons</h4>
-                                    <p>Medium commercial goods boxes</p>
-                                </div>
-                            </div>
-                            <div class="calc-counter-wrapper">
-                                <button type="button" class="counter-btn" onclick="updateCalc('stockBoxes', -5)">-</button>
-                                <span class="counter-val" id="val-stockBoxes">0</span>
-                                <button type="button" class="counter-btn" onclick="updateCalc('stockBoxes', 5)">+</button>
-                            </div>
-                        </div>
-
-                        <div class="calc-input-card">
-                            <div class="calc-icon-title">
-                                <span class="material-symbols-rounded">dns</span>
-                                <div>
-                                    <h4>IT Servers &amp; Hardware</h4>
-                                    <p>Server racks, monitors &amp; printers</p>
-                                </div>
-                            </div>
-                            <div class="calc-counter-wrapper">
-                                <button type="button" class="counter-btn" onclick="updateCalc('itEquipment', -1)">-</button>
-                                <span class="counter-val" id="val-itEquipment">0</span>
-                                <button type="button" class="counter-btn" onclick="updateCalc('itEquipment', 1)">+</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="calc-result-bar">
-                        <div class="result-text-group">
-                            <span class="res-label">RECOMMENDED STORAGE SIZE</span>
-                            <h3 id="calc-result-size">0 sq. ft.</h3>
-                            <p id="calc-result-desc">Add commercial items above to see your estimated room size.</p>
-                        </div>
-                        <button class="btn btn-accent btn-large" onclick="openQuoteModal()">Get Exact Quote</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             SECTION 7, HOW BUSINESS STORAGE WORKS
-             ========================================== -->
-        <section class="works-section">
+        <section class="household-process-section">
             <div class="container">
                 <div class="section-header-centered">
-                    <span class="calc-tag">SIMPLE PROCESS</span>
+                    <span class="calc-tag">EASY 4-STEP PROCESS</span>
                     <h2>How Business Storage Works</h2>
-                    <p>Four easy steps to secure extra commercial space for your company in Delhi NCR.</p>
+                    <p>Storing your furniture and household items with Self Storage India is simple, secure, and stress-free.</p>
                 </div>
-
-                <div class="works-grid">
-                    <div class="work-step-card">
-                        <div class="step-num">01</div>
-                        <h3>Choose Unit Size</h3>
-                        <p>Select the ideal storage room size for your office files, inventory, or furniture with flexible monthly terms.</p>
+                <div class="process-grid">
+                    <div class="process-step-card">
+                        <div class="process-step-number">01</div>
+                        <h3>Choose Room Size</h3>
+                        <p>Use our size calculator or speak to a space expert to find the exact room size needed for your 1BHK, 2BHK, or 3BHK items.</p>
                     </div>
-
-                    <div class="work-step-card">
-                        <div class="step-num">02</div>
+                    <div class="process-step-card">
+                        <div class="process-step-number">02</div>
                         <h3>Doorstep Pickup</h3>
-                        <p>Our logistics team handles professional packing, inventory tagging, and transport directly from your office premises.</p>
+                        <p>Our professional moving team packs your furniture with multi-layer protection and picks it up straight from your doorstep.</p>
                     </div>
-
-                    <div class="work-step-card">
-                        <div class="step-num">03</div>
-                        <h3>Secured Storage</h3>
-                        <p>Items are safely stored inside your private, climate-controlled, 24/7 CCTV-monitored warehouse unit.</p>
+                    <div class="process-step-card">
+                        <div class="process-step-number">03</div>
+                        <h3>Secure Under Lock</h3>
+                        <p>Store your goods inside a private, pest-controlled room. You lock it with your own key for 100% privacy and security.</p>
                     </div>
-
-                    <div class="work-step-card">
-                        <div class="step-num">04</div>
-                        <h3>Access &amp; Invoicing</h3>
-                        <p>Access your storage room anytime with your key and receive monthly GST invoices for easy tax compliance.</p>
+                    <div class="process-step-card">
+                        <div class="process-step-number">04</div>
+                        <h3>Easy Access &amp; Return</h3>
+                        <p>Access your storage unit 7 days a week or request partial or complete redelivery to your new home whenever ready.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==========================================
-             SECTION 8, LOCATIONS ACROSS NCR
-             ========================================== -->
-        <section id="locations" class="facility-locations-section">
-            <div class="container">
-                <div class="section-header-centered">
-                    <span class="calc-tag">OUR WAREHOUSE LOCATIONS</span>
-                    <h2>Storage Warehouses Across Delhi NCR</h2>
-                    <p>Conveniently located facilities offering 24/7 security, drive-up loading docks, and easy access.</p>
+        <!-- Storage Calculator Banner Section (Matching Homepage) -->
+        <section id="calculator" class="calc-banner-section" aria-labelledby="calc-banner-heading">
+            <div class="calc-banner-container">
+                <div class="calc-banner-header">
+                    <span class="calc-tag">INSTANT SPACE ESTIMATOR</span>
+                    <h2 id="calc-banner-heading">Calculate Your Storage Unit Size</h2>
+                    <p>Select your items below to estimate exact sq. ft. needed and avoid paying for extra space.</p>
                 </div>
 
-                <div class="facility-grid">
-                    <!-- Gurugram Facility Card -->
-                    <div class="facility-card shadow-md">
-                        <div class="facility-img-wrapper">
-                            <img src="assets/gurugram_storage.webp" alt="Self Storage Warehouse Facility in Gurugram" loading="lazy" width="774" height="502" decoding="async">
-                            <span class="facility-badge">Primary Hub</span>
+                <div class="calc-banner-items">
+                    <div class="calc-banner-item" onclick="window.open('storage-calculator-backup.html', '_blank')" role="button" tabindex="0" title="Estimate Storage for Boxes">
+                        <div class="calc-item-icon-box">
+                            <span class="material-symbols-rounded">inventory_2</span>
                         </div>
-                        <div class="facility-card-body">
-                            <h3>Gurugram Facility</h3>
-                            <p class="facility-address"><span class="material-symbols-rounded">location_on</span> Near NH-8 Highway &amp; Pace City 1, Sector 37, Gurugram, Haryana 122001</p>
-                            <ul class="facility-features">
-                                <li><span class="material-symbols-rounded">check</span> 24/7 CCTV &amp; Security Guards</li>
-                                <li><span class="material-symbols-rounded">check</span> Drive-up Loading Docks</li>
-                                <li><span class="material-symbols-rounded">check</span> Private Lock &amp; Key Rooms</li>
-                            </ul>
-                            <div class="facility-card-actions">
-                                <a href="self-storage-gurugram.html" class="btn btn-secondary">Facility Details</a>
-                                <button class="btn btn-primary" onclick="openQuoteModal()">Book Unit</button>
-                            </div>
-                        </div>
+                        <span class="calc-item-name">Boxes &amp; Cartons</span>
                     </div>
 
-                    <!-- Noida Facility Card -->
-                    <div class="facility-card shadow-md">
-                        <div class="facility-img-wrapper">
-                            <img src="assets/noida_storage.webp" alt="Self Storage Warehouse Facility in Noida" loading="lazy" width="780" height="512" decoding="async">
-                            <span class="facility-badge">Express Logistics Hub</span>
+                    <div class="calc-banner-item" onclick="window.open('storage-calculator-backup.html', '_blank')" role="button" tabindex="0" title="Estimate Storage for Beds">
+                        <div class="calc-item-icon-box">
+                            <span class="material-symbols-rounded">bed</span>
                         </div>
-                        <div class="facility-card-body">
-                            <h3>Noida Facility</h3>
-                            <p class="facility-address"><span class="material-symbols-rounded">location_on</span> Sector 63, Noida, Uttar Pradesh 201301</p>
-                            <ul class="facility-features">
-                                <li><span class="material-symbols-rounded">check</span> Fire Safety &amp; Pest Control</li>
-                                <li><span class="material-symbols-rounded">check</span> Easy Freight Elevator Access</li>
-                                <li><span class="material-symbols-rounded">check</span> Doorstep Transport Service</li>
-                            </ul>
-                            <div class="facility-card-actions">
-                                <a href="self-storage-noida.html" class="btn btn-secondary">Facility Details</a>
-                                <button class="btn btn-primary" onclick="openQuoteModal()">Book Unit</button>
-                            </div>
-                        </div>
+                        <span class="calc-item-name">Beds &amp; Mattresses</span>
                     </div>
 
-                    <!-- Delhi Facility Card -->
-                    <div class="facility-card shadow-md">
-                        <div class="facility-img-wrapper">
-                            <img src="assets/dwarka_storage.webp" alt="Self Storage Warehouse Facility in Delhi" loading="lazy" width="774" height="500" decoding="async">
-                            <span class="facility-badge">Capital City Hub</span>
+                    <div class="calc-banner-item" onclick="window.open('storage-calculator-backup.html', '_blank')" role="button" tabindex="0" title="Estimate Storage for Chairs">
+                        <div class="calc-item-icon-box">
+                            <span class="material-symbols-rounded">chair</span>
                         </div>
-                        <div class="facility-card-body">
-                            <h3>Delhi Facility</h3>
-                            <p class="facility-address"><span class="material-symbols-rounded">location_on</span> Rajokri / Dwarka Link Road, New Delhi 110037</p>
-                            <ul class="facility-features">
-                                <li><span class="material-symbols-rounded">check</span> 24/7 Gated Access</li>
-                                <li><span class="material-symbols-rounded">check</span> Climate-Managed Units</li>
-                                <li><span class="material-symbols-rounded">check</span> Flexible Monthly Subscriptions</li>
-                            </ul>
-                            <div class="facility-card-actions">
-                                <a href="self-storage-delhi.html" class="btn btn-secondary">Facility Details</a>
-                                <button class="btn btn-primary" onclick="openQuoteModal()">Book Unit</button>
-                            </div>
-                        </div>
+                        <span class="calc-item-name">Chairs &amp; Sofas</span>
                     </div>
+
+                    <div class="calc-banner-item" onclick="window.open('storage-calculator-backup.html', '_blank')" role="button" tabindex="0" title="Estimate Storage for Tables">
+                        <div class="calc-item-icon-box">
+                            <span class="material-symbols-rounded">table_restaurant</span>
+                        </div>
+                        <span class="calc-item-name">Dining Tables</span>
+                    </div>
+
+                    <div class="calc-banner-item" onclick="window.open('storage-calculator-backup.html', '_blank')" role="button" tabindex="0" title="Estimate Storage for Appliances">
+                        <div class="calc-item-icon-box">
+                            <span class="material-symbols-rounded">tv</span>
+                        </div>
+                        <span class="calc-item-name">Appliances &amp; TV</span>
+                    </div>
+
+                    <div class="calc-banner-item" onclick="window.open('storage-calculator-backup.html', '_blank')" role="button" tabindex="0" title="Estimate Storage for Cabinets">
+                        <div class="calc-item-icon-box">
+                            <span class="material-symbols-rounded">kitchen</span>
+                        </div>
+                        <span class="calc-item-name">Wardrobes &amp; Cabinets</span>
+                    </div>
+
+                    <div class="calc-banner-item" onclick="window.open('storage-calculator-backup.html', '_blank')" role="button" tabindex="0" title="Estimate Storage for Luggage">
+                        <div class="calc-item-icon-box">
+                            <span class="material-symbols-rounded">luggage</span>
+                        </div>
+                        <span class="calc-item-name">Luggage &amp; Bags</span>
+                    </div>
+
+                    <div class="calc-banner-item" onclick="window.open('storage-calculator-backup.html', '_blank')" role="button" tabindex="0" title="Estimate Storage for Office Files">
+                        <div class="calc-item-icon-box">
+                            <span class="material-symbols-rounded">work</span>
+                        </div>
+                        <span class="calc-item-name">Office &amp; Files</span>
+                    </div>
+                </div>
+
+                <div class="calc-banner-cta-wrapper">
+                    <a href="storage-calculator-backup.html" target="_blank" rel="noopener" class="btn-calc-orange">
+                        <span>Calculate Your Storage Now</span>
+                        <span class="material-symbols-rounded">arrow_forward</span>
+                    </a>
+                </div>
+
+                <div class="calc-banner-features">
+                    <span class="calc-feature-chip">⚡ 100% Free &amp; Fast</span>
+                    <span class="calc-feature-chip">📐 Precise Sq. Ft. Estimate</span>
+                    <span class="calc-feature-chip">💰 Zero Wasted Space</span>
                 </div>
             </div>
         </section>
 
         <!-- ==========================================
-             SECTION 9, TESTIMONIALS
+             SECTION 8, TESTIMONIALS
              ========================================== -->
-        <section class="testimonials-section">
+        <section id="testimonials" class="testimonials-section">
             <div class="container">
                 <div class="section-header-centered">
-                    <span class="calc-tag">CLIENT REVIEWS</span>
-                    <h2>Trusted by Businesses Across Delhi NCR</h2>
-                    <p>Here is what corporate clients and business owners say about storing with Self Storage India.</p>
+                    <span class="calc-tag" style="color: var(--accent); border-color: rgba(245, 158, 11, 0.35);">★★★★★ TRUSTED BY THOUSANDS</span>
+                    <h2>Stories from Our Customers.</h2>
+                    <p>More than 5,000 customers across Delhi NCR have trusted Self Storage India to securely store their furniture, household items, luggage, and business inventory. Here's what they have to say.</p>
                 </div>
 
+                <!-- Testimonial Cards Carousel / Grid -->
                 <div class="testimonials-grid">
+                    <!-- Card 1: Nandini Saha -->
                     <div class="testimonial-card shadow-sm">
-                        <div class="stars">★★★★★</div>
-                        <p class="quote">"Storing 5 years of financial audit files and legal records with Self Storage India saved us over ₹60,000 per month compared to renting extra office space in Cyber City."</p>
-                        <div class="client-info">
-                            <img src="assets/client_nandini.webp" alt="Nandini Roy - Operations Director" class="client-avatar" width="200" height="200" loading="lazy" decoding="async">
-                            <div>
-                                <h4>Nandini Roy</h4>
-                                <p>Operations Director, FinTech Solutions</p>
+                        <span class="material-symbols-rounded quote-icon">format_quote</span>
+                        <div class="rating-stars">★★★★★</div>
+                        <p class="testimonial-text">"The entire experience was seamless, from booking the storage room to collecting my belongings months later. Everything remained in perfect condition, and the staff was incredibly professional."</p>
+                        <div class="testimonial-profile">
+                            <img src="assets/client_nandini.webp" alt="Nandini Saha - Verified Household Storage Customer Review Delhi" class="profile-img" loading="lazy" width="200" height="200" decoding="async">
+                            <div class="profile-info">
+                                <h4>Nandini Saha</h4>
+                                <p>Delhi</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-footer">
+                            <span class="storage-badge">Private Room Storage</span>
+                            <span class="verified-badge"><span class="material-symbols-rounded">verified</span> Verified Customer</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Nitin Gupta -->
+                    <div class="testimonial-card shadow-sm">
+                        <span class="material-symbols-rounded quote-icon">format_quote</span>
+                        <div class="rating-stars">★★★★★</div>
+                        <p class="testimonial-text">"We used Self Storage India during our office relocation. The facility was secure, easy to access, and made the entire move stress-free."</p>
+                        <div class="testimonial-profile">
+                            <img src="assets/client_nitin.webp" alt="Nitin Gupta - Verified Business Storage Customer Review Noida" class="profile-img" loading="lazy" width="200" height="200" decoding="async">
+                            <div class="profile-info">
+                                <h4>Nitin Gupta</h4>
+                                <p>Noida</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-footer">
+                            <span class="storage-badge">Business Storage</span>
+                            <span class="verified-badge"><span class="material-symbols-rounded">verified</span> Verified Customer</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Roselin Kiro -->
+                    <div class="testimonial-card shadow-sm">
+                        <span class="material-symbols-rounded quote-icon">format_quote</span>
+                        <div class="rating-stars">★★★★★</div>
+                        <p class="testimonial-text">"My luggage and furniture stayed safe for over a year. The rooms were clean, secure, and exactly what I needed while relocating."</p>
+                        <div class="testimonial-profile">
+                            <img src="assets/client_roselin.webp" alt="Roselin Kiro - Verified Household Storage Customer Review Gurugram" class="profile-img" loading="lazy" width="200" height="200" decoding="async">
+                            <div class="profile-info">
+                                <h4>Roselin Kiro</h4>
+                                <p>Gurugram</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-footer">
+                            <span class="storage-badge">Household Storage</span>
+                            <span class="verified-badge"><span class="material-symbols-rounded">verified</span> Verified Customer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECTION 9, OUR LOCATIONS
+             ========================================== -->
+        <section id="locations" class="locations-section">
+            <div class="container">
+                <div class="section-header-centered">
+                    <span class="loc-tag-vibrant">OUR LOCATIONS</span>
+                    <h2>Storage Facilities Across Delhi NCR</h2>
+                    <p>Conveniently located storage facilities across Delhi NCR, making it easy to store, access and retrieve your belongings whenever you need them.</p>
+                </div>
+
+                <!-- 3 Location Cards -->
+                <div class="locations-grid">
+                    <!-- Location Card 1: Delhi -->
+                    <div class="location-card shadow-sm" id="loc-card-delhi" onclick="openQuoteModal()">
+                        <div class="loc-image-container">
+                            <img src="assets/dwarka_storage.webp" alt="Self Storage Delhi Dwarka Facility" class="loc-image" width="774" height="500" decoding="async" loading="lazy">
+                            <div class="loc-badge">
+                                <span class="material-symbols-rounded">location_on</span>
+                                <span>Delhi</span>
+                            </div>
+                        </div>
+                        <div class="loc-details">
+                            <h3>Selfstorage Dwarka</h3>
+                            <p class="loc-address">Sector 28, Dwarka, Delhi</p>
+                            <div class="loc-chips">
+                                <span class="chip">✓ 24/7 Security</span>
+                                <span class="chip">✓ CCTV Monitoring</span>
+                                <span class="chip">✓ Pest Control</span>
+                            </div>
+                            <div class="loc-explore-link">
+                                <span>Explore Facility</span>
+                                <span class="material-symbols-rounded explore-arrow">arrow_right_alt</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="testimonial-card shadow-sm">
-                        <div class="stars">★★★★★</div>
-                        <p class="quote">"Their pallet racking and doorstep logistics team handle our e-commerce inventory effortlessly during peak festive sale seasons. GST invoices are always delivered on time."</p>
-                        <div class="client-info">
-                            <img src="assets/client_nitin.webp" alt="Nitin Mehta - Founder" class="client-avatar" width="200" height="200" loading="lazy" decoding="async">
-                            <div>
-                                <h4>Nitin Mehta</h4>
-                                <p>Founder, Crafts &amp; Living E-Commerce</p>
+                    <!-- Location Card 2: Gurugram -->
+                    <div class="location-card shadow-sm" id="loc-card-gurugram" onclick="openQuoteModal()">
+                        <div class="loc-image-container">
+                            <img src="assets/gurugram_storage.webp" alt="Self Storage Gurugram Facility" class="loc-image" width="774" height="500" decoding="async" loading="lazy">
+                            <div class="loc-badge">
+                                <span class="material-symbols-rounded">location_on</span>
+                                <span>Gurugram</span>
+                            </div>
+                        </div>
+                        <div class="loc-details">
+                            <h3>Selfstorage Gurugram</h3>
+                            <p class="loc-address">Sector 34, Honda Chowk, Gurugram</p>
+                            <div class="loc-chips">
+                                <span class="chip">✓ 24/7 Security</span>
+                                <span class="chip">✓ CCTV Monitoring</span>
+                                <span class="chip">✓ Pest Control</span>
+                            </div>
+                            <div class="loc-explore-link">
+                                <span>Explore Facility</span>
+                                <span class="material-symbols-rounded explore-arrow">arrow_right_alt</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="testimonial-card shadow-sm">
-                        <div class="stars">★★★★★</div>
-                        <p class="quote">"When we shifted our 30-workstation corporate office in Noida, Self Storage India kept all our desks, chairs, and IT servers safe for 2 months without a single scratch."</p>
-                        <div class="client-info">
-                            <img src="assets/client_roselin.webp" alt="Roselin Joseph - Corporate Admin Lead" class="client-avatar" width="200" height="200" loading="lazy" decoding="async">
-                            <div>
-                                <h4>Roselin Joseph</h4>
-                                <p>Corporate Admin Lead, Global Media</p>
+                    <!-- Location Card 3: Noida -->
+                    <div class="location-card shadow-sm" id="loc-card-noida" onclick="openQuoteModal()">
+                        <div class="loc-image-container">
+                            <img src="assets/noida_storage.webp" alt="Self Storage Noida Facility" class="loc-image" width="780" height="512" decoding="async" loading="lazy">
+                            <div class="loc-badge">
+                                <span class="material-symbols-rounded">location_on</span>
+                                <span>Noida</span>
+                            </div>
+                        </div>
+                        <div class="loc-details">
+                            <h3>Selfstorage Noida</h3>
+                            <p class="loc-address">Sector 59, Noida</p>
+                            <div class="loc-chips">
+                                <span class="chip">✓ 24/7 Security</span>
+                                <span class="chip">✓ CCTV Monitoring</span>
+                                <span class="chip">✓ Pest Control</span>
+                            </div>
+                            <div class="loc-explore-link">
+                                <span>Explore Facility</span>
+                                <span class="material-symbols-rounded explore-arrow">arrow_right_alt</span>
                             </div>
                         </div>
                     </div>
@@ -869,64 +851,213 @@
         </section>
 
         <!-- ==========================================
-             SECTION 10, FAQ SECTION
+             SECTION 11, FACILITY GALLERY STRIP
              ========================================== -->
-        <section class="faq-section">
+        <section class="gallery-strip-section">
+            <div class="container">
+                <div class="gallery-strip-header">
+                    <span class="calc-tag">INSIDE OUR FACILITIES</span>
+                    <h2>Clean. Secure. Yours.</h2>
+                    <p>Every facility is clean, well-lit, pest-controlled, and under 24/7 CCTV surveillance. See for yourself.</p>
+                </div>
+                <div class="gallery-strip-grid">
+                    <div class="gallery-item gallery-item-large">
+                        <img src="assets/business_storage_racks.jpg" alt="Self Storage India Gurugram facility — premium clean corridor" loading="lazy" width="884" height="688" decoding="async">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/facility_1.webp" alt="Private lockable storage rooms at Self Storage India Delhi" loading="lazy" width="1280" height="720" decoding="async">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/facility_2.webp" alt="Secure storage facility interior — Self Storage India" loading="lazy" width="1280" height="720" decoding="async">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/facility_3.webp" alt="Business storage units — Self Storage India NCR" loading="lazy" width="1280" height="720" decoding="async">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/facility_4.webp" alt="Climate controlled private storage rooms Delhi NCR" loading="lazy" width="1280" height="720" decoding="async">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECTION 12, HOUSEHOLD STORAGE DETAILS (SEO CONTENT)
+             ========================================== -->
+        <section class="seo-details-section">
+            <div class="seo-details-section__container">
+                <h2>Household Goods Storage in NCR</h2>
+                <p>When you're looking for space to store your household goods, finding a reliable and secure solution is important. Whether you're dealing with a home renovation, relocating to a new city, or simply decluttering to make more room, the need for extra storage can arise unexpectedly. That's where Self Storage India comes in, offering top-notch storage facilities tailored to meet your specific needs.</p>
+                <p>With busy urban lifestyles in NCR, having a dedicated and safe space to store your valuables not only brings peace of mind but also frees up room at home, allowing you to focus on living comfortably. Our services are designed to provide secure, convenient, and accessible storage options for individuals and families alike, ensuring your belongings remain protected for as long as you need them stored.</p>
+                <p>Self Storage India has earned a reputation for providing hassle-free storage experiences, with various options that cater to different storage requirements, making it easier than ever to keep your household goods in order.</p>
+
+                <h2>Flexible Household Storage Units in NCR</h2>
+                <p>At Self Storage India, we understand the importance of keeping your items secure while freeing up space in your home. Our home storage services cater to individuals and families who need a flexible and affordable storage solution, offering:</p>
+                <ul>
+                    <li>Short-term and long-term storage plans</li>
+                    <li>Secure facilities with 24/7 surveillance</li>
+                    <li>Spacious units to accommodate household goods of all sizes</li>
+                    <li>Transportation assistance to help move your items into storage</li>
+                </ul>
+                <p>Whether it's furniture, electronics, or personal belongings, our home storage services in NCR ensure that your items are well-protected, easily accessible, and ready for use whenever required.</p>
+
+                <h2>Personal Storage Space NCR | Safe and Reliable</h2>
+                <p>In a bustling city like NCR, it's easy for personal belongings to accumulate over time, quickly filling up valuable space in your home. Whether it's off-season clothing, treasured books, or sports equipment, finding room for everything can become a challenge. This is where personal storage space in NCR from Self Storage India offers a practical solution.</p>
+                <p>Our individual storage units are ideal for safely storing items like seasonal clothing, personal collections, sports gear, or even art and décor that you may not use every day but still want to keep.</p>
+                <p>Our storage spaces come in a variety of sizes, allowing you to store anything from a few boxes to larger items of furniture, depending on your needs. With secure facilities, easy access, and affordable pricing, you can declutter your home. Self Storage India is here to provide you with the extra space you need without the stress of overcrowding your living areas.</p>
+
+                <h2>Household Storage India NCR | Protect Your Valuables</h2>
+                <p>As more people in India, especially in NCR, look for efficient ways to store their household belongings, the demand for reliable household storage has skyrocketed. Self Storage India offers a smart and professional solution to manage your household storage needs. Whether you're moving to a new home, renovating your current space, or simply need a temporary solution while traveling, our storage services are designed to provide you with peace of mind.</p>
+                <p>Our household storage spaces are perfect for:</p>
+                <ul>
+                    <li>Safeguarding delicate or valuable items, ensuring they remain in pristine condition.</li>
+                    <li>Offering extra storage space while you’re remodeling or reorganizing your home.</li>
+                    <li>Storing your household belongings during long trips or extended stays abroad.</li>
+                </ul>
+                <p>With 24/7 CCTV monitoring, advanced fire safety systems, and secure access controls, we take every precaution to keep your belongings safe and sound.</p>
+
+                <h2>Furniture Storage Services NCR | Hassle-Free Storage Solutions</h2>
+                <p>Furniture can take up a lot of room in your home, and sometimes you just need a secure place to store it. Whether you're in between homes or just need a temporary space, Self Storage India offers the perfect solution. Our furniture storage services in NCR provide the ideal environment for storing large and bulky items like: sofas, Dining tables and other large furnishings.</p>
+                <p>We ensure that your furniture is stored in a clean and secure environment, protecting it from dust and damage. Whether you need short-term storage while you move or a longer-term solution, we’ve got you covered. Plus, our spacious units can handle even the largest pieces, giving you the flexibility to store as much or as little as you need.</p>
+
+                <h2>Home Storage Units NCR</h2>
+                <p>When your home feels cluttered and you need additional space to store your belongings, home storage units in NCR from Self Storage India provide the perfect solution. Our units come in different sizes, catering to everything from small household items to large furniture. With flexible rental options, you can choose a plan that fits your needs without being locked into a long-term contract.</p>
+                <p>Additionally, our storage units are equipped with high-security systems, including digital access controls, ensuring that your items are safe and protected at all times. Whether you are a student needing extra space, a professional looking to store work-related items, or a family requiring storage during a move, Self Storage India has the ideal unit to keep your home organized and clutter-free.</p>
+
+                <h2>Household Storage Services NCR</h2>
+                <p>For many homeowners and renters, space can quickly become a concern. Our household storage services in NCR are designed to help you manage your excess belongings without the stress of overcrowding your living space. Self Storage India offers a range of services to simplify your storage experience. We provide packing assistance to ensure that your fragile and valuable items are stored safely.</p>
+                <p>With flexible contracts and no long-term commitments, you can store your items for as little or as long as you need. Additionally, we offer transportation solutions to make moving your items into storage easier and more convenient.</p>
+
+                <h2>Storage for Household Goods NCR</h2>
+                <p>When you need a reliable place to store your household items, storage for household goods in NCR at Self Storage India offers a practical and secure solution. We provide storage spaces for a variety of items, including furniture, kitchen appliances, and home décor. Our modern storage facilities are equipped with top-notch security measures to safeguard your belongings, ensuring they remain in excellent condition while in storage.</p>
+                <p>Whether you are decluttering, renovating, or in the process of moving, our storage services provide a safe and accessible option for storing your household goods.</p>
+
+                <h2>Why Choose Self Storage India?</h2>
+                <p>Self Storage India is a trusted name in household storage services in NCR, offering tailored solutions for individuals, families, and businesses. Here’s why so many choose us:</p>
+                <ul>
+                    <li><strong>Security:</strong> 24/7 CCTV surveillance and biometric access for top-notch safety.</li>
+                    <li><strong>Flexible Plans:</strong> Short-term and long-term rental options to fit your needs.</li>
+                    <li><strong>Convenience:</strong> Easily accessible storage units in prime NCR locations.</li>
+                    <li><strong>Affordable Pricing:</strong> Competitive rates without compromising on quality.</li>
+                    <li><strong>Variety of Unit Sizes:</strong> Storage options that fit everything from small items to large furniture.</li>
+                    <li><strong>Professional Assistance:</strong> Expert help with packing and organizing your belongings.</li>
+                    <li><strong>Hassle-Free Transport:</strong> Convenient transportation options to move items in and out.</li>
+                    <li><strong>Clean and Well-Maintained:</strong> Our storage units are regularly cleaned and pest-controlled for your peace of mind.</li>
+                    <li><strong>Dedicated Customer Support:</strong> Friendly and reliable service whenever you need assistance.</li>
+                    <li><strong>Trusted Reputation:</strong> Thousands of satisfied customers across NCR rely on us for secure storage solutions.</li>
+                </ul>
+
+                <h2>How Self Storage India Can Help You</h2>
+                <p>At Self Storage India, we make storing your household goods simple and hassle-free. Our team of professionals is here to assist you every step of the way, from selecting the right storage unit to ensuring that your items are properly stored and protected. Whether you need to store just a few boxes or an entire houseful of furniture, we have the perfect solution for you.</p>
+                <ul>
+                    <li>Secure and accessible storage units</li>
+                    <li>Flexible rental options to suit your needs</li>
+                    <li>Affordable pricing for all household storage requirements</li>
+                </ul>
+
+                <h2>The Smart Choice for Storing Your Belongings</h2>
+                <p>When it comes to storing your household goods in NCR, Self Storage India offers the best in security, convenience, and affordability. Whether you need short-term storage while moving or a long-term solution to keep your home organized, our home storage services provide everything you need to safely store your belongings. From home storage units to furniture storage services, we are dedicated to ensuring that your storage experience is as seamless and stress-free as possible.</p>
+                <p>If you're looking for reliable and affordable household storage services in NCR, Self Storage India is your trusted partner in keeping your items safe and secure. Contact us today to learn more about our storage solutions and find the perfect unit for your needs!</p>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECTION 13, FREQUENTLY ASKED QUESTIONS
+             ========================================== -->
+        <section id="faq" class="faq-section">
             <div class="container">
                 <div class="section-header-centered">
-                    <span class="calc-tag">FREQUENTLY ASKED QUESTIONS</span>
-                    <h2>Business Storage FAQs</h2>
-                    <p>Got questions about storing your commercial inventory or office files? Find quick answers below.</p>
+                    <span class="calc-tag">QUESTIONS &amp; ANSWERS</span>
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Find answers to common questions about space options, security parameters, flexibility, and booking details.</p>
                 </div>
 
-                <div class="faq-accordion-wrapper">
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
-                            <span>Do you provide GST tax invoices for business storage rentals?</span>
-                            <span class="material-symbols-rounded faq-icon">expand_more</span>
+                <!-- Center Accordion Container -->
+                <div class="faq-accordions-centered-container">
+                    <!-- Accordion 1 -->
+                    <div class="faq-accordion-item shadow-sm">
+                        <button class="faq-trigger" onclick="toggleFaq(this)">
+                            <span>How does Self Storage India work?</span>
+                            <span class="material-symbols-rounded accordion-arrow">add</span>
                         </button>
-                        <div class="faq-answer">
-                            <p>Yes, absolutely. We issue official GST tax invoices for all corporate and business storage subscriptions, allowing your business to claim input tax credits easily.</p>
+                        <div class="faq-content-box">
+                            <p>Select your desired room size, pack your items (or request our team's help), and move them in. You lock the room and keep the key, ensuring complete privacy and exclusive access.</p>
                         </div>
                     </div>
 
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
-                            <span>How secure are our confidential office document archives?</span>
-                            <span class="material-symbols-rounded faq-icon">expand_more</span>
+                    <!-- Accordion 2 -->
+                    <div class="faq-accordion-item shadow-sm">
+                        <button class="faq-trigger" onclick="toggleFaq(this)">
+                            <span>What can I store?</span>
+                            <span class="material-symbols-rounded accordion-arrow">add</span>
                         </button>
-                        <div class="faq-answer">
-                            <p>Your document archive boxes are stored inside private, lockable units with 24/7 CCTV surveillance, pest control, and climate management. Only your authorized company representatives hold the key.</p>
+                        <div class="faq-content-box">
+                            <p>You can store household furniture, appliances, electronics, business inventory, documents, office equipment, luggage, and packed boxes. Prohibited items include hazardous, illegal, or perishable goods.</p>
                         </div>
                     </div>
 
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
-                            <span>Can we access our commercial inventory during business hours?</span>
-                            <span class="material-symbols-rounded faq-icon">expand_more</span>
+                    <!-- Accordion 3 -->
+                    <div class="faq-accordion-item shadow-sm">
+                        <button class="faq-trigger" onclick="toggleFaq(this)">
+                            <span>How secure are my belongings?</span>
+                            <span class="material-symbols-rounded accordion-arrow">add</span>
                         </button>
-                        <div class="faq-answer">
-                            <p>Yes. You can access your business storage room anytime during operating hours to retrieve stock, add new inventory, or check files. Drive-up loading bays and freight elevators are available.</p>
+                        <div class="faq-content-box">
+                            <p>Our facilities feature 24/7 CCTV surveillance, perimeter alarms, secure access control, fire safety measures, and on-site security guards. You hold the only key to your lock.</p>
                         </div>
                     </div>
 
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
-                            <span>Do you offer doorstep pickup and transport for business goods?</span>
-                            <span class="material-symbols-rounded faq-icon">expand_more</span>
+                    <!-- Accordion 4 -->
+                    <div class="faq-accordion-item shadow-sm">
+                        <button class="faq-trigger" onclick="toggleFaq(this)">
+                            <span>Can I access my storage whenever I need?</span>
+                            <span class="material-symbols-rounded accordion-arrow">add</span>
                         </button>
-                        <div class="faq-answer">
-                            <p>Yes, our professional logistics team provides door-to-door pickup from your office or commercial facility across Delhi, Gurugram, and Noida, including packing and inventory tagging.</p>
+                        <div class="faq-content-box">
+                            <p>Yes! We offer easy access 7 days a week during our extended operating hours, allowing you to retrieve or add items whenever it's convenient.</p>
                         </div>
                     </div>
 
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
-                            <span>Is climate-managed storage available for sensitive IT servers &amp; files?</span>
-                            <span class="material-symbols-rounded faq-icon">expand_more</span>
+                    <!-- Accordion 5 -->
+                    <div class="faq-accordion-item shadow-sm">
+                        <button class="faq-trigger" onclick="toggleFaq(this)">
+                            <span>Do you provide packing and pickup services?</span>
+                            <span class="material-symbols-rounded accordion-arrow">add</span>
                         </button>
-                        <div class="faq-answer">
-                            <p>Yes, we offer climate-managed units that protect sensitive documents, files, records, and IT hardware from humidity, moisture, and extreme temperature variations.</p>
+                        <div class="faq-content-box">
+                            <p>Yes, we offer professional packing and door-to-door pickup services across Delhi NCR, making your storage transition completely hassle-free.</p>
+                        </div>
+                    </div>
+
+                    <!-- Accordion 6 -->
+                    <div class="faq-accordion-item shadow-sm">
+                        <button class="faq-trigger" onclick="toggleFaq(this)">
+                            <span>Is insurance available?</span>
+                            <span class="material-symbols-rounded accordion-arrow">add</span>
+                        </button>
+                        <div class="faq-content-box">
+                            <p>Yes, we offer flexible insurance options to protect your stored goods against unforeseen events, giving you complete peace of mind.</p>
+                        </div>
+                    </div>
+
+                    <!-- Accordion 7 -->
+                    <div class="faq-accordion-item shadow-sm">
+                        <button class="faq-trigger" onclick="toggleFaq(this)">
+                            <span>What storage sizes are available?</span>
+                            <span class="material-symbols-rounded accordion-arrow">add</span>
+                        </button>
+                        <div class="faq-content-box">
+                            <p>We offer a wide range of unit sizes, from small lockers for personal items or documents, up to large rooms capable of storing 3BHK+ households or business stocks.</p>
+                        </div>
+                    </div>
+
+                    <!-- Accordion 8 -->
+                    <div class="faq-accordion-item shadow-sm">
+                        <button class="faq-trigger" onclick="toggleFaq(this)">
+                            <span>How do I get started?</span>
+                            <span class="material-symbols-rounded accordion-arrow">add</span>
+                        </button>
+                        <div class="faq-content-box">
+                            <p>Simply request a callback, use our online size calculator, or visit one of our facilities. Our storage specialists will help you select the perfect unit and arrange your move-in.</p>
                         </div>
                     </div>
                 </div>
@@ -968,15 +1099,15 @@
 
             <div class="footer-logos">
                 <a href="index.html" class="footer-logo footer-logo-primary">
-                    <img src="https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo-300x63.png" alt="Self Storage India Logo - Private Lockable Storage Rooms &amp; Warehouses" loading="lazy" width="240" height="50" decoding="async">
+                    <img src="https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo-300x63.png" alt="Self Storage India Logo - Private Lockable Storage Rooms &amp; Warehouses" loading="lazy" decoding="async" width="240" height="50">
                 </a>
 
                 <a href="index.html" class="footer-logo footer-logo-warehouse">
-                    <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/ss_warehouse_white_bg_449_60-1-300x40.webp" alt="Self Storage Warehouse Division Official Logo" loading="lazy" width="240" height="32" decoding="async">
+                    <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/ss_warehouse_white_bg_449_60-1-300x40.webp" alt="Self Storage Warehouse Division Official Logo" loading="lazy" decoding="async" width="240" height="32">
                 </a>
 
                 <div class="footer-logo footer-logo-member">
-                    <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/Logo_SSAMember-Reflex_kiztzz-300x198.webp" alt="Self Storage Association Asia Official Member Certification Badge" loading="lazy" width="120" height="79" decoding="async">
+                    <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/Logo_SSAMember-Reflex_kiztzz-300x198.webp" alt="Self Storage Association Asia Official Member Certification Badge" loading="lazy" decoding="async" width="120" height="79">
                 </div>
             </div>
 
@@ -1005,10 +1136,10 @@
                 <div class="form-group">
                     <label for="storage-size">Est. Storage Needs</label>
                     <select id="storage-size">
-                        <option>Archive Locker (Files, Document boxes)</option>
-                        <option>Medium Unit (5–10 Desk Office)</option>
-                        <option>Large Unit (15–20 Desk Office / Stock)</option>
-                        <option>Warehouse Suite (Palletized stock / Bulk)</option>
+                        <option>Locker (Small items, files)</option>
+                        <option>Small Room (1BHK furniture)</option>
+                        <option>Medium Room (2BHK furniture)</option>
+                        <option>Large Room (3BHK+ / Business stock)</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-accent full-width" style="height: 52px; font-size: 0.95rem;">Calculate Estimate</button>
