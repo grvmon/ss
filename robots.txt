@@ -1,0 +1,6 @@
+# robots.txt for Self Storage India
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://selfstorageindia.com/sitemap.xml
