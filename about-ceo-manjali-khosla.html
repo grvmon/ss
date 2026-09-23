@@ -36,7 +36,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Google Material Symbols Rounded Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
-    <link rel="stylesheet" href="styles.css?v=3.7">
+    <link rel="stylesheet" href="styles.css?v=3.8">
     <!-- Font Awesome CDN for footer social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
@@ -227,339 +227,438 @@
     <!-- Mobile Drawer Overlay -->
     <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileMenu()"></div>
 
-    <!-- Main Container -->
-    <main class="ceo-page-container">
-        <!-- Breadcrumb Navigation -->
-        <nav aria-label="Breadcrumb">
-            <ul class="ssi-breadcrumb">
-                <li><a href="index.html"><span class="material-symbols-rounded" style="font-size: 15px;">home</span> Home</a></li>
-                <li class="bc-sep"><span class="material-symbols-rounded" style="font-size: 13px;">chevron_right</span></li>
-                <li><span>About Us</span></li>
-                <li class="bc-sep"><span class="material-symbols-rounded" style="font-size: 13px;">chevron_right</span></li>
-                <li class="bc-current" aria-current="page">Dr. Manjali Khosla (CEO)</li>
-            </ul>
-        </nav>
+    <!-- Main Body Container -->
+    <main>
+        <!-- Hero Container (Consistent with Homepage Design System) -->
+        <section class="hero-container">
+            <!-- Background graphics -->
+            <div class="bg-shape-grid"></div>
+            <div class="bg-shape-glow"></div>
+            <div class="bg-blueprint-pattern"></div>
 
-        <!-- Hero Section: Executive Introduction -->
-        <section class="ceo-hero-grid">
-            <div class="ceo-hero-text">
-                <div class="badge-accent-wrapper" style="margin-bottom: 14px;">
-                    <span class="hero-tagline-accent">INDIA'S FIRST SELF-STORAGE FACILITY</span>
+            <section class="hero-content-wrapper">
+                <!-- Left Info Block -->
+                <div class="hero-text-block">
+                    <!-- Visual Breadcrumbs -->
+                    <nav class="ssi-breadcrumb" aria-label="Breadcrumb" style="margin-bottom: 14px;">
+                        <a href="index.html"><i class="fa-solid fa-house" style="font-size: 11px;"></i> Home</a>
+                        <i class="fa-solid fa-chevron-right bc-sep"></i>
+                        <span>About Us</span>
+                        <i class="fa-solid fa-chevron-right bc-sep"></i>
+                        <span class="bc-current">Dr. Manjali Khosla (CEO)</span>
+                    </nav>
+
+                    <div class="badge-accent-wrapper">
+                        <span class="hero-tagline-accent">LEADERSHIP &amp; VISION</span>
+                    </div>
+
+                    <h1 class="hero-main-title">
+                        Meet Dr. Manjali Khosla: <br>
+                        <span class="accent-text">Visionary Leader &amp; CEO</span>
+                    </h1>
+
+                    <p class="hero-paragraph">
+                        Guiding Self Storage India with innovation, integrity, and an uncompromising customer-centric philosophy — making secure, private, and flexible self-storage an accessible reality for families and enterprises across Delhi NCR.
+                    </p>
+                    <p class="hero-paragraph">
+                        Pioneering the nation's first purpose-built, secure, pest-controlled, and 100% woman-friendly self-storage facilities since 2013.
+                    </p>
+
+                    <p class="hero-ideal-list">
+                        <strong>Leadership Pillars:</strong> Absolute Privacy • Sole Key Custody • Woman-Friendly • 24/7 CCTV • Pest-Controlled
+                    </p>
+
+                    <!-- CTA buttons group -->
+                    <div class="hero-action-buttons">
+                        <button class="btn btn-primary btn-large" onclick="openQuoteModal()">Get Free Quote</button>
+                        <a href="storage-calculator.html" class="btn btn-secondary btn-large">Space Calculator</a>
+                        <a href="tel:+919090206090" class="btn btn-secondary btn-large">
+                            <span class="material-symbols-rounded" style="font-size: 18px;">call</span>
+                            +91-9090206090
+                        </a>
+                    </div>
+
+                    <!-- Trust Indicators Directly Below CTA -->
+                    <div class="hero-trust-indicators">
+                        <div class="trust-indicator-item">
+                            <div class="stars">★★★★★ 4.9</div>
+                            <div class="label">Google Rating</div>
+                        </div>
+                        <div class="trust-divider"></div>
+                        <div class="trust-indicator-item">
+                            <div class="count">2013</div>
+                            <div class="label">Pioneered In India</div>
+                        </div>
+                        <div class="trust-divider"></div>
+                        <div class="trust-indicator-item">
+                            <div class="count">5,000+</div>
+                            <div class="label">Satisfied Clients</div>
+                        </div>
+                    </div>
                 </div>
-                <h1>
-                    Meet Dr. Manjali Khosla: <br>
-                    <span class="accent-text">Visionary Leader &amp; CEO</span>
-                </h1>
-                <p class="ceo-hero-lead">
-                    Guiding Self Storage India with innovation, integrity, and a customer-centric philosophy — making secure, private, and flexible storage a reality for families and enterprises across Delhi NCR.
-                </p>
 
-                <!-- Core Trust Highlight Pills -->
-                <div class="ceo-highlight-pills">
-                    <div class="ceo-highlight-pill">
-                        <span class="material-symbols-rounded">security</span>
-                        <span>24/7 CCTV &amp; Security</span>
+                <!-- Right Visual: Executive Portrait Card with Floating Badges -->
+                <div class="hero-visual-block">
+                    <div class="hero-visual-wrapper shadow-lg">
+                        <div class="hero-visual-img-container" style="height: 380px;">
+                            <img src="assets/manjali_cover.jpg" alt="Dr. Manjali Khosla - CEO and Founder of Self Storage India" class="hero-visual-img" fetchpriority="high" width="1024" height="682" decoding="async">
+                        </div>
+
+                        <!-- Floating Badge 1 (Leadership Overlay) -->
+                        <div class="floating-badge badge-1 shadow-md">
+                            <div class="badge-icon-box">
+                                <span class="material-symbols-rounded">verified_user</span>
+                            </div>
+                            <div class="badge-content">
+                                <h4>Founder &amp; CEO</h4>
+                                <p>Self Storage India</p>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge 2 (Woman-Led Overlay) -->
+                        <div class="floating-badge badge-2 shadow-md">
+                            <div class="badge-icon-box orange">
+                                <span class="material-symbols-rounded">female</span>
+                            </div>
+                            <div class="badge-content">
+                                <h4>100% Woman-Friendly</h4>
+                                <p>Safe &amp; Well-Lit Rooms</p>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge 3 (Academic Excellence Overlay) -->
+                        <div class="floating-badge badge-3 shadow-md">
+                            <div class="badge-icon-box">
+                                <span class="material-symbols-rounded">school</span>
+                            </div>
+                            <div class="badge-content">
+                                <h4>PhD, UC Davis</h4>
+                                <p>Analytical Chemistry</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="ceo-highlight-pill">
-                        <span class="material-symbols-rounded">key</span>
-                        <span>Sole Key Custody</span>
+                </div>
+            </section>
+        </section>
+
+        <!-- Trust Key Features Strip (Matching Homepage Standard) -->
+        <section class="hero-trust-strip">
+            <div class="offerings-trust-strip">
+                <div class="trust-strip-item">
+                    <div class="trust-icon-circle">
+                        <span class="material-symbols-rounded">lock</span>
                     </div>
-                    <div class="ceo-highlight-pill">
-                        <span class="material-symbols-rounded">pest_control</span>
-                        <span>Pest-Controlled Facilities</span>
+                    <div class="trust-text">
+                        <h4>Own Lock &amp; Key</h4>
+                        <p>Personal lock &amp; full control.</p>
                     </div>
-                    <div class="ceo-highlight-pill">
+                </div>
+                <div class="trust-strip-item">
+                    <div class="trust-icon-circle">
+                        <span class="material-symbols-rounded">videocam</span>
+                    </div>
+                    <div class="trust-text">
+                        <h4>24/7 CCTV Monitoring</h4>
+                        <p>Round-the-clock security.</p>
+                    </div>
+                </div>
+                <div class="trust-strip-item">
+                    <div class="trust-icon-circle">
                         <span class="material-symbols-rounded">female</span>
-                        <span>100% Woman-Friendly</span>
                     </div>
-                    <div class="ceo-highlight-pill">
-                        <span class="material-symbols-rounded">pin_drop</span>
-                        <span>Delhi • Gurugram • Noida</span>
+                    <div class="trust-text">
+                        <h4>100% Woman-Friendly</h4>
+                        <p>Safe, well-lit, dignified facilities.</p>
+                    </div>
+                </div>
+                <div class="trust-strip-item">
+                    <div class="trust-icon-circle">
+                        <span class="material-symbols-rounded">verified</span>
+                    </div>
+                    <div class="trust-text">
+                        <h4>SSAA Certified Member</h4>
+                        <p>Self Storage Association Asia.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trusted & Featured In Media Logos (Matching Homepage Trust-Bar) -->
+        <section class="trust-bar" aria-label="Media Publications Featuring Self Storage India">
+            <div class="trust-bar-container">
+                <span class="trust-title">As seen on</span>
+                <div class="trust-logos-grid">
+                    <div class="logo-item" title="Press Trust of India">
+                        <img src="images/media/pti.png" alt="Press Trust of India PTI News Feature - Self Storage India" loading="lazy" width="48" height="48" decoding="async">
+                    </div>
+                    <div class="logo-item" title="The Week Live">
+                        <img src="images/media/the-week.png" alt="The Week Magazine Coverage - Self Storage India" loading="lazy" width="48" height="48" decoding="async">
+                    </div>
+                    <div class="logo-item" title="Times of India">
+                        <img src="images/media/toi.png" alt="Times of India TOI Press Feature - Self Storage India" loading="lazy" width="48" height="48" decoding="async">
+                    </div>
+                    <div class="logo-item" title="Radius+ Global Storage Intelligence">
+                        <img src="images/media/rplus.png" alt="Radius Plus Media Feature - Self Storage India" loading="lazy" width="48" height="48" decoding="async">
+                    </div>
+                    <div class="logo-item" title="The Economic Times">
+                        <img src="images/media/economic-times.png" alt="The Economic Times ET News Feature - Self Storage India" loading="lazy" width="48" height="48" decoding="async">
+                    </div>
+                    <div class="logo-item" title="Inside Self Storage">
+                        <img src="images/media/iss.png" alt="Inside Self Storage ISS Global Member Badge - Self Storage India" loading="lazy" width="48" height="48" decoding="async">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Editorial Content Container -->
+        <div class="ceo-page-container">
+            <!-- Biography Story Grid: Part 1 & 2 -->
+            <section class="ceo-story-grid">
+                <!-- Story Card 1 -->
+                <article class="ceo-story-card">
+                    <div class="story-card-icon">
+                        <span class="material-symbols-rounded">lightbulb</span>
+                    </div>
+                    <h2>The Inception: Born Out of a Personal Challenge</h2>
+                    <p>
+                        Dr. Manjali Khosla’s journey to founding Self Storage India began with a very real, relatable dilemma. While relocating from Dubai to India, she urgently needed a secure storage facility to temporarily house her household furniture and personal belongings. She searched across Delhi NCR but struggled to find a single facility that was clean, easily accessible, pest-controlled, and woman-friendly.
+                    </p>
+                    <p>
+                        Having lived and worked abroad for years, she was surprised by the complete absence of organized self-storage in India — especially given that private lockable storage has long been a staple utility in metropolitan economies worldwide.
+                    </p>
+                    <p>
+                        Rather than settling for unorganized warehousing or damp basements, her entrepreneurial spirit took over. In 2013, she founded <strong>Self Storage India</strong> — pioneering the nation's first purpose-built, secure, private self-storage facility born out of her own quest for reliable, dignified space.
+                    </p>
+                </article>
+
+                <!-- Story Card 2 -->
+                <article class="ceo-story-card">
+                    <div class="story-card-icon">
+                        <span class="material-symbols-rounded">school</span>
+                    </div>
+                    <h2>The Woman Behind the Company</h2>
+                    <p>
+                        Manjali grew up in Hong Kong in a traditional family where women were customarily expected to complete high school and transition immediately to domestic responsibilities. She chose an alternative, pioneering path — becoming the first woman in her family to pursue higher academic studies in science.
+                    </p>
+                    <p>
+                        She traveled to the United States and earned a <strong>PhD in Analytical Chemistry from the prestigious University of California, Davis (UC Davis)</strong>. Her scientific background instilled a meticulous, data-driven approach to facility operations, quality control, humidity mitigation, and systematic security.
+                    </p>
+                    <p>
+                        Carrying a proud history of "firsts," Dr. Khosla aspires to be the first in her family to steer an enterprise to a public stock exchange listing, and she is steadfastly guiding Self Storage India toward sustainable, institutional growth.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Inspirational Quote Banner (Brand Gradient) -->
+            <section class="ceo-quote-banner">
+                <div class="ceo-quote-content">
+                    <blockquote class="ceo-quote-text">
+                        “The idea is, wherever one may be in the world, they know that their goods are safe and sound here – that’s my mission since I know this is what I would want from a company like Self Storage.”
+                    </blockquote>
+                    <div class="ceo-quote-author">Dr. Manjali Khosla</div>
+                    <div class="ceo-quote-title">Founder &amp; Chief Executive Officer, Self Storage India</div>
+                </div>
+            </section>
+
+            <!-- Biography Story Grid: Part 3 & 4 -->
+            <section class="ceo-story-grid">
+                <!-- Story Card 3 -->
+                <article class="ceo-story-card">
+                    <div class="story-card-icon">
+                        <span class="material-symbols-rounded">eco</span>
+                    </div>
+                    <h2>Conscious Living &amp; Social Responsibility</h2>
+                    <p>
+                        A firm believer in the philosophy, <em>“If you are going to do something, give it your best shot,”</em> Manjali balances executive leadership with deep social and environmental activism.
+                    </p>
+                    <p>
+                        As co-founder of <strong>Care for Air</strong>, an active non-profit civic initiative dedicated to combating air pollution, she advocates tirelessly for environmental awareness, respiratory wellness, and clean energy in urban India.
+                    </p>
+                    <p>
+                        Her dedication to community extends into grassroots education. In her personal time, Dr. Khosla volunteers teaching English to underprivileged youth and coordinates toy and educational game drives to bring joyful, constructive play into children’s lives.
+                    </p>
+                </article>
+
+                <!-- Story Card 4 -->
+                <article class="ceo-story-card">
+                    <div class="story-card-icon">
+                        <span class="material-symbols-rounded">rocket_launch</span>
+                    </div>
+                    <h2>The Vision: Space for Modern, Nomadic Lifestyles</h2>
+                    <p>
+                        As modern work culture transforms, Self Storage India plays an essential role in unlocking freedom for individuals and businesses alike. The rapid rise of hybrid work, global mobility, and digital nomadism means professionals no longer need to be chained to expensive apartment leases just to safeguard their belongings.
+                    </p>
+                    <p>
+                        Having a reliable, private storage unit enables individuals to relocate freely between cities, travel abroad without rent burdens, or move back home on their own terms.
+                    </p>
+                    <p>
+                        For commercial enterprises, flexible month-to-month warehousing eliminates burdensome multi-year real estate leases, allowing startups and SMEs to scale inventory dynamically with zero capital lock-in.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Leadership Pillars & Core Values -->
+            <section style="margin-bottom: 64px;">
+                <div class="values-section-head">
+                    <div class="badge-accent-wrapper" style="margin-bottom: 10px;">
+                        <span class="hero-tagline-accent">FOUNDATIONAL PRINCIPLES</span>
+                    </div>
+                    <h2>Our Guiding Leadership Pillars</h2>
+                    <p>The core values instilled by Dr. Manjali Khosla that shape every customer interaction and facility standard.</p>
+                </div>
+
+                <div class="values-cards-grid">
+                    <!-- Pillar 1 -->
+                    <div class="value-feature-card">
+                        <div class="value-feature-icon">
+                            <span class="material-symbols-rounded">verified_user</span>
+                        </div>
+                        <h3>Absolute Custody</h3>
+                        <p>You hold the only physical key to your private lockable room. No master keys, no third-party inspections, complete personal privacy.</p>
+                    </div>
+
+                    <!-- Pillar 2 -->
+                    <div class="value-feature-card">
+                        <div class="value-feature-icon">
+                            <span class="material-symbols-rounded">female</span>
+                        </div>
+                        <h3>Dignity &amp; Woman-Friendly</h3>
+                        <p>Brightly lit, secure, and respectful environments that ensure complete comfort and ease of access for women, families, and solo visitors.</p>
+                    </div>
+
+                    <!-- Pillar 3 -->
+                    <div class="value-feature-card">
+                        <div class="value-feature-icon">
+                            <span class="material-symbols-rounded">cleaning_services</span>
+                        </div>
+                        <h3>Pristine Hygiene</h3>
+                        <p>Scheduled preventive pest management, advanced moisture barriers, and continuous maintenance keep your valuables spotless.</p>
+                    </div>
+
+                    <!-- Pillar 4 -->
+                    <div class="value-feature-card">
+                        <div class="value-feature-icon">
+                            <span class="material-symbols-rounded">handshake</span>
+                        </div>
+                        <h3>Transparent Pricing</h3>
+                        <p>Zero hidden maintenance fees, no security deposit lock-ins, and honest month-to-month billing where you only pay for the space you use.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Industry Accreditations & Memberships -->
+            <section class="accreditation-card" aria-label="Official Industry Memberships">
+                <div class="accreditation-content">
+                    <h3>Certified Industry Standards &amp; Accreditation</h3>
+                    <p>Self Storage India operates under the international best practices set by the Self Storage Association Asia (SSAA), ensuring world-class security protocols, fire safety, and customer protection.</p>
+                </div>
+                <div class="accreditation-badges">
+                    <div class="accreditation-badge-item">
+                        <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/Logo_SSAMember-Reflex_kiztzz-300x198.webp" alt="Self Storage Association Asia Official Member" width="120" height="79" loading="lazy">
+                        <span>Official Member<br>SSAA (Asia)</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Space Estimator Calculator Banner (Consistent with Homepage) -->
+        <section class="calc-banner-section" aria-labelledby="calc-banner-heading">
+            <div class="calc-banner-container">
+                <div class="calc-banner-header">
+                    <span class="calc-tag">INSTANT SPACE ESTIMATOR</span>
+                    <h2 id="calc-banner-heading">Calculate Your Storage Unit Size</h2>
+                    <p>Select your items below to estimate exact sq. ft. needed and avoid paying for extra space.</p>
+                </div>
+
+                <div class="calc-banner-items">
+                    <div class="calc-banner-item" onclick="window.open('storage-calculator.html', '_blank')" role="button" tabindex="0" title="Estimate Storage for Boxes">
+                        <div class="calc-item-icon-box">
+                            <span class="material-symbols-rounded">inventory_2</span>
+                        </div>
+                        <span class="calc-item-name">Boxes &amp; Cartons</span>
+                    </div>
+
+                    <div class="calc-banner-item" onclick="window.open('storage-calculator.html', '_blank')" role="button" tabindex="0" title="Estimate Storage for Beds">
+                        <div class="calc-item-icon-box">
+                            <span class="material-symbols-rounded">bed</span>
+                        </div>
+                        <span class="calc-item-name">Beds &amp; Mattresses</span>
+                    </div>
+
+                    <div class="calc-banner-item" onclick="window.open('storage-calculator.html', '_blank')" role="button" tabindex="0" title="Estimate Storage for Chairs">
+                        <div class="calc-item-icon-box">
+                            <span class="material-symbols-rounded">chair</span>
+                        </div>
+                        <span class="calc-item-name">Chairs &amp; Sofas</span>
+                    </div>
+
+                    <div class="calc-banner-item" onclick="window.open('storage-calculator.html', '_blank')" role="button" tabindex="0" title="Estimate Storage for Tables">
+                        <div class="calc-item-icon-box">
+                            <span class="material-symbols-rounded">table_restaurant</span>
+                        </div>
+                        <span class="calc-item-name">Dining Tables</span>
+                    </div>
+
+                    <div class="calc-banner-item" onclick="window.open('storage-calculator.html', '_blank')" role="button" tabindex="0" title="Estimate Storage for Appliances">
+                        <div class="calc-item-icon-box">
+                            <span class="material-symbols-rounded">tv</span>
+                        </div>
+                        <span class="calc-item-name">Appliances &amp; TV</span>
+                    </div>
+
+                    <div class="calc-banner-item" onclick="window.open('storage-calculator.html', '_blank')" role="button" tabindex="0" title="Estimate Storage for Cabinets">
+                        <div class="calc-item-icon-box">
+                            <span class="material-symbols-rounded">kitchen</span>
+                        </div>
+                        <span class="calc-item-name">Wardrobes &amp; Cabinets</span>
+                    </div>
+
+                    <div class="calc-banner-item" onclick="window.open('storage-calculator.html', '_blank')" role="button" tabindex="0" title="Estimate Storage for Luggage">
+                        <div class="calc-item-icon-box">
+                            <span class="material-symbols-rounded">luggage</span>
+                        </div>
+                        <span class="calc-item-name">Luggage &amp; Bags</span>
+                    </div>
+
+                    <div class="calc-banner-item" onclick="window.open('storage-calculator.html', '_blank')" role="button" tabindex="0" title="Estimate Storage for Office Files">
+                        <div class="calc-item-icon-box">
+                            <span class="material-symbols-rounded">work</span>
+                        </div>
+                        <span class="calc-item-name">Office &amp; Files</span>
                     </div>
                 </div>
 
-                <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-                    <a href="storage-calculator.html" class="btn btn-primary" style="padding: 12px 24px;">
-                        <span class="material-symbols-rounded" style="font-size: 19px;">calculate</span>
-                        Estimate Your Space
+                <div class="calc-banner-cta-wrapper">
+                    <a href="storage-calculator.html" class="btn-calc-orange">
+                        <span>Calculate Your Storage Now</span>
+                        <span class="material-symbols-rounded">arrow_forward</span>
                     </a>
-                    <a href="tel:+919090206090" class="btn btn-outline" style="padding: 12px 24px;">
-                        <span class="material-symbols-rounded" style="font-size: 19px;">call</span>
-                        Speak with Space Expert
-                    </a>
-                </div>
-            </div>
-
-            <!-- Executive Portrait Card -->
-            <div class="ceo-photo-card">
-                <img src="assets/manjali_cover.jpg" alt="Dr. Manjali Khosla - CEO of Self Storage India inside secure storage unit facility" class="ceo-photo-img" width="1000" height="667" fetchpriority="high">
-                <div class="ceo-photo-caption">
-                    <div class="ceo-photo-name">Dr. Manjali Khosla</div>
-                    <div class="ceo-photo-role">Founder &amp; Chief Executive Officer</div>
-                    <div class="ceo-photo-meta">PhD, Analytical Chemistry (UC Davis) | Co-Founder, Care for Air</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Media Recognition Strip: As Seen On -->
-        <section class="media-strip-wrapper" aria-label="Media Publications Featuring Self Storage India">
-            <div class="media-strip-label">As Featured &amp; Recognized In Leading Media</div>
-            <div class="media-strip-logos">
-                <div class="media-logo-item" title="The Economic Times">
-                    <img src="images/media/economic-times.png" alt="The Economic Times coverage of Self Storage India" width="78" height="76" loading="lazy">
-                </div>
-                <div class="media-logo-item" title="The Times of India">
-                    <img src="images/media/toi.png" alt="Times of India feature on Self Storage India" width="77" height="76" loading="lazy">
-                </div>
-                <div class="media-logo-item" title="The Week">
-                    <img src="images/media/the-week.png" alt="The Week coverage" width="77" height="76" loading="lazy">
-                </div>
-                <div class="media-logo-item" title="Press Trust of India (PTI)">
-                    <img src="images/media/pti.png" alt="Press Trust of India" width="55" height="53" loading="lazy">
-                </div>
-                <div class="media-logo-item" title="Inside Self-Storage (ISS)">
-                    <img src="images/media/iss.png" alt="Inside Self-Storage industry journal" width="64" height="39" loading="lazy">
-                </div>
-                <div class="media-logo-item" title="Radius+ Global Storage Intelligence">
-                    <img src="images/media/rplus.png" alt="Radius Plus Self Storage Intelligence" width="78" height="76" loading="lazy">
-                </div>
-            </div>
-        </section>
-
-        <!-- Biography Story Grid: Part 1 & 2 -->
-        <section class="ceo-story-grid">
-            <!-- Story Card 1 -->
-            <article class="ceo-story-card">
-                <div class="story-card-icon">
-                    <span class="material-symbols-rounded">lightbulb</span>
-                </div>
-                <h2>The Inception: Born Out of a Personal Challenge</h2>
-                <p>
-                    Manjali Khosla’s journey to founding Self Storage India began with a very real, relatable dilemma. While relocating from Dubai to India, she needed a storage facility to temporarily house her household furniture and personal belongings. She searched across Delhi NCR but struggled to find a single facility that was clean, easily accessible, pest-controlled, and woman-friendly.
-                </p>
-                <p>
-                    Having lived and worked abroad for years, she was surprised by the absence of organized self-storage in India — especially given that private lockable storage has long been a staple service in developed metropolitan economies worldwide.
-                </p>
-                <p>
-                    Rather than settling for unorganized warehousing or damp basements, her entrepreneurial spirit kicked in. In 2013, she founded <strong>Self Storage India</strong> — pioneering the nation's first purpose-built, secure, private self-storage facility born out of her own quest for reliable, dignified space.
-                </p>
-            </article>
-
-            <!-- Story Card 2 -->
-            <article class="ceo-story-card">
-                <div class="story-card-icon">
-                    <span class="material-symbols-rounded">school</span>
-                </div>
-                <h2>The Woman Behind the Company</h2>
-                <p>
-                    Manjali grew up in Hong Kong in a traditional family where women were customarily expected to complete high school and transition immediately to domestic responsibilities. She chose an alternative, pioneering path — becoming the first woman in her family to pursue higher academic studies in science.
-                </p>
-                <p>
-                    She traveled to the United States and earned a <strong>PhD in Analytical Chemistry from the prestigious University of California, Davis (UC Davis)</strong>. Her scientific background instilled a meticulous, data-driven approach to operations, quality control, humidity mitigation, and systematic security.
-                </p>
-                <p>
-                    Carrying a proud history of "firsts," Dr. Khosla aspires to be the first in her family to steer an enterprise to a public stock exchange listing, and she is steadfastly guiding Self Storage India toward sustainable, institutional growth.
-                </p>
-            </article>
-        </section>
-
-        <!-- Inspirational Quote Banner -->
-        <section class="ceo-quote-banner">
-            <div class="ceo-quote-content">
-                <blockquote class="ceo-quote-text">
-                    “The idea is, wherever one may be in the world, they know that their goods are safe and sound here – that’s my mission since I know this is what I would want from a company like Self Storage.”
-                </blockquote>
-                <div class="ceo-quote-author">Dr. Manjali Khosla</div>
-                <div class="ceo-quote-title">Founder &amp; Chief Executive Officer, Self Storage India</div>
-            </div>
-        </section>
-
-        <!-- Biography Story Grid: Part 3 & 4 -->
-        <section class="ceo-story-grid">
-            <!-- Story Card 3 -->
-            <article class="ceo-story-card">
-                <div class="story-card-icon">
-                    <span class="material-symbols-rounded">eco</span>
-                </div>
-                <h2>Conscious Living &amp; Social Responsibility</h2>
-                <p>
-                    A strong believer in the philosophy, <em>“If you are going to do something, give it your best shot,”</em> Manjali balances executive leadership with deep social and environmental activism.
-                </p>
-                <p>
-                    As co-founder of <strong>Care for Air</strong>, an active non-profit civic initiative dedicated to combating air pollution, she advocates tirelessly for environmental awareness, respiratory wellness, and clean energy in urban India.
-                </p>
-                <p>
-                    Her dedication to community extends into grassroots education. In her personal time, Dr. Khosla volunteers teaching English to underprivileged youth and coordinates toy and educational game drives to bring joyful, constructive play into children’s lives.
-                </p>
-            </article>
-
-            <!-- Story Card 4 -->
-            <article class="ceo-story-card">
-                <div class="story-card-icon">
-                    <span class="material-symbols-rounded">rocket_launch</span>
-                </div>
-                <h2>The Vision: Space for Modern, Nomadic Lifestyles</h2>
-                <p>
-                    As modern work culture transforms, Self Storage India plays an essential role in unlocking freedom for individuals and businesses alike. The rapid rise of hybrid work, global mobility, and digital nomadism means professionals no longer need to be chained to expensive apartment leases just to safeguard their belongings.
-                </p>
-                <p>
-                    Having a reliable, private storage unit enables individuals to relocate freely between cities, travel abroad without rent burdens, or move back home on their own terms.
-                </p>
-                <p>
-                    For commercial enterprises, flexible month-to-month warehousing eliminates burdensome multi-year real estate leases, allowing startups and SMEs to scale inventory dynamically with zero capital lock-in.
-                </p>
-            </article>
-        </section>
-
-        <!-- Leadership Pillars & Core Values -->
-        <section style="margin-bottom: 64px;">
-            <div class="values-section-head">
-                <div class="badge-accent-wrapper" style="margin-bottom: 10px;">
-                    <span class="hero-tagline-accent">FOUNDATIONAL PRINCIPLES</span>
-                </div>
-                <h2>Our Guiding Leadership Pillars</h2>
-                <p>The core values instilled by Dr. Manjali Khosla that shape every customer interaction and facility standard.</p>
-            </div>
-
-            <div class="values-cards-grid">
-                <!-- Pillar 1 -->
-                <div class="value-feature-card">
-                    <div class="value-feature-icon">
-                        <span class="material-symbols-rounded">verified_user</span>
-                    </div>
-                    <h3>Absolute Custody</h3>
-                    <p>You hold the only physical key to your private lockable room. No master keys, no third-party inspections, complete personal privacy.</p>
                 </div>
 
-                <!-- Pillar 2 -->
-                <div class="value-feature-card">
-                    <div class="value-feature-icon">
-                        <span class="material-symbols-rounded">diversity_1</span>
-                    </div>
-                    <h3>Dignity &amp; Woman-Friendly</h3>
-                    <p>Brightly lit, secure, and respectful environments that ensure complete comfort and ease of access for women, families, and solo visitors.</p>
+                <div class="calc-banner-features">
+                    <span class="calc-feature-chip">⚡ 100% Free &amp; Fast</span>
+                    <span class="calc-feature-chip">📐 Precise Sq. Ft. Estimate</span>
+                    <span class="calc-feature-chip">💰 Zero Wasted Space</span>
                 </div>
-
-                <!-- Pillar 3 -->
-                <div class="value-feature-card">
-                    <div class="value-feature-icon">
-                        <span class="material-symbols-rounded">cleaning_services</span>
-                    </div>
-                    <h3>Pristine Hygiene</h3>
-                    <p>Scheduled preventive pest management, advanced moisture barriers, and continuous maintenance keep your valuables spotless.</p>
-                </div>
-
-                <!-- Pillar 4 -->
-                <div class="value-feature-card">
-                    <div class="value-feature-icon">
-                        <span class="material-symbols-rounded">handshake</span>
-                    </div>
-                    <h3>Transparent Pricing</h3>
-                    <p>Zero hidden maintenance fees, no security deposit lock-ins, and honest month-to-month billing where you only pay for the space you use.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Industry Accreditations & Memberships -->
-        <section class="accreditation-card" aria-label="Official Industry Memberships">
-            <div class="accreditation-content">
-                <h3>Certified Industry Standards &amp; Accreditation</h3>
-                <p>Self Storage India operates under the international best practices set by the Self Storage Association Asia (SSAA), ensuring world-class security protocols, fire safety, and customer protection.</p>
-            </div>
-            <div class="accreditation-badges">
-                <div class="accreditation-badge-item">
-                    <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/Logo_SSAMember-Reflex_kiztzz-300x198.webp" alt="Self Storage Association Asia Official Member" width="120" height="79" loading="lazy">
-                    <span>Official Member<br>SSAA (Asia)</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Conversion CTA Banner -->
-        <section style="background: linear-gradient(135deg, #0b3c5d 0%, #1e40af 100%); border-radius: 28px; padding: 48px; text-align: center; color: #ffffff; box-shadow: 0 16px 36px -8px rgba(11, 60, 93, 0.3);">
-            <h2 style="font-size: clamp(1.8rem, 2.8vw, 2.4rem); font-weight: 800; color: #ffffff; margin-bottom: 14px;">
-                Experience Peace of Mind with India's Storage Pioneer
-            </h2>
-            <p style="font-size: 1.05rem; color: #e2e8f0; max-width: 640px; margin: 0 auto 28px; line-height: 1.6;">
-                Whether you are remodeling your home, traveling abroad, or growing business inventory, we provide the perfect private lockable room for your needs.
-            </p>
-            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                <button class="btn btn-primary" onclick="openQuoteModal()" style="padding: 14px 28px; font-size: 1rem;">
-                    <span class="material-symbols-rounded">request_quote</span>
-                    Get Instant Free Quote
-                </button>
-                <a href="storage-calculator.html" class="btn btn-outline" style="padding: 14px 28px; font-size: 1rem; color: #ffffff; border-color: rgba(255,255,255,0.4);">
-                    <span class="material-symbols-rounded">calculate</span>
-                    Storage Size Calculator
-                </a>
-                <a href="tel:+919090206090" class="btn btn-outline" style="padding: 14px 28px; font-size: 1rem; color: #ffffff; border-color: rgba(255,255,255,0.4);">
-                    <span class="material-symbols-rounded">call</span>
-                    Call +91-9090206090
-                </a>
             </div>
         </section>
     </main>
 
-    <!-- Global Footer -->
-    <footer class="footer">
+    <!-- Global Site Footer (100% Baseline In-Line with Homepage) -->
+    <footer class="site-footer">
         <div class="footer-container">
-            <div class="footer-grid">
-                <!-- Company Info -->
-                <div class="footer-col">
-                    <a href="index.html" class="footer-logo">
-                        <img src="https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo.png" alt="Self Storage India Logo" loading="lazy" decoding="async" width="240" height="68">
-                    </a>
-                    <p class="footer-desc">
-                        India's pioneer in secure, private, lockable self-storage rooms. Certified member of the Self Storage Association Asia (SSAA).
-                    </p>
-                    <div class="footer-contact">
-                        <div class="contact-item">
-                            <span class="material-symbols-rounded">call</span>
-                            <a href="tel:+919090206090">+91-9090206090</a>
-                        </div>
-                        <div class="contact-item">
-                            <span class="material-symbols-rounded">mail</span>
-                            <a href="mailto:info@selfstorageindia.com">info@selfstorageindia.com</a>
-                        </div>
-                    </div>
-                </div>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="household-goods-storage.html">For Home</a>
+                <a href="business-storage.html">For Business</a>
+                <a href="self-storage-delhi.html">Locations</a>
+                <a href="about-ceo-manjali-khosla.html" class="active">About CEO</a>
+                <a href="https://selfstorageindia.com/blog/">Blogs</a>
+                <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="javascript:void(0)" onclick="openQuoteModal()">Contact Us</a>
+            </nav>
 
-                <!-- Storage Solutions Links -->
-                <div class="footer-col">
-                    <h4>Storage Solutions</h4>
-                    <ul class="footer-links">
-                        <li><a href="household-goods-storage.html">Household Storage</a></li>
-                        <li><a href="business-storage.html">Business &amp; Commercial</a></li>
-                        <li><a href="offering-private-rooms.html">Private Storage Rooms</a></li>
-                        <li><a href="offering-box-storage.html">Box Storage Units</a></li>
-                        <li><a href="storage-calculator.html">Space Calculator</a></li>
-                    </ul>
-                </div>
-
-                <!-- Locations Links -->
-                <div class="footer-col">
-                    <h4>Facilities</h4>
-                    <ul class="footer-links">
-                        <li><a href="self-storage-gurugram.html">Gurugram Facility</a></li>
-                        <li><a href="self-storage-delhi.html">Delhi Facility</a></li>
-                        <li><a href="self-storage-noida.html">Noida Facility</a></li>
-                        <li><a href="index.html#locations">All NCR Locations</a></li>
-                    </ul>
-                </div>
-
-                <!-- About & Company Links -->
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <ul class="footer-links">
-                        <li><a href="about-ceo-manjali-khosla.html">About CEO (Dr. Manjali Khosla)</a></li>
-                        <li><a href="https://selfstorageindia.com/blog/">Our Blog</a></li>
-                        <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Social Media Icons Strip -->
-            <div class="footer-social-strip">
+            <div class="footer-socials" aria-label="Social media links">
                 <a href="https://www.facebook.com/selfstorageindia" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                     <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
                 </a>
@@ -580,26 +679,27 @@
                 </a>
             </div>
 
-            <!-- Footer Logos & Certification -->
             <div class="footer-logos">
                 <a href="index.html" class="footer-logo footer-logo-primary">
-                    <img src="https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo-300x63.png" alt="Self Storage India Logo" loading="lazy" decoding="async" width="240" height="50">
+                    <img src="https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo-300x63.png" alt="Self Storage India Logo - Private Lockable Storage Rooms &amp; Warehouses" loading="lazy" decoding="async" width="240" height="50">
                 </a>
+
                 <a href="index.html" class="footer-logo footer-logo-warehouse">
                     <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/ss_warehouse_white_bg_449_60-1-300x40.webp" alt="Self Storage Warehouse Division Official Logo" loading="lazy" decoding="async" width="240" height="32">
                 </a>
+
                 <div class="footer-logo footer-logo-member">
                     <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/Logo_SSAMember-Reflex_kiztzz-300x198.webp" alt="Self Storage Association Asia Official Member Certification Badge" loading="lazy" decoding="async" width="120" height="79">
                 </div>
             </div>
 
             <p class="footer-copyright">
-                Copyright – &copy;2026, SelfStorage India, All Rights Reserved.
+                Copyright – ©2026, SelfStorage India, All Rights Reserved.
             </p>
         </div>
     </footer>
 
-    <!-- Simple Modern Modal for conversion -->
+    <!-- Quote Modal -->
     <div id="quote-modal" class="modal-overlay" onclick="closeQuoteModal(event)">
         <div class="modal-card shadow-lg" onclick="event.stopPropagation()">
             <div class="modal-header">
@@ -629,7 +729,20 @@
         </div>
     </div>
 
-    <!-- Success Toast -->
+    <!-- Video Modal -->
+    <div id="video-modal" class="modal-overlay" onclick="closeVideoModal(event)">
+        <div class="modal-card shadow-lg video-card" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2>How Self Storage Works</h2>
+                <button class="modal-close" onclick="closeVideoModal()"><span class="material-symbols-rounded">close</span></button>
+            </div>
+            <div class="video-container-box">
+                <iframe width="100%" height="280" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="How Storage Works" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Toast Notification -->
     <div id="toast" class="toast-notification shadow-lg">
         <span class="material-symbols-rounded toast-icon">check_circle</span>
         <div class="toast-content">
@@ -638,6 +751,7 @@
         </div>
     </div>
 
+    <!-- Back To Top Button -->
     <button class="back-to-top" type="button" aria-label="Back to top" id="backToTopBtn">
         <span class="material-symbols-rounded" aria-hidden="true">keyboard_arrow_up</span>
     </button>

@@ -460,14 +460,16 @@ h3 {
     box-shadow: 0 8px 20px rgba(255, 150, 0, 0.32);
 }
 
-.btn-secondary {
+.btn-secondary,
+.btn-outline {
     background: #FFFFFF;
     border: 1.5px solid rgba(24, 108, 236, 0.3);
     color: var(--primary);
     box-shadow: 0 2px 6px rgba(0,0,0,0.02);
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover,
+.btn-outline:hover {
     background-color: var(--primary-light);
     border-color: var(--primary);
     transform: translateY(-2px);
@@ -6153,7 +6155,7 @@ h3 {
 .ceo-page-container {
     max-width: 1240px;
     margin: 0 auto;
-    padding: 100px var(--space-xl) var(--space-3xl);
+    padding: 56px var(--space-xl) var(--space-3xl);
 }
 
 .ceo-hero-grid {
@@ -6368,12 +6370,12 @@ h3 {
 /* Quote Callout */
 .ceo-quote-banner {
     position: relative;
-    background: linear-gradient(135deg, #0b3c5d 0%, #1e40af 100%);
+    background: linear-gradient(135deg, #186CEC 0%, #0F52BA 100%);
     border-radius: 28px;
     padding: 52px 60px;
     color: #ffffff;
     margin-bottom: 64px;
-    box-shadow: 0 20px 40px -10px rgba(11, 60, 93, 0.35);
+    box-shadow: 0 20px 40px -10px rgba(24, 108, 236, 0.35);
     overflow: hidden;
 }
 
@@ -6384,7 +6386,7 @@ h3 {
     left: 30px;
     font-size: 180px;
     font-family: Georgia, serif;
-    color: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.12);
     pointer-events: none;
     line-height: 1;
 }
@@ -6409,13 +6411,13 @@ h3 {
 .ceo-quote-author {
     font-size: 1.05rem;
     font-weight: 700;
-    color: #fdba74;
+    color: #FFD180;
     margin-bottom: 4px;
 }
 
 .ceo-quote-title {
     font-size: 0.88rem;
-    color: #cbd5e1;
+    color: #e0f2fe;
     letter-spacing: 0.04em;
 }
 
