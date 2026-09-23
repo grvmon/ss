@@ -214,7 +214,7 @@
             <li class="bc-sep">/</li>
             <li><a href="blog.html">Blogs</a></li>
             <li class="bc-sep">/</li>
-            <li class="bc-category"><span class="material-symbols-rounded" style="font-size: 14px;">label</span> Relocation</li>
+            <li class="bc-current">Relocation</li>
         </ol>
 
         <!-- Article Header -->
@@ -239,7 +239,7 @@
                     <a href="https://api.whatsapp.com/send?text=Luggage%20Storage%20at%20Delhi%20Airport%20%E2%80%93%20Shaping%20the%20Future%20of%20Travel%20in%20India%20https%3A//selfstorageindia.com/luggage-storage-services-transformation-india/" target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                     <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//selfstorageindia.com/luggage-storage-services-transformation-india/" target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="https://twitter.com/intent/tweet?url=https%3A//selfstorageindia.com/luggage-storage-services-transformation-india/&text=Luggage%20Storage%20at%20Delhi%20Airport%20%E2%80%93%20Shaping%20the%20Future%20of%20Travel%20in%20India" target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on X"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="javascript:navigator.clipboard.writeText(window.location.href);alert('Article link copied to clipboard!');" class="share-btn" aria-label="Copy Article Link"><span class="material-symbols-rounded" style="font-size: 18px;">link</span></a>
+                    <a href="javascript:void(0)" onclick="copyArticleLink(this)" class="share-btn" aria-label="Copy Article Link" title="Copy article link"><span class="material-symbols-rounded" style="font-size: 18px;">link</span></a>
                 </div>
             </div>
         </header>
@@ -251,6 +251,9 @@
                 <!-- Featured Hero Image (Contained in content area) -->
                 <div class="blog-hero-image-wrap">
                     <img src="https://selfstorageindia.com/wp-content/uploads/2023/06/Luggage-Storage-at-Delhi-Airport-–-Shaping-the-Future-of-Travel-in-India-.jpg" alt="Luggage Storage at Delhi Airport – Shaping the Future of Travel in India" width="1280" height="720" fetchpriority="high" decoding="async">
+                    <span class="hero-image-badge">
+                        <span class="material-symbols-rounded">label</span> Relocation
+                    </span>
                 </div>
 
                 
@@ -733,5 +736,28 @@
     </button>
 
     <script src="app.js?v=3.6"></script>
+    <script>
+    function copyArticleLink(btn) {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            const toast = document.getElementById('toast');
+            if (toast) {
+                const heading = toast.querySelector('h4');
+                const desc = toast.querySelector('p');
+                const oldHeading = heading ? heading.textContent : '';
+                const oldDesc = desc ? desc.textContent : '';
+                if (heading) heading.textContent = 'Link Copied!';
+                if (desc) desc.textContent = 'Article link copied to clipboard.';
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    if (heading) heading.textContent = oldHeading;
+                    if (desc) desc.textContent = oldDesc;
+                }, 3000);
+            }
+        }).catch(() => {
+            alert('Article link copied: ' + window.location.href);
+        });
+    }
+    </script>
 </body>
 </html>

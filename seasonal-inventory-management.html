@@ -343,7 +343,7 @@
             <li class="bc-sep">/</li>
             <li><a href="blog.html">Blogs</a></li>
             <li class="bc-sep">/</li>
-            <li class="bc-category"><span class="material-symbols-rounded">label</span> Business Inventory &amp; Logistics</li>
+            <li class="bc-current">Business Storage</li>
         </ol>
 
         <!-- Blog Header -->
@@ -368,7 +368,7 @@
                     <a href="https://api.whatsapp.com/send?text=Seasonal%20Inventory%20Management:%209%20Smart%20Ways%20to%20Manage%20Stock%20https://selfstorageindia.com/seasonal-inventory-management.html" target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                     <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://selfstorageindia.com/seasonal-inventory-management.html" target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="https://twitter.com/intent/tweet?url=https://selfstorageindia.com/seasonal-inventory-management.html&text=Seasonal%20Inventory%20Management" target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on X"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="javascript:navigator.clipboard.writeText(window.location.href);alert('Article link copied to clipboard!');" class="share-btn" aria-label="Copy Article Link"><span class="material-symbols-rounded" style="font-size: 18px;">link</span></a>
+                    <a href="javascript:void(0)" onclick="copyArticleLink(this)" class="share-btn" aria-label="Copy Article Link" title="Copy article link"><span class="material-symbols-rounded" style="font-size: 18px;">link</span></a>
                 </div>
             </div>
         </header>
@@ -380,6 +380,9 @@
                 <!-- Featured Hero Image (Contained in content area) -->
                 <div class="blog-hero-image-wrap">
                     <img src="assets/facility_3.webp" alt="Seasonal inventory storage and business warehouse solutions at Self Storage India" width="1280" height="720" fetchpriority="high" decoding="async">
+                    <span class="hero-image-badge">
+                        <span class="material-symbols-rounded">label</span> Business Storage
+                    </span>
                 </div>
                 <!-- Executive Summary Box -->
                 <div class="key-takeaways-box" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-left: 4px solid #0B3C5D; border-radius: 12px; padding: 24px; margin: 28px 0;">
@@ -983,13 +986,35 @@
 
     <script src="app.js?v=3.6"></script>
     <script>
+    function copyArticleLink(btn) {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            const toast = document.getElementById('toast');
+            if (toast) {
+                const heading = toast.querySelector('h4');
+                const desc = toast.querySelector('p');
+                const oldHeading = heading ? heading.textContent : '';
+                const oldDesc = desc ? desc.textContent : '';
+                if (heading) heading.textContent = 'Link Copied!';
+                if (desc) desc.textContent = 'Article link copied to clipboard.';
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    if (heading) heading.textContent = oldHeading;
+                    if (desc) desc.textContent = oldDesc;
+                }, 3000);
+            }
+        }).catch(() => {
+            alert('Article link copied: ' + window.location.href);
+        });
+    }
+
     window.addEventListener('scroll', () => {
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (winScroll / height) * 100;
         const bar = document.getElementById('scroll-progress-bar');
         if (bar) bar.style.width = scrolled + '%';
-    });
+    }, { passive: true });
 
     document.addEventListener('DOMContentLoaded', () => {
         const observer = new IntersectionObserver((entries) => {
@@ -997,7 +1022,7 @@
                 if (entry.isIntersecting) {
                     const id = entry.target.getAttribute('id');
                     document.querySelectorAll('.toc-list a').forEach(link => {
-                        if (link.getAttribute('href') === ) {
+                        if (link.getAttribute('href') === '#' + id) {
                             link.style.fontWeight = '700';
                             link.style.color = '#FF6B00';
                         } else {
