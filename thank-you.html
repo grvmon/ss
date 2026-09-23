@@ -43,36 +43,6 @@
             z-index: 2;
         }
 
-        .success-animation-wrap {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 84px;
-            height: 84px;
-            border-radius: 50%;
-            background: #ECFDF5;
-            color: #059669;
-            margin-bottom: 24px;
-            box-shadow: 0 0 0 12px rgba(16, 185, 129, 0.12);
-            animation: pulseSuccess 2.5s infinite;
-        }
-
-        @keyframes pulseSuccess {
-            0% {
-                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.25);
-            }
-            70% {
-                box-shadow: 0 0 0 18px rgba(16, 185, 129, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
-            }
-        }
-
-        .success-animation-wrap .material-symbols-rounded {
-            font-size: 46px;
-        }
-
         .thank-you-badge {
             display: inline-flex;
             align-items: center;
@@ -484,11 +454,6 @@
     <!-- Main Content: Thank You Section -->
     <main class="thank-you-wrapper">
         <div class="thank-you-container">
-            <!-- Animated Checkmark -->
-            <div class="success-animation-wrap" aria-hidden="true">
-                <span class="material-symbols-rounded">check_circle</span>
-            </div>
-
             <div class="thank-you-badge">
                 <span class="material-symbols-rounded" style="font-size: 16px;">verified</span>
                 Request Confirmed
