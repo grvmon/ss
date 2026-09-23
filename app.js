@@ -330,3 +330,20 @@ if (window.location.pathname.startsWith('/ss')) {
         });
     });
 }
+
+// 8. Storage Advisor Widget Integration ("Abha" Pattern)
+(function() {
+    if (window.location.pathname.indexOf('/thank-you') !== -1) return;
+    if (document.querySelector('script[src*="storage-advisor.js"]')) return;
+    var s = document.createElement('script');
+    var scriptTag = document.querySelector('script[src*="app.js"]');
+    var basePath = '/';
+    if (scriptTag && scriptTag.getAttribute('src')) {
+        var src = scriptTag.getAttribute('src');
+        var idx = src.lastIndexOf('app.js');
+        if (idx !== -1) basePath = src.substring(0, idx);
+    }
+    s.src = basePath + 'storage-advisor.js';
+    s.defer = true;
+    document.body.appendChild(s);
+})();
