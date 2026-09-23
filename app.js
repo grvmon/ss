@@ -318,3 +318,15 @@ if (backToTopBtn) {
 }
 
 
+
+// GitHub Pages subpath routing compatibility
+if (window.location.pathname.startsWith('/ss')) {
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('a[href^="/"]').forEach(a => {
+            const href = a.getAttribute('href');
+            if (href && !href.startsWith('/ss') && !href.startsWith('//')) {
+                a.setAttribute('href', '/ss' + (href === '/' ? '' : href));
+            }
+        });
+    });
+}
