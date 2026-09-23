@@ -6171,6 +6171,41 @@ h3 {
     border-bottom: 2px solid var(--primary-light, #EFF6FF);
 }
 
+.btn-calculator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 18px;
+    background: #FFFFFF;
+    color: #186CEC;
+    border: 1.5px solid #186CEC;
+    border-radius: 10px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(24, 108, 236, 0.08);
+    transition: all 0.25s ease;
+}
+
+.btn-calculator:hover {
+    background: #186CEC;
+    color: #FFFFFF;
+    border-color: #186CEC;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(24, 108, 236, 0.25);
+}
+
+.btn-calculator .material-symbols-rounded {
+    font-size: 18px;
+    transition: transform 0.2s ease;
+}
+
+.btn-calculator:hover .calc-arrow {
+    transform: translateX(3px);
+}
+
 /* ==========================================================================
    CEO PROFILE & LEADERSHIP PAGE DESIGN SYSTEM
    ========================================================================== */
