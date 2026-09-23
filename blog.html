@@ -139,15 +139,39 @@
             position: absolute;
             top: 14px;
             left: 14px;
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(8px);
-            color: #FFFFFF;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: #0F172A;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 6px 12px;
+            border-radius: 8px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.6px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            z-index: 2;
+            pointer-events: none;
+        }
+        .blog-card-cat-badge .material-symbols-rounded {
+            font-size: 15px;
+            color: #FF6B00;
+            line-height: 1;
+        }
+        @media (max-width: 640px) {
+            .blog-card-cat-badge {
+                top: 10px;
+                left: 10px;
+                font-size: 0.68rem;
+                padding: 4px 10px;
+            }
+            .blog-card-cat-badge .material-symbols-rounded {
+                font-size: 13px;
+            }
         }
         .blog-card-body {
             padding: 24px;
@@ -369,7 +393,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="managing-seasonal-inventory-storage-tips.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2024/01/managing-seasonal-inventory-in-storage.jpg" alt="Optimizing Seasonal Inventory Management Techniques in Storage" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Jan 19, 2024</span>
@@ -383,7 +407,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="business-inventory-management-with-self-storage-india.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2024/01/pexels-tiger-lily-4483774-scaled-1.jpg" alt="Efficient Inventory Management with Self Storage India" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Jan 19, 2024</span>
@@ -397,7 +421,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="breaking-free-digital-nomad-journey-world-travel.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/09/Breaking-Free-How-I-Left-My-Rented-Apartment-in-New-Delhi-to-Explore-the-World.jpg" alt="Embracing Digital Nomadism: A Journey Through World Travel" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 29, 2023</span>
@@ -411,7 +435,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="from-dreamer-to-wanderer-self-storage-guide.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/09/From-Dreamer-to-Wanderer-How-Self-Storage-Can-Make-It-Happen.jpg" alt="Wanderlust Unleashed: A Journey through the Lens of Travel Storage" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 27, 2023</span>
@@ -425,7 +449,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="wander-without-limits-nomadic-lifestyle-self-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/09/Wander-Without-Limits-How-Self-Storage-Empowers-the-Nomadic-Lifestyle.jpg" alt="The Nomadic Lifestyle Empowered by Self-Storage Adventures!" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 26, 2023</span>
@@ -439,7 +463,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="cutting-costs-saving-with-affordable-self-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/08/Cutting_Costs_The_Ultimate_Beginners_Guide_to_Saving_Money_by_Choosing_a_Storage_Unit_Nearby_1200x628.jpg" alt="Affordable Self Storage Solutions for Cutting Costs Saving" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 21, 2023</span>
@@ -453,7 +477,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="benefits-nearby-storage-unit.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/08/The-Advantages-of-Having-a-Local-Storage-Unit-for-Both-Business-and-Personal-Requirements.jpg" alt="Self Storage Advantages- Catering to Both Business and Personal Needs" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 16, 2023</span>
@@ -467,7 +491,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-to-store-your-goods-guide.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/08/Mastering-the-Art-of-Storing-Your-Belongings-Unveiling-the-Secret-Tip-of-Self-Storage.jpg" alt="Unlocking the Art of Storage: Tips to Secure Your Belongings" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 16, 2023</span>
@@ -481,7 +505,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="store-your-goods-self-storage-guide.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/08/Maximizing-Space-A-Comprehensive-Guide-to-Storing-Your-Goods-in-a-Self-Storage-Unit-2.jpg" alt="A Comprehensive Guide on Securing Your Space in Self Storage Unit" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 16, 2023</span>
@@ -495,7 +519,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="quick-access-emergencies-self-storage-importance.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/08/Quick-Access-in-Emergencies-The-Importance-of-Having-Your-Self-Storage-Unit-Nearby.jpg" alt="Importance of Having Self Storage Near Me During Emergencies" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 08, 2023</span>
@@ -509,7 +533,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="safe-storage-for-college-students-making-the-most-of-self-storage-units-in-delhi.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/07/Safe-Storage-for-College-Students-Making-the-Most-of-Self-Storage-Units-in-Delhi-1.png" alt="Storage Facility in Delhi for College Students" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Jul 22, 2023</span>
@@ -523,7 +547,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="safe-storage-businesses-self-storage-inventory-security.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/07/Safe-Storage-for-Businesses-How-Self-Storage-Can-Safeguard-Your-Inventory-min.jpg" alt="Safe Storage for Businesses | Unveiling Inventory Organization Techniques" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Jul 21, 2023</span>
@@ -537,7 +561,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="self-storage-solutions-delhi-guide.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/07/Storage-Made-Easy-A-Beginners-Guide-to-Self-Storage-Solutions-in-Delhi-India-min.jpg" alt="Delhi Storage Unit – Organise Your Space" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Jul 20, 2023</span>
@@ -551,7 +575,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="self-storage-101-unleashing-clarity-through-organization-and-decluttering.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/07/A-Step-by-Step-Guide-for-Organization-and-Decluttering-.jpg" alt="A Step-by-Step Guide for Organization and Decluttering" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Jul 20, 2023</span>
@@ -565,7 +589,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="ultimate-beginners-guide-to-relocating-self-storage-101.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/07/Self-Storage-Guide-–-A-Beginners-Handbook-for-a-Seamless-Relocation-.jpg" alt="Self Storage Guide – A Beginner’s Handbook for a Seamless Relocation" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Jul 20, 2023</span>
@@ -579,7 +603,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="safe-storage-guide-for-collectors.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/07/A-Guide-to-Protecting-Your-Valuables-in-a-Secure-Storage-Unit-.png" alt="A Guide to Protecting Your Valuables in a Secure Storage Unit" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Jul 18, 2023</span>
@@ -593,7 +617,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="unleashing-travel-freedom-maximizing-your-trip-with-convenient-luggage-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/06/Luggage-Management-Unleashing-Travel-Freedom-for-a-Great-Trip-.jpg" alt="Luggage Management: Unleashing Travel Freedom for a Great Trip" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Jun 15, 2023</span>
@@ -607,7 +631,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="luggage-storage-services-transformation-india.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/06/Luggage-Storage-at-Delhi-Airport-–-Shaping-the-Future-of-Travel-in-India-.jpg" alt="Luggage Storage at Delhi Airport – Shaping the Future of Travel in India" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Jun 15, 2023</span>
@@ -621,7 +645,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="overcoming-travel-challenges-the-role-of-luggage-storage-in-india.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/06/Unveiling-the-Impact-of-Luggage-Storage-in-India-.jpg" alt="Unveiling the Impact of Luggage Storage in India" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Jun 09, 2023</span>
@@ -635,7 +659,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="exploring-delhi-ncr-ensuring-your-luggages-safety-and-security.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/06/Explore-Delhi-Luggage-Store-Ensuring-Safety-and-Security-.jpg" alt="Explore Delhi Luggage Store: Ensuring Safety and Security" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Jun 09, 2023</span>
@@ -649,7 +673,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="navigating-storage-solutions-storage-calculator-power.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/05/How-to-use-a-Storage-Calculator-–-Tips-Tricks-.webp" alt="How to use a Storage Calculator – Tips &amp; Tricks" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> May 26, 2023</span>
@@ -663,7 +687,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="avoid-overpaying-self-storage-guide-storage-calculator.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/05/Your-Comprehensive-Guide-on-Storage-Unit-Costs-.webp" alt="Your Comprehensive Guide on Storage Unit Costs" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> May 26, 2023</span>
@@ -677,7 +701,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="storage-calculators-efficient-self-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/05/The-Ultimate-Storage-Space-Calculator-.webp" alt="The Ultimate Storage Space Calculator" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> May 26, 2023</span>
@@ -691,7 +715,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="simplifying-your-life-top-10-items-to-store-in-self-storage-for-a-clutter-free-home.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/05/Ultimate-Guide-to-a-Clutter-Free-Home-Tips-Tricks-.webp" alt="Ultimate Guide to a Clutter-Free Home | Tips &amp; Tricks" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> May 19, 2023</span>
@@ -705,7 +729,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="the-transformative-power-of-decluttering-unleash-mental-wellness-with-self-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/05/Unlock-Mental-Wellness-with-Self-Storage-.webp" alt="Unlock Mental Wellness with Self Storage" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> May 19, 2023</span>
@@ -719,7 +743,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="seasonal-swap-outs-how-to-use-self-storage-for-easy-seasonal-decluttering.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/05/Seasonal-Swap-Outs-How-to-Use-Self-Storage-for-Easy-Seasonal-Decluttering-.webp" alt="Seasonal Swap-Outs: How to Use Self Storage for Easy Seasonal Decluttering" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> May 19, 2023</span>
@@ -733,7 +757,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="the-konmari-method-meets-self-storage-a-match-made-in-decluttering-heaven.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/05/The-KonMari-Method-Meets-Self-Storage-A-Match-Made-in-Decluttering-Heaven-.webp" alt="The KonMari Method Meets Self Storage: A Match Made in Decluttering Heaven" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> May 19, 2023</span>
@@ -747,7 +771,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="art-of-letting-go-emotional-decluttering-guide.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/05/The-Art-of-Letting-Go-Declutter-Your-Life-with-Self-Storage-.webp" alt="The Art of Letting Go: Declutter Your Life with Self-Storage" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> May 19, 2023</span>
@@ -761,7 +785,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="7-easy-decluttering-tips-for-a-more-organized-home.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/03/10-Easy-Decluttering-Tips-for-Home-–-Transform-it-Now-.webp" alt="10 Easy Decluttering Tips for Home – Transform it Now" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Mar 16, 2023</span>
@@ -775,7 +799,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="indias-self-storage-boom-insights.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/03/Indias-Self-Storage-Boom-A-Deep-Dive-into-Evolution-Economic-Impact-and-Future-Trends-.webp" alt="India’s Self Storage Boom: A Deep Dive into Evolution, Economic Impact, and Future Trends" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Mar 16, 2023</span>
@@ -789,7 +813,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="renovate-your-bedroom-and-make-it-your-dreamy-sanctuary-bedroom-renovation-tips.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/03/Dream-Bedroom-Renovation-Tips-Transform-Your-Space-.webp" alt="Dream Bedroom Renovation Tips | Transform Your Space" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Mar 16, 2023</span>
@@ -803,7 +827,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="creating-a-modern-and-stylish-home-office-on-a-budget-decluttering-tips.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/03/Creating-a-Modern-and-Stylish-Home-Office-on-a-Budget-Decluttering-Tips-.webp" alt="Creating a Modern and Stylish Home Office on a Budget: Decluttering Tips" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Mar 16, 2023</span>
@@ -817,7 +841,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="the-ultimate-guide-to-seasonal-decluttering.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/01/The-Ultimate-Guide-to-Seasonal-Decluttering-Your-Home-.webp" alt="The Ultimate Guide to Seasonal Decluttering Your Home" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Jan 30, 2023</span>
@@ -831,7 +855,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="the-definitive-guide-to-living-room-renovation.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/01/Transform-Your-Space-–-A-Comprehensive-Living-Room-Renovation-Guide-.webp" alt="Transform Your Space – A Comprehensive Living Room Renovation Guide" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Jan 30, 2023</span>
@@ -845,7 +869,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="decluttering-your-outdoor-space.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/01/Top-Outdoor-Cleaning-Strategies-for-Effective-Decluttering-.webp" alt="Top Outdoor Cleaning Strategies for Effective Decluttering" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Jan 30, 2023</span>
@@ -859,7 +883,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-do-you-declutter-an-indoor-garden.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/01/How-do-you-declutter-an-indoor-garden-.webp" alt="How do you declutter an indoor garden?" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Jan 30, 2023</span>
@@ -873,7 +897,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="4-mistakes-to-avoid-when-downsizing-your-office-space.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/01/4-Common-Errors-to-Avoid-When-Downsizing-Your-Office-Space-.webp" alt="4 Common Errors to Avoid When Downsizing Your Office Space" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Jan 30, 2023</span>
@@ -887,7 +911,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="6-things-to-watch-out-for-while-downsizing-your-office.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/01/Workspace-Optimization-6-Factors-to-Consider-During-Office-Downsizing-.webp" alt="Workspace Optimization: 6 Factors to Consider During Office Downsizing" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Jan 30, 2023</span>
@@ -901,7 +925,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="10-wrapping-and-packing-materials-for-storage-and-moving.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2023/01/10-Wrapping-and-Packing-Materials-–-Bubble-Wrap-Boxes-More-.webp" alt="10 Wrapping and Packing Materials – Bubble Wrap, Boxes &amp; More" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Jan 30, 2023</span>
@@ -915,7 +939,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="what-is-the-right-furniture-for-my-office.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/12/What-is-the-Right-Furniture-for-My-Office-.jpg" alt="What is the Right Furniture for My Office?" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Dec 16, 2022</span>
@@ -929,7 +953,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="5-step-guide-to-decluttering-wardrobes.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/11/Decluttering-Wardrobe-–-5-Tips-for-a-More-Organized-Closet-.jpg" alt="Decluttering Wardrobe – 5 Tips for a More Organized Closet" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Nov 22, 2022</span>
@@ -943,7 +967,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="7-steps-to-embracing-the-hybrid-culture.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/11/How-to-Embrace-Hybrid-Work-Culture-.jpg" alt="How to Embrace Hybrid Work Culture?" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Nov 16, 2022</span>
@@ -957,7 +981,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="how-to-declutter-office-before-downsizing.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/11/How-to-declutter-office-before-downsizing-.jpg" alt="How to declutter office before downsizing" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Nov 16, 2022</span>
@@ -971,7 +995,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="how-business-owners-can-prepare-for-the-hybrid-work-future.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/11/How-to-Optimize-Remote-Work-for-Your-Business-.jpg" alt="How to Optimize Remote Work for Your Business?" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Nov 16, 2022</span>
@@ -985,7 +1009,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="10-home-office-ideas-to-inspire-productivity.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/11/10-Home-Office-Ideas-to-Inspire-Productivity-.jpg" alt="10 Home Office Ideas to Inspire Productivity" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Nov 16, 2022</span>
@@ -999,7 +1023,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="7-steps-to-setting-up-a-home-office.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/11/7-Steps-for-a-Productive-Home-Office-Setup-.jpg" alt="7 Steps for a Productive Home Office Setup" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Nov 16, 2022</span>
@@ -1013,7 +1037,7 @@
         <article class="blog-card shadow-sm" data-category="Downsizing">
             <a href="what-do-you-purge-when-downsizing.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/11/Organizing-Small-Spaces-–-Effective-Organization-Tips-.jpg" alt="Organizing Small Spaces – Effective Organization Tips" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Downsizing</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Downsizing</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Nov 16, 2022</span>
@@ -1027,7 +1051,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="how-to-integrate-ergonomics-in-my-office-space.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/11/Transforming-My-Workspace-into-an-Ergonomic-Office-.jpg" alt="Transforming My Workspace into an Ergonomic Office" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Nov 15, 2022</span>
@@ -1041,7 +1065,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="how-to-identify-the-perfect-office-space.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/11/How-to-Identify-the-Perfect-Office-Space-.jpg" alt="How to Identify the Perfect Office Space" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Nov 14, 2022</span>
@@ -1055,7 +1079,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="how-do-i-select-the-right-business-model-for-my-office.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/11/How-Do-I-Select-the-Right-Hybrid-Work-Model-for-My-Office-.jpg" alt="How Do I Select the Right Hybrid Work Model for My Office?" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Nov 14, 2022</span>
@@ -1069,7 +1093,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="5-ways-businesses-can-cut-back-on-office-space.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/11/5-Corporate-Cost-Cutting-Ideas-to-Reduce-Office-Space-Usage-.jpg" alt="5 Corporate Cost Cutting Ideas to Reduce Office Space Usage" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Nov 14, 2022</span>
@@ -1083,7 +1107,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-do-i-declutter-my-balcony.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/11/How-to-Do-Balcony-Cleaning-A-Step-by-Step-Guide-.webp" alt="How to Do Balcony Cleaning: A Step-by-Step Guide" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Nov 09, 2022</span>
@@ -1097,7 +1121,7 @@
         <article class="blog-card shadow-sm" data-category="Downsizing">
             <a href="the-complete-guide-to-downsizing-your-home-after-retirement.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/11/An-Ultimate-Guide-on-Downsizing-Home-for-Retirement-.webp" alt="An Ultimate Guide on Downsizing Home for Retirement" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Downsizing</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Downsizing</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Nov 09, 2022</span>
@@ -1111,7 +1135,7 @@
         <article class="blog-card shadow-sm" data-category="Downsizing">
             <a href="downsizing-for-retirees-a-checklist.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/11/Downsizing-Checklist-for-Retirees-Your-Path-to-Retirement-.webp" alt="Downsizing Checklist for Retirees | Your Path to Retirement" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Downsizing</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Downsizing</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Nov 09, 2022</span>
@@ -1125,7 +1149,7 @@
         <article class="blog-card shadow-sm" data-category="Downsizing">
             <a href="things-to-never-ever-throw-out-when-youre-downsizing.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/11/How-to-Manage-Sentimental-Clutter-Effectively-.webp" alt="How to Manage Sentimental Clutter Effectively?" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Downsizing</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Downsizing</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Nov 05, 2022</span>
@@ -1139,7 +1163,7 @@
         <article class="blog-card shadow-sm" data-category="Downsizing">
             <a href="advantages-and-disadvantages-of-downsizing-your-home.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/11/Downsizing-Home-Benefits-–-Pros-Cons-of-Space-Optimization-.webp" alt="Downsizing Home Benefits – Pros &amp; Cons of Space Optimization" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Downsizing</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Downsizing</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Nov 04, 2022</span>
@@ -1153,7 +1177,7 @@
         <article class="blog-card shadow-sm" data-category="Downsizing">
             <a href="7-master-tips-to-declutter-your-home-when-downsizing.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/11/Downsizing-Your-Home-7-Expert-Tips-for-Effective-Decluttering-.webp" alt="Downsizing Your Home | 7 Expert Tips for Effective Decluttering" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Downsizing</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Downsizing</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Nov 04, 2022</span>
@@ -1167,7 +1191,7 @@
         <article class="blog-card shadow-sm" data-category="Downsizing">
             <a href="4-mistakes-people-make-when-downsizing-in-retirement.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/11/Planning-for-Retirement-–-Secure-Your-Future-Now-.webp" alt="Planning for Retirement – Secure Your Future Now!" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Downsizing</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Downsizing</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Nov 02, 2022</span>
@@ -1181,7 +1205,7 @@
         <article class="blog-card shadow-sm" data-category="Downsizing">
             <a href="5-reasons-why-you-will-be-happier-in-a-smaller-home.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/11/5-Cost-Effective-Advantages-of-A-Small-House-.webp" alt="5 Cost-Effective Advantages of A Small House" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Downsizing</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Downsizing</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Nov 02, 2022</span>
@@ -1195,7 +1219,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="the-master-plan-to-decluttering-old-clothes.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/11/Effortless-Wardrobe-Decluttering-–-5-Tips-for-a-Tidy-Closet-.webp" alt="Effortless Wardrobe Decluttering – 5 Tips for a Tidy Closet" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Nov 01, 2022</span>
@@ -1209,7 +1233,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="8-exciting-ways-to-clean-up-computer-cable-clutter-under-your-desk.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/11/8-Exciting-Desk-Cable-Management-Tips-.webp" alt="8 Exciting Desk Cable Management Tips" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Nov 01, 2022</span>
@@ -1223,7 +1247,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="the-ultimate-guide-to-indian-bedroom-renovation.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/11/A-Step-by-Step-Guide-to-Indian-Bedroom-Renovation-.webp" alt="A Step-by-Step Guide to Indian Bedroom Renovation" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Nov 01, 2022</span>
@@ -1237,7 +1261,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-to-use-self-storage-to-prepare-for-a-delhi-winter.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/Essential-Winter-Storage-Tips-to-Prepare-for-a-Delhi-Winter-.webp" alt="Essential Winter Storage Tips to Prepare for a Delhi Winter" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 31, 2022</span>
@@ -1251,7 +1275,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-do-i-declutter-my-study-table.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/Study-Table-Cleaning-Tips-and-Tricks-for-Organized-Living-.webp" alt="Study Table Cleaning: Tips and Tricks for Organized Living" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 31, 2022</span>
@@ -1265,7 +1289,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="5-must-dos-of-kitchen-renovation.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/Revitalize-Your-Space-with-5-Must-Dos-of-Kitchen-Remodeling-.webp" alt="Revitalize Your Space with 5 Must-Do’s of Kitchen Remodeling" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 31, 2022</span>
@@ -1279,7 +1303,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="4-innovative-kitchen-renovation-ideas-lighting-decor-more.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/Explore-Cutting-Edge-Kitchen-Renovation-Ideas-in-India-.webp" alt="Explore Cutting-Edge Kitchen Renovation Ideas in India" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 31, 2022</span>
@@ -1293,7 +1317,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="4-innovative-kitchen-renovation-ideas-cabinets-to-countertops.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/Kitchen-Renovation-–-Creative-Ideas-from-Cabinets-to-Countertops-.webp" alt="Kitchen Renovation – Creative Ideas from Cabinets to Countertops" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 31, 2022</span>
@@ -1307,7 +1331,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="how-to-design-your-home-office.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/How-to-Design-Your-Home-Office-.webp" alt="How to Design Your Home Office" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 26, 2022</span>
@@ -1321,7 +1345,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="7-step-guide-to-declutter-your-home.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/Top-7-Decluttering-Home-Tips-to-a-Clutter-Free-Home-.webp" alt="Top 7 Decluttering Home Tips to a Clutter-Free Home" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 25, 2022</span>
@@ -1335,7 +1359,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="5-tips-to-declutter-your-home.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/5-Simple-Tips-to-Declutter-Your-Home-for-a-Fresh-Start-.webp" alt="5 Simple Tips to Declutter Your Home for a Fresh Start" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 24, 2022</span>
@@ -1349,7 +1373,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="3-easy-steps-to-decluttering-the-living-room.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/Declutter-Living-Room-–-Transform-Your-Space-with-10-Easy-Steps-.webp" alt="Declutter Living Room – Transform Your Space with 10 Easy Steps" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 20, 2022</span>
@@ -1363,7 +1387,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="how-to-declutter-an-office.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/Office-Decluttering-Tips-for-a-Clean-and-Efficient-Workspace-.webp" alt="Office Decluttering: Tips for a Clean and Efficient Workspace" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 20, 2022</span>
@@ -1377,7 +1401,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="5-reasons-to-declutter-your-home.html" class="blog-card-media-wrap">
                 <img src="assets/facility_3.webp" alt="Decluttering Benefits – 5 Advantages You Need to Know" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 19, 2022</span>
@@ -1391,7 +1415,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-to-declutter-a-bookshelf-without-losing-its-personality.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/How-to-Declutter-a-Bookshelf-–-5-Unique-Tips-Tricks-.webp" alt="How to Declutter a Bookshelf – 5 Unique Tips &amp; Tricks" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 19, 2022</span>
@@ -1405,7 +1429,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="how-to-protect-your-belongings-during-a-home-renovation.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/Important-Tips-to-Secure-Your-Belongings-During-Home-Renovation-.webp" alt="Important Tips to Secure Your Belongings During Home Renovation" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 19, 2022</span>
@@ -1419,7 +1443,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="decluttering-the-kitchen-fast.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/Decluttering-The-Kitchen-Easy-Steps-for-a-Cleaner-Space-.webp" alt="Decluttering The Kitchen: Easy Steps for a Cleaner Space" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 19, 2022</span>
@@ -1433,7 +1457,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-do-you-declutter-kitchen-utensils.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/Top-Kitchen-Utensil-Organizers-to-Keep-Your-Space-Tidy-.webp" alt="Top Kitchen Utensil Organizers to Keep Your Space Tidy" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 14, 2022</span>
@@ -1447,7 +1471,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-do-i-declutter-my-minimalist-room.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/Organize-Your-Minimalist-Room-with-Decluttering-Methods-.webp" alt="Organize Your Minimalist Room with Decluttering Methods" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 14, 2022</span>
@@ -1461,7 +1485,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="declutter-your-bathroom-in-three-easy-steps.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/From-Grimy-to-Gleaming-Step-by-Step-Guide-to-Bathroom-Decluttering-.webp" alt="From Grimy to Gleaming: Step-by-Step Guide to Bathroom Decluttering" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 14, 2022</span>
@@ -1475,7 +1499,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="declutter-the-dining-table-things-to-get-rid-off.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/The-Art-of-Dining-Table-Cleaning-–-Dine-Shine-.webp" alt="The Art of Dining Table Cleaning – Dine &amp; Shine" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 14, 2022</span>
@@ -1489,7 +1513,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="4-quick-and-easy-ways-to-declutter-the-bedroom.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/Transform-Your-Space-with-Bedroom-Decluttering-Tips-.webp" alt="Transform Your Space with Bedroom Decluttering Tips" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 14, 2022</span>
@@ -1503,7 +1527,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="how-much-office-space-do-i-need.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/Finding-an-Ideal-Office-Space-How-Much-Do-I-Really-Need-.webp" alt="Finding an Ideal Office Space: How Much Do I Really Need?" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 12, 2022</span>
@@ -1517,7 +1541,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="how-to-organise-your-study-room.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/Guidebook-on-Mastering-the-Art-of-Study-Room-Organization-.webp" alt="Guidebook on Mastering the Art of Study Room Organization" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 12, 2022</span>
@@ -1531,7 +1555,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="what-is-the-future-of-office-spaces.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/Trends-and-Transformations-in-the-Future-of-Office-Spaces-.webp" alt="Trends and Transformations in the Future of Office Spaces" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 12, 2022</span>
@@ -1545,7 +1569,7 @@
         <article class="blog-card shadow-sm" data-category="Downsizing">
             <a href="the-ultimate-guide-to-moving-to-a-smaller-home.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/Essential-Tips-for-Moving-to-a-Smaller-Home-.webp" alt="Essential Tips for Moving to a Smaller Home" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Downsizing</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Downsizing</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 12, 2022</span>
@@ -1559,7 +1583,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="the-ultimate-guide-to-downsizing-your-office.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/The-Ultimate-Guide-to-Office-Downsizing-.webp" alt="The Ultimate Guide to Office Downsizing" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 12, 2022</span>
@@ -1573,7 +1597,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="priceless-dining-room-renovation-ideas.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/5-Ultimate-Dining-Room-Renovation-Ideas-.webp" alt="5 Ultimate Dining Room Renovation Ideas" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 12, 2022</span>
@@ -1587,7 +1611,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="should-i-move-to-a-smaller-office.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/The-Benefits-of-Working-From-Home-Beyond-the-Office-.webp" alt="The Benefits of Working From Home | Beyond the Office" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 12, 2022</span>
@@ -1601,7 +1625,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="the-four-box-method-of-decluttering.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/The-Four-Box-Method-of-Decluttering-.webp" alt="The Four Box Method of Decluttering" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 10, 2022</span>
@@ -1615,7 +1639,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="prepare-your-home-for-the-festive-season.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/10-Festive-Cleaning-Tips-to-Prepare-Your-Home-for-the-Season-.webp" alt="10 Festive Cleaning Tips to Prepare Your Home for the Season" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 10, 2022</span>
@@ -1629,7 +1653,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="should-managers-have-offices.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/10/Manager-Cabin-Essentials-Designing-Effective-Office-Spaces-for-Leaders-.webp" alt="Manager Cabin Essentials: Designing Effective Office Spaces for Leaders" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Oct 10, 2022</span>
@@ -1643,7 +1667,7 @@
         <article class="blog-card shadow-sm" data-category="Storage Tips">
             <a href="4-tips-professional-organisers-use-to-declutter-a-home.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/Professional-Home-Organisers-Guide-4-Essential-Decluttering-Tips-.webp" alt="Professional Home Organisers Guide: 4 Essential Decluttering Tips" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Storage Tips</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Storage Tips</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 28, 2022</span>
@@ -1657,7 +1681,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="a-first-timers-guide-to-renting-a-self-storage-unit-in-india.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/A-First-Timers-Guide-to-Renting-a-Self-Storage-Unit-in-India-.webp" alt="A First-Timer’s Guide to Renting a Self-Storage Unit in India" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 27, 2022</span>
@@ -1671,7 +1695,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-to-organise-your-childrens-room.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/How-to-Create-a-Safe-and-Playful-Childrens-Room-.webp" alt="How to Create a Safe and Playful Children’s Room" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 26, 2022</span>
@@ -1685,7 +1709,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="7-steps-to-reduce-stress-and-create-work-life-balance.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/Effective-Work-Life-Balance-Strategies-.webp" alt="Effective Work Life Balance Strategies" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 26, 2022</span>
@@ -1699,7 +1723,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="how-to-redesign-your-office-space-to-work-better.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/5-Creative-Ideas-to-Redesign-Office-Space-.webp" alt="5 Creative Ideas to Redesign Office Space" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 23, 2022</span>
@@ -1713,7 +1737,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="the-ultimate-guide-to-kitchen-renovation.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/An-Ultimate-Guide-on-How-to-Renovate-a-Kitchen-.webp" alt="An Ultimate Guide on How to Renovate a Kitchen" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 23, 2022</span>
@@ -1727,7 +1751,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="6-factors-to-consider-when-placing-items-in-self-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/6-Tips-for-Efficiently-Organizing-Items-in-Cheap-Storage-Spaces-.webp" alt="6 Tips for Efficiently Organizing Items in Cheap Storage Spaces" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 22, 2022</span>
@@ -1741,7 +1765,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="10-best-living-room-decorating-ideas-designs.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/10-Living-Room-Decorating-Ideas-to-Revitalize-Your-Space-.webp" alt="10 Living Room Decorating Ideas to Revitalize Your Space" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 22, 2022</span>
@@ -1755,7 +1779,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="10-best-bedroom-paint-colour-ideas-for-a-dreamy-space.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/10-Best-Bedroom-Paint-Colour-Ideas-for-a-Dreamy-Space-.webp" alt="10 Best Bedroom Paint Colour Ideas for a Dreamy Space" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 22, 2022</span>
@@ -1769,7 +1793,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="6-ways-to-declutter-your-kitchen.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/Top-Tips-to-Declutter-Your-Kitchen-and-Maximize-Space-.webp" alt="Top Tips to Declutter Your Kitchen and Maximize Space" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 21, 2022</span>
@@ -1783,7 +1807,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="7-ways-to-create-the-bedroom-of-your-dreams-dream-bedroom.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/7-Dream-Bedroom-Ideas-to-Transform-Your-Space-into-a-Cozy-Haven-.webp" alt="7 Dream Bedroom Ideas to Transform Your Space into a Cozy Haven" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 21, 2022</span>
@@ -1797,7 +1821,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-to-declutter-your-home-room-by-room.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/Declutter-House-A-Step-by-Step-Guide-to-Organizing-Room-by-Room-.webp" alt="Declutter House: A Step-by-Step Guide to Organizing Room by Room" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 21, 2022</span>
@@ -1811,7 +1835,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="7-ways-to-declutter-a-living-space-in-30-minutes-or-less.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/7-Ways-to-Declutter-Your-Living-Room-in-30-Minutes-or-Less-.webp" alt="7 Ways to Declutter Your Living Room in 30 Minutes or Less" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 20, 2022</span>
@@ -1825,7 +1849,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="declutter-your-kitchen-without-spending-too-much-money.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/Budget-Friendly-Kitchen-Cleaning-Affordable-Methods-.webp" alt="Budget-Friendly Kitchen Cleaning | Affordable Methods" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 20, 2022</span>
@@ -1839,7 +1863,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="kitchen-organisation-hacks-that-will-free-up-space.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/Transform-your-Space-with-Kitchen-Organization-Hacks-.webp" alt="Transform your Space with Kitchen Organization Hacks" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 20, 2022</span>
@@ -1853,7 +1877,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="15-decluttering-tips-to-make-your-home-more-productive-and-efficient.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/15-Home-Decluttering-Tips-for-a-Productive-and-Efficient-Space-.webp" alt="15 Home Decluttering Tips for a Productive and Efficient Space" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 20, 2022</span>
@@ -1867,7 +1891,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="4-small-office-organization-ideas-to-boost-your-productivity.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/Boost-Productivity-with-These-4-Small-Office-Organization-Ideas-.webp" alt="Boost Productivity with These 4 Small Office Organization Ideas" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 19, 2022</span>
@@ -1881,7 +1905,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="how-self-storage-can-help-coworking-operators-and-members.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/Streamline-Your-Coworking-Space-with-Self-Storage-Solutions-.webp" alt="Streamline Your Coworking Space with Self Storage Solutions" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 17, 2022</span>
@@ -1895,7 +1919,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="3-checklist-items-to-choose-the-right-colour-for-your-space.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/Trending-Paint-Colors-for-Room-–-Transform-Your-Space-.webp" alt="Trending Paint Colors for Room – Transform Your Space" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 14, 2022</span>
@@ -1909,7 +1933,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="4-things-to-keep-in-mind-while-storing-documents-in-self-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/Top-Tips-for-Efficient-Document-Storage-in-Self-Storage-Units-.webp" alt="Top Tips for Efficient Document Storage in Self-Storage Units" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 14, 2022</span>
@@ -1923,7 +1947,7 @@
         <article class="blog-card shadow-sm" data-category="Business Storage">
             <a href="ways-to-use-a-self-storage-facility-for-your-business.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/5-Tremendous-Ways-to-Elevate-Your-Business-with-Storage-Units-.webp" alt="5 Tremendous Ways to Elevate Your Business with Storage Units" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Business Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Business Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 14, 2022</span>
@@ -1937,7 +1961,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="how-to-decide-on-the-rooms-layout.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/Optimal-Room-Layouts-–-A-Guide-to-Effective-Design-Choices-.webp" alt="Optimal Room Layouts – A Guide to Effective Design Choices" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 14, 2022</span>
@@ -1951,7 +1975,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="quotes-that-could-empower-you-to-declutter-anything.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/Quotes-that-Could-Empower-You-to-Declutter-Anything-.webp" alt="Quotes that Could Empower You to Declutter Anything!" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 14, 2022</span>
@@ -1965,7 +1989,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="choose-the-perfect-furniture-for-your-home.html" class="blog-card-media-wrap">
                 <img src="assets/facility_3.webp" alt="Top Tips for Choosing the Perfect Home Furniture for Every Room" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 14, 2022</span>
@@ -1979,7 +2003,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="decluttering-life-what-to-keep-store-and-dispose-of.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/How-to-Declutter-Your-Life-Transform-Your-Space-Today-.webp" alt="How to Declutter Your Life: Transform Your Space Today" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 14, 2022</span>
@@ -1993,7 +2017,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="4-important-questions-to-ask-when-choosing-an-interior-designer.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/The-Ultimate-Guide-to-Office-Downsizing-.webp" alt="The Ultimate Guide to Finding the Right Interior Designer" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 09, 2022</span>
@@ -2007,7 +2031,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="a-homemakers-guide-to-interior-design-management.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/A-Homemakers-Step-by-Step-Guide-to-Interior-Management-.webp" alt="A Homemaker’s Step-by-Step Guide to Interior Management" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 09, 2022</span>
@@ -2021,7 +2045,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="types-of-interior-design-projects.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/The-Top-Interior-Design-Styles-You-Need-to-Know-About-.webp" alt="The Top Interior Design Styles You Need to Know About" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 09, 2022</span>
@@ -2035,7 +2059,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="create-a-winning-budget-for-an-interior-design-project.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/Create-a-Winning-Budget-for-an-Interior-Design-Project-.webp" alt="Create a Winning Budget for an Interior Design Project" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 09, 2022</span>
@@ -2049,7 +2073,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="4-clever-ideas-for-a-small-indian-kitchen-design.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/Efficient-Small-Indian-Kitchen-Design-Ideas-for-Modern-Homes-.webp" alt="Efficient Small Indian Kitchen Design Ideas for Modern Homes" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 05, 2022</span>
@@ -2063,7 +2087,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="kitchen-design-transform-a-conventional-kitchen-into-a-modular-one.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/Transform-Your-Home-with-Contemporary-Modular-Kitchen-Design-.webp" alt="Transform Your Home with Contemporary Modular Kitchen Design" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 05, 2022</span>
@@ -2077,7 +2101,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="kitchen-renovation-guide-5-common-mistakes-to-avoid.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/09/Ultimate-Kitchen-Renovation-Guide-to-Transform-Your-Space-.webp" alt="Ultimate Kitchen Renovation Guide to Transform Your Space" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Sep 01, 2022</span>
@@ -2091,7 +2115,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="what-should-my-renovation-plan-contain.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/What-Should-My-Renovation-Plan-Contain-.webp" alt="What Should My Renovation Plan Contain?" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 31, 2022</span>
@@ -2105,7 +2129,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="4-benefits-of-using-self-storage-during-renovations.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/How-to-Maximize-Storage-During-Renovation-Top-Tips-and-Ideas-.webp" alt="How to Maximize Storage During Renovation: Top Tips and Ideas" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 31, 2022</span>
@@ -2119,7 +2143,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="6-things-not-to-do-while-budgeting-for-home-renovation.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/Unveiling-the-Real-House-Renovation-Cost-Tips-Insight-.webp" alt="Unveiling the Real House Renovation Cost | Tips &amp; Insight" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 30, 2022</span>
@@ -2133,7 +2157,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="6-things-to-keep-in-mind-while-choosing-an-architect.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/Selecting-a-Professional-Architect-–-6-Essential-Factors-.webp" alt="Selecting a Professional Architect – 6 Essential Factors" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 30, 2022</span>
@@ -2147,7 +2171,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="how-to-design-a-storage-room.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/Storage-Room-Design-Ideas-for-a-Well-Organized-Home-.webp" alt="Storage Room Design Ideas for a Well-Organized Home" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 30, 2022</span>
@@ -2161,7 +2185,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="5-pocket-friendly-kitchen-renovation-ideas.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/5-Kitchen-Renovation-Ideas-to-Transform-Your-Space-.webp" alt="5 Kitchen Renovation Ideas to Transform Your Space" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 26, 2022</span>
@@ -2175,7 +2199,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="7-step-guide-on-how-to-organise-your-home-renovation.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/An-Ultimate-Home-Renovation-Guide-to-Transforming-Your-Space-.webp" alt="An Ultimate Home Renovation Guide to Transforming Your Space" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 26, 2022</span>
@@ -2189,7 +2213,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="8-great-ways-to-bring-new-life-to-your-old-house.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/Old-House-Transformation-8-Ways-to-Bring-New-Life-to-Your-Home-.webp" alt="Old House Transformation: 8 Ways to Bring New Life to Your Home" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 26, 2022</span>
@@ -2203,7 +2227,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="5-creative-craft-room-organization-ideas.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/5-Creative-Craft-Room-Organization-Ideas-.webp" alt="5 Creative Craft Room Organization Ideas" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 17, 2022</span>
@@ -2217,7 +2241,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="5-ingenious-ways-to-store-your-grocery-bags-between-trips.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/5-Efficient-Ways-to-Store-Grocery-Bag-Until-Next-Use-.webp" alt="5 Efficient Ways to Store Grocery Bag Until Next Use" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 17, 2022</span>
@@ -2231,7 +2255,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="five-ways-to-organise-reusable-bags-and-save-the-environment.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/How-to-Organise-Reusable-Bags-for-Easy-Access-and-Storage-.webp" alt="How to Organise Reusable Bags for Easy Access and Storage" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 17, 2022</span>
@@ -2245,7 +2269,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="15-home-organising-tips-you-wish-you-knew-all-along.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/Unlocking-Home-Organization-Ideas-15-Tips-for-a-Clutter-Free-Life-.webp" alt="Unlocking Home Organization Ideas: 15 Tips for a Clutter-Free Life" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 17, 2022</span>
@@ -2259,7 +2283,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="organise-your-closet-in-4-easy-steps.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/5-Wardrobe-Organization-Ideas-to-Revamp-Your-Storage-Space-.webp" alt="5 Wardrobe Organization Ideas to Revamp Your Storage Space" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 17, 2022</span>
@@ -2273,7 +2297,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="15-kitchen-organisation-ideas-to-maximise-storage-space.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/15-Creative-Kitchen-Organization-Ideas-to-Maximize-Your-Space-.webp" alt="15 Creative Kitchen Organization Ideas to Maximize Your Space" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 17, 2022</span>
@@ -2287,7 +2311,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="15-best-organising-tips-inspired-by-marie-kondo-for-the-tidiest-home-ever.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/15-Marie-Kondo-OrganisingTips-for-the-Tidiest-Home-of-Your-Dreams-.webp" alt="15 Marie Kondo OrganisingTips for the Tidiest Home of Your Dreams" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 17, 2022</span>
@@ -2301,7 +2325,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="the-ultimate-5-step-guide-for-storing-your-electronics-safely.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/Efficient-Electronic-Storage-Solutions-for-Modern-Living-.webp" alt="Efficient Electronic Storage Solutions for Modern Living" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 12, 2022</span>
@@ -2315,7 +2339,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="packing-materials-for-moving-and-selfstorage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/Packing-Materials-Your-Guide-for-Moving-and-SelfStorage-.webp" alt="Packing Materials: Your Guide for Moving and SelfStorage" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 12, 2022</span>
@@ -2329,7 +2353,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="piano-packing-done-right-5-dos-and-donts-to-always-remember.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/Piano-packing-done-right-5-Dos-and-Donts-to-always-remember-.webp" alt="Piano-packing done right: 5 Do’s and Don’ts to always remember" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 12, 2022</span>
@@ -2343,7 +2367,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="master-labelling-in-4-sure-shot-steps.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/Simplify-Packing-with-These-4-Easy-Packing-Labels-Step-.webp" alt="Simplify Packing with These 4 Easy Packing Labels Step" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 12, 2022</span>
@@ -2357,7 +2381,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="8-tips-to-preserve-your-furniture-while-in-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/8-Tips-to-Preserve-Your-Furniture-While-in-Storage-.webp" alt="8 Tips to Preserve Your Furniture While in Storage" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 12, 2022</span>
@@ -2371,7 +2395,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="should-you-hire-an-interior-designer-or-an-architect.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/Should-you-hire-an-Interior-designer-or-an-Architect1200px.webp" alt="Should you hire an Interior designer or an Architect?" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 12, 2022</span>
@@ -2385,7 +2409,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="how-to-protect-your-furniture-during-relocation.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/Furniture-Protection-–-How-To-Protect-Your-Furniture-during-Relocation-.webp" alt="Furniture Protection – How To Protect Your Furniture during Relocation" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 12, 2022</span>
@@ -2399,7 +2423,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="5-sure-shot-ways-to-preserve-your-artwork-in-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/Tips-on-How-to-Preserve-Artwork-–-Artistic-Preservation-.webp" alt="Tips on How to Preserve Artwork – Artistic Preservation" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 12, 2022</span>
@@ -2413,7 +2437,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="5-pro-tips-for-safely-packing-fragile-items-for-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/Secure-Your-Valuables-with-Best-Packaging-for-Fragile-Items-.webp" alt="Secure Your Valuables with Best Packaging for Fragile Items" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 10, 2022</span>
@@ -2427,7 +2451,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="5-super-ideas-to-renovate-with-a-small-budget.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/5-Budget-Renovation-Ideas-to-Transform-Your-Space-.webp" alt="5 Budget Renovation Ideas to Transform Your Space" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 10, 2022</span>
@@ -2441,7 +2465,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="5-important-things-every-renovation-plan-should-contain.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/Your-Comprehensive-Guide-to-Home-Renovation-Planning-.webp" alt="Your Comprehensive Guide to Home Renovation Planning" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 10, 2022</span>
@@ -2455,7 +2479,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="what-can-and-cannot-be-stored-inside-your-self-storage-unit.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/Hazardous-Materials-Storage-–-Whats-Allowed-and-Whats-Not-.webp" alt="Hazardous Materials Storage – What’s Allowed and What’s Not!" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 01, 2022</span>
@@ -2469,7 +2493,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="3-golden-rules-to-keep-your-comics-safe.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/3-Golden-Rules-for-Effective-Comic-Book-Storage-.webp" alt="3 Golden Rules for Effective Comic Book Storage" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 01, 2022</span>
@@ -2483,7 +2507,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="the-4-point-checklist-to-choose-the-most-suitable-self-storage-unit-for-your-needs.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/A-Guidebook-for-How-to-Choose-a-Storage-Unit-.webp" alt="A Guidebook for How to Choose a Storage Unit" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 01, 2022</span>
@@ -2497,7 +2521,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="four-tips-for-storing-your-antiques-paintings-and-decoration-pieces-right.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/Painting-Storage-Made-Easy-4-Tips-for-Safely-Storing-Antiques-.webp" alt="Painting Storage Made Easy: 4 Tips for Safely Storing Antiques" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 01, 2022</span>
@@ -2511,7 +2535,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-to-use-labels-to-organize-your-things-at-home-and-in-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/Understand-the-Art-of-Effective-Labelling-for-Home-and-Storage-.webp" alt="Understand the Art of Effective Labelling for Home and Storage" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 01, 2022</span>
@@ -2525,7 +2549,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="6-ways-to-maximise-vertical-space-in-your-home.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/08/6-Smart-Strategies-for-Utilizing-Vertical-Space-at-Home-.webp" alt="6 Smart Strategies for Utilizing Vertical Space at Home" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Aug 01, 2022</span>
@@ -2539,7 +2563,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="best-way-for-organizing-your-document-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/05/How-to-Organize-Documents-Efficiently-–-Tips-Tricks-.webp" alt="How to Organize Documents Efficiently – Tips &amp; Tricks" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> May 24, 2022</span>
@@ -2553,7 +2577,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-to-pack-decoration-pieces.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/The-Ultimate-Guide-on-How-to-Pack-Paintings-.webp" alt="The Ultimate Guide on How to Pack Paintings" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2567,7 +2591,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-to-airbnb-your-home.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Airbnb-Rental-101-A-Beginners-Guide-to-Hosting-and-Earning-.webp" alt="Airbnb Rental 101: A Beginner’s Guide to Hosting and Earning" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2581,7 +2605,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="preparing-for-winter-move-need-keep-in-mind.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Winter-Moving-Tips-for-a-Smooth-Transition-.webp" alt="Winter Moving Tips for a Smooth Transition" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2595,7 +2619,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="garage-storage-tips-and-organization-ideas.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Top-10-Garage-Storage-Ideas-to-Transform-Your-Space-.webp" alt="Top 10 Garage Storage Ideas to Transform Your Space" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2609,7 +2633,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="5-ways-to-adult-better-adulting.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/5-Ways-for-better-Adulting-.webp" alt="5 Ways for better Adulting" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2623,7 +2647,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-to-care-for-and-store-boxing-equipment.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/How-to-Take-Care-of-Your-Boxing-Gloves-for-Lasting-Performance-.webp" alt="How to Take Care of Your Boxing Gloves for Lasting Performance?" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2637,7 +2661,7 @@
         <article class="blog-card shadow-sm" data-category="Downsizing">
             <a href="to-store-or-not-to-store-thats-the-question.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Secure-Self-Storage-Solutions-Safeguard-Your-Belongings-.webp" alt="Secure Self Storage Solutions | Safeguard Your Belongings" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Downsizing</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Downsizing</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2651,7 +2675,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="things-keep-in-mind-choosing-packer-and-mover.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Top-Tips-for-Choosing-Packers-and-Movers-in-Delhi-What-to-Consider-.webp" alt="Top Tips for Choosing Packers and Movers in Delhi | What to Consider" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2665,7 +2689,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="make-some-space-to-breathe.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Make-some-space-to-breathe-.webp" alt="Make some space to breathe!!" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2679,7 +2703,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-to-declutter-your-home-this-holi.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Holi-Cleaning-–-Tips-to-Declutter-Your-Home-and-Welcome-Fresh-Beginnings-.webp" alt="Holi Cleaning – Tips to Declutter Your Home and Welcome Fresh Beginnings" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2693,7 +2717,7 @@
         <article class="blog-card shadow-sm" data-category="Downsizing">
             <a href="saving-additional-home-rental-self-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Saving-additional-INR-18000-of-home-rental-with-self-storage-.webp" alt="Saving additional INR 18,000 of home rental with self storage" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Downsizing</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Downsizing</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2707,7 +2731,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-to-declutter-your-life-with-self-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Declutter-Your-Life-and-Transform-Your-Space-with-Self-Storage-.webp" alt="Declutter Your Life and Transform Your Space with Self Storage" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2721,7 +2745,7 @@
         <article class="blog-card shadow-sm" data-category="Renovation">
             <a href="things-to-keep-in-mind-choosing-an-architect.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/How-to-Choose-an-Architect-–-Important-Tips-Method-.webp" alt="How to Choose an Architect – Important Tips &amp; Method" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Renovation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Renovation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2735,7 +2759,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="advantages-of-booking-a-self-storage-benefits.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Self-Storage-Benefits-–-Unlocking-Convenience-and-Flexibility-for-You-.webp" alt="Self-Storage Benefits – Unlocking Convenience and Flexibility for You" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2749,7 +2773,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="packing-tips-and-tricks-keep-in-mind-packing.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Essential-Packing-Tips-and-Tricks-for-Smooth-Journey-.webp" alt="Essential Packing Tips and Tricks for Smooth Journey" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2763,7 +2787,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="storing-musical-instruments-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/5-Effective-Strategies-for-Musical-Instrument-Storage-.webp" alt="5 Effective Strategies for Musical Instrument Storage" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2777,7 +2801,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="self-storage-works-well-for-small-businesses.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Maximizing-Productivity-with-Business-Storage-Solutions-.webp" alt="Maximizing Productivity with Business Storage Solutions" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2791,7 +2815,7 @@
         <article class="blog-card shadow-sm" data-category="Downsizing">
             <a href="reasons-downsize-your-home-downsizing-home.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Benefits-of-Downsizing-Your-Home-–-A-Step-to-Quality-Lifestyle-.webp" alt="Benefits of Downsizing Your Home – A Step to Quality Lifestyle" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Downsizing</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Downsizing</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2805,7 +2829,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="piano-in-self-storage-piano-storage-tips.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/How-to-store-a-piano-in-self-storage-.webp" alt="How to store a piano in self storage" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2819,7 +2843,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="6-ways-to-maximize-vertical-space.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Vertical-Space-Storage-for-Clutter-free-Ambience-.webp" alt="Vertical Space Storage for Clutter-free Ambience" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2833,7 +2857,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="short-simple-complete-guide-art-of-labeling.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/The-Subtle-Art-of-Labeling-Well-.webp" alt="The Subtle Art of Labeling Well" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2847,7 +2871,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="spring-cleaning-tips-home-room-cleaning.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/10-Essential-Spring-Cleaning-Tips-to-Refresh-Your-Home-.webp" alt="10 Essential Spring Cleaning Tips to Refresh Your Home" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2861,7 +2885,7 @@
         <article class="blog-card shadow-sm" data-category="Seasonal">
             <a href="safely-and-properly-store-winter-clothes.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/How-to-Store-Winter-Clothes-Keep-Your-Wardrobe-Fresh-.webp" alt="How to Store Winter Clothes | Keep Your Wardrobe Fresh" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Seasonal</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Seasonal</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2875,7 +2899,7 @@
         <article class="blog-card shadow-sm" data-category="Bike Storage">
             <a href="store-all-seasons-motorcycle-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Essential-Motorcycle-Storage-Solutions-for-All-Seasons-.webp" alt="Essential Motorcycle Storage Solutions for All Seasons" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Bike Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Bike Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2889,7 +2913,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-to-organize-your-taxes-for-tax-season.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Streamline-Your-Tax-Season-Tips-for-Organizing-Tax-Documents-.webp" alt="Streamline Your Tax Season | Tips for Organizing Tax Documents" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2903,7 +2927,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="how-to-protect-electronics-and-fragile-items-during-moving.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Packing-Fragile-Items-Safeguarding-Delicate-Items-during-a-Move-.webp" alt="Packing Fragile Items- Safeguarding Delicate Items during a Move" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2917,7 +2941,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="important-terms-you-moving-internationally.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Important-Terms-to-Know-If-You-Are-Moving-Internationally-.webp" alt="Important Terms to Know If You Are Moving Internationally" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2931,7 +2955,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="preserve-your-precious-coin-collection-with-these-storage-tips.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Preserve-Your-Precious-Coin-Collection-with-These-Storage-Tips-.webp" alt="Preserve Your Precious Coin Collection with These Storage Tips" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2945,7 +2969,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="avoid-moving-mistakes-with-these-five-tips.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Avoid-These-5-Moving-Mistakes-for-a-Stress-Free-Relocation-.webp" alt="Avoid These 5 Moving Mistakes for a Stress-Free Relocation" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2959,7 +2983,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="new-shopping-style-this-season-thrifting.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Refresh-Your-Wardrobe-with-Seasonal-Shopping-.webp" alt="Refresh Your Wardrobe with Seasonal Shopping" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2973,7 +2997,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="storage-problem-in-pawn-shops-pawn-stars.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/How-to-Manage-Storage-Issues-in-Pawn-Shops-Efficiently-.webp" alt="How to Manage Storage Issues in Pawn Shops Efficiently?" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -2987,7 +3011,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="preserving-your-comic-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Preserving-Your-Comic-Collection-With-Self-Storage-.webp" alt="Preserving Your Comic Collection With Self Storage" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -3001,7 +3025,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-to-store-golf-clubs-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/selfstorage-golf1200px.jpg" alt="How to Store Golf Clubs" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -3015,7 +3039,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="pros-cons-moving-during-different-seasons.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/selfstorage_1moving_in_diff_seasons1200px.webp" alt="Moving and Storage Tips for Every Season" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -3029,7 +3053,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="leveraging-consulate-assistance-abroad.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/selfstorage_clean_sports_equipment_shutterstock_170053526_21200px.webp" alt="Leveraging Consulate Help For Assistance Abroad" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -3043,7 +3067,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-to-store-your-bicycle-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/bicycle_storage1200px.webp" alt="Best Bicycle Storage Ideas for Small Spaces and Garages" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -3057,7 +3081,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="moving-to-india-where-can-i-store-goods.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/connaught_place_new_delhi_selfstorage1200px.webp" alt="Moving to India – where can I store goods" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -3071,7 +3095,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="how-to-prepare-for-an-international-move.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/How-to-prepare-for-an-international-move_800x5331200px.webp" alt="3 Easy steps that will Prepare you for Moving Abroad" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -3085,7 +3109,7 @@
         <article class="blog-card shadow-sm" data-category="Downsizing">
             <a href="why-millennials-renting-instead-of-buying.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Buy-or-rent1200px.webp" alt="Why Millennials Prefer Renting Instead of Buying — And 8 Reasons Why It Works for Them" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Downsizing</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Downsizing</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -3099,7 +3123,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-to-store-precious-painting-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/art_exhibition_self-storage1200px.webp" alt="5 Tips to preserve your precious Paintings and Artwork" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -3113,7 +3137,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="9-management-lessons-from-pro-cyclists.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/9-Management-Lessons-From-Pro-Cyclists-.webp" alt="9 Management Lessons From Pro Cyclists" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -3127,7 +3151,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-to-stack-things-inside-a-self-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/How-to-stack-things-inside-a-self-storage-.webp" alt="How to stack things inside a self-storage" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -3141,7 +3165,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="world-of-storage-auctions-storage-wars.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Storage_Wars1200px.webp" alt="The Fascinating and Little-Known World of Storage Auctions | Storage War$" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -3155,7 +3179,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="the-six-ds-drivers-of-self-storage-demand.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/self-storage-6D1200px.webp" alt="Unveiling the 6D’s Behind Self Storage Demand" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -3169,7 +3193,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="preserve-your-furniture-while-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/selfstorage_preserve_your_furniture_while_in_storage1200px.webp" alt="7 Furniture Storage Tips You Need for Efficient Living" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -3183,7 +3207,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-to-clean-your-sneakers.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/sneekers-clean-2_11zon_800x5331200px.webp" alt="8 Tips To Maintain Your Perfect Sneakers" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -3197,7 +3221,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="businesses-document-storage-and-more.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/rsz_businesses_need_document_storage1200px.webp" alt="Streamline Your Workflow with Effective Office Document Storage" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -3211,7 +3235,7 @@
         <article class="blog-card shadow-sm" data-category="Relocation">
             <a href="tips-for-moving-to-delhi.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/india_gate-new_11zon-11200px.webp" alt="Essential Tips for a Smooth Move to Delhi" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Relocation</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Relocation</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -3225,7 +3249,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="konmari-method-declutter-your-home.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/self-storage-blog-11200px.webp" alt="Transform Your Home with the KonMari Decluttering Method" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -3239,7 +3263,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="know-youre-choosing-the-right-self-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/self-storage-unit1200px.webp" alt="How to Find the Perfect Self Storage Unit?" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -3253,7 +3277,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="why-less-is-more-minimalist.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/selfstorage_minimalist1200px.webp" alt="Why Less is More for a Minimalist Lifestyle?" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -3267,7 +3291,7 @@
         <article class="blog-card shadow-sm" data-category="Bike Storage">
             <a href="benefits-of-bike-storage.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/Bike-Storage-blog-1_1200x628.webp" alt="Protect Your Bike with Self Storage India’s Reliable Bike Storage" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Bike Storage</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Bike Storage</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -3281,7 +3305,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-box-storage-can-make-more-space-for-your-needs.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/04/box-storage-blog-new1200px.webp" alt="Maximize Your Space with Box Storage Solutions" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Apr 12, 2022</span>
@@ -3295,7 +3319,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-self-storage-make-space-during-covid-19.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/03/how-self-storage-can-help-you-make-more-space-during-covid-191200px.webp" alt="How self storage can help you make more space during Covid-19" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Mar 22, 2022</span>
@@ -3309,7 +3333,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-to-rescue-businesses-during-covid-19.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/03/How-Self-Storage-Can-Come-to-the-Rescue-of-Businesses-during-Covid-19-11200px.webp" alt="The Role of Self Storage for Businesses During the Pandemic" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Mar 22, 2022</span>
@@ -3323,7 +3347,7 @@
         <article class="blog-card shadow-sm" data-category="Decluttering">
             <a href="how-self-storage-can-help-in-covid-19.html" class="blog-card-media-wrap">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2022/03/how-self-storage-can-help-you-in-the-new-covid-19-reality1200px.webp" alt="Decluttering During Pandemic with Self Storage Solutions" loading="lazy" decoding="async" width="400" height="240" class="blog-card-img">
-                <span class="blog-card-cat-badge">Decluttering</span>
+                <span class="blog-card-cat-badge"><span class="material-symbols-rounded">label</span> Decluttering</span>
             </a>
             <div class="blog-card-body">
                 <span class="blog-card-date"><span class="material-symbols-rounded" style="font-size: 14px;">calendar_today</span> Mar 22, 2022</span>

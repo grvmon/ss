@@ -5959,6 +5959,48 @@ h3 {
     }
 }
 
+.blog-card-cat-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #0F172A;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.blog-card-cat-badge .material-symbols-rounded {
+    font-size: 15px;
+    color: #FF6B00;
+    line-height: 1;
+}
+
+@media (max-width: 640px) {
+    .blog-card-cat-badge {
+        top: 10px;
+        left: 10px;
+        font-size: 0.68rem;
+        padding: 4px 10px;
+    }
+    .blog-card-cat-badge .material-symbols-rounded {
+        font-size: 13px;
+    }
+}
+
+
 .blog-kicker {
     display: inline-flex;
     align-items: center;
