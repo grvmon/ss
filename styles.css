@@ -6036,6 +6036,17 @@ h3 {
     border-radius: 12px;
     border: 1px solid #E2E8F0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+    .article-table th,
+    .article-table td {
+        white-space: nowrap;
+        padding: 12px 14px;
+        font-size: 0.88rem;
+    }
 }
 
 .article-table {
@@ -6204,6 +6215,132 @@ h3 {
     font-size: 0.9rem;
     color: #475569;
     line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+    .author-bio-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 20px;
+    }
+}
+
+/* Lead Magnet Responsive Styles */
+.lead-magnet-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-left: 4px solid var(--primary, #2864df);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 36px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+}
+
+@media (max-width: 640px) {
+    .lead-magnet-card {
+        padding: 20px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .lead-magnet-card .btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+/* ==========================================================================
+   BLOG UP-NEXT & RELATED POSTS NAVIGATION
+   ========================================================================== */
+
+.related-articles-section {
+    margin-top: 56px;
+    padding-top: 36px;
+    border-top: 1px solid #E2E8F0;
+}
+
+.related-section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark, #0F172A);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.related-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .related-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.related-nav-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 22px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.related-nav-card:hover {
+    border-color: #2864df;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(40, 100, 223, 0.12);
+}
+
+.related-nav-card .nav-direction {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #2864df;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.related-nav-card.next-card .nav-direction {
+    justify-content: flex-end;
+}
+
+.related-nav-card h4 {
+    margin: 0 0 8px 0;
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1.4;
+    transition: color 0.2s ease;
+}
+
+.related-nav-card:hover h4 {
+    color: #2864df;
+}
+
+.related-nav-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #64748B;
+    line-height: 1.5;
 }
 
 .blog-sidebar {
