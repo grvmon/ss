@@ -5425,10 +5425,12 @@ h3 {
 
 .ssi-delhi-row {
   display: grid;
-  grid-template-columns: 52% 48%;
-  gap: 30px;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 24px;
   align-items: stretch;
   margin-bottom: 24px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .ssi-delhi-map-card {
@@ -5437,9 +5439,10 @@ h3 {
   box-shadow: 0 8px 24px rgba(24, 35, 58, 0.05);
   overflow: hidden;
   position: relative;
-  min-height: 380px; 
-  height: 380px;
+  min-height: 440px; 
+  height: 100%;
   border: 1px solid var(--ssi-delhi-border);
+  box-sizing: border-box;
 }
 
 .ssi-delhi-map-card iframe {
@@ -5518,7 +5521,9 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: space-between; 
-  height: 380px; 
+  min-height: 440px;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .ssi-delhi-main-paragraph {
@@ -5587,6 +5592,8 @@ h3 {
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   align-items: start;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .ssi-delhi-contact-col {
