@@ -6129,31 +6129,29 @@ h3 {
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-@media (min-width: 768px) {
-    .toc-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px 24px;
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
 }
 
 .toc-list li {
-    margin-bottom: 8px;
+    margin: 0;
+    line-height: 1.5;
 }
 
 .toc-list a {
-    color: #3b82f6;
+    color: #2864df;
     text-decoration: none;
     font-weight: 500;
     font-size: 0.95rem;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
+    display: inline-block;
 }
 
 .toc-list a:hover {
-    color: var(--primary);
+    color: var(--primary, #0B3C5D);
     text-decoration: underline;
+    transform: translateX(3px);
 }
 
 .in-article-cta {
