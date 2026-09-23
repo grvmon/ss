@@ -148,8 +148,97 @@
   ]
 }
     </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What documents do I need to gather for tax season?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Collect income statements, expense receipts, and investment documents. Also, tax forms like W-2s and 1099s should be included."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How should I organize my tax documents?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use labeled folders for different categories like income, deductions, and investments. Keep digital copies for easy access."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best way to store receipts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Store receipts in an envelope or folder. Consider scanning them to create digital backups."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long should I keep my tax documents?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Keep tax documents for at least seven years. This includes returns, receipts, and supporting documents."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I track my expenses throughout the year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use expense tracking apps or spreadsheets. Regularly update them to stay organized."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I do with old tax documents?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shred old tax documents you no longer need. This protects your personal information."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can a tax organizer help me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A tax organizer provides a checklist of necessary documents. It ensures you don’t miss any important paperwork."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are some tips for digital tax document organization?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Create folders on your computer for each tax year. Use cloud storage for easy access and backup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I simplify my tax filing process?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gather all documents before starting. Use tax software or hire a professional for assistance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are common mistakes to avoid during tax season?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Avoid last-minute filing and forgetting to include all income sources. Double-check for accuracy to prevent errors."
+      }
+    }
+  ]
+}
+    </script>
 </head>
 <body class="light-theme">
+    <div id="scroll-progress-bar" style="position: fixed; top: 0; left: 0; height: 3px; background: #FF6B00; width: 0%; z-index: 2000; transition: width 0.1s ease-out;"></div>
     <!-- Navigation Bar -->
     <header class="navbar" id="navbar">
         <div class="nav-container">
@@ -307,6 +396,17 @@
                 </div>
 
                 
+                <!-- Executive Summary Box -->
+                <div class="key-takeaways-box" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-left: 4px solid #0B3C5D; border-radius: 12px; padding: 24px; margin: 28px 0;">
+                    <div class="key-takeaways-title" style="color: #0F172A; font-size: 1.05rem; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <span class="material-symbols-rounded" style="color: #FF6B00; font-size: 20px;">lightbulb</span> Key Takeaways &amp; Executive Summary
+                    </div>
+                    <ul class="key-takeaways-list" style="margin: 0; padding-left: 20px; color: #334155; line-height: 1.7; font-size: 0.95rem;">
+                        <li><strong>Core Overview:</strong> Organize your tax documents with these tips and simplify your tax season by using efficient storage solutions for stress-free preparation.</li><li><strong>Actionable Insight:</strong> Practical advice on organizing tax documents &amp;#8211; declutter your workspace.</li><li><strong>Actionable Insight:</strong> Practical advice on use utility lockers for tax document organizing.</li><li><strong>Actionable Insight:</strong> Practical advice on renovate your filing system.</li><li><strong>Storage Space Optimization:</strong> Using dedicated, 24/7 monitored personal or business storage units across Delhi, Gurugram &amp; Noida allows you to protect valuable assets while keeping primary spaces organized.</li>
+                    </ul>
+                </div>
+
+                
         <div class="toc-box">
             <div class="toc-title">
                 <span class="material-symbols-rounded">format_list_bulleted</span> Table of Contents
@@ -452,6 +552,15 @@
 
 
 <p><strong>Scanning Important Tax Documents</strong></p>
+                <!-- Mid-Article CTA Banner -->
+                <div class="in-article-cta" style="background: linear-gradient(135deg, #0B3C5D 0%, #1D2731 100%); border-radius: 12px; padding: 32px 28px; margin: 40px 0; color: #FFFFFF; text-align: center;">
+                    <h3 style="color: #FFFFFF; font-size: 1.35rem; font-weight: 700; margin-bottom: 10px;">Need Flexible Storage Space in Delhi NCR?</h3>
+                    <p style="color: #CBD5E1; font-size: 0.95rem; line-height: 1.6; max-width: 620px; margin: 0 auto 20px;">Rent clean, private, lockable storage rooms with 24/7 CCTV surveillance, automated access control, and flexible monthly plans across Gurugram, Delhi &amp; Noida.</p>
+                    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                        <button class="btn btn-accent" onclick="openQuoteModal()" style="font-weight: 700;">Get Free Storage Quote</button>
+                        <a href="../storage-calculator.html" class="btn" style="background: rgba(255,255,255,0.15); color: #FFFFFF; border: 1px solid rgba(255,255,255,0.3); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 8px;">Calculate Space <span class="material-symbols-rounded" style="font-size: 18px;">arrow_forward</span></a>
+                    </div>
+                </div>
 
 
 
@@ -557,42 +666,101 @@
 
 
 
-<h3 id="faqs" class="wp-block-heading" id="h-faqs">FAQs</h3>
 
-
-
-<div class="schema-faq wp-block-yoast-faq-block">
-<div id="faq-question-1719044486264" class="schema-faq-section"><strong class="schema-faq-question"><strong>Q1: What documents do I need to gather for tax season?</strong></strong>
-<p class="schema-faq-answer"><strong>A:</strong> Collect income statements, expense receipts, and investment documents. Also, tax forms like W-2s and 1099s should be included.</p>
-</div>
-<div id="faq-question-1719044487872" class="schema-faq-section"><strong class="schema-faq-question"><strong>Q2: How should I organize my tax documents?</strong></strong>
-<p class="schema-faq-answer"><strong>A:</strong> Use labeled folders for different categories like income, deductions, and investments. Keep digital copies for easy access.</p>
-</div>
-<div id="faq-question-1719044488889" class="schema-faq-section"><strong class="schema-faq-question"><strong>Q3: What is the best way to store receipts?</strong></strong>
-<p class="schema-faq-answer"><strong>A:</strong> Store receipts in an envelope or folder. Consider scanning them to create digital backups.</p>
-</div>
-<div id="faq-question-1719044490452" class="schema-faq-section"><strong class="schema-faq-question"><strong>Q4: How long should I keep my tax documents?</strong></strong>
-<p class="schema-faq-answer"><strong>A:</strong> Keep tax documents for at least seven years. This includes returns, receipts, and supporting documents.</p>
-</div>
-<div id="faq-question-1719044491606" class="schema-faq-section"><strong class="schema-faq-question"><strong>Q5: How can I track my expenses throughout the year?</strong></strong>
-<p class="schema-faq-answer"><strong>A:</strong> Use expense tracking apps or spreadsheets. Regularly update them to stay organized.</p>
-</div>
-<div id="faq-question-1719044813640" class="schema-faq-section"><strong class="schema-faq-question"><strong>Q6: What should I do with old tax documents?</strong></strong>
-<p class="schema-faq-answer"><strong>A:</strong> Shred old tax documents you no longer need. This protects your personal information.</p>
-</div>
-<div id="faq-question-1719044814518" class="schema-faq-section"><strong class="schema-faq-question"><strong>Q7: How can a tax organizer help me?</strong></strong>
-<p class="schema-faq-answer"><strong>A:</strong> A tax organizer provides a checklist of necessary documents. It ensures you don&#8217;t miss any important paperwork.</p>
-</div>
-<div id="faq-question-1719044816816" class="schema-faq-section"><strong class="schema-faq-question"><strong>Q8: What are some tips for digital tax document organization?</strong></strong>
-<p class="schema-faq-answer"><strong>A:</strong> Create folders on your computer for each tax year. Use cloud storage for easy access and backup.</p>
-</div>
-<div id="faq-question-1719044817657" class="schema-faq-section"><strong class="schema-faq-question"><strong>Q9: How can I simplify my tax filing process?</strong></strong>
-<p class="schema-faq-answer"><strong>A:</strong> Gather all documents before starting. Use tax software or hire a professional for assistance.</p>
-</div>
-<div id="faq-question-1719044885281" class="schema-faq-section"><strong class="schema-faq-question"><strong>Q10: What are common mistakes to avoid during tax season?</strong></strong>
-<p class="schema-faq-answer"><strong>A:</strong> Avoid last-minute filing and forgetting to include all income sources. Double-check for accuracy to prevent errors.</p>
-</div>
-</div>
+                <div class="faq-accordion-group" style="margin-top: 36px; margin-bottom: 40px;">
+                    <h3 style="color: #0F172A; font-size: 1.4rem; font-weight: 700; margin-bottom: 20px;">Frequently Asked Questions</h3>
+                    
+                <div class="faq-accordion-item shadow-sm">
+                    <button class="faq-trigger" onclick="toggleFaq(this)">
+                        <span>Q1. What documents do I need to gather for tax season?</span>
+                        <span class="material-symbols-rounded accordion-arrow">add</span>
+                    </button>
+                    <div class="faq-content-box">
+                        <p>Collect income statements, expense receipts, and investment documents. Also, tax forms like W-2s and 1099s should be included.</p>
+                    </div>
+                </div>
+                <div class="faq-accordion-item shadow-sm">
+                    <button class="faq-trigger" onclick="toggleFaq(this)">
+                        <span>Q2. How should I organize my tax documents?</span>
+                        <span class="material-symbols-rounded accordion-arrow">add</span>
+                    </button>
+                    <div class="faq-content-box">
+                        <p>Use labeled folders for different categories like income, deductions, and investments. Keep digital copies for easy access.</p>
+                    </div>
+                </div>
+                <div class="faq-accordion-item shadow-sm">
+                    <button class="faq-trigger" onclick="toggleFaq(this)">
+                        <span>Q3. What is the best way to store receipts?</span>
+                        <span class="material-symbols-rounded accordion-arrow">add</span>
+                    </button>
+                    <div class="faq-content-box">
+                        <p>Store receipts in an envelope or folder. Consider scanning them to create digital backups.</p>
+                    </div>
+                </div>
+                <div class="faq-accordion-item shadow-sm">
+                    <button class="faq-trigger" onclick="toggleFaq(this)">
+                        <span>Q4. How long should I keep my tax documents?</span>
+                        <span class="material-symbols-rounded accordion-arrow">add</span>
+                    </button>
+                    <div class="faq-content-box">
+                        <p>Keep tax documents for at least seven years. This includes returns, receipts, and supporting documents.</p>
+                    </div>
+                </div>
+                <div class="faq-accordion-item shadow-sm">
+                    <button class="faq-trigger" onclick="toggleFaq(this)">
+                        <span>Q5. How can I track my expenses throughout the year?</span>
+                        <span class="material-symbols-rounded accordion-arrow">add</span>
+                    </button>
+                    <div class="faq-content-box">
+                        <p>Use expense tracking apps or spreadsheets. Regularly update them to stay organized.</p>
+                    </div>
+                </div>
+                <div class="faq-accordion-item shadow-sm">
+                    <button class="faq-trigger" onclick="toggleFaq(this)">
+                        <span>Q6. What should I do with old tax documents?</span>
+                        <span class="material-symbols-rounded accordion-arrow">add</span>
+                    </button>
+                    <div class="faq-content-box">
+                        <p>Shred old tax documents you no longer need. This protects your personal information.</p>
+                    </div>
+                </div>
+                <div class="faq-accordion-item shadow-sm">
+                    <button class="faq-trigger" onclick="toggleFaq(this)">
+                        <span>Q7. How can a tax organizer help me?</span>
+                        <span class="material-symbols-rounded accordion-arrow">add</span>
+                    </button>
+                    <div class="faq-content-box">
+                        <p>A tax organizer provides a checklist of necessary documents. It ensures you don’t miss any important paperwork.</p>
+                    </div>
+                </div>
+                <div class="faq-accordion-item shadow-sm">
+                    <button class="faq-trigger" onclick="toggleFaq(this)">
+                        <span>Q8. What are some tips for digital tax document organization?</span>
+                        <span class="material-symbols-rounded accordion-arrow">add</span>
+                    </button>
+                    <div class="faq-content-box">
+                        <p>Create folders on your computer for each tax year. Use cloud storage for easy access and backup.</p>
+                    </div>
+                </div>
+                <div class="faq-accordion-item shadow-sm">
+                    <button class="faq-trigger" onclick="toggleFaq(this)">
+                        <span>Q9. How can I simplify my tax filing process?</span>
+                        <span class="material-symbols-rounded accordion-arrow">add</span>
+                    </button>
+                    <div class="faq-content-box">
+                        <p>Gather all documents before starting. Use tax software or hire a professional for assistance.</p>
+                    </div>
+                </div>
+                <div class="faq-accordion-item shadow-sm">
+                    <button class="faq-trigger" onclick="toggleFaq(this)">
+                        <span>Q10. What are common mistakes to avoid during tax season?</span>
+                        <span class="material-symbols-rounded accordion-arrow">add</span>
+                    </button>
+                    <div class="faq-content-box">
+                        <p>Avoid last-minute filing and forgetting to include all income sources. Double-check for accuracy to prevent errors.</p>
+                    </div>
+                </div>
+                </div>
 
 
 
@@ -673,6 +841,22 @@
                         <li style="margin-bottom: 12px;"><a href="../offering-private-rooms.html" style="color: #2864df; font-weight: 600; text-decoration: none; font-size: 0.95rem;">• Private Storage Rooms</a></li>
                         <li><a href="../offering-box-storage.html" style="color: #2864df; font-weight: 600; text-decoration: none; font-size: 0.95rem;">• Pay-Per-Box Storage</a></li>
                     </ul>
+                </div>
+
+                <!-- Sidebar Widget 5: Verified Review -->
+                <div class="sidebar-widget" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 20px;">
+                    <div style="color: #F59E0B; margin-bottom: 8px;">
+                        <span class="material-symbols-rounded" style="font-size: 20px; vertical-align: middle;">star</span>
+                        <span class="material-symbols-rounded" style="font-size: 20px; vertical-align: middle;">star</span>
+                        <span class="material-symbols-rounded" style="font-size: 20px; vertical-align: middle;">star</span>
+                        <span class="material-symbols-rounded" style="font-size: 20px; vertical-align: middle;">star</span>
+                        <span class="material-symbols-rounded" style="font-size: 20px; vertical-align: middle;">star</span>
+                    </div>
+                    <p style="font-size: 0.88rem; color: #334155; font-style: italic; margin-bottom: 12px; line-height: 1.5;">
+                        "Self Storage India made storing our goods completely seamless. The 24/7 security and clean, private lockable units gave our team complete peace of mind."
+                    </p>
+                    <div style="font-weight: 700; font-size: 0.85rem; color: #0F172A;">— Verified Customer</div>
+                    <div style="font-size: 0.78rem; color: #64748B;">Delhi NCR</div>
                 </div>
             </aside>
         </div>
@@ -799,6 +983,35 @@
             alert('Article link copied: ' + window.location.href);
         });
     }
+
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        const bar = document.getElementById('scroll-progress-bar');
+        if (bar) bar.style.width = scrolled + '%';
+    }, { passive: true });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    document.querySelectorAll('.toc-list a').forEach(link => {
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.style.fontWeight = '700';
+                            link.style.color = '#FF6B00';
+                        } else {
+                            link.style.fontWeight = '400';
+                            link.style.color = '#2864df';
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: '-20% 0px -70% 0px' });
+
+        document.querySelectorAll('article h2[id], article h3[id]').forEach(h => observer.observe(h));
+    });
     </script>
 </body>
 </html>
