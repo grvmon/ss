@@ -5894,16 +5894,38 @@ h3 {
     width: 100%;
     border-radius: 16px;
     overflow: hidden;
-    margin-bottom: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    margin-bottom: 32px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    position: relative;
 }
 
 .blog-hero-image-wrap img {
     width: 100%;
     height: auto;
-    max-height: 480px;
+    max-height: 440px;
     object-fit: cover;
     display: block;
+}
+
+.blog-hero-cat-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #FFFFFF;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .blog-layout-grid {
