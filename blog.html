@@ -242,6 +242,44 @@
             }
         }
     </style>
+    <!-- Structured Data: Blog Hub & Breadcrumbs (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "@id": "https://selfstorageindia.com/blog#blog",
+      "name": "Self Storage India Knowledge Hub & Guides",
+      "description": "Explore expert guides on household goods storage, office inventory management, decluttering tips, and relocation hacks across Delhi NCR from Self Storage India.",
+      "url": "https://selfstorageindia.com/blog",
+      "publisher": {
+        "@type": "SelfStorage",
+        "@id": "https://selfstorageindia.com/#organization",
+        "name": "Self Storage India",
+        "url": "https://selfstorageindia.com/",
+        "logo": "https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo.png"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://selfstorageindia.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://selfstorageindia.com/blog"
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="light-theme">
     <!-- Navigation Bar -->
