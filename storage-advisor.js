@@ -485,7 +485,7 @@
                 '</svg>' +
               '</button>' +
               '<p class="lf-privacy-consent">' +
-                'By submitting, you agree to our <a href="/privacy-policy" target="_blank">Privacy Policy</a>.' +
+                'By submitting, you agree to our <a href="/privacy-policy" onclick="if(window.openPrivacyModal){window.openPrivacyModal();return false;}" target="_blank">Privacy Policy</a>.' +
               '</p>' +
               '<p class="lf-global-err" id="advGlobalErr" role="alert" aria-live="assertive" aria-atomic="true"></p>' +
             '</div>' +
