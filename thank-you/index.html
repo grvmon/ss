@@ -11,9 +11,9 @@
     <link rel="canonical" href="https://selfstorageindia.com/thank-you">
 
     <!-- Official Self Storage India Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
 
     <!-- Fonts pairing: Plus Jakarta Sans (Headings) & Inter (Body UI) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,11 +21,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Google Material Symbols Rounded Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
-    <link rel="stylesheet" href="/styles.css?v=3.6">
+    <link rel="stylesheet" id="theme-styles" href="../styles.css?v=3.8">
     <!-- Font Awesome CDN for footer social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+    <!-- GitHub Pages / Subpath Compatibility Guard -->
+    <script>
+        (function() {
+            var isGh = window.location.pathname.startsWith('/ss');
+            if (isGh) {
+                var l = document.getElementById('theme-styles');
+                if (l && (!l.href || !l.href.includes('/ss/styles.css'))) {
+                    l.href = '/ss/styles.css?v=3.8';
+                }
+            }
+        })();
+    </script>
+
     <style>
+        /* Prevent FOUC for modals and hidden components */
+        .modal-overlay { display: none !important; }
+        .modal-overlay.open { display: flex !important; }
+        .toast-notification { display: none !important; }
+        .toast-notification.show { display: flex !important; }
+
         .thank-you-wrapper {
             min-height: calc(100vh - 160px);
             padding: 120px 24px 80px;
@@ -544,7 +563,7 @@
             </div>
 
             <div>
-                <a href="/" class="return-home-btn">
+                <a href="/" class="return-home-btn" id="returnHomeBtn">
                     <span class="material-symbols-rounded">arrow_back</span>
                     Return to Homepage
                 </a>
@@ -650,6 +669,27 @@
         <span class="material-symbols-rounded" aria-hidden="true">keyboard_arrow_up</span>
     </button>
 
-    <script src="/app.js?v=3.6"></script>
+    <script src="../app.js?v=3.6"></script>
+    <script>
+        // GitHub Pages & Navigation Enhancements
+        (function() {
+            var isGh = window.location.pathname.startsWith('/ss');
+            if (isGh && typeof toggleMobileMenu === 'undefined') {
+                var s = document.createElement('script');
+                s.src = '/ss/app.js?v=3.6';
+                document.body.appendChild(s);
+            }
+            // Return button intelligence: route back to /store if that was referrer
+            var returnBtn = document.getElementById('returnHomeBtn');
+            if (returnBtn && isGh) {
+                if (document.referrer && document.referrer.indexOf('/store') !== -1) {
+                    returnBtn.href = '/ss/store';
+                    returnBtn.innerHTML = '<span class="material-symbols-rounded">arrow_back</span> Return to Store';
+                } else {
+                    returnBtn.href = '/ss/';
+                }
+            }
+        })();
+    </script>
 </body>
 </html>

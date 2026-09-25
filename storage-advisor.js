@@ -5,7 +5,8 @@
 (function() {
   'use strict';
 
-  var REDIRECT_URL = (typeof window.advisorRedirectUrl !== 'undefined') ? window.advisorRedirectUrl : '/thank-you';
+  var defaultRedirect = (window.location.pathname.startsWith('/ss')) ? '/ss/thank-you' : '/thank-you';
+  var REDIRECT_URL = (typeof window.advisorRedirectUrl !== 'undefined') ? window.advisorRedirectUrl : defaultRedirect;
   var COOLDOWN_SECONDS = 15;
   var basePath = (function() {
     var scriptTag = document.querySelector('script[src*="storage-advisor.js"]');

@@ -72,12 +72,22 @@ function handleFormSubmit(event) {
     event.preventDefault();
     
     // Clear fields & close modal
-    document.getElementById('user-name').value = '';
-    document.getElementById('user-phone').value = '';
+    var nameInput = document.getElementById('user-name');
+    var phoneInput = document.getElementById('user-phone');
+    if (nameInput) nameInput.value = '';
+    if (phoneInput) phoneInput.value = '';
     closeQuoteModal();
     
     // Show instant success notification
     showToastNotification();
+
+    // If not already on thank-you page, navigate to thank-you confirmation
+    if (window.location.pathname.indexOf('/thank-you') === -1) {
+        setTimeout(function() {
+            var isGh = window.location.pathname.startsWith('/ss');
+            window.location.href = isGh ? '/ss/thank-you' : '/thank-you';
+        }, 500);
+    }
 }
 
 // 5. Toast Success Message
