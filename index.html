@@ -36,7 +36,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Google Material Symbols Rounded Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
-    <link rel="stylesheet" href="styles.css?v=3.6">
+    <link rel="stylesheet" href="styles.css?v=3.9">
     <!-- Font Awesome CDN for footer social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
@@ -1457,11 +1457,16 @@
 
     <!-- Simple Modern Modal for conversion -->
     <div id="quote-modal" class="modal-overlay" onclick="closeQuoteModal(event)">
-        <div class="modal-card shadow-lg" onclick="event.stopPropagation()">
-            <div class="modal-header">
-                <h2>Get Free Storage Quote</h2>
-                <button class="modal-close" onclick="closeQuoteModal()"><span class="material-symbols-rounded">close</span></button>
+        <div class="modal-card advisor-quote-card shadow-lg" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeQuoteModal()" aria-label="Close modal">
+                <span class="material-symbols-rounded">close</span>
+            </button>
+
+            <div class="advisor-modal-head">
+                <h2>Talk to an Expert Advisor</h2>
+                <p>Get unbiased storage guidance, detailed pricing, and independent diligence reports.</p>
             </div>
+
             <form class="modal-form" id="quoteModalForm" action="https://crm.zoho.in/crm/WebToLeadForm" method="POST" accept-charset="UTF-8" onsubmit="handleFormSubmit(event)">
                 <!-- Zoho CRM Hidden Integration Fields -->
                 <input type="hidden" name="xnQsjsdp" value="a979ecd831c0e0cc3021561407927e41ccad53ba7f9728c54ff061b222e0eb6c">
@@ -1470,29 +1475,49 @@
                 <input type="hidden" name="returnURL" id="zoho_return_url" value="https://grvmon.github.io/ss/thank-you">
                 <input type="hidden" name="wFaTrisJS" value="true">
                 <input type="hidden" name="aG9uZXlwb3Q" value="">
+                <input type="hidden" id="storage-size" name="Description" value="General Inquiry">
 
-                <div class="form-group">
-                    <label for="user-name">Full Name</label>
+                <!-- 1. Full Name with Notched Border -->
+                <div class="notched-input-group">
+                    <label for="user-name">FULL NAME *</label>
                     <input type="text" id="user-name" name="Last Name" required placeholder="Aarav Sharma" maxlength="80">
                 </div>
-                <div class="form-group">
-                    <label for="user-phone">Phone Number</label>
-                    <input type="tel" id="user-phone" name="Phone" required placeholder="+91 98765 43210" maxlength="30">
+
+                <!-- 2. Phone Number with Country Dropdown -->
+                <div class="sleek-field-group sleek-phone-group">
+                    <div class="country-select-wrap">
+                        <select id="country-code" name="country_code" aria-label="Country Code">
+                            <option value="+91" selected>+91</option>
+                            <option value="+1">+1 (US)</option>
+                            <option value="+44">+44 (UK)</option>
+                            <option value="+971">+971 (UAE)</option>
+                            <option value="+65">+65 (SG)</option>
+                            <option value="+61">+61 (AU)</option>
+                            <option value="+49">+49 (DE)</option>
+                        </select>
+                        <span class="country-arrow material-symbols-rounded">expand_more</span>
+                    </div>
+                    <div class="sleek-phone-divider"></div>
+                    <input type="tel" id="user-phone" name="Phone" required placeholder="Mobile *" maxlength="15">
                 </div>
-                <div class="form-group">
-                    <label for="user-email">Email Address</label>
-                    <input type="email" id="user-email" name="Email" required placeholder="aarav@example.com" maxlength="100">
+
+                <!-- 3. Email Field -->
+                <div class="sleek-field-group">
+                    <input type="email" id="user-email" name="Email" required placeholder="Email *" maxlength="100">
                 </div>
-                <div class="form-group">
-                    <label for="storage-size">Est. Storage Needs</label>
-                    <select id="storage-size" name="Description">
-                        <option>Locker (Small items, files)</option>
-                        <option>Small Room (1BHK furniture)</option>
-                        <option>Medium Room (2BHK furniture)</option>
-                        <option>Large Room (3BHK+ / Business stock)</option>
-                    </select>
-                </div>
-                <button type="submit" id="quoteSubmitBtn" class="btn btn-accent full-width" style="height: 52px; font-size: 0.95rem;">Get Free Quote</button>
+
+                <!-- 4. Action Button with Circle Arrow -->
+                <button type="submit" id="quoteSubmitBtn" class="btn-request-callback">
+                    <span>Request Callback</span>
+                    <span class="btn-callback-circle">
+                        <span class="material-symbols-rounded">arrow_outward</span>
+                    </span>
+                </button>
+
+                <!-- 5. Privacy Policy Disclaimer -->
+                <p class="advisor-privacy-disclaimer">
+                    By submitting your details, you agree to our <a href="javascript:void(0)" onclick="openPrivacyModal()">Privacy Policy</a>.
+                </p>
             </form>
         </div>
     </div>
@@ -1523,7 +1548,7 @@
         <span class="material-symbols-rounded" aria-hidden="true">keyboard_arrow_up</span>
     </button>
 
-    <script src="app.js?v=4.0"></script>
+    <script src="app.js?v=4.1"></script>
     <script src="storage-advisor.js" defer></script>
 </body>
 </html>

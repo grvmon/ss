@@ -44,13 +44,15 @@ function closeMobileMenu() {
 // 2. Quote Modal Toggle Functions
 function openQuoteModal() {
     const modal = document.getElementById('quote-modal');
-    modal.classList.add('open');
+    if (modal) modal.classList.add('open');
+    document.body.classList.add('quote-modal-open');
 }
 
 function closeQuoteModal(event) {
     const modal = document.getElementById('quote-modal');
     if (!event || event.target === modal) {
-        modal.classList.remove('open');
+        if (modal) modal.classList.remove('open');
+        document.body.classList.remove('quote-modal-open');
     }
 }
 
@@ -95,6 +97,8 @@ async function handleFormSubmit(event) {
     var phoneVal = phoneInput ? phoneInput.value.trim() : '';
     var emailVal = emailInput ? emailInput.value.trim() : '';
     var sizeVal = sizeInput ? sizeInput.value : '';
+    var countrySelect = document.getElementById('country-code');
+    var countryCode = countrySelect ? countrySelect.value : '+91';
 
     if (!nameVal) {
         alert('Please enter your full name.');
@@ -102,8 +106,9 @@ async function handleFormSubmit(event) {
         return;
     }
 
-    if (!phoneVal || phoneVal.replace(/\D/g, '').length < 10) {
-        alert('Please enter a valid 10-digit mobile number.');
+    var rawDigits = phoneVal.replace(/\D/g, '');
+    if (!phoneVal || rawDigits.length < 8) {
+        alert('Please enter a valid mobile number.');
         if (phoneInput) phoneInput.focus();
         return;
     }
@@ -114,10 +119,12 @@ async function handleFormSubmit(event) {
         return;
     }
 
-    var originalBtnText = submitBtn ? submitBtn.innerText : 'Get Free Quote & Lock In Space';
+    var formattedPhone = countryCode + ' ' + rawDigits;
+
+    var originalBtnText = submitBtn ? submitBtn.innerText : 'Request Callback';
     if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerText = 'Connecting with Space Advisor...';
+        submitBtn.innerText = 'Connecting with Advisor...';
     }
 
     var returnUrl = getThankYouUrl();
@@ -132,7 +139,7 @@ async function handleFormSubmit(event) {
     formData.append('ldeskuid', '');
     formData.append('LDTuvid', (window.$zoho && window.$zoho.salesiq && window.$zoho.salesiq.visitor) ? window.$zoho.salesiq.visitor.uniqueid() : '');
     formData.append('Last Name', nameVal);
-    formData.append('Phone', phoneVal);
+    formData.append('Phone', formattedPhone);
     formData.append('Email', emailVal);
     formData.append('Description', 'Selected Space/Location: ' + sizeVal + ' | Landing Page: ' + window.location.pathname + ' | Referrer: ' + (document.referrer || 'Direct'));
 
