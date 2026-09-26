@@ -436,7 +436,7 @@
       return true;
     },
     vEmail: function(live) {
-      if (!emailInput) return false;
+      if (!emailInput) return true;
       var v = emailInput.value.trim();
       if (!v) {
         if (!live || submitted) this.setErr(emailField, emailErr, STRINGS.errEmailRequired);
@@ -606,7 +606,7 @@
       document.body.classList.add("quote-modal-open");
       document.body.style.overflow = "hidden";
 
-      [nameInput, phoneInput, emailInput].forEach(updateClearButtonsA11y);
+      [nameInput, phoneInput, emailInput].filter(Boolean).forEach(updateClearButtonsA11y);
       startPhoneAutofillWatch();
       setTimeout(function() { if (nameInput) nameInput.focus(); }, 250);
     },
@@ -671,8 +671,8 @@
     if (sourceUrl) sourceUrl.value   = window.location.href;
 
     setTimeout(function() {
-      [nameInput, phoneInput, emailInput].forEach(function(i) {
-        if (i) checkValueState(i);
+      [nameInput, phoneInput, emailInput].filter(Boolean).forEach(function(i) {
+        checkValueState(i);
       });
     }, 100);
   }
@@ -697,12 +697,12 @@
 
     var nameOk  = ValidationService.vName();
     var phoneOk = ValidationService.vPhone();
-    var emailOk = ValidationService.vEmail();
+    var emailOk = emailInput ? ValidationService.vEmail() : true;
 
-    if (!(nameOk && phoneOk && emailOk)) {
+    if (!nameOk || !phoneOk || !emailOk) {
       if (!nameOk && nameInput) nameInput.focus();
       else if (!phoneOk && phoneInput) phoneInput.focus();
-      else if (emailInput) emailInput.focus();
+      else if (!emailOk && emailInput) emailInput.focus();
       return;
     }
 
@@ -758,7 +758,9 @@
     formData.append('LDTuvid', (window.$zoho && window.$zoho.salesiq && window.$zoho.salesiq.visitor) ? window.$zoho.salesiq.visitor.uniqueid() : '');
     formData.append('Last Name', ValidationService.normalizeString(nameInput.value));
     formData.append('Phone', fullPhone);
-    formData.append('Email', emailInput.value.trim().toLowerCase());
+    if (emailInput && emailInput.value.trim()) {
+      formData.append('Email', emailInput.value.trim().toLowerCase());
+    }
     formData.append('Description', 'Selected Unit: ' + sizePref + ' | Country: ' + (currentCountry ? currentCountry.name : 'IN') + ' | Source: acrenkey lead form | Landing Page: ' + window.location.pathname + ' | Referrer: ' + (document.referrer || 'Direct'));
 
     try {
@@ -772,9 +774,9 @@
       Store.set("lf_conversion_timestamp_lock", String(Date.now()));
 
       // Dispatch tracking event
-      window.dispatchEvent(new CustomEvent('quote_lead_submitted', {
-        detail: { name: nameInput.value, phone: fullPhone, email: emailInput.value, size: sizePref }
-      }));
+      var leadDetail = { name: nameInput.value, phone: fullPhone, size: sizePref };
+      if (emailInput && emailInput.value.trim()) leadDetail.email = emailInput.value.trim();
+      window.dispatchEvent(new CustomEvent('quote_lead_submitted', { detail: leadDetail }));
 
       // Redirect to thank you
       window.location.href = returnUrl;
