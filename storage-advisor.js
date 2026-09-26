@@ -464,12 +464,21 @@
                   '</div>' +
                   '<input type="hidden" id="advCcVal" name="country_code" value="+91">' +
                   '<div class="lf-divider"></div>' +
-                  '<input class="lf-input" type="tel" id="advPhone" name="phone" inputmode="numeric" autocomplete="tel" enterkeyhint="done" aria-required="true" tabindex="0" aria-invalid="false" maxlength="15" aria-describedby="advPhoneErr">' +
+                  '<input class="lf-input" type="tel" id="advPhone" name="phone" inputmode="numeric" autocomplete="tel" enterkeyhint="next" aria-required="true" tabindex="0" aria-invalid="false" maxlength="15" aria-describedby="advPhoneErr">' +
                   '<span class="lf-valid-icon" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M1 7l4 4 8-8"/></svg></span>' +
                   '<button type="button" class="lf-clear-btn" id="advPhoneClearBtn" aria-label="Clear mobile" tabindex="-1"><svg viewBox="0 0 10 10" fill="none"><path stroke="currentColor" stroke-width="1.2" stroke-linecap="round" d="M1 1l8 8M9 1L1 9"/></svg></button>' +
                 '</div>' +
               '</div>' +
               '<div class="lf-err" id="advPhoneErr" role="alert"></div>' +
+            '</div>' +
+            '<div class="lf-field" id="advEmailField">' +
+              '<div class="lf-input-box">' +
+                '<label class="lf-label" for="advEmail">Email<span class="lf-req" aria-hidden="true">*</span></label>' +
+                '<input class="lf-input" type="email" id="advEmail" name="email" autocomplete="email" enterkeyhint="done" aria-required="true" tabindex="0" aria-invalid="false" maxlength="120" aria-describedby="advEmailErr">' +
+                '<span class="lf-valid-icon" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M1 7l4 4 8-8"/></svg></span>' +
+                '<button type="button" class="lf-clear-btn" id="advEmailClearBtn" aria-label="Clear email" tabindex="-1"><svg viewBox="0 0 10 10" fill="none"><path stroke="currentColor" stroke-width="1.2" stroke-linecap="round" d="M1 1l8 8M9 1L1 9"/></svg></button>' +
+              '</div>' +
+              '<div class="lf-err" id="advEmailErr" role="alert"></div>' +
             '</div>' +
             '<div class="lf-submit-wrap">' +
               '<button type="submit" class="lf-btn" id="advSubmitBtn" tabindex="0" aria-label="Start chat with Abha">' +
@@ -757,6 +766,9 @@
     formData.append('LDTuvid', (window.$zoho && window.$zoho.salesiq && window.$zoho.salesiq.visitor) ? window.$zoho.salesiq.visitor.uniqueid() : '');
     formData.append('Last Name', ValidationService.normalizeString(nameInput.value));
     formData.append('Phone', formattedPhone);
+    if (emailInput && emailInput.value.trim()) {
+      formData.append('Email', emailInput.value.trim().toLowerCase());
+    }
     formData.append('Description', 'Selected Unit: Storage Advisor Chat | Country: ' + (currentCountry ? currentCountry.name : 'IN') + ' | Source: talk to abha advisor | Landing Page: ' + window.location.pathname + ' | Referrer: ' + (document.referrer || 'Direct'));
 
     try {

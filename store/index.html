@@ -1261,7 +1261,7 @@
                                 </div>
                                 <input type="hidden" id="lfCcVal" name="country_code" value="+91">
                                 <div class="lf-divider"></div>
-                                <input class="lf-input lf-focusable" type="tel" id="lfPhone" name="Phone" inputmode="numeric" autocomplete="tel" enterkeyhint="done" aria-required="true" tabindex="0" aria-invalid="false" maxlength="15" aria-describedby="lfPhoneErr">
+                                <input class="lf-input lf-focusable" type="tel" id="lfPhone" name="Phone" inputmode="numeric" autocomplete="tel" enterkeyhint="next" aria-required="true" tabindex="0" aria-invalid="false" maxlength="15" aria-describedby="lfPhoneErr">
                                 <span class="lf-valid-icon" aria-hidden="true">
                                     <svg viewBox="0 0 14 14" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M1 7l4 4 8-8"/></svg>
                                 </span>
@@ -1271,6 +1271,21 @@
                             </div>
                         </div>
                         <div class="lf-err" id="lfPhoneErr" role="alert"></div>
+                    </div>
+
+                    <!-- 3. Email Field with Floating Label, Error, Clear & Valid check -->
+                    <div class="lf-field" id="lfEmailField">
+                        <div class="lf-input-box">
+                            <label class="lf-label" for="lfEmail">Email<span class="lf-req" aria-hidden="true">*</span></label>
+                            <input class="lf-input lf-focusable" type="email" id="lfEmail" name="Email" autocomplete="email" enterkeyhint="done" aria-required="true" tabindex="0" aria-invalid="false" maxlength="120" aria-describedby="lfEmailErr">
+                            <span class="lf-valid-icon" aria-hidden="true">
+                                <svg viewBox="0 0 14 14" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M1 7l4 4 8-8"/></svg>
+                            </span>
+                            <button type="button" class="lf-clear-btn lf-focusable" aria-label="Clear email field" tabindex="-1">
+                                <svg viewBox="0 0 10 10" fill="none"><path stroke="currentColor" stroke-width="1.2" stroke-linecap="round" d="M1 1l8 8M9 1L1 9"/></svg>
+                            </button>
+                        </div>
+                        <div class="lf-err" id="lfEmailErr" role="alert"></div>
                     </div>
 
                     <!-- Submit Button with Spinner & Arrow Badge -->
