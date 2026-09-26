@@ -593,6 +593,109 @@
     if (phoneField && !phoneField.contains(target) && target !== ccBackdrop) closePanel();
   };
 
+  var CONTEXTUAL_HEADINGS = {
+    'Why Storage Fold': {
+      heading: 'Secure, Flexible Storage for Home & Business',
+      sub: 'Private lockable rooms with 24/7 security, climate protection, and flexible monthly plans across Delhi NCR.'
+    },
+    'Use Cases Fold': {
+      heading: 'Storage That Fits Your Life & Business',
+      sub: 'Simple storage solutions for home renovation, moving, decluttering, or business inventory.'
+    },
+    'Relocating / Moving': {
+      heading: 'Relocation & Moving Storage Quote',
+      sub: 'Safe, temporary space for household furniture and belongings while moving.'
+    },
+    'Home Renovation': {
+      heading: 'Home Renovation Storage Quote',
+      sub: 'Protect your furniture and valuables during home renovation or remodeling.'
+    },
+    'Work From Home': {
+      heading: 'Home Workspace Storage Quote',
+      sub: 'Declutter your living area and make room for a productive home office.'
+    },
+    'Household Storage': {
+      heading: 'Household Goods Storage Quote',
+      sub: 'Secure private storage rooms for furniture, appliances, and personal items.'
+    },
+    'Business Inventory': {
+      heading: 'Business & Inventory Storage Quote',
+      sub: 'Scalable commercial storage with 100% GST invoicing and easy loading.'
+    },
+    'Business Transition': {
+      heading: 'Business Transition Storage Quote',
+      sub: 'Flexible storage during office remodeling, relocation, or expansion.'
+    },
+    'Downsizing': {
+      heading: 'Downsizing Storage Quote',
+      sub: 'Keep cherished possessions safe without cluttering your new home.'
+    },
+    'Decluttering': {
+      heading: 'Decluttering Storage Quote',
+      sub: 'Reclaim extra space in your home with an affordable private unit.'
+    },
+    'Growing Family': {
+      heading: 'Family Storage Quote',
+      sub: 'Flexible extra space for baby gear, sports equipment, and household goods.'
+    },
+    'Delhi': {
+      heading: 'Delhi Facility Storage Quote',
+      sub: 'Centrally located storage in Delhi with 24/7 CCTV and private access.'
+    },
+    'Gurugram': {
+      heading: 'Gurugram Facility Storage Quote',
+      sub: 'Modern, pest-controlled storage units in Gurugram near major hubs.'
+    },
+    'Noida': {
+      heading: 'Noida Facility Storage Quote',
+      sub: 'Easily accessible, secure private storage units in Sector 59, Noida.'
+    },
+    'Facility Walkthrough': {
+      heading: 'Accessible Facilities Across Delhi, Gurugram & Noida',
+      sub: 'Book a free 15-minute guided walkthrough at our Delhi, Gurugram, or Noida center.'
+    },
+    'Center Manager Inquiry': {
+      heading: 'Inquire with Center Manager',
+      sub: 'Speak with our on-site facility team for custom space and direct rates.'
+    },
+    'Private Rooms': {
+      heading: 'Private Storage Rooms Quote',
+      sub: 'Lockable rooms from 20 to 300+ sq. ft. You keep the only key.'
+    },
+    'Business Storage': {
+      heading: 'Commercial Business Storage Quote',
+      sub: 'Warehouse space with loading access, security, and flexible terms.'
+    },
+    'Luggage & Box Storage': {
+      heading: 'Luggage & Box Storage Quote',
+      sub: 'Compact, affordable storage boxes for students, travel, or small items.'
+    },
+    'Custom Enterprise Unit': {
+      heading: 'Storage Room Sizes for Every Need',
+      sub: 'From personal lockers to 300+ sq. ft. private rooms and custom warehouses.'
+    },
+    'Corporate Inquiry': {
+      heading: 'Corporate Storage Inquiry',
+      sub: 'B2B storage solutions with dedicated docks and GST-compliant invoicing.'
+    },
+    'Testimonials Fold': {
+      heading: 'Trusted by 5,000+ Households & Businesses',
+      sub: 'Safe, reliable storage with zero deposit lock-ins and flexible monthly rentals.'
+    },
+    'Instant Callback': {
+      heading: 'Request an Instant Callback',
+      sub: 'Our storage specialist will contact you within 15 minutes.'
+    },
+    'Gallery Fold': {
+      heading: 'Clean, Secure & 100% Private Storage',
+      sub: 'Every facility is sanitized, pest-controlled, and monitored by 24/7 CCTV.'
+    },
+    'Facility Inquiry': {
+      heading: 'Facility Space & Rate Inquiry',
+      sub: 'Get instant unit availability and transparent pricing from our team.'
+    }
+  };
+
   var ModalController = {
     open: function (pref) {
       initElements();
@@ -600,6 +703,19 @@
 
       if (pref && storageSizeInput) {
         storageSizeInput.value = pref;
+      }
+
+      var headingEl = document.getElementById("lfMainHeading");
+      var subHeadingEl = document.getElementById("lfSubHeading");
+      if (headingEl && subHeadingEl) {
+        var ctx = pref && CONTEXTUAL_HEADINGS[pref];
+        if (ctx) {
+          headingEl.textContent = ctx.heading;
+          subHeadingEl.textContent = ctx.sub;
+        } else {
+          headingEl.textContent = "Get Your Free Storage Quote";
+          subHeadingEl.textContent = "Get transparent storage pricing, custom unit sizing, and instant space guidance.";
+        }
       }
 
       lfFormOpenTime = Date.now();
@@ -646,6 +762,7 @@
   window.closeModal     = function() { ModalController.close(); };
   window.openQuoteModal = function(pref) { ModalController.open(pref); };
   window.closeQuoteModal = function() { ModalController.close(); };
+  window.CONTEXTUAL_HEADINGS = CONTEXTUAL_HEADINGS;
 
   var UTM_TTL = 30 * 60 * 1000;
   var urlParams = new URLSearchParams(window.location.search);

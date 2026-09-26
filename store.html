@@ -372,8 +372,8 @@
                                 <span class="material-symbols-rounded">lock</span>
                                 <span>100% Private Lock &amp; Key</span>
                             </div>
-                            <h3>Ready to Reclaim Your Living or Office Space?</h3>
-                            <p>Units range from compact lockers to large 3BHK+ private suites. No long-term lock-in, transparent monthly billing, and partner transport support.</p>
+                            <h3>Secure, Flexible Storage for Home &amp; Business</h3>
+                            <p>Private lockable rooms with 24/7 security, climate protection, and flexible monthly plans across Delhi NCR.</p>
                         </div>
                         <div class="cta-btns">
                             <button class="btn btn-primary" onclick="openQuoteModal('Why Storage Fold')">
@@ -538,11 +538,11 @@
                     <div class="cta-inner-card cta-accent-border">
                         <div class="cta-copy">
                             <div class="cta-badge-pill cta-badge-accent">
-                                <span class="material-symbols-rounded">support_agent</span>
-                                <span>Free Space Assessment</span>
+                                <span class="material-symbols-rounded">tune</span>
+                                <span>Tailored Use Cases</span>
                             </div>
-                            <h3>Not Sure Which Unit Fits Your Situation?</h3>
-                            <p>Tell us what you're storing. Our storage specialists evaluate your exact volume so you never pay for unused room.</p>
+                            <h3>Storage That Fits Your Life &amp; Business</h3>
+                            <p>Simple storage solutions for home renovation, moving, decluttering, or business inventory. Pay only for what you need.</p>
                         </div>
                         <div class="cta-btns">
                             <button class="btn btn-accent" onclick="openQuoteModal('Use Cases Fold')">
@@ -648,10 +648,10 @@
                     <div class="banner-text">
                         <div class="cta-badge-pill" style="margin-bottom: 8px;">
                             <span class="material-symbols-rounded">pin_drop</span>
-                            <span>Strategic NCR Accessibility</span>
+                            <span>Strategic NCR Locations</span>
                         </div>
-                        <h3>Prefer to Inspect a Facility in Person?</h3>
-                        <p>Book a free, 15-minute guided walkthrough at our Gurugram, Delhi, or Noida storage centers before booking.</p>
+                        <h3>Accessible Facilities Across Delhi, Gurugram &amp; Noida</h3>
+                        <p>Visit our secure, central facilities across NCR. Book a free 15-minute walkthrough or get an instant quote.</p>
                     </div>
                     <div class="banner-actions">
                         <button class="btn btn-primary" onclick="openQuoteModal('Facility Walkthrough')">
@@ -754,11 +754,11 @@
                     <div class="cta-inner-card">
                         <div class="cta-copy">
                             <div class="cta-badge-pill">
-                                <span class="material-symbols-rounded">tune</span>
-                                <span>Modular &amp; Scalable</span>
+                                <span class="material-symbols-rounded">shelves</span>
+                                <span>Tailored Storage Unit Sizes</span>
                             </div>
-                            <h3>Need Custom Dimensions or Enterprise Warehousing?</h3>
-                            <p>We combine modular units up to 10,000+ sq. ft. with private keys, dedicated loading docks, and 100% GST-compliant B2B invoicing.</p>
+                            <h3>Storage Room Sizes for Every Need</h3>
+                            <p>From personal lockers to 300+ sq. ft. private rooms and custom business warehouses with transparent monthly pricing.</p>
                         </div>
                         <div class="cta-btns">
                             <button class="btn btn-primary" onclick="openQuoteModal('Custom Enterprise Unit')">
@@ -849,8 +849,8 @@
                                 <span class="material-symbols-rounded">verified</span>
                                 <span>5,000+ Verified Customers</span>
                             </div>
-                            <h3>Join Delhi NCR's Most Trusted Self-Storage Community</h3>
-                            <p>Experience hassle-free storage with zero security deposit lock-ins, 24/7 CCTV surveillance, and total peace of mind.</p>
+                            <h3>Trusted by 5,000+ Households &amp; Businesses</h3>
+                            <p>Experience safe, reliable storage with zero security deposit lock-ins, 24/7 CCTV surveillance, and flexible monthly rentals.</p>
                         </div>
                         <div class="cta-btns">
                             <button class="btn btn-accent" onclick="openQuoteModal('Testimonials Fold')">
@@ -898,11 +898,11 @@
                     <div class="cta-inner-card">
                         <div class="cta-copy">
                             <div class="cta-badge-pill">
-                                <span class="material-symbols-rounded">camera_indoor</span>
-                                <span>Verified Facility Standards</span>
+                                <span class="material-symbols-rounded">cleaning_services</span>
+                                <span>Clean. Secure. Yours.</span>
                             </div>
-                            <h3>Clean, Well-Lit, and 100% Private</h3>
-                            <p>Every corridor is sanitized, pest-controlled, and under active 24/7 CCTV surveillance. Reserve your space online in under 2 minutes.</p>
+                            <h3>Clean, Secure &amp; 100% Private Storage</h3>
+                            <p>Every facility is sanitized, pest-controlled, and monitored by 24/7 CCTV. Reserve your private room online in minutes.</p>
                         </div>
                         <div class="cta-btns">
                             <button class="btn btn-primary" onclick="openQuoteModal('Gallery Fold')">
@@ -1118,7 +1118,125 @@
     <script src="storage-advisor.min.js?v=5.0" defer></script>
     <script>
     // Zero-Exit Page Custom Modal Handlers
+    var CONTEXTUAL_HEADINGS = {
+        'Why Storage Fold': {
+            heading: 'Secure, Flexible Storage for Home & Business',
+            sub: 'Private lockable rooms with 24/7 security, climate protection, and flexible monthly plans across Delhi NCR.'
+        },
+        'Use Cases Fold': {
+            heading: 'Storage That Fits Your Life & Business',
+            sub: 'Simple storage solutions for home renovation, moving, decluttering, or business inventory.'
+        },
+        'Relocating / Moving': {
+            heading: 'Relocation & Moving Storage Quote',
+            sub: 'Safe, temporary space for household furniture and belongings while moving.'
+        },
+        'Home Renovation': {
+            heading: 'Home Renovation Storage Quote',
+            sub: 'Protect your furniture and valuables during home renovation or remodeling.'
+        },
+        'Work From Home': {
+            heading: 'Home Workspace Storage Quote',
+            sub: 'Declutter your living area and make room for a productive home office.'
+        },
+        'Household Storage': {
+            heading: 'Household Goods Storage Quote',
+            sub: 'Secure private storage rooms for furniture, appliances, and personal items.'
+        },
+        'Business Inventory': {
+            heading: 'Business & Inventory Storage Quote',
+            sub: 'Scalable commercial storage with 100% GST invoicing and easy loading.'
+        },
+        'Business Transition': {
+            heading: 'Business Transition Storage Quote',
+            sub: 'Flexible storage during office remodeling, relocation, or expansion.'
+        },
+        'Downsizing': {
+            heading: 'Downsizing Storage Quote',
+            sub: 'Keep cherished possessions safe without cluttering your new home.'
+        },
+        'Decluttering': {
+            heading: 'Decluttering Storage Quote',
+            sub: 'Reclaim extra space in your home with an affordable private unit.'
+        },
+        'Growing Family': {
+            heading: 'Family Storage Quote',
+            sub: 'Flexible extra space for baby gear, sports equipment, and household goods.'
+        },
+        'Delhi': {
+            heading: 'Delhi Facility Storage Quote',
+            sub: 'Centrally located storage in Delhi with 24/7 CCTV and private access.'
+        },
+        'Gurugram': {
+            heading: 'Gurugram Facility Storage Quote',
+            sub: 'Modern, pest-controlled storage units in Gurugram near major hubs.'
+        },
+        'Noida': {
+            heading: 'Noida Facility Storage Quote',
+            sub: 'Easily accessible, secure private storage units in Sector 59, Noida.'
+        },
+        'Facility Walkthrough': {
+            heading: 'Accessible Facilities Across Delhi, Gurugram & Noida',
+            sub: 'Book a free 15-minute guided walkthrough at our Delhi, Gurugram, or Noida center.'
+        },
+        'Center Manager Inquiry': {
+            heading: 'Inquire with Center Manager',
+            sub: 'Speak with our on-site facility team for custom space and direct rates.'
+        },
+        'Private Rooms': {
+            heading: 'Private Storage Rooms Quote',
+            sub: 'Lockable rooms from 20 to 300+ sq. ft. You keep the only key.'
+        },
+        'Business Storage': {
+            heading: 'Commercial Business Storage Quote',
+            sub: 'Warehouse space with loading access, security, and flexible terms.'
+        },
+        'Luggage & Box Storage': {
+            heading: 'Luggage & Box Storage Quote',
+            sub: 'Compact, affordable storage boxes for students, travel, or small items.'
+        },
+        'Custom Enterprise Unit': {
+            heading: 'Storage Room Sizes for Every Need',
+            sub: 'From personal lockers to 300+ sq. ft. private rooms and custom warehouses.'
+        },
+        'Corporate Inquiry': {
+            heading: 'Corporate Storage Inquiry',
+            sub: 'B2B storage solutions with dedicated docks and GST-compliant invoicing.'
+        },
+        'Testimonials Fold': {
+            heading: 'Trusted by 5,000+ Households & Businesses',
+            sub: 'Safe, reliable storage with zero deposit lock-ins and flexible monthly rentals.'
+        },
+        'Instant Callback': {
+            heading: 'Request an Instant Callback',
+            sub: 'Our storage specialist will contact you within 15 minutes.'
+        },
+        'Gallery Fold': {
+            heading: 'Clean, Secure & 100% Private Storage',
+            sub: 'Every facility is sanitized, pest-controlled, and monitored by 24/7 CCTV.'
+        },
+        'Facility Inquiry': {
+            heading: 'Facility Space & Rate Inquiry',
+            sub: 'Get instant unit availability and transparent pricing from our team.'
+        }
+    };
+
+    function updateModalHeadings(pref) {
+        var h = document.getElementById('lfMainHeading');
+        var s = document.getElementById('lfSubHeading');
+        if (!h || !s) return;
+        var ctx = pref && CONTEXTUAL_HEADINGS[pref];
+        if (ctx) {
+            h.textContent = ctx.heading;
+            s.textContent = ctx.sub;
+        } else {
+            h.textContent = 'Get Your Free Storage Quote';
+            s.textContent = 'Get transparent storage pricing, custom unit sizing, and instant space guidance.';
+        }
+    }
+
     function openQuoteModal(pref) {
+        updateModalHeadings(pref);
         if (window.openModal) {
             window.openModal(pref);
         } else {
