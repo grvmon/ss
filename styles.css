@@ -423,6 +423,7 @@ h3 {
     font-weight: 600;
     font-size: 0.92rem;
     cursor: pointer;
+    text-decoration: none !important;
     transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
     border: none;
     display: inline-flex;
@@ -4556,7 +4557,8 @@ h3 {
 
 .footer-nav a:hover {
     opacity: 1;
-    text-decoration: underline;
+    color: var(--accent, #FF6B00);
+    text-decoration: none;
 }
 
 /* Social Media Icons */
@@ -5806,7 +5808,7 @@ h3 {
 
 .ssi-breadcrumb a:hover {
   color: #1d4ed8;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .ssi-breadcrumb .bc-sep {
@@ -6234,7 +6236,7 @@ h3 {
 
 .toc-list a:hover {
     color: var(--primary, #0B3C5D);
-    text-decoration: underline;
+    text-decoration: none;
     transform: translateX(3px);
 }
 
@@ -7048,9 +7050,57 @@ h3 {
     flex-shrink: 0;
 }
 
-.cta-btns .btn-secondary,
-.cta-btns .btn-outline {
-    text-decoration: none;
+/* Universal Minimal Text-Decoration Guarantee for CTAs & Interactive Actions */
+.btn,
+a.btn,
+button.btn,
+.btn-calc-orange,
+.btn-offering-primary,
+.phone-link,
+.cta-btns a,
+.cta-btns button,
+.banner-actions a,
+.banner-actions button,
+.faq-cta-actions a,
+.faq-cta-actions button,
+.hero-action-buttons a,
+.hero-action-buttons button,
+.nav-actions a,
+.nav-actions button,
+.cta-badge-pill,
+.sense-card,
+.location-card,
+.offering-card,
+.footer-nav a {
+    text-decoration: none !important;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active,
+a.btn:hover,
+a.btn:focus,
+a.btn:active,
+button.btn:hover,
+button.btn:focus,
+button.btn:active,
+.btn-calc-orange:hover,
+.btn-calc-orange:focus,
+.btn-offering-primary:hover,
+.phone-link:hover,
+.cta-btns a:hover,
+.cta-btns button:hover,
+.banner-actions a:hover,
+.banner-actions button:hover,
+.faq-cta-actions a:hover,
+.faq-cta-actions button:hover,
+.hero-action-buttons a:hover,
+.hero-action-buttons button:hover,
+.nav-actions a:hover,
+.nav-actions button:hover,
+.cta-badge-pill:hover,
+.footer-nav a:hover {
+    text-decoration: none !important;
 }
 
 @media (max-width: 900px) {
