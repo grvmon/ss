@@ -32,6 +32,7 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  overflow-y: auto;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
@@ -63,7 +64,7 @@
   box-shadow: 0 24px 60px rgba(0, 43, 73, 0.28);
   max-height: calc(100vh - 32px);
   max-height: calc(100dvh - 32px);
-  overflow-y: auto;
+  overflow: visible;
   transform: translateY(24px);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -224,6 +225,11 @@
 .lf-form .lf-field {
   position: relative;
   width: 100%;
+}
+
+.lf-form .lf-field-phone {
+  position: relative;
+  z-index: 50;
 }
 
 .lf-input-box {
@@ -450,13 +456,13 @@ input:-webkit-autofill {
   position: absolute;
   top: calc(100% + 8px);
   left: -16px;
-  z-index: 9999999 !important;
+  z-index: 99999999 !important;
   width: calc(100% + 32px);
   background: #FFFFFF;
   border: 1px solid #E2E8F0;
   border-radius: 8px;
-  box-shadow: 0 12px 32px rgba(0, 43, 73, 0.16);
-  max-height: 260px;
+  box-shadow: 0 16px 40px rgba(0, 43, 73, 0.22);
+  max-height: 240px;
   overflow: hidden;
   flex-direction: column;
 }
@@ -531,6 +537,7 @@ input:-webkit-autofill {
 }
 
 .lf-cc-list {
+  max-height: 190px;
   overflow-y: auto;
   flex: 1;
   -webkit-overflow-scrolling: touch;

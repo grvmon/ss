@@ -21,7 +21,7 @@
     return isGh ? '/ss/' : '/';
   })();
   var CHIME_URL = basePath + 'assets/advisor-chime.wav';
-  var AVATAR_URL = basePath + 'assets/advisor-ananya.webp';
+  var AVATAR_URL = basePath + 'assets/advisor-abha.webp';
   var CSS_URL = basePath + 'storage-advisor.min.css?v=5.0';
 
   var STRINGS = {
@@ -382,8 +382,8 @@
 
     var unitHtml = '' +
       '<aside class="advisor-floating-unit" id="advisorFloatingUnit" aria-label="Personal Storage Advisor">' +
-        '<div class="advisor-speech-bubble" id="advisorSpeechBubble" role="status" aria-live="polite" title="Chat with Ananya">' +
-          '<div class="advisor-speech-title">Hi! I\'m Ananya</div>' +
+        '<div class="advisor-speech-bubble" id="advisorSpeechBubble" role="status" aria-live="polite" title="Chat with Abha">' +
+          '<div class="advisor-speech-title">Hi! I\'m Abha</div>' +
           '<div class="advisor-speech-desc">Need help calculating storage space?</div>' +
           '<div class="advisor-bubble-tail" aria-hidden="true">' +
             '<svg width="16" height="9" viewBox="0 0 16 9" fill="none">' +
@@ -394,8 +394,8 @@
         '</div>' +
         '<div class="advisor-main-card" id="advisorMainCard">' +
           '<div class="advisor-avatar-wrap">' +
-            '<img src="' + AVATAR_URL + '" alt="Ananya - Personal Storage Advisor" class="advisor-avatar-img" width="80" height="80" loading="lazy">' +
-            '<span class="advisor-status-dot" aria-label="Ananya is online"></span>' +
+            '<img src="' + AVATAR_URL + '" alt="Abha - Personal Storage Advisor" class="advisor-avatar-img" width="82" height="82" loading="lazy">' +
+            '<span class="advisor-status-dot" aria-label="Abha is online"></span>' +
           '</div>' +
           '<div class="advisor-card-content">' +
             '<div class="advisor-card-heading">' +
@@ -408,9 +408,9 @@
               '</button>' +
             '</div>' +
             '<div class="advisor-status-row">' +
-              '<span class="advisor-status-text"><strong>Ananya</strong> is online • Quick reply</span>' +
+              '<span class="advisor-status-text"><strong>Abha</strong> is online now</span>' +
             '</div>' +
-            '<button type="button" class="advisor-talk-btn" id="advisorTalkBtn" aria-label="Start chat with Ananya">' +
+            '<button type="button" class="advisor-talk-btn" id="advisorTalkBtn" aria-label="Start chat with Abha">' +
               '<span>Start Chat</span>' +
               '<svg class="advisor-talk-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
                 '<line x1="5" y1="12" x2="19" y2="12"></line>' +
@@ -423,6 +423,7 @@
       '<div class="advisor-modal-overlay" id="advisorModalOverlay" aria-hidden="true">' +
         '<div class="advisor-modal-backdrop" id="advisorModalBackdrop"></div>' +
         '<div class="advisor-modal-wrap" id="advisorModalWrap" role="dialog" aria-modal="true" aria-labelledby="advisorHeading" aria-describedby="advisorSubheading">' +
+          '<div class="advisor-drag-handle" aria-hidden="true"></div>' +
           '<button type="button" class="advisor-modal-close-btn" id="advisorModalClose" aria-label="Close dialog">' +
             '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">' +
               '<path d="M1 1l12 12M13 1L1 13"></path>' +
@@ -430,11 +431,11 @@
           '</button>' +
           '<div class="advisor-modal-header">' +
             '<div class="advisor-header-avatar-wrap">' +
-              '<img src="' + AVATAR_URL + '" alt="Ananya - Personal Storage Advisor" class="advisor-header-avatar-img" width="72" height="72">' +
+              '<img src="' + AVATAR_URL + '" alt="Abha - Personal Storage Advisor" class="advisor-header-avatar-img" width="72" height="72">' +
               '<span class="advisor-header-status-dot" aria-label="Online"></span>' +
             '</div>' +
             '<div class="advisor-header-text">' +
-              '<h2 class="advisor-modal-title" id="advisorHeading">Talk to Ananya</h2>' +
+              '<h2 class="advisor-modal-title" id="advisorHeading">Talk to Abha</h2>' +
               '<p class="advisor-modal-subtitle" id="advisorSubheading">Personal Storage Advisor • Quick 2-min response</p>' +
             '</div>' +
           '</div>' +
@@ -471,7 +472,7 @@
               '<div class="lf-err" id="advPhoneErr" role="alert"></div>' +
             '</div>' +
             '<div class="lf-submit-wrap">' +
-              '<button type="submit" class="lf-btn" id="advSubmitBtn" tabindex="0" aria-label="Start chat with Ananya">' +
+              '<button type="submit" class="lf-btn" id="advSubmitBtn" tabindex="0" aria-label="Start chat with Abha">' +
                 '<div class="lf-spinner"></div>' +
                 '<span id="advBtnText">Start Chat</span>' +
                 '<svg class="advisor-talk-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
@@ -605,22 +606,6 @@
       e.preventDefault();
       e.stopPropagation();
     }
-    if (typeof window.openModal === 'function') {
-      window.openModal('Personal Storage Advisor');
-      return;
-    }
-    if (typeof openQuoteModal === 'function') {
-      openQuoteModal('Personal Storage Advisor');
-      return;
-    }
-    var qm = document.getElementById('quote-modal') || document.getElementById('lfModalOverlay');
-    if (qm) {
-      qm.classList.add('lf-modal-open', 'open');
-      document.body.classList.add('quote-modal-open');
-      var nameInp = document.getElementById('lfName') || document.getElementById('user-name');
-      if (nameInp) setTimeout(function() { nameInp.focus(); }, 150);
-      return;
-    }
     openModal();
   }
 
@@ -735,14 +720,14 @@
     var tracking = getTrackingPayload();
     var dial = (ccVal ? ccVal.value : "+91") || "+91";
     var rawDigits = phoneInput.value.trim().replace(/\D/g, "");
-    var formattedPhone = dial + rawDigits;
+    var formattedPhone = dial + " " + rawDigits;
 
     var payload = {
       name: nameInput.value.trim(),
       phone: formattedPhone,
       email: (emailInput && emailInput.value) ? emailInput.value.trim().toLowerCase() : '',
       country_code: dial,
-      source_widget: "talk_to_ananya_advisor",
+      source_widget: "talk_to_abha_advisor",
       source_url: tracking.source_url,
       page_title: tracking.page_title,
       submitted_at: tracking.submitted_at,
@@ -752,7 +737,38 @@
       gclid: tracking.gclid
     };
 
+    var ZOHO_WEB_TO_LEAD = {
+      action: "https://crm.zoho.in/crm/WebToLeadForm",
+      xnQsjsdp: "5b597ab74326550702419ec4a9a08ea15a9ab29f796a40a5a22e8fb7a3c306d8",
+      xmIwtLD: "76ff4728564a2c1404c0ec2e90f23d7065dc45c7314781dd4e037041a995e8e3c5ec7a40ca380b2a36b3060fc1e58284",
+      actionType: "TGVhZHM=",
+      wFaTrisJS: "true"
+    };
+
+    var formData = new FormData();
+    formData.append('xnQsjsdp', ZOHO_WEB_TO_LEAD.xnQsjsdp);
+    formData.append('xmIwtLD', ZOHO_WEB_TO_LEAD.xmIwtLD);
+    formData.append('actionType', ZOHO_WEB_TO_LEAD.actionType);
+    formData.append('returnURL', REDIRECT_URL);
+    formData.append('wFaTrisJS', ZOHO_WEB_TO_LEAD.wFaTrisJS);
+    formData.append('aG9uZXlwb3Q', '');
+    formData.append('zc_gad', tracking.gclid || '');
+    formData.append('ldeskuid', '');
+    formData.append('LDTuvid', (window.$zoho && window.$zoho.salesiq && window.$zoho.salesiq.visitor) ? window.$zoho.salesiq.visitor.uniqueid() : '');
+    formData.append('Last Name', ValidationService.normalizeString(nameInput.value));
+    formData.append('Phone', formattedPhone);
+    formData.append('Description', 'Selected Unit: Storage Advisor Chat | Country: ' + (currentCountry ? currentCountry.name : 'IN') + ' | Source: talk to abha advisor | Landing Page: ' + window.location.pathname + ' | Referrer: ' + (document.referrer || 'Direct'));
+
     try {
+      try {
+        await fetch(ZOHO_WEB_TO_LEAD.action, {
+          method: 'POST',
+          body: formData,
+          cache: 'no-cache'
+        });
+      } catch (crmErr) {
+        console.warn("[Storage Advisor Zoho warning]", crmErr);
+      }
       if (typeof window.sendAdvisorData === "function") {
         await window.sendAdvisorData(payload);
       }
@@ -990,6 +1006,11 @@
 
   /* Expose globals */
   window.openAdvisorModal = openModal;
+  window.openAbhaModal = openModal;
+  window.triggerAbhaChat = function() {
+    playChime();
+    openModal();
+  };
   window.closeAdvisorModal = closeModal;
   window.toggleAdvisorMinimize = toggleMinimize;
   window.playAdvisorChime = playChime;

@@ -3468,6 +3468,14 @@ h3 {
 .faq-cta-actions {
     display: flex;
     gap: var(--space-md);
+    flex-shrink: 0;
+    align-items: center;
+}
+
+.faq-cta-actions button,
+.faq-cta-actions .btn {
+    white-space: nowrap !important;
+    flex-shrink: 0;
 }
 
 @media (max-width: 900px) {

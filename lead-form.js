@@ -507,14 +507,20 @@
     currentCountry = c;
     if (ccDisplay) ccDisplay.textContent = c.dial;
     if (ccVal) ccVal.value = c.dial;
+    if (phoneInput) {
+      var hasErr = phoneField && phoneField.classList.contains("lf-has-error");
+      if (submitted || hasErr || phoneInput.value.trim() !== "") {
+        ValidationService.vPhone(true);
+      }
+    }
   }
 
   function buildList(filter) {
     if (!ccList) return;
     ccList.innerHTML = "";
-    var q = (filter || "").toLowerCase();
+    var q = (filter || "").toLowerCase().trim();
     filteredCountries = getSorted().filter(function(c) {
-      return !q || c.name.toLowerCase().indexOf(q) !== -1 || c.dial.indexOf(q) !== -1;
+      return !q || c.name.toLowerCase().indexOf(q) !== -1 || c.dial.indexOf(q) !== -1 || c.code.toLowerCase().indexOf(q) !== -1;
     });
     var frag = document.createDocumentFragment();
     filteredCountries.forEach(function(c, idx) {
@@ -526,6 +532,7 @@
       el.setAttribute("id", "lf-opt-" + idx);
       el.innerHTML = '<span class="lf-cc-opt-dial">' + c.dial + '</span><span>' + c.name + '</span>';
       el.addEventListener("click", function(e) {
+        e.preventDefault();
         e.stopPropagation();
         selectCountry(c);
         closePanel();
@@ -552,10 +559,13 @@
       if (ccTrigger) ccTrigger.setAttribute("aria-expanded", "true");
     } else {
       var phoneRow = document.querySelector(".lf-phone-row");
-      if (phoneRow) phoneRow.appendChild(ccPanel);
+      if (phoneRow && !phoneRow.contains(ccPanel)) phoneRow.appendChild(ccPanel);
       ccPanel.classList.add("lf-cc-open");
       if (ccTrigger) ccTrigger.setAttribute("aria-expanded", "true");
-      if (ccSearch) ccSearch.focus();
+      if (ccSearch) {
+        ccSearch.value = "";
+        setTimeout(function() { ccSearch.focus(); }, 50);
+      }
       setTimeout(function() {
         document.addEventListener("click", outsideClickListener);
       }, 50);
