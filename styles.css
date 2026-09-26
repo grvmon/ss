@@ -81,6 +81,17 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 86px;
+}
+
+#why-storage,
+#services,
+#locations,
+#offerings,
+#testimonials,
+#facilities,
+#faq {
+    scroll-margin-top: 86px;
 }
 
 body {
@@ -8220,18 +8231,4 @@ body.quote-modal-open .advisor-floating-unit,
   display: none !important;
 }
 
-/* ==========================================
-   PERFORMANCE: CONTENT VISIBILITY OPTIMIZATION
-   Skip rendering of offscreen sections until approached
-   ========================================== */
-.locations-section,
-.offerings-section,
-.testimonials-section,
-.gallery-strip-section,
-#self-storage-ncr,
-.faq-section,
-.site-footer {
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 800px;
-}
 

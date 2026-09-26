@@ -442,6 +442,33 @@ if (backToTopBtn) {
     });
 }
 
+// Smooth scrolling for header anchor links
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.navbar a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const hash = this.getAttribute('href');
+            if (hash && hash !== '#') {
+                const target = document.querySelector(hash);
+                if (target) {
+                    e.preventDefault();
+                    closeMobileMenu();
+                    setTimeout(() => {
+                        const nav = document.querySelector('.navbar');
+                        const navHeight = nav ? nav.offsetHeight : 76;
+                        const top = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 12;
+                        window.scrollTo({
+                            top: Math.max(0, top),
+                            behavior: 'smooth'
+                        });
+                        if (history.pushState) {
+                            history.pushState(null, null, hash);
+                        }
+                    }, 50);
+                }
+            }
+        });
+    });
+});
 
 
 // GitHub Pages subpath routing compatibility
