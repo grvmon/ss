@@ -9,17 +9,20 @@
   var REDIRECT_URL = (typeof window.advisorRedirectUrl !== 'undefined') ? window.advisorRedirectUrl : defaultRedirect;
   var COOLDOWN_SECONDS = 15;
   var basePath = (function() {
-    var scriptTag = document.querySelector('script[src*="storage-advisor.js"]');
+    var scriptTag = document.querySelector('script[src*="storage-advisor"]');
     if (scriptTag && scriptTag.getAttribute('src')) {
       var src = scriptTag.getAttribute('src');
-      var idx = src.lastIndexOf('storage-advisor.js');
+      var idx = src.lastIndexOf('storage-advisor');
       if (idx !== -1) return src.substring(0, idx);
     }
-    return '/';
+    var isGh = window.location.pathname.startsWith('/ss');
+    var isStoreSub = window.location.pathname.includes('/store/') || window.location.pathname.endsWith('/store/');
+    if (isStoreSub) return '../';
+    return isGh ? '/ss/' : '/';
   })();
   var CHIME_URL = basePath + 'assets/advisor-chime.wav';
   var AVATAR_URL = basePath + 'assets/advisor-ananya.webp';
-  var CSS_URL = basePath + 'storage-advisor.css';
+  var CSS_URL = basePath + 'storage-advisor.min.css?v=5.0';
 
   var STRINGS = {
     btnSubmit: "Start Chat",
@@ -244,7 +247,7 @@
       return true;
     },
     vEmail: function(live) {
-      if (!emailInput) return false;
+      if (!emailInput) return true;
       var v = emailInput.value.trim();
       if (!v) {
         if (!live || submitted) this.setErr(emailField, emailErr, STRINGS.errEmailRequired);
@@ -460,21 +463,12 @@
                   '</div>' +
                   '<input type="hidden" id="advCcVal" name="country_code" value="+91">' +
                   '<div class="lf-divider"></div>' +
-                  '<input class="lf-input" type="tel" id="advPhone" name="phone" inputmode="numeric" autocomplete="tel" enterkeyhint="next" aria-required="true" tabindex="0" aria-invalid="false" maxlength="15" aria-describedby="advPhoneErr">' +
+                  '<input class="lf-input" type="tel" id="advPhone" name="phone" inputmode="numeric" autocomplete="tel" enterkeyhint="done" aria-required="true" tabindex="0" aria-invalid="false" maxlength="15" aria-describedby="advPhoneErr">' +
                   '<span class="lf-valid-icon" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M1 7l4 4 8-8"/></svg></span>' +
                   '<button type="button" class="lf-clear-btn" id="advPhoneClearBtn" aria-label="Clear mobile" tabindex="-1"><svg viewBox="0 0 10 10" fill="none"><path stroke="currentColor" stroke-width="1.2" stroke-linecap="round" d="M1 1l8 8M9 1L1 9"/></svg></button>' +
                 '</div>' +
               '</div>' +
               '<div class="lf-err" id="advPhoneErr" role="alert"></div>' +
-            '</div>' +
-            '<div class="lf-field" id="advEmailField">' +
-              '<div class="lf-input-box">' +
-                '<label class="lf-label" for="advEmail">Email<span class="lf-req" aria-hidden="true">*</span></label>' +
-                '<input class="lf-input" type="email" id="advEmail" name="email" autocomplete="email" enterkeyhint="done" aria-required="true" tabindex="0" aria-invalid="false" maxlength="120" aria-describedby="advEmailErr">' +
-                '<span class="lf-valid-icon" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M1 7l4 4 8-8"/></svg></span>' +
-                '<button type="button" class="lf-clear-btn" id="advEmailClearBtn" aria-label="Clear email" tabindex="-1"><svg viewBox="0 0 10 10" fill="none"><path stroke="currentColor" stroke-width="1.2" stroke-linecap="round" d="M1 1l8 8M9 1L1 9"/></svg></button>' +
-              '</div>' +
-              '<div class="lf-err" id="advEmailErr" role="alert"></div>' +
             '</div>' +
             '<div class="lf-submit-wrap">' +
               '<button type="submit" class="lf-btn" id="advSubmitBtn" tabindex="0" aria-label="Start chat with Ananya">' +
@@ -606,6 +600,30 @@
     }
   };
 
+  function openTheForm(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    if (typeof window.openModal === 'function') {
+      window.openModal('Personal Storage Advisor');
+      return;
+    }
+    if (typeof openQuoteModal === 'function') {
+      openQuoteModal('Personal Storage Advisor');
+      return;
+    }
+    var qm = document.getElementById('quote-modal') || document.getElementById('lfModalOverlay');
+    if (qm) {
+      qm.classList.add('lf-modal-open', 'open');
+      document.body.classList.add('quote-modal-open');
+      var nameInp = document.getElementById('lfName') || document.getElementById('user-name');
+      if (nameInp) setTimeout(function() { nameInp.focus(); }, 150);
+      return;
+    }
+    openModal();
+  }
+
   function openModal() {
     if (!modalOverlay) initElements();
     if (!modalOverlay) return;
@@ -626,17 +644,15 @@
     modalOverlay.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
 
-    [nameField, phoneField, emailField].forEach(function(f) {
-      if (f) f.classList.remove("lf-has-error", "lf-is-valid");
+    [nameField, phoneField, emailField].filter(Boolean).forEach(function(f) {
+      f.classList.remove("lf-has-error", "lf-is-valid");
     });
-    [nameErr, phoneErr, emailErr].forEach(function(el) {
-      if (el) el.textContent = "";
+    [nameErr, phoneErr, emailErr].filter(Boolean).forEach(function(el) {
+      el.textContent = "";
     });
-    [nameInput, phoneInput, emailInput].forEach(function(el) {
-      if (el) {
-        checkValueState(el);
-        updateClearButtonsA11y(el);
-      }
+    [nameInput, phoneInput, emailInput].filter(Boolean).forEach(function(el) {
+      checkValueState(el);
+      updateClearButtonsA11y(el);
     });
 
     startPhoneAutofillWatch();
@@ -682,12 +698,12 @@
     if (phoneInput) PhoneSyncManager.syncInput();
     var nameOk = ValidationService.vName(false);
     var phoneOk = ValidationService.vPhone(false);
-    var emailOk = ValidationService.vEmail(false);
+    var emailOk = emailInput ? ValidationService.vEmail(false) : true;
 
-    if (!(nameOk && phoneOk && emailOk)) {
+    if (!nameOk || !phoneOk || !emailOk) {
       if (!nameOk && nameInput) nameInput.focus();
       else if (!phoneOk && phoneInput) phoneInput.focus();
-      else if (emailInput) emailInput.focus();
+      else if (!emailOk && emailInput) emailInput.focus();
       return;
     }
 
@@ -724,7 +740,7 @@
     var payload = {
       name: nameInput.value.trim(),
       phone: formattedPhone,
-      email: emailInput.value.trim().toLowerCase(),
+      email: (emailInput && emailInput.value) ? emailInput.value.trim().toLowerCase() : '',
       country_code: dial,
       source_widget: "talk_to_ananya_advisor",
       source_url: tracking.source_url,
@@ -797,18 +813,25 @@
     ccVal = document.getElementById("advCcVal");
 
     /* Bind events */
-    if (closeBtn) closeBtn.addEventListener("click", toggleMinimize);
-    if (speechBubble) speechBubble.addEventListener("click", openModal);
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMinimize();
+      });
+    }
+
+    if (speechBubble) speechBubble.addEventListener("click", openTheForm);
     var talkBtn = document.getElementById("advisorTalkBtn");
-    if (talkBtn) talkBtn.addEventListener("click", openModal);
+    if (talkBtn) talkBtn.addEventListener("click", openTheForm);
+
+    var avatarWrap = document.querySelector(".advisor-avatar-wrap");
+    if (avatarWrap) avatarWrap.addEventListener("click", openTheForm);
 
     if (mainCard) {
       mainCard.addEventListener("click", function(e) {
-        if (floatingUnit && floatingUnit.classList.contains("is-minimized")) {
-          e.preventDefault();
-          e.stopPropagation();
-          toggleMinimize();
-        }
+        if (e.target && e.target.closest && e.target.closest("#advisorCloseBtn")) return;
+        openTheForm(e);
       });
     }
 

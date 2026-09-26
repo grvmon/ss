@@ -137,6 +137,7 @@ body.mobile-menu-open .advisor-floating-unit {
   gap: 16px;
   max-width: 345px;
   box-sizing: border-box;
+  cursor: pointer;
   transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               border-radius 0.3s cubic-bezier(0.16, 1, 0.3, 1),
@@ -156,6 +157,7 @@ body.mobile-menu-open .advisor-floating-unit {
   width: 80px;
   height: 80px;
   flex-shrink: 0;
+  cursor: pointer;
 }
 
 .advisor-avatar-img {
@@ -166,6 +168,7 @@ body.mobile-menu-open .advisor-floating-unit {
   display: block;
   box-shadow: 0 4px 12px rgba(0, 43, 73, 0.12);
   background: #E8EEF5;
+  cursor: pointer;
 }
 
 .advisor-status-dot {
