@@ -1273,30 +1273,42 @@
                 <h2>Get Free Storage Quote</h2>
                 <button class="modal-close" onclick="closeQuoteModal()" aria-label="Close modal"><span class="material-symbols-rounded">close</span></button>
             </div>
-            <form class="modal-form" onsubmit="handleFormSubmit(event)">
+            <form class="modal-form" id="quoteModalForm" action="https://crm.zoho.in/crm/WebToLeadForm" method="POST" accept-charset="UTF-8" onsubmit="handleFormSubmit(event)">
+                <!-- Zoho CRM Hidden Integration Fields -->
+                <input type="hidden" name="xnQsjsdp" value="a979ecd831c0e0cc3021561407927e41ccad53ba7f9728c54ff061b222e0eb6c">
+                <input type="hidden" name="xmIwtLD" value="0554b4515d63426b46b3bc2afad2cbd7fb8d66685ba40768b173c282051a2e9df93658768a3fc0ab3706c8f4d36586b4">
+                <input type="hidden" name="actionType" value="TGVhZHM=">
+                <input type="hidden" name="returnURL" id="zoho_return_url" value="https://grvmon.github.io/ss/thank-you">
+                <input type="hidden" name="wFaTrisJS" value="true">
+                <input type="hidden" name="aG9uZXlwb3Q" value="">
+
                 <div class="form-group">
                     <label for="user-name">Full Name</label>
-                    <input type="text" id="user-name" required placeholder="Aarav Sharma">
+                    <input type="text" id="user-name" name="Last Name" required placeholder="Aarav Sharma" maxlength="80">
                 </div>
                 <div class="form-group">
                     <label for="user-phone">Phone Number</label>
-                    <input type="tel" id="user-phone" required placeholder="+91 98765 43210">
+                    <input type="tel" id="user-phone" name="Phone" required placeholder="+91 98765 43210" maxlength="30">
+                </div>
+                <div class="form-group">
+                    <label for="user-email">Email Address</label>
+                    <input type="email" id="user-email" name="Email" required placeholder="aarav@example.com" maxlength="100">
                 </div>
                 <div class="form-group">
                     <label for="storage-size">Preferred Space / Location</label>
-                    <select id="storage-size">
+                    <select id="storage-size" name="Description">
                         <option value="Locker">Locker (Small items, files, luggage)</option>
                         <option value="Small Room">Small Room (1BHK furniture)</option>
                         <option value="Medium Room">Medium Room (2BHK furniture)</option>
                         <option value="Large Room">Large Room (3BHK+ / Business stock)</option>
-                        <option value="Delhi">Delhi Facility (Dwarka Sector 28)</option>
-                        <option value="Gurugram">Gurugram Facility (Sector 34 Honda Chowk)</option>
-                        <option value="Noida">Noida Facility (Sector 59)</option>
-                        <option value="Private Rooms">Private Lockable Room</option>
-                        <option value="Business Storage">Commercial / Business Inventory</option>
+                        <option value="Delhi Facility (Dwarka Sector 28)">Delhi Facility (Dwarka Sector 28)</option>
+                        <option value="Gurugram Facility (Sector 34 Honda Chowk)">Gurugram Facility (Sector 34 Honda Chowk)</option>
+                        <option value="Noida Facility (Sector 59)">Noida Facility (Sector 59)</option>
+                        <option value="Private Lockable Room">Private Lockable Room</option>
+                        <option value="Commercial Business Storage">Commercial / Business Inventory</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-accent full-width" style="height: 52px; font-size: 0.95rem;">Get Free Quote &amp; Lock In Space</button>
+                <button type="submit" id="quoteSubmitBtn" class="btn btn-accent full-width" style="height: 52px; font-size: 0.95rem;">Get Free Quote &amp; Lock In Space</button>
             </form>
         </div>
     </div>
@@ -1351,7 +1363,7 @@
     </button>
 
     <!-- Interactive Scripts -->
-    <script src="app.js?v=3.8"></script>
+    <script src="app.js?v=4.0"></script>
     <script src="storage-advisor.js" defer></script>
     <script>
     // Zero-Exit Page Custom Modal Handlers

@@ -67,32 +67,140 @@ function closeVideoModal(event) {
     }
 }
 
-// 4. Conversion Form Submission Logic
-function handleFormSubmit(event) {
-    event.preventDefault();
-    
-    // Clear fields & close modal
+// 4. Conversion Form Submission Logic (Zoho CRM Web-to-Lead Integration)
+const ZOHO_WEB_TO_LEAD = {
+    action: 'https://crm.zoho.in/crm/WebToLeadForm',
+    xnQsjsdp: 'a979ecd831c0e0cc3021561407927e41ccad53ba7f9728c54ff061b222e0eb6c',
+    xmIwtLD: '0554b4515d63426b46b3bc2afad2cbd7fb8d66685ba40768b173c282051a2e9df93658768a3fc0ab3706c8f4d36586b4',
+    actionType: 'TGVhZHM=',
+    wFaTrisJS: 'true'
+};
+
+function getThankYouUrl() {
+    var isGh = window.location.pathname.startsWith('/ss');
+    return window.location.origin + (isGh ? '/ss/thank-you' : '/thank-you');
+}
+
+async function handleFormSubmit(event) {
+    if (event) event.preventDefault();
+
+    var form = event ? event.target : document.getElementById('quoteModalForm');
     var nameInput = document.getElementById('user-name');
     var phoneInput = document.getElementById('user-phone');
-    if (nameInput) nameInput.value = '';
-    if (phoneInput) phoneInput.value = '';
-    closeQuoteModal();
-    
-    // Show instant success notification
-    showToastNotification();
+    var emailInput = document.getElementById('user-email');
+    var sizeInput = document.getElementById('storage-size');
+    var submitBtn = document.getElementById('quoteSubmitBtn') || (form ? form.querySelector('button[type="submit"]') : null);
 
-    // If not already on thank-you page, navigate to thank-you confirmation
-    if (window.location.pathname.indexOf('/thank-you') === -1) {
+    var nameVal = nameInput ? nameInput.value.trim() : '';
+    var phoneVal = phoneInput ? phoneInput.value.trim() : '';
+    var emailVal = emailInput ? emailInput.value.trim() : '';
+    var sizeVal = sizeInput ? sizeInput.value : '';
+
+    if (!nameVal) {
+        alert('Please enter your full name.');
+        if (nameInput) nameInput.focus();
+        return;
+    }
+
+    if (!phoneVal || phoneVal.replace(/\D/g, '').length < 10) {
+        alert('Please enter a valid 10-digit mobile number.');
+        if (phoneInput) phoneInput.focus();
+        return;
+    }
+
+    if (!emailVal || emailVal.indexOf('@') === -1 || emailVal.indexOf('.') === -1) {
+        alert('Please enter a valid email address.');
+        if (emailInput) emailInput.focus();
+        return;
+    }
+
+    var originalBtnText = submitBtn ? submitBtn.innerText : 'Get Free Quote & Lock In Space';
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Connecting with Space Advisor...';
+    }
+
+    var returnUrl = getThankYouUrl();
+    var formData = new FormData();
+    formData.append('xnQsjsdp', ZOHO_WEB_TO_LEAD.xnQsjsdp);
+    formData.append('xmIwtLD', ZOHO_WEB_TO_LEAD.xmIwtLD);
+    formData.append('actionType', ZOHO_WEB_TO_LEAD.actionType);
+    formData.append('returnURL', returnUrl);
+    formData.append('wFaTrisJS', ZOHO_WEB_TO_LEAD.wFaTrisJS);
+    formData.append('aG9uZXlwb3Q', '');
+    formData.append('zc_gad', '');
+    formData.append('ldeskuid', '');
+    formData.append('LDTuvid', (window.$zoho && window.$zoho.salesiq && window.$zoho.salesiq.visitor) ? window.$zoho.salesiq.visitor.uniqueid() : '');
+    formData.append('Last Name', nameVal);
+    formData.append('Phone', phoneVal);
+    formData.append('Email', emailVal);
+    formData.append('Description', 'Selected Space/Location: ' + sizeVal + ' | Landing Page: ' + window.location.pathname + ' | Referrer: ' + (document.referrer || 'Direct'));
+
+    try {
+        await fetch(ZOHO_WEB_TO_LEAD.action, {
+            method: 'POST',
+            body: formData,
+            cache: 'no-cache'
+        });
+
+        // Also fire custom tracking event
+        window.dispatchEvent(new CustomEvent('quote_lead_submitted', {
+            detail: { name: nameVal, phone: phoneVal, email: emailVal, size: sizeVal }
+        }));
+
+        closeQuoteModal();
+        showToastNotification();
+
         setTimeout(function() {
-            var isGh = window.location.pathname.startsWith('/ss');
-            window.location.href = isGh ? '/ss/thank-you' : '/thank-you';
+            window.location.href = returnUrl;
         }, 500);
+    } catch (err) {
+        console.warn('Direct fetch to Zoho CRM had an issue, falling back to standard form submission...', err);
+        if (form && typeof form.submit === 'function') {
+            var retInput = document.getElementById('zoho_return_url');
+            if (retInput) retInput.value = returnUrl;
+            form.submit();
+        } else {
+            closeQuoteModal();
+            window.location.href = returnUrl;
+        }
     }
 }
 
-// 5. Toast Success Message
+// 5. Connect Ananya Storage Advisor Widget to Zoho CRM
+window.sendAdvisorData = async function(payload) {
+    if (!payload) return;
+    var returnUrl = getThankYouUrl();
+    var formData = new FormData();
+    formData.append('xnQsjsdp', ZOHO_WEB_TO_LEAD.xnQsjsdp);
+    formData.append('xmIwtLD', ZOHO_WEB_TO_LEAD.xmIwtLD);
+    formData.append('actionType', ZOHO_WEB_TO_LEAD.actionType);
+    formData.append('returnURL', returnUrl);
+    formData.append('wFaTrisJS', ZOHO_WEB_TO_LEAD.wFaTrisJS);
+    formData.append('aG9uZXlwb3Q', '');
+    formData.append('zc_gad', payload.gclid || '');
+    formData.append('ldeskuid', '');
+    formData.append('LDTuvid', (window.$zoho && window.$zoho.salesiq && window.$zoho.salesiq.visitor) ? window.$zoho.salesiq.visitor.uniqueid() : '');
+    formData.append('Last Name', payload.name || 'Website Visitor');
+    formData.append('Phone', payload.phone || '');
+    formData.append('Email', payload.email || '');
+    formData.append('Description', 'Source: Ananya Advisor Widget | ' + (payload.page_title || '') + ' | ' + (payload.source_url || ''));
+
+    try {
+        await fetch(ZOHO_WEB_TO_LEAD.action, {
+            method: 'POST',
+            body: formData,
+            cache: 'no-cache'
+        });
+    } catch(err) {
+        console.warn('Advisor Zoho lead sync fallback:', err);
+    }
+};
+
+// 6. Toast Success Message
 function showToastNotification() {
     const toast = document.getElementById('toast');
+    if (!toast) return;
     toast.classList.add('show');
     
     setTimeout(() => {
