@@ -1,6 +1,6 @@
 /* ==========================================================================
    ACRENKEY-IDENTICAL LEAD FORM STYLING FOR SELF STORAGE INDIA
-   Preserves brand colors (#FF6B00 Orange, #002B49 Navy) while implementing
+   Preserves brand colors (#FF9600 Orange, #002B49 Navy) while implementing
    Acre&Key's exact geometry, floating labels, country dropdown & error states.
    ========================================================================== */
 
@@ -49,7 +49,7 @@
   --lf-ink: #002B49;
   --lf-muted: rgba(0, 43, 73, 0.55);
   --lf-line: #E2E8F0;
-  --lf-line-focus: #FF6B00;
+  --lf-line-focus: #FF9600;
   --lf-err: #DC2626;
   --lf-ok: #16A34A;
   --lf-bg-surface: #FFFFFF;
@@ -248,7 +248,7 @@
 
 .lf-field.lf-focused .lf-input-box {
   border-color: var(--lf-line-focus);
-  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.12);
+  box-shadow: 0 0 0 3px rgba(255, 150, 0, 0.12);
 }
 
 .lf-field.lf-has-error .lf-input-box {
@@ -619,7 +619,7 @@ input:-webkit-autofill {
   min-height: 48px;
   border: none !important;
   border-radius: 6px !important;
-  background: linear-gradient(135deg, #FF6B00 0%, #E05300 100%) !important;
+  background: linear-gradient(135deg, #FF9600 0%, #E68500 100%) !important;
   color: #FFFFFF !important;
   font-family: var(--lf-font-sans) !important;
   font-size: 15px !important;
@@ -629,7 +629,7 @@ input:-webkit-autofill {
   text-decoration: none !important;
   cursor: pointer !important;
   position: relative;
-  box-shadow: 0 4px 14px rgba(255, 107, 0, 0.3) !important;
+  box-shadow: 0 4px 14px rgba(255, 150, 0, 0.3) !important;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.25s ease, box-shadow 0.25s ease, opacity 0.2s ease !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -640,14 +640,14 @@ input:-webkit-autofill {
 }
 
 .lf-btn:hover {
-  background: linear-gradient(135deg, #FF7D1A 0%, #E85D0A 100%) !important;
-  box-shadow: 0 8px 22px rgba(255, 107, 0, 0.45) !important;
+  background: linear-gradient(135deg, #FFA51A 0%, #E85D0A 100%) !important;
+  box-shadow: 0 8px 22px rgba(255, 150, 0, 0.45) !important;
   transform: translateY(-1px) !important;
 }
 
 .lf-btn:active {
   transform: translateY(0) !important;
-  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.25) !important;
+  box-shadow: 0 4px 12px rgba(255, 150, 0, 0.25) !important;
 }
 
 .lf-btn:disabled {
@@ -780,19 +780,19 @@ input:-webkit-autofill {
 
 .lf-modal-close-icon:focus-visible {
   outline: none !important;
-  box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.5) !important;
-  background-color: rgba(255, 107, 0, 0.08) !important;
+  box-shadow: 0 0 0 2px rgba(255, 150, 0, 0.5) !important;
+  background-color: rgba(255, 150, 0, 0.08) !important;
 }
 
 .lf-clear-btn:focus-visible {
   outline: none !important;
-  box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.5) !important;
+  box-shadow: 0 0 0 2px rgba(255, 150, 0, 0.5) !important;
 }
 
 .lf-cc-trigger:focus-visible {
   outline: none !important;
   border-radius: 6px !important;
-  box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.45) !important;
+  box-shadow: 0 0 0 2px rgba(255, 150, 0, 0.45) !important;
 }
 
 .lf-cc-search:focus-visible {
@@ -802,7 +802,7 @@ input:-webkit-autofill {
 
 .lf-btn:focus-visible {
   outline: none !important;
-  box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px rgba(255, 107, 0, 0.65), 0 6px 18px rgba(0, 43, 73, 0.2) !important;
+  box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px rgba(255, 150, 0, 0.65), 0 6px 18px rgba(0, 43, 73, 0.2) !important;
 }
 
 /* Hide floating advisor widget when quote modal is open */

@@ -1,6 +1,6 @@
 /* ==========================================================================
    Self Storage India - Personal Storage Advisor Widget ("Abha" Pattern)
-   Theme: SSI Navy (#002B49), Accent Orange (#FF6B00), Green Dot (#00A844)
+   Theme: SSI Navy (#002B49), Accent Orange (#FF9600), Green Dot (#00A844)
    ========================================================================== */
 
 /* Keyframe Animations */
@@ -258,7 +258,7 @@ body.mobile-menu-open .advisor-floating-unit {
 }
 
 .advisor-status-text strong {
-  color: #FF6B00;
+  color: #FF9600;
   font-weight: 700;
 }
 
@@ -272,7 +272,7 @@ body.mobile-menu-open .advisor-floating-unit {
   height: 40px !important;
   min-height: 40px !important;
   padding: 0 16px !important;
-  background: linear-gradient(135deg, #FF6B00 0%, #E85D04 100%) !important;
+  background: linear-gradient(135deg, #FF9600 0%, #E68500 100%) !important;
   color: #FFFFFF !important;
   border: none !important;
   border-radius: 8px !important;
@@ -290,7 +290,7 @@ body.mobile-menu-open .advisor-floating-unit {
 }
 
 .advisor-talk-btn:hover {
-  background: linear-gradient(135deg, #FF7A1A 0%, #F06509 100%) !important;
+  background: linear-gradient(135deg, #FFA51A 0%, #ED8E00 100%) !important;
   color: #FFFFFF !important;
   transform: translateY(-1px) !important;
   box-shadow: 0 6px 18px rgba(232, 93, 4, 0.38) !important;
@@ -346,7 +346,7 @@ body.mobile-menu-open .advisor-floating-unit {
 
 .advisor-floating-unit.is-minimized .advisor-main-card:hover {
   transform: scale(1.08) !important;
-  box-shadow: 0 14px 34px rgba(0, 43, 73, 0.28), 0 0 0 3px rgba(255, 107, 0, 0.45) !important;
+  box-shadow: 0 14px 34px rgba(0, 43, 73, 0.28), 0 0 0 3px rgba(255, 150, 0, 0.45) !important;
 }
 
 .advisor-floating-unit.is-minimized .advisor-avatar-wrap {
@@ -400,7 +400,7 @@ body.mobile-menu-open .advisor-floating-unit {
   --lf-ink: #002B49;
   --lf-muted: rgba(0, 43, 73, 0.5);
   --lf-line: #DFE5EB;
-  --lf-line-focus: #FF6B00;
+  --lf-line-focus: #FF9600;
   --lf-err: #D92525;
   --lf-ok: #00A844;
   --lf-bg-surface: #FFFFFF;
@@ -492,7 +492,7 @@ body.mobile-menu-open .advisor-floating-unit {
 
 .advisor-modal-close-btn:focus-visible {
   outline: none !important;
-  box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.5) !important;
+  box-shadow: 0 0 0 2px rgba(255, 150, 0, 0.5) !important;
 }
 
 /* Modal Header */
@@ -596,7 +596,7 @@ body.mobile-menu-open .advisor-floating-unit {
 
 .advisor-modal-wrap .lf-field.lf-focused .lf-input-box {
   border-color: var(--lf-line-focus);
-  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.12);
+  box-shadow: 0 0 0 3px rgba(255, 150, 0, 0.12);
 }
 
 .advisor-modal-wrap .lf-field.lf-has-error .lf-input-box {
@@ -637,7 +637,7 @@ body.mobile-menu-open .advisor-floating-unit {
   font-weight: 700 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.05em !important;
-  color: #FF6B00 !important;
+  color: #FF9600 !important;
   background-color: var(--lf-bg-surface) !important;
   left: 12px !important;
 }
@@ -832,7 +832,7 @@ body.mobile-menu-open .advisor-floating-unit {
 
 .advisor-modal-wrap .lf-cc-opt-dial {
   font-weight: 700;
-  color: #FF6B00;
+  color: #FF9600;
   min-width: 44px;
 }
 
@@ -865,7 +865,7 @@ body.mobile-menu-open .advisor-floating-unit {
   min-height: 48px;
   border: none !important;
   border-radius: 8px !important;
-  background: linear-gradient(135deg, #FF6B00 0%, #E85D04 100%) !important;
+  background: linear-gradient(135deg, #FF9600 0%, #E68500 100%) !important;
   color: #FFFFFF !important;
   font-family: var(--lf-font-heading) !important;
   font-size: 15px !important;
@@ -887,7 +887,7 @@ body.mobile-menu-open .advisor-floating-unit {
 }
 
 .advisor-modal-wrap .lf-btn:hover {
-  background: linear-gradient(135deg, #FF7A1A 0%, #F06509 100%) !important;
+  background: linear-gradient(135deg, #FFA51A 0%, #ED8E00 100%) !important;
   box-shadow: 0 6px 18px rgba(232, 93, 4, 0.42) !important;
   transform: translateY(-1px) !important;
 }
@@ -924,8 +924,7 @@ body.mobile-menu-open .advisor-floating-unit {
 }
 
 .advisor-modal-wrap .lf-privacy-consent a {
-  color: #002B49;
-  text-decoration: underline;
+  color: #186CEC; text-decoration: underline;
 }
 
 .advisor-modal-wrap .lf-global-err {
