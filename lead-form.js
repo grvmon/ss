@@ -35,7 +35,7 @@
     errCooldown:      "You've already submitted recently. Please wait a few seconds before trying again.",
     slowSubmit:       "Still submitting... Please wait.",
     errOffline:       "Connection issue. Your details are safely held. Please click Request Callback once more to retry or reach out to support.",
-    errSubmit:        "Form submission blocked by network policy. Please call us directly at +91-9090206090."
+    errSubmit:        "Form submission blocked by network policy. Please check your connection and try again."
   };
 
   var nameRx  = /^[\p{Letter}\p{Mark}\p{Number}\s.'-]{2,60}$/u;

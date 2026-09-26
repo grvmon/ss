@@ -34,7 +34,7 @@
     errEmailInvalid: "Enter a valid email address",
     errCooldown: "You've already requested a chat recently. Please wait a moment.",
     errOffline: "Connection issue. Your details are safely held. Please click Start Chat once more.",
-    errSubmit: "Form submission failed. Please call us directly at +91-9090206090."
+    errSubmit: "Form submission failed. Please try again or submit your request via the quote form."
   };
 
   var nameRx = /^[\p{Letter}\p{Mark}\p{Number}\s.'-]{2,60}$/u;
