@@ -1,0 +1,34 @@
+# ----------------------------------------------------------------------
+# Self Storage India — LiteSpeed & Apache Production Configuration
+# ----------------------------------------------------------------------
+
+# 1. Custom 404 Error Document (Serves branded 404 page with 404 HTTP status)
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Ensure HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # If requested resource exists as a file or directory, serve directly
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Clean URL support: /page -> /page.html if page.html exists
+    RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+    RewriteRule ^([^/]+)/?$ $1.html [L]
+
+    # Clean Directory URL support: /folder -> /folder/index.html if folder/index.html exists
+    RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+    RewriteRule ^([^/]+)/?$ $1/index.html [L]
+
+    # Any other non-existent route goes to /404.html
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /404.html [L]
+</IfModule>

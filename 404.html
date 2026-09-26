@@ -7,22 +7,52 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-GKXNTWYJ9S');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found (404) | Self Storage India</title>
-    
+
+    <!-- Subpath & GitHub Pages Dynamic Base Routing (Fixes broken links on deep/random URLs) -->
+    <script>
+    (function() {
+        var p = window.location.pathname;
+        var isGh = p.startsWith('/ss/') || p === '/ss';
+        window.__IS_GH__ = isGh;
+        window.__SITE_PREFIX__ = isGh ? '/ss' : '';
+
+        // Dynamically insert base tag to ensure all relative assets resolve correctly
+        var b = document.createElement('base');
+        b.href = isGh ? '/ss/' : '/';
+        document.head.appendChild(b);
+
+        // Fix all root-relative links across the page
+        function fix404Links() {
+            if (!isGh) return;
+            document.querySelectorAll('a[href^="/"]').forEach(function(a) {
+                var h = a.getAttribute('href');
+                if (h && !h.startsWith('/ss') && !h.startsWith('//')) {
+                    a.setAttribute('href', '/ss' + (h === '/' ? '/' : h));
+                }
+            });
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', fix404Links);
+        } else {
+            fix404Links();
+        }
+    })();
+    </script>
+
     <!-- Primary Meta Tags -->
     <meta name="description" content="The page you are looking for does not exist or has been moved. Explore our private lockable storage units, size calculator, and services across Delhi, Gurugram, and Noida.">
     <meta name="robots" content="noindex, follow">
     <link rel="canonical" href="https://selfstorageindia.com/404">
 
     <!-- Official Self Storage India Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
     <!-- Fonts pairing: Plus Jakarta Sans (Headings) & Inter (Body UI) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +60,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Google Material Symbols Rounded Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
-    <link rel="stylesheet" href="/styles.css?v=3.6">
+    <link rel="stylesheet" href="styles.min.css?v=5.0">
+    <link rel="stylesheet" href="lead-form.min.css?v=5.0">
     <!-- Font Awesome CDN for footer social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -111,6 +142,7 @@
         .error-actions .btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
             padding: 14px 28px;
             font-weight: 600;
@@ -135,15 +167,15 @@
 
         .error-actions .btn-secondary {
             background: #FFFFFF;
-            color: #0F172A;
-            border: 1px solid var(--border, #E9EEF4);
+            color: var(--primary, #186CEC);
+            border: 1.5px solid var(--primary, #186CEC);
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
         }
 
         .error-actions .btn-secondary:hover {
-            border-color: var(--primary, #186CEC);
-            color: var(--primary, #186CEC);
+            background: var(--surface, #F8FAFC);
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(24, 108, 236, 0.12);
         }
 
         .quick-nav-section {
@@ -363,7 +395,7 @@
                     <span class="material-symbols-rounded">call</span>
                     +91-9090206090
                 </a>
-                <button class="btn btn-primary" onclick="openQuoteModal()">Get Free Quote</button>
+                <button class="btn btn-primary" onclick="openQuoteModal('404 Header Nav')">Get Free Quote</button>
                 <button class="mobile-nav-toggle" id="mobileNavToggle" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu">
                     <span class="material-symbols-rounded">menu</span>
                 </button>
@@ -385,7 +417,7 @@
             <h1 class="error-number">404</h1>
             <h2 class="error-title">Oops! This Storage Space is Empty</h2>
             <p class="error-desc">
-                We searched every unit across our facilities, but the page you are looking for has either been relocated, removed, or never existed in our storage facility.
+                We searched every unit across our facilities in Delhi, Gurugram, and Noida, but the page you are looking for has either been relocated, removed, or never existed in our storage facility.
             </p>
 
             <div class="error-actions">
@@ -393,7 +425,7 @@
                     <span class="material-symbols-rounded">home</span>
                     Back to Homepage
                 </a>
-                <button class="btn btn-secondary" onclick="openQuoteModal()">
+                <button class="btn btn-secondary" onclick="openQuoteModal('404 Page Action')">
                     <span class="material-symbols-rounded">calculate</span>
                     Get Free Quote
                 </button>
@@ -462,9 +494,9 @@
                 <a href="/#locations">Locations</a>
                 <a href="/about-ceo-manjali-khosla">About CEO</a>
                 <a href="/blog">Blogs</a>
-                <a href="/terms-and-conditions">Terms &amp; Conditions</a>
-                <a href="/privacy-policy">Privacy Policy</a>
-                <a href="javascript:void(0)" onclick="openQuoteModal()">Contact Us</a>
+                <a href="javascript:void(0)" onclick="openTermsModal()">Terms &amp; Conditions</a>
+                <a href="javascript:void(0)" onclick="openPrivacyModal()">Privacy Policy</a>
+                <a href="javascript:void(0)" onclick="openQuoteModal('404 Footer')">Contact Us</a>
             </nav>
 
             <div class="footer-socials" aria-label="Social media links">
@@ -508,49 +540,201 @@
         </div>
     </footer>
 
-    <!-- Quote Modal -->
-    <div id="quote-modal" class="modal-overlay" onclick="closeQuoteModal(event)">
-        <div class="modal-card shadow-lg" onclick="event.stopPropagation()">
-            <div class="modal-header">
-                <h2>Calculate Storage Needs</h2>
-                <button class="modal-close" onclick="closeQuoteModal()"><span class="material-symbols-rounded">close</span></button>
+    <!-- Lead Quote Modal (Acre&Key Identical Lead Form) -->
+    <div class="lf-modal-overlay" id="quote-modal" style="display: none;">
+        <div class="lf-cc-backdrop" id="lfCcBackdrop"></div>
+        <div class="lf-wrap" id="lfWrap" role="dialog" aria-modal="true" aria-labelledby="lfMainHeading" aria-describedby="lfSubHeading">
+            <div class="lf-drag-handle"></div>
+            <button type="button" class="lf-modal-close-icon lf-focusable" id="lfModalClose" aria-label="Close modal window" tabindex="0">
+                <svg viewBox="0 0 14 14" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M1 1l12 12M13 1L1 13"/></svg>
+            </button>
+            <div id="lfModalFormContent">
+                <div class="lf-header">
+                    <h2 class="lf-main-heading" id="lfMainHeading">Get Your Free Storage Quote</h2>
+                    <p class="lf-sub-heading" id="lfSubHeading">Get transparent storage pricing, custom unit sizing, and instant space guidance.</p>
+                </div>
+                <form class="lf-form" id="lfForm" novalidate action="https://crm.zoho.in/crm/WebToLeadForm" method="POST" accept-charset="UTF-8">
+                    <!-- Zoho CRM Hidden Fields -->
+                    <input type="hidden" name="xnQsjsdp" value="a979ecd831c0e0cc3021561407927e41ccad53ba7f9728c54ff061b222e0eb6c">
+                    <input type="hidden" name="xmIwtLD" value="0554b4515d63426b46b3bc2afad2cbd7fb8d66685ba40768b173c282051a2e9df93658768a3fc0ab3706c8f4d36586b4">
+                    <input type="hidden" name="actionType" value="TGVhZHM=">
+                    <input type="hidden" name="returnURL" id="zoho_return_url" value="https://grvmon.github.io/ss/thank-you">
+                    <input type="hidden" name="wFaTrisJS" value="true">
+                    <input type="hidden" id="storage-size" name="Description" value="404 Page Inquiry">
+
+                    <!-- Anti-spam & Tracking -->
+                    <input class="lf-hp" type="text" name="website" value="" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <input type="hidden" id="lfGclid" name="gclid">
+                    <input type="hidden" id="lfFclid" name="fclid">
+                    <input type="hidden" id="lfUtmSource" name="utm_source">
+                    <input type="hidden" id="lfUtmMedium" name="utm_medium">
+                    <input type="hidden" id="lfUtmCampaign" name="utm_campaign">
+                    <input type="hidden" id="lfUtmTerm" name="utm_term">
+                    <input type="hidden" id="lfUtmContent" name="utm_content">
+                    <input type="hidden" id="lfSourceUrl" name="source_url">
+                    <input type="hidden" id="lfSubmittedAt" name="submitted_at">
+
+                    <!-- 1. Name Field with Floating Notched Label, Error, Clear & Valid check -->
+                    <div class="lf-field" id="lfNameField">
+                        <div class="lf-input-box">
+                            <label class="lf-label" for="lfName">Full name<span class="lf-req" aria-hidden="true">*</span></label>
+                            <input class="lf-input lf-focusable" type="text" id="lfName" name="Last Name" autocomplete="name" enterkeyhint="next" aria-required="true" tabindex="0" aria-invalid="false" maxlength="60" aria-describedby="lfNameErr">
+                            <span class="lf-valid-icon" aria-hidden="true">
+                                <svg viewBox="0 0 14 14" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M1 7l4 4 8-8"/></svg>
+                            </span>
+                            <button type="button" class="lf-clear-btn lf-focusable" aria-label="Clear name field" tabindex="-1">
+                                <svg viewBox="0 0 10 10" fill="none"><path stroke="currentColor" stroke-width="1.2" stroke-linecap="round" d="M1 1l8 8M9 1L1 9"/></svg>
+                            </button>
+                        </div>
+                        <div class="lf-err" id="lfNameErr" role="alert"></div>
+                    </div>
+
+                    <!-- 2. Phone Field with Searchable Country Dropdown, Floating Label, Error, Clear & Valid check -->
+                    <div class="lf-field lf-field-phone" id="lfPhoneField">
+                        <div class="lf-input-box">
+                            <label class="lf-label" id="lfPhoneLbl" for="lfPhone">Mobile<span class="lf-req" aria-hidden="true">*</span></label>
+                            <div class="lf-phone-row">
+                                <button type="button" class="lf-cc-trigger lf-focusable" id="lfCcTrigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="lfCcPanel" aria-label="Select country dial code" tabindex="0">
+                                    <span id="lfCcDisplay">+91</span>
+                                    <svg class="lf-cc-arrow" viewBox="0 0 8 5" fill="none"><path stroke="currentColor" stroke-width="1.2" stroke-linecap="round" d="M1 1l3 3 3-3"/></svg>
+                                </button>
+                                <div class="lf-cc-panel" id="lfCcPanel" role="listbox" aria-labelledby="lfPhoneLbl">
+                                    <input class="lf-cc-search lf-focusable" type="text" id="lfCcSearch" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-controls="lfCcList" placeholder="Search country..." autocomplete="off" aria-label="Search countries by name or code" tabindex="-1">
+                                    <div class="lf-cc-list" id="lfCcList"></div>
+                                </div>
+                                <input type="hidden" id="lfCcVal" name="country_code" value="+91">
+                                <div class="lf-divider"></div>
+                                <input class="lf-input lf-focusable" type="tel" id="lfPhone" name="Phone" inputmode="numeric" autocomplete="tel" enterkeyhint="next" aria-required="true" tabindex="0" aria-invalid="false" maxlength="15" aria-describedby="lfPhoneErr">
+                                <span class="lf-valid-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 14 14" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M1 7l4 4 8-8"/></svg>
+                                </span>
+                                <button type="button" class="lf-clear-btn lf-focusable" id="lfPhoneClearBtn" aria-label="Clear mobile number field" tabindex="-1">
+                                    <svg viewBox="0 0 10 10" fill="none"><path stroke="currentColor" stroke-width="1.2" stroke-linecap="round" d="M1 1l8 8M9 1L1 9"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="lf-err" id="lfPhoneErr" role="alert"></div>
+                    </div>
+
+                    <!-- 3. Email Field with Floating Label, Error, Clear & Valid check -->
+                    <div class="lf-field" id="lfEmailField">
+                        <div class="lf-input-box">
+                            <label class="lf-label" for="lfEmail">Email<span class="lf-req" aria-hidden="true">*</span></label>
+                            <input class="lf-input lf-focusable" type="email" id="lfEmail" name="Email" autocomplete="email" enterkeyhint="done" aria-required="true" tabindex="0" aria-invalid="false" maxlength="120" aria-describedby="lfEmailErr">
+                            <span class="lf-valid-icon" aria-hidden="true">
+                                <svg viewBox="0 0 14 14" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M1 7l4 4 8-8"/></svg>
+                            </span>
+                            <button type="button" class="lf-clear-btn lf-focusable" aria-label="Clear email field" tabindex="-1">
+                                <svg viewBox="0 0 10 10" fill="none"><path stroke="currentColor" stroke-width="1.2" stroke-linecap="round" d="M1 1l8 8M9 1L1 9"/></svg>
+                            </button>
+                        </div>
+                        <div class="lf-err" id="lfEmailErr" role="alert"></div>
+                    </div>
+
+                    <!-- Submit Button with Spinner & Arrow Badge -->
+                    <div class="lf-submit-wrap">
+                        <button type="submit" class="lf-btn lf-focusable primary-cta-btn" id="lfSubmitBtn" tabindex="0">
+                            <div class="lf-spinner"></div>
+                            <span id="lfBtnText">Request Callback</span>
+                            <span class="cta-arrow-badge" aria-hidden="true">
+                                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4.5" y1="11.5" x2="11.5" y2="4.5"></line><polyline points="6.5 4.5 11.5 4.5 11.5 9.5"></polyline></svg>
+                            </span>
+                        </button>
+                        <p class="lf-privacy-consent">
+                            By submitting your details, you agree to our <a href="javascript:void(0)" onclick="openPrivacyModal()">Privacy Policy</a>.
+                        </p>
+                        <p class="lf-global-err" id="lfGlobalErr" role="alert" aria-live="assertive" aria-atomic="true">Connection issue. Your details are safely held. Please click Request Callback once more to retry or reach out to support.</p>
+                    </div>
+                </form>
             </div>
-            <form class="modal-form" onsubmit="handleFormSubmit(event)">
-                <div class="form-group">
-                    <label for="user-name">Full Name</label>
-                    <input type="text" id="user-name" required placeholder="Aarav Sharma">
-                </div>
-                <div class="form-group">
-                    <label for="user-phone">Phone Number</label>
-                    <input type="tel" id="user-phone" required placeholder="+91 98765 43210">
-                </div>
-                <div class="form-group">
-                    <label for="storage-size">Est. Storage Needs</label>
-                    <select id="storage-size">
-                        <option>Locker (Small items, files)</option>
-                        <option>Small Room (1BHK furniture)</option>
-                        <option>Medium Room (2BHK furniture)</option>
-                        <option>Large Room (3BHK+ / Business stock)</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-accent full-width" style="height: 52px; font-size: 0.95rem;">Calculate Estimate</button>
-            </form>
         </div>
     </div>
 
-    <!-- Success Toast -->
-    <div id="toast" class="toast-notification shadow-lg">
-        <span class="material-symbols-rounded toast-icon">check_circle</span>
-        <div class="toast-content">
-            <h4>Callback Requested!</h4>
-            <p>Our storage specialist will call you within 15 minutes.</p>
+    <!-- On-Page Terms & Conditions Modal (Zero Exit) -->
+    <div id="terms-modal" class="modal-overlay" onclick="closeTermsModal(event)">
+        <div class="modal-card shadow-lg policy-card" onclick="event.stopPropagation()" style="max-width: 600px; max-height: 85vh; overflow-y: auto;">
+            <div class="modal-header">
+                <h2>Terms &amp; Conditions</h2>
+                <button class="modal-close" onclick="closeTermsModal()" aria-label="Close Terms modal"><span class="material-symbols-rounded">close</span></button>
+            </div>
+            <div style="font-size: 0.9rem; line-height: 1.6; color: var(--text);">
+                <p><strong>1. Storage Agreement:</strong> Self Storage India Pvt. Ltd. provides private, clean, and secure lockable storage rooms and lockers across Delhi NCR.</p>
+                <p style="margin-top: 10px;"><strong>2. Exclusive Access:</strong> You hold the primary lock and sole key to your unit. Self Storage India personnel do not enter your private room without your explicit written authorization or legal order.</p>
+                <p style="margin-top: 10px;"><strong>3. Prohibited Items:</strong> Flammables, explosives, hazardous chemicals, perishable foods, illegal items, living organisms, and contraband are strictly prohibited in all facilities.</p>
+                <p style="margin-top: 10px;"><strong>4. Flexible Billing:</strong> Storage plans are billed on a flexible monthly basis with clear, transparent pricing and no hidden maintenance surcharges.</p>
+                <p style="margin-top: 10px;"><strong>5. Security &amp; Safety:</strong> Facilities are protected by round-the-clock recorded CCTV, security personnel, fire detection systems, and regular pest control.</p>
+                <button class="btn btn-primary full-width" style="margin-top: 20px;" onclick="closeTermsModal()">Close Terms</button>
+            </div>
         </div>
     </div>
 
+    <!-- On-Page Privacy Policy Modal (Zero Exit) -->
+    <div id="privacy-modal" class="modal-overlay" onclick="closePrivacyModal(event)">
+        <div class="modal-card shadow-lg policy-card" onclick="event.stopPropagation()" style="max-width: 600px; max-height: 85vh; overflow-y: auto;">
+            <div class="modal-header">
+                <h2>Privacy Policy</h2>
+                <button class="modal-close" onclick="closePrivacyModal()" aria-label="Close Privacy modal"><span class="material-symbols-rounded">close</span></button>
+            </div>
+            <div style="font-size: 0.9rem; line-height: 1.6; color: var(--text);">
+                <p><strong>Commitment to Privacy:</strong> Self Storage India respects and protects your personal data in accordance with Indian information technology regulations.</p>
+                <p style="margin-top: 10px;"><strong>Data Collection:</strong> We collect contact information (such as your name, mobile number, and storage preferences) solely for the purpose of providing storage consultation, pricing estimates, and customer service.</p>
+                <p style="margin-top: 10px;"><strong>Zero Third-Party Data Sharing:</strong> Your personal contact details are never rented, sold, or shared with third-party marketing companies.</p>
+                <p style="margin-top: 10px;"><strong>Data Security:</strong> Form submissions and communication channels are encrypted to ensure complete privacy and confidentiality.</p>
+                <button class="btn btn-primary full-width" style="margin-top: 20px;" onclick="closePrivacyModal()">Close Privacy Policy</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
     <button class="back-to-top" type="button" aria-label="Back to top" id="backToTopBtn">
         <span class="material-symbols-rounded" aria-hidden="true">keyboard_arrow_up</span>
     </button>
 
-    <script src="/app.js?v=3.6"></script>
+    <!-- Interactive Scripts -->
+    <script src="app.min.js?v=5.0"></script>
+    <script src="lead-form.min.js?v=5.0"></script>
+    <script>
+    // Zero-Exit Page Custom Modal Handlers
+    function openQuoteModal(pref) {
+        if (window.openModal) {
+            window.openModal(pref);
+        } else {
+            const modal = document.getElementById('quote-modal');
+            if (modal) {
+                if (pref) {
+                    const target = document.getElementById('storage-size');
+                    if (target) target.value = pref;
+                }
+                modal.classList.add('lf-modal-open');
+                modal.classList.add('open');
+                document.body.classList.add('quote-modal-open');
+            }
+        }
+    }
+
+    function openTermsModal() {
+        const modal = document.getElementById('terms-modal');
+        if (modal) modal.classList.add('open');
+    }
+
+    function closeTermsModal(event) {
+        const modal = document.getElementById('terms-modal');
+        if (!event || event.target === modal) {
+            if (modal) modal.classList.remove('open');
+        }
+    }
+
+    function openPrivacyModal() {
+        const modal = document.getElementById('privacy-modal');
+        if (modal) modal.classList.add('open');
+    }
+
+    function closePrivacyModal(event) {
+        const modal = document.getElementById('privacy-modal');
+        if (!event || event.target === modal) {
+            if (modal) modal.classList.remove('open');
+        }
+    }
+    </script>
 </body>
 </html>
