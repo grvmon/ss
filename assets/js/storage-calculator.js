@@ -8,13 +8,10 @@
   'use strict';
 
   // =========================================================================
-  // 1. DATA: 37 SSI FACILITY UNITS (DIRECT FROM CALCUMATE INTEGRATION)
+  // 1. DATA: 33 SSI FACILITY UNITS (STARTING FROM TIER 2 - STANDARD 48 SQ FT)
   // =========================================================================
   const SSI_UNITS = [
-    { id: 'u_6x4', name: 'Standard 6 X 4', w: 6, d: 4, h: 8, area: 24, vol: 192, tier: 'Tier 2 - Standard', price: 1200 },
-    { id: 'u_9x4', name: 'Standard 9 X 4', w: 9, d: 4, h: 8, area: 36, vol: 288, tier: 'Tier 2 - Standard', price: 2900 },
-    { id: 'u_8x5', name: 'Standard 8 X 5', w: 8, d: 5, h: 8, area: 40, vol: 320, tier: 'Tier 2 - Standard', price: 3200 },
-    { id: 'u_11x4', name: 'Standard 11 X 4', w: 11, d: 4, h: 8, area: 44, vol: 352, tier: 'Tier 2 - Standard', price: 3500 },
+    // Tier 2: Standard (45–68 sq ft)
     { id: 'u_8x6', name: 'Standard 8 X 6', w: 8, d: 6, h: 8, area: 48, vol: 384, tier: 'Tier 2 - Standard', price: 3800 },
     { id: 'u_7x7', name: 'Standard 7 X 7', w: 7, d: 7, h: 8, area: 49, vol: 392, tier: 'Tier 2 - Standard', price: 3900 },
     { id: 'u_10x5', name: 'Standard 10 X 5', w: 10, d: 5, h: 8, area: 50, vol: 400, tier: 'Tier 2 - Standard', price: 4000 },
@@ -24,6 +21,8 @@
     { id: 'u_12x5', name: 'Standard 12 X 5', w: 12, d: 5, h: 8, area: 60, vol: 480, tier: 'Tier 2 - Standard', price: 4900 },
     { id: 'u_10x6', name: 'Standard 10 X 6', w: 10, d: 6, h: 8, area: 60, vol: 480, tier: 'Tier 2 - Standard', price: 4900 },
     { id: 'u_11x6', name: 'Standard 11 X 6', w: 11, d: 6, h: 8, area: 66, vol: 528, tier: 'Tier 2 - Standard', price: 5400 },
+
+    // Tier 3: Large (70–102 sq ft)
     { id: 'u_14x5', name: 'Large 14 X 5', w: 14, d: 5, h: 8, area: 70, vol: 560, tier: 'Tier 3 - Large', price: 5700 },
     { id: 'u_10x7', name: 'Large 10 X 7', w: 10, d: 7, h: 8, area: 70, vol: 560, tier: 'Tier 3 - Large', price: 5700 },
     { id: 'u_9x8', name: 'Large 9 X 8', w: 9, d: 8, h: 8, area: 72, vol: 576, tier: 'Tier 3 - Large', price: 5900 },
@@ -38,6 +37,8 @@
     { id: 'u_23x4', name: 'Large 23 X 4', w: 23, d: 4, h: 8, area: 92, vol: 736, tier: 'Tier 3 - Large', price: 7600 },
     { id: 'u_19x5', name: 'Large 19 X 5', w: 19, d: 5, h: 8, area: 95, vol: 760, tier: 'Tier 3 - Large', price: 7800 },
     { id: 'u_11x9', name: 'Large 11 X 9', w: 11, d: 9, h: 8, area: 99, vol: 792, tier: 'Tier 3 - Large', price: 8200 },
+
+    // Tier 4: Extra Large (110–175 sq ft + custom up to 187 sq ft)
     { id: 'u_18x6', name: 'Extra Large 18 X 6', w: 18, d: 6, h: 8, area: 108, vol: 864, tier: 'Tier 4 - Extra Large', price: 8900 },
     { id: 'u_11x10', name: 'Extra Large 11 X 10', w: 11, d: 10, h: 8, area: 110, vol: 880, tier: 'Tier 4 - Extra Large', price: 9100 },
     { id: 'u_23x5', name: 'Extra Large 23 X 5', w: 23, d: 5, h: 8, area: 115, vol: 920, tier: 'Tier 4 - Extra Large', price: 9500 },
@@ -51,67 +52,67 @@
   ];
 
   // =========================================================================
-  // 2. DATA: INDIAN HOUSEHOLD ITEMS CATALOG (47 DETAILED ITEMS)
+  // 2. DATA: INDIAN HOUSEHOLD ITEMS CATALOG (47 DETAILED ITEMS WITH BASE FOOTPRINT)
   // =========================================================================
   const INDIAN_ITEMS = [
     // --- LIVING ROOM ---
-    { id: 'sofa_3', name: '3-Seater Sofa', cat: 'living', icon: 'weekend', cuFt: 50.4, w: 2.1, d: 0.85, h: 0.8, color: '#3b82f6' },
-    { id: 'sofa_2', name: '2-Seater Sofa', cat: 'living', icon: 'weekend', cuFt: 36.0, w: 1.5, d: 0.85, h: 0.8, color: '#60a5fa' },
-    { id: 'sofa_1', name: 'Armchair / Single Recliner', cat: 'living', icon: 'armchair', cuFt: 21.7, w: 0.85, d: 0.85, h: 0.85, color: '#93c5fd' },
-    { id: 'sofa_l_shape', name: 'L-Shaped Sectional Sofa', cat: 'living', icon: 'weekend', cuFt: 86.8, w: 2.4, d: 1.6, h: 0.8, color: '#2563eb' },
-    { id: 'diwan', name: 'Diwan Bed with Box Storage', cat: 'living', icon: 'bed', cuFt: 29.4, w: 1.85, d: 0.9, h: 0.5, color: '#f59e0b' },
-    { id: 'center_table', name: 'Center / Coffee Table', cat: 'living', icon: 'table_restaurant', cuFt: 9.5, w: 1.0, d: 0.6, h: 0.45, color: '#d97706' },
-    { id: 'tv_unit', name: 'TV Unit & Media Console', cat: 'living', icon: 'tv', cuFt: 11.9, w: 1.5, d: 0.45, h: 0.5, color: '#78350f' },
-    { id: 'led_tv', name: 'LED TV 43-65" (Boxed)', cat: 'living', icon: 'tv', cuFt: 7.6, w: 1.4, d: 0.18, h: 0.85, color: '#1e293b' },
-    { id: 'pooja_mandir', name: 'Pooja Mandir (Wooden/Marble)', cat: 'living', icon: 'temple_hindu', cuFt: 11.5, w: 0.6, d: 0.45, h: 1.2, color: '#b45309' },
-    { id: 'bookshelf', name: 'Bookshelf / Display Rack', cat: 'living', icon: 'shelves', cuFt: 15.8, w: 0.8, d: 0.35, h: 1.6, color: '#475569' },
-    { id: 'shoe_rack', name: 'Shoe Rack / Cabinet', cat: 'living', icon: 'steps', cuFt: 8.9, w: 0.8, d: 0.35, h: 0.9, color: '#64748b' },
+    { id: 'sofa_3', name: '3-Seater Sofa', cat: 'living', icon: 'weekend', cuFt: 50.4, w: 2.1, d: 0.85, h: 0.8, floorFootprint: 7.5, color: '#3b82f6' },
+    { id: 'sofa_2', name: '2-Seater Sofa', cat: 'living', icon: 'weekend', cuFt: 36.0, w: 1.5, d: 0.85, h: 0.8, floorFootprint: 5.5, color: '#60a5fa' },
+    { id: 'sofa_1', name: 'Armchair / Single Recliner', cat: 'living', icon: 'armchair', cuFt: 21.7, w: 0.85, d: 0.85, h: 0.85, floorFootprint: 4.0, color: '#93c5fd' },
+    { id: 'sofa_l_shape', name: 'L-Shaped Sectional Sofa', cat: 'living', icon: 'weekend', cuFt: 86.8, w: 2.4, d: 1.6, h: 0.8, floorFootprint: 14.0, color: '#2563eb' },
+    { id: 'diwan', name: 'Diwan Bed with Box Storage', cat: 'living', icon: 'bed', cuFt: 29.4, w: 1.85, d: 0.9, h: 0.5, floorFootprint: 8.0, color: '#f59e0b' },
+    { id: 'center_table', name: 'Center / Coffee Table', cat: 'living', icon: 'table_restaurant', cuFt: 9.5, w: 1.0, d: 0.6, h: 0.45, floorFootprint: 2.0, color: '#d97706' },
+    { id: 'tv_unit', name: 'TV Unit & Media Console', cat: 'living', icon: 'tv', cuFt: 11.9, w: 1.5, d: 0.45, h: 0.5, floorFootprint: 3.5, color: '#78350f' },
+    { id: 'led_tv', name: 'LED TV 43-65" (Boxed)', cat: 'living', icon: 'tv', cuFt: 7.6, w: 1.4, d: 0.18, h: 0.85, floorFootprint: 1.0, color: '#1e293b' },
+    { id: 'pooja_mandir', name: 'Pooja Mandir (Wooden/Marble)', cat: 'living', icon: 'temple_hindu', cuFt: 11.5, w: 0.6, d: 0.45, h: 1.2, floorFootprint: 2.0, color: '#b45309' },
+    { id: 'bookshelf', name: 'Bookshelf / Display Rack', cat: 'living', icon: 'shelves', cuFt: 15.8, w: 0.8, d: 0.35, h: 1.6, floorFootprint: 2.5, color: '#475569' },
+    { id: 'shoe_rack', name: 'Shoe Rack / Cabinet', cat: 'living', icon: 'steps', cuFt: 8.9, w: 0.8, d: 0.35, h: 0.9, floorFootprint: 1.8, color: '#64748b' },
 
     // --- BEDROOM ---
-    { id: 'bed_king', name: 'King Double Bed with Storage', cat: 'bedroom', icon: 'bed', cuFt: 58.8, w: 2.0, d: 1.85, h: 0.45, color: '#10b981' },
-    { id: 'bed_queen', name: 'Queen Double Bed', cat: 'bedroom', icon: 'bed', cuFt: 49.3, w: 2.0, d: 1.55, h: 0.45, color: '#059669' },
-    { id: 'bed_single', name: 'Single Bed / Diwan Cot', cat: 'bedroom', icon: 'single_bed', cuFt: 25.5, w: 1.9, d: 0.95, h: 0.4, color: '#34d399' },
-    { id: 'mattress_double', name: 'King / Queen Mattress', cat: 'bedroom', icon: 'bed', cuFt: 22.6, w: 2.0, d: 1.6, h: 0.2, color: '#a7f3d0' },
-    { id: 'almirah_2door', name: '2-Door Wardrobe / Steel Almirah', cat: 'bedroom', icon: 'dresser', cuFt: 34.1, w: 0.9, d: 0.55, h: 1.95, color: '#047857' },
-    { id: 'almirah_3door', name: '3-Door Large Wardrobe', cat: 'bedroom', icon: 'dresser', cuFt: 53.0, w: 1.4, d: 0.55, h: 1.95, color: '#065f46' },
-    { id: 'dressing_table', name: 'Dressing Table with Mirror', cat: 'bedroom', icon: 'dresser', cuFt: 21.6, w: 0.8, d: 0.45, h: 1.7, color: '#14b8a6' },
-    { id: 'bedside_tables', name: 'Bedside Tables (Pair)', cat: 'bedroom', icon: 'table_restaurant', cuFt: 6.4, w: 0.45, d: 0.4, h: 0.5, color: '#0d9488' },
-    { id: 'razai_bundles', name: 'Gadda / Razai / Quilt Bundles', cat: 'bedroom', icon: 'inventory_2', cuFt: 9.5, w: 0.9, d: 0.6, h: 0.5, color: '#6ee7b7' },
+    { id: 'bed_king', name: 'King Double Bed with Storage', cat: 'bedroom', icon: 'bed', cuFt: 58.8, w: 2.0, d: 1.85, h: 0.45, floorFootprint: 8.0, color: '#10b981' },
+    { id: 'bed_queen', name: 'Queen Double Bed', cat: 'bedroom', icon: 'bed', cuFt: 49.3, w: 2.0, d: 1.55, h: 0.45, floorFootprint: 7.0, color: '#059669' },
+    { id: 'bed_single', name: 'Single Bed / Diwan Cot', cat: 'bedroom', icon: 'single_bed', cuFt: 25.5, w: 1.9, d: 0.95, h: 0.4, floorFootprint: 4.5, color: '#34d399' },
+    { id: 'mattress_double', name: 'King / Queen Mattress', cat: 'bedroom', icon: 'bed', cuFt: 22.6, w: 2.0, d: 1.6, h: 0.2, floorFootprint: 2.5, color: '#a7f3d0' },
+    { id: 'almirah_2door', name: '2-Door Wardrobe / Steel Almirah', cat: 'bedroom', icon: 'dresser', cuFt: 34.1, w: 0.9, d: 0.55, h: 1.95, floorFootprint: 5.0, color: '#047857' },
+    { id: 'almirah_3door', name: '3-Door Large Wardrobe', cat: 'bedroom', icon: 'dresser', cuFt: 53.0, w: 1.4, d: 0.55, h: 1.95, floorFootprint: 7.5, color: '#065f46' },
+    { id: 'dressing_table', name: 'Dressing Table with Mirror', cat: 'bedroom', icon: 'dresser', cuFt: 21.6, w: 0.8, d: 0.45, h: 1.7, floorFootprint: 3.5, color: '#14b8a6' },
+    { id: 'bedside_tables', name: 'Bedside Tables (Pair)', cat: 'bedroom', icon: 'table_restaurant', cuFt: 6.4, w: 0.45, d: 0.4, h: 0.5, floorFootprint: 1.2, color: '#0d9488' },
+    { id: 'razai_bundles', name: 'Gadda / Razai / Quilt Bundles', cat: 'bedroom', icon: 'inventory_2', cuFt: 9.5, w: 0.9, d: 0.6, h: 0.5, floorFootprint: 1.2, color: '#6ee7b7' },
 
     // --- KITCHEN & DINING ---
-    { id: 'fridge_double', name: 'Double Door Refrigerator (250-450L)', cat: 'kitchen', icon: 'kitchen', cuFt: 30.3, w: 0.7, d: 0.7, h: 1.75, color: '#0284c7' },
-    { id: 'fridge_single', name: 'Single Door Refrigerator (190L)', cat: 'kitchen', icon: 'kitchen', cuFt: 17.9, w: 0.6, d: 0.65, h: 1.3, color: '#38bdf8' },
-    { id: 'dining_6', name: 'Dining Table (6-Seater)', cat: 'kitchen', icon: 'table_restaurant', cuFt: 35.8, w: 1.5, d: 0.9, h: 0.75, color: '#e11d48' },
-    { id: 'dining_4', name: 'Dining Table (4-Seater)', cat: 'kitchen', icon: 'table_restaurant', cuFt: 23.3, w: 1.1, d: 0.8, h: 0.75, color: '#f43f5e' },
-    { id: 'dining_chairs', name: 'Dining Chairs (Set of 4)', cat: 'kitchen', icon: 'chair', cuFt: 18.0, w: 0.5, d: 0.5, h: 0.95, color: '#fda4af' },
-    { id: 'microwave', name: 'Microwave Oven / OTG', cat: 'kitchen', icon: 'microwave', cuFt: 3.1, w: 0.55, d: 0.45, h: 0.35, color: '#9f1239' },
-    { id: 'gas_stove_cyl', name: 'Gas Stove & Cylinder (Empty)', cat: 'kitchen', icon: 'propane_tank', cuFt: 5.5, w: 0.6, d: 0.4, h: 0.65, color: '#be123c' },
-    { id: 'water_purifier', name: 'RO Water Purifier System', cat: 'kitchen', icon: 'water_drop', cuFt: 2.3, w: 0.4, d: 0.3, h: 0.55, color: '#06b6d4' },
+    { id: 'fridge_double', name: 'Double Door Refrigerator (250-450L)', cat: 'kitchen', icon: 'kitchen', cuFt: 30.3, w: 0.7, d: 0.7, h: 1.75, floorFootprint: 5.0, color: '#0284c7' },
+    { id: 'fridge_single', name: 'Single Door Refrigerator (190L)', cat: 'kitchen', icon: 'kitchen', cuFt: 17.9, w: 0.6, d: 0.65, h: 1.3, floorFootprint: 4.0, color: '#38bdf8' },
+    { id: 'dining_6', name: 'Dining Table (6-Seater)', cat: 'kitchen', icon: 'table_restaurant', cuFt: 35.8, w: 1.5, d: 0.9, h: 0.75, floorFootprint: 6.0, color: '#e11d48' },
+    { id: 'dining_4', name: 'Dining Table (4-Seater)', cat: 'kitchen', icon: 'table_restaurant', cuFt: 23.3, w: 1.1, d: 0.8, h: 0.75, floorFootprint: 4.5, color: '#f43f5e' },
+    { id: 'dining_chairs', name: 'Dining Chairs (Set of 4)', cat: 'kitchen', icon: 'chair', cuFt: 18.0, w: 0.5, d: 0.5, h: 0.95, floorFootprint: 2.5, color: '#fda4af' },
+    { id: 'microwave', name: 'Microwave Oven / OTG', cat: 'kitchen', icon: 'microwave', cuFt: 3.1, w: 0.55, d: 0.45, h: 0.35, floorFootprint: 0.5, color: '#9f1239' },
+    { id: 'gas_stove_cyl', name: 'Gas Stove & Cylinder (Empty)', cat: 'kitchen', icon: 'propane_tank', cuFt: 5.5, w: 0.6, d: 0.4, h: 0.65, floorFootprint: 1.5, color: '#be123c' },
+    { id: 'water_purifier', name: 'RO Water Purifier System', cat: 'kitchen', icon: 'water_drop', cuFt: 2.3, w: 0.4, d: 0.3, h: 0.55, floorFootprint: 0.5, color: '#06b6d4' },
 
     // --- APPLIANCES & UTILITIES ---
-    { id: 'washing_front', name: 'Front Load Washing Machine', cat: 'appliances', icon: 'local_laundry_service', cuFt: 10.8, w: 0.6, d: 0.6, h: 0.85, color: '#8b5cf6' },
-    { id: 'washing_top', name: 'Top Load Washing Machine', cat: 'appliances', icon: 'local_laundry_service', cuFt: 9.6, w: 0.55, d: 0.55, h: 0.9, color: '#a78bfa' },
-    { id: 'split_ac', name: 'Split AC (Indoor + Outdoor)', cat: 'appliances', icon: 'mode_fan', cuFt: 6.7, w: 0.9, d: 0.35, h: 0.6, color: '#7c3aed' },
-    { id: 'window_ac', name: 'Window AC Unit', cat: 'appliances', icon: 'mode_fan', cuFt: 6.7, w: 0.65, d: 0.65, h: 0.45, color: '#6d28d9' },
-    { id: 'air_cooler', name: 'Desert Air Cooler', cat: 'appliances', icon: 'air', cuFt: 14.5, w: 0.65, d: 0.55, h: 1.15, color: '#c4b5fd' },
-    { id: 'inverter_battery', name: 'Inverter + Heavy Battery Set', cat: 'appliances', icon: 'battery_charging_full', cuFt: 4.4, w: 0.5, d: 0.45, h: 0.55, color: '#4c1d95' },
-    { id: 'geyser', name: 'Geyser / Water Heater', cat: 'appliances', icon: 'water_heater', cuFt: 4.6, w: 0.45, d: 0.45, h: 0.65, color: '#ec4899' },
+    { id: 'washing_front', name: 'Front Load Washing Machine', cat: 'appliances', icon: 'local_laundry_service', cuFt: 10.8, w: 0.6, d: 0.6, h: 0.85, floorFootprint: 3.8, color: '#8b5cf6' },
+    { id: 'washing_top', name: 'Top Load Washing Machine', cat: 'appliances', icon: 'local_laundry_service', cuFt: 9.6, w: 0.55, d: 0.55, h: 0.9, floorFootprint: 3.2, color: '#a78bfa' },
+    { id: 'split_ac', name: 'Split AC (Indoor + Outdoor)', cat: 'appliances', icon: 'mode_fan', cuFt: 6.7, w: 0.9, d: 0.35, h: 0.6, floorFootprint: 1.0, color: '#7c3aed' },
+    { id: 'window_ac', name: 'Window AC Unit', cat: 'appliances', icon: 'mode_fan', cuFt: 6.7, w: 0.65, d: 0.65, h: 0.45, floorFootprint: 1.8, color: '#6d28d9' },
+    { id: 'air_cooler', name: 'Desert Air Cooler', cat: 'appliances', icon: 'air', cuFt: 14.5, w: 0.65, d: 0.55, h: 1.15, floorFootprint: 3.5, color: '#c4b5fd' },
+    { id: 'inverter_battery', name: 'Inverter + Heavy Battery Set', cat: 'appliances', icon: 'battery_charging_full', cuFt: 4.4, w: 0.5, d: 0.45, h: 0.55, floorFootprint: 2.0, color: '#4c1d95' },
+    { id: 'geyser', name: 'Geyser / Water Heater', cat: 'appliances', icon: 'water_heater', cuFt: 4.6, w: 0.45, d: 0.45, h: 0.65, floorFootprint: 0.8, color: '#ec4899' },
 
     // --- BOXES, TRUNKS & LUGGAGE ---
-    { id: 'box_large', name: 'Large Moving Carton (Clothes)', cat: 'boxes', icon: 'inventory_2', cuFt: 4.3, w: 0.6, d: 0.45, h: 0.45, color: '#f59e0b' },
-    { id: 'box_medium', name: 'Medium Carton (Books/Kitchen)', cat: 'boxes', icon: 'inventory_2', cuFt: 2.5, w: 0.45, d: 0.4, h: 0.4, color: '#fbbf24' },
-    { id: 'box_small', name: 'Small Carton (Crockery)', cat: 'boxes', icon: 'inventory_2', cuFt: 1.1, w: 0.35, d: 0.3, h: 0.3, color: '#fde68a' },
-    { id: 'trunk_steel', name: 'Steel Trunk / Metal Peti', cat: 'boxes', icon: 'luggage', cuFt: 8.3, w: 0.95, d: 0.55, h: 0.45, color: '#64748b' },
-    { id: 'suitcase_large', name: 'Large Strolley Suitcase', cat: 'boxes', icon: 'luggage', cuFt: 4.0, w: 0.75, d: 0.5, h: 0.3, color: '#475569' },
-    { id: 'suitcase_cabin', name: 'Cabin Bag / Duffle Bag', cat: 'boxes', icon: 'luggage', cuFt: 1.7, w: 0.55, d: 0.35, h: 0.25, color: '#94a3b8' },
+    { id: 'box_large', name: 'Large Moving Carton (Clothes)', cat: 'boxes', icon: 'inventory_2', cuFt: 4.3, w: 0.6, d: 0.45, h: 0.45, floorFootprint: 0.6, color: '#f59e0b' },
+    { id: 'box_medium', name: 'Medium Carton (Books/Kitchen)', cat: 'boxes', icon: 'inventory_2', cuFt: 2.5, w: 0.45, d: 0.4, h: 0.4, floorFootprint: 0.4, color: '#fbbf24' },
+    { id: 'box_small', name: 'Small Carton (Crockery)', cat: 'boxes', icon: 'inventory_2', cuFt: 1.1, w: 0.35, d: 0.3, h: 0.3, floorFootprint: 0.2, color: '#fde68a' },
+    { id: 'trunk_steel', name: 'Steel Trunk / Metal Peti', cat: 'boxes', icon: 'luggage', cuFt: 8.3, w: 0.95, d: 0.55, h: 0.45, floorFootprint: 4.5, color: '#64748b' },
+    { id: 'suitcase_large', name: 'Large Strolley Suitcase', cat: 'boxes', icon: 'luggage', cuFt: 4.0, w: 0.75, d: 0.5, h: 0.3, floorFootprint: 0.8, color: '#475569' },
+    { id: 'suitcase_cabin', name: 'Cabin Bag / Duffle Bag', cat: 'boxes', icon: 'luggage', cuFt: 1.7, w: 0.55, d: 0.35, h: 0.25, floorFootprint: 0.4, color: '#94a3b8' },
 
     // --- OFFICE, VEHICLES & EXTRA ---
-    { id: 'two_wheeler', name: 'Two-Wheeler (Activa / Motorcycle)', cat: 'office_vehicle', icon: 'two_wheeler', cuFt: 54.0, w: 1.9, d: 0.7, h: 1.15, color: '#dc2626' },
-    { id: 'bicycle', name: 'Bicycle (Adult / Kids)', cat: 'office_vehicle', icon: 'pedal_bike', cuFt: 36.0, w: 1.7, d: 0.6, h: 1.0, color: '#ea580c' },
-    { id: 'office_desk', name: 'Office Workstation / Study Desk', cat: 'office_vehicle', icon: 'desk', cuFt: 19.1, w: 1.2, d: 0.6, h: 0.75, color: '#0891b2' },
-    { id: 'office_chair', name: 'Ergonomic Office Chair', cat: 'office_vehicle', icon: 'chair', cuFt: 17.2, w: 0.65, d: 0.65, h: 1.15, color: '#0e7490' },
-    { id: 'archive_box', name: 'Archival Document File Box', cat: 'office_vehicle', icon: 'folder', cuFt: 1.3, w: 0.4, d: 0.32, h: 0.28, color: '#ca8a04' },
-    { id: 'fitness_gym', name: 'Treadmill / Exercise Gym Cycle', cat: 'office_vehicle', icon: 'fitness_center', cuFt: 55.1, w: 1.6, d: 0.75, h: 1.3, color: '#16a34a' }
+    { id: 'two_wheeler', name: 'Two-Wheeler (Activa / Motorcycle)', cat: 'office_vehicle', icon: 'two_wheeler', cuFt: 54.0, w: 1.9, d: 0.7, h: 1.15, floorFootprint: 15.0, color: '#dc2626' },
+    { id: 'bicycle', name: 'Bicycle (Adult / Kids)', cat: 'office_vehicle', icon: 'pedal_bike', cuFt: 36.0, w: 1.7, d: 0.6, h: 1.0, floorFootprint: 7.0, color: '#ea580c' },
+    { id: 'office_desk', name: 'Office Workstation / Study Desk', cat: 'office_vehicle', icon: 'desk', cuFt: 19.1, w: 1.2, d: 0.6, h: 0.75, floorFootprint: 4.5, color: '#0891b2' },
+    { id: 'office_chair', name: 'Ergonomic Office Chair', cat: 'office_vehicle', icon: 'chair', cuFt: 17.2, w: 0.65, d: 0.65, h: 1.15, floorFootprint: 3.5, color: '#0e7490' },
+    { id: 'archive_box', name: 'Archival Document File Box', cat: 'office_vehicle', icon: 'folder', cuFt: 1.3, w: 0.4, d: 0.32, h: 0.28, floorFootprint: 0.25, color: '#ca8a04' },
+    { id: 'fitness_gym', name: 'Treadmill / Exercise Gym Cycle', cat: 'office_vehicle', icon: 'fitness_center', cuFt: 55.1, w: 1.6, d: 0.75, h: 1.3, floorFootprint: 12.0, color: '#16a34a' }
   ];
 
   // =========================================================================
@@ -230,6 +231,18 @@
         suitcase_cabin: 4,
         razai_bundles: 2
       }
+    },
+    'office': {
+      label: 'Office & Business Storage (~70–100 sq ft · Tier 3 - Large)',
+      items: {
+        office_desk: 4,
+        office_chair: 8,
+        archive_box: 40,
+        bookshelf: 2,
+        box_medium: 15,
+        sofa_2: 1,
+        center_table: 1
+      }
     }
   };
 
@@ -249,11 +262,14 @@
   INDIAN_ITEMS.forEach(it => { state.quantities[it.id] = 0; });
 
   // =========================================================================
-  // 5. PACKING & UNIT SELECTION ALGORITHM
+  // 5. PACKING & UNIT SELECTION ALGORITHM (DUAL CONSTRAINT: VOLUME & FLOOR AREA)
   // =========================================================================
   function calculateTotalInventory() {
     let totalCuFt = 0;
     let totalItems = 0;
+    let reqFloorFootprint = 0;
+    let maxLen = 0;
+    let maxWid = 0;
     const inventoryList = [];
 
     // Catalog items
@@ -261,8 +277,14 @@
       const q = state.quantities[it.id] || 0;
       if (q > 0) {
         totalCuFt += q * it.cuFt;
+        reqFloorFootprint += q * (it.floorFootprint || (it.cuFt / 10));
         totalItems += q;
         inventoryList.push({ ...it, qty: q });
+
+        const itLen = Math.max(it.w, it.d) * 3.28084;
+        const itWid = Math.min(it.w, it.d) * 3.28084;
+        if (itLen > maxLen) maxLen = itLen;
+        if (itWid > maxWid) maxWid = itWid;
       }
     });
 
@@ -270,14 +292,25 @@
     state.customItems.forEach(ci => {
       const q = ci.qty || 1;
       totalCuFt += q * ci.cuFt;
+      reqFloorFootprint += q * (ci.w * 3.28084 * ci.d * 3.28084);
       totalItems += q;
       inventoryList.push({ ...ci, qty: q, isCustom: true, icon: 'extension', color: '#ec4899' });
+
+      const ciLen = Math.max(ci.w, ci.d) * 3.28084;
+      const ciWid = Math.min(ci.w, ci.d) * 3.28084;
+      if (ciLen > maxLen) maxLen = ciLen;
+      if (ciWid > maxWid) maxWid = ciWid;
     });
 
-    return { totalCuFt, totalItems, inventoryList };
+    return { totalCuFt, totalItems, reqFloorFootprint, maxLen, maxWid, inventoryList };
   }
 
-  function getRecommendedUnit(totalCuFt) {
+  function getRecommendedUnit(inventoryData) {
+    const totalCuFt = inventoryData.totalCuFt || 0;
+    const reqFloorFootprint = inventoryData.reqFloorFootprint || 0;
+    const maxLen = inventoryData.maxLen || 0;
+    const maxWid = inventoryData.maxWid || 0;
+
     if (totalCuFt <= 0) {
       return {
         unit: null,
@@ -292,46 +325,60 @@
     // Practical self-storage packing efficiency: 75% usable cubic volume accounting for voids & walkways
     const PACKING_EFFICIENCY = 0.75;
     const effectiveNeededCuFt = totalCuFt / PACKING_EFFICIENCY;
-    const approxFloorArea = Math.ceil(totalCuFt / 6.5); // assuming avg stack height 6.5ft
+    const effectiveFloorArea = Math.max(reqFloorFootprint, totalCuFt / 6.5);
 
-    // Match smallest unit from 37 SSI units
+    // Match smallest unit from 33 SSI units (starting at Tier 2 - 48 sq ft)
     let matchedUnit = null;
     let nextUnit = null;
 
     for (let i = 0; i < SSI_UNITS.length; i++) {
       const u = SSI_UNITS[i];
-      if (u.vol >= effectiveNeededCuFt) {
-        matchedUnit = u;
-        nextUnit = SSI_UNITS[i + 1] || null;
-        break;
-      }
+      // 1. Must satisfy cubic volume requirement
+      if (u.vol < effectiveNeededCuFt) continue;
+      // 2. Must satisfy physical floor footprint requirement
+      if (u.area < effectiveFloorArea) continue;
+      // 3. Must fit the bulkiest single item dimensions
+      const uMaxDim = Math.max(u.w, u.d);
+      const uMinDim = Math.min(u.w, u.d);
+      if (uMaxDim < maxLen || uMinDim < maxWid) continue;
+
+      matchedUnit = u;
+      nextUnit = SSI_UNITS[i + 1] || null;
+      break;
     }
 
     // If items exceed the largest single unit (187 sq ft / 1496 cu ft)
     if (!matchedUnit) {
       const largest = SSI_UNITS[SSI_UNITS.length - 1];
-      const multiple = Math.ceil(effectiveNeededCuFt / largest.vol);
+      const mult = Math.max(
+        Math.ceil(effectiveNeededCuFt / largest.vol),
+        Math.ceil(effectiveFloorArea / largest.area)
+      );
       matchedUnit = {
         id: 'multiple_units',
-        name: `${multiple}× Extra Large 17 X 11 Suites`,
-        w: largest.w * multiple,
+        name: `${mult}× Extra Large 17 X 11 Suites`,
+        w: largest.w * mult,
         d: largest.d,
         h: largest.h,
-        area: largest.area * multiple,
-        vol: largest.vol * multiple,
+        area: largest.area * mult,
+        vol: largest.vol * mult,
         tier: 'Multiple Private Suites',
-        price: largest.price * multiple
+        price: largest.price * mult
       };
     }
 
-    const utilizationPct = Math.min(100, Math.round((totalCuFt / (matchedUnit.vol * PACKING_EFFICIENCY)) * 100));
+    // Realistic utilization: item volume as percentage of gross room volume
+    const utilizationPct = Math.min(100, Math.round((totalCuFt / matchedUnit.vol) * 100));
 
-    let statusText = 'Comfortable fit with room for access walkways';
+    let statusText = 'Comfortable fit with room for access walkways.';
     let statusCode = 'good';
     if (utilizationPct > 88) {
-      statusText = 'Packed to capacity. Consider next size up for easier item retrieval.';
+      statusText = 'Packed near capacity. Consider next size up for easier item retrieval.';
       statusCode = 'tight';
-    } else if (utilizationPct < 55) {
+    } else if (utilizationPct > 78) {
+      statusText = 'High density fit; vertical stacking recommended to preserve walkway.';
+      statusCode = 'optimal';
+    } else if (utilizationPct < 45) {
       statusText = 'Spacious unit with extra buffer for future additions.';
       statusCode = 'roomy';
     }
@@ -340,7 +387,7 @@
       unit: matchedUnit,
       nextUnit,
       utilizationPct,
-      requiredFloorArea: approxFloorArea,
+      requiredFloorArea: Math.round(effectiveFloorArea),
       statusText,
       statusCode
     };
@@ -589,8 +636,9 @@
   // 7. UI RENDERER & INTERACTION CONTROLLER
   // =========================================================================
   function renderAll() {
-    const { totalCuFt, totalItems, inventoryList } = calculateTotalInventory();
-    const result = getRecommendedUnit(totalCuFt);
+    const invData = calculateTotalInventory();
+    const result = getRecommendedUnit(invData);
+    const { totalCuFt, totalItems, inventoryList } = invData;
 
     // 1. Update live result metrics
     const unitNameEl = document.getElementById('calc-unit-name');
@@ -616,16 +664,16 @@
       if (statusNoteEl) statusNoteEl.innerText = result.statusText;
       if (ctaBtnText) ctaBtnText.innerText = `Book ${result.unit.tier} (${result.unit.area} sq ft) →`;
     } else {
-      if (tierBadgeEl) tierBadgeEl.innerText = 'Select Items';
-      if (unitNameEl) unitNameEl.innerText = 'Select Items';
-      if (unitDimEl) unitDimEl.innerText = 'Standard facility units (45–175 sq ft)';
+      if (tierBadgeEl) tierBadgeEl.innerText = 'Tier 2 - Standard';
+      if (unitNameEl) unitNameEl.innerText = 'Select Items or Preset';
+      if (unitDimEl) unitDimEl.innerText = 'Standard facility rooms (48–187 sq ft)';
       if (unitAreaEl) unitAreaEl.innerText = '0 sq ft';
       if (unitVolEl) unitVolEl.innerText = '0 cu ft';
-      if (unitPriceEl) unitPriceEl.innerText = 'Starting from ₹1,200/mo';
+      if (unitPriceEl) unitPriceEl.innerText = 'Starting from ₹3,800/mo (Tier 2 Standard)';
       if (utilBarEl) utilBarEl.style.width = '0%';
       if (utilPctEl) utilPctEl.innerText = '0% Filled';
-      if (statusNoteEl) statusNoteEl.innerText = 'Tap + on items or choose a 1-click home preset below.';
-      if (ctaBtnText) ctaBtnText.innerText = 'Select Items to Estimate Quote';
+      if (statusNoteEl) statusNoteEl.innerText = 'Tap + on items or choose a 1-click home/office preset below.';
+      if (ctaBtnText) ctaBtnText.innerText = 'Select Items or Request Free Sizing Advice';
     }
 
     // 2. Render item counter badges on cards
@@ -805,11 +853,25 @@
     },
 
     handleQuote: function () {
-      const { totalCuFt, totalItems, inventoryList } = calculateTotalInventory();
-      const result = getRecommendedUnit(totalCuFt);
+      const invData = calculateTotalInventory();
+      const result = getRecommendedUnit(invData);
+      const { totalCuFt, totalItems, inventoryList } = invData;
 
       if (!result.unit || totalItems === 0) {
-        alert('Please select at least one item or choose a preset before requesting a quote.');
+        const description = 'Storage Sizing Consultation Request (Self Storage Calculator)';
+        const sizeInput = document.getElementById('storage-size');
+        if (sizeInput) sizeInput.value = description;
+
+        if (window.openQuoteModal) {
+          window.openQuoteModal(description);
+        } else if (window.ModalController) {
+          window.ModalController.open(description);
+        }
+
+        const headingEl = document.getElementById('lfMainHeading');
+        const subHeadingEl = document.getElementById('lfSubHeading');
+        if (headingEl) headingEl.textContent = 'Get Free Storage Sizing Advice';
+        if (subHeadingEl) subHeadingEl.textContent = 'Tell us what you plan to store and our storage experts will calculate the perfect unit size for you.';
         return;
       }
 
@@ -830,7 +892,7 @@
       const headingEl = document.getElementById('lfMainHeading');
       const subHeadingEl = document.getElementById('lfSubHeading');
       if (headingEl) headingEl.textContent = `Get Free Quote for ${result.unit.tier} (${result.unit.area} sq ft)`;
-      if (subHeadingEl) subHeadingEl.textContent = `Unit reserved for your ${totalItems} household items. Transparent pricing guaranteed.`;
+      if (subHeadingEl) subHeadingEl.textContent = `Unit reserved for your ${totalItems} items. Transparent pricing guaranteed.`;
     },
 
     toggleViewMode: function () {}

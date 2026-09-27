@@ -256,6 +256,9 @@
                             <button type="button" class="calc-preset-pill" onclick="window.SSI_CALCULATOR.applyPreset('4bhk', this)">
                                 <span class="material-symbols-rounded" style="font-size: 17px; vertical-align: middle;">villa</span> 4 BHK (150–175 sq ft)
                             </button>
+                            <button type="button" class="calc-preset-pill" onclick="window.SSI_CALCULATOR.applyPreset('office', this)">
+                                <span class="material-symbols-rounded" style="font-size: 17px; vertical-align: middle;">business_center</span> Office Space (~75 sq ft)
+                            </button>
                             <button type="button" class="calc-preset-pill btn-reset" onclick="window.SSI_CALCULATOR.resetAll()">
                                 <span class="material-symbols-rounded" style="font-size: 15px; vertical-align: middle;">refresh</span> Reset All
                             </button>
@@ -282,7 +285,7 @@
                                 <div style="margin-top: 14px;">
                                     <div style="display: flex; justify-content: space-between; font-size: 0.78rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 6px;">
                                         <span>Unit Volume Utilization</span>
-                                        <span id="calc-status-note">Tap + on items to pack room</span>
+                                        <span id="calc-status-note">Tap + on items or choose a preset</span>
                                     </div>
                                     <div style="width: 100%; height: 8px; background: #e2e8f0; border-radius: 99px; overflow: hidden;">
                                         <div id="calc-util-bar" style="width: 0%; height: 100%; background: linear-gradient(90deg, #2563eb, #3b82f6); transition: width 0.3s ease;"></div>
@@ -308,17 +311,17 @@
                                         <span class="badge-dot"></span>
                                         <h5>Recommended Room Tier</h5>
                                     </div>
-                                    <span class="result-tier-badge" id="calc-tier-badge" style="margin-bottom: 0; background: #e0f2fe; color: #0284c7; font-weight: 700;">Select Items</span>
+                                    <span class="result-tier-badge" id="calc-tier-badge" style="margin-bottom: 0; background: #e0f2fe; color: #0284c7; font-weight: 700;">Tier 2 - Standard</span>
                                 </div>
                                 <div class="result-value" id="calc-unit-area">0 sq ft</div>
                                 <ul class="result-details">
                                     <li>
                                         <span class="material-symbols-rounded check-icon">check_circle</span>
-                                        <strong id="calc-unit-name">Select Items</strong>
+                                        <strong id="calc-unit-name">Select Items or Preset</strong>
                                     </li>
                                     <li>
                                         <span class="material-symbols-rounded check-icon">check_circle</span>
-                                        <span id="calc-unit-dims">37 facility unit sizes available</span>
+                                        <span id="calc-unit-dims">Standard facility rooms (48–187 sq ft)</span>
                                     </li>
                                     <li>
                                         <span class="material-symbols-rounded check-icon">check_circle</span>
@@ -326,11 +329,11 @@
                                     </li>
                                     <li>
                                         <span class="material-symbols-rounded check-icon">check_circle</span>
-                                        <span id="calc-unit-price">Starting from ₹1,200/mo</span>
+                                        <span id="calc-unit-price">Starting from ₹3,800/mo (Tier 2 Standard)</span>
                                     </li>
                                 </ul>
                                 <button type="button" class="cta-btn-calc" onclick="window.SSI_CALCULATOR.handleQuote()">
-                                    <span id="calc-cta-text">Select Items to Estimate Quote</span>
+                                    <span id="calc-cta-text">Select Items or Request Free Sizing Advice</span>
                                     <span class="material-symbols-rounded">arrow_forward</span>
                                 </button>
                                 <a href="tel:+919090206090" class="calc-call-link">
@@ -434,7 +437,7 @@
                         <span class="material-symbols-rounded">payments</span>
                         <div>
                             <h4>Pay Only For What You Need</h4>
-                            <p>Modular private rooms from 20 to 300+ sq. ft. No paying for dead space.</p>
+                            <p>Modular private rooms from 45 to 300+ sq. ft. No paying for dead space.</p>
                         </div>
                     </div>
                     <div class="trust-card">
@@ -665,6 +668,17 @@
                 </div>
             </div>
         </section>
+
+        <!-- Sticky Mobile Bottom Bar -->
+        <div class="calc-mobile-bar" id="calc-mobile-bar">
+            <div class="calc-mobile-info">
+                <span class="calc-mobile-sqft" id="calc-mobile-sqft">0 sq ft</span>
+                <span class="calc-mobile-tier" id="calc-mobile-tier">Select Items</span>
+            </div>
+            <button type="button" class="calc-mobile-btn" onclick="window.SSI_CALCULATOR.handleQuote()">
+                Get Free Quote <span class="material-symbols-rounded" style="font-size: 16px;">arrow_forward</span>
+            </button>
+        </div>
     </main>
 
     <!-- Global Footer -->
