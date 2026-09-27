@@ -1,6 +1,6 @@
 /**
  * Self Storage India — End-to-End Indian Household Storage Sizing Engine
- * Incorporating Calcumate 3D volumetric logic, 37 SSI facility unit tiers,
+ * Incorporating Calcumate 3D volumetric logic, 19 SSI facility unit sizes,
  * real-time isometric 3D canvas packing, and Zoho CRM lead integration.
  */
 
@@ -11,32 +11,32 @@
   // 1. DATA: SSI FACILITY UNITS (19 REAL SIZES: 27 TO 125 SQ FT, 685 ROOMS TOTAL)
   // =========================================================================
   const SSI_UNITS = [
-    // Tier 1: Personal Locker / Mini Room (27–42 sq ft) - 161 total rooms
-    { id: 'u_27', name: 'Personal Locker 27 sq ft', w: 9, d: 3, h: 8, area: 27, vol: 216, rooms: 12, tier: 'Tier 1 - Personal / Locker' },
-    { id: 'u_32', name: 'Mini Room 32 sq ft', w: 8, d: 4, h: 8, area: 32, vol: 256, rooms: 11, tier: 'Tier 1 - Personal / Locker' },
-    { id: 'u_33', name: 'Compact Room 33 sq ft', w: 11, d: 3, h: 8, area: 33, vol: 264, rooms: 46, tier: 'Tier 1 - Personal / Locker' },
-    { id: 'u_35', name: 'Compact Room 35 sq ft', w: 7, d: 5, h: 8, area: 35, vol: 280, rooms: 48, tier: 'Tier 1 - Personal / Locker' },
-    { id: 'u_40', name: 'Compact Room 40 sq ft', w: 8, d: 5, h: 8, area: 40, vol: 320, rooms: 35, tier: 'Tier 1 - Personal / Locker' },
-    { id: 'u_42', name: 'Studio Room 42 sq ft', w: 7, d: 6, h: 8, area: 42, vol: 336, rooms: 9, tier: 'Tier 1 - Personal / Locker' },
+    // Personal Locker / Mini Room (27–42 sq ft) - 161 total rooms
+    { id: 'u_27', name: 'Personal Locker (27 sq ft)', w: 9, d: 3, h: 8, area: 27, vol: 216, rooms: 12 },
+    { id: 'u_32', name: 'Mini Room (32 sq ft)', w: 8, d: 4, h: 8, area: 32, vol: 256, rooms: 11 },
+    { id: 'u_33', name: 'Compact Room (33 sq ft)', w: 11, d: 3, h: 8, area: 33, vol: 264, rooms: 46 },
+    { id: 'u_35', name: 'Compact Room (35 sq ft)', w: 7, d: 5, h: 8, area: 35, vol: 280, rooms: 48 },
+    { id: 'u_40', name: 'Compact Room (40 sq ft)', w: 8, d: 5, h: 8, area: 40, vol: 320, rooms: 35 },
+    { id: 'u_42', name: 'Studio Room (42 sq ft)', w: 7, d: 6, h: 8, area: 42, vol: 336, rooms: 9 },
 
-    // Tier 2: Standard Room (45–68 sq ft) - 436 total rooms (Most Popular)
-    { id: 'u_45', name: 'Standard 45 sq ft', w: 9, d: 5, h: 8, area: 45, vol: 360, rooms: 65, tier: 'Tier 2 - Standard' },
-    { id: 'u_50', name: 'Standard 50 sq ft', w: 10, d: 5, h: 8, area: 50, vol: 400, rooms: 66, tier: 'Tier 2 - Standard' },
-    { id: 'u_51', name: 'Standard 51 sq ft', w: 8.5, d: 6, h: 8, area: 51, vol: 408, rooms: 93, tier: 'Tier 2 - Standard' },
-    { id: 'u_52', name: 'Standard 52 sq ft', w: 8, d: 6.5, h: 8, area: 52, vol: 416, rooms: 29, tier: 'Tier 2 - Standard' },
-    { id: 'u_61', name: 'Standard Plus 61 sq ft', w: 10, d: 6.1, h: 8, area: 61, vol: 488, rooms: 17, tier: 'Tier 2 - Standard' },
-    { id: 'u_62', name: 'Standard Plus 62 sq ft', w: 10, d: 6.2, h: 8, area: 62, vol: 496, rooms: 19, tier: 'Tier 2 - Standard' },
-    { id: 'u_65', name: 'Prime Standard 65 sq ft', w: 10, d: 6.5, h: 8, area: 65, vol: 520, rooms: 106, tier: 'Tier 2 - Standard' },
-    { id: 'u_66', name: 'Standard Plus 66 sq ft', w: 11, d: 6, h: 8, area: 66, vol: 528, rooms: 20, tier: 'Tier 2 - Standard' },
-    { id: 'u_68', name: 'Large Standard 68 sq ft', w: 10, d: 6.8, h: 8, area: 68, vol: 544, rooms: 21, tier: 'Tier 2 - Standard' },
+    // Standard Room (45–68 sq ft) - 436 total rooms (Most Popular)
+    { id: 'u_45', name: 'Standard Room (45 sq ft)', w: 9, d: 5, h: 8, area: 45, vol: 360, rooms: 65 },
+    { id: 'u_50', name: 'Standard Room (50 sq ft)', w: 10, d: 5, h: 8, area: 50, vol: 400, rooms: 66 },
+    { id: 'u_51', name: 'Standard Room (51 sq ft)', w: 8.5, d: 6, h: 8, area: 51, vol: 408, rooms: 93 },
+    { id: 'u_52', name: 'Standard Room (52 sq ft)', w: 8, d: 6.5, h: 8, area: 52, vol: 416, rooms: 29 },
+    { id: 'u_61', name: 'Standard Plus (61 sq ft)', w: 10, d: 6.1, h: 8, area: 61, vol: 488, rooms: 17 },
+    { id: 'u_62', name: 'Standard Plus (62 sq ft)', w: 10, d: 6.2, h: 8, area: 62, vol: 496, rooms: 19 },
+    { id: 'u_65', name: 'Prime Standard (65 sq ft)', w: 10, d: 6.5, h: 8, area: 65, vol: 520, rooms: 106 },
+    { id: 'u_66', name: 'Standard Plus (66 sq ft)', w: 11, d: 6, h: 8, area: 66, vol: 528, rooms: 20 },
+    { id: 'u_68', name: 'Large Standard (68 sq ft)', w: 10, d: 6.8, h: 8, area: 68, vol: 544, rooms: 21 },
 
-    // Tier 3: Large Room (72–98 sq ft) - 74 total rooms
-    { id: 'u_72', name: 'Large 72 sq ft', w: 9, d: 8, h: 8, area: 72, vol: 576, rooms: 29, tier: 'Tier 3 - Large' },
-    { id: 'u_74', name: 'Large 74 sq ft', w: 10, d: 7.4, h: 8, area: 74, vol: 592, rooms: 29, tier: 'Tier 3 - Large' },
-    { id: 'u_98', name: 'Master Large 98 sq ft', w: 14, d: 7, h: 8, area: 98, vol: 784, rooms: 16, tier: 'Tier 3 - Large' },
+    // Large Room (72–98 sq ft) - 74 total rooms
+    { id: 'u_72', name: 'Large Room (72 sq ft)', w: 9, d: 8, h: 8, area: 72, vol: 576, rooms: 29 },
+    { id: 'u_74', name: 'Large Room (74 sq ft)', w: 10, d: 7.4, h: 8, area: 74, vol: 592, rooms: 29 },
+    { id: 'u_98', name: 'Master Large Room (98 sq ft)', w: 14, d: 7, h: 8, area: 98, vol: 784, rooms: 16 },
 
-    // Tier 4: Extra Large Suite (125 sq ft) - 14 total rooms
-    { id: 'u_125', name: 'Extra Large Suite 125 sq ft', w: 12.5, d: 10, h: 8, area: 125, vol: 1000, rooms: 14, tier: 'Tier 4 - Extra Large' }
+    // Extra Large Suite (125 sq ft) - 14 total rooms
+    { id: 'u_125', name: 'Extra Large Suite (125 sq ft)', w: 12.5, d: 10, h: 8, area: 125, vol: 1000, rooms: 14 }
   ];
 
   // =========================================================================
@@ -104,7 +104,7 @@
   // =========================================================================
   const INDIAN_PRESETS = {
     '1bhk': {
-      label: '1 BHK Home (45–68 sq ft · Tier 2 - Standard)',
+      label: '1 BHK Home (45–68 sq ft · Standard Room)',
       items: {
         bed_queen: 1,
         mattress_double: 1,
@@ -123,7 +123,7 @@
       }
     },
     '2bhk': {
-      label: '2 BHK Home (70–102 sq ft · Tier 3 - Large)',
+      label: '2 BHK Home (72–98 sq ft · Large Room)',
       items: {
         bed_king: 1,
         bed_queen: 1,
@@ -148,7 +148,7 @@
       }
     },
     '3bhk': {
-      label: '3 BHK Home (110–145 sq ft · Tier 4 - Extra Large)',
+      label: '3 BHK Home (98–125 sq ft · Master Large Room)',
       items: {
         bed_king: 2,
         bed_single: 1,
@@ -179,7 +179,7 @@
       }
     },
     '4bhk': {
-      label: '4 BHK / Villa (150–175 sq ft · Tier 4 - Extra Large)',
+      label: '4 BHK / Villa (125+ sq ft · Extra Large Suites)',
       items: {
         bed_king: 2,
         bed_queen: 1,
@@ -217,7 +217,7 @@
       }
     },
     'office': {
-      label: 'Office & Business Storage (~70–100 sq ft · Tier 3 - Large)',
+      label: 'Office & Business Storage (~66–74 sq ft)',
       items: {
         office_desk: 4,
         office_chair: 8,
@@ -312,7 +312,7 @@
     // Mixed residential goods floor footprint: average real-world stacking density of 5.8 cu ft per sq ft
     const effectiveFloorArea = Math.max(reqFloorFootprint, totalCuFt / 5.8);
 
-    // Match smallest unit from 33 SSI units (starting at Tier 2 - 48 sq ft)
+    // Match smallest unit from 19 SSI units (27 to 125 sq ft)
     let matchedUnit = null;
     let nextUnit = null;
 
@@ -348,7 +348,6 @@
         mult: mult,
         area: largest.area * mult,
         vol: largest.vol * mult,
-        tier: 'Multiple Private Suites',
         isMultiple: true
       };
     }
@@ -989,8 +988,8 @@
     const tierBadgeEl = document.getElementById('calc-tier-badge');
 
     if (result.unit) {
-      if (tierBadgeEl) tierBadgeEl.innerText = result.unit.tier;
-      if (unitNameEl) unitNameEl.innerText = `${result.unit.tier} (${result.unit.name})`;
+      if (tierBadgeEl) tierBadgeEl.style.display = 'none';
+      if (unitNameEl) unitNameEl.innerText = result.unit.name;
       if (unitDimEl) {
         if (result.unit.isMultiple) {
           unitDimEl.innerText = `${result.unit.mult} Suites of ${result.unit.w} ft × ${result.unit.d} ft (${result.unit.h} ft Ceiling)`;
@@ -1013,9 +1012,9 @@
       }
       if (utilPctEl) utilPctEl.innerText = `${result.utilizationPct}% Filled`;
       if (statusNoteEl) statusNoteEl.innerText = result.statusText;
-      if (ctaBtnText) ctaBtnText.innerText = `Book ${result.unit.tier} (${result.unit.area} sq ft) →`;
+      if (ctaBtnText) ctaBtnText.innerText = `Book ${result.unit.area} sq ft Unit →`;
     } else {
-      if (tierBadgeEl) tierBadgeEl.innerText = 'Select Items';
+      if (tierBadgeEl) tierBadgeEl.style.display = 'none';
       if (unitNameEl) unitNameEl.innerText = 'Select Items or Preset';
       if (unitDimEl) unitDimEl.innerText = 'Facility units available from 27 to 125+ sq ft';
       if (unitAreaEl) unitAreaEl.innerText = '0 sq ft';
@@ -1067,7 +1066,7 @@
     if (mobileBar) {
       if (totalCuFt > 0 && result.unit) {
         mobileBar.classList.add('visible');
-        if (mobileSqFt) mobileSqFt.innerText = `${result.unit.area} sq ft · ${result.unit.tier}`;
+        if (mobileSqFt) mobileSqFt.innerText = `${result.unit.area} sq ft`;
         if (mobileTier) mobileTier.innerText = result.unit.name;
       } else {
         mobileBar.classList.remove('visible');
@@ -1190,7 +1189,7 @@
       }
 
       const itemSummary = inventoryList.map(it => `${it.qty}x ${it.name}`).join(', ');
-      const description = `Storage Calculator: ${result.unit.tier} - ${result.unit.name} (${result.unit.area} sq ft, ${result.unit.vol} cu ft) | ${result.utilizationPct}% Utilized | Inventory: ${itemSummary}`;
+      const description = `Storage Calculator: ${result.unit.name} (${result.unit.area} sq ft, ${result.unit.vol} cu ft) | ${result.utilizationPct}% Utilized | Inventory: ${itemSummary}`;
 
       // Update hidden storage-size
       const sizeInput = document.getElementById('storage-size');
@@ -1205,7 +1204,7 @@
       // Contextual title
       const headingEl = document.getElementById('lfMainHeading');
       const subHeadingEl = document.getElementById('lfSubHeading');
-      if (headingEl) headingEl.textContent = `Get Free Quote for ${result.unit.tier} (${result.unit.area} sq ft)`;
+      if (headingEl) headingEl.textContent = `Get Free Quote for ${result.unit.area} sq ft Unit`;
       if (subHeadingEl) subHeadingEl.textContent = `Unit sized for your ${totalItems} items. Zero obligation quotation.`;
     },
 
