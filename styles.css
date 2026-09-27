@@ -9122,7 +9122,7 @@ body.quote-modal-open .advisor-floating-unit,
 
     .hero-trust-indicators {
         display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
+        grid-template-columns: repeat(3, 1fr) !important;
         align-items: center !important;
         width: 100% !important;
         padding: 16px 0 0 !important;
@@ -9133,10 +9133,7 @@ body.quote-modal-open .advisor-floating-unit,
     .hero-trust-indicators .trust-divider {
         display: none !important;
     }
-    .hero-trust-indicators .trust-indicator-item:nth-child(5) {
-        grid-column: 1 / -1;
-    }
-
+    
     .trust-indicator-item .stars {
         font-size: 0.88rem !important;
     }
