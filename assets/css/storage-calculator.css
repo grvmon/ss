@@ -126,17 +126,26 @@
 /* Category Filter Pills */
 .calc-cat-tabs {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  flex-wrap: nowrap;
+  gap: 6px;
   margin-bottom: 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
+}
+
+.calc-cat-tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .calc-cat-pill {
   appearance: none;
   background: #ffffff;
   border: 1px solid var(--border);
-  padding: 8px 16px;
-  font-size: 0.85rem;
+  padding: 7px 13px;
+  font-size: 0.81rem;
   font-weight: 600;
   color: var(--text-secondary);
   border-radius: var(--radius-pill);
@@ -144,7 +153,9 @@
   transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .calc-cat-pill:hover {
