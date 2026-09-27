@@ -117,13 +117,19 @@ html {
     scroll-margin-top: 86px;
 }
 
+html {
+    margin: 0;
+    padding: 0;
+    background-color: #F8FAFC;
+}
+
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
     overflow-x: hidden !important;
     font-family: var(--font-body);
-    background-color: var(--bg);
+    background-color: #FFFFFF;
     color: var(--text);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
