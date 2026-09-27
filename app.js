@@ -850,6 +850,20 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// Delegate whole card clicks to primary link within card
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.location-card:not(a), .offering-card:not(a)').forEach(card => {
+        const link = card.querySelector('a');
+        if (link) {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', (e) => {
+                if (e.target.closest('a') || e.target.closest('button')) return;
+                link.click();
+            });
+        }
+    });
+});
+
 // GitHub Pages subpath routing compatibility
 if (window.location.pathname.startsWith('/ss')) {
     document.addEventListener('DOMContentLoaded', () => {

@@ -1481,16 +1481,111 @@ h3 {
 
 @media (max-width: 900px) {
     .mobile-nav-toggle {
-        display: none !important;
+        display: flex !important;
     }
 
     .nav-links {
+        display: flex !important;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 300px;
+        max-width: 85vw;
+        height: 100vh;
+        background: #ffffff;
+        flex-direction: column;
+        padding: 24px 20px;
+        gap: 14px;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+        z-index: 1001;
+        transform: translateX(100%);
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: transform;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-links.mobile-open {
+        transform: translateX(0) !important;
+    }
+
+    .mobile-drawer-header {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 8px;
+        width: 100%;
+    }
+
+    .mobile-drawer-title {
+        font-family: var(--font-heading);
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: var(--text);
+    }
+
+    .mobile-drawer-close {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: var(--text-secondary);
+    }
+
+    .mobile-nav-overlay {
+        display: block !important;
+    }
+
+    .nav-item-dropdown {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        width: 100% !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 4px 0 8px 12px !important;
+        background: transparent !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+    }
+
+    .dropdown-arrow {
         display: none !important;
     }
 
-    .mobile-drawer-header,
-    .mobile-nav-overlay {
+    .nav-actions .btn-primary {
         display: none !important;
+    }
+
+    /* Zero-exit /store page exception */
+    .page-store .mobile-nav-toggle {
+        display: none !important;
+    }
+    .page-store .nav-links {
+        display: none !important;
+    }
+    .page-store .mobile-drawer-header,
+    .page-store .mobile-nav-overlay {
+        display: none !important;
+    }
+    .page-store .nav-actions .btn-primary {
+        display: inline-flex !important;
     }
 }
 
@@ -1520,6 +1615,9 @@ h3 {
         gap: 8px;
     }
     .nav-actions .btn-primary {
+        display: none !important;
+    }
+    .page-store .nav-actions .btn-primary {
         display: inline-flex !important;
         padding: 8px 14px;
         font-size: 0.82rem;
@@ -1529,9 +1627,9 @@ h3 {
         line-height: 1;
     }
     .mobile-nav-toggle {
-        display: none !important;
+        display: flex !important;
     }
-    .mobile-nav-overlay {
+    .page-store .mobile-nav-toggle {
         display: none !important;
     }
     .phone-link {
@@ -8819,11 +8917,16 @@ body.quote-modal-open .advisor-floating-unit,
         width: auto !important;
     }
 
-    .nav-links,
-    .mobile-nav-toggle,
-    .mobile-drawer-header,
+    .mobile-nav-toggle {
+        display: flex !important;
+    }
+
+    .mobile-drawer-header {
+        display: flex !important;
+    }
+
     .mobile-nav-overlay {
-        display: none !important;
+        display: block !important;
     }
 
     .nav-actions {
@@ -8833,6 +8936,18 @@ body.quote-modal-open .advisor-floating-unit,
     }
 
     .nav-actions .btn-primary {
+        display: none !important;
+    }
+
+    /* Zero-exit /store page exception */
+    .page-store .mobile-nav-toggle,
+    .page-store .nav-links,
+    .page-store .mobile-drawer-header,
+    .page-store .mobile-nav-overlay {
+        display: none !important;
+    }
+
+    .page-store .nav-actions .btn-primary {
         display: inline-flex !important;
         padding: 8px 14px !important;
         font-size: 0.82rem !important;
