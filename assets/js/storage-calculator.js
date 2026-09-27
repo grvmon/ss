@@ -56,63 +56,63 @@
   // =========================================================================
   const INDIAN_ITEMS = [
     // --- LIVING ROOM ---
-    { id: 'sofa_3', name: '3-Seater Sofa', cat: 'living', icon: 'weekend', cuFt: 50.4, w: 2.1, d: 0.85, h: 0.8, floorFootprint: 7.5, color: '#3b82f6' },
+    { id: 'sofa_3', name: '3-Seater Living Sofa', cat: 'living', icon: 'weekend', cuFt: 50.4, w: 2.1, d: 0.85, h: 0.8, floorFootprint: 7.5, color: '#3b82f6' },
     { id: 'sofa_2', name: '2-Seater Sofa', cat: 'living', icon: 'weekend', cuFt: 36.0, w: 1.5, d: 0.85, h: 0.8, floorFootprint: 5.5, color: '#60a5fa' },
-    { id: 'sofa_1', name: 'Armchair / Single Recliner', cat: 'living', icon: 'armchair', cuFt: 21.7, w: 0.85, d: 0.85, h: 0.85, floorFootprint: 4.0, color: '#93c5fd' },
+    { id: 'sofa_1', name: 'Recliner / Armchair', cat: 'living', icon: 'armchair', cuFt: 21.7, w: 0.85, d: 0.85, h: 0.85, floorFootprint: 4.0, color: '#93c5fd' },
     { id: 'sofa_l_shape', name: 'L-Shaped Sectional Sofa', cat: 'living', icon: 'weekend', cuFt: 86.8, w: 2.4, d: 1.6, h: 0.8, floorFootprint: 14.0, color: '#2563eb' },
-    { id: 'diwan', name: 'Diwan Bed with Box Storage', cat: 'living', icon: 'bed', cuFt: 29.4, w: 1.85, d: 0.9, h: 0.5, floorFootprint: 8.0, color: '#f59e0b' },
+    { id: 'diwan', name: 'Diwan Bed with Storage', cat: 'living', icon: 'bed', cuFt: 29.4, w: 1.85, d: 0.9, h: 0.5, floorFootprint: 8.0, color: '#f59e0b' },
     { id: 'center_table', name: 'Center / Coffee Table', cat: 'living', icon: 'table_restaurant', cuFt: 9.5, w: 1.0, d: 0.6, h: 0.45, floorFootprint: 2.0, color: '#d97706' },
-    { id: 'tv_unit', name: 'TV Unit & Media Console', cat: 'living', icon: 'tv', cuFt: 11.9, w: 1.5, d: 0.45, h: 0.5, floorFootprint: 3.5, color: '#78350f' },
-    { id: 'led_tv', name: 'LED TV 43-65" (Boxed)', cat: 'living', icon: 'tv', cuFt: 7.6, w: 1.4, d: 0.18, h: 0.85, floorFootprint: 1.0, color: '#1e293b' },
-    { id: 'pooja_mandir', name: 'Pooja Mandir (Wooden/Marble)', cat: 'living', icon: 'temple_hindu', cuFt: 11.5, w: 0.6, d: 0.45, h: 1.2, floorFootprint: 2.0, color: '#b45309' },
+    { id: 'tv_unit', name: 'TV Entertainment Unit', cat: 'living', icon: 'tv', cuFt: 11.9, w: 1.5, d: 0.45, h: 0.5, floorFootprint: 3.5, color: '#78350f' },
+    { id: 'led_tv', name: 'LED Smart TV (Boxed)', cat: 'living', icon: 'tv', cuFt: 7.6, w: 1.4, d: 0.18, h: 0.85, floorFootprint: 1.0, color: '#1e293b' },
+    { id: 'pooja_mandir', name: 'Pooja Mandir', cat: 'living', icon: 'temple_hindu', cuFt: 11.5, w: 0.6, d: 0.45, h: 1.2, floorFootprint: 2.0, color: '#b45309' },
     { id: 'bookshelf', name: 'Bookshelf / Display Rack', cat: 'living', icon: 'shelves', cuFt: 15.8, w: 0.8, d: 0.35, h: 1.6, floorFootprint: 2.5, color: '#475569' },
-    { id: 'shoe_rack', name: 'Shoe Rack / Cabinet', cat: 'living', icon: 'steps', cuFt: 8.9, w: 0.8, d: 0.35, h: 0.9, floorFootprint: 1.8, color: '#64748b' },
+    { id: 'shoe_rack', name: 'Shoe Rack Cabinet', cat: 'living', icon: 'steps', cuFt: 8.9, w: 0.8, d: 0.35, h: 0.9, floorFootprint: 1.8, color: '#64748b' },
 
     // --- BEDROOM ---
-    { id: 'bed_king', name: 'King Double Bed with Storage', cat: 'bedroom', icon: 'bed', cuFt: 58.8, w: 2.0, d: 1.85, h: 0.45, floorFootprint: 8.0, color: '#10b981' },
+    { id: 'bed_king', name: 'King Bed with Storage', cat: 'bedroom', icon: 'bed', cuFt: 58.8, w: 2.0, d: 1.85, h: 0.45, floorFootprint: 8.0, color: '#10b981' },
     { id: 'bed_queen', name: 'Queen Double Bed', cat: 'bedroom', icon: 'bed', cuFt: 49.3, w: 2.0, d: 1.55, h: 0.45, floorFootprint: 7.0, color: '#059669' },
     { id: 'bed_single', name: 'Single Bed / Diwan Cot', cat: 'bedroom', icon: 'single_bed', cuFt: 25.5, w: 1.9, d: 0.95, h: 0.4, floorFootprint: 4.5, color: '#34d399' },
     { id: 'mattress_double', name: 'King / Queen Mattress', cat: 'bedroom', icon: 'bed', cuFt: 22.6, w: 2.0, d: 1.6, h: 0.2, floorFootprint: 2.5, color: '#a7f3d0' },
-    { id: 'almirah_2door', name: '2-Door Wardrobe / Steel Almirah', cat: 'bedroom', icon: 'dresser', cuFt: 34.1, w: 0.9, d: 0.55, h: 1.95, floorFootprint: 5.0, color: '#047857' },
+    { id: 'almirah_2door', name: '2-Door Wardrobe / Almirah', cat: 'bedroom', icon: 'dresser', cuFt: 34.1, w: 0.9, d: 0.55, h: 1.95, floorFootprint: 5.0, color: '#047857' },
     { id: 'almirah_3door', name: '3-Door Large Wardrobe', cat: 'bedroom', icon: 'dresser', cuFt: 53.0, w: 1.4, d: 0.55, h: 1.95, floorFootprint: 7.5, color: '#065f46' },
     { id: 'dressing_table', name: 'Dressing Table with Mirror', cat: 'bedroom', icon: 'dresser', cuFt: 21.6, w: 0.8, d: 0.45, h: 1.7, floorFootprint: 3.5, color: '#14b8a6' },
     { id: 'bedside_tables', name: 'Bedside Tables (Pair)', cat: 'bedroom', icon: 'table_restaurant', cuFt: 6.4, w: 0.45, d: 0.4, h: 0.5, floorFootprint: 1.2, color: '#0d9488' },
-    { id: 'razai_bundles', name: 'Gadda / Razai / Quilt Bundles', cat: 'bedroom', icon: 'inventory_2', cuFt: 9.5, w: 0.9, d: 0.6, h: 0.5, floorFootprint: 1.2, color: '#6ee7b7' },
+    { id: 'razai_bundles', name: 'Quilt & Bedding Bundle', cat: 'bedroom', icon: 'inventory_2', cuFt: 9.5, w: 0.9, d: 0.6, h: 0.5, floorFootprint: 1.2, color: '#6ee7b7' },
 
     // --- KITCHEN & DINING ---
-    { id: 'fridge_double', name: 'Double Door Refrigerator (250-450L)', cat: 'kitchen', icon: 'kitchen', cuFt: 30.3, w: 0.7, d: 0.7, h: 1.75, floorFootprint: 5.0, color: '#0284c7' },
-    { id: 'fridge_single', name: 'Single Door Refrigerator (190L)', cat: 'kitchen', icon: 'kitchen', cuFt: 17.9, w: 0.6, d: 0.65, h: 1.3, floorFootprint: 4.0, color: '#38bdf8' },
-    { id: 'dining_6', name: 'Dining Table (6-Seater)', cat: 'kitchen', icon: 'table_restaurant', cuFt: 35.8, w: 1.5, d: 0.9, h: 0.75, floorFootprint: 6.0, color: '#e11d48' },
-    { id: 'dining_4', name: 'Dining Table (4-Seater)', cat: 'kitchen', icon: 'table_restaurant', cuFt: 23.3, w: 1.1, d: 0.8, h: 0.75, floorFootprint: 4.5, color: '#f43f5e' },
+    { id: 'fridge_double', name: 'Double Door Refrigerator', cat: 'kitchen', icon: 'kitchen', cuFt: 30.3, w: 0.7, d: 0.7, h: 1.75, floorFootprint: 5.0, color: '#0284c7' },
+    { id: 'fridge_single', name: 'Single Door Refrigerator', cat: 'kitchen', icon: 'kitchen', cuFt: 17.9, w: 0.6, d: 0.65, h: 1.3, floorFootprint: 4.0, color: '#38bdf8' },
+    { id: 'dining_6', name: '6-Seater Dining Table', cat: 'kitchen', icon: 'table_restaurant', cuFt: 35.8, w: 1.5, d: 0.9, h: 0.75, floorFootprint: 6.0, color: '#e11d48' },
+    { id: 'dining_4', name: '4-Seater Dining Table', cat: 'kitchen', icon: 'table_restaurant', cuFt: 23.3, w: 1.1, d: 0.8, h: 0.75, floorFootprint: 4.5, color: '#f43f5e' },
     { id: 'dining_chairs', name: 'Dining Chairs (Set of 4)', cat: 'kitchen', icon: 'chair', cuFt: 18.0, w: 0.5, d: 0.5, h: 0.95, floorFootprint: 2.5, color: '#fda4af' },
     { id: 'microwave', name: 'Microwave Oven / OTG', cat: 'kitchen', icon: 'microwave', cuFt: 3.1, w: 0.55, d: 0.45, h: 0.35, floorFootprint: 0.5, color: '#9f1239' },
-    { id: 'gas_stove_cyl', name: 'Gas Stove & Cylinder (Empty)', cat: 'kitchen', icon: 'propane_tank', cuFt: 5.5, w: 0.6, d: 0.4, h: 0.65, floorFootprint: 1.5, color: '#be123c' },
-    { id: 'water_purifier', name: 'RO Water Purifier System', cat: 'kitchen', icon: 'water_drop', cuFt: 2.3, w: 0.4, d: 0.3, h: 0.55, floorFootprint: 0.5, color: '#06b6d4' },
+    { id: 'gas_stove_cyl', name: 'Gas Stove & Cylinder', cat: 'kitchen', icon: 'propane_tank', cuFt: 5.5, w: 0.6, d: 0.4, h: 0.65, floorFootprint: 1.5, color: '#be123c' },
+    { id: 'water_purifier', name: 'RO Water Purifier', cat: 'kitchen', icon: 'water_drop', cuFt: 2.3, w: 0.4, d: 0.3, h: 0.55, floorFootprint: 0.5, color: '#06b6d4' },
 
     // --- APPLIANCES & UTILITIES ---
-    { id: 'washing_front', name: 'Front Load Washing Machine', cat: 'appliances', icon: 'local_laundry_service', cuFt: 10.8, w: 0.6, d: 0.6, h: 0.85, floorFootprint: 3.8, color: '#8b5cf6' },
-    { id: 'washing_top', name: 'Top Load Washing Machine', cat: 'appliances', icon: 'local_laundry_service', cuFt: 9.6, w: 0.55, d: 0.55, h: 0.9, floorFootprint: 3.2, color: '#a78bfa' },
-    { id: 'split_ac', name: 'Split AC (Indoor + Outdoor)', cat: 'appliances', icon: 'mode_fan', cuFt: 6.7, w: 0.9, d: 0.35, h: 0.6, floorFootprint: 1.0, color: '#7c3aed' },
+    { id: 'washing_front', name: 'Front Load Washer', cat: 'appliances', icon: 'local_laundry_service', cuFt: 10.8, w: 0.6, d: 0.6, h: 0.85, floorFootprint: 3.8, color: '#8b5cf6' },
+    { id: 'washing_top', name: 'Top Load Washer', cat: 'appliances', icon: 'local_laundry_service', cuFt: 9.6, w: 0.55, d: 0.55, h: 0.9, floorFootprint: 3.2, color: '#a78bfa' },
+    { id: 'split_ac', name: 'Split AC (Indoor & Out)', cat: 'appliances', icon: 'mode_fan', cuFt: 6.7, w: 0.9, d: 0.35, h: 0.6, floorFootprint: 1.0, color: '#7c3aed' },
     { id: 'window_ac', name: 'Window AC Unit', cat: 'appliances', icon: 'mode_fan', cuFt: 6.7, w: 0.65, d: 0.65, h: 0.45, floorFootprint: 1.8, color: '#6d28d9' },
     { id: 'air_cooler', name: 'Desert Air Cooler', cat: 'appliances', icon: 'air', cuFt: 14.5, w: 0.65, d: 0.55, h: 1.15, floorFootprint: 3.5, color: '#c4b5fd' },
-    { id: 'inverter_battery', name: 'Inverter + Heavy Battery Set', cat: 'appliances', icon: 'battery_charging_full', cuFt: 4.4, w: 0.5, d: 0.45, h: 0.55, floorFootprint: 2.0, color: '#4c1d95' },
+    { id: 'inverter_battery', name: 'Inverter & Battery Set', cat: 'appliances', icon: 'battery_charging_full', cuFt: 4.4, w: 0.5, d: 0.45, h: 0.55, floorFootprint: 2.0, color: '#4c1d95' },
     { id: 'geyser', name: 'Geyser / Water Heater', cat: 'appliances', icon: 'water_heater', cuFt: 4.6, w: 0.45, d: 0.45, h: 0.65, floorFootprint: 0.8, color: '#ec4899' },
 
     // --- BOXES, TRUNKS & LUGGAGE ---
-    { id: 'box_large', name: 'Large Moving Carton (Clothes)', cat: 'boxes', icon: 'inventory_2', cuFt: 4.3, w: 0.6, d: 0.45, h: 0.45, floorFootprint: 0.6, color: '#f59e0b' },
-    { id: 'box_medium', name: 'Medium Carton (Books/Kitchen)', cat: 'boxes', icon: 'inventory_2', cuFt: 2.5, w: 0.45, d: 0.4, h: 0.4, floorFootprint: 0.4, color: '#fbbf24' },
-    { id: 'box_small', name: 'Small Carton (Crockery)', cat: 'boxes', icon: 'inventory_2', cuFt: 1.1, w: 0.35, d: 0.3, h: 0.3, floorFootprint: 0.2, color: '#fde68a' },
-    { id: 'trunk_steel', name: 'Steel Trunk / Metal Peti', cat: 'boxes', icon: 'luggage', cuFt: 8.3, w: 0.95, d: 0.55, h: 0.45, floorFootprint: 4.5, color: '#64748b' },
-    { id: 'suitcase_large', name: 'Large Strolley Suitcase', cat: 'boxes', icon: 'luggage', cuFt: 4.0, w: 0.75, d: 0.5, h: 0.3, floorFootprint: 0.8, color: '#475569' },
-    { id: 'suitcase_cabin', name: 'Cabin Bag / Duffle Bag', cat: 'boxes', icon: 'luggage', cuFt: 1.7, w: 0.55, d: 0.35, h: 0.25, floorFootprint: 0.4, color: '#94a3b8' },
+    { id: 'box_large', name: 'Large Moving Carton', cat: 'boxes', icon: 'inventory_2', cuFt: 4.3, w: 0.6, d: 0.45, h: 0.45, floorFootprint: 0.6, color: '#f59e0b' },
+    { id: 'box_medium', name: 'Medium Moving Carton', cat: 'boxes', icon: 'inventory_2', cuFt: 2.5, w: 0.45, d: 0.4, h: 0.4, floorFootprint: 0.4, color: '#fbbf24' },
+    { id: 'box_small', name: 'Small Moving Carton', cat: 'boxes', icon: 'inventory_2', cuFt: 1.1, w: 0.35, d: 0.3, h: 0.3, floorFootprint: 0.2, color: '#fde68a' },
+    { id: 'trunk_steel', name: 'Steel Trunk / Sandook', cat: 'boxes', icon: 'luggage', cuFt: 8.3, w: 0.95, d: 0.55, h: 0.45, floorFootprint: 4.5, color: '#64748b' },
+    { id: 'suitcase_large', name: 'Large Trolley Suitcase', cat: 'boxes', icon: 'luggage', cuFt: 4.0, w: 0.75, d: 0.5, h: 0.3, floorFootprint: 0.8, color: '#475569' },
+    { id: 'suitcase_cabin', name: 'Cabin Trolley / Duffle', cat: 'boxes', icon: 'luggage', cuFt: 1.7, w: 0.55, d: 0.35, h: 0.25, floorFootprint: 0.4, color: '#94a3b8' },
 
     // --- OFFICE, VEHICLES & EXTRA ---
-    { id: 'two_wheeler', name: 'Two-Wheeler (Activa / Motorcycle)', cat: 'office_vehicle', icon: 'two_wheeler', cuFt: 54.0, w: 1.9, d: 0.7, h: 1.15, floorFootprint: 15.0, color: '#dc2626' },
+    { id: 'two_wheeler', name: 'Two-Wheeler / Scooter', cat: 'office_vehicle', icon: 'two_wheeler', cuFt: 54.0, w: 1.9, d: 0.7, h: 1.15, floorFootprint: 15.0, color: '#dc2626' },
     { id: 'bicycle', name: 'Bicycle (Adult / Kids)', cat: 'office_vehicle', icon: 'pedal_bike', cuFt: 36.0, w: 1.7, d: 0.6, h: 1.0, floorFootprint: 7.0, color: '#ea580c' },
-    { id: 'office_desk', name: 'Office Workstation / Study Desk', cat: 'office_vehicle', icon: 'desk', cuFt: 19.1, w: 1.2, d: 0.6, h: 0.75, floorFootprint: 4.5, color: '#0891b2' },
+    { id: 'office_desk', name: 'Office Workstation / Desk', cat: 'office_vehicle', icon: 'desk', cuFt: 19.1, w: 1.2, d: 0.6, h: 0.75, floorFootprint: 4.5, color: '#0891b2' },
     { id: 'office_chair', name: 'Ergonomic Office Chair', cat: 'office_vehicle', icon: 'chair', cuFt: 17.2, w: 0.65, d: 0.65, h: 1.15, floorFootprint: 3.5, color: '#0e7490' },
-    { id: 'archive_box', name: 'Archival Document File Box', cat: 'office_vehicle', icon: 'folder', cuFt: 1.3, w: 0.4, d: 0.32, h: 0.28, floorFootprint: 0.25, color: '#ca8a04' },
-    { id: 'fitness_gym', name: 'Treadmill / Exercise Gym Cycle', cat: 'office_vehicle', icon: 'fitness_center', cuFt: 55.1, w: 1.6, d: 0.75, h: 1.3, floorFootprint: 12.0, color: '#16a34a' }
+    { id: 'archive_box', name: 'Archival Document Box', cat: 'office_vehicle', icon: 'folder', cuFt: 1.3, w: 0.4, d: 0.32, h: 0.28, floorFootprint: 0.25, color: '#ca8a04' },
+    { id: 'fitness_gym', name: 'Treadmill / Gym Cycle', cat: 'office_vehicle', icon: 'fitness_center', cuFt: 55.1, w: 1.6, d: 0.75, h: 1.3, floorFootprint: 12.0, color: '#16a34a' }
   ];
 
   // =========================================================================
@@ -872,8 +872,7 @@
           <div class="inv-card-header">
             <span class="material-symbols-rounded inv-card-icon" style="color: ${it.color};">${it.icon}</span>
             <div class="inv-card-info">
-              <span class="inv-card-name">${it.name}</span>
-              <span class="inv-card-sub">Approx. ${it.cuFt} cu. ft.</span>
+              <span class="inv-card-name" title="${it.name}">${it.name}</span>
             </div>
           </div>
           <div class="inv-card-controls">
