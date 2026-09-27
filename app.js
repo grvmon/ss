@@ -41,18 +41,62 @@ function closeMobileMenu() {
     document.body.classList.remove('no-scroll');
 }
 
-// 2. Quote Modal Toggle Functions
-function openQuoteModal() {
-    const modal = document.getElementById('quote-modal');
-    if (modal) modal.classList.add('open');
-    document.body.classList.add('quote-modal-open');
+// 2. Quote & Policy Modal Toggle Functions
+function openQuoteModal(pref) {
+    if (window.openModal) {
+        window.openModal(pref);
+    } else {
+        const modal = document.getElementById('quote-modal');
+        if (modal) {
+            if (pref) {
+                const target = document.getElementById('storage-size');
+                if (target) target.value = pref;
+            }
+            modal.style.display = 'flex';
+            modal.classList.add('lf-modal-open');
+            modal.classList.add('open');
+            document.body.classList.add('quote-modal-open');
+        }
+    }
 }
 
 function closeQuoteModal(event) {
-    const modal = document.getElementById('quote-modal');
+    if (window.closeModal) {
+        window.closeModal();
+    } else {
+        const modal = document.getElementById('quote-modal');
+        if (!event || event.target === modal) {
+            if (modal) {
+                modal.classList.remove('lf-modal-open');
+                modal.classList.remove('open');
+                modal.style.display = 'none';
+            }
+            document.body.classList.remove('quote-modal-open');
+        }
+    }
+}
+
+function openTermsModal() {
+    const modal = document.getElementById('terms-modal');
+    if (modal) modal.classList.add('open');
+}
+
+function closeTermsModal(event) {
+    const modal = document.getElementById('terms-modal');
     if (!event || event.target === modal) {
         if (modal) modal.classList.remove('open');
-        document.body.classList.remove('quote-modal-open');
+    }
+}
+
+function openPrivacyModal() {
+    const modal = document.getElementById('privacy-modal');
+    if (modal) modal.classList.add('open');
+}
+
+function closePrivacyModal(event) {
+    const modal = document.getElementById('privacy-modal');
+    if (!event || event.target === modal) {
+        if (modal) modal.classList.remove('open');
     }
 }
 

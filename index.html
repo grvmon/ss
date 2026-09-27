@@ -1573,6 +1573,41 @@
         </div>
     </div>
 
+    <!-- On-Page Terms & Conditions Modal (Zero Exit) -->
+    <div id="terms-modal" class="modal-overlay" onclick="closeTermsModal(event)">
+        <div class="modal-card shadow-lg policy-card" onclick="event.stopPropagation()" style="max-width: 600px; max-height: 85vh; overflow-y: auto;">
+            <div class="modal-header">
+                <h2>Terms &amp; Conditions</h2>
+                <button class="modal-close" onclick="closeTermsModal()" aria-label="Close Terms modal"><span class="material-symbols-rounded">close</span></button>
+            </div>
+            <div style="font-size: 0.9rem; line-height: 1.6; color: var(--text);">
+                <p><strong>1. Storage Agreement:</strong> Self Storage India Pvt. Ltd. provides private, clean, and secure lockable storage rooms and lockers across Delhi NCR.</p>
+                <p style="margin-top: 10px;"><strong>2. Exclusive Access:</strong> You hold the primary lock and sole key to your unit. Self Storage India personnel do not enter your private room without your explicit written authorization or legal order.</p>
+                <p style="margin-top: 10px;"><strong>3. Prohibited Items:</strong> Flammables, explosives, hazardous chemicals, perishable foods, illegal items, living organisms, and contraband are strictly prohibited in all facilities.</p>
+                <p style="margin-top: 10px;"><strong>4. Flexible Billing:</strong> Storage plans are billed on a flexible monthly basis with clear, transparent pricing and no hidden maintenance surcharges.</p>
+                <p style="margin-top: 10px;"><strong>5. Security &amp; Safety:</strong> Facilities are protected by round-the-clock recorded CCTV, security personnel, fire detection systems, and regular pest control.</p>
+                <button class="btn btn-primary full-width" style="margin-top: 20px;" onclick="closeTermsModal()">Close Terms</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- On-Page Privacy Policy Modal (Zero Exit) -->
+    <div id="privacy-modal" class="modal-overlay" onclick="closePrivacyModal(event)">
+        <div class="modal-card shadow-lg policy-card" onclick="event.stopPropagation()" style="max-width: 600px; max-height: 85vh; overflow-y: auto;">
+            <div class="modal-header">
+                <h2>Privacy Policy</h2>
+                <button class="modal-close" onclick="closePrivacyModal()" aria-label="Close Privacy modal"><span class="material-symbols-rounded">close</span></button>
+            </div>
+            <div style="font-size: 0.9rem; line-height: 1.6; color: var(--text);">
+                <p><strong>Commitment to Privacy:</strong> Self Storage India respects and protects your personal data in accordance with Indian information technology regulations.</p>
+                <p style="margin-top: 10px;"><strong>Data Collection:</strong> We collect contact information (such as your name, mobile number, and storage preferences) solely for the purpose of providing storage consultation, pricing estimates, and customer service.</p>
+                <p style="margin-top: 10px;"><strong>Zero Third-Party Data Sharing:</strong> Your personal contact details are never rented, sold, or shared with third-party marketing companies.</p>
+                <p style="margin-top: 10px;"><strong>Data Security:</strong> Form submissions and communication channels are encrypted to ensure complete privacy and confidentiality.</p>
+                <button class="btn btn-primary full-width" style="margin-top: 20px;" onclick="closePrivacyModal()">Close Privacy Policy</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Video Modal -->
     <div id="video-modal" class="modal-overlay" onclick="closeVideoModal(event)">
         <div class="modal-card shadow-lg video-card" onclick="event.stopPropagation()">
