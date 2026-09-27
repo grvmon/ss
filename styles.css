@@ -5144,7 +5144,8 @@ h3 {
     gap: 8px;
 }
 
-.gallery-strip-header h2 {
+.gallery-strip-header h2,
+    .ncr-blog-layout h2 {
     font-size: clamp(1.3rem, 2vw, 1.7rem);
     font-weight: 700;
     color: var(--text);
@@ -9054,7 +9055,8 @@ body.quote-modal-open .advisor-floating-unit,
     .section-header-centered h1,
     .section-header-centered h2,
     .intro-header-block h2,
-    .gallery-strip-header h2 {
+    .gallery-strip-header h2,
+    .ncr-blog-layout h2 {
         font-size: 1.45rem !important;
         line-height: 1.22 !important;
         letter-spacing: -0.02em !important;
