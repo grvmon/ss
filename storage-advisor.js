@@ -1068,21 +1068,23 @@
       Store.set("advisor_minimized", "0");
     }
 
-    /* Timed entrance animation - smooth, prompt 350ms entrance */
-    setTimeout(function() {
+    /* Show only after scrolling past the first fold (approx 400px or half screen height) */
+    var handleScrollVisibility = function() {
       if (floatingUnit) {
-        floatingUnit.classList.add("is-visible");
-      }
-    }, 350);
-
-    /* Also show immediately on scroll */
-    var onFirstScroll = function() {
-      if (floatingUnit && !floatingUnit.classList.contains("is-visible")) {
-        floatingUnit.classList.add("is-visible");
-        window.removeEventListener("scroll", onFirstScroll);
+        if (window.scrollY > Math.min(window.innerHeight * 0.5, 400)) {
+          if (!floatingUnit.classList.contains("is-visible")) {
+            floatingUnit.classList.add("is-visible");
+          }
+        } else {
+          if (floatingUnit.classList.contains("is-visible")) {
+            floatingUnit.classList.remove("is-visible");
+          }
+        }
       }
     };
-    window.addEventListener("scroll", onFirstScroll, { passive: true });
+    window.addEventListener("scroll", handleScrollVisibility, { passive: true });
+    // Run once on load just in case they load halfway down the page
+    handleScrollVisibility();
   }
 
   /* Expose globals */
