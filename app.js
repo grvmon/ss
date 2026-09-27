@@ -910,3 +910,11 @@ if (window.location.pathname.startsWith('/ss')) {
         (document.body || document.head || document.documentElement).appendChild(s);
     }
 })();
+
+
+// Prevent transition jerk on load
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        document.body.classList.remove('preload');
+    }, 50);
+});
