@@ -780,6 +780,7 @@
 
   function prefillHidden() {
     var gclid = document.getElementById("lfGclid");
+    var zcGad = document.getElementById("zc_gad");
     var fclid = document.getElementById("lfFclid");
     var utmSource = document.getElementById("lfUtmSource");
     var utmMedium = document.getElementById("lfUtmMedium");
@@ -788,7 +789,9 @@
     var utmContent = document.getElementById("lfUtmContent");
     var sourceUrl = document.getElementById("lfSourceUrl");
 
-    if (gclid) gclid.value       = getParam("gclid");
+    var gclidVal = (zcGad && zcGad.value) ? zcGad.value : getParam("gclid");
+    if (gclid) gclid.value = gclidVal;
+    if (zcGad && !zcGad.value && gclidVal) zcGad.value = gclidVal;
     if (fclid) fclid.value       = getParam("fclid");
     if (utmSource) utmSource.value   = getParam("utm_source");
     if (utmMedium) utmMedium.value   = getParam("utm_medium");
@@ -878,7 +881,8 @@
     var utmCampaign = getParam("utm_campaign");
     var utmTerm     = getParam("utm_term");
     var utmContent  = getParam("utm_content");
-    var gclidVal    = getParam("gclid");
+    var zcGadElem   = document.getElementById("zc_gad");
+    var gclidVal    = (zcGadElem && zcGadElem.value) ? zcGadElem.value : getParam("gclid");
     var fclidVal    = getParam("fclid");
 
     var descParts = [
