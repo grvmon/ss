@@ -1362,7 +1362,7 @@ h3 {
 }
 
 .toast.show, .toast-notification.show {
-    display: flex !important;
+    display: flex !important; visibility: visible !important; opacity: 1 !important; color: var(--text-dark, #111) !important; z-index: 9999 !important;
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
@@ -1481,11 +1481,11 @@ h3 {
 
 @media (max-width: 900px) {
     .mobile-nav-toggle {
-        display: flex !important;
+        display: flex !important; visibility: visible !important; opacity: 1 !important; color: var(--text-dark, #111) !important; z-index: 9999 !important;
     }
 
     .nav-links {
-        display: flex !important;
+        display: flex !important; visibility: visible !important; opacity: 1 !important; color: var(--text-dark, #111) !important; z-index: 9999 !important;
         position: fixed;
         top: 0;
         right: 0;
@@ -1521,7 +1521,7 @@ h3 {
     }
 
     .mobile-drawer-header {
-        display: flex !important;
+        display: flex !important; visibility: visible !important; opacity: 1 !important; color: var(--text-dark, #111) !important; z-index: 9999 !important;
         align-items: center;
         justify-content: space-between;
         padding-bottom: 16px;
@@ -1543,7 +1543,7 @@ h3 {
         border-radius: 50%;
         width: 36px;
         height: 36px;
-        display: flex !important;
+        display: flex !important; visibility: visible !important; opacity: 1 !important; color: var(--text-dark, #111) !important; z-index: 9999 !important;
         align-items: center;
         justify-content: center;
         cursor: pointer;
@@ -1571,7 +1571,7 @@ h3 {
         border: none !important;
         padding: 4px 0 8px 12px !important;
         background: transparent !important;
-        display: flex !important;
+        display: flex !important; visibility: visible !important; opacity: 1 !important; color: var(--text-dark, #111) !important; z-index: 9999 !important;
         flex-direction: column !important;
         gap: 6px !important;
     }
@@ -1638,7 +1638,7 @@ h3 {
         line-height: 1;
     }
     .mobile-nav-toggle {
-        display: flex !important;
+        display: flex !important; visibility: visible !important; opacity: 1 !important; color: var(--text-dark, #111) !important; z-index: 9999 !important;
     }
     .page-store .mobile-nav-toggle {
         display: none !important;
@@ -8108,7 +8108,7 @@ body.quote-modal-open .advisor-floating-unit {
 }
 
 .lf-modal-overlay.lf-modal-open {
-  display: flex !important;
+  display: flex !important; visibility: visible !important; opacity: 1 !important; color: var(--text-dark, #111) !important; z-index: 9999 !important;
   opacity: 1 !important;
   visibility: visible !important;
   pointer-events: auto !important;
@@ -8476,7 +8476,7 @@ input:-webkit-autofill {
 }
 
 .lf-phone-row {
-  display: flex !important;
+  display: flex !important; visibility: visible !important; opacity: 1 !important; color: var(--text-dark, #111) !important; z-index: 9999 !important;
   align-items: center !important;
   width: 100% !important;
   position: relative !important;
@@ -8551,7 +8551,7 @@ input:-webkit-autofill {
   }
 
   .lf-cc-panel {
-    display: flex !important;
+    display: flex !important; visibility: visible !important; opacity: 1 !important; color: var(--text-dark, #111) !important; z-index: 9999 !important;
     visibility: hidden;
     position: fixed !important;
     bottom: 0 !important;
@@ -8912,14 +8912,14 @@ body.quote-modal-open .advisor-floating-unit,
     .nav-container {
         height: 60px !important;
         padding: 0 16px !important;
-        display: flex !important;
+        display: flex !important; visibility: visible !important; opacity: 1 !important; color: var(--text-dark, #111) !important; z-index: 9999 !important;
         align-items: center !important;
         justify-content: space-between !important;
     }
 
     .brand-logo {
         height: 44px !important;
-        display: flex !important;
+        display: flex !important; visibility: visible !important; opacity: 1 !important; color: var(--text-dark, #111) !important; z-index: 9999 !important;
         align-items: center !important;
     }
 
@@ -8929,11 +8929,11 @@ body.quote-modal-open .advisor-floating-unit,
     }
 
     .mobile-nav-toggle {
-        display: flex !important;
+        display: flex !important; visibility: visible !important; opacity: 1 !important; color: var(--text-dark, #111) !important; z-index: 9999 !important;
     }
 
     .mobile-drawer-header {
-        display: flex !important;
+        display: flex !important; visibility: visible !important; opacity: 1 !important; color: var(--text-dark, #111) !important; z-index: 9999 !important;
     }
 
     .mobile-nav-overlay {
@@ -8941,7 +8941,7 @@ body.quote-modal-open .advisor-floating-unit,
     }
 
     .nav-actions {
-        display: flex !important;
+        display: flex !important; visibility: visible !important; opacity: 1 !important; color: var(--text-dark, #111) !important; z-index: 9999 !important;
         align-items: center !important;
         gap: 12px !important;
     }
@@ -8999,7 +8999,7 @@ body.quote-modal-open .advisor-floating-unit,
     .gallery-strip-header {
         margin: 0 auto 22px !important;
         text-align: center !important;
-        display: flex !important;
+        display: flex !important; visibility: visible !important; opacity: 1 !important; color: var(--text-dark, #111) !important; z-index: 9999 !important;
         flex-direction: column !important;
         align-items: center !important;
         padding: 0 4px !important;
@@ -9052,14 +9052,14 @@ body.quote-modal-open .advisor-floating-unit,
     }
 
     .hero-content-wrapper {
-        display: flex !important;
+        display: flex !important; visibility: visible !important; opacity: 1 !important; color: var(--text-dark, #111) !important; z-index: 9999 !important;
         flex-direction: column !important;
         gap: 18px !important;
         padding: 0 16px !important;
     }
 
     .hero-text-block {
-        display: flex !important;
+        display: flex !important; visibility: visible !important; opacity: 1 !important; color: var(--text-dark, #111) !important; z-index: 9999 !important;
         flex-direction: column !important;
         align-items: flex-start !important;
         width: 100% !important;
@@ -9086,7 +9086,7 @@ body.quote-modal-open .advisor-floating-unit,
     }
 
     .hero-action-buttons {
-        display: flex !important;
+        display: flex !important; visibility: visible !important; opacity: 1 !important; color: var(--text-dark, #111) !important; z-index: 9999 !important;
         flex-direction: column !important;
         gap: 8px !important;
         width: 100% !important;
@@ -9195,7 +9195,7 @@ body.quote-modal-open .advisor-floating-unit,
 
     /* 8. Why Self Storage Section */
     .split-columns-layout {
-        display: flex !important;
+        display: flex !important; visibility: visible !important; opacity: 1 !important; color: var(--text-dark, #111) !important; z-index: 9999 !important;
         flex-direction: column !important;
         gap: 16px !important;
         margin-bottom: 20px !important;
@@ -9225,7 +9225,7 @@ body.quote-modal-open .advisor-floating-unit,
     }
 
     .why-benefits-list {
-        display: flex !important;
+        display: flex !important; visibility: visible !important; opacity: 1 !important; color: var(--text-dark, #111) !important; z-index: 9999 !important;
         flex-direction: column !important;
         gap: 8px !important;
         margin-top: 10px !important;
@@ -9376,7 +9376,7 @@ body.quote-modal-open .advisor-floating-unit,
 
     /* 15. FAQ Section */
     .faq-list {
-        display: flex !important;
+        display: flex !important; visibility: visible !important; opacity: 1 !important; color: var(--text-dark, #111) !important; z-index: 9999 !important;
         flex-direction: column !important;
         gap: 8px !important;
         margin-bottom: 20px !important;
