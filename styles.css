@@ -281,7 +281,7 @@ h3 {
     align-items: center;
     gap: 6px;
     padding: 9px 16px;
-    border-radius: 10px;
+    border-radius: 12px;
     position: relative;
     cursor: pointer;
     text-decoration: none;
@@ -346,7 +346,7 @@ h3 {
     transform: translateX(-50%) translateY(8px);
     background: #ffffff;
     border: 1px solid rgba(226, 232, 240, 0.95);
-    border-radius: 14px;
+    border-radius: 12px;
     padding: 12px;
     width: 320px;
     display: flex;
@@ -669,7 +669,7 @@ h3 {
     background-color: var(--primary-light);
     border: 1px solid rgba(24, 108, 236, 0.18);
     padding: 6px 14px;
-    border-radius: 20px;
+    border-radius: var(--radius-card);
     display: inline-flex;
     align-items: center;
     cursor: default;
@@ -886,7 +886,7 @@ h3 {
     color: var(--primary);
     background: var(--primary-light);
     padding: 6px 16px;
-    border-radius: 20px;
+    border-radius: var(--radius-card);
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -943,7 +943,7 @@ h3 {
 .press-card {
     background: #FFFFFF;
     border: 1px solid rgba(226, 232, 240, 0.9);
-    border-radius: 14px;
+    border-radius: 12px;
     padding: 20px 22px;
     display: flex;
     flex-direction: column;
@@ -968,7 +968,7 @@ h3 {
     width: 42px;
     height: 42px;
     object-fit: contain;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 1px solid rgba(0, 0, 0, 0.06);
     background: #FFFFFF;
     padding: 4px;
@@ -1101,7 +1101,7 @@ h3 {
     border: 1px solid #cbd5e1;
     color: #1e293b;
     padding: 4px 10px;
-    border-radius: 20px;
+    border-radius: var(--radius-card);
     font-size: 11.5px;
     font-weight: 600;
     display: inline-flex;
@@ -1143,7 +1143,7 @@ h3 {
     padding: 6px 16px;
     background-color: var(--primary-light);
     border: 1px solid rgba(24, 108, 236, 0.12);
-    border-radius: 20px;
+    border-radius: var(--radius-card);
     font-size: 0.82rem;
     font-weight: 600;
     color: var(--text-secondary);
@@ -2339,7 +2339,7 @@ h3 {
     margin-bottom: 24px;
     background: #ffffff;
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: 12px;
     padding: 16px 20px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
@@ -2656,7 +2656,7 @@ h3 {
 .size-guide-card {
     background: #ffffff;
     border: 1px solid var(--border);
-    border-radius: 16px;
+    border-radius: 12px;
     padding: 24px;
     display: flex;
     flex-direction: column;
@@ -2785,7 +2785,7 @@ h3 {
 .calc-how-card {
     background: #ffffff;
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: 12px;
     padding: 24px;
     display: flex;
     flex-direction: column;
@@ -2827,7 +2827,7 @@ h3 {
 .calc-expert-strip {
     background: linear-gradient(135deg, #0e223b 0%, #1e3a5f 100%);
     color: #ffffff;
-    border-radius: 16px;
+    border-radius: 12px;
     padding: 36px 40px;
     display: flex;
     align-items: center;
@@ -3371,17 +3371,9 @@ h3 {
 }
 
 /* Minimal heading override for offerings section only */
-.offerings-section .section-header-centered h2 {
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    color: var(--text);
-}
 
-.offerings-section .section-header-centered p {
-    font-size: 15px !important;
-    max-width: 560px;
-}
+
+
 
 .offerings-grid {
     display: grid;
@@ -3789,7 +3781,7 @@ h3 {
 .testimonial-card {
     background-color: #ffffff;
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: 12px;
     padding: var(--space-xl);
     display: flex;
     flex-direction: column;
@@ -3931,7 +3923,7 @@ h3 {
     background: linear-gradient(180deg, #FAFCFF 0%, #FFFFFF 100%);
     border: 1px solid var(--border);
     color: var(--text);
-    border-radius: 20px;
+    border-radius: var(--radius-card);
     padding: 44px 32px;
     box-shadow: 0 8px 30px rgba(15, 23, 42, 0.04);
     text-align: center;
@@ -5444,7 +5436,7 @@ h3 {
     padding: 48px 36px;
     background: linear-gradient(180deg, #FAFCFF 0%, #FFFFFF 100%);
     border: 1px solid var(--border);
-    border-radius: 24px;
+    border-radius: var(--radius-card);
     box-shadow: 0 8px 30px rgba(15, 23, 42, 0.04);
     text-align: center;
     display: flex;
@@ -5501,7 +5493,7 @@ h3 {
     padding: 18px 12px;
     background-color: #FFFFFF;
     border: 1px solid var(--border);
-    border-radius: 16px;
+    border-radius: 12px;
     box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
     cursor: pointer;
     text-decoration: none;
@@ -5611,7 +5603,7 @@ h3 {
 @media (max-width: 768px) {
     .calc-banner-container {
         padding: 32px 20px;
-        border-radius: 16px;
+        border-radius: 12px;
     }
     .calc-banner-items {
         grid-template-columns: repeat(2, 1fr);
@@ -5667,7 +5659,7 @@ h3 {
     position: relative;
     background-color: #ffffff;
     border: 1px solid rgba(226, 232, 240, 0.9);
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -6185,7 +6177,7 @@ h3 {
 
 .ssi-delhi-map-card {
   background: var(--ssi-delhi-white);
-  border-radius: 16px;
+  border-radius: 12px;
   box-shadow: 0 8px 24px rgba(24, 35, 58, 0.05);
   overflow: hidden;
   position: relative;
@@ -6207,7 +6199,7 @@ h3 {
   bottom: 16px;
   left: 16px;
   background: var(--ssi-delhi-white);
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 14px;
   box-shadow: 0 6px 20px rgba(24, 35, 58, 0.12);
   max-width: 270px;
@@ -6265,7 +6257,7 @@ h3 {
 .ssi-delhi-content-card {
   background: var(--ssi-delhi-white);
   border: 1px solid var(--ssi-delhi-border);
-  border-radius: 16px;
+  border-radius: 12px;
   padding: 24px; 
   box-shadow: 0 8px 24px rgba(24, 35, 58, 0.03);
   display: flex;
@@ -6335,7 +6327,7 @@ h3 {
 .ssi-delhi-contact-strip {
   background: var(--ssi-delhi-white);
   border: 1px solid var(--ssi-delhi-border);
-  border-radius: 16px;
+  border-radius: 12px;
   padding: 24px;
   box-shadow: 0 8px 24px rgba(24, 35, 58, 0.03);
   display: grid;
@@ -6577,7 +6569,7 @@ h3 {
     background: var(--primary-light, #EFF6FF);
     color: var(--primary, #186CEC);
     padding: 6px 14px;
-    border-radius: 20px;
+    border-radius: var(--radius-card);
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -6664,7 +6656,7 @@ h3 {
 
 .blog-hero-image-wrap {
     width: 100%;
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
     margin-bottom: 32px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
@@ -6956,7 +6948,7 @@ h3 {
 .in-article-cta {
     background: linear-gradient(135deg, var(--primary, #186CEC) 0%, #1E293B 100%);
     color: #FFFFFF;
-    border-radius: 16px;
+    border-radius: 12px;
     padding: 32px;
     margin: 40px 0;
     text-align: center;
@@ -6980,7 +6972,7 @@ h3 {
     gap: 20px;
     background: #F8FAFC;
     border: 1px solid #E2E8F0;
-    border-radius: 16px;
+    border-radius: 12px;
     padding: 28px;
     margin: 48px 0 32px;
 }
@@ -7091,7 +7083,7 @@ h3 {
     justify-content: space-between;
     background: #FFFFFF;
     border: 1px solid #E2E8F0;
-    border-radius: 14px;
+    border-radius: 12px;
     padding: 22px;
     text-decoration: none;
     transition: all 0.25s ease;
@@ -7151,7 +7143,7 @@ h3 {
 .sidebar-widget {
     background: #FFFFFF;
     border: 1px solid #E2E8F0;
-    border-radius: 16px;
+    border-radius: 12px;
     padding: 24px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
@@ -7320,7 +7312,7 @@ h3 {
 .media-strip-wrapper {
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-radius: 20px;
+    border-radius: var(--radius-card);
     padding: 28px 36px;
     margin-bottom: 64px;
     box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.03);
@@ -7368,7 +7360,7 @@ h3 {
 .ceo-story-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-radius: 24px;
+    border-radius: var(--radius-card);
     padding: 36px;
     box-shadow: 0 6px 20px -4px rgba(0, 0, 0, 0.04);
     display: flex;
@@ -7378,7 +7370,7 @@ h3 {
 .story-card-icon {
     width: 48px;
     height: 48px;
-    border-radius: 14px;
+    border-radius: 12px;
     background: var(--primary-light);
     color: var(--primary);
     display: flex;
@@ -7414,7 +7406,7 @@ h3 {
 .ceo-quote-banner {
     position: relative;
     background: linear-gradient(135deg, #186CEC 0%, #0F52BA 100%);
-    border-radius: 20px;
+    border-radius: var(--radius-card);
     padding: 44px 50px;
     color: #ffffff;
     margin-bottom: 56px;
@@ -7494,7 +7486,7 @@ h3 {
 .value-feature-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-radius: 20px;
+    border-radius: var(--radius-card);
     padding: 28px 24px;
     box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.03);
     transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
@@ -7541,7 +7533,7 @@ h3 {
 .accreditation-card {
     background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
     border: 1px solid #e2e8f0;
-    border-radius: 24px;
+    border-radius: var(--radius-card);
     padding: 36px 40px;
     display: flex;
     align-items: center;
@@ -7575,7 +7567,7 @@ h3 {
 .accreditation-badge-item {
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-radius: 14px;
+    border-radius: 12px;
     padding: 10px 18px;
     display: flex;
     align-items: center;
@@ -7633,7 +7625,7 @@ h3 {
 
     .ceo-quote-banner {
         padding: 36px 24px;
-        border-radius: 20px;
+        border-radius: var(--radius-card);
     }
 
     .values-cards-grid {
@@ -7828,7 +7820,7 @@ button.btn:active,
 .advisor-quote-card {
     max-width: 480px;
     padding: 38px 36px 28px 36px;
-    border-radius: 20px;
+    border-radius: var(--radius-card);
     background: #FFFFFF;
     position: relative;
     box-shadow: 0 20px 50px -10px rgba(24, 108, 236, 0.22), 0 0 1px rgba(24, 108, 236, 0.15);
@@ -9177,7 +9169,7 @@ body.quote-modal-open .advisor-floating-unit,
     .hero-visual-img-container {
         width: 100% !important;
         height: 210px !important;
-        border-radius: 10px !important;
+        border-radius: 12px !important;
     }
 
     .floating-badge {
@@ -9248,7 +9240,7 @@ body.quote-modal-open .advisor-floating-unit,
         height: auto !important;
         aspect-ratio: 16/9 !important;
         max-height: 210px !important;
-        border-radius: 10px !important;
+        border-radius: 12px !important;
     }
 
     .column-intro-paragraph {
@@ -9280,7 +9272,7 @@ body.quote-modal-open .advisor-floating-unit,
 
     .benefit-card-item {
         padding: 14px 16px !important;
-        border-radius: 10px !important;
+        border-radius: 12px !important;
     }
 
     .benefit-card-item h3 {
@@ -9322,7 +9314,7 @@ body.quote-modal-open .advisor-floating-unit,
 
     .sense-card {
         padding: 16px 14px !important;
-        border-radius: 10px !important;
+        border-radius: 12px !important;
         gap: 12px !important;
     }
 
@@ -9343,7 +9335,7 @@ body.quote-modal-open .advisor-floating-unit,
     }
 
     .location-card {
-        border-radius: 10px !important;
+        border-radius: 12px !important;
     }
 
     .location-image-wrapper {
@@ -9364,7 +9356,7 @@ body.quote-modal-open .advisor-floating-unit,
     }
 
     .offering-card {
-        border-radius: 10px !important;
+        border-radius: 12px !important;
     }
 
     .offering-image-container {
@@ -9384,7 +9376,7 @@ body.quote-modal-open .advisor-floating-unit,
 
     .testimonial-card {
         padding: 16px 14px !important;
-        border-radius: 10px !important;
+        border-radius: 12px !important;
     }
 
     /* 14. Facilities (Clean 2-Column Bento Grid) */
@@ -9394,18 +9386,18 @@ body.quote-modal-open .advisor-floating-unit,
         grid-template-rows: auto !important;
         gap: 8px !important;
         padding: 0 16px !important;
-        border-radius: 10px !important;
+        border-radius: 12px !important;
     }
 
     .gallery-item-large {
         grid-column: 1 / -1 !important;
         height: 180px !important;
-        border-radius: 8px !important;
+        border-radius: 12px !important;
     }
 
     .gallery-item {
         height: 110px !important;
-        border-radius: 8px !important;
+        border-radius: 12px !important;
     }
 
     /* 15. FAQ Section */
@@ -9417,7 +9409,7 @@ body.quote-modal-open .advisor-floating-unit,
     }
 
     .faq-item {
-        border-radius: 8px !important;
+        border-radius: 12px !important;
         overflow: hidden !important;
     }
 
@@ -9439,7 +9431,7 @@ body.quote-modal-open .advisor-floating-unit,
 
     .cta-inner-card {
         padding: 18px 16px !important;
-        border-radius: 10px !important;
+        border-radius: 12px !important;
         gap: 14px !important;
         flex-direction: column !important;
         align-items: flex-start !important;
