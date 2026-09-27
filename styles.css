@@ -9092,7 +9092,7 @@ body.quote-modal-open .advisor-floating-unit,
     }
 
     .hero-main-title {
-        font-size: 1.6rem !important;
+        font-size: clamp(12px, 4.5vw, 1.6rem) !important; white-space: nowrap !important;
         line-height: 1.2 !important;
         margin-bottom: 10px !important;
         letter-spacing: -0.02em !important;
