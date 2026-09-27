@@ -770,7 +770,22 @@
     if (emailInput && emailInput.value.trim()) {
       formData.append('Email', emailInput.value.trim().toLowerCase());
     }
-    formData.append('Description', 'Selected Unit: Storage Advisor Chat | Country: ' + (currentCountry ? currentCountry.name : 'IN') + ' | Source: talk to abha advisor | Landing Page: ' + window.location.pathname + ' | Referrer: ' + (document.referrer || 'Direct'));
+    var descParts = [
+      'Selected Unit: Storage Advisor Chat',
+      'Country: ' + (currentCountry ? currentCountry.name : 'IN'),
+      'Source: talk to abha advisor',
+      'Landing Page: ' + window.location.pathname,
+      'Referrer: ' + (document.referrer || 'Direct')
+    ];
+    if (tracking.utm_source)   descParts.push('UTM Source: ' + tracking.utm_source);
+    if (tracking.utm_medium)   descParts.push('UTM Medium: ' + tracking.utm_medium);
+    if (tracking.utm_campaign) descParts.push('UTM Campaign: ' + tracking.utm_campaign);
+    if (tracking.gclid)        descParts.push('GCLID: ' + tracking.gclid);
+
+    formData.append('Description', descParts.join(' | '));
+    if (tracking.utm_source)   formData.append('utm_source', tracking.utm_source);
+    if (tracking.utm_medium)   formData.append('utm_medium', tracking.utm_medium);
+    if (tracking.utm_campaign) formData.append('utm_campaign', tracking.utm_campaign);
 
     try {
       try {
