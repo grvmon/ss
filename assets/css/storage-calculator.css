@@ -4,76 +4,82 @@
 
 /* Compact Header */
 .calc-header-compact {
-  margin: 0 auto 16px auto !important;
+  margin: 0 auto 10px auto !important;
   text-align: center;
   max-width: 860px;
 }
 
 .calc-header-compact .calc-tag {
-  margin-bottom: 6px !important;
-  padding: 4px 12px;
-  font-size: 0.78rem;
-  letter-spacing: 0.05em;
+  margin-bottom: 4px !important;
+  padding: 3px 10px;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
   font-weight: 700;
 }
 
 .calc-main-title {
-  font-size: clamp(1.35rem, 2.2vw, 1.85rem) !important;
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem) !important;
   font-weight: 700 !important;
-  line-height: 1.22 !important;
+  line-height: 1.2 !important;
   color: var(--text) !important;
-  margin: 4px 0 6px 0 !important;
+  margin: 2px 0 4px 0 !important;
   letter-spacing: -0.02em;
 }
 
 .calc-main-subtitle {
-  font-size: 0.92rem !important;
-  line-height: 1.45 !important;
-  max-width: 780px !important;
+  font-size: 0.85rem !important;
+  line-height: 1.35 !important;
+  max-width: 760px !important;
   margin: 0 auto !important;
   color: var(--text-secondary) !important;
 }
 
 @media (max-width: 768px) {
   .calc-header-compact {
-    margin-bottom: 12px !important;
+    margin-bottom: 10px !important;
   }
   .calc-main-title {
-    font-size: 1.25rem !important;
-    line-height: 1.3 !important;
-    margin: 4px 0 4px 0 !important;
+    font-size: 1.2rem !important;
+    line-height: 1.25 !important;
+    margin: 2px 0 3px 0 !important;
   }
   .calc-main-subtitle {
-    font-size: 0.85rem !important;
-    line-height: 1.38 !important;
+    font-size: 0.82rem !important;
+    line-height: 1.32 !important;
   }
 }
 
 /* Presets Wrapper */
 .calc-preset-wrapper {
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   background: #ffffff;
   border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 14px 18px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  border-radius: 12px;
+  padding: 7px 14px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .calc-preset-title {
-  font-size: 0.82rem;
+  font-size: 0.76rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   color: var(--text-secondary);
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
+  white-space: nowrap;
 }
 
 .calc-preset-bar {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
   align-items: center;
 }
 
@@ -82,15 +88,15 @@
   border: 1px solid var(--border);
   background: var(--surface);
   color: var(--text);
-  padding: 8px 16px;
+  padding: 5px 12px;
   border-radius: var(--radius-pill);
-  font-size: 0.85rem;
+  font-size: 0.80rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   white-space: nowrap;
 }
 
@@ -427,30 +433,77 @@
 /* Main 2-Column Calculator Layout (Desktop) */
 .calc-container {
   display: grid;
-  grid-template-columns: 380px 1fr;
-  gap: 28px;
+  grid-template-columns: 360px 1fr;
+  gap: 22px;
   align-items: start;
 }
 
 .calc-visual-column {
   position: sticky;
-  top: 96px;
+  top: 82px;
   z-index: 10;
 }
 
-/* Live Result Card Refinements */
+/* Live Result Card Refinements - Compact Fold 1 Fit */
 .live-result-card {
   background-color: #ffffff;
   border: 1.5px solid rgba(37, 99, 235, 0.22);
-  border-radius: 16px;
-  padding: 22px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .live-result-card:hover {
   border-color: var(--primary);
-  box-shadow: 0 8px 26px rgba(37, 99, 235, 0.09);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+}
+
+.live-result-card .result-header {
+  margin-bottom: 8px !important;
+}
+
+.live-result-card .result-value {
+  font-size: 1.85rem !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  margin-bottom: 8px !important;
+}
+
+.live-result-card .result-details {
+  gap: 6px !important;
+  margin-bottom: 10px !important;
+}
+
+.live-result-card .result-details li {
+  font-size: 0.82rem !important;
+  gap: 6px !important;
+  line-height: 1.25 !important;
+}
+
+.live-result-card .result-details li .check-icon {
+  font-size: 1rem !important;
+}
+
+.live-result-card .calc-selected-chips-wrap {
+  margin-top: 8px !important;
+  padding-top: 8px !important;
+  margin-bottom: 10px !important;
+}
+
+.live-result-card .calc-selected-chips {
+  max-height: 70px !important;
+}
+
+.live-result-card .cta-btn-calc {
+  padding: 11px 18px !important;
+  font-size: 0.92rem !important;
+  margin-bottom: 6px !important;
+}
+
+.live-result-card .calc-call-link {
+  margin-top: 6px !important;
+  font-size: 0.78rem !important;
 }
 
 /* Trust Cards Grid */

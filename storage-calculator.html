@@ -48,7 +48,7 @@
     <link rel="stylesheet" href="styles.css?v=3.7">
     <link rel="stylesheet" href="lead-form.min.css?v=5.0">
     <link rel="stylesheet" href="storage-advisor.min.css?v=5.5">
-    <link rel="stylesheet" href="assets/css/storage-calculator.css?v=1.6">
+    <link rel="stylesheet" href="assets/css/storage-calculator.css?v=1.7">
     <!-- Font Awesome CDN for footer social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
@@ -208,7 +208,7 @@
     <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileMenu()"></div>
 
     <!-- Main Content -->
-    <main style="padding-top: 82px; padding-bottom: 50px;">
+    <main style="padding-top: 74px; padding-bottom: 40px;">
         <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 0 var(--space-xl);">
             <!-- Breadcrumbs -->
             <nav aria-label="Breadcrumb">
@@ -220,7 +220,7 @@
             </nav>
         </div>
 
-        <section id="calculator" class="calc-section" style="padding-top: 8px;">
+        <section id="calculator" class="calc-section" style="padding-top: 2px;">
             <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 0 var(--space-xl);">
                 <div class="section-header-centered calc-header-compact">
                     <span class="calc-tag">
@@ -235,30 +235,28 @@
                 <div id="native-calculator-view">
                     <!-- 1-Click Home & Business Presets -->
                     <div class="calc-preset-wrapper">
-                        <div style="margin-bottom: 12px;">
-                            <span class="calc-preset-title">
-                                <span class="material-symbols-rounded" style="color: var(--primary);">auto_fix_high</span>
-                                1-Click Indian Home &amp; Business Presets:
-                            </span>
-                        </div>
+                        <span class="calc-preset-title">
+                            <span class="material-symbols-rounded" style="color: var(--primary); font-size: 16px;">auto_fix_high</span>
+                            1-Click Presets:
+                        </span>
                         <div class="calc-preset-bar">
                             <button type="button" class="calc-preset-pill" onclick="window.SSI_CALCULATOR.applyPreset('1bhk', this)">
-                                <span class="material-symbols-rounded" style="font-size: 17px; vertical-align: middle;">home</span> 1 BHK (45–68 sq ft)
+                                <span class="material-symbols-rounded" style="font-size: 15px; vertical-align: middle;">home</span> 1 BHK (45–68 sq ft)
                             </button>
                             <button type="button" class="calc-preset-pill" onclick="window.SSI_CALCULATOR.applyPreset('2bhk', this)">
-                                <span class="material-symbols-rounded" style="font-size: 17px; vertical-align: middle;">apartment</span> 2 BHK (72–98 sq ft)
+                                <span class="material-symbols-rounded" style="font-size: 15px; vertical-align: middle;">apartment</span> 2 BHK (72–98 sq ft)
                             </button>
                             <button type="button" class="calc-preset-pill" onclick="window.SSI_CALCULATOR.applyPreset('3bhk', this)">
-                                <span class="material-symbols-rounded" style="font-size: 17px; vertical-align: middle;">domain</span> 3 BHK (98–125 sq ft)
+                                <span class="material-symbols-rounded" style="font-size: 15px; vertical-align: middle;">domain</span> 3 BHK (98–125 sq ft)
                             </button>
                             <button type="button" class="calc-preset-pill" onclick="window.SSI_CALCULATOR.applyPreset('4bhk', this)">
-                                <span class="material-symbols-rounded" style="font-size: 17px; vertical-align: middle;">villa</span> 4 BHK (125+ sq ft)
+                                <span class="material-symbols-rounded" style="font-size: 15px; vertical-align: middle;">villa</span> 4 BHK (125+ sq ft)
                             </button>
                             <button type="button" class="calc-preset-pill" onclick="window.SSI_CALCULATOR.applyPreset('office', this)">
-                                <span class="material-symbols-rounded" style="font-size: 17px; vertical-align: middle;">business_center</span> Office Space (~66–74 sq ft)
+                                <span class="material-symbols-rounded" style="font-size: 15px; vertical-align: middle;">business_center</span> Office (~66–74 sq ft)
                             </button>
                             <button type="button" class="calc-preset-pill btn-reset" onclick="window.SSI_CALCULATOR.resetAll()">
-                                <span class="material-symbols-rounded" style="font-size: 15px; vertical-align: middle;">refresh</span> Reset All
+                                <span class="material-symbols-rounded" style="font-size: 14px; vertical-align: middle;">refresh</span> Reset
                             </button>
                         </div>
                     </div>
@@ -268,25 +266,25 @@
                         <div class="calc-visual-column">
                             <!-- Live Result Card -->
                             <div class="live-result-card shadow-lg">
-                                <div class="result-header" style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                                <div class="result-header" style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
                                     <span class="badge-dot"></span>
-                                    <h5 style="margin: 0; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.04em;">RECOMMENDED UNIT</h5>
+                                    <h5 style="margin: 0; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.04em;">RECOMMENDED UNIT</h5>
                                 </div>
 
-                                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
+                                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
                                     <div class="result-value" id="calc-unit-area" style="margin-bottom: 0; line-height: 1;">0 sq ft</div>
-                                    <span class="result-tier-badge" id="calc-util-percent" style="margin-bottom: 0; font-size: 0.76rem; font-weight: 700; background: #f1f5f9; color: var(--text);">0% Filled</span>
+                                    <span class="result-tier-badge" id="calc-util-percent" style="margin-bottom: 0; font-size: 0.74rem; font-weight: 700; background: #f1f5f9; color: var(--text);">0% Filled</span>
                                 </div>
 
                                 <!-- Utilization progress bar -->
-                                <div style="margin-bottom: 16px;">
-                                    <div style="width: 100%; height: 8px; background: #e2e8f0; border-radius: 99px; overflow: hidden; margin-bottom: 6px;">
+                                <div style="margin-bottom: 10px;">
+                                    <div style="width: 100%; height: 6px; background: #e2e8f0; border-radius: 99px; overflow: hidden; margin-bottom: 4px;">
                                         <div id="calc-util-bar" style="width: 0%; height: 100%; background: linear-gradient(90deg, #2563eb, #3b82f6); transition: width 0.3s ease;"></div>
                                     </div>
-                                    <div style="font-size: 0.76rem; color: var(--text-secondary); font-weight: 500;" id="calc-status-note">Tap + on items or choose a preset</div>
+                                    <div style="font-size: 0.74rem; color: var(--text-secondary); font-weight: 500;" id="calc-status-note">Tap + on items or choose a preset</div>
                                 </div>
 
-                                <ul class="result-details" style="margin-bottom: 16px;">
+                                <ul class="result-details" style="margin-bottom: 10px;">
                                     <li>
                                         <span class="material-symbols-rounded check-icon">check_circle</span>
                                         <strong id="calc-unit-name">Select Items or Preset</strong>
@@ -306,12 +304,12 @@
                                 </ul>
 
                                 <!-- Selected Item Chips with 1-Click Remove -->
-                                <div class="calc-selected-chips-wrap" style="margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--border); margin-bottom: 18px;">
-                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                                        <span class="calc-selected-chips-title" style="font-size: 0.76rem; font-weight: 700; color: var(--text-secondary);">Selected Items:</span>
-                                        <span id="calc-total-items-count" style="font-size: 0.78rem; font-weight: 700; color: var(--primary);">0 items</span>
+                                <div class="calc-selected-chips-wrap" style="margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border); margin-bottom: 10px;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                                        <span class="calc-selected-chips-title" style="font-size: 0.74rem; font-weight: 700; color: var(--text-secondary);">Selected Items:</span>
+                                        <span id="calc-total-items-count" style="font-size: 0.75rem; font-weight: 700; color: var(--primary);">0 items</span>
                                     </div>
-                                    <div class="calc-selected-chips" id="calc-inventory-chips" style="max-height: 110px; overflow-y: auto;">
+                                    <div class="calc-selected-chips" id="calc-inventory-chips" style="max-height: 68px; overflow-y: auto;">
                                         <span class="no-items-label">No items in your storage plan yet.</span>
                                     </div>
                                 </div>
@@ -321,7 +319,7 @@
                                     <span class="material-symbols-rounded">arrow_forward</span>
                                 </button>
                                 <a href="tel:+919090206090" class="calc-call-link">
-                                    <span class="material-symbols-rounded" style="font-size: 16px;">call</span>
+                                    <span class="material-symbols-rounded" style="font-size: 15px;">call</span>
                                     Prefer phone sizing? Call +91-9090206090
                                 </a>
                             </div>
