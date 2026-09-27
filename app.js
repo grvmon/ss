@@ -172,6 +172,28 @@ async function handleFormSubmit(event) {
     }
 
     var returnUrl = getThankYouUrl();
+    var urlParams = new URLSearchParams(window.location.search);
+    var utmSource   = urlParams.get('utm_source') || (window.sessionStorage ? window.sessionStorage.getItem('lf_utm_source') : '') || '';
+    var utmMedium   = urlParams.get('utm_medium') || (window.sessionStorage ? window.sessionStorage.getItem('lf_utm_medium') : '') || '';
+    var utmCampaign = urlParams.get('utm_campaign') || (window.sessionStorage ? window.sessionStorage.getItem('lf_utm_campaign') : '') || '';
+    var utmTerm     = urlParams.get('utm_term') || (window.sessionStorage ? window.sessionStorage.getItem('lf_utm_term') : '') || '';
+    var utmContent  = urlParams.get('utm_content') || (window.sessionStorage ? window.sessionStorage.getItem('lf_utm_content') : '') || '';
+    var gclidVal    = urlParams.get('gclid') || (window.sessionStorage ? window.sessionStorage.getItem('lf_gclid') : '') || '';
+    var fclidVal    = urlParams.get('fclid') || (window.sessionStorage ? window.sessionStorage.getItem('lf_fclid') : '') || '';
+
+    var descParts = [
+        'Selected Space/Location: ' + sizeVal,
+        'Landing Page: ' + window.location.pathname,
+        'Referrer: ' + (document.referrer || 'Direct')
+    ];
+    if (utmSource)   descParts.push('UTM Source: ' + utmSource);
+    if (utmMedium)   descParts.push('UTM Medium: ' + utmMedium);
+    if (utmCampaign) descParts.push('UTM Campaign: ' + utmCampaign);
+    if (utmTerm)     descParts.push('UTM Term: ' + utmTerm);
+    if (utmContent)  descParts.push('UTM Content: ' + utmContent);
+    if (gclidVal)    descParts.push('GCLID: ' + gclidVal);
+    if (fclidVal)    descParts.push('FCLID: ' + fclidVal);
+
     var formData = new FormData();
     formData.append('xnQsjsdp', ZOHO_WEB_TO_LEAD.xnQsjsdp);
     formData.append('xmIwtLD', ZOHO_WEB_TO_LEAD.xmIwtLD);
@@ -179,13 +201,21 @@ async function handleFormSubmit(event) {
     formData.append('returnURL', returnUrl);
     formData.append('wFaTrisJS', ZOHO_WEB_TO_LEAD.wFaTrisJS);
     formData.append('aG9uZXlwb3Q', '');
-    formData.append('zc_gad', '');
+    formData.append('zc_gad', gclidVal || '');
     formData.append('ldeskuid', '');
     formData.append('LDTuvid', (window.$zoho && window.$zoho.salesiq && window.$zoho.salesiq.visitor) ? window.$zoho.salesiq.visitor.uniqueid() : '');
     formData.append('Last Name', nameVal);
     formData.append('Phone', formattedPhone);
     formData.append('Email', emailVal);
-    formData.append('Description', 'Selected Space/Location: ' + sizeVal + ' | Landing Page: ' + window.location.pathname + ' | Referrer: ' + (document.referrer || 'Direct'));
+    formData.append('Description', descParts.join(' | '));
+
+    if (utmSource)   formData.append('utm_source', utmSource);
+    if (utmMedium)   formData.append('utm_medium', utmMedium);
+    if (utmCampaign) formData.append('utm_campaign', utmCampaign);
+    if (utmTerm)     formData.append('utm_term', utmTerm);
+    if (utmContent)  formData.append('utm_content', utmContent);
+    if (gclidVal)    formData.append('gclid', gclidVal);
+    if (fclidVal)    formData.append('fclid', fclidVal);
 
     try {
         await fetch(ZOHO_WEB_TO_LEAD.action, {
@@ -196,7 +226,18 @@ async function handleFormSubmit(event) {
 
         // Also fire custom tracking event
         window.dispatchEvent(new CustomEvent('quote_lead_submitted', {
-            detail: { name: nameVal, phone: phoneVal, email: emailVal, size: sizeVal }
+            detail: { 
+                name: nameVal, 
+                phone: phoneVal, 
+                email: emailVal, 
+                size: sizeVal,
+                utm_source: utmSource,
+                utm_medium: utmMedium,
+                utm_campaign: utmCampaign,
+                utm_term: utmTerm,
+                utm_content: utmContent,
+                gclid: gclidVal
+            }
         }));
 
         closeQuoteModal();

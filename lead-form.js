@@ -873,6 +873,29 @@
     var returnUrl = getThankYouUrl();
     var sizePref = storageSizeInput ? storageSizeInput.value : "General Inquiry";
 
+    var utmSource   = getParam("utm_source");
+    var utmMedium   = getParam("utm_medium");
+    var utmCampaign = getParam("utm_campaign");
+    var utmTerm     = getParam("utm_term");
+    var utmContent  = getParam("utm_content");
+    var gclidVal    = getParam("gclid");
+    var fclidVal    = getParam("fclid");
+
+    var descParts = [
+      'Selected Unit: ' + sizePref,
+      'Country: ' + (currentCountry ? currentCountry.name : 'IN'),
+      'Source: acrenkey lead form',
+      'Landing Page: ' + window.location.pathname,
+      'Referrer: ' + (document.referrer || 'Direct')
+    ];
+    if (utmSource)   descParts.push('UTM Source: ' + utmSource);
+    if (utmMedium)   descParts.push('UTM Medium: ' + utmMedium);
+    if (utmCampaign) descParts.push('UTM Campaign: ' + utmCampaign);
+    if (utmTerm)     descParts.push('UTM Term: ' + utmTerm);
+    if (utmContent)  descParts.push('UTM Content: ' + utmContent);
+    if (gclidVal)    descParts.push('GCLID: ' + gclidVal);
+    if (fclidVal)    descParts.push('FCLID: ' + fclidVal);
+
     var formData = new FormData();
     formData.append('xnQsjsdp', ZOHO_WEB_TO_LEAD.xnQsjsdp);
     formData.append('xmIwtLD', ZOHO_WEB_TO_LEAD.xmIwtLD);
@@ -880,7 +903,7 @@
     formData.append('returnURL', returnUrl);
     formData.append('wFaTrisJS', ZOHO_WEB_TO_LEAD.wFaTrisJS);
     formData.append('aG9uZXlwb3Q', '');
-    formData.append('zc_gad', getParam("gclid") || '');
+    formData.append('zc_gad', gclidVal || '');
     formData.append('ldeskuid', '');
     formData.append('LDTuvid', (window.$zoho && window.$zoho.salesiq && window.$zoho.salesiq.visitor) ? window.$zoho.salesiq.visitor.uniqueid() : '');
     formData.append('Last Name', ValidationService.normalizeString(nameInput.value));
@@ -888,7 +911,16 @@
     if (emailInput && emailInput.value.trim()) {
       formData.append('Email', emailInput.value.trim().toLowerCase());
     }
-    formData.append('Description', 'Selected Unit: ' + sizePref + ' | Country: ' + (currentCountry ? currentCountry.name : 'IN') + ' | Source: acrenkey lead form | Landing Page: ' + window.location.pathname + ' | Referrer: ' + (document.referrer || 'Direct'));
+    formData.append('Description', descParts.join(' | '));
+
+    // Also pass individual UTM fields into FormData in case Zoho CRM has custom fields mapped
+    if (utmSource)   formData.append('utm_source', utmSource);
+    if (utmMedium)   formData.append('utm_medium', utmMedium);
+    if (utmCampaign) formData.append('utm_campaign', utmCampaign);
+    if (utmTerm)     formData.append('utm_term', utmTerm);
+    if (utmContent)  formData.append('utm_content', utmContent);
+    if (gclidVal)    formData.append('gclid', gclidVal);
+    if (fclidVal)    formData.append('fclid', fclidVal);
 
     try {
       var res = await fetch(ZOHO_WEB_TO_LEAD.action, {
@@ -901,7 +933,17 @@
       Store.set("lf_conversion_timestamp_lock", String(Date.now()));
 
       // Dispatch tracking event
-      var leadDetail = { name: nameInput.value, phone: fullPhone, size: sizePref };
+      var leadDetail = { 
+        name: nameInput.value, 
+        phone: fullPhone, 
+        size: sizePref,
+        utm_source: utmSource || '',
+        utm_medium: utmMedium || '',
+        utm_campaign: utmCampaign || '',
+        utm_term: utmTerm || '',
+        utm_content: utmContent || '',
+        gclid: gclidVal || ''
+      };
       if (emailInput && emailInput.value.trim()) leadDetail.email = emailInput.value.trim();
       window.dispatchEvent(new CustomEvent('quote_lead_submitted', { detail: leadDetail }));
 
