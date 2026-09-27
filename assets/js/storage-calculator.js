@@ -398,6 +398,9 @@
   // =========================================================================
   // 6. 3D ISOMETRIC CANVAS VISUALIZER
   // =========================================================================
+  // =========================================================================
+  // 6. STORAGE ROOM VISUALIZER (3D ISOMETRIC ROOM & 2D ARCHITECTURAL FLOORPLAN)
+  // =========================================================================
   function render3DCanvas(unit, items) {
     const canvas = document.getElementById('calc-3d-canvas');
     if (!canvas) return;
@@ -408,7 +411,7 @@
     const dpr = window.devicePixelRatio || 1;
     const rect = canvas.getBoundingClientRect();
     const width = rect.width || 480;
-    const height = rect.height || 300;
+    const height = rect.height || 280;
 
     if (canvas.width !== width * dpr || canvas.height !== height * dpr) {
       canvas.width = width * dpr;
@@ -420,48 +423,164 @@
     ctx.clearRect(0, 0, width, height);
 
     if (!unit || items.length === 0) {
-      // Empty room preview
       drawEmptyRoom(ctx, width, height);
       ctx.restore();
       return;
     }
 
-    // Isometric projection helpers
+    if (state.angle3D === 'top') {
+      draw2DFloorPlan(ctx, width, height, unit, items);
+    } else {
+      drawIsometricRoom(ctx, width, height, unit, items);
+    }
+
+    ctx.restore();
+  }
+
+  function drawEmptyRoom(ctx, width, height) {
+    ctx.save();
+    const cx = width / 2;
+    const cy = height / 2;
+
+    ctx.fillStyle = '#f8fafc';
+    ctx.fillRect(0, 0, width, height);
+
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = '700 13px "Plus Jakarta Sans", sans-serif';
+    ctx.fillText('Storage Room Visualizer', cx, cy - 12);
+
+    ctx.font = '500 12px "Plus Jakarta Sans", sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('Select furniture or a 1-click home preset below to preview room layout', cx, cy + 12);
+    ctx.restore();
+  }
+
+  function drawIsometricRoom(ctx, width, height, unit, items) {
     const unitW = unit.w || 10;
     const unitD = unit.d || 6;
     const unitH = unit.h || 8;
 
-    const scale = Math.min(width / (unitW + unitD + 4), height / (unitH + unitD + 4)) * 1.5;
+    const cos30 = Math.cos(Math.PI / 6); // ~0.866
+    const sin30 = Math.sin(Math.PI / 6); // 0.5
+
+    const availW = width - 40;
+    const availH = height - 40;
+    const scale = Math.min(
+      availW / ((unitW + unitD) * cos30),
+      availH / ((unitW + unitD) * sin30 * 0.55 + unitH * 0.75)
+    ) * 0.92;
+
     const originX = width / 2;
-    const originY = height * 0.72;
+    const originY = height * 0.44;
 
     function isoProject(x, y, z) {
-      // x: width (right), y: depth (left-up), z: height (up)
-      const isoX = originX + (x - y) * Math.cos(Math.PI / 6) * scale;
-      const isoY = originY + (x + y) * Math.sin(Math.PI / 6) * scale * 0.6 - z * scale * 0.7;
+      const fwdY = unitD - y;
+      const isoX = originX + (x - fwdY) * cos30 * scale;
+      const isoY = originY + (x + fwdY) * sin30 * scale * 0.55 - z * scale * 0.75;
       return { x: isoX, y: isoY };
     }
 
-    // 1. Draw Unit Floor (Grid)
-    ctx.beginPath();
-    const p0 = isoProject(0, 0, 0);
-    const pX = isoProject(unitW, 0, 0);
-    const pXY = isoProject(unitW, unitD, 0);
-    const pY = isoProject(0, unitD, 0);
+    // 1. Back Walls
+    const pBack = isoProject(0, unitD, 0);
+    const pLeftFront = isoProject(0, 0, 0);
+    const pBackTop = isoProject(0, unitD, unitH);
+    const pLeftFrontTop = isoProject(0, 0, unitH);
 
-    ctx.moveTo(p0.x, p0.y);
-    ctx.lineTo(pX.x, pX.y);
-    ctx.lineTo(pXY.x, pXY.y);
-    ctx.lineTo(pY.x, pY.y);
+    // Left Partition Wall
+    ctx.beginPath();
+    ctx.moveTo(pBack.x, pBack.y);
+    ctx.lineTo(pLeftFront.x, pLeftFront.y);
+    ctx.lineTo(pLeftFrontTop.x, pLeftFrontTop.y);
+    ctx.lineTo(pBackTop.x, pBackTop.y);
     ctx.closePath();
-    ctx.fillStyle = '#f8fafc';
+    const leftWallGrad = ctx.createLinearGradient(pBack.x, pBackTop.y, pLeftFront.x, pLeftFront.y);
+    leftWallGrad.addColorStop(0, '#e2e8f0');
+    leftWallGrad.addColorStop(1, '#f1f5f9');
+    ctx.fillStyle = leftWallGrad;
     ctx.fill();
     ctx.strokeStyle = '#cbd5e1';
     ctx.lineWidth = 1;
     ctx.stroke();
 
-    // Floor 1ft grid lines
+    // Left Wall Corrugated Seams
     ctx.strokeStyle = 'rgba(203, 213, 225, 0.4)';
+    for (let gy = 1; gy < unitD; gy++) {
+      const b0 = isoProject(0, gy, 0);
+      const b1 = isoProject(0, gy, unitH);
+      ctx.beginPath();
+      ctx.moveTo(b0.x, b0.y);
+      ctx.lineTo(b1.x, b1.y);
+      ctx.stroke();
+    }
+
+    // Right Partition Wall
+    const pRightFront = isoProject(unitW, unitD, 0);
+    const pRightFrontTop = isoProject(unitW, unitD, unitH);
+
+    ctx.beginPath();
+    ctx.moveTo(pBack.x, pBack.y);
+    ctx.lineTo(pRightFront.x, pRightFront.y);
+    ctx.lineTo(pRightFrontTop.x, pRightFrontTop.y);
+    ctx.lineTo(pBackTop.x, pBackTop.y);
+    ctx.closePath();
+    const rightWallGrad = ctx.createLinearGradient(pBack.x, pBackTop.y, pRightFront.x, pRightFront.y);
+    rightWallGrad.addColorStop(0, '#cbd5e1');
+    rightWallGrad.addColorStop(1, '#e2e8f0');
+    ctx.fillStyle = rightWallGrad;
+    ctx.fill();
+    ctx.strokeStyle = '#94a3b8';
+    ctx.stroke();
+
+    // Right Wall Corrugated Seams
+    ctx.strokeStyle = 'rgba(148, 163, 184, 0.4)';
+    for (let gx = 1; gx < unitW; gx++) {
+      const b0 = isoProject(gx, unitD, 0);
+      const b1 = isoProject(gx, unitD, unitH);
+      ctx.beginPath();
+      ctx.moveTo(b0.x, b0.y);
+      ctx.lineTo(b1.x, b1.y);
+      ctx.stroke();
+    }
+
+    // Top Header Beam (SSI Navy + Orange accent)
+    ctx.beginPath();
+    ctx.moveTo(pLeftFrontTop.x, pLeftFrontTop.y);
+    ctx.lineTo(pBackTop.x, pBackTop.y);
+    ctx.lineTo(pRightFrontTop.x, pRightFrontTop.y);
+    ctx.strokeStyle = '#002B49';
+    ctx.lineWidth = 4;
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(pLeftFrontTop.x, pLeftFrontTop.y + 2);
+    ctx.lineTo(pBackTop.x, pBackTop.y + 2);
+    ctx.lineTo(pRightFrontTop.x, pRightFrontTop.y + 2);
+    ctx.strokeStyle = '#FF9600';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    // 2. Epoxy Showroom Floor
+    const pFrontCenter = isoProject(unitW, 0, 0);
+    ctx.beginPath();
+    ctx.moveTo(pBack.x, pBack.y);
+    ctx.lineTo(pRightFront.x, pRightFront.y);
+    ctx.lineTo(pFrontCenter.x, pFrontCenter.y);
+    ctx.lineTo(pLeftFront.x, pLeftFront.y);
+    ctx.closePath();
+    const floorGrad = ctx.createLinearGradient(pBack.x, pBack.y, pFrontCenter.x, pFrontCenter.y);
+    floorGrad.addColorStop(0, '#f8fafc');
+    floorGrad.addColorStop(1, '#edf2f7');
+    ctx.fillStyle = floorGrad;
+    ctx.fill();
+    ctx.strokeStyle = '#94a3b8';
+    ctx.lineWidth = 1.2;
+    ctx.stroke();
+
+    // Floor 1ft grid lines
+    ctx.strokeStyle = 'rgba(203, 213, 225, 0.5)';
+    ctx.lineWidth = 0.8;
     for (let gx = 1; gx < unitW; gx++) {
       const g0 = isoProject(gx, 0, 0);
       const g1 = isoProject(gx, unitD, 0);
@@ -479,96 +598,299 @@
       ctx.stroke();
     }
 
-    // 2. Draw Back Walls (Private Room partition panels)
-    // Left back wall
+    // 3. Generate Clean OrganizedBoxes
+    const boxes = generateOrganizedBoxes(unitW, unitD, unitH, items);
+
+    // 4. Ground Contact Shadows
+    ctx.fillStyle = 'rgba(15, 23, 42, 0.08)';
+    boxes.forEach(b => {
+      if (b.z === 0) {
+        const s0 = isoProject(b.x + 0.08, b.y - 0.08, 0);
+        const s1 = isoProject(b.x + b.w + 0.08, b.y - 0.08, 0);
+        const s2 = isoProject(b.x + b.w + 0.08, b.y + b.d + 0.08, 0);
+        const s3 = isoProject(b.x + 0.08, b.y + b.d + 0.08, 0);
+        ctx.beginPath();
+        ctx.moveTo(s0.x, s0.y);
+        ctx.lineTo(s1.x, s1.y);
+        ctx.lineTo(s2.x, s2.y);
+        ctx.lineTo(s3.x, s3.y);
+        ctx.closePath();
+        ctx.fill();
+      }
+    });
+
+    // 5. Painter's Algorithm Depth-Sorting
+    boxes.sort((a, b) => {
+      if (Math.abs(b.y - a.y) > 0.05) return b.y - a.y;
+      if (Math.abs(a.x - b.x) > 0.05) return a.x - b.x;
+      return a.z - b.z;
+    });
+
+    // 6. Draw 3D Box Units
+    boxes.forEach(b => {
+      drawIsoBox(ctx, isoProject, b.x, b.y, b.z, b.w, b.d, b.h, b.color, b.label, b.type);
+    });
+
+    // 7. Dimension Tags on Floor Edges (Clean pill badges)
+    drawDimensionPill(ctx, isoProject(unitW / 2, 0, 0), `${unitW} ft Width`, 0, 16);
+    drawDimensionPill(ctx, isoProject(0, unitD / 2, 0), `${unitD} ft Depth`, -16, 12);
+  }
+
+  function drawDimensionPill(ctx, p, text, offsetX, offsetY) {
+    ctx.save();
+    ctx.font = '700 10px "Plus Jakarta Sans", sans-serif';
+    const textWidth = ctx.measureText(text).width;
+    const pillW = textWidth + 16;
+    const pillH = 18;
+    const x = p.x + offsetX - pillW / 2;
+    const y = p.y + offsetY - pillH / 2;
+
     ctx.beginPath();
-    const pY_top = isoProject(0, unitD, unitH);
-    const pXY_top = isoProject(unitW, unitD, unitH);
-    ctx.moveTo(pY.x, pY.y);
-    ctx.lineTo(pY_top.x, pY_top.y);
-    ctx.lineTo(pXY_top.x, pXY_top.y);
-    ctx.lineTo(pXY.x, pXY.y);
-    ctx.closePath();
-    ctx.fillStyle = '#e2e8f0';
+    ctx.roundRect ? ctx.roundRect(x, y, pillW, pillH, 99) : ctx.rect(x, y, pillW, pillH);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
     ctx.fill();
-    ctx.strokeStyle = '#94a3b8';
+    ctx.strokeStyle = '#cbd5e1';
+    ctx.lineWidth = 1;
     ctx.stroke();
 
-    // Wall vertical corrugated lines
-    ctx.strokeStyle = 'rgba(148, 163, 184, 0.2)';
-    for (let wx = 1; wx < unitW; wx++) {
-      const b0 = isoProject(wx, unitD, 0);
-      const b1 = isoProject(wx, unitD, unitH);
-      ctx.beginPath();
-      ctx.moveTo(b0.x, b0.y);
-      ctx.lineTo(b1.x, b1.y);
-      ctx.stroke();
-    }
-
-    // 3. Draw Packed Items as 3D Isometric Bounding Boxes
-    drawPackedItems(ctx, isoProject, unitW, unitD, unitH, items);
-
-    // 4. Draw Front Unit Dimensions & Shutter Header
     ctx.fillStyle = '#0f172a';
-    ctx.font = '600 11px "Plus Jakarta Sans", sans-serif';
     ctx.textAlign = 'center';
-    const dimWidthPos = isoProject(unitW / 2, 0, 0);
-    ctx.fillText(`${unitW} ft Width`, dimWidthPos.x + 10, dimWidthPos.y + 18);
-
-    const dimDepthPos = isoProject(0, unitD / 2, 0);
-    ctx.fillText(`${unitD} ft Depth`, dimDepthPos.x - 22, dimDepthPos.y + 12);
-
+    ctx.textBaseline = 'middle';
+    ctx.fillText(text, x + pillW / 2, y + pillH / 2);
     ctx.restore();
   }
 
-  function drawEmptyRoom(ctx, width, height) {
+  function draw2DFloorPlan(ctx, width, height, unit, items) {
+    const unitW = unit.w || 10;
+    const unitD = unit.d || 6;
+
+    const pad = 36;
+    const availW = width - pad * 2;
+    const availH = height - pad * 2;
+    const scale = Math.min(availW / unitW, availH / unitD);
+
+    const planW = unitW * scale;
+    const planH = unitD * scale;
+    const startX = (width - planW) / 2;
+    const startY = (height - planH) / 2;
+
+    // Background Room Area
+    ctx.fillStyle = '#f8fafc';
+    ctx.fillRect(startX, startY, planW, planH);
+
+    // 1ft grid
+    ctx.strokeStyle = 'rgba(203, 213, 225, 0.4)';
+    ctx.lineWidth = 0.8;
+    for (let x = 1; x < unitW; x++) {
+      ctx.beginPath();
+      ctx.moveTo(startX + x * scale, startY);
+      ctx.lineTo(startX + x * scale, startY + planH);
+      ctx.stroke();
+    }
+    for (let y = 1; y < unitD; y++) {
+      ctx.beginPath();
+      ctx.moveTo(startX, startY + y * scale);
+      ctx.lineTo(startX + planW, startY + y * scale);
+      ctx.stroke();
+    }
+
+    // Access Walkway Corridor
+    const aisleW = Math.min(1.8, unitW * 0.22) * scale;
+    const aisleX = startX + planW / 2 - aisleW / 2;
+    ctx.fillStyle = 'rgba(16, 185, 129, 0.1)';
+    ctx.fillRect(aisleX, startY, aisleW, planH);
+    ctx.strokeStyle = 'rgba(16, 185, 129, 0.4)';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4, 4]);
+    ctx.strokeRect(aisleX, startY, aisleW, planH);
+    ctx.setLineDash([]);
+
+    ctx.fillStyle = '#059669';
+    ctx.font = '700 9px "Plus Jakarta Sans", sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillStyle = '#94a3b8';
-    ctx.font = '500 13px "Plus Jakarta Sans", sans-serif';
-    ctx.fillText('Virtual 3D Room will render as items are added', width / 2, height / 2 - 10);
-    ctx.font = '700 12px "Plus Jakarta Sans", sans-serif';
-    ctx.fillStyle = '#2563eb';
-    ctx.fillText('Select items or tap a 1-click preset below', width / 2, height / 2 + 14);
-  }
+    ctx.fillText('ACCESS AISLE', aisleX + aisleW / 2, startY + planH / 2);
 
-  function drawPackedItems(ctx, isoProject, maxW, maxD, maxH, items) {
-    // Deterministic procedural packing stacker
-    let curX = 0.5;
-    let curY = 0.5;
-    let curZ = 0;
-    let rowMaxD = 0;
+    // Packed 2D Footprints
+    const boxes = generateOrganizedBoxes(unitW, unitD, 8, items);
+    boxes.forEach(b => {
+      const bx = startX + b.x * scale;
+      const by = startY + (unitD - b.y - b.d) * scale;
+      const bw = b.w * scale;
+      const bh = b.d * scale;
 
-    items.forEach((item) => {
-      for (let i = 0; i < item.qty; i++) {
-        const itemW = Math.max(0.8, Math.min(item.w ? item.w * 3.28 : 2.5, 5));
-        const itemD = Math.max(0.8, Math.min(item.d ? item.d * 3.28 : 2.0, 4));
-        const itemH = Math.max(0.6, Math.min(item.h ? item.h * 3.28 : 2.0, 5));
+      ctx.fillStyle = b.color;
+      ctx.fillRect(bx, by, bw, bh);
+      ctx.strokeStyle = 'rgba(0, 0, 0, 0.15)';
+      ctx.lineWidth = 1;
+      ctx.strokeRect(bx, by, bw, bh);
 
-        // Check if fits in current row
-        if (curX + itemW > maxW - 0.5) {
-          curX = 0.5;
-          curY += rowMaxD + 0.3;
-          rowMaxD = 0;
-        }
-
-        if (curY + itemD > maxD - 0.5) {
-          // Stack on top
-          curX = 0.5;
-          curY = 0.5;
-          curZ = Math.min(maxH - 1, curZ + 1.8);
-        }
-
-        rowMaxD = Math.max(rowMaxD, itemD);
-
-        // Render 3D isometric box
-        drawIsoBox(ctx, isoProject, curX, curY, curZ, itemW, itemD, itemH, item.color || '#3b82f6');
-
-        curX += itemW + 0.2;
+      if (bw > 24 && bh > 14) {
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '700 8.5px "Plus Jakarta Sans", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(b.label || '', bx + bw / 2, by + bh / 2);
       }
     });
+
+    // Outer Room Walls
+    ctx.strokeStyle = '#002B49';
+    ctx.lineWidth = 4;
+    ctx.strokeRect(startX, startY, planW, planH);
+
+    // Roll-up Shutter Entrance (Front wall)
+    const doorW = planW * 0.55;
+    const doorX = startX + (planW - doorW) / 2;
+    ctx.strokeStyle = '#FF9600';
+    ctx.lineWidth = 5;
+    ctx.beginPath();
+    ctx.moveTo(doorX, startY + planH);
+    ctx.lineTo(doorX + doorW, startY + planH);
+    ctx.stroke();
+
+    ctx.fillStyle = '#FF9600';
+    ctx.font = '700 9px "Plus Jakarta Sans", sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('▲ PRIVATE SHUTTER ENTRANCE', startX + planW / 2, startY + planH + 16);
+
+    // Dimension labels
+    ctx.fillStyle = '#0f172a';
+    ctx.font = '700 11px "Plus Jakarta Sans", sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(`${unitW} ft Width`, startX + planW / 2, startY - 10);
+
+    ctx.save();
+    ctx.translate(startX - 12, startY + planH / 2);
+    ctx.rotate(-Math.PI / 2);
+    ctx.fillText(`${unitD} ft Depth`, 0, 0);
+    ctx.restore();
   }
 
-  function drawIsoBox(ctx, isoProject, x, y, z, w, d, h, color) {
+  function generateOrganizedBoxes(unitW, unitD, unitH, items) {
+    const boxes = [];
+    const furniture = [];
+    const appliances = [];
+    const boxesAndLuggage = [];
+
+    items.forEach(it => {
+      const qty = it.qty || 1;
+      for (let i = 0; i < qty; i++) {
+        const id = it.id.toLowerCase();
+        if (it.cat === 'bedroom' || it.cat === 'living' || id.includes('sofa') || id.includes('bed') || id.includes('table') || id.includes('almirah') || id.includes('desk') || id.includes('chair') || id.includes('diwan') || id.includes('mandir')) {
+          furniture.push(it);
+        } else if (id.includes('fridge') || id.includes('washing') || id.includes('ac') || id.includes('cooler') || id.includes('geyser') || id.includes('inverter') || id.includes('purifier') || id.includes('microwave') || id.includes('stove')) {
+          appliances.push(it);
+        } else {
+          boxesAndLuggage.push(it);
+        }
+      }
+    });
+
+    const minX = 0.4;
+    const maxX = unitW - 0.4;
+    const minY = 0.4;
+    const maxY = unitD - 0.4;
+
+    // 1. Pack Back Wall Furniture (large vertical pieces)
+    let curBackX = minX;
+    furniture.forEach((f, idx) => {
+      const isLarge = f.id.includes('bed') || f.id.includes('almirah') || f.id.includes('sofa') || f.id.includes('table');
+      const w = isLarge ? 2.8 : 1.8;
+      const d = 1.3;
+      const h = isLarge ? Math.min(unitH - 0.8, 4.6) : Math.min(unitH - 1, 3.2);
+
+      if (curBackX + w <= maxX) {
+        boxes.push({
+          x: curBackX,
+          y: maxY - d,
+          z: 0,
+          w: w,
+          d: d,
+          h: h,
+          color: f.id.includes('bed') ? '#1e3a8a' : (f.id.includes('sofa') ? '#2563eb' : (f.id.includes('almirah') ? '#0f766e' : '#334155')),
+          label: f.name.replace(/\(.*?\)/g, '').split('/')[0].trim().split(' ')[0],
+          type: 'furniture'
+        });
+        curBackX += w + 0.25;
+      } else {
+        const sideW = 1.4;
+        const sideD = 2.4;
+        const sideH = Math.min(unitH - 1, 3.2);
+        const slotY = minY + ((idx % 3) * (sideD + 0.3));
+        if (slotY + sideD <= maxY - 1.2) {
+          boxes.push({
+            x: minX,
+            y: slotY,
+            z: 0,
+            w: sideW,
+            d: sideD,
+            h: sideH,
+            color: '#3b82f6',
+            label: f.name.replace(/\(.*?\)/g, '').split('/')[0].trim().split(' ')[0],
+            type: 'furniture'
+          });
+        }
+      }
+    });
+
+    // 2. Pack Appliances (clean grouping on right side)
+    let appIdx = 0;
+    appliances.forEach((app) => {
+      const w = 1.7;
+      const d = 1.6;
+      const h = Math.min(unitH - 0.8, app.id.includes('fridge') ? 4.8 : 3.0);
+      const placeX = maxX - w;
+      const placeY = Math.max(minY, (maxY - 1.6) - (appIdx * (d + 0.3)));
+      if (placeY >= minY && placeX > minX + 1.8) {
+        boxes.push({
+          x: placeX,
+          y: placeY,
+          z: 0,
+          w: w,
+          d: d,
+          h: h,
+          color: app.id.includes('fridge') ? '#64748b' : (app.id.includes('washing') ? '#475569' : '#94a3b8'),
+          label: app.name.split(' ')[0],
+          type: 'appliance'
+        });
+        appIdx++;
+      }
+    });
+
+    // 3. Pack Boxes & Luggage in tidy pallet stacks
+    const boxW = 1.35;
+    const boxD = 1.25;
+    const boxH = 1.15;
+    const maxStackHeight = 3;
+    let bIdx = 0;
+    const startBoxX = minX + 1.8;
+    const startBoxY = minY + 0.4;
+
+    boxesAndLuggage.forEach((b) => {
+      const colX = startBoxX + (Math.floor(bIdx / (maxStackHeight * 2)) * (boxW + 0.2));
+      const colY = startBoxY + ((Math.floor(bIdx / maxStackHeight) % 2) * (boxD + 0.2));
+      const colZ = (bIdx % maxStackHeight) * boxH;
+
+      if (colX + boxW <= maxX - 1.5 && colY + boxD <= maxY - 1.2 && colZ + boxH <= unitH) {
+        boxes.push({
+          x: colX,
+          y: colY,
+          z: colZ,
+          w: boxW,
+          d: boxD,
+          h: boxH,
+          color: b.id.includes('trunk') ? '#64748b' : (b.id.includes('suitcase') ? '#0284c7' : '#d97706'),
+          label: b.id.includes('box') ? 'Box' : (b.id.includes('trunk') ? 'Trunk' : 'Luggage'),
+          type: 'box'
+        });
+        bIdx++;
+      }
+    });
+
+    return boxes;
+  }
+
+  function drawIsoBox(ctx, isoProject, x, y, z, w, d, h, color, label, type) {
     const p0 = isoProject(x, y, z);
     const p1 = isoProject(x + w, y, z);
     const p2 = isoProject(x + w, y + d, z);
@@ -579,38 +901,63 @@
     const t2 = isoProject(x + w, y + d, z + h);
     const t3 = isoProject(x, y + d, z + h);
 
-    // Top Face (lightest)
+    // 1. Top Face (Overhead LED highlight)
     ctx.beginPath();
     ctx.moveTo(t0.x, t0.y);
     ctx.lineTo(t1.x, t1.y);
     ctx.lineTo(t2.x, t2.y);
     ctx.lineTo(t3.x, t3.y);
     ctx.closePath();
-    ctx.fillStyle = shadeColor(color, 20);
+    ctx.fillStyle = shadeColor(color, 24);
     ctx.fill();
-    ctx.strokeStyle = 'rgba(0,0,0,0.15)';
+    ctx.strokeStyle = 'rgba(0, 0, 0, 0.12)';
+    ctx.lineWidth = 1;
     ctx.stroke();
 
-    // Right / Front Face (medium)
-    ctx.beginPath();
-    ctx.moveTo(p1.x, p1.y);
-    ctx.lineTo(t1.x, t1.y);
-    ctx.lineTo(t2.x, t2.y);
-    ctx.lineTo(p2.x, p2.y);
-    ctx.closePath();
-    ctx.fillStyle = shadeColor(color, -10);
-    ctx.fill();
-    ctx.stroke();
+    // Box tape band for moving cartons
+    if (type === 'box') {
+      const midT0_1 = { x: (t0.x + t1.x) / 2, y: (t0.y + t1.y) / 2 };
+      const midT2_3 = { x: (t2.x + t3.x) / 2, y: (t2.y + t3.y) / 2 };
+      ctx.beginPath();
+      ctx.moveTo(midT0_1.x, midT0_1.y);
+      ctx.lineTo(midT2_3.x, midT2_3.y);
+      ctx.strokeStyle = '#92400e';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+    }
 
-    // Left Face (darkest)
+    // Label on Top Face
+    if (label && Math.abs(t1.x - t0.x) > 28) {
+      const centerT = { x: (t0.x + t2.x) / 2, y: (t0.y + t2.y) / 2 };
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '700 8.5px "Plus Jakarta Sans", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(label, centerT.x, centerT.y);
+    }
+
+    // 2. Front Face (facing forward)
     ctx.beginPath();
     ctx.moveTo(p0.x, p0.y);
-    ctx.lineTo(t0.x, t0.y);
-    ctx.lineTo(t1.x, t1.y);
     ctx.lineTo(p1.x, p1.y);
+    ctx.lineTo(t1.x, t1.y);
+    ctx.lineTo(t0.x, t0.y);
     ctx.closePath();
-    ctx.fillStyle = shadeColor(color, 5);
+    ctx.fillStyle = shadeColor(color, -8);
     ctx.fill();
+    ctx.strokeStyle = 'rgba(0, 0, 0, 0.12)';
+    ctx.stroke();
+
+    // 3. Side Face (facing left)
+    ctx.beginPath();
+    ctx.moveTo(p0.x, p0.y);
+    ctx.lineTo(p3.x, p3.y);
+    ctx.lineTo(t3.x, t3.y);
+    ctx.lineTo(t0.x, t0.y);
+    ctx.closePath();
+    ctx.fillStyle = shadeColor(color, 6);
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(0, 0, 0, 0.12)';
     ctx.stroke();
   }
 
@@ -623,13 +970,13 @@
     G = parseInt((G * (100 + percent)) / 100);
     B = parseInt((B * (100 + percent)) / 100);
 
-    R = R < 255 ? R : 255;
-    G = G < 255 ? G : 255;
-    B = B < 255 ? B : 255;
+    R = Math.min(255, Math.max(0, R));
+    G = Math.min(255, Math.max(0, G));
+    B = Math.min(255, Math.max(0, B));
 
-    const RR = R.toString(16).length === 1 ? '0' + R.toString(16) : R.toString(16);
-    const GG = G.toString(16).length === 1 ? '0' + G.toString(16) : G.toString(16);
-    const BB = B.toString(16).length === 1 ? '0' + B.toString(16) : B.toString(16);
+    const RR = R.toString(16).padStart(2, '0');
+    const GG = G.toString(16).padStart(2, '0');
+    const BB = B.toString(16).padStart(2, '0');
 
     return '#' + RR + GG + BB;
   }
@@ -871,7 +1218,14 @@
       if (subHeadingEl) subHeadingEl.textContent = `Unit sized for your ${totalItems} items. Zero obligation quotation.`;
     },
 
-    toggleViewMode: function () {}
+    toggleViewMode: function (mode, btn) {
+      if (mode) state.angle3D = mode;
+      if (btn) {
+        document.querySelectorAll('.calc-view-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
+      renderAll();
+    }
   };
 
   // Global aliases for legacy/inline button triggers

@@ -266,16 +266,30 @@
                         <!-- Left Column: 3D Room Visualizer & Result Card -->
                         <div class="calc-visual-column">
                             <div class="storage-unit-box shadow-md">
-                                <div class="unit-header" style="justify-content: space-between;">
+                                <div class="unit-header" style="justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
                                     <div style="display: flex; align-items: center; gap: 8px;">
                                         <span class="material-symbols-rounded" style="color: var(--primary);">view_in_ar</span>
-                                        <h4>3D Virtual Storage Room</h4>
+                                        <h4 style="margin: 0; font-size: 0.95rem; font-weight: 700;">Storage Visualizer</h4>
                                     </div>
-                                    <span class="result-tier-badge" id="calc-util-percent" style="margin-bottom: 0;">0% Filled</span>
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <div class="calc-view-toggle">
+                                            <button type="button" class="calc-view-btn active" id="btn-view-iso" onclick="window.SSI_CALCULATOR.toggleViewMode('iso', this)">3D Room</button>
+                                            <button type="button" class="calc-view-btn" id="btn-view-top" onclick="window.SSI_CALCULATOR.toggleViewMode('top', this)">Floor Plan</button>
+                                        </div>
+                                        <span class="result-tier-badge" id="calc-util-percent" style="margin-bottom: 0;">0% Filled</span>
+                                    </div>
                                 </div>
 
-                                <div class="canvas-visual-wrap" style="position: relative; width: 100%; height: 260px; background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%); border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center;">
+                                <div class="canvas-visual-wrap" style="position: relative; width: 100%; height: 280px; background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%); border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center;">
                                     <canvas id="calc-3d-canvas" style="width: 100%; height: 100%; display: block;"></canvas>
+                                </div>
+
+                                <!-- Visualizer Legend -->
+                                <div class="calc-canvas-legend" style="display: flex; justify-content: center; gap: 14px; margin-top: 10px; font-size: 0.72rem; font-weight: 600; color: var(--text-secondary); flex-wrap: wrap;">
+                                    <span style="display: flex; align-items: center; gap: 5px;"><span style="width: 9px; height: 9px; border-radius: 2px; background: #2563eb; display: inline-block;"></span> Furniture</span>
+                                    <span style="display: flex; align-items: center; gap: 5px;"><span style="width: 9px; height: 9px; border-radius: 2px; background: #64748b; display: inline-block;"></span> Appliances</span>
+                                    <span style="display: flex; align-items: center; gap: 5px;"><span style="width: 9px; height: 9px; border-radius: 2px; background: #d97706; display: inline-block;"></span> Moving Boxes</span>
+                                    <span style="display: flex; align-items: center; gap: 5px;"><span style="width: 9px; height: 9px; border-radius: 2px; background: #10b981; display: inline-block;"></span> Access Aisle</span>
                                 </div>
 
                                 <!-- Utilization progress bar -->
@@ -819,6 +833,6 @@
     <script src="../app.js?v=3.6"></script>
     <script src="../lead-form.min.js?v=5.0" defer></script>
     <script type="text/javascript" src="https://crm.zoho.in/crm/javascript/zcga.js"></script>
-    <script src="../assets/js/storage-calculator.js?v=1.6" defer></script>
+    <script src="../assets/js/storage-calculator.js?v=1.7" defer></script>
 </body>
 </html>
