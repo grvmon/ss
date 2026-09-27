@@ -8,54 +8,35 @@
   'use strict';
 
   // =========================================================================
-  // 1. DATA: SSI FACILITY UNITS (TIER 1 THROUGH TIER 4: 24 TO 187 SQ FT)
+  // 1. DATA: SSI FACILITY UNITS (19 REAL SIZES: 27 TO 125 SQ FT, 685 ROOMS TOTAL)
   // =========================================================================
   const SSI_UNITS = [
-    // Tier 1: Personal Locker / Mini Room (15–44 sq ft)
-    { id: 'u_6x4', name: 'Mini Locker 6 X 4', w: 6, d: 4, h: 8, area: 24, vol: 192, tier: 'Tier 1 - Personal / Locker', price: 2000 },
-    { id: 'u_8x4', name: 'Small Room 8 X 4', w: 8, d: 4, h: 8, area: 32, vol: 256, tier: 'Tier 1 - Personal / Locker', price: 2600 },
-    { id: 'u_9x4', name: 'Small Room 9 X 4', w: 9, d: 4, h: 8, area: 36, vol: 288, tier: 'Tier 1 - Personal / Locker', price: 2900 },
-    { id: 'u_8x5', name: 'Small Room 8 X 5', w: 8, d: 5, h: 8, area: 40, vol: 320, tier: 'Tier 1 - Personal / Locker', price: 3200 },
-    { id: 'u_11x4', name: 'Small Room 11 X 4', w: 11, d: 4, h: 8, area: 44, vol: 352, tier: 'Tier 1 - Personal / Locker', price: 3500 },
+    // Tier 1: Personal Locker / Mini Room (27–42 sq ft) - 161 total rooms
+    { id: 'u_27', name: 'Personal Locker 27 sq ft', w: 9, d: 3, h: 8, area: 27, vol: 216, rooms: 12, tier: 'Tier 1 - Personal / Locker' },
+    { id: 'u_32', name: 'Mini Room 32 sq ft', w: 8, d: 4, h: 8, area: 32, vol: 256, rooms: 11, tier: 'Tier 1 - Personal / Locker' },
+    { id: 'u_33', name: 'Compact Room 33 sq ft', w: 11, d: 3, h: 8, area: 33, vol: 264, rooms: 46, tier: 'Tier 1 - Personal / Locker' },
+    { id: 'u_35', name: 'Compact Room 35 sq ft', w: 7, d: 5, h: 8, area: 35, vol: 280, rooms: 48, tier: 'Tier 1 - Personal / Locker' },
+    { id: 'u_40', name: 'Compact Room 40 sq ft', w: 8, d: 5, h: 8, area: 40, vol: 320, rooms: 35, tier: 'Tier 1 - Personal / Locker' },
+    { id: 'u_42', name: 'Studio Room 42 sq ft', w: 7, d: 6, h: 8, area: 42, vol: 336, rooms: 9, tier: 'Tier 1 - Personal / Locker' },
 
-    // Tier 2: Standard (45–68 sq ft)
-    { id: 'u_8x6', name: 'Standard 8 X 6', w: 8, d: 6, h: 8, area: 48, vol: 384, tier: 'Tier 2 - Standard', price: 3800 },
-    { id: 'u_7x7', name: 'Standard 7 X 7', w: 7, d: 7, h: 8, area: 49, vol: 392, tier: 'Tier 2 - Standard', price: 3900 },
-    { id: 'u_10x5', name: 'Standard 10 X 5', w: 10, d: 5, h: 8, area: 50, vol: 400, tier: 'Tier 2 - Standard', price: 4000 },
-    { id: 'u_9x6', name: 'Standard 9 X 6', w: 9, d: 6, h: 8, area: 54, vol: 432, tier: 'Tier 2 - Standard', price: 4300 },
-    { id: 'u_11x5', name: 'Standard 11 X 5', w: 11, d: 5, h: 8, area: 55, vol: 440, tier: 'Tier 2 - Standard', price: 4500 },
-    { id: 'u_8x7', name: 'Standard 8 X 7', w: 8, d: 7, h: 8, area: 56, vol: 448, tier: 'Tier 2 - Standard', price: 4600 },
-    { id: 'u_12x5', name: 'Standard 12 X 5', w: 12, d: 5, h: 8, area: 60, vol: 480, tier: 'Tier 2 - Standard', price: 4900 },
-    { id: 'u_10x6', name: 'Standard 10 X 6', w: 10, d: 6, h: 8, area: 60, vol: 480, tier: 'Tier 2 - Standard', price: 4900 },
-    { id: 'u_11x6', name: 'Standard 11 X 6', w: 11, d: 6, h: 8, area: 66, vol: 528, tier: 'Tier 2 - Standard', price: 5400 },
+    // Tier 2: Standard Room (45–68 sq ft) - 436 total rooms (Most Popular)
+    { id: 'u_45', name: 'Standard 45 sq ft', w: 9, d: 5, h: 8, area: 45, vol: 360, rooms: 65, tier: 'Tier 2 - Standard' },
+    { id: 'u_50', name: 'Standard 50 sq ft', w: 10, d: 5, h: 8, area: 50, vol: 400, rooms: 66, tier: 'Tier 2 - Standard' },
+    { id: 'u_51', name: 'Standard 51 sq ft', w: 8.5, d: 6, h: 8, area: 51, vol: 408, rooms: 93, tier: 'Tier 2 - Standard' },
+    { id: 'u_52', name: 'Standard 52 sq ft', w: 8, d: 6.5, h: 8, area: 52, vol: 416, rooms: 29, tier: 'Tier 2 - Standard' },
+    { id: 'u_61', name: 'Standard Plus 61 sq ft', w: 10, d: 6.1, h: 8, area: 61, vol: 488, rooms: 17, tier: 'Tier 2 - Standard' },
+    { id: 'u_62', name: 'Standard Plus 62 sq ft', w: 10, d: 6.2, h: 8, area: 62, vol: 496, rooms: 19, tier: 'Tier 2 - Standard' },
+    { id: 'u_65', name: 'Prime Standard 65 sq ft', w: 10, d: 6.5, h: 8, area: 65, vol: 520, rooms: 106, tier: 'Tier 2 - Standard' },
+    { id: 'u_66', name: 'Standard Plus 66 sq ft', w: 11, d: 6, h: 8, area: 66, vol: 528, rooms: 20, tier: 'Tier 2 - Standard' },
+    { id: 'u_68', name: 'Large Standard 68 sq ft', w: 10, d: 6.8, h: 8, area: 68, vol: 544, rooms: 21, tier: 'Tier 2 - Standard' },
 
-    // Tier 3: Large (70–102 sq ft)
-    { id: 'u_14x5', name: 'Large 14 X 5', w: 14, d: 5, h: 8, area: 70, vol: 560, tier: 'Tier 3 - Large', price: 5700 },
-    { id: 'u_10x7', name: 'Large 10 X 7', w: 10, d: 7, h: 8, area: 70, vol: 560, tier: 'Tier 3 - Large', price: 5700 },
-    { id: 'u_9x8', name: 'Large 9 X 8', w: 9, d: 8, h: 8, area: 72, vol: 576, tier: 'Tier 3 - Large', price: 5900 },
-    { id: 'u_12x6', name: 'Large 12 X 6', w: 12, d: 6, h: 8, area: 72, vol: 576, tier: 'Tier 3 - Large', price: 5900 },
-    { id: 'u_11x7', name: 'Large 11 X 7', w: 11, d: 7, h: 8, area: 77, vol: 616, tier: 'Tier 3 - Large', price: 6300 },
-    { id: 'u_13x6', name: 'Large 13 X 6', w: 13, d: 6, h: 8, area: 78, vol: 624, tier: 'Tier 3 - Large', price: 6400 },
-    { id: 'u_10x8', name: 'Large 10 X 8', w: 10, d: 8, h: 8, area: 80, vol: 640, tier: 'Tier 3 - Large', price: 6600 },
-    { id: 'u_14x6', name: 'Large 14 X 6', w: 14, d: 6, h: 8, area: 84, vol: 672, tier: 'Tier 3 - Large', price: 6900 },
-    { id: 'u_11x8', name: 'Large 11 X 8', w: 11, d: 8, h: 8, area: 88, vol: 704, tier: 'Tier 3 - Large', price: 7200 },
-    { id: 'u_18x5', name: 'Large 18 X 5', w: 18, d: 5, h: 8, area: 90, vol: 720, tier: 'Tier 3 - Large', price: 7400 },
-    { id: 'u_15x6', name: 'Large 15 X 6', w: 15, d: 6, h: 8, area: 90, vol: 720, tier: 'Tier 3 - Large', price: 7400 },
-    { id: 'u_23x4', name: 'Large 23 X 4', w: 23, d: 4, h: 8, area: 92, vol: 736, tier: 'Tier 3 - Large', price: 7600 },
-    { id: 'u_19x5', name: 'Large 19 X 5', w: 19, d: 5, h: 8, area: 95, vol: 760, tier: 'Tier 3 - Large', price: 7800 },
-    { id: 'u_11x9', name: 'Large 11 X 9', w: 11, d: 9, h: 8, area: 99, vol: 792, tier: 'Tier 3 - Large', price: 8200 },
+    // Tier 3: Large Room (72–98 sq ft) - 74 total rooms
+    { id: 'u_72', name: 'Large 72 sq ft', w: 9, d: 8, h: 8, area: 72, vol: 576, rooms: 29, tier: 'Tier 3 - Large' },
+    { id: 'u_74', name: 'Large 74 sq ft', w: 10, d: 7.4, h: 8, area: 74, vol: 592, rooms: 29, tier: 'Tier 3 - Large' },
+    { id: 'u_98', name: 'Master Large 98 sq ft', w: 14, d: 7, h: 8, area: 98, vol: 784, rooms: 16, tier: 'Tier 3 - Large' },
 
-    // Tier 4: Extra Large (110–175 sq ft + custom up to 187 sq ft)
-    { id: 'u_18x6', name: 'Extra Large 18 X 6', w: 18, d: 6, h: 8, area: 108, vol: 864, tier: 'Tier 4 - Extra Large', price: 8900 },
-    { id: 'u_11x10', name: 'Extra Large 11 X 10', w: 11, d: 10, h: 8, area: 110, vol: 880, tier: 'Tier 4 - Extra Large', price: 9100 },
-    { id: 'u_23x5', name: 'Extra Large 23 X 5', w: 23, d: 5, h: 8, area: 115, vol: 920, tier: 'Tier 4 - Extra Large', price: 9500 },
-    { id: 'u_18x7', name: 'Extra Large 18 X 7', w: 18, d: 7, h: 8, area: 126, vol: 1008, tier: 'Tier 4 - Extra Large', price: 10400 },
-    { id: 'u_14x9', name: 'Extra Large 14 X 9', w: 14, d: 9, h: 8, area: 126, vol: 1008, tier: 'Tier 4 - Extra Large', price: 10400 },
-    { id: 'u_13x10', name: 'Extra Large 13 X 10', w: 13, d: 10, h: 8, area: 130, vol: 1040, tier: 'Tier 4 - Extra Large', price: 10700 },
-    { id: 'u_13x11', name: 'Extra Large 13 X 11', w: 13, d: 11, h: 8, area: 143, vol: 1144, tier: 'Tier 4 - Extra Large', price: 11800 },
-    { id: 'u_19x8', name: 'Extra Large 19 X 8', w: 19, d: 8, h: 8, area: 152, vol: 1216, tier: 'Tier 4 - Extra Large', price: 12500 },
-    { id: 'u_19x9', name: 'Extra Large 19 X 9', w: 19, d: 9, h: 8, area: 171, vol: 1368, tier: 'Tier 4 - Extra Large', price: 14000 },
-    { id: 'u_17x11', name: 'Extra Large 17 X 11', w: 17, d: 11, h: 8, area: 187, vol: 1496, tier: 'Tier 4 - Extra Large', price: 15400 }
+    // Tier 4: Extra Large Suite (125 sq ft) - 14 total rooms
+    { id: 'u_125', name: 'Extra Large Suite 125 sq ft', w: 12.5, d: 10, h: 8, area: 125, vol: 1000, rooms: 14, tier: 'Tier 4 - Extra Large' }
   ];
 
   // =========================================================================
@@ -351,7 +332,7 @@
       break;
     }
 
-    // If items exceed the largest single unit (187 sq ft / 1496 cu ft)
+    // If items exceed the largest single unit (125 sq ft / 1000 cu ft)
     if (!matchedUnit) {
       const largest = SSI_UNITS[SSI_UNITS.length - 1];
       const mult = Math.max(
@@ -360,7 +341,7 @@
       );
       matchedUnit = {
         id: 'multiple_units',
-        name: `${mult}× Extra Large 17 X 11 Suites`,
+        name: `${mult}× Extra Large 125 sq ft Suites`,
         w: largest.w,
         d: largest.d,
         h: largest.h,
@@ -368,7 +349,6 @@
         area: largest.area * mult,
         vol: largest.vol * mult,
         tier: 'Multiple Private Suites',
-        price: largest.price * mult,
         isMultiple: true
       };
     }
@@ -378,7 +358,7 @@
 
     let statusText = 'Comfortable fit with room for access walkways.';
     let statusCode = 'good';
-    if (matchedUnit.area <= 44) {
+    if (matchedUnit.area <= 42) {
       statusText = 'Ideal for personal boxes, luggage, or studio essentials.';
       statusCode = 'good';
     } else if (utilizationPct > 88) {
@@ -1037,7 +1017,7 @@
     } else {
       if (tierBadgeEl) tierBadgeEl.innerText = 'Select Items';
       if (unitNameEl) unitNameEl.innerText = 'Select Items or Preset';
-      if (unitDimEl) unitDimEl.innerText = 'Facility units available from 24 to 187+ sq ft';
+      if (unitDimEl) unitDimEl.innerText = 'Facility units available from 27 to 125+ sq ft';
       if (unitAreaEl) unitAreaEl.innerText = '0 sq ft';
       if (unitVolEl) unitVolEl.innerText = '0 cu ft';
       if (unitPriceEl) unitPriceEl.innerText = 'Flexible monthly rental · Zero lock-ins';
