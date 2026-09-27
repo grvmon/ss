@@ -666,7 +666,7 @@
       }
       if (unitAreaEl) unitAreaEl.innerText = `${result.unit.area} sq ft`;
       if (unitVolEl) unitVolEl.innerText = `${result.unit.vol} cu ft`;
-      if (unitPriceEl) unitPriceEl.innerText = `Starting from ₹${result.unit.price.toLocaleString('en-IN')}/mo`;
+      if (unitPriceEl) unitPriceEl.innerText = 'Flexible monthly rental · Zero lock-ins';
       if (utilBarEl) {
         utilBarEl.style.width = `${result.utilizationPct}%`;
         if (result.statusCode === 'tight') {
@@ -686,7 +686,7 @@
       if (unitDimEl) unitDimEl.innerText = 'Standard facility rooms (48–187 sq ft)';
       if (unitAreaEl) unitAreaEl.innerText = '0 sq ft';
       if (unitVolEl) unitVolEl.innerText = '0 cu ft';
-      if (unitPriceEl) unitPriceEl.innerText = 'Starting from ₹3,800/mo (Tier 2 Standard)';
+      if (unitPriceEl) unitPriceEl.innerText = 'Flexible monthly rental · Zero lock-ins';
       if (utilBarEl) {
         utilBarEl.style.width = '0%';
         utilBarEl.style.background = 'linear-gradient(90deg, #2563eb, #3b82f6)';
@@ -733,7 +733,7 @@
     if (mobileBar) {
       if (totalCuFt > 0 && result.unit) {
         mobileBar.classList.add('visible');
-        if (mobileSqFt) mobileSqFt.innerText = `${result.unit.area} sq ft · ₹${result.unit.price.toLocaleString('en-IN')}/mo`;
+        if (mobileSqFt) mobileSqFt.innerText = `${result.unit.area} sq ft · ${result.unit.tier}`;
         if (mobileTier) mobileTier.innerText = result.unit.name;
       } else {
         mobileBar.classList.remove('visible');
@@ -868,7 +868,7 @@
       const headingEl = document.getElementById('lfMainHeading');
       const subHeadingEl = document.getElementById('lfSubHeading');
       if (headingEl) headingEl.textContent = `Get Free Quote for ${result.unit.tier} (${result.unit.area} sq ft)`;
-      if (subHeadingEl) subHeadingEl.textContent = `Unit reserved for your ${totalItems} items. Transparent pricing guaranteed.`;
+      if (subHeadingEl) subHeadingEl.textContent = `Unit sized for your ${totalItems} items. Zero obligation quotation.`;
     },
 
     toggleViewMode: function () {}
