@@ -23,7 +23,7 @@
   })();
   var CHIME_URL = basePath + 'assets/advisor-chime.wav';
   var AVATAR_URL = basePath + 'assets/advisor-abha.webp';
-  var CSS_URL = basePath + 'storage-advisor.min.css?v=5.2';
+  var CSS_URL = basePath + 'storage-advisor.min.css?v=5.3';
 
   var STRINGS = {
     btnSubmit: "Start Chat",
