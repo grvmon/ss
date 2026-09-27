@@ -23,7 +23,7 @@
   })();
   var CHIME_URL = basePath + 'assets/advisor-chime.wav';
   var AVATAR_URL = basePath + 'assets/advisor-abha.webp';
-  var CSS_URL = basePath + 'storage-advisor.min.css?v=5.3';
+  var CSS_URL = basePath + 'storage-advisor.min.css?v=5.4';
 
   var STRINGS = {
     btnSubmit: "Start Chat",
@@ -334,22 +334,41 @@
     }
   }
 
+  var UTM_TTL = 30 * 60 * 1000;
   function getQueryParam(key) {
     if (window.location.search) {
       try {
         var params = new URLSearchParams(window.location.search);
-        return params.get(key) || "";
+        var val = params.get(key);
+        if (val) {
+          Store.set("adv_" + key, val);
+          Store.set("adv_" + key + "_ts", String(Date.now()));
+          return val;
+        }
       } catch(e) {}
     }
-    return "";
+    var ts = parseInt(Store.get("adv_" + key + "_ts") || Store.get("lf_" + key + "_ts") || "0", 10);
+    if (ts && (Date.now() - ts) < UTM_TTL) {
+      return Store.get("adv_" + key) || Store.get("lf_" + key) || "";
+    }
+    return Store.get("adv_" + key) || Store.get("lf_" + key) || "";
+  }
+
+  function getGclid() {
+    var zcGadElem = document.getElementById("zc_gad");
+    if (zcGadElem && zcGadElem.value) return zcGadElem.value;
+    return getQueryParam("gclid");
   }
 
   function getTrackingPayload() {
+    var gclid = getGclid();
     return {
-      gclid: getQueryParam("gclid"),
+      gclid: gclid,
       utm_source: getQueryParam("utm_source"),
       utm_medium: getQueryParam("utm_medium"),
       utm_campaign: getQueryParam("utm_campaign"),
+      utm_term: getQueryParam("utm_term"),
+      utm_content: getQueryParam("utm_content"),
       source_url: window.location.href,
       page_title: document.title,
       submitted_at: new Date().toISOString()
@@ -780,12 +799,17 @@
     if (tracking.utm_source)   descParts.push('UTM Source: ' + tracking.utm_source);
     if (tracking.utm_medium)   descParts.push('UTM Medium: ' + tracking.utm_medium);
     if (tracking.utm_campaign) descParts.push('UTM Campaign: ' + tracking.utm_campaign);
+    if (tracking.utm_term)     descParts.push('UTM Term: ' + tracking.utm_term);
+    if (tracking.utm_content)  descParts.push('UTM Content: ' + tracking.utm_content);
     if (tracking.gclid)        descParts.push('GCLID: ' + tracking.gclid);
 
     formData.append('Description', descParts.join(' | '));
     if (tracking.utm_source)   formData.append('utm_source', tracking.utm_source);
     if (tracking.utm_medium)   formData.append('utm_medium', tracking.utm_medium);
     if (tracking.utm_campaign) formData.append('utm_campaign', tracking.utm_campaign);
+    if (tracking.utm_term)     formData.append('utm_term', tracking.utm_term);
+    if (tracking.utm_content)  formData.append('utm_content', tracking.utm_content);
+    if (tracking.gclid)        formData.append('gclid', tracking.gclid);
 
     try {
       try {
