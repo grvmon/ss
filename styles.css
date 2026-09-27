@@ -1612,12 +1612,12 @@ h3 {
         justify-content: space-between;
     }
     .brand-logo {
-        height: 34px;
+        height: 44px;
         display: flex;
         align-items: center;
     }
     .brand-logo-img {
-        height: 32px;
+        height: 42px;
         width: auto;
     }
     .nav-actions {
@@ -8918,13 +8918,13 @@ body.quote-modal-open .advisor-floating-unit,
     }
 
     .brand-logo {
-        height: 34px !important;
+        height: 44px !important;
         display: flex !important;
         align-items: center !important;
     }
 
     .brand-logo-img {
-        height: 32px !important;
+        height: 42px !important;
         width: auto !important;
     }
 
