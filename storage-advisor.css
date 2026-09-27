@@ -72,8 +72,14 @@
 }
 
 .advisor-floating-unit.is-hidden,
-body.mobile-menu-open .advisor-floating-unit {
+body.mobile-menu-open .advisor-floating-unit,
+body.no-scroll .advisor-floating-unit,
+.nav-links.mobile-open ~ .advisor-floating-unit,
+.nav-links.mobile-open ~ * .advisor-floating-unit {
   display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 body.has-calc-bar .advisor-floating-unit,

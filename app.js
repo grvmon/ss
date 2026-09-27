@@ -30,6 +30,7 @@ function toggleMobileMenu() {
         navLinks.classList.add('mobile-open');
         if (overlay) overlay.classList.add('active');
         document.body.classList.add('no-scroll');
+        document.body.classList.add('mobile-menu-open');
     }
 }
 
@@ -39,6 +40,7 @@ function closeMobileMenu() {
     if (navLinks) navLinks.classList.remove('mobile-open');
     if (overlay) overlay.classList.remove('active');
     document.body.classList.remove('no-scroll');
+    document.body.classList.remove('mobile-menu-open');
 }
 
 // 2. Quote & Policy Modal Toggle Functions
