@@ -833,34 +833,7 @@
       if (subHeadingEl) subHeadingEl.textContent = `Unit reserved for your ${totalItems} household items. Transparent pricing guaranteed.`;
     },
 
-    toggleViewMode: function (mode) {
-      state.viewMode = mode;
-      const nativeView = document.getElementById('native-calculator-view');
-      const calcumateView = document.getElementById('calcumate-widget-view');
-      const nativeBtn = document.getElementById('btn-view-native');
-      const calcumateBtn = document.getElementById('btn-view-calcumate');
-
-      if (mode === 'calcumate') {
-        if (nativeView) nativeView.style.display = 'none';
-        if (calcumateView) calcumateView.style.display = 'block';
-        if (nativeBtn) nativeBtn.classList.remove('active');
-        if (calcumateBtn) calcumateBtn.classList.add('active');
-
-        // Trigger Calcumate script if not loaded
-        if (!document.getElementById('calcumate-script-tag')) {
-          const s = document.createElement('script');
-          s.id = 'calcumate-script-tag';
-          s.defer = true;
-          s.src = 'https://production.calcumate.co/static/js/main.js';
-          document.body.appendChild(s);
-        }
-      } else {
-        if (nativeView) nativeView.style.display = 'grid';
-        if (calcumateView) calcumateView.style.display = 'none';
-        if (nativeBtn) nativeBtn.classList.add('active');
-        if (calcumateBtn) calcumateBtn.classList.remove('active');
-      }
-    }
+    toggleViewMode: function () {}
   };
 
   // Global aliases for legacy/inline button triggers
