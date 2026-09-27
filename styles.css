@@ -1623,7 +1623,7 @@ h3 {
     .nav-actions {
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 12px;
     }
     .nav-actions .btn-primary {
         display: none !important;
@@ -1645,17 +1645,17 @@ h3 {
     }
     .phone-link {
         font-size: 0;
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        background: #EEF5FF;
+        width: 40px;
+        height: 40px;
+        border-radius: var(--radius-sm, 8px);
+        background: transparent;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
     }
     .phone-link span {
-        font-size: 18px;
+        font-size: 26px;
         color: var(--primary);
         margin: 0;
     }
@@ -8943,7 +8943,7 @@ body.quote-modal-open .advisor-floating-unit,
     .nav-actions {
         display: flex !important;
         align-items: center !important;
-        gap: 8px !important;
+        gap: 12px !important;
     }
 
     .nav-actions .btn-primary {
