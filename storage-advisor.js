@@ -1050,15 +1050,16 @@
       }
     });
 
-    /* Start collapsed on calculator page or when advisorStartMinimized is set */
-    var isCalcPage = (typeof window.advisorStartMinimized !== 'undefined') ?
+    /* Start collapsed on calculator page, mobile devices, or when advisorStartMinimized is set */
+    var startMinimized = (typeof window.advisorStartMinimized !== 'undefined') ?
       Boolean(window.advisorStartMinimized) :
       (window.location.pathname.indexOf('storage-calculator') !== -1 ||
        !!document.querySelector('.storage-calculator-section') ||
        !!document.getElementById('ssiCalcApp') ||
-       document.body.classList.contains('page-storage-calculator'));
+       document.body.classList.contains('page-storage-calculator') ||
+       window.innerWidth <= 768);
 
-    if (isCalcPage) {
+    if (startMinimized) {
       if (floatingUnit) {
         floatingUnit.classList.add("is-minimized");
       }
