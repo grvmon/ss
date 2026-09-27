@@ -807,50 +807,6 @@
       });
     },
 
-    addCustomItem: function () {
-      const nameInput = document.getElementById('custom-item-name');
-      const lengthInput = document.getElementById('custom-item-l');
-      const widthInput = document.getElementById('custom-item-w');
-      const heightInput = document.getElementById('custom-item-h');
-      const qtyInput = document.getElementById('custom-item-qty');
-
-      const name = nameInput ? nameInput.value.trim() : '';
-      const l = lengthInput ? parseFloat(lengthInput.value) || 2 : 2;
-      const w = widthInput ? parseFloat(widthInput.value) || 2 : 2;
-      const h = heightInput ? parseFloat(heightInput.value) || 2 : 2;
-      const qty = qtyInput ? parseInt(qtyInput.value) || 1 : 1;
-
-      if (!name) {
-        alert('Please enter an item name (e.g. Wooden Swing, Harmonium, etc.)');
-        return;
-      }
-
-      const cuFt = Math.round((l * w * h) * 10) / 10;
-      const customId = 'cust_' + Date.now();
-
-      state.customItems.push({
-        id: customId,
-        name: name,
-        cuFt: cuFt,
-        w: l * 0.3048,
-        d: w * 0.3048,
-        h: h * 0.3048,
-        qty: qty
-      });
-
-      // Clear inputs
-      if (nameInput) nameInput.value = '';
-      if (lengthInput) lengthInput.value = '';
-      if (widthInput) widthInput.value = '';
-      if (heightInput) heightInput.value = '';
-      if (qtyInput) qtyInput.value = '1';
-
-      // Close modal if open
-      const customModal = document.getElementById('custom-item-modal');
-      if (customModal) customModal.style.display = 'none';
-
-      renderAll();
-    },
 
     handleQuote: function () {
       const invData = calculateTotalInventory();
