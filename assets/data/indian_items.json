@@ -2,7 +2,6 @@
   {
     "id": "sofa_3",
     "name": "3-Seater Sofa",
-    "nameHi": "3-सीटर सोफा",
     "cat": "living",
     "icon": "weekend",
     "w": 210,
@@ -15,7 +14,6 @@
   {
     "id": "sofa_2",
     "name": "2-Seater Sofa",
-    "nameHi": "2-सीटर सोफा",
     "cat": "living",
     "icon": "weekend",
     "w": 150,
@@ -28,7 +26,6 @@
   {
     "id": "sofa_1",
     "name": "Single Armchair / Recliner",
-    "nameHi": "सिंगल सोफा / रिक्लाइनर",
     "cat": "living",
     "icon": "armchair",
     "w": 85,
@@ -41,7 +38,6 @@
   {
     "id": "sofa_l_shape",
     "name": "L-Shaped Sectional Sofa",
-    "nameHi": "L-शेप कॉर्नर सोफा",
     "cat": "living",
     "icon": "weekend",
     "w": 240,
@@ -54,7 +50,6 @@
   {
     "id": "diwan",
     "name": "Diwan with Box Storage",
-    "nameHi": "दीवान (बॉक्स वाला)",
     "cat": "living",
     "icon": "bed",
     "w": 185,
@@ -67,7 +62,6 @@
   {
     "id": "center_table",
     "name": "Center / Coffee Table",
-    "nameHi": "सेंटर / कॉफ़ी टेबल",
     "cat": "living",
     "icon": "table_restaurant",
     "w": 100,
@@ -80,7 +74,6 @@
   {
     "id": "tv_unit",
     "name": "TV Unit / Entertainment Console",
-    "nameHi": "टीवी कैबिनेट / टेबल",
     "cat": "living",
     "icon": "tv",
     "w": 150,
@@ -93,7 +86,6 @@
   {
     "id": "led_tv",
     "name": "LED TV 43-65 inch (in box)",
-    "nameHi": "एलईडी टीवी (बॉक्स में)",
     "cat": "living",
     "icon": "tv",
     "w": 140,
@@ -106,7 +98,6 @@
   {
     "id": "pooja_mandir",
     "name": "Pooja Mandir (Wooden/Marble)",
-    "nameHi": "पूजा मंदिर",
     "cat": "living",
     "icon": "temple_hindu",
     "w": 60,
@@ -119,7 +110,6 @@
   {
     "id": "bookshelf",
     "name": "Bookshelf / Display Showcase",
-    "nameHi": "बुकशेल्फ़ / शोकेस",
     "cat": "living",
     "icon": "shelves",
     "w": 80,
@@ -132,7 +122,6 @@
   {
     "id": "shoe_rack",
     "name": "Shoe Rack",
-    "nameHi": "शू रैक",
     "cat": "living",
     "icon": "steps",
     "w": 80,
@@ -145,7 +134,6 @@
   {
     "id": "bed_king",
     "name": "King Double Bed with Storage",
-    "nameHi": "किंग साइज़ डबल बेड",
     "cat": "bedroom",
     "icon": "bed",
     "w": 200,
@@ -158,7 +146,6 @@
   {
     "id": "bed_queen",
     "name": "Queen Double Bed",
-    "nameHi": "क्वीन साइज़ बेड",
     "cat": "bedroom",
     "icon": "bed",
     "w": 200,
@@ -171,7 +158,6 @@
   {
     "id": "bed_single",
     "name": "Single Bed / Cot",
-    "nameHi": "सिंगल बेड / चारपाई",
     "cat": "bedroom",
     "icon": "single_bed",
     "w": 190,
@@ -184,7 +170,6 @@
   {
     "id": "mattress_double",
     "name": "King / Queen Mattress",
-    "nameHi": "डबल बेड गद्दा",
     "cat": "bedroom",
     "icon": "bed",
     "w": 200,
@@ -197,7 +182,6 @@
   {
     "id": "almirah_2door",
     "name": "2-Door Wardrobe / Steel Almirah",
-    "nameHi": "2-डोर अलमारी / गोदरेज",
     "cat": "bedroom",
     "icon": "dresser",
     "w": 90,
@@ -210,7 +194,6 @@
   {
     "id": "almirah_3door",
     "name": "3-Door Large Wardrobe",
-    "nameHi": "3-डोर बड़ी अलमारी",
     "cat": "bedroom",
     "icon": "dresser",
     "w": 140,
@@ -223,7 +206,6 @@
   {
     "id": "dressing_table",
     "name": "Dressing Table with Mirror",
-    "nameHi": "ड्रेसिंग टेबल",
     "cat": "bedroom",
     "icon": "dresser",
     "w": 80,
@@ -236,7 +218,6 @@
   {
     "id": "bedside_tables",
     "name": "Bedside Tables (Pair)",
-    "nameHi": "साइड टेबल (जोड़ा)",
     "cat": "bedroom",
     "icon": "table_restaurant",
     "w": 45,
@@ -249,7 +230,6 @@
   {
     "id": "razai_bundles",
     "name": "Gadda / Razai / Quilt Bundles",
-    "nameHi": "रज़ाई / गद्दों का बंडल",
     "cat": "bedroom",
     "icon": "inventory_2",
     "w": 90,
@@ -262,7 +242,6 @@
   {
     "id": "fridge_double",
     "name": "Double Door Fridge (250-450L)",
-    "nameHi": "डबल डोर फ्रिज",
     "cat": "kitchen",
     "icon": "kitchen",
     "w": 70,
@@ -275,7 +254,6 @@
   {
     "id": "fridge_single",
     "name": "Single Door Refrigerator (190L)",
-    "nameHi": "सिंगल डोर फ्रिज",
     "cat": "kitchen",
     "icon": "kitchen",
     "w": 60,
@@ -288,7 +266,6 @@
   {
     "id": "dining_6",
     "name": "Dining Table (6-Seater)",
-    "nameHi": "डाइनिंग टेबल (6-सीटर)",
     "cat": "kitchen",
     "icon": "table_restaurant",
     "w": 150,
@@ -301,7 +278,6 @@
   {
     "id": "dining_4",
     "name": "Dining Table (4-Seater)",
-    "nameHi": "डाइनिंग टेबल (4-सीटर)",
     "cat": "kitchen",
     "icon": "table_restaurant",
     "w": 110,
@@ -314,7 +290,6 @@
   {
     "id": "dining_chairs",
     "name": "Dining Chairs (Set of 4)",
-    "nameHi": "डाइनिंग कुर्सियां (4 का सेट)",
     "cat": "kitchen",
     "icon": "chair",
     "w": 50,
@@ -327,7 +302,6 @@
   {
     "id": "microwave",
     "name": "Microwave Oven / OTG",
-    "nameHi": "माइक्रोवेव ओवन",
     "cat": "kitchen",
     "icon": "microwave",
     "w": 55,
@@ -340,7 +314,6 @@
   {
     "id": "gas_stove_cyl",
     "name": "Gas Stove & Cylinder (Empty)",
-    "nameHi": "गैस चूल्हा व सिलेंडर",
     "cat": "kitchen",
     "icon": "propane_tank",
     "w": 60,
@@ -353,7 +326,6 @@
   {
     "id": "water_purifier",
     "name": "RO Water Purifier",
-    "nameHi": "वाटर प्यूरीफायर (RO)",
     "cat": "kitchen",
     "icon": "water_drop",
     "w": 40,
@@ -366,7 +338,6 @@
   {
     "id": "washing_front",
     "name": "Front Load Washing Machine",
-    "nameHi": "वॉशिंग मशीन (फ्रंट लोड)",
     "cat": "appliances",
     "icon": "local_laundry_service",
     "w": 60,
@@ -379,7 +350,6 @@
   {
     "id": "washing_top",
     "name": "Top Load Washing Machine",
-    "nameHi": "वॉशिंग मशीन (टॉप लोड)",
     "cat": "appliances",
     "icon": "local_laundry_service",
     "w": 55,
@@ -392,7 +362,6 @@
   {
     "id": "split_ac",
     "name": "Split AC (Indoor + Outdoor Units)",
-    "nameHi": "स्प्लिट एसी (दोनों यूनिट)",
     "cat": "appliances",
     "icon": "mode_fan",
     "w": 90,
@@ -405,7 +374,6 @@
   {
     "id": "window_ac",
     "name": "Window AC Unit",
-    "nameHi": "विंडो एसी",
     "cat": "appliances",
     "icon": "mode_fan",
     "w": 65,
@@ -418,7 +386,6 @@
   {
     "id": "air_cooler",
     "name": "Desert Air Cooler",
-    "nameHi": "कूलर (डेज़र्ट)",
     "cat": "appliances",
     "icon": "air",
     "w": 65,
@@ -431,7 +398,6 @@
   {
     "id": "inverter_battery",
     "name": "Inverter + Battery Trolley",
-    "nameHi": "इन्वर्टर व बैटरी सेट",
     "cat": "appliances",
     "icon": "battery_charging_full",
     "w": 50,
@@ -444,7 +410,6 @@
   {
     "id": "geyser",
     "name": "Geyser / Water Heater",
-    "nameHi": "गीज़र",
     "cat": "appliances",
     "icon": "water_heater",
     "w": 45,
@@ -457,7 +422,6 @@
   {
     "id": "box_large",
     "name": "Large Moving Carton (Clothes/Linen)",
-    "nameHi": "बड़ा कार्टन बॉक्स (कपड़े)",
     "cat": "boxes",
     "icon": "inventory_2",
     "w": 60,
@@ -470,7 +434,6 @@
   {
     "id": "box_medium",
     "name": "Medium Carton (Kitchen/Books)",
-    "nameHi": "मध्यम कार्टन बॉक्स",
     "cat": "boxes",
     "icon": "inventory_2",
     "w": 45,
@@ -483,7 +446,6 @@
   {
     "id": "box_small",
     "name": "Small Carton / Crockery Box",
-    "nameHi": "छोटा बॉक्स (बर्तन/किताबें)",
     "cat": "boxes",
     "icon": "inventory_2",
     "w": 35,
@@ -496,7 +458,6 @@
   {
     "id": "trunk_steel",
     "name": "Steel Trunk / Metal Peti",
-    "nameHi": "लोहे की पेटी / ट्रंक",
     "cat": "boxes",
     "icon": "luggage",
     "w": 95,
@@ -509,7 +470,6 @@
   {
     "id": "suitcase_large",
     "name": "Large Travel Suitcase / Strolley",
-    "nameHi": "बड़ा सूटकेस (ट्रॉली)",
     "cat": "boxes",
     "icon": "luggage",
     "w": 75,
@@ -522,7 +482,6 @@
   {
     "id": "suitcase_cabin",
     "name": "Cabin Suitcase / Duffle Bag",
-    "nameHi": "केबिन बैग / डफ़ल बैग",
     "cat": "boxes",
     "icon": "luggage",
     "w": 55,
@@ -535,7 +494,6 @@
   {
     "id": "two_wheeler",
     "name": "Scooter / Motorcycle (Activa/Bike)",
-    "nameHi": "स्कूटर / मोटरसाइकिल",
     "cat": "office_vehicle",
     "icon": "two_wheeler",
     "w": 190,
@@ -548,7 +506,6 @@
   {
     "id": "bicycle",
     "name": "Bicycle (Adult / Kids)",
-    "nameHi": "साइकिल",
     "cat": "office_vehicle",
     "icon": "pedal_bike",
     "w": 170,
@@ -561,7 +518,6 @@
   {
     "id": "office_desk",
     "name": "Office Workstation / Study Desk",
-    "nameHi": "ऑफिस मेज / स्टडी टेबल",
     "cat": "office_vehicle",
     "icon": "desk",
     "w": 120,
@@ -574,7 +530,6 @@
   {
     "id": "office_chair",
     "name": "Ergonomic Executive Office Chair",
-    "nameHi": "ऑफिस चेयर",
     "cat": "office_vehicle",
     "icon": "chair",
     "w": 65,
@@ -587,7 +542,6 @@
   {
     "id": "archive_box",
     "name": "Document File & Archival Box",
-    "nameHi": "दस्तावेज़ / फाइल बॉक्स",
     "cat": "office_vehicle",
     "icon": "folder",
     "w": 40,
@@ -600,7 +554,6 @@
   {
     "id": "fitness_gym",
     "name": "Treadmill / Exercise Bike",
-    "nameHi": "ट्रेडमिल / जिम बाइक",
     "cat": "office_vehicle",
     "icon": "fitness_center",
     "w": 160,
