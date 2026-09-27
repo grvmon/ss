@@ -74,7 +74,7 @@
     }
     </script>
 
-    <!-- Structured Data: SelfStorage LocalBusiness & AggregateRating Schema -->
+    <!-- Structured Data: SelfStorage Multi-Location & Review Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -85,9 +85,10 @@
       "url": "https://selfstorageindia.com/",
       "logo": "https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo.png",
       "image": "https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo.png",
+      "telephone": "+91-9090206090",
       "email": "info@selfstorageindia.com",
       "priceRange": "₹₹",
-      "description": "India's first and largest self-storage facility provider. Private, lockable storage rooms with 24/7 CCTV surveillance, pest control, pest control, and personal key access across Delhi, Gurugram, and Noida.",
+      "description": "India's first and largest self-storage facility provider. Private, lockable storage rooms with 24/7 CCTV surveillance, pest control, and personal key access across Delhi, Gurugram, and Noida.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Sector 28, Dwarka",
@@ -115,6 +116,65 @@
         {"@type": "City", "name": "Noida"},
         {"@type": "AdministrativeArea", "name": "Delhi NCR"}
       ],
+      "department": [
+        {
+          "@type": "SelfStorage",
+          "name": "Self Storage India - Dwarka Facility",
+          "telephone": "+91-9090206090",
+          "url": "https://selfstorageindia.com/self-storage-in-delhi/",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Sector 28, Dwarka",
+            "addressLocality": "New Delhi",
+            "addressRegion": "Delhi",
+            "postalCode": "110077",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 28.5562,
+            "longitude": 77.0600
+          }
+        },
+        {
+          "@type": "SelfStorage",
+          "name": "Self Storage India - Gurugram Facility",
+          "telephone": "+91-9090206090",
+          "url": "https://selfstorageindia.com/self-storage-in-gurugram/",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Sector 34, Honda Chowk",
+            "addressLocality": "Gurugram",
+            "addressRegion": "Haryana",
+            "postalCode": "122004",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 28.4357,
+            "longitude": 76.9984
+          }
+        },
+        {
+          "@type": "SelfStorage",
+          "name": "Self Storage India - Noida Facility",
+          "telephone": "+91-9090206090",
+          "url": "https://selfstorageindia.com/self-storage-in-noida/",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Sector 59",
+            "addressLocality": "Noida",
+            "addressRegion": "Uttar Pradesh",
+            "postalCode": "201301",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 28.5996,
+            "longitude": 77.3627
+          }
+        }
+      ],
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
@@ -122,6 +182,47 @@
         "ratingCount": "540",
         "reviewCount": "540"
       },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Nandini Saha"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "The entire experience was seamless, from booking the storage room to collecting my belongings months later. Everything remained in perfect condition, and the staff was incredibly professional."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Nitin Gupta"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "We used Self Storage India during our office relocation. The facility was secure, easy to access, and made the entire move stress-free."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Roselin Kiro"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "My luggage and furniture stayed safe for over a year. The rooms were clean, secure, and exactly what I needed while relocating."
+        }
+      ],
       "sameAs": [
         "https://www.facebook.com/selfstorageindia",
         "https://www.instagram.com/selfstorageindia",
@@ -171,7 +272,7 @@
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "Self Storage Space Estimator Calculator",
-      "url": "https://selfstorageindia.com/storage-calculator",
+      "url": "https://selfstorageindia.com/self-storage-calculator/",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "All",
       "offers": {
@@ -194,12 +295,6 @@
           "position": 1,
           "name": "Home",
           "item": "https://selfstorageindia.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Storage Facilities Delhi NCR",
-          "item": "https://selfstorageindia.com/#locations"
         }
       ]
     }
@@ -256,7 +351,7 @@
           "name": "What makes Self Storage India a trusted storage provider in NCR?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Established in 2013, Self Storage India is India's pioneer in self-storage. We operate clean, secure, pest-controlled, and pest-controlled storage facilities strategically located in Delhi, Gurugram, and Noida with transparent pricing."
+            "text": "Established in 2013, Self Storage India is India's pioneer in self-storage. We operate clean, secure, and pest-controlled storage facilities strategically located in Delhi, Gurugram, and Noida with transparent pricing."
           }
         },
         {
@@ -333,7 +428,7 @@
     <header class="navbar" id="navbar">
         <div class="nav-container">
             <!-- Brand Logo -->
-            <a href="/" class="brand-logo" aria-label="Self Storage India Home">
+            <a href="/ss/" class="brand-logo" aria-label="Self Storage India Home">
                 <img src="https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo.png" alt="Self Storage India Logo" class="brand-logo-img" fetchpriority="high" width="240" height="68" decoding="async">
             </a>
 
@@ -350,14 +445,14 @@
                 <div class="nav-item-dropdown">
                     <a href="javascript:void(0)" class="nav-link">Storage <span class="material-symbols-rounded dropdown-arrow">keyboard_arrow_down</span></a>
                     <div class="dropdown-menu shadow-md">
-                        <a href="/household-goods-storage" class="dropdown-item">
+                        <a href="https://selfstorageindia.com/household-goods-storage/" class="dropdown-item">
                             <span class="material-symbols-rounded dropdown-icon">home</span>
                             <div class="dropdown-info">
                                 <h6>For Home</h6>
                                 <p>Store household items &amp; furniture</p>
                             </div>
                         </a>
-                        <a href="/business-storage" class="dropdown-item">
+                        <a href="https://selfstorageindia.com/self-storage-business/" class="dropdown-item">
                             <span class="material-symbols-rounded dropdown-icon">business</span>
                             <div class="dropdown-info">
                                 <h6>For Business</h6>
@@ -371,21 +466,21 @@
                 <div class="nav-item-dropdown">
                     <a href="javascript:void(0)" class="nav-link">Locations <span class="material-symbols-rounded dropdown-arrow">keyboard_arrow_down</span></a>
                     <div class="dropdown-menu shadow-md">
-                        <a href="/self-storage-gurugram" class="dropdown-item">
+                        <a href="https://selfstorageindia.com/self-storage-in-gurugram/" class="dropdown-item">
                             <span class="material-symbols-rounded dropdown-icon">location_on</span>
                             <div class="dropdown-info">
                                 <h6>Gurugram</h6>
                                 <p>Sector 34, Honda Chowk</p>
                             </div>
                         </a>
-                        <a href="/self-storage-delhi" class="dropdown-item">
+                        <a href="https://selfstorageindia.com/self-storage-in-delhi/" class="dropdown-item">
                             <span class="material-symbols-rounded dropdown-icon">location_on</span>
                             <div class="dropdown-info">
                                 <h6>Delhi</h6>
                                 <p>Sector 28, Dwarka</p>
                             </div>
                         </a>
-                        <a href="/self-storage-noida" class="dropdown-item">
+                        <a href="https://selfstorageindia.com/self-storage-in-noida/" class="dropdown-item">
                             <span class="material-symbols-rounded dropdown-icon">location_on</span>
                             <div class="dropdown-info">
                                 <h6>Noida</h6>
@@ -399,21 +494,21 @@
                 <div class="nav-item-dropdown">
                     <a href="javascript:void(0)" class="nav-link">Offerings <span class="material-symbols-rounded dropdown-arrow">keyboard_arrow_down</span></a>
                     <div class="dropdown-menu shadow-md">
-                        <a href="/offering-private-rooms" class="dropdown-item">
+                        <a href="https://selfstorageindia.com/private-rooms-self-storage-size-guide/" class="dropdown-item">
                             <span class="material-symbols-rounded dropdown-icon">meeting_room</span>
                             <div class="dropdown-info">
                                 <h6>Private Rooms</h6>
                                 <p>Lockable modular space units</p>
                             </div>
                         </a>
-                        <a href="/offering-box-storage" class="dropdown-item">
+                        <a href="https://selfstorageindia.com/box-storage-2/" class="dropdown-item">
                             <span class="material-symbols-rounded dropdown-icon">package_2</span>
                             <div class="dropdown-info">
                                 <h6>Box Storage</h6>
                                 <p>Small items &amp; document files</p>
                             </div>
                         </a>
-                        <a href="/offering-box-storage" class="dropdown-item">
+                        <a href="https://selfstorageindia.com/luggage-storage-2/" class="dropdown-item">
                             <span class="material-symbols-rounded dropdown-icon">luggage</span>
                             <div class="dropdown-info">
                                 <h6>Luggage Storage</h6>
@@ -423,7 +518,7 @@
                     </div>
                 </div>
                 
-                <a href="/blog" class="nav-link">Blogs</a>
+                <a href="https://selfstorageindia.com/blog/" class="nav-link">Blogs</a>
             </nav>
 
             <!-- Actions & CTA -->
@@ -830,56 +925,56 @@
                 </div>
 
                 <div class="calc-banner-items">
-                    <a href="/storage-calculator" target="_blank" rel="noopener" class="calc-banner-item" title="Estimate Storage for Boxes">
+                    <a href="https://selfstorageindia.com/self-storage-calculator/" target="_blank" rel="noopener" class="calc-banner-item" title="Estimate Storage for Boxes">
                         <div class="calc-item-icon-box">
                             <span class="material-symbols-rounded">inventory_2</span>
                         </div>
                         <span class="calc-item-name">Boxes & Cartons</span>
                     </a>
 
-                    <a href="/storage-calculator" target="_blank" rel="noopener" class="calc-banner-item" title="Estimate Storage for Beds">
+                    <a href="https://selfstorageindia.com/self-storage-calculator/" target="_blank" rel="noopener" class="calc-banner-item" title="Estimate Storage for Beds">
                         <div class="calc-item-icon-box">
                             <span class="material-symbols-rounded">bed</span>
                         </div>
                         <span class="calc-item-name">Beds & Mattresses</span>
                     </a>
 
-                    <a href="/storage-calculator" target="_blank" rel="noopener" class="calc-banner-item" title="Estimate Storage for Chairs">
+                    <a href="https://selfstorageindia.com/self-storage-calculator/" target="_blank" rel="noopener" class="calc-banner-item" title="Estimate Storage for Chairs">
                         <div class="calc-item-icon-box">
                             <span class="material-symbols-rounded">chair</span>
                         </div>
                         <span class="calc-item-name">Chairs & Sofas</span>
                     </a>
 
-                    <a href="/storage-calculator" target="_blank" rel="noopener" class="calc-banner-item" title="Estimate Storage for Tables">
+                    <a href="https://selfstorageindia.com/self-storage-calculator/" target="_blank" rel="noopener" class="calc-banner-item" title="Estimate Storage for Tables">
                         <div class="calc-item-icon-box">
                             <span class="material-symbols-rounded">table_restaurant</span>
                         </div>
                         <span class="calc-item-name">Dining Tables</span>
                     </a>
 
-                    <a href="/storage-calculator" target="_blank" rel="noopener" class="calc-banner-item" title="Estimate Storage for Appliances">
+                    <a href="https://selfstorageindia.com/self-storage-calculator/" target="_blank" rel="noopener" class="calc-banner-item" title="Estimate Storage for Appliances">
                         <div class="calc-item-icon-box">
                             <span class="material-symbols-rounded">tv</span>
                         </div>
                         <span class="calc-item-name">Appliances & TV</span>
                     </a>
 
-                    <a href="/storage-calculator" target="_blank" rel="noopener" class="calc-banner-item" title="Estimate Storage for Cabinets">
+                    <a href="https://selfstorageindia.com/self-storage-calculator/" target="_blank" rel="noopener" class="calc-banner-item" title="Estimate Storage for Cabinets">
                         <div class="calc-item-icon-box">
                             <span class="material-symbols-rounded">kitchen</span>
                         </div>
                         <span class="calc-item-name">Wardrobes & Cabinets</span>
                     </a>
 
-                    <a href="/storage-calculator" target="_blank" rel="noopener" class="calc-banner-item" title="Estimate Storage for Luggage">
+                    <a href="https://selfstorageindia.com/self-storage-calculator/" target="_blank" rel="noopener" class="calc-banner-item" title="Estimate Storage for Luggage">
                         <div class="calc-item-icon-box">
                             <span class="material-symbols-rounded">luggage</span>
                         </div>
                         <span class="calc-item-name">Luggage & Bags</span>
                     </a>
 
-                    <a href="/storage-calculator" target="_blank" rel="noopener" class="calc-banner-item" title="Estimate Storage for Office Files">
+                    <a href="https://selfstorageindia.com/self-storage-calculator/" target="_blank" rel="noopener" class="calc-banner-item" title="Estimate Storage for Office Files">
                         <div class="calc-item-icon-box">
                             <span class="material-symbols-rounded">work</span>
                         </div>
@@ -888,7 +983,7 @@
                 </div>
 
                 <div class="calc-banner-cta-wrapper">
-                    <a href="/storage-calculator" target="_blank" rel="noopener" class="btn-calc-orange">
+                    <a href="https://selfstorageindia.com/self-storage-calculator/" target="_blank" rel="noopener" class="btn-calc-orange">
                         <span>Calculate Your Storage Now</span>
                         <span class="material-symbols-rounded">arrow_forward</span>
                     </a>
@@ -914,7 +1009,7 @@
                 <!-- 3 Location Cards -->
                 <div class="locations-grid">
                     <!-- Location Card 1: Delhi -->
-                    <a href="/self-storage-delhi" class="location-card shadow-sm" id="loc-card-delhi">
+                    <a href="https://selfstorageindia.com/self-storage-in-delhi/" class="location-card shadow-sm" id="loc-card-delhi">
                         <div class="loc-image-container">
                             <img src="assets/dwarka_storage.webp" alt="Self Storage India Dwarka Facility - Private Storage Rooms Sector 28 Delhi" class="loc-image" loading="lazy" width="774" height="500" decoding="async">
                             <div class="loc-badge">
@@ -938,7 +1033,7 @@
                     </a>
 
                     <!-- Location Card 2: Gurugram -->
-                    <a href="/self-storage-gurugram" class="location-card shadow-sm" id="loc-card-gurugram">
+                    <a href="https://selfstorageindia.com/self-storage-in-gurugram/" class="location-card shadow-sm" id="loc-card-gurugram">
                         <div class="loc-image-container">
                             <img src="assets/gurugram_storage.webp" alt="Self Storage India Gurugram Facility - Private Storage Rooms Sector 34 Honda Chowk" class="loc-image" loading="lazy" width="774" height="500" decoding="async">
                             <div class="loc-badge">
@@ -962,7 +1057,7 @@
                     </a>
 
                     <!-- Location Card 3: Noida -->
-                    <a href="/self-storage-noida" class="location-card shadow-sm" id="loc-card-noida">
+                    <a href="https://selfstorageindia.com/self-storage-in-noida/" class="location-card shadow-sm" id="loc-card-noida">
                         <div class="loc-image-container">
                             <img src="assets/noida_storage.webp" alt="Self Storage India Noida Facility - Private Storage Rooms Sector 59 Noida" class="loc-image" loading="lazy" width="780" height="512" decoding="async">
                             <div class="loc-badge">
@@ -1000,7 +1095,7 @@
                 <!-- 3 Premium Product Cards -->
                 <div class="offerings-grid">
                     <!-- Card 1: Private Storage -->
-                    <a href="/offering-private-rooms" class="offering-card">
+                    <a href="https://selfstorageindia.com/private-rooms-self-storage-size-guide/" class="offering-card">
                         <div class="offering-image-container">
                             <img src="assets/home_storage_new.webp" alt="Private Lockable Self Storage Rooms for Household Furniture Storage" class="offering-image" loading="lazy" width="900" height="907" decoding="async">
                             <div class="offering-image-overlay"></div>
@@ -1024,7 +1119,7 @@
                     </a>
 
                     <!-- Card 2: Business Storage (Featured) -->
-                    <a href="/business-storage" class="offering-card featured-card">
+                    <a href="https://selfstorageindia.com/self-storage-business/" class="offering-card featured-card">
                         <div class="offering-image-container">
                             <img src="assets/business_storage_new.webp" alt="Commercial Business Storage Units for Corporate Inventory &amp; Document Archiving" class="offering-image" loading="lazy" width="900" height="904" decoding="async">
                             <div class="offering-image-overlay"></div>
@@ -1047,7 +1142,7 @@
                     </a>
 
                     <!-- Card 3: Luggage & Box Storage -->
-                    <a href="/offering-box-storage" class="offering-card">
+                    <a href="https://selfstorageindia.com/box-storage-2/" class="offering-card">
                         <div class="offering-image-container">
                             <img src="assets/luggage_storage_new.webp" alt="Affordable Box Storage & Luggage Storage Facilities in Delhi NCR" class="offering-image" loading="lazy" width="900" height="940" decoding="async">
                             <div class="offering-image-overlay"></div>
@@ -1312,7 +1407,7 @@
                             <span class="material-symbols-rounded accordion-arrow">add</span>
                         </button>
                         <div class="faq-content-box">
-                            <p>Established in 2013, Self Storage India is India's pioneer in self-storage. We operate clean, secure, pest-controlled, and pest-controlled storage facilities strategically located in Delhi, Gurugram, and Noida with transparent pricing.</p>
+                            <p>Established in 2013, Self Storage India is India's pioneer in self-storage. We operate clean, secure, and pest-controlled storage facilities strategically located in Delhi, Gurugram, and Noida with transparent pricing.</p>
                         </div>
                     </div>
 
@@ -1413,13 +1508,13 @@
         <footer class="site-footer">
         <div class="footer-container">
             <nav class="footer-nav" aria-label="Footer navigation">
-                <a href="/household-goods-storage">For Home</a>
-                <a href="/business-storage">For Business</a>
+                <a href="https://selfstorageindia.com/household-goods-storage/">For Home</a>
+                <a href="https://selfstorageindia.com/self-storage-business/">For Business</a>
                 <a href="#locations">Locations</a>
-                <a href="/about-ceo-manjali-khosla">About CEO</a>
-                <a href="/blog">Blogs</a>
-                <a href="/terms-and-conditions">Terms &amp; Conditions</a>
-                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="https://selfstorageindia.com/about-self-storage-india/about-ceo-manjali-khosla/">About CEO</a>
+                <a href="https://selfstorageindia.com/blog/">Blogs</a>
+                <a href="https://selfstorageindia.com/terms-and-conditions/">Terms &amp; Conditions</a>
+                <a href="https://selfstorageindia.com/privacy-policy/">Privacy Policy</a>
                 <a href="javascript:void(0)" onclick="openQuoteModal('Footer Contact Us')">Contact Us</a>
             </nav>
 
@@ -1445,11 +1540,11 @@
             </div>
 
             <div class="footer-logos">
-                <a href="/" class="footer-logo footer-logo-primary">
+                <a href="/ss/" class="footer-logo footer-logo-primary">
                     <img src="https://selfstorageindia.com/wp-content/uploads/2025/07/Self-Storage-India-Logo-300x63.png" alt="Self Storage India Logo - Private Lockable Storage Rooms &amp; Warehouses" loading="lazy" decoding="async" width="240" height="50">
                 </a>
 
-                <a href="/" class="footer-logo footer-logo-warehouse">
+                <a href="/ss/" class="footer-logo footer-logo-warehouse">
                     <img src="https://selfstorageindia.com/wp-content/uploads/2024/09/ss_warehouse_white_bg_449_60-1-300x40.webp" alt="Self Storage Warehouse Division Official Logo" loading="lazy" decoding="async" width="240" height="32">
                 </a>
 
@@ -1618,7 +1713,10 @@
                 <button class="modal-close" onclick="closeVideoModal()"><span class="material-symbols-rounded">close</span></button>
             </div>
             <div class="video-container-box">
-                <iframe width="100%" height="280" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="How Storage Works" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <video controls width="100%" poster="assets/manjali_cover.jpg" style="border-radius: 8px; width: 100%; max-height: 400px; display: block;" aria-label="How Self Storage Works demonstration video">
+                    <source src="assets/why-self-storage.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
             </div>
         </div>
     </div>
