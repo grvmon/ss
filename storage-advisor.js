@@ -9,20 +9,21 @@
   var REDIRECT_URL = (typeof window.advisorRedirectUrl !== 'undefined') ? window.advisorRedirectUrl : defaultRedirect;
   var COOLDOWN_SECONDS = 15;
   var basePath = (function() {
-    var scriptTag = document.querySelector('script[src*="storage-advisor"]');
-    if (scriptTag && scriptTag.getAttribute('src')) {
-      var src = scriptTag.getAttribute('src');
-      var idx = src.lastIndexOf('storage-advisor');
-      if (idx !== -1) return src.substring(0, idx);
+    if (window.location.protocol === 'file:') {
+      var scriptTag = document.querySelector('script[src*="storage-advisor"]');
+      if (scriptTag && scriptTag.getAttribute('src')) {
+        var src = scriptTag.getAttribute('src');
+        var idx = src.lastIndexOf('storage-advisor');
+        if (idx !== -1) return src.substring(0, idx);
+      }
+      return '';
     }
     var isGh = window.location.pathname.startsWith('/ss');
-    var isStoreSub = window.location.pathname.includes('/store/') || window.location.pathname.endsWith('/store/');
-    if (isStoreSub) return '../';
     return isGh ? '/ss/' : '/';
   })();
   var CHIME_URL = basePath + 'assets/advisor-chime.wav';
   var AVATAR_URL = basePath + 'assets/advisor-abha.webp';
-  var CSS_URL = basePath + 'storage-advisor.min.css?v=5.0';
+  var CSS_URL = basePath + 'storage-advisor.min.css?v=5.2';
 
   var STRINGS = {
     btnSubmit: "Start Chat",
@@ -854,11 +855,29 @@
     if (talkBtn) talkBtn.addEventListener("click", openTheForm);
 
     var avatarWrap = document.querySelector(".advisor-avatar-wrap");
-    if (avatarWrap) avatarWrap.addEventListener("click", openTheForm);
+    if (avatarWrap) {
+      avatarWrap.addEventListener("click", function(e) {
+        if (floatingUnit && floatingUnit.classList.contains("is-minimized")) {
+          e.preventDefault();
+          e.stopPropagation();
+          floatingUnit.classList.remove("is-minimized");
+          Store.set("advisor_minimized", "0");
+          return;
+        }
+        openTheForm(e);
+      });
+    }
 
     if (mainCard) {
       mainCard.addEventListener("click", function(e) {
         if (e.target && e.target.closest && e.target.closest("#advisorCloseBtn")) return;
+        if (floatingUnit && floatingUnit.classList.contains("is-minimized")) {
+          e.preventDefault();
+          e.stopPropagation();
+          floatingUnit.classList.remove("is-minimized");
+          Store.set("advisor_minimized", "0");
+          return;
+        }
         openTheForm(e);
       });
     }
@@ -994,21 +1013,19 @@
       }
     });
 
-    /* Restore minimized state if set */
-    if (Store.get("advisor_minimized") === "1" && floatingUnit) {
-      floatingUnit.classList.add("is-minimized");
-    }
+    /* Fresh start on new page views so Abha is visible and ready to assist */
+    Store.set("advisor_minimized", "0");
 
-    /* Timed entrance animation */
+    /* Timed entrance animation - smooth, prompt 350ms entrance */
     setTimeout(function() {
       if (floatingUnit) {
         floatingUnit.classList.add("is-visible");
       }
-    }, 2200);
+    }, 350);
 
-    /* Also show on scroll */
+    /* Also show immediately on scroll */
     var onFirstScroll = function() {
-      if (window.scrollY > 200 && floatingUnit && !floatingUnit.classList.contains("is-visible")) {
+      if (floatingUnit && !floatingUnit.classList.contains("is-visible")) {
         floatingUnit.classList.add("is-visible");
         window.removeEventListener("scroll", onFirstScroll);
       }

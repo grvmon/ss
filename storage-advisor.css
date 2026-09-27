@@ -76,6 +76,11 @@ body.mobile-menu-open .advisor-floating-unit {
   display: none !important;
 }
 
+body.has-calc-bar .advisor-floating-unit,
+.calc-mobile-bar.visible ~ .advisor-floating-unit {
+  bottom: max(86px, calc(80px + env(safe-area-inset-bottom, 0px))) !important;
+}
+
 /* Speech Bubble */
 .advisor-speech-bubble {
   position: relative;
@@ -1011,10 +1016,10 @@ body.mobile-menu-open .advisor-floating-unit {
 
 @media (max-width: 480px) {
   .advisor-floating-unit {
-    bottom: max(18px, calc(14px + env(safe-area-inset-bottom, 0px)));
-    right: max(16px, calc(12px + env(safe-area-inset-right, 0px)));
+    bottom: max(16px, calc(12px + env(safe-area-inset-bottom, 0px)));
+    right: max(14px, calc(10px + env(safe-area-inset-right, 0px)));
     left: auto;
-    max-width: calc(100vw - 24px);
+    max-width: calc(100vw - 20px);
   }
 
   .advisor-speech-bubble {
