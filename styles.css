@@ -4039,10 +4039,9 @@ h3 {
 
 /* FAQ Section Styles */
 .faq-section {
-    padding: var(--space-section) 0;
+    padding: var(--space-section) 0 40px;
     background-color: #ffffff;
     border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
 }
 
 .faq-accordions-centered-container {
@@ -5232,7 +5231,7 @@ h3 {
 /* Site Footer */
 .site-footer {
     background: linear-gradient(135deg, #186CEC 0%, #0F52BA 100%);
-    padding: 50px 24px 40px;
+    padding: 50px 0 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     position: relative;
     width: 100%;
