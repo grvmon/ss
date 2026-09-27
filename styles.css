@@ -120,6 +120,7 @@ html {
 html, body {
     margin: 0;
     padding: 0;
+    width: 100%;
     overflow-x: hidden !important;
     font-family: var(--font-body);
     background-color: var(--bg);
@@ -218,7 +219,7 @@ h3 {
     left: 0;
     right: 0;
     z-index: 100;
-    background: #ffffff;
+    background: #F8FAFC;
     border-bottom: 1px solid var(--border);
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
     height: 76px;
@@ -227,7 +228,7 @@ h3 {
 }
 
 .navbar.scrolled {
-    background: #ffffff;
+    background: #ffffff; /* Stays white after scroll */
     border-bottom: 1px solid var(--border);
     height: 76px;
     box-shadow: var(--shadow-sm);
