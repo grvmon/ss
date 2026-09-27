@@ -68,11 +68,11 @@
     { id: 'bookshelf', name: 'Bookshelf / Display Rack', cat: 'living', icon: 'shelves', cuFt: 15.8, w: 0.8, d: 0.35, h: 1.6, floorFootprint: 2.5, color: '#475569' },
     { id: 'shoe_rack', name: 'Shoe Rack Cabinet', cat: 'living', icon: 'steps', cuFt: 8.9, w: 0.8, d: 0.35, h: 0.9, floorFootprint: 1.8, color: '#64748b' },
 
-    // --- BEDROOM ---
-    { id: 'bed_king', name: 'King Bed with Storage', cat: 'bedroom', icon: 'bed', cuFt: 58.8, w: 2.0, d: 1.85, h: 0.45, floorFootprint: 8.0, color: '#10b981' },
-    { id: 'bed_queen', name: 'Queen Double Bed', cat: 'bedroom', icon: 'bed', cuFt: 49.3, w: 2.0, d: 1.55, h: 0.45, floorFootprint: 7.0, color: '#059669' },
-    { id: 'bed_single', name: 'Single Bed / Diwan Cot', cat: 'bedroom', icon: 'single_bed', cuFt: 25.5, w: 1.9, d: 0.95, h: 0.4, floorFootprint: 4.5, color: '#34d399' },
-    { id: 'mattress_double', name: 'King / Queen Mattress', cat: 'bedroom', icon: 'bed', cuFt: 22.6, w: 2.0, d: 1.6, h: 0.2, floorFootprint: 2.5, color: '#a7f3d0' },
+    // --- BEDROOM (Stored profile: Dismantled/Upright profile clearance) ---
+    { id: 'bed_king', name: 'King Bed with Storage', cat: 'bedroom', icon: 'bed', cuFt: 58.8, w: 2.0, d: 0.9, h: 1.2, floorFootprint: 8.0, color: '#10b981' },
+    { id: 'bed_queen', name: 'Queen Double Bed', cat: 'bedroom', icon: 'bed', cuFt: 49.3, w: 2.0, d: 0.85, h: 1.1, floorFootprint: 7.0, color: '#059669' },
+    { id: 'bed_single', name: 'Single Bed / Diwan Cot', cat: 'bedroom', icon: 'single_bed', cuFt: 25.5, w: 1.9, d: 0.7, h: 0.9, floorFootprint: 4.5, color: '#34d399' },
+    { id: 'mattress_double', name: 'King / Queen Mattress', cat: 'bedroom', icon: 'bed', cuFt: 22.6, w: 2.0, d: 0.35, h: 1.6, floorFootprint: 2.5, color: '#a7f3d0' },
     { id: 'almirah_2door', name: '2-Door Wardrobe / Almirah', cat: 'bedroom', icon: 'dresser', cuFt: 34.1, w: 0.9, d: 0.55, h: 1.95, floorFootprint: 5.0, color: '#047857' },
     { id: 'almirah_3door', name: '3-Door Large Wardrobe', cat: 'bedroom', icon: 'dresser', cuFt: 53.0, w: 1.4, d: 0.55, h: 1.95, floorFootprint: 7.5, color: '#065f46' },
     { id: 'dressing_table', name: 'Dressing Table with Mirror', cat: 'bedroom', icon: 'dresser', cuFt: 21.6, w: 0.8, d: 0.45, h: 1.7, floorFootprint: 3.5, color: '#14b8a6' },
@@ -325,7 +325,8 @@
     // Practical self-storage packing efficiency: 75% usable cubic volume accounting for voids & walkways
     const PACKING_EFFICIENCY = 0.75;
     const effectiveNeededCuFt = totalCuFt / PACKING_EFFICIENCY;
-    const effectiveFloorArea = Math.max(reqFloorFootprint, totalCuFt / 6.5);
+    // Mixed residential goods floor footprint: average real-world stacking density of 5.8 cu ft per sq ft
+    const effectiveFloorArea = Math.max(reqFloorFootprint, totalCuFt / 5.8);
 
     // Match smallest unit from 33 SSI units (starting at Tier 2 - 48 sq ft)
     let matchedUnit = null;
@@ -357,13 +358,15 @@
       matchedUnit = {
         id: 'multiple_units',
         name: `${mult}× Extra Large 17 X 11 Suites`,
-        w: largest.w * mult,
+        w: largest.w,
         d: largest.d,
         h: largest.h,
+        mult: mult,
         area: largest.area * mult,
         vol: largest.vol * mult,
         tier: 'Multiple Private Suites',
-        price: largest.price * mult
+        price: largest.price * mult,
+        isMultiple: true
       };
     }
 
@@ -372,7 +375,10 @@
 
     let statusText = 'Comfortable fit with room for access walkways.';
     let statusCode = 'good';
-    if (utilizationPct > 88) {
+    if (inventoryData.totalItems <= 6 && totalCuFt < 45) {
+      statusText = 'Entry private room size (48 sq ft). For smaller personal box or luggage lots, ask us about shared box storage plans!';
+      statusCode = 'roomy';
+    } else if (utilizationPct > 88) {
       statusText = 'Packed near capacity. Consider next size up for easier item retrieval.';
       statusCode = 'tight';
     } else if (utilizationPct > 78) {
@@ -655,11 +661,26 @@
     if (result.unit) {
       if (tierBadgeEl) tierBadgeEl.innerText = result.unit.tier;
       if (unitNameEl) unitNameEl.innerText = `${result.unit.tier} (${result.unit.name})`;
-      if (unitDimEl) unitDimEl.innerText = `${result.unit.w} ft × ${result.unit.d} ft × ${result.unit.h} ft Ceiling`;
+      if (unitDimEl) {
+        if (result.unit.isMultiple) {
+          unitDimEl.innerText = `${result.unit.mult} Suites of ${result.unit.w} ft × ${result.unit.d} ft (${result.unit.h} ft Ceiling)`;
+        } else {
+          unitDimEl.innerText = `${result.unit.w} ft × ${result.unit.d} ft × ${result.unit.h} ft Ceiling`;
+        }
+      }
       if (unitAreaEl) unitAreaEl.innerText = `${result.unit.area} sq ft`;
       if (unitVolEl) unitVolEl.innerText = `${result.unit.vol} cu ft`;
       if (unitPriceEl) unitPriceEl.innerText = `Starting from ₹${result.unit.price.toLocaleString('en-IN')}/mo`;
-      if (utilBarEl) utilBarEl.style.width = `${result.utilizationPct}%`;
+      if (utilBarEl) {
+        utilBarEl.style.width = `${result.utilizationPct}%`;
+        if (result.statusCode === 'tight') {
+          utilBarEl.style.background = 'linear-gradient(90deg, #f59e0b, #d97706)';
+        } else if (result.statusCode === 'optimal' || result.statusCode === 'good') {
+          utilBarEl.style.background = 'linear-gradient(90deg, #10b981, #059669)';
+        } else {
+          utilBarEl.style.background = 'linear-gradient(90deg, #2563eb, #3b82f6)';
+        }
+      }
       if (utilPctEl) utilPctEl.innerText = `${result.utilizationPct}% Filled`;
       if (statusNoteEl) statusNoteEl.innerText = result.statusText;
       if (ctaBtnText) ctaBtnText.innerText = `Book ${result.unit.tier} (${result.unit.area} sq ft) →`;
@@ -670,7 +691,10 @@
       if (unitAreaEl) unitAreaEl.innerText = '0 sq ft';
       if (unitVolEl) unitVolEl.innerText = '0 cu ft';
       if (unitPriceEl) unitPriceEl.innerText = 'Starting from ₹3,800/mo (Tier 2 Standard)';
-      if (utilBarEl) utilBarEl.style.width = '0%';
+      if (utilBarEl) {
+        utilBarEl.style.width = '0%';
+        utilBarEl.style.background = 'linear-gradient(90deg, #2563eb, #3b82f6)';
+      }
       if (utilPctEl) utilPctEl.innerText = '0% Filled';
       if (statusNoteEl) statusNoteEl.innerText = 'Tap + on items or choose a 1-click home/office preset below.';
       if (ctaBtnText) ctaBtnText.innerText = 'Select Items or Request Free Sizing Advice';
@@ -713,7 +737,7 @@
     if (mobileBar) {
       if (totalCuFt > 0 && result.unit) {
         mobileBar.classList.add('visible');
-        if (mobileSqFt) mobileSqFt.innerText = `${result.unit.area} sq ft`;
+        if (mobileSqFt) mobileSqFt.innerText = `${result.unit.area} sq ft · ₹${result.unit.price.toLocaleString('en-IN')}/mo`;
         if (mobileTier) mobileTier.innerText = result.unit.name;
       } else {
         mobileBar.classList.remove('visible');
