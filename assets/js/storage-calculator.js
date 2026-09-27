@@ -1,0 +1,808 @@
+/**
+ * Self Storage India — End-to-End Indian Household Storage Sizing Engine
+ * Incorporating Calcumate 3D volumetric logic, 37 SSI facility unit tiers,
+ * real-time isometric 3D canvas packing, and Zoho CRM lead integration.
+ */
+
+(function () {
+  'use strict';
+
+  // =========================================================================
+  // 1. DATA: 37 SSI FACILITY UNITS (DIRECT FROM CALCUMATE INTEGRATION)
+  // =========================================================================
+  const SSI_UNITS = [
+    { id: 'u_6x4', name: 'Tiny 6 X 4', w: 6, d: 4, h: 8, area: 24, vol: 192, tier: 'Personal Locker', price: 1200 },
+    { id: 'u_9x4', name: 'Small 9 X 4', w: 9, d: 4, h: 8, area: 36, vol: 288, tier: 'Small Room', price: 2900 },
+    { id: 'u_8x5', name: 'Small 8 X 5', w: 8, d: 5, h: 8, area: 40, vol: 320, tier: 'Small Room', price: 3200 },
+    { id: 'u_11x4', name: 'Small 11 X 4', w: 11, d: 4, h: 8, area: 44, vol: 352, tier: 'Small Room', price: 3500 },
+    { id: 'u_8x6', name: 'Small 8 X 6', w: 8, d: 6, h: 8, area: 48, vol: 384, tier: 'Small Room', price: 3800 },
+    { id: 'u_7x7', name: 'Small 7 X 7', w: 7, d: 7, h: 8, area: 49, vol: 392, tier: 'Small Room', price: 3900 },
+    { id: 'u_10x5', name: 'Small 10 X 5', w: 10, d: 5, h: 8, area: 50, vol: 400, tier: 'Small Room', price: 4000 },
+    { id: 'u_9x6', name: 'Small 9 X 6', w: 9, d: 6, h: 8, area: 54, vol: 432, tier: 'Small Room', price: 4300 },
+    { id: 'u_11x5', name: 'Medium 11 X 5', w: 11, d: 5, h: 8, area: 55, vol: 440, tier: 'Medium Room', price: 4500 },
+    { id: 'u_8x7', name: 'Medium 8 X 7', w: 8, d: 7, h: 8, area: 56, vol: 448, tier: 'Medium Room', price: 4600 },
+    { id: 'u_12x5', name: 'Medium 12 X 5', w: 12, d: 5, h: 8, area: 60, vol: 480, tier: 'Medium Room', price: 4900 },
+    { id: 'u_10x6', name: 'Medium 10 X 6', w: 10, d: 6, h: 8, area: 60, vol: 480, tier: 'Medium Room', price: 4900 },
+    { id: 'u_11x6', name: 'Medium 11 X 6', w: 11, d: 6, h: 8, area: 66, vol: 528, tier: 'Medium Room', price: 5400 },
+    { id: 'u_14x5', name: 'Medium 14 X 5', w: 14, d: 5, h: 8, area: 70, vol: 560, tier: 'Medium Room', price: 5700 },
+    { id: 'u_10x7', name: 'Medium 10 X 7', w: 10, d: 7, h: 8, area: 70, vol: 560, tier: 'Medium Room', price: 5700 },
+    { id: 'u_9x8', name: 'Medium 9 X 8', w: 9, d: 8, h: 8, area: 72, vol: 576, tier: 'Medium Room', price: 5900 },
+    { id: 'u_12x6', name: 'Medium 12 X 6', w: 12, d: 6, h: 8, area: 72, vol: 576, tier: 'Medium Room', price: 5900 },
+    { id: 'u_11x7', name: 'Large 11 X 7', w: 11, d: 7, h: 8, area: 77, vol: 616, tier: 'Large Room', price: 6300 },
+    { id: 'u_13x6', name: 'Large 13 X 6', w: 13, d: 6, h: 8, area: 78, vol: 624, tier: 'Large Room', price: 6400 },
+    { id: 'u_10x8', name: 'Large 10 X 8', w: 10, d: 8, h: 8, area: 80, vol: 640, tier: 'Large Room', price: 6600 },
+    { id: 'u_14x6', name: 'Large 14 X 6', w: 14, d: 6, h: 8, area: 84, vol: 672, tier: 'Large Room', price: 6900 },
+    { id: 'u_11x8', name: 'Large 11 X 8', w: 11, d: 8, h: 8, area: 88, vol: 704, tier: 'Large Room', price: 7200 },
+    { id: 'u_18x5', name: 'Large 18 X 5', w: 18, d: 5, h: 8, area: 90, vol: 720, tier: 'Large Room', price: 7400 },
+    { id: 'u_15x6', name: 'Large 15 X 6', w: 15, d: 6, h: 8, area: 90, vol: 720, tier: 'Large Room', price: 7400 },
+    { id: 'u_23x4', name: 'Large 23 X 4', w: 23, d: 4, h: 8, area: 92, vol: 736, tier: 'Large Room', price: 7600 },
+    { id: 'u_19x5', name: 'Large 19 X 5', w: 19, d: 5, h: 8, area: 95, vol: 760, tier: 'Large Room', price: 7800 },
+    { id: 'u_11x9', name: 'Extra Large 11 X 9', w: 11, d: 9, h: 8, area: 99, vol: 792, tier: 'Extra Large Suite', price: 8200 },
+    { id: 'u_18x6', name: 'Extra Large 18 X 6', w: 18, d: 6, h: 8, area: 108, vol: 864, tier: 'Extra Large Suite', price: 8900 },
+    { id: 'u_11x10', name: 'Extra Large 11 X 10', w: 11, d: 10, h: 8, area: 110, vol: 880, tier: 'Extra Large Suite', price: 9100 },
+    { id: 'u_23x5', name: 'Extra Large 23 X 5', w: 23, d: 5, h: 8, area: 115, vol: 920, tier: 'Extra Large Suite', price: 9500 },
+    { id: 'u_18x7', name: 'Extra Large 18 X 7', w: 18, d: 7, h: 8, area: 126, vol: 1008, tier: 'Extra Large Suite', price: 10400 },
+    { id: 'u_14x9', name: 'Extra Large 14 X 9', w: 14, d: 9, h: 8, area: 126, vol: 1008, tier: 'Extra Large Suite', price: 10400 },
+    { id: 'u_13x10', name: 'Extra Large 13 X 10', w: 13, d: 10, h: 8, area: 130, vol: 1040, tier: 'Extra Large Suite', price: 10700 },
+    { id: 'u_13x11', name: 'Extra Large 13 X 11', w: 13, d: 11, h: 8, area: 143, vol: 1144, tier: 'Extra Large Suite', price: 11800 },
+    { id: 'u_19x8', name: 'Extra Large 19 X 8', w: 19, d: 8, h: 8, area: 152, vol: 1216, tier: 'Extra Large Suite', price: 12500 },
+    { id: 'u_19x9', name: 'Extra Large 19 X 9', w: 19, d: 9, h: 8, area: 171, vol: 1368, tier: 'Extra Large Suite', price: 14000 },
+    { id: 'u_17x11', name: 'Extra Large 17 X 11', w: 17, d: 11, h: 8, area: 187, vol: 1496, tier: 'Extra Large Suite', price: 15400 }
+  ];
+
+  // =========================================================================
+  // 2. DATA: INDIAN HOUSEHOLD ITEMS CATALOG (47 DETAILED ITEMS)
+  // =========================================================================
+  const INDIAN_ITEMS = [
+    // --- LIVING ROOM ---
+    { id: 'sofa_3', name: '3-Seater Sofa', nameHi: '3-सीटर सोफा', cat: 'living', icon: 'weekend', cuFt: 50.4, w: 2.1, d: 0.85, h: 0.8, color: '#3b82f6' },
+    { id: 'sofa_2', name: '2-Seater Sofa', nameHi: '2-सीटर सोफा', cat: 'living', icon: 'weekend', cuFt: 36.0, w: 1.5, d: 0.85, h: 0.8, color: '#60a5fa' },
+    { id: 'sofa_1', name: 'Armchair / Single Recliner', nameHi: 'सिंगल सोफा / रिक्लाइनर', cat: 'living', icon: 'armchair', cuFt: 21.7, w: 0.85, d: 0.85, h: 0.85, color: '#93c5fd' },
+    { id: 'sofa_l_shape', name: 'L-Shaped Sectional Sofa', nameHi: 'L-शेप कॉर्नर सोफा', cat: 'living', icon: 'weekend', cuFt: 86.8, w: 2.4, d: 1.6, h: 0.8, color: '#2563eb' },
+    { id: 'diwan', name: 'Diwan Bed with Box Storage', nameHi: 'दीवान (बॉक्स वाला)', cat: 'living', icon: 'bed', cuFt: 29.4, w: 1.85, d: 0.9, h: 0.5, color: '#f59e0b' },
+    { id: 'center_table', name: 'Center / Coffee Table', nameHi: 'सेंटर / कॉफ़ी टेबल', cat: 'living', icon: 'table_restaurant', cuFt: 9.5, w: 1.0, d: 0.6, h: 0.45, color: '#d97706' },
+    { id: 'tv_unit', name: 'TV Unit & Media Console', nameHi: 'टीवी कैबिनेट / टेबल', cat: 'living', icon: 'tv', cuFt: 11.9, w: 1.5, d: 0.45, h: 0.5, color: '#78350f' },
+    { id: 'led_tv', name: 'LED TV 43-65" (Boxed)', nameHi: 'एलईडी टीवी (बॉक्स में)', cat: 'living', icon: 'tv', cuFt: 7.6, w: 1.4, d: 0.18, h: 0.85, color: '#1e293b' },
+    { id: 'pooja_mandir', name: 'Pooja Mandir (Wooden/Marble)', nameHi: 'पूजा मंदिर', cat: 'living', icon: 'temple_hindu', cuFt: 11.5, w: 0.6, d: 0.45, h: 1.2, color: '#b45309' },
+    { id: 'bookshelf', name: 'Bookshelf / Display Rack', nameHi: 'बुकशेल्फ़ / शोकेस', cat: 'living', icon: 'shelves', cuFt: 15.8, w: 0.8, d: 0.35, h: 1.6, color: '#475569' },
+    { id: 'shoe_rack', name: 'Shoe Rack / Cabinet', nameHi: 'शू रैक', cat: 'living', icon: 'steps', cuFt: 8.9, w: 0.8, d: 0.35, h: 0.9, color: '#64748b' },
+
+    // --- BEDROOM ---
+    { id: 'bed_king', name: 'King Double Bed with Storage', nameHi: 'किंग साइज़ डबल बेड', cat: 'bedroom', icon: 'bed', cuFt: 58.8, w: 2.0, d: 1.85, h: 0.45, color: '#10b981' },
+    { id: 'bed_queen', name: 'Queen Double Bed', nameHi: 'क्वीन साइज़ बेड', cat: 'bedroom', icon: 'bed', cuFt: 49.3, w: 2.0, d: 1.55, h: 0.45, color: '#059669' },
+    { id: 'bed_single', name: 'Single Bed / Diwan Cot', nameHi: 'सिंगल बेड / चारपाई', cat: 'bedroom', icon: 'single_bed', cuFt: 25.5, w: 1.9, d: 0.95, h: 0.4, color: '#34d399' },
+    { id: 'mattress_double', name: 'King / Queen Mattress', nameHi: 'डबल बेड गद्दा', cat: 'bedroom', icon: 'bed', cuFt: 22.6, w: 2.0, d: 1.6, h: 0.2, color: '#a7f3d0' },
+    { id: 'almirah_2door', name: '2-Door Wardrobe / Steel Almirah', nameHi: '2-डोर अलमारी / गोदरेज', cat: 'bedroom', icon: 'dresser', cuFt: 34.1, w: 0.9, d: 0.55, h: 1.95, color: '#047857' },
+    { id: 'almirah_3door', name: '3-Door Large Wardrobe', nameHi: '3-डोर बड़ी अलमारी', cat: 'bedroom', icon: 'dresser', cuFt: 53.0, w: 1.4, d: 0.55, h: 1.95, color: '#065f46' },
+    { id: 'dressing_table', name: 'Dressing Table with Mirror', nameHi: 'ड्रेसिंग टेबल', cat: 'bedroom', icon: 'dresser', cuFt: 21.6, w: 0.8, d: 0.45, h: 1.7, color: '#14b8a6' },
+    { id: 'bedside_tables', name: 'Bedside Tables (Pair)', nameHi: 'साइड टेबल (जोड़ा)', cat: 'bedroom', icon: 'table_restaurant', cuFt: 6.4, w: 0.45, d: 0.4, h: 0.5, color: '#0d9488' },
+    { id: 'razai_bundles', name: 'Gadda / Razai / Quilt Bundles', nameHi: 'रज़ाई / गद्दों का बंडल', cat: 'bedroom', icon: 'inventory_2', cuFt: 9.5, w: 0.9, d: 0.6, h: 0.5, color: '#6ee7b7' },
+
+    // --- KITCHEN & DINING ---
+    { id: 'fridge_double', name: 'Double Door Refrigerator (250-450L)', nameHi: 'डबल डोर फ्रिज', cat: 'kitchen', icon: 'kitchen', cuFt: 30.3, w: 0.7, d: 0.7, h: 1.75, color: '#0284c7' },
+    { id: 'fridge_single', name: 'Single Door Refrigerator (190L)', nameHi: 'सिंगल डोर फ्रिज', cat: 'kitchen', icon: 'kitchen', cuFt: 17.9, w: 0.6, d: 0.65, h: 1.3, color: '#38bdf8' },
+    { id: 'dining_6', name: 'Dining Table (6-Seater)', nameHi: 'डाइनिंग टेबल (6-सीटर)', cat: 'kitchen', icon: 'table_restaurant', cuFt: 35.8, w: 1.5, d: 0.9, h: 0.75, color: '#e11d48' },
+    { id: 'dining_4', name: 'Dining Table (4-Seater)', nameHi: 'डाइनिंग टेबल (4-सीटर)', cat: 'kitchen', icon: 'table_restaurant', cuFt: 23.3, w: 1.1, d: 0.8, h: 0.75, color: '#f43f5e' },
+    { id: 'dining_chairs', name: 'Dining Chairs (Set of 4)', nameHi: 'डाइनिंग कुर्सियां (4 सेट)', cat: 'kitchen', icon: 'chair', cuFt: 18.0, w: 0.5, d: 0.5, h: 0.95, color: '#fda4af' },
+    { id: 'microwave', name: 'Microwave Oven / OTG', nameHi: 'माइक्रोवेव ओवन', cat: 'kitchen', icon: 'microwave', cuFt: 3.1, w: 0.55, d: 0.45, h: 0.35, color: '#9f1239' },
+    { id: 'gas_stove_cyl', name: 'Gas Stove & Cylinder (Empty)', nameHi: 'गैस चूल्हा व सिलेंडर', cat: 'kitchen', icon: 'propane_tank', cuFt: 5.5, w: 0.6, d: 0.4, h: 0.65, color: '#be123c' },
+    { id: 'water_purifier', name: 'RO Water Purifier System', nameHi: 'वाटर प्यूरीफायर (RO)', cat: 'kitchen', icon: 'water_drop', cuFt: 2.3, w: 0.4, d: 0.3, h: 0.55, color: '#06b6d4' },
+
+    // --- APPLIANCES & UTILITIES ---
+    { id: 'washing_front', name: 'Front Load Washing Machine', nameHi: 'वॉशिंग मशीन (फ्रंट लोड)', cat: 'appliances', icon: 'local_laundry_service', cuFt: 10.8, w: 0.6, d: 0.6, h: 0.85, color: '#8b5cf6' },
+    { id: 'washing_top', name: 'Top Load Washing Machine', nameHi: 'वॉशिंग मशीन (टॉप लोड)', cat: 'appliances', icon: 'local_laundry_service', cuFt: 9.6, w: 0.55, d: 0.55, h: 0.9, color: '#a78bfa' },
+    { id: 'split_ac', name: 'Split AC (Indoor + Outdoor)', nameHi: 'स्प्लिट एसी (दोनों यूनिट)', cat: 'appliances', icon: 'mode_fan', cuFt: 6.7, w: 0.9, d: 0.35, h: 0.6, color: '#7c3aed' },
+    { id: 'window_ac', name: 'Window AC Unit', nameHi: 'विंडो एसी', cat: 'appliances', icon: 'mode_fan', cuFt: 6.7, w: 0.65, d: 0.65, h: 0.45, color: '#6d28d9' },
+    { id: 'air_cooler', name: 'Desert Air Cooler', nameHi: 'कूलर (डेज़र्ट)', cat: 'appliances', icon: 'air', cuFt: 14.5, w: 0.65, d: 0.55, h: 1.15, color: '#c4b5fd' },
+    { id: 'inverter_battery', name: 'Inverter + Heavy Battery Set', nameHi: 'इन्वर्टर व बैटरी सेट', cat: 'appliances', icon: 'battery_charging_full', cuFt: 4.4, w: 0.5, d: 0.45, h: 0.55, color: '#4c1d95' },
+    { id: 'geyser', name: 'Geyser / Water Heater', nameHi: 'गीज़र', cat: 'appliances', icon: 'water_heater', cuFt: 4.6, w: 0.45, d: 0.45, h: 0.65, color: '#ec4899' },
+
+    // --- BOXES, TRUNKS & LUGGAGE ---
+    { id: 'box_large', name: 'Large Moving Carton (Clothes)', nameHi: 'बड़ा कार्टन बॉक्स (कपड़े)', cat: 'boxes', icon: 'inventory_2', cuFt: 4.3, w: 0.6, d: 0.45, h: 0.45, color: '#f59e0b' },
+    { id: 'box_medium', name: 'Medium Carton (Books/Kitchen)', nameHi: 'मध्यम कार्टन बॉक्स', cat: 'boxes', icon: 'inventory_2', cuFt: 2.5, w: 0.45, d: 0.4, h: 0.4, color: '#fbbf24' },
+    { id: 'box_small', name: 'Small Carton (Crockery)', nameHi: 'छोटा बॉक्स (बर्तन/किताबें)', cat: 'boxes', icon: 'inventory_2', cuFt: 1.1, w: 0.35, d: 0.3, h: 0.3, color: '#fde68a' },
+    { id: 'trunk_steel', name: 'Steel Trunk / Metal Peti', nameHi: 'लोहे की पेटी / ट्रंक', cat: 'boxes', icon: 'luggage', cuFt: 8.3, w: 0.95, d: 0.55, h: 0.45, color: '#64748b' },
+    { id: 'suitcase_large', name: 'Large Strolley Suitcase', nameHi: 'बड़ा सूटकेस (ट्रॉली)', cat: 'boxes', icon: 'luggage', cuFt: 4.0, w: 0.75, d: 0.5, h: 0.3, color: '#475569' },
+    { id: 'suitcase_cabin', name: 'Cabin Bag / Duffle Bag', nameHi: 'केबिन बैग / डफ़ल बैग', cat: 'boxes', icon: 'luggage', cuFt: 1.7, w: 0.55, d: 0.35, h: 0.25, color: '#94a3b8' },
+
+    // --- OFFICE, VEHICLES & EXTRA ---
+    { id: 'two_wheeler', name: 'Two-Wheeler (Activa / Motorcycle)', nameHi: 'स्कूटर / मोटरसाइकिल', cat: 'office_vehicle', icon: 'two_wheeler', cuFt: 54.0, w: 1.9, d: 0.7, h: 1.15, color: '#dc2626' },
+    { id: 'bicycle', name: 'Bicycle (Adult / Kids)', nameHi: 'साइकिल', cat: 'office_vehicle', icon: 'pedal_bike', cuFt: 36.0, w: 1.7, d: 0.6, h: 1.0, color: '#ea580c' },
+    { id: 'office_desk', name: 'Office Workstation / Study Desk', nameHi: 'ऑफिस मेज / स्टडी टेबल', cat: 'office_vehicle', icon: 'desk', cuFt: 19.1, w: 1.2, d: 0.6, h: 0.75, color: '#0891b2' },
+    { id: 'office_chair', name: 'Ergonomic Office Chair', nameHi: 'ऑफिस चेयर', cat: 'office_vehicle', icon: 'chair', cuFt: 17.2, w: 0.65, d: 0.65, h: 1.15, color: '#0e7490' },
+    { id: 'archive_box', name: 'Archival Document File Box', nameHi: 'दस्तावेज़ / फाइल बॉक्स', cat: 'office_vehicle', icon: 'folder', cuFt: 1.3, w: 0.4, d: 0.32, h: 0.28, color: '#ca8a04' },
+    { id: 'fitness_gym', name: 'Treadmill / Exercise Gym Cycle', nameHi: 'ट्रेडमिल / जिम बाइक', cat: 'office_vehicle', icon: 'fitness_center', cuFt: 55.1, w: 1.6, d: 0.75, h: 1.3, color: '#16a34a' }
+  ];
+
+  // =========================================================================
+  // 3. PRESETS TAILORED FOR INDIAN APARTMENTS & HOMES
+  // =========================================================================
+  const INDIAN_PRESETS = {
+    '1rk': {
+      label: 'Studio / 1 RK (~35 sq ft)',
+      items: { bed_single: 1, mattress_double: 1, almirah_2door: 1, fridge_single: 1, microwave: 1, box_medium: 6, suitcase_large: 2, water_purifier: 1 }
+    },
+    '1bhk': {
+      label: '1 BHK Flat (~50-60 sq ft)',
+      items: { bed_king: 1, mattress_double: 1, sofa_3: 1, center_table: 1, tv_unit: 1, led_tv: 1, almirah_2door: 1, fridge_double: 1, washing_front: 1, microwave: 1, split_ac: 1, box_large: 6, box_medium: 8, suitcase_large: 3, suitcase_cabin: 2 }
+    },
+    '2bhk': {
+      label: '2 BHK Home (~80-100 sq ft)',
+      items: { bed_king: 1, bed_queen: 1, mattress_double: 2, sofa_3: 1, sofa_2: 1, center_table: 1, tv_unit: 1, led_tv: 1, dining_4: 1, dining_chairs: 1, almirah_2door: 2, dressing_table: 1, fridge_double: 1, washing_front: 1, microwave: 1, split_ac: 2, inverter_battery: 1, box_large: 12, box_medium: 15, box_small: 6, trunk_steel: 1, suitcase_large: 4, suitcase_cabin: 3 }
+    },
+    '3bhk': {
+      label: '3 BHK Villa (~130-160 sq ft)',
+      items: { bed_king: 2, bed_single: 1, mattress_double: 2, sofa_3: 1, sofa_2: 1, sofa_1: 2, center_table: 1, tv_unit: 1, led_tv: 2, pooja_mandir: 1, bookshelf: 1, shoe_rack: 1, dining_6: 1, dining_chairs: 1, almirah_3door: 1, almirah_2door: 2, dressing_table: 1, fridge_double: 1, washing_front: 1, microwave: 1, split_ac: 3, air_cooler: 1, inverter_battery: 1, geyser: 1, box_large: 20, box_medium: 25, box_small: 10, trunk_steel: 2, suitcase_large: 6, suitcase_cabin: 4, bicycle: 1 }
+    },
+    'luggage_only': {
+      label: 'Boxes & Trunks Only (~25-35 sq ft)',
+      items: { box_large: 8, box_medium: 12, box_small: 6, trunk_steel: 2, suitcase_large: 4, suitcase_cabin: 4, razai_bundles: 2, bicycle: 1 }
+    },
+    'office_startup': {
+      label: 'Office & Startup Archive (~70-90 sq ft)',
+      items: { office_desk: 3, office_chair: 6, archive_box: 25, bookshelf: 2, two_wheeler: 1 }
+    }
+  };
+
+  // =========================================================================
+  // 4. STATE MANAGEMENT
+  // =========================================================================
+  const state = {
+    quantities: {}, // item_id -> quantity
+    customItems: [], // [{ id, name, cuFt, w, d, h, qty }]
+    activeCategory: 'all',
+    searchQuery: '',
+    viewMode: 'native', // 'native' | 'calcumate'
+    angle3D: 'iso' // 'iso' | 'top' | 'front'
+  };
+
+  // Populate initial 0 quantities
+  INDIAN_ITEMS.forEach(it => { state.quantities[it.id] = 0; });
+
+  // =========================================================================
+  // 5. PACKING & UNIT SELECTION ALGORITHM
+  // =========================================================================
+  function calculateTotalInventory() {
+    let totalCuFt = 0;
+    let totalItems = 0;
+    const inventoryList = [];
+
+    // Catalog items
+    INDIAN_ITEMS.forEach(it => {
+      const q = state.quantities[it.id] || 0;
+      if (q > 0) {
+        totalCuFt += q * it.cuFt;
+        totalItems += q;
+        inventoryList.push({ ...it, qty: q });
+      }
+    });
+
+    // Custom items
+    state.customItems.forEach(ci => {
+      const q = ci.qty || 1;
+      totalCuFt += q * ci.cuFt;
+      totalItems += q;
+      inventoryList.push({ ...ci, qty: q, isCustom: true, icon: 'extension', color: '#ec4899' });
+    });
+
+    return { totalCuFt, totalItems, inventoryList };
+  }
+
+  function getRecommendedUnit(totalCuFt) {
+    if (totalCuFt <= 0) {
+      return {
+        unit: null,
+        nextUnit: null,
+        utilizationPct: 0,
+        requiredFloorArea: 0,
+        statusText: 'Select items or choose a 1-click home preset above to calculate unit fit.',
+        statusCode: 'empty'
+      };
+    }
+
+    // Practical self-storage packing efficiency: 75% usable cubic volume accounting for voids & walkways
+    const PACKING_EFFICIENCY = 0.75;
+    const effectiveNeededCuFt = totalCuFt / PACKING_EFFICIENCY;
+    const approxFloorArea = Math.ceil(totalCuFt / 6.5); // assuming avg stack height 6.5ft
+
+    // Match smallest unit from 37 SSI units
+    let matchedUnit = null;
+    let nextUnit = null;
+
+    for (let i = 0; i < SSI_UNITS.length; i++) {
+      const u = SSI_UNITS[i];
+      if (u.vol >= effectiveNeededCuFt) {
+        matchedUnit = u;
+        nextUnit = SSI_UNITS[i + 1] || null;
+        break;
+      }
+    }
+
+    // If items exceed the largest single unit (187 sq ft / 1496 cu ft)
+    if (!matchedUnit) {
+      const largest = SSI_UNITS[SSI_UNITS.length - 1];
+      const multiple = Math.ceil(effectiveNeededCuFt / largest.vol);
+      matchedUnit = {
+        id: 'multiple_units',
+        name: `${multiple}× Extra Large 17 X 11 Suites`,
+        w: largest.w * multiple,
+        d: largest.d,
+        h: largest.h,
+        area: largest.area * multiple,
+        vol: largest.vol * multiple,
+        tier: 'Multiple Private Suites',
+        price: largest.price * multiple
+      };
+    }
+
+    const utilizationPct = Math.min(100, Math.round((totalCuFt / (matchedUnit.vol * PACKING_EFFICIENCY)) * 100));
+
+    let statusText = 'Comfortable fit with room for access walkways';
+    let statusCode = 'good';
+    if (utilizationPct > 88) {
+      statusText = 'Packed to capacity. Consider next size up for easier item retrieval.';
+      statusCode = 'tight';
+    } else if (utilizationPct < 55) {
+      statusText = 'Spacious unit with extra buffer for future additions.';
+      statusCode = 'roomy';
+    }
+
+    return {
+      unit: matchedUnit,
+      nextUnit,
+      utilizationPct,
+      requiredFloorArea: approxFloorArea,
+      statusText,
+      statusCode
+    };
+  }
+
+  // =========================================================================
+  // 6. 3D ISOMETRIC CANVAS VISUALIZER
+  // =========================================================================
+  function render3DCanvas(unit, items) {
+    const canvas = document.getElementById('calc-3d-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    // HiDPI support
+    const dpr = window.devicePixelRatio || 1;
+    const rect = canvas.getBoundingClientRect();
+    const width = rect.width || 480;
+    const height = rect.height || 300;
+
+    if (canvas.width !== width * dpr || canvas.height !== height * dpr) {
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+    }
+
+    ctx.save();
+    ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, width, height);
+
+    if (!unit || items.length === 0) {
+      // Empty room preview
+      drawEmptyRoom(ctx, width, height);
+      ctx.restore();
+      return;
+    }
+
+    // Isometric projection helpers
+    const unitW = unit.w || 10;
+    const unitD = unit.d || 6;
+    const unitH = unit.h || 8;
+
+    const scale = Math.min(width / (unitW + unitD + 4), height / (unitH + unitD + 4)) * 1.5;
+    const originX = width / 2;
+    const originY = height * 0.72;
+
+    function isoProject(x, y, z) {
+      // x: width (right), y: depth (left-up), z: height (up)
+      const isoX = originX + (x - y) * Math.cos(Math.PI / 6) * scale;
+      const isoY = originY + (x + y) * Math.sin(Math.PI / 6) * scale * 0.6 - z * scale * 0.7;
+      return { x: isoX, y: isoY };
+    }
+
+    // 1. Draw Unit Floor (Grid)
+    ctx.beginPath();
+    const p0 = isoProject(0, 0, 0);
+    const pX = isoProject(unitW, 0, 0);
+    const pXY = isoProject(unitW, unitD, 0);
+    const pY = isoProject(0, unitD, 0);
+
+    ctx.moveTo(p0.x, p0.y);
+    ctx.lineTo(pX.x, pX.y);
+    ctx.lineTo(pXY.x, pXY.y);
+    ctx.lineTo(pY.x, pY.y);
+    ctx.closePath();
+    ctx.fillStyle = '#f8fafc';
+    ctx.fill();
+    ctx.strokeStyle = '#cbd5e1';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    // Floor 1ft grid lines
+    ctx.strokeStyle = 'rgba(203, 213, 225, 0.4)';
+    for (let gx = 1; gx < unitW; gx++) {
+      const g0 = isoProject(gx, 0, 0);
+      const g1 = isoProject(gx, unitD, 0);
+      ctx.beginPath();
+      ctx.moveTo(g0.x, g0.y);
+      ctx.lineTo(g1.x, g1.y);
+      ctx.stroke();
+    }
+    for (let gy = 1; gy < unitD; gy++) {
+      const g0 = isoProject(0, gy, 0);
+      const g1 = isoProject(unitW, gy, 0);
+      ctx.beginPath();
+      ctx.moveTo(g0.x, g0.y);
+      ctx.lineTo(g1.x, g1.y);
+      ctx.stroke();
+    }
+
+    // 2. Draw Back Walls (Private Room partition panels)
+    // Left back wall
+    ctx.beginPath();
+    const pY_top = isoProject(0, unitD, unitH);
+    const pXY_top = isoProject(unitW, unitD, unitH);
+    ctx.moveTo(pY.x, pY.y);
+    ctx.lineTo(pY_top.x, pY_top.y);
+    ctx.lineTo(pXY_top.x, pXY_top.y);
+    ctx.lineTo(pXY.x, pXY.y);
+    ctx.closePath();
+    ctx.fillStyle = '#e2e8f0';
+    ctx.fill();
+    ctx.strokeStyle = '#94a3b8';
+    ctx.stroke();
+
+    // Wall vertical corrugated lines
+    ctx.strokeStyle = 'rgba(148, 163, 184, 0.2)';
+    for (let wx = 1; wx < unitW; wx++) {
+      const b0 = isoProject(wx, unitD, 0);
+      const b1 = isoProject(wx, unitD, unitH);
+      ctx.beginPath();
+      ctx.moveTo(b0.x, b0.y);
+      ctx.lineTo(b1.x, b1.y);
+      ctx.stroke();
+    }
+
+    // 3. Draw Packed Items as 3D Isometric Bounding Boxes
+    drawPackedItems(ctx, isoProject, unitW, unitD, unitH, items);
+
+    // 4. Draw Front Unit Dimensions & Shutter Header
+    ctx.fillStyle = '#0f172a';
+    ctx.font = '600 11px "Plus Jakarta Sans", sans-serif';
+    ctx.textAlign = 'center';
+    const dimWidthPos = isoProject(unitW / 2, 0, 0);
+    ctx.fillText(`${unitW} ft Width`, dimWidthPos.x + 10, dimWidthPos.y + 18);
+
+    const dimDepthPos = isoProject(0, unitD / 2, 0);
+    ctx.fillText(`${unitD} ft Depth`, dimDepthPos.x - 22, dimDepthPos.y + 12);
+
+    ctx.restore();
+  }
+
+  function drawEmptyRoom(ctx, width, height) {
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = '500 13px "Plus Jakarta Sans", sans-serif';
+    ctx.fillText('Virtual 3D Room will render as items are added', width / 2, height / 2 - 10);
+    ctx.font = '700 12px "Plus Jakarta Sans", sans-serif';
+    ctx.fillStyle = '#2563eb';
+    ctx.fillText('Select items or tap a 1-click preset below', width / 2, height / 2 + 14);
+  }
+
+  function drawPackedItems(ctx, isoProject, maxW, maxD, maxH, items) {
+    // Deterministic procedural packing stacker
+    let curX = 0.5;
+    let curY = 0.5;
+    let curZ = 0;
+    let rowMaxD = 0;
+
+    items.forEach((item) => {
+      for (let i = 0; i < item.qty; i++) {
+        const itemW = Math.max(0.8, Math.min(item.w ? item.w * 3.28 : 2.5, 5));
+        const itemD = Math.max(0.8, Math.min(item.d ? item.d * 3.28 : 2.0, 4));
+        const itemH = Math.max(0.6, Math.min(item.h ? item.h * 3.28 : 2.0, 5));
+
+        // Check if fits in current row
+        if (curX + itemW > maxW - 0.5) {
+          curX = 0.5;
+          curY += rowMaxD + 0.3;
+          rowMaxD = 0;
+        }
+
+        if (curY + itemD > maxD - 0.5) {
+          // Stack on top
+          curX = 0.5;
+          curY = 0.5;
+          curZ = Math.min(maxH - 1, curZ + 1.8);
+        }
+
+        rowMaxD = Math.max(rowMaxD, itemD);
+
+        // Render 3D isometric box
+        drawIsoBox(ctx, isoProject, curX, curY, curZ, itemW, itemD, itemH, item.color || '#3b82f6');
+
+        curX += itemW + 0.2;
+      }
+    });
+  }
+
+  function drawIsoBox(ctx, isoProject, x, y, z, w, d, h, color) {
+    const p0 = isoProject(x, y, z);
+    const p1 = isoProject(x + w, y, z);
+    const p2 = isoProject(x + w, y + d, z);
+    const p3 = isoProject(x, y + d, z);
+
+    const t0 = isoProject(x, y, z + h);
+    const t1 = isoProject(x + w, y, z + h);
+    const t2 = isoProject(x + w, y + d, z + h);
+    const t3 = isoProject(x, y + d, z + h);
+
+    // Top Face (lightest)
+    ctx.beginPath();
+    ctx.moveTo(t0.x, t0.y);
+    ctx.lineTo(t1.x, t1.y);
+    ctx.lineTo(t2.x, t2.y);
+    ctx.lineTo(t3.x, t3.y);
+    ctx.closePath();
+    ctx.fillStyle = shadeColor(color, 20);
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(0,0,0,0.15)';
+    ctx.stroke();
+
+    // Right / Front Face (medium)
+    ctx.beginPath();
+    ctx.moveTo(p1.x, p1.y);
+    ctx.lineTo(t1.x, t1.y);
+    ctx.lineTo(t2.x, t2.y);
+    ctx.lineTo(p2.x, p2.y);
+    ctx.closePath();
+    ctx.fillStyle = shadeColor(color, -10);
+    ctx.fill();
+    ctx.stroke();
+
+    // Left Face (darkest)
+    ctx.beginPath();
+    ctx.moveTo(p0.x, p0.y);
+    ctx.lineTo(t0.x, t0.y);
+    ctx.lineTo(t1.x, t1.y);
+    ctx.lineTo(p1.x, p1.y);
+    ctx.closePath();
+    ctx.fillStyle = shadeColor(color, 5);
+    ctx.fill();
+    ctx.stroke();
+  }
+
+  function shadeColor(color, percent) {
+    let R = parseInt(color.substring(1, 3), 16);
+    let G = parseInt(color.substring(3, 5), 16);
+    let B = parseInt(color.substring(5, 7), 16);
+
+    R = parseInt((R * (100 + percent)) / 100);
+    G = parseInt((G * (100 + percent)) / 100);
+    B = parseInt((B * (100 + percent)) / 100);
+
+    R = R < 255 ? R : 255;
+    G = G < 255 ? G : 255;
+    B = B < 255 ? B : 255;
+
+    const RR = R.toString(16).length === 1 ? '0' + R.toString(16) : R.toString(16);
+    const GG = G.toString(16).length === 1 ? '0' + G.toString(16) : G.toString(16);
+    const BB = B.toString(16).length === 1 ? '0' + B.toString(16) : B.toString(16);
+
+    return '#' + RR + GG + BB;
+  }
+
+  // =========================================================================
+  // 7. UI RENDERER & INTERACTION CONTROLLER
+  // =========================================================================
+  function renderAll() {
+    const { totalCuFt, totalItems, inventoryList } = calculateTotalInventory();
+    const result = getRecommendedUnit(totalCuFt);
+
+    // 1. Update live result metrics
+    const unitNameEl = document.getElementById('calc-unit-name');
+    const unitDimEl = document.getElementById('calc-unit-dims');
+    const unitAreaEl = document.getElementById('calc-unit-area');
+    const unitVolEl = document.getElementById('calc-unit-volume');
+    const unitPriceEl = document.getElementById('calc-unit-price');
+    const utilBarEl = document.getElementById('calc-util-bar');
+    const utilPctEl = document.getElementById('calc-util-percent');
+    const statusNoteEl = document.getElementById('calc-status-note');
+    const ctaBtnText = document.getElementById('calc-cta-text');
+
+    if (result.unit) {
+      if (unitNameEl) unitNameEl.innerText = result.unit.name;
+      if (unitDimEl) unitDimEl.innerText = `${result.unit.w} ft × ${result.unit.d} ft × ${result.unit.h} ft Ceiling`;
+      if (unitAreaEl) unitAreaEl.innerText = `${result.unit.area} sq ft`;
+      if (unitVolEl) unitVolEl.innerText = `${result.unit.vol} cu ft`;
+      if (unitPriceEl) unitPriceEl.innerText = `Starting from ₹${result.unit.price.toLocaleString('en-IN')}/mo`;
+      if (utilBarEl) utilBarEl.style.width = `${result.utilizationPct}%`;
+      if (utilPctEl) utilPctEl.innerText = `${result.utilizationPct}% Filled`;
+      if (statusNoteEl) statusNoteEl.innerText = result.statusText;
+      if (ctaBtnText) ctaBtnText.innerText = `Book ${result.unit.name} (${result.unit.area} sq ft) →`;
+    } else {
+      if (unitNameEl) unitNameEl.innerText = 'Select Items';
+      if (unitDimEl) unitDimEl.innerText = '37 facility unit sizes available';
+      if (unitAreaEl) unitAreaEl.innerText = '0 sq ft';
+      if (unitVolEl) unitVolEl.innerText = '0 cu ft';
+      if (unitPriceEl) unitPriceEl.innerText = 'Starting from ₹1,200/mo';
+      if (utilBarEl) utilBarEl.style.width = '0%';
+      if (utilPctEl) utilPctEl.innerText = '0% Filled';
+      if (statusNoteEl) statusNoteEl.innerText = 'Tap + on items or choose a 1-click home preset below.';
+      if (ctaBtnText) ctaBtnText.innerText = 'Select Items to Estimate Quote';
+    }
+
+    // 2. Render item counter badges on cards
+    INDIAN_ITEMS.forEach(it => {
+      const q = state.quantities[it.id] || 0;
+      const countEl = document.getElementById(`qty-${it.id}`);
+      const cardEl = document.getElementById(`item-card-${it.id}`);
+      if (countEl) countEl.innerText = q;
+      if (cardEl) {
+        if (q > 0) cardEl.classList.add('active-item');
+        else cardEl.classList.remove('active-item');
+      }
+    });
+
+    // 3. Render Inventory Summary Drawer / Chips
+    const inventoryChipsEl = document.getElementById('calc-inventory-chips');
+    const totalItemsCountEl = document.getElementById('calc-total-items-count');
+    if (totalItemsCountEl) totalItemsCountEl.innerText = `${totalItems} items`;
+
+    if (inventoryChipsEl) {
+      if (inventoryList.length === 0) {
+        inventoryChipsEl.innerHTML = '<span class="empty-inv-msg">No items in your storage plan yet.</span>';
+      } else {
+        inventoryChipsEl.innerHTML = inventoryList.map(it => `
+          <div class="inv-chip">
+            <span class="inv-chip-name">${it.qty}× ${it.name}</span>
+            <button type="button" class="inv-chip-del" onclick="window.SSI_CALCULATOR.setItemQty('${it.id}', 0, ${it.isCustom ? 'true' : 'false'})" aria-label="Remove ${it.name}">&times;</button>
+          </div>
+        `).join('');
+      }
+    }
+
+    // 4. Update Sticky Mobile Bar
+    const mobileBar = document.getElementById('calc-mobile-bar');
+    const mobileSqFt = document.getElementById('calc-mobile-sqft');
+    const mobileTier = document.getElementById('calc-mobile-tier');
+    if (mobileBar) {
+      if (totalCuFt > 0 && result.unit) {
+        mobileBar.classList.add('visible');
+        if (mobileSqFt) mobileSqFt.innerText = `${result.unit.area} sq ft`;
+        if (mobileTier) mobileTier.innerText = result.unit.name;
+      } else {
+        mobileBar.classList.remove('visible');
+      }
+    }
+
+    // 5. Draw 3D Isometric Canvas
+    render3DCanvas(result.unit, inventoryList);
+  }
+
+  // =========================================================================
+  // 8. PUBLIC API & EVENT HANDLERS
+  // =========================================================================
+  window.SSI_CALCULATOR = {
+    updateQty: function (id, delta) {
+      state.quantities[id] = Math.max(0, (state.quantities[id] || 0) + delta);
+      renderAll();
+    },
+
+    setItemQty: function (id, qty, isCustom) {
+      if (isCustom) {
+        state.customItems = state.customItems.filter(ci => ci.id !== id);
+      } else {
+        state.quantities[id] = Math.max(0, qty);
+      }
+      renderAll();
+    },
+
+    applyPreset: function (presetKey, btn) {
+      if (btn) {
+        document.querySelectorAll('.calc-preset-pill').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
+
+      // Reset first
+      INDIAN_ITEMS.forEach(it => { state.quantities[it.id] = 0; });
+      state.customItems = [];
+
+      const preset = INDIAN_PRESETS[presetKey];
+      if (preset && preset.items) {
+        for (const id in preset.items) {
+          state.quantities[id] = preset.items[id];
+        }
+      }
+      renderAll();
+    },
+
+    resetAll: function () {
+      INDIAN_ITEMS.forEach(it => { state.quantities[it.id] = 0; });
+      state.customItems = [];
+      document.querySelectorAll('.calc-preset-pill').forEach(b => b.classList.remove('active'));
+      renderAll();
+    },
+
+    filterCategory: function (cat, btn) {
+      state.activeCategory = cat;
+      if (btn) {
+        document.querySelectorAll('.calc-cat-pill').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
+
+      const cards = document.querySelectorAll('.calc-inv-card');
+      cards.forEach(card => {
+        const itemCat = card.getAttribute('data-cat');
+        const itemName = card.getAttribute('data-name').toLowerCase();
+        const matchesCat = (cat === 'all' || itemCat === cat);
+        const matchesSearch = (!state.searchQuery || itemName.includes(state.searchQuery));
+
+        if (matchesCat && matchesSearch) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    },
+
+    searchItems: function (query) {
+      state.searchQuery = (query || '').toLowerCase().trim();
+      const cards = document.querySelectorAll('.calc-inv-card');
+      cards.forEach(card => {
+        const itemCat = card.getAttribute('data-cat');
+        const itemName = card.getAttribute('data-name').toLowerCase();
+        const matchesCat = (state.activeCategory === 'all' || itemCat === state.activeCategory);
+        const matchesSearch = (!state.searchQuery || itemName.includes(state.searchQuery));
+
+        if (matchesCat && matchesSearch) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    },
+
+    addCustomItem: function () {
+      const nameInput = document.getElementById('custom-item-name');
+      const lengthInput = document.getElementById('custom-item-l');
+      const widthInput = document.getElementById('custom-item-w');
+      const heightInput = document.getElementById('custom-item-h');
+      const qtyInput = document.getElementById('custom-item-qty');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const l = lengthInput ? parseFloat(lengthInput.value) || 2 : 2;
+      const w = widthInput ? parseFloat(widthInput.value) || 2 : 2;
+      const h = heightInput ? parseFloat(heightInput.value) || 2 : 2;
+      const qty = qtyInput ? parseInt(qtyInput.value) || 1 : 1;
+
+      if (!name) {
+        alert('Please enter an item name (e.g. Wooden Swing, Harmonium, etc.)');
+        return;
+      }
+
+      const cuFt = Math.round((l * w * h) * 10) / 10;
+      const customId = 'cust_' + Date.now();
+
+      state.customItems.push({
+        id: customId,
+        name: name,
+        cuFt: cuFt,
+        w: l * 0.3048,
+        d: w * 0.3048,
+        h: h * 0.3048,
+        qty: qty
+      });
+
+      // Clear inputs
+      if (nameInput) nameInput.value = '';
+      if (lengthInput) lengthInput.value = '';
+      if (widthInput) widthInput.value = '';
+      if (heightInput) heightInput.value = '';
+      if (qtyInput) qtyInput.value = '1';
+
+      // Close modal if open
+      const customModal = document.getElementById('custom-item-modal');
+      if (customModal) customModal.style.display = 'none';
+
+      renderAll();
+    },
+
+    handleQuote: function () {
+      const { totalCuFt, totalItems, inventoryList } = calculateTotalInventory();
+      const result = getRecommendedUnit(totalCuFt);
+
+      if (!result.unit || totalItems === 0) {
+        alert('Please select at least one item or choose a preset before requesting a quote.');
+        return;
+      }
+
+      const itemSummary = inventoryList.map(it => `${it.qty}x ${it.name}`).join(', ');
+      const description = `Storage Calculator: ${result.unit.name} (${result.unit.area} sq ft, ${result.unit.vol} cu ft) | ${result.utilizationPct}% Utilized | Inventory: ${itemSummary}`;
+
+      // Update hidden storage-size
+      const sizeInput = document.getElementById('storage-size');
+      if (sizeInput) sizeInput.value = description;
+
+      if (window.openQuoteModal) {
+        window.openQuoteModal(description);
+      } else if (window.ModalController) {
+        window.ModalController.open(description);
+      }
+
+      // Contextual title
+      const headingEl = document.getElementById('lfMainHeading');
+      const subHeadingEl = document.getElementById('lfSubHeading');
+      if (headingEl) headingEl.textContent = `Get Free Quote for ${result.unit.name} (${result.unit.area} sq ft)`;
+      if (subHeadingEl) subHeadingEl.textContent = `Unit reserved for your ${totalItems} household items. Transparent pricing guaranteed.`;
+    },
+
+    toggleViewMode: function (mode) {
+      state.viewMode = mode;
+      const nativeView = document.getElementById('native-calculator-view');
+      const calcumateView = document.getElementById('calcumate-widget-view');
+      const nativeBtn = document.getElementById('btn-view-native');
+      const calcumateBtn = document.getElementById('btn-view-calcumate');
+
+      if (mode === 'calcumate') {
+        if (nativeView) nativeView.style.display = 'none';
+        if (calcumateView) calcumateView.style.display = 'block';
+        if (nativeBtn) nativeBtn.classList.remove('active');
+        if (calcumateBtn) calcumateBtn.classList.add('active');
+
+        // Trigger Calcumate script if not loaded
+        if (!document.getElementById('calcumate-script-tag')) {
+          const s = document.createElement('script');
+          s.id = 'calcumate-script-tag';
+          s.defer = true;
+          s.src = 'https://production.calcumate.co/static/js/main.js';
+          document.body.appendChild(s);
+        }
+      } else {
+        if (nativeView) nativeView.style.display = 'grid';
+        if (calcumateView) calcumateView.style.display = 'none';
+        if (nativeBtn) nativeBtn.classList.add('active');
+        if (calcumateBtn) calcumateBtn.classList.remove('active');
+      }
+    }
+  };
+
+  // Global aliases for legacy/inline button triggers
+  window.handleCalculatorQuote = window.SSI_CALCULATOR.handleQuote;
+  window.applyCalcPreset = window.SSI_CALCULATOR.applyPreset;
+  window.filterCalcCategory = window.SSI_CALCULATOR.filterCategory;
+  window.updateItemQty = window.SSI_CALCULATOR.updateQty;
+
+  // =========================================================================
+  // 9. DOM INITIALIZATION
+  // =========================================================================
+  document.addEventListener('DOMContentLoaded', function () {
+    // Generate Item Cards HTML
+    const gridEl = document.getElementById('calc-items-grid-container');
+    if (gridEl) {
+      gridEl.innerHTML = INDIAN_ITEMS.map(it => `
+        <div class="calc-inv-card" id="item-card-${it.id}" data-id="${it.id}" data-cat="${it.cat}" data-name="${it.name} ${it.nameHi}">
+          <div class="inv-card-header">
+            <span class="material-symbols-rounded inv-card-icon" style="color: ${it.color};">${it.icon}</span>
+            <div class="inv-card-info">
+              <span class="inv-card-name">${it.name}</span>
+              <span class="inv-card-sub">${it.nameHi} · ~${it.cuFt} cu. ft.</span>
+            </div>
+          </div>
+          <div class="inv-card-controls">
+            <button type="button" class="inv-btn-dec" onclick="window.SSI_CALCULATOR.updateQty('${it.id}', -1)" aria-label="Decrease ${it.name}">—</button>
+            <span class="inv-qty-display" id="qty-${it.id}">0</span>
+            <button type="button" class="inv-btn-inc" onclick="window.SSI_CALCULATOR.updateQty('${it.id}', 1)" aria-label="Increase ${it.name}">+</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    renderAll();
+  });
+
+})();

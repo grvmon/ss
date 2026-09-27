@@ -1,0 +1,407 @@
+/* =========================================================================
+   Self Storage India — Storage Calculator Component Styles
+   ========================================================================= */
+
+/* Mode Switcher Tabs */
+.calc-mode-switch {
+  display: inline-flex;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  gap: 4px;
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+}
+
+.calc-mode-btn {
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.calc-mode-btn:hover {
+  color: var(--primary);
+}
+
+.calc-mode-btn.active {
+  background: #ffffff;
+  color: var(--primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Presets Wrapper */
+.calc-preset-wrapper {
+  margin-bottom: 24px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px 22px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.calc-preset-title {
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.calc-preset-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.calc-preset-pill {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.calc-preset-pill:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(24, 108, 236, 0.08);
+}
+
+.calc-preset-pill.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(24, 108, 236, 0.25);
+}
+
+.calc-preset-pill.btn-reset {
+  color: #ef4444;
+  border-color: #fee2e2;
+  background: #fef2f2;
+}
+
+.calc-preset-pill.btn-reset:hover {
+  background: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+}
+
+.calc-preset-pill.btn-custom-item {
+  color: #7c3aed;
+  border-color: #ede9fe;
+  background: #f5f3ff;
+  font-weight: 700;
+}
+
+.calc-preset-pill.btn-custom-item:hover {
+  background: #7c3aed;
+  color: #ffffff;
+  border-color: #7c3aed;
+}
+
+/* Category Filter Pills */
+.calc-cat-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.calc-cat-pill {
+  appearance: none;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.calc-cat-pill:hover {
+  color: var(--primary);
+  border-color: rgba(37, 99, 235, 0.4);
+}
+
+.calc-cat-pill.active {
+  color: #ffffff;
+  background: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.25);
+}
+
+/* Search Box */
+.calc-search-row input:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Dynamic Item Cards Grid */
+#calc-items-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.calc-inv-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.calc-inv-card:hover {
+  border-color: rgba(37, 99, 235, 0.5);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.08);
+  transform: translateY(-2px);
+}
+
+.calc-inv-card.active-item {
+  border-color: var(--primary);
+  background: #f8fbff;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.12);
+}
+
+.inv-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.inv-card-icon {
+  font-size: 1.6rem;
+  background: rgba(37, 99, 235, 0.08);
+  border-radius: 10px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.inv-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.inv-card-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.calc-inv-card.active-item .inv-card-name {
+  color: var(--primary);
+}
+
+.inv-card-sub {
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+  line-height: 1.25;
+}
+
+.inv-card-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f1f5f9;
+  border-radius: var(--radius-pill);
+  padding: 4px 6px;
+  transition: background 0.2s ease;
+}
+
+.calc-inv-card.active-item .inv-card-controls {
+  background: rgba(37, 99, 235, 0.12);
+}
+
+.inv-btn-dec,
+.inv-btn-inc {
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: #ffffff;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.inv-btn-dec:hover,
+.inv-btn-inc:hover {
+  background: var(--primary);
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.inv-qty-display {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text);
+  min-width: 24px;
+  text-align: center;
+}
+
+.calc-inv-card.active-item .inv-qty-display {
+  color: var(--primary);
+}
+
+/* Inventory Chips in Room Visualizer Box */
+.calc-selected-chips-wrap {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border);
+}
+
+.calc-selected-chips-title {
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+
+.calc-selected-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-height: 120px;
+  overflow-y: auto;
+  padding: 4px 0;
+}
+
+.inv-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  border-radius: var(--radius-pill);
+  padding: 3px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #3730a3;
+  animation: popIn 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.inv-chip-del {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: #6366f1;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease;
+}
+
+.inv-chip-del:hover {
+  color: #ef4444;
+}
+
+.empty-inv-msg {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* 3D Canvas Visualizer Container */
+.canvas-visual-wrap canvas {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Calcumate Widget Container */
+#calcumate-widget-view {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  min-height: 600px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+/* Modal Overlay & Custom Item Dialog */
+.modal-card input:focus {
+  border-color: var(--primary) !important;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .calc-container {
+    grid-template-columns: 1fr;
+  }
+
+  .calc-visual-column {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .calc-preset-bar {
+    gap: 6px;
+  }
+
+  .calc-preset-pill {
+    font-size: 0.78rem;
+    padding: 6px 12px;
+  }
+
+  #calc-items-grid-container {
+    grid-template-columns: 1fr;
+  }
+}

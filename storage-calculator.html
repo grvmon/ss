@@ -47,6 +47,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
     <link rel="stylesheet" href="styles.css?v=3.7">
     <link rel="stylesheet" href="lead-form.min.css?v=5.0">
+    <link rel="stylesheet" href="assets/css/storage-calculator.css?v=1.0">
     <!-- Font Awesome CDN for footer social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
@@ -220,383 +221,228 @@
 
         <section id="calculator" class="calc-section">
             <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 0 var(--space-xl);">
-                <div class="section-header-centered" style="margin-bottom: 32px;">
+                <div class="section-header-centered" style="margin-bottom: 24px;">
                     <span class="calc-tag">
                         <span class="material-symbols-rounded" style="font-size: 1.15rem; margin-right: 4px; vertical-align: middle;">calculate</span>
                         Storage Size Calculator
                     </span>
                     <h1>Find the Perfect Storage Space<br>in Under 60 Seconds</h1>
-                    <p>Select your household furniture, appliances, boxes, or business inventory below to see live visual space recommendations, 3D unit fill, and transparent pricing in Delhi NCR.</p>
+                    <p>Select your household furniture, appliances, boxes, or business inventory below to see live 3D unit fill, cubic capacity, and transparent pricing in Delhi NCR.</p>
                 </div>
 
-                <!-- 1-Click Home & Business Presets -->
-                <div class="calc-preset-wrapper">
-                    <span class="calc-preset-title">
-                        <span class="material-symbols-rounded" style="font-size: 1.1rem; color: var(--primary);">auto_fix_high</span>
-                        Quick 1-Click Estimator Presets:
-                    </span>
-                    <div class="calc-preset-bar">
-                        <button type="button" class="calc-preset-btn" onclick="applyCalcPreset('1bhk', this)">
-                            <span>🏠</span> 1 BHK Flat (~60 sq ft)
+                <!-- Dual View Mode Switcher -->
+                <div style="display: flex; justify-content: center; margin-bottom: 24px;">
+                    <div class="calc-mode-switch">
+                        <button type="button" class="calc-mode-btn active" id="btn-view-native" onclick="window.SSI_CALCULATOR.toggleViewMode('native')">
+                            <span class="material-symbols-rounded">view_in_ar</span> 🇮🇳 Indian Household 3D Calculator
                         </button>
-                        <button type="button" class="calc-preset-btn" onclick="applyCalcPreset('2bhk', this)">
-                            <span>🏡</span> 2 BHK Home (~110 sq ft)
-                        </button>
-                        <button type="button" class="calc-preset-btn" onclick="applyCalcPreset('3bhk', this)">
-                            <span>🏰</span> 3 BHK Home (~180 sq ft)
-                        </button>
-                        <button type="button" class="calc-preset-btn" onclick="applyCalcPreset('luggage', this)">
-                            <span>🎒</span> Luggage &amp; Boxes (~25 sq ft)
-                        </button>
-                        <button type="button" class="calc-preset-btn" onclick="applyCalcPreset('office', this)">
-                            <span>🏢</span> Office &amp; Archive (~120 sq ft)
-                        </button>
-                        <button type="button" class="calc-preset-btn btn-reset" onclick="applyCalcPreset('reset', this)">
-                            <span class="material-symbols-rounded" style="font-size: 15px;">refresh</span> Reset All
+                        <button type="button" class="calc-mode-btn" id="btn-view-calcumate" onclick="window.SSI_CALCULATOR.toggleViewMode('calcumate')">
+                            <span class="material-symbols-rounded">layers</span> 🌐 Calcumate 3D Widget
                         </button>
                     </div>
                 </div>
 
-                <div class="calc-container" style="padding: 0;">
-                    <!-- Left Column: Illustrated Storage Unit (fills dynamically) & Result Card -->
-                    <div class="calc-visual-column">
-                        <div class="storage-unit-box shadow-md">
-                            <div class="unit-header" style="justify-content: space-between;">
-                                <div style="display: flex; align-items: center; gap: 8px;">
-                                    <span class="material-symbols-rounded" style="color: var(--primary);">door_sliding</span>
-                                    <h4>Your Virtual Storage Unit</h4>
-                                </div>
-                                <span class="result-tier-badge" id="calc-result-tier" style="margin-bottom: 0;">Select Items</span>
-                            </div>
-                            <div class="unit-room-visual">
-                                <!-- The fill overlays -->
-                                <div class="unit-fill-progress" id="unit-fill"></div>
-                                <div class="unit-fill-percentage" id="unit-fill-percent">0% Filled</div>
-                                <!-- Illustrated boxes that show up when items are added -->
-                                <div class="unit-grid-items" id="unit-items-display"></div>
-                            </div>
+                <!-- View 1: Calcumate 3D Widget View (Toggled) -->
+                <div id="calcumate-widget-view" style="display: none; margin-bottom: 32px;">
+                    <div
+                        id="calcumate-root"
+                        data-integration="selfstorageindia.com"
+                        data-integration-2=""
+                        data-ref="AQICAHhReAOexSsfBeJ/FMNVdjLFzyMEhuepXqwRfRaqckbrnAG6AQH2ootsfkRak9PguPmdAAAAgzCBgAYJKoZIhvcNAQcGoHMwcQIBADBsBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDLaaeU/BjIxB3Wi6OwIBEIA/FjFIiBLDYSfUnlRCPEwQ2AQDTt8OpmPaQR7OHb8AFf87R9jRiMgvIDKOe/6DPW2Ag+5OInTSYNhKwlxVBbOP"
+                        data-int="119bbc46-718c-40cd-8fa2-b11b40fb6b73"
+                    ></div>
+                </div>
 
-                            <!-- Selected Item Chips with 1-Click Remove -->
-                            <div class="calc-selected-chips-wrap">
-                                <span class="calc-selected-chips-title">Current Item Inventory:</span>
-                                <div class="calc-selected-chips" id="calc-selected-chips">
-                                    <span class="no-items-label">No items selected yet. Tap + on items or pick a preset above.</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Live Result Card -->
-                        <div class="live-result-card shadow-lg">
-                            <div class="result-header">
-                                <span class="badge-dot"></span>
-                                <h5>Recommended Storage Room</h5>
-                            </div>
-                            <div class="result-value" id="calc-result-size">0 sq ft</div>
-                            <ul class="result-details">
-                                <li>
-                                    <span class="material-symbols-rounded check-icon">check_circle</span>
-                                    <span id="calc-result-desc">Select items or choose a 1-click home preset above</span>
-                                </li>
-                                <li>
-                                    <span class="material-symbols-rounded check-icon">check_circle</span>
-                                    <span id="calc-result-dimensions">Custom modular private rooms available</span>
-                                </li>
-                                <li>
-                                    <span class="material-symbols-rounded check-icon">check_circle</span>
-                                    <span id="calc-result-price">Est. Monthly Plan: Starting from ₹1,200</span>
-                                </li>
-                                <li>
-                                    <span class="material-symbols-rounded check-icon">check_circle</span>
-                                    <span>9.5 ft ceiling clearance (vertical stacking factored in)</span>
-                                </li>
-                            </ul>
-                            <button type="button" class="cta-btn-calc" onclick="handleCalculatorQuote()">
-                                <span id="calc-cta-text">Select Items to Estimate Quote</span>
-                                <span class="material-symbols-rounded">arrow_forward</span>
+                <!-- View 2: Native Indian Household 3D Engine (Primary) -->
+                <div id="native-calculator-view">
+                    <!-- 1-Click Home & Business Presets -->
+                    <div class="calc-preset-wrapper">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
+                            <span class="calc-preset-title">
+                                <span class="material-symbols-rounded" style="color: var(--primary);">auto_fix_high</span>
+                                1-Click Indian Home &amp; Business Presets:
+                            </span>
+                            <button type="button" class="calc-preset-pill btn-custom-item" onclick="document.getElementById('custom-item-modal').style.display='flex'">
+                                <span class="material-symbols-rounded" style="font-size: 16px;">add_circle</span> + Add Custom Item / Size
                             </button>
-                            <a href="tel:+919090206090" class="calc-call-link">
-                                <span class="material-symbols-rounded" style="font-size: 16px;">call</span>
-                                Prefer phone sizing? Call +91-9090206090
-                            </a>
+                        </div>
+                        <div class="calc-preset-bar">
+                            <button type="button" class="calc-preset-pill" onclick="window.SSI_CALCULATOR.applyPreset('1rk', this)">
+                                <span>🏠</span> 1 RK / Studio (~35 sq ft)
+                            </button>
+                            <button type="button" class="calc-preset-pill" onclick="window.SSI_CALCULATOR.applyPreset('1bhk', this)">
+                                <span>🏡</span> 1 BHK Flat (~60 sq ft)
+                            </button>
+                            <button type="button" class="calc-preset-pill" onclick="window.SSI_CALCULATOR.applyPreset('2bhk', this)">
+                                <span>🏰</span> 2 BHK Home (~90 sq ft)
+                            </button>
+                            <button type="button" class="calc-preset-pill" onclick="window.SSI_CALCULATOR.applyPreset('3bhk', this)">
+                                <span>🏢</span> 3 BHK Villa (~150 sq ft)
+                            </button>
+                            <button type="button" class="calc-preset-pill" onclick="window.SSI_CALCULATOR.applyPreset('luggage_only', this)">
+                                <span>🎒</span> Boxes &amp; Trunks (~30 sq ft)
+                            </button>
+                            <button type="button" class="calc-preset-pill" onclick="window.SSI_CALCULATOR.applyPreset('office_startup', this)">
+                                <span>💼</span> Office &amp; Startup (~80 sq ft)
+                            </button>
+                            <button type="button" class="calc-preset-pill btn-reset" onclick="window.SSI_CALCULATOR.resetAll()">
+                                <span class="material-symbols-rounded" style="font-size: 15px;">refresh</span> Reset All
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Right Column: Interactive Item Grid with Category Tabs -->
-                    <div class="calc-items-column">
-                        <!-- Category Filter Tabs -->
-                        <div class="calc-filter-tabs">
-                            <button type="button" class="calc-tab-btn active" onclick="filterCalcCategory('all', this)">
-                                <span class="material-symbols-rounded" style="font-size: 16px;">category</span> All Items
-                            </button>
-                            <button type="button" class="calc-tab-btn" onclick="filterCalcCategory('living', this)">
-                                <span class="material-symbols-rounded" style="font-size: 16px;">weekend</span> Furniture
-                            </button>
-                            <button type="button" class="calc-tab-btn" onclick="filterCalcCategory('appliances', this)">
-                                <span class="material-symbols-rounded" style="font-size: 16px;">kitchen</span> Appliances
-                            </button>
-                            <button type="button" class="calc-tab-btn" onclick="filterCalcCategory('boxes', this)">
-                                <span class="material-symbols-rounded" style="font-size: 16px;">inventory_2</span> Boxes &amp; Luggage
-                            </button>
-                            <button type="button" class="calc-tab-btn" onclick="filterCalcCategory('office', this)">
-                                <span class="material-symbols-rounded" style="font-size: 16px;">business</span> Office &amp; Stock
-                            </button>
+                    <div class="calc-container" style="padding: 0;">
+                        <!-- Left Column: 3D Room Visualizer & Result Card -->
+                        <div class="calc-visual-column">
+                            <div class="storage-unit-box shadow-md">
+                                <div class="unit-header" style="justify-content: space-between;">
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <span class="material-symbols-rounded" style="color: var(--primary);">view_in_ar</span>
+                                        <h4>3D Virtual Storage Room</h4>
+                                    </div>
+                                    <span class="result-tier-badge" id="calc-util-percent" style="margin-bottom: 0;">0% Filled</span>
+                                </div>
+
+                                <div class="canvas-visual-wrap" style="position: relative; width: 100%; height: 260px; background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%); border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center;">
+                                    <canvas id="calc-3d-canvas" style="width: 100%; height: 100%; display: block;"></canvas>
+                                </div>
+
+                                <!-- Utilization progress bar -->
+                                <div style="margin-top: 14px;">
+                                    <div style="display: flex; justify-content: space-between; font-size: 0.78rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 6px;">
+                                        <span>Unit Volume Utilization</span>
+                                        <span id="calc-status-note">Tap + on items to pack room</span>
+                                    </div>
+                                    <div style="width: 100%; height: 8px; background: #e2e8f0; border-radius: 99px; overflow: hidden;">
+                                        <div id="calc-util-bar" style="width: 0%; height: 100%; background: linear-gradient(90deg, #2563eb, #3b82f6); transition: width 0.3s ease;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Selected Item Chips with 1-Click Remove -->
+                                <div class="calc-selected-chips-wrap">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                                        <span class="calc-selected-chips-title">Current Item Inventory:</span>
+                                        <span id="calc-total-items-count" style="font-size: 0.78rem; font-weight: 700; color: var(--primary);">0 items</span>
+                                    </div>
+                                    <div class="calc-selected-chips" id="calc-inventory-chips">
+                                        <span class="no-items-label">No items in your storage plan yet.</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Live Result Card -->
+                            <div class="live-result-card shadow-lg">
+                                <div class="result-header">
+                                    <span class="badge-dot"></span>
+                                    <h5>Recommended Unit Size</h5>
+                                </div>
+                                <div class="result-value" id="calc-unit-area">0 sq ft</div>
+                                <ul class="result-details">
+                                    <li>
+                                        <span class="material-symbols-rounded check-icon">check_circle</span>
+                                        <strong id="calc-unit-name">Select Items</strong>
+                                    </li>
+                                    <li>
+                                        <span class="material-symbols-rounded check-icon">check_circle</span>
+                                        <span id="calc-unit-dims">37 facility unit sizes available</span>
+                                    </li>
+                                    <li>
+                                        <span class="material-symbols-rounded check-icon">check_circle</span>
+                                        <span id="calc-unit-volume">0 cu ft total capacity</span>
+                                    </li>
+                                    <li>
+                                        <span class="material-symbols-rounded check-icon">check_circle</span>
+                                        <span id="calc-unit-price">Starting from ₹1,200/mo</span>
+                                    </li>
+                                </ul>
+                                <button type="button" class="cta-btn-calc" onclick="window.SSI_CALCULATOR.handleQuote()">
+                                    <span id="calc-cta-text">Select Items to Estimate Quote</span>
+                                    <span class="material-symbols-rounded">arrow_forward</span>
+                                </button>
+                                <a href="tel:+919090206090" class="calc-call-link">
+                                    <span class="material-symbols-rounded" style="font-size: 16px;">call</span>
+                                    Prefer phone sizing? Call +91-9090206090
+                                </a>
+                            </div>
                         </div>
 
-                        <div class="calc-items-grid">
-                            <!-- Item 1: King Bed -->
-                            <div class="calc-item-card" data-item="bed_king" data-category="living" data-volume="20">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">bed</span>
-                                    </div>
-                                    <span>King / Double Bed</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button type="button" class="control-btn minus" onclick="updateItemQty('bed_king', -1)" aria-label="Decrease quantity">—</button>
-                                    <span class="qty-display" id="qty-bed_king">0</span>
-                                    <button type="button" class="control-btn plus" onclick="updateItemQty('bed_king', 1)" aria-label="Increase quantity">+</button>
+                        <!-- Right Column: Interactive Item Grid with Category Tabs & Search -->
+                        <div class="calc-items-column">
+                            <!-- Search & Custom item bar -->
+                            <div class="calc-search-row" style="margin-bottom: 16px; display: flex; gap: 12px; align-items: center;">
+                                <div style="position: relative; flex: 1;">
+                                    <span class="material-symbols-rounded" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #94a3b8; font-size: 20px;">search</span>
+                                    <input type="text" id="calc-item-search" placeholder="Search Indian household items (e.g. Diwan, Mandir, Almirah, Cooler, Trunks)..." oninput="window.SSI_CALCULATOR.searchItems(this.value)" style="width: 100%; padding: 11px 14px 11px 42px; border-radius: 99px; border: 1px solid var(--border); font-size: 0.9rem; background: #ffffff; outline: none; box-sizing: border-box;">
                                 </div>
                             </div>
 
-                            <!-- Item 2: Single Bed -->
-                            <div class="calc-item-card" data-item="bed_single" data-category="living" data-volume="10">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">single_bed</span>
-                                    </div>
-                                    <span>Single Bed</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button type="button" class="control-btn minus" onclick="updateItemQty('bed_single', -1)" aria-label="Decrease quantity">—</button>
-                                    <span class="qty-display" id="qty-bed_single">0</span>
-                                    <button type="button" class="control-btn plus" onclick="updateItemQty('bed_single', 1)" aria-label="Increase quantity">+</button>
-                                </div>
+                            <!-- Category Filter Tabs -->
+                            <div class="calc-cat-tabs">
+                                <button type="button" class="calc-cat-pill active" onclick="window.SSI_CALCULATOR.filterCategory('all', this)">
+                                    <span class="material-symbols-rounded" style="font-size: 16px;">category</span> All Items (47)
+                                </button>
+                                <button type="button" class="calc-cat-pill" onclick="window.SSI_CALCULATOR.filterCategory('living', this)">
+                                    <span class="material-symbols-rounded" style="font-size: 16px;">weekend</span> Living Room
+                                </button>
+                                <button type="button" class="calc-cat-pill" onclick="window.SSI_CALCULATOR.filterCategory('bedroom', this)">
+                                    <span class="material-symbols-rounded" style="font-size: 16px;">bed</span> Bedroom
+                                </button>
+                                <button type="button" class="calc-cat-pill" onclick="window.SSI_CALCULATOR.filterCategory('kitchen', this)">
+                                    <span class="material-symbols-rounded" style="font-size: 16px;">kitchen</span> Kitchen &amp; Dining
+                                </button>
+                                <button type="button" class="calc-cat-pill" onclick="window.SSI_CALCULATOR.filterCategory('appliances', this)">
+                                    <span class="material-symbols-rounded" style="font-size: 16px;">mode_fan</span> Appliances
+                                </button>
+                                <button type="button" class="calc-cat-pill" onclick="window.SSI_CALCULATOR.filterCategory('boxes', this)">
+                                    <span class="material-symbols-rounded" style="font-size: 16px;">inventory_2</span> Boxes &amp; Trunks
+                                </button>
+                                <button type="button" class="calc-cat-pill" onclick="window.SSI_CALCULATOR.filterCategory('office_vehicle', this)">
+                                    <span class="material-symbols-rounded" style="font-size: 16px;">two_wheeler</span> Office &amp; Bikes
+                                </button>
                             </div>
 
-                            <!-- Item 3: 3-Seater Sofa -->
-                            <div class="calc-item-card" data-item="sofa_3" data-category="living" data-volume="15">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">weekend</span>
-                                    </div>
-                                    <span>3-Seater Sofa</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button type="button" class="control-btn minus" onclick="updateItemQty('sofa_3', -1)" aria-label="Decrease quantity">—</button>
-                                    <span class="qty-display" id="qty-sofa_3">0</span>
-                                    <button type="button" class="control-btn plus" onclick="updateItemQty('sofa_3', 1)" aria-label="Increase quantity">+</button>
-                                </div>
+                            <!-- Dynamic Items Grid Container (Populated with 47 Indian household items) -->
+                            <div id="calc-items-grid-container">
+                                <!-- Rendered dynamically by assets/js/storage-calculator.js -->
                             </div>
+                        </div>
+                    </div>
+                </div>
 
-                            <!-- Item 4: Armchair / 1-Seater -->
-                            <div class="calc-item-card" data-item="sofa_single" data-category="living" data-volume="6">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">armchair</span>
-                                    </div>
-                                    <span>Armchair / Recliner</span>
+                <!-- Custom Item Modal (Zero Exit Dialog) -->
+                <div id="custom-item-modal" class="modal-overlay" style="display: none; align-items: center; justify-content: center; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 10000; padding: 20px;">
+                    <div class="modal-card shadow-lg" style="max-width: 480px; width: 100%; background: #ffffff; border-radius: 16px; padding: 24px; position: relative;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                            <h3 style="margin: 0; font-size: 1.15rem; font-weight: 800; color: var(--text);">Add Custom Item or Machinery</h3>
+                            <button type="button" onclick="document.getElementById('custom-item-modal').style.display='none'" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #64748b; line-height: 1;">&times;</button>
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.4;">Have unique Indian furniture (e.g. Jhula swing, heavy safe, harmonium, or workshop machinery)? Enter dimensions below in feet.</p>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div>
+                                <label style="display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 4px; color: var(--text);">Item Name *</label>
+                                <input type="text" id="custom-item-name" placeholder="e.g. Wooden Jhula Swing, Harmonium, Safe" style="width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.9rem; box-sizing: border-box;">
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                                <div>
+                                    <label style="display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 4px; color: var(--text);">Length (ft)</label>
+                                    <input type="number" id="custom-item-l" placeholder="e.g. 4" min="0.5" step="0.5" style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.9rem; box-sizing: border-box;">
                                 </div>
-                                <div class="card-controls">
-                                    <button type="button" class="control-btn minus" onclick="updateItemQty('sofa_single', -1)" aria-label="Decrease quantity">—</button>
-                                    <span class="qty-display" id="qty-sofa_single">0</span>
-                                    <button type="button" class="control-btn plus" onclick="updateItemQty('sofa_single', 1)" aria-label="Increase quantity">+</button>
+                                <div>
+                                    <label style="display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 4px; color: var(--text);">Width (ft)</label>
+                                    <input type="number" id="custom-item-w" placeholder="e.g. 2" min="0.5" step="0.5" style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.9rem; box-sizing: border-box;">
+                                </div>
+                                <div>
+                                    <label style="display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 4px; color: var(--text);">Height (ft)</label>
+                                    <input type="number" id="custom-item-h" placeholder="e.g. 3" min="0.5" step="0.5" style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.9rem; box-sizing: border-box;">
                                 </div>
                             </div>
-
-                            <!-- Item 5: Dining Table -->
-                            <div class="calc-item-card" data-item="table" data-category="living" data-volume="10">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">table_restaurant</span>
-                                    </div>
-                                    <span>Dining Table</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button type="button" class="control-btn minus" onclick="updateItemQty('table', -1)" aria-label="Decrease quantity">—</button>
-                                    <span class="qty-display" id="qty-table">0</span>
-                                    <button type="button" class="control-btn plus" onclick="updateItemQty('table', 1)" aria-label="Increase quantity">+</button>
-                                </div>
+                            <div>
+                                <label style="display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 4px; color: var(--text);">Quantity</label>
+                                <input type="number" id="custom-item-qty" value="1" min="1" max="100" style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.9rem; box-sizing: border-box;">
                             </div>
-
-                            <!-- Item 6: Chair -->
-                            <div class="calc-item-card" data-item="chair" data-category="living" data-volume="3">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">chair</span>
-                                    </div>
-                                    <span>Chair</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button type="button" class="control-btn minus" onclick="updateItemQty('chair', -1)" aria-label="Decrease quantity">—</button>
-                                    <span class="qty-display" id="qty-chair">0</span>
-                                    <button type="button" class="control-btn plus" onclick="updateItemQty('chair', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Item 7: Wardrobe / Almirah -->
-                            <div class="calc-item-card" data-item="wardrobe" data-category="living" data-volume="15">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">dresser</span>
-                                    </div>
-                                    <span>Wardrobe / Almirah</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button type="button" class="control-btn minus" onclick="updateItemQty('wardrobe', -1)" aria-label="Decrease quantity">—</button>
-                                    <span class="qty-display" id="qty-wardrobe">0</span>
-                                    <button type="button" class="control-btn plus" onclick="updateItemQty('wardrobe', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Item 8: TV & Media Console -->
-                            <div class="calc-item-card" data-item="tv" data-category="living" data-volume="4">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">tv</span>
-                                    </div>
-                                    <span>TV &amp; Console</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button type="button" class="control-btn minus" onclick="updateItemQty('tv', -1)" aria-label="Decrease quantity">—</button>
-                                    <span class="qty-display" id="qty-tv">0</span>
-                                    <button type="button" class="control-btn plus" onclick="updateItemQty('tv', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Item 9: Refrigerator -->
-                            <div class="calc-item-card" data-item="fridge" data-category="appliances" data-volume="10">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">kitchen</span>
-                                    </div>
-                                    <span>Refrigerator</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button type="button" class="control-btn minus" onclick="updateItemQty('fridge', -1)" aria-label="Decrease quantity">—</button>
-                                    <span class="qty-display" id="qty-fridge">0</span>
-                                    <button type="button" class="control-btn plus" onclick="updateItemQty('fridge', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Item 10: Washing Machine -->
-                            <div class="calc-item-card" data-item="washing" data-category="appliances" data-volume="8">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">local_laundry_service</span>
-                                    </div>
-                                    <span>Washing Machine</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button type="button" class="control-btn minus" onclick="updateItemQty('washing', -1)" aria-label="Decrease quantity">—</button>
-                                    <span class="qty-display" id="qty-washing">0</span>
-                                    <button type="button" class="control-btn plus" onclick="updateItemQty('washing', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Item 11: AC / Air Cooler -->
-                            <div class="calc-item-card" data-item="ac" data-category="appliances" data-volume="6">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">mode_fan</span>
-                                    </div>
-                                    <span>AC / Air Cooler</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button type="button" class="control-btn minus" onclick="updateItemQty('ac', -1)" aria-label="Decrease quantity">—</button>
-                                    <span class="qty-display" id="qty-ac">0</span>
-                                    <button type="button" class="control-btn plus" onclick="updateItemQty('ac', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Item 12: Standard Boxes -->
-                            <div class="calc-item-card" data-item="boxes" data-category="boxes" data-volume="2">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">inventory_2</span>
-                                    </div>
-                                    <span>Standard Boxes</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button type="button" class="control-btn minus" onclick="updateItemQty('boxes', -1)" aria-label="Decrease quantity">—</button>
-                                    <span class="qty-display" id="qty-boxes">0</span>
-                                    <button type="button" class="control-btn plus" onclick="updateItemQty('boxes', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Item 13: Suitcases / Bags -->
-                            <div class="calc-item-card" data-item="luggage" data-category="boxes" data-volume="3">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">luggage</span>
-                                    </div>
-                                    <span>Suitcases / Bags</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button type="button" class="control-btn minus" onclick="updateItemQty('luggage', -1)" aria-label="Decrease quantity">—</button>
-                                    <span class="qty-display" id="qty-luggage">0</span>
-                                    <button type="button" class="control-btn plus" onclick="updateItemQty('luggage', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Item 14: Bicycle / Bike -->
-                            <div class="calc-item-card" data-item="bicycle" data-category="boxes" data-volume="8">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">pedal_bike</span>
-                                    </div>
-                                    <span>Bicycle / Bike</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button type="button" class="control-btn minus" onclick="updateItemQty('bicycle', -1)" aria-label="Decrease quantity">—</button>
-                                    <span class="qty-display" id="qty-bicycle">0</span>
-                                    <button type="button" class="control-btn plus" onclick="updateItemQty('bicycle', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Item 15: Office Desk -->
-                            <div class="calc-item-card" data-item="desk" data-category="office" data-volume="12">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">desk</span>
-                                    </div>
-                                    <span>Office Desk</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button type="button" class="control-btn minus" onclick="updateItemQty('desk', -1)" aria-label="Decrease quantity">—</button>
-                                    <span class="qty-display" id="qty-desk">0</span>
-                                    <button type="button" class="control-btn plus" onclick="updateItemQty('desk', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Item 16: Document Box -->
-                            <div class="calc-item-card" data-item="folder" data-category="office" data-volume="1.5">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">folder</span>
-                                    </div>
-                                    <span>Document Carton</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button type="button" class="control-btn minus" onclick="updateItemQty('folder', -1)" aria-label="Decrease quantity">—</button>
-                                    <span class="qty-display" id="qty-folder">0</span>
-                                    <button type="button" class="control-btn plus" onclick="updateItemQty('folder', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Item 17: Business Stock / Pallet -->
-                            <div class="calc-item-card" data-item="inventory" data-category="office" data-volume="20">
-                                <div class="card-icon-title">
-                                    <div class="calc-icon-box theme-blue">
-                                        <span class="material-symbols-rounded">warehouse</span>
-                                    </div>
-                                    <span>Stock / Pallet</span>
-                                </div>
-                                <div class="card-controls">
-                                    <button type="button" class="control-btn minus" onclick="updateItemQty('inventory', -1)" aria-label="Decrease quantity">—</button>
-                                    <span class="qty-display" id="qty-inventory">0</span>
-                                    <button type="button" class="control-btn plus" onclick="updateItemQty('inventory', 1)" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
+                            <button type="button" class="btn btn-primary" onclick="window.SSI_CALCULATOR.addCustomItem()" style="margin-top: 8px; padding: 12px; font-weight: 700;">
+                                Add to Storage Plan
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1107,5 +953,6 @@
     <script src="app.js?v=3.6"></script>
     <script src="lead-form.min.js?v=5.0" defer></script>
     <script type="text/javascript" src="https://crm.zoho.in/crm/javascript/zcga.js"></script>
+    <script src="assets/js/storage-calculator.js?v=1.0" defer></script>
 </body>
 </html>
