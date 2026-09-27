@@ -75,18 +75,7 @@
   border-color: #ef4444;
 }
 
-.calc-preset-pill.btn-custom-item {
-  color: #7c3aed;
-  border-color: #ede9fe;
-  background: #f5f3ff;
-  font-weight: 700;
-}
 
-.calc-preset-pill.btn-custom-item:hover {
-  background: #7c3aed;
-  color: #ffffff;
-  border-color: #7c3aed;
-}
 
 /* Category Filter Pills */
 .calc-cat-tabs {

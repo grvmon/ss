@@ -234,14 +234,11 @@
                 <div id="native-calculator-view">
                     <!-- 1-Click Home & Business Presets -->
                     <div class="calc-preset-wrapper">
-                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
+                        <div style="margin-bottom: 12px;">
                             <span class="calc-preset-title">
                                 <span class="material-symbols-rounded" style="color: var(--primary);">auto_fix_high</span>
                                 1-Click Indian Home &amp; Business Presets:
                             </span>
-                            <button type="button" class="calc-preset-pill btn-custom-item" onclick="document.getElementById('custom-item-modal').style.display='flex'">
-                                <span class="material-symbols-rounded" style="font-size: 16px;">add_circle</span> + Add Custom Item / Size
-                            </button>
                         </div>
                         <div class="calc-preset-bar">
                             <button type="button" class="calc-preset-pill" onclick="window.SSI_CALCULATOR.applyPreset('1bhk', this)">
@@ -386,43 +383,7 @@
                     </div>
                 </div>
 
-                <!-- Custom Item Modal (Zero Exit Dialog) -->
-                <div id="custom-item-modal" class="modal-overlay" style="display: none; align-items: center; justify-content: center; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 10000; padding: 20px;">
-                    <div class="modal-card shadow-lg" style="max-width: 480px; width: 100%; background: #ffffff; border-radius: 16px; padding: 24px; position: relative;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                            <h3 style="margin: 0; font-size: 1.15rem; font-weight: 800; color: var(--text);">Add Custom Item or Machinery</h3>
-                            <button type="button" onclick="document.getElementById('custom-item-modal').style.display='none'" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #64748b; line-height: 1;">&times;</button>
-                        </div>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.4;">Have unique Indian furniture (e.g. Jhula swing, heavy safe, harmonium, or workshop machinery)? Enter dimensions below in feet.</p>
-                        <div style="display: flex; flex-direction: column; gap: 12px;">
-                            <div>
-                                <label style="display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 4px; color: var(--text);">Item Name *</label>
-                                <input type="text" id="custom-item-name" placeholder="e.g. Wooden Jhula Swing, Harmonium, Safe" style="width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.9rem; box-sizing: border-box;">
-                            </div>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-                                <div>
-                                    <label style="display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 4px; color: var(--text);">Length (ft)</label>
-                                    <input type="number" id="custom-item-l" placeholder="e.g. 4" min="0.5" step="0.5" style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.9rem; box-sizing: border-box;">
-                                </div>
-                                <div>
-                                    <label style="display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 4px; color: var(--text);">Width (ft)</label>
-                                    <input type="number" id="custom-item-w" placeholder="e.g. 2" min="0.5" step="0.5" style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.9rem; box-sizing: border-box;">
-                                </div>
-                                <div>
-                                    <label style="display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 4px; color: var(--text);">Height (ft)</label>
-                                    <input type="number" id="custom-item-h" placeholder="e.g. 3" min="0.5" step="0.5" style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.9rem; box-sizing: border-box;">
-                                </div>
-                            </div>
-                            <div>
-                                <label style="display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 4px; color: var(--text);">Quantity</label>
-                                <input type="number" id="custom-item-qty" value="1" min="1" max="100" style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.9rem; box-sizing: border-box;">
-                            </div>
-                            <button type="button" class="btn btn-primary" onclick="window.SSI_CALCULATOR.addCustomItem()" style="margin-top: 8px; padding: 12px; font-weight: 700;">
-                                Add to Storage Plan
-                            </button>
-                        </div>
-                    </div>
-                </div>
+
 
                 <!-- Trust Section / Reassurance Cards -->
                 <div class="calc-trust-grid">
