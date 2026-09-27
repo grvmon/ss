@@ -11,43 +11,43 @@
   // 1. DATA: 37 SSI FACILITY UNITS (DIRECT FROM CALCUMATE INTEGRATION)
   // =========================================================================
   const SSI_UNITS = [
-    { id: 'u_6x4', name: 'Tiny 6 X 4', w: 6, d: 4, h: 8, area: 24, vol: 192, tier: 'Personal Locker', price: 1200 },
-    { id: 'u_9x4', name: 'Small 9 X 4', w: 9, d: 4, h: 8, area: 36, vol: 288, tier: 'Small Room', price: 2900 },
-    { id: 'u_8x5', name: 'Small 8 X 5', w: 8, d: 5, h: 8, area: 40, vol: 320, tier: 'Small Room', price: 3200 },
-    { id: 'u_11x4', name: 'Small 11 X 4', w: 11, d: 4, h: 8, area: 44, vol: 352, tier: 'Small Room', price: 3500 },
-    { id: 'u_8x6', name: 'Small 8 X 6', w: 8, d: 6, h: 8, area: 48, vol: 384, tier: 'Small Room', price: 3800 },
-    { id: 'u_7x7', name: 'Small 7 X 7', w: 7, d: 7, h: 8, area: 49, vol: 392, tier: 'Small Room', price: 3900 },
-    { id: 'u_10x5', name: 'Small 10 X 5', w: 10, d: 5, h: 8, area: 50, vol: 400, tier: 'Small Room', price: 4000 },
-    { id: 'u_9x6', name: 'Small 9 X 6', w: 9, d: 6, h: 8, area: 54, vol: 432, tier: 'Small Room', price: 4300 },
-    { id: 'u_11x5', name: 'Medium 11 X 5', w: 11, d: 5, h: 8, area: 55, vol: 440, tier: 'Medium Room', price: 4500 },
-    { id: 'u_8x7', name: 'Medium 8 X 7', w: 8, d: 7, h: 8, area: 56, vol: 448, tier: 'Medium Room', price: 4600 },
-    { id: 'u_12x5', name: 'Medium 12 X 5', w: 12, d: 5, h: 8, area: 60, vol: 480, tier: 'Medium Room', price: 4900 },
-    { id: 'u_10x6', name: 'Medium 10 X 6', w: 10, d: 6, h: 8, area: 60, vol: 480, tier: 'Medium Room', price: 4900 },
-    { id: 'u_11x6', name: 'Medium 11 X 6', w: 11, d: 6, h: 8, area: 66, vol: 528, tier: 'Medium Room', price: 5400 },
-    { id: 'u_14x5', name: 'Medium 14 X 5', w: 14, d: 5, h: 8, area: 70, vol: 560, tier: 'Medium Room', price: 5700 },
-    { id: 'u_10x7', name: 'Medium 10 X 7', w: 10, d: 7, h: 8, area: 70, vol: 560, tier: 'Medium Room', price: 5700 },
-    { id: 'u_9x8', name: 'Medium 9 X 8', w: 9, d: 8, h: 8, area: 72, vol: 576, tier: 'Medium Room', price: 5900 },
-    { id: 'u_12x6', name: 'Medium 12 X 6', w: 12, d: 6, h: 8, area: 72, vol: 576, tier: 'Medium Room', price: 5900 },
-    { id: 'u_11x7', name: 'Large 11 X 7', w: 11, d: 7, h: 8, area: 77, vol: 616, tier: 'Large Room', price: 6300 },
-    { id: 'u_13x6', name: 'Large 13 X 6', w: 13, d: 6, h: 8, area: 78, vol: 624, tier: 'Large Room', price: 6400 },
-    { id: 'u_10x8', name: 'Large 10 X 8', w: 10, d: 8, h: 8, area: 80, vol: 640, tier: 'Large Room', price: 6600 },
-    { id: 'u_14x6', name: 'Large 14 X 6', w: 14, d: 6, h: 8, area: 84, vol: 672, tier: 'Large Room', price: 6900 },
-    { id: 'u_11x8', name: 'Large 11 X 8', w: 11, d: 8, h: 8, area: 88, vol: 704, tier: 'Large Room', price: 7200 },
-    { id: 'u_18x5', name: 'Large 18 X 5', w: 18, d: 5, h: 8, area: 90, vol: 720, tier: 'Large Room', price: 7400 },
-    { id: 'u_15x6', name: 'Large 15 X 6', w: 15, d: 6, h: 8, area: 90, vol: 720, tier: 'Large Room', price: 7400 },
-    { id: 'u_23x4', name: 'Large 23 X 4', w: 23, d: 4, h: 8, area: 92, vol: 736, tier: 'Large Room', price: 7600 },
-    { id: 'u_19x5', name: 'Large 19 X 5', w: 19, d: 5, h: 8, area: 95, vol: 760, tier: 'Large Room', price: 7800 },
-    { id: 'u_11x9', name: 'Extra Large 11 X 9', w: 11, d: 9, h: 8, area: 99, vol: 792, tier: 'Extra Large Suite', price: 8200 },
-    { id: 'u_18x6', name: 'Extra Large 18 X 6', w: 18, d: 6, h: 8, area: 108, vol: 864, tier: 'Extra Large Suite', price: 8900 },
-    { id: 'u_11x10', name: 'Extra Large 11 X 10', w: 11, d: 10, h: 8, area: 110, vol: 880, tier: 'Extra Large Suite', price: 9100 },
-    { id: 'u_23x5', name: 'Extra Large 23 X 5', w: 23, d: 5, h: 8, area: 115, vol: 920, tier: 'Extra Large Suite', price: 9500 },
-    { id: 'u_18x7', name: 'Extra Large 18 X 7', w: 18, d: 7, h: 8, area: 126, vol: 1008, tier: 'Extra Large Suite', price: 10400 },
-    { id: 'u_14x9', name: 'Extra Large 14 X 9', w: 14, d: 9, h: 8, area: 126, vol: 1008, tier: 'Extra Large Suite', price: 10400 },
-    { id: 'u_13x10', name: 'Extra Large 13 X 10', w: 13, d: 10, h: 8, area: 130, vol: 1040, tier: 'Extra Large Suite', price: 10700 },
-    { id: 'u_13x11', name: 'Extra Large 13 X 11', w: 13, d: 11, h: 8, area: 143, vol: 1144, tier: 'Extra Large Suite', price: 11800 },
-    { id: 'u_19x8', name: 'Extra Large 19 X 8', w: 19, d: 8, h: 8, area: 152, vol: 1216, tier: 'Extra Large Suite', price: 12500 },
-    { id: 'u_19x9', name: 'Extra Large 19 X 9', w: 19, d: 9, h: 8, area: 171, vol: 1368, tier: 'Extra Large Suite', price: 14000 },
-    { id: 'u_17x11', name: 'Extra Large 17 X 11', w: 17, d: 11, h: 8, area: 187, vol: 1496, tier: 'Extra Large Suite', price: 15400 }
+    { id: 'u_6x4', name: 'Standard 6 X 4', w: 6, d: 4, h: 8, area: 24, vol: 192, tier: 'Tier 2 - Standard', price: 1200 },
+    { id: 'u_9x4', name: 'Standard 9 X 4', w: 9, d: 4, h: 8, area: 36, vol: 288, tier: 'Tier 2 - Standard', price: 2900 },
+    { id: 'u_8x5', name: 'Standard 8 X 5', w: 8, d: 5, h: 8, area: 40, vol: 320, tier: 'Tier 2 - Standard', price: 3200 },
+    { id: 'u_11x4', name: 'Standard 11 X 4', w: 11, d: 4, h: 8, area: 44, vol: 352, tier: 'Tier 2 - Standard', price: 3500 },
+    { id: 'u_8x6', name: 'Standard 8 X 6', w: 8, d: 6, h: 8, area: 48, vol: 384, tier: 'Tier 2 - Standard', price: 3800 },
+    { id: 'u_7x7', name: 'Standard 7 X 7', w: 7, d: 7, h: 8, area: 49, vol: 392, tier: 'Tier 2 - Standard', price: 3900 },
+    { id: 'u_10x5', name: 'Standard 10 X 5', w: 10, d: 5, h: 8, area: 50, vol: 400, tier: 'Tier 2 - Standard', price: 4000 },
+    { id: 'u_9x6', name: 'Standard 9 X 6', w: 9, d: 6, h: 8, area: 54, vol: 432, tier: 'Tier 2 - Standard', price: 4300 },
+    { id: 'u_11x5', name: 'Standard 11 X 5', w: 11, d: 5, h: 8, area: 55, vol: 440, tier: 'Tier 2 - Standard', price: 4500 },
+    { id: 'u_8x7', name: 'Standard 8 X 7', w: 8, d: 7, h: 8, area: 56, vol: 448, tier: 'Tier 2 - Standard', price: 4600 },
+    { id: 'u_12x5', name: 'Standard 12 X 5', w: 12, d: 5, h: 8, area: 60, vol: 480, tier: 'Tier 2 - Standard', price: 4900 },
+    { id: 'u_10x6', name: 'Standard 10 X 6', w: 10, d: 6, h: 8, area: 60, vol: 480, tier: 'Tier 2 - Standard', price: 4900 },
+    { id: 'u_11x6', name: 'Standard 11 X 6', w: 11, d: 6, h: 8, area: 66, vol: 528, tier: 'Tier 2 - Standard', price: 5400 },
+    { id: 'u_14x5', name: 'Large 14 X 5', w: 14, d: 5, h: 8, area: 70, vol: 560, tier: 'Tier 3 - Large', price: 5700 },
+    { id: 'u_10x7', name: 'Large 10 X 7', w: 10, d: 7, h: 8, area: 70, vol: 560, tier: 'Tier 3 - Large', price: 5700 },
+    { id: 'u_9x8', name: 'Large 9 X 8', w: 9, d: 8, h: 8, area: 72, vol: 576, tier: 'Tier 3 - Large', price: 5900 },
+    { id: 'u_12x6', name: 'Large 12 X 6', w: 12, d: 6, h: 8, area: 72, vol: 576, tier: 'Tier 3 - Large', price: 5900 },
+    { id: 'u_11x7', name: 'Large 11 X 7', w: 11, d: 7, h: 8, area: 77, vol: 616, tier: 'Tier 3 - Large', price: 6300 },
+    { id: 'u_13x6', name: 'Large 13 X 6', w: 13, d: 6, h: 8, area: 78, vol: 624, tier: 'Tier 3 - Large', price: 6400 },
+    { id: 'u_10x8', name: 'Large 10 X 8', w: 10, d: 8, h: 8, area: 80, vol: 640, tier: 'Tier 3 - Large', price: 6600 },
+    { id: 'u_14x6', name: 'Large 14 X 6', w: 14, d: 6, h: 8, area: 84, vol: 672, tier: 'Tier 3 - Large', price: 6900 },
+    { id: 'u_11x8', name: 'Large 11 X 8', w: 11, d: 8, h: 8, area: 88, vol: 704, tier: 'Tier 3 - Large', price: 7200 },
+    { id: 'u_18x5', name: 'Large 18 X 5', w: 18, d: 5, h: 8, area: 90, vol: 720, tier: 'Tier 3 - Large', price: 7400 },
+    { id: 'u_15x6', name: 'Large 15 X 6', w: 15, d: 6, h: 8, area: 90, vol: 720, tier: 'Tier 3 - Large', price: 7400 },
+    { id: 'u_23x4', name: 'Large 23 X 4', w: 23, d: 4, h: 8, area: 92, vol: 736, tier: 'Tier 3 - Large', price: 7600 },
+    { id: 'u_19x5', name: 'Large 19 X 5', w: 19, d: 5, h: 8, area: 95, vol: 760, tier: 'Tier 3 - Large', price: 7800 },
+    { id: 'u_11x9', name: 'Large 11 X 9', w: 11, d: 9, h: 8, area: 99, vol: 792, tier: 'Tier 3 - Large', price: 8200 },
+    { id: 'u_18x6', name: 'Extra Large 18 X 6', w: 18, d: 6, h: 8, area: 108, vol: 864, tier: 'Tier 4 - Extra Large', price: 8900 },
+    { id: 'u_11x10', name: 'Extra Large 11 X 10', w: 11, d: 10, h: 8, area: 110, vol: 880, tier: 'Tier 4 - Extra Large', price: 9100 },
+    { id: 'u_23x5', name: 'Extra Large 23 X 5', w: 23, d: 5, h: 8, area: 115, vol: 920, tier: 'Tier 4 - Extra Large', price: 9500 },
+    { id: 'u_18x7', name: 'Extra Large 18 X 7', w: 18, d: 7, h: 8, area: 126, vol: 1008, tier: 'Tier 4 - Extra Large', price: 10400 },
+    { id: 'u_14x9', name: 'Extra Large 14 X 9', w: 14, d: 9, h: 8, area: 126, vol: 1008, tier: 'Tier 4 - Extra Large', price: 10400 },
+    { id: 'u_13x10', name: 'Extra Large 13 X 10', w: 13, d: 10, h: 8, area: 130, vol: 1040, tier: 'Tier 4 - Extra Large', price: 10700 },
+    { id: 'u_13x11', name: 'Extra Large 13 X 11', w: 13, d: 11, h: 8, area: 143, vol: 1144, tier: 'Tier 4 - Extra Large', price: 11800 },
+    { id: 'u_19x8', name: 'Extra Large 19 X 8', w: 19, d: 8, h: 8, area: 152, vol: 1216, tier: 'Tier 4 - Extra Large', price: 12500 },
+    { id: 'u_19x9', name: 'Extra Large 19 X 9', w: 19, d: 9, h: 8, area: 171, vol: 1368, tier: 'Tier 4 - Extra Large', price: 14000 },
+    { id: 'u_17x11', name: 'Extra Large 17 X 11', w: 17, d: 11, h: 8, area: 187, vol: 1496, tier: 'Tier 4 - Extra Large', price: 15400 }
   ];
 
   // =========================================================================
@@ -118,29 +118,118 @@
   // 3. PRESETS TAILORED FOR INDIAN APARTMENTS & HOMES
   // =========================================================================
   const INDIAN_PRESETS = {
-    '1rk': {
-      label: 'Studio / 1 RK (~35 sq ft)',
-      items: { bed_single: 1, mattress_double: 1, almirah_2door: 1, fridge_single: 1, microwave: 1, box_medium: 6, suitcase_large: 2, water_purifier: 1 }
-    },
     '1bhk': {
-      label: '1 BHK Flat (~50-60 sq ft)',
-      items: { bed_king: 1, mattress_double: 1, sofa_3: 1, center_table: 1, tv_unit: 1, led_tv: 1, almirah_2door: 1, fridge_double: 1, washing_front: 1, microwave: 1, split_ac: 1, box_large: 6, box_medium: 8, suitcase_large: 3, suitcase_cabin: 2 }
+      label: '1 BHK Home (45–68 sq ft · Tier 2 - Standard)',
+      items: {
+        bed_queen: 1,
+        mattress_double: 1,
+        almirah_2door: 1,
+        sofa_3: 1,
+        center_table: 1,
+        tv_unit: 1,
+        led_tv: 1,
+        fridge_double: 1,
+        washing_front: 1,
+        microwave: 1,
+        box_large: 6,
+        box_medium: 6,
+        suitcase_large: 2,
+        suitcase_cabin: 2
+      }
     },
     '2bhk': {
-      label: '2 BHK Home (~80-100 sq ft)',
-      items: { bed_king: 1, bed_queen: 1, mattress_double: 2, sofa_3: 1, sofa_2: 1, center_table: 1, tv_unit: 1, led_tv: 1, dining_4: 1, dining_chairs: 1, almirah_2door: 2, dressing_table: 1, fridge_double: 1, washing_front: 1, microwave: 1, split_ac: 2, inverter_battery: 1, box_large: 12, box_medium: 15, box_small: 6, trunk_steel: 1, suitcase_large: 4, suitcase_cabin: 3 }
+      label: '2 BHK Home (70–102 sq ft · Tier 3 - Large)',
+      items: {
+        bed_king: 1,
+        bed_queen: 1,
+        mattress_double: 2,
+        almirah_2door: 2,
+        sofa_3: 1,
+        center_table: 1,
+        tv_unit: 1,
+        led_tv: 1,
+        dining_4: 1,
+        dining_chairs: 1,
+        fridge_double: 1,
+        washing_front: 1,
+        microwave: 1,
+        split_ac: 2,
+        pooja_mandir: 1,
+        box_large: 8,
+        box_medium: 8,
+        suitcase_large: 3,
+        suitcase_cabin: 2,
+        trunk_steel: 1
+      }
     },
     '3bhk': {
-      label: '3 BHK Villa (~130-160 sq ft)',
-      items: { bed_king: 2, bed_single: 1, mattress_double: 2, sofa_3: 1, sofa_2: 1, sofa_1: 2, center_table: 1, tv_unit: 1, led_tv: 2, pooja_mandir: 1, bookshelf: 1, shoe_rack: 1, dining_6: 1, dining_chairs: 1, almirah_3door: 1, almirah_2door: 2, dressing_table: 1, fridge_double: 1, washing_front: 1, microwave: 1, split_ac: 3, air_cooler: 1, inverter_battery: 1, geyser: 1, box_large: 20, box_medium: 25, box_small: 10, trunk_steel: 2, suitcase_large: 6, suitcase_cabin: 4, bicycle: 1 }
+      label: '3 BHK Home (110–145 sq ft · Tier 4 - Extra Large)',
+      items: {
+        bed_king: 2,
+        bed_single: 1,
+        mattress_double: 2,
+        almirah_3door: 1,
+        almirah_2door: 2,
+        dressing_table: 1,
+        sofa_3: 1,
+        sofa_2: 1,
+        center_table: 1,
+        tv_unit: 1,
+        led_tv: 1,
+        dining_6: 1,
+        dining_chairs: 1,
+        fridge_double: 1,
+        washing_front: 1,
+        microwave: 1,
+        split_ac: 3,
+        pooja_mandir: 1,
+        shoe_rack: 1,
+        box_large: 12,
+        box_medium: 12,
+        box_small: 6,
+        trunk_steel: 1,
+        suitcase_large: 4,
+        suitcase_cabin: 3,
+        bicycle: 1
+      }
     },
-    'luggage_only': {
-      label: 'Boxes & Trunks Only (~25-35 sq ft)',
-      items: { box_large: 8, box_medium: 12, box_small: 6, trunk_steel: 2, suitcase_large: 4, suitcase_cabin: 4, razai_bundles: 2, bicycle: 1 }
-    },
-    'office_startup': {
-      label: 'Office & Startup Archive (~70-90 sq ft)',
-      items: { office_desk: 3, office_chair: 6, archive_box: 25, bookshelf: 2, two_wheeler: 1 }
+    '4bhk': {
+      label: '4 BHK / Villa (150–175 sq ft · Tier 4 - Extra Large)',
+      items: {
+        bed_king: 2,
+        bed_queen: 1,
+        bed_single: 1,
+        mattress_double: 3,
+        almirah_3door: 2,
+        almirah_2door: 1,
+        dressing_table: 1,
+        sofa_3: 1,
+        sofa_2: 1,
+        sofa_1: 1,
+        center_table: 1,
+        tv_unit: 1,
+        led_tv: 2,
+        dining_6: 1,
+        dining_chairs: 1,
+        fridge_double: 1,
+        washing_front: 1,
+        microwave: 1,
+        split_ac: 4,
+        inverter_battery: 1,
+        pooja_mandir: 1,
+        bookshelf: 1,
+        shoe_rack: 1,
+        office_desk: 1,
+        office_chair: 1,
+        bicycle: 1,
+        box_large: 16,
+        box_medium: 16,
+        box_small: 8,
+        trunk_steel: 2,
+        suitcase_large: 5,
+        suitcase_cabin: 4,
+        razai_bundles: 2
+      }
     }
   };
 
@@ -513,9 +602,11 @@
     const utilPctEl = document.getElementById('calc-util-percent');
     const statusNoteEl = document.getElementById('calc-status-note');
     const ctaBtnText = document.getElementById('calc-cta-text');
+    const tierBadgeEl = document.getElementById('calc-tier-badge');
 
     if (result.unit) {
-      if (unitNameEl) unitNameEl.innerText = result.unit.name;
+      if (tierBadgeEl) tierBadgeEl.innerText = result.unit.tier;
+      if (unitNameEl) unitNameEl.innerText = `${result.unit.tier} (${result.unit.name})`;
       if (unitDimEl) unitDimEl.innerText = `${result.unit.w} ft × ${result.unit.d} ft × ${result.unit.h} ft Ceiling`;
       if (unitAreaEl) unitAreaEl.innerText = `${result.unit.area} sq ft`;
       if (unitVolEl) unitVolEl.innerText = `${result.unit.vol} cu ft`;
@@ -523,10 +614,11 @@
       if (utilBarEl) utilBarEl.style.width = `${result.utilizationPct}%`;
       if (utilPctEl) utilPctEl.innerText = `${result.utilizationPct}% Filled`;
       if (statusNoteEl) statusNoteEl.innerText = result.statusText;
-      if (ctaBtnText) ctaBtnText.innerText = `Book ${result.unit.name} (${result.unit.area} sq ft) →`;
+      if (ctaBtnText) ctaBtnText.innerText = `Book ${result.unit.tier} (${result.unit.area} sq ft) →`;
     } else {
+      if (tierBadgeEl) tierBadgeEl.innerText = 'Select Items';
       if (unitNameEl) unitNameEl.innerText = 'Select Items';
-      if (unitDimEl) unitDimEl.innerText = '37 facility unit sizes available';
+      if (unitDimEl) unitDimEl.innerText = 'Standard facility units (45–175 sq ft)';
       if (unitAreaEl) unitAreaEl.innerText = '0 sq ft';
       if (unitVolEl) unitVolEl.innerText = '0 cu ft';
       if (unitPriceEl) unitPriceEl.innerText = 'Starting from ₹1,200/mo';
@@ -722,7 +814,7 @@
       }
 
       const itemSummary = inventoryList.map(it => `${it.qty}x ${it.name}`).join(', ');
-      const description = `Storage Calculator: ${result.unit.name} (${result.unit.area} sq ft, ${result.unit.vol} cu ft) | ${result.utilizationPct}% Utilized | Inventory: ${itemSummary}`;
+      const description = `Storage Calculator: ${result.unit.tier} - ${result.unit.name} (${result.unit.area} sq ft, ${result.unit.vol} cu ft) | ${result.utilizationPct}% Utilized | Inventory: ${itemSummary}`;
 
       // Update hidden storage-size
       const sizeInput = document.getElementById('storage-size');
@@ -737,7 +829,7 @@
       // Contextual title
       const headingEl = document.getElementById('lfMainHeading');
       const subHeadingEl = document.getElementById('lfSubHeading');
-      if (headingEl) headingEl.textContent = `Get Free Quote for ${result.unit.name} (${result.unit.area} sq ft)`;
+      if (headingEl) headingEl.textContent = `Get Free Quote for ${result.unit.tier} (${result.unit.area} sq ft)`;
       if (subHeadingEl) subHeadingEl.textContent = `Unit reserved for your ${totalItems} household items. Transparent pricing guaranteed.`;
     },
 

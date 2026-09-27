@@ -267,23 +267,17 @@
                             </button>
                         </div>
                         <div class="calc-preset-bar">
-                            <button type="button" class="calc-preset-pill" onclick="window.SSI_CALCULATOR.applyPreset('1rk', this)">
-                                <span>🏠</span> 1 RK / Studio (~35 sq ft)
-                            </button>
                             <button type="button" class="calc-preset-pill" onclick="window.SSI_CALCULATOR.applyPreset('1bhk', this)">
-                                <span>🏡</span> 1 BHK Flat (~60 sq ft)
+                                <span>🏠</span> 1 BHK (45–68 sq ft)
                             </button>
                             <button type="button" class="calc-preset-pill" onclick="window.SSI_CALCULATOR.applyPreset('2bhk', this)">
-                                <span>🏰</span> 2 BHK Home (~90 sq ft)
+                                <span>🏡</span> 2 BHK (70–102 sq ft)
                             </button>
                             <button type="button" class="calc-preset-pill" onclick="window.SSI_CALCULATOR.applyPreset('3bhk', this)">
-                                <span>🏢</span> 3 BHK Villa (~150 sq ft)
+                                <span>🏰</span> 3 BHK (110–145 sq ft)
                             </button>
-                            <button type="button" class="calc-preset-pill" onclick="window.SSI_CALCULATOR.applyPreset('luggage_only', this)">
-                                <span>🎒</span> Boxes &amp; Trunks (~30 sq ft)
-                            </button>
-                            <button type="button" class="calc-preset-pill" onclick="window.SSI_CALCULATOR.applyPreset('office_startup', this)">
-                                <span>💼</span> Office &amp; Startup (~80 sq ft)
+                            <button type="button" class="calc-preset-pill" onclick="window.SSI_CALCULATOR.applyPreset('4bhk', this)">
+                                <span>🏢</span> 4 BHK (150–175 sq ft)
                             </button>
                             <button type="button" class="calc-preset-pill btn-reset" onclick="window.SSI_CALCULATOR.resetAll()">
                                 <span class="material-symbols-rounded" style="font-size: 15px;">refresh</span> Reset All
@@ -332,9 +326,12 @@
 
                             <!-- Live Result Card -->
                             <div class="live-result-card shadow-lg">
-                                <div class="result-header">
-                                    <span class="badge-dot"></span>
-                                    <h5>Recommended Unit Size</h5>
+                                <div class="result-header" style="justify-content: space-between;">
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <span class="badge-dot"></span>
+                                        <h5>Recommended Room Tier</h5>
+                                    </div>
+                                    <span class="result-tier-badge" id="calc-tier-badge" style="margin-bottom: 0; background: #e0f2fe; color: #0284c7; font-weight: 700;">Select Items</span>
                                 </div>
                                 <div class="result-value" id="calc-unit-area">0 sq ft</div>
                                 <ul class="result-details">
@@ -484,79 +481,60 @@
                 </div>
 
                 <div class="size-guide-grid">
-                    <!-- Tier 1: Personal Locker -->
+                    <!-- Tier 2: Standard -->
                     <div class="size-guide-card">
                         <div>
-                            <span class="size-guide-badge">Compact Storage</span>
-                            <h3 class="size-guide-title">Personal Locker</h3>
-                            <div class="size-guide-sqft">20 – 40 sq. ft.</div>
-                            <div class="size-guide-dim">Dim: ~5 ft × 6 ft × 9.5 ft H</div>
-                            <ul class="size-guide-fits">
-                                <li><span class="material-symbols-rounded">check</span> 10–15 standard cartons &amp; boxes</li>
-                                <li><span class="material-symbols-rounded">check</span> 4–6 travel suitcases &amp; bags</li>
-                                <li><span class="material-symbols-rounded">check</span> Academic books, tax files &amp; records</li>
-                                <li><span class="material-symbols-rounded">check</span> Sports gear, golf sets &amp; bicycle</li>
-                            </ul>
-                        </div>
-                        <button type="button" class="size-guide-btn" onclick="openQuoteModal('Personal Locker (20-40 sq ft)')">
-                            Select This Size <span class="material-symbols-rounded" style="font-size: 16px;">arrow_forward</span>
-                        </button>
-                    </div>
-
-                    <!-- Tier 2: Small Room -->
-                    <div class="size-guide-card" style="border-color: rgba(37, 99, 235, 0.4); box-shadow: 0 4px 16px rgba(37, 99, 235, 0.06);">
-                        <div>
-                            <span class="size-guide-badge" style="color: var(--primary);">Most Popular for 1 BHK</span>
-                            <h3 class="size-guide-title">Small Private Room</h3>
-                            <div class="size-guide-sqft">50 – 75 sq. ft.</div>
-                            <div class="size-guide-dim">Dim: ~7.5 ft × 10 ft × 9.5 ft H</div>
+                            <span class="size-guide-badge" style="color: var(--primary);">Ideal for 1 BHK</span>
+                            <h3 class="size-guide-title">Tier 2 - Standard</h3>
+                            <div class="size-guide-sqft">45 – 68 sq. ft.</div>
+                            <div class="size-guide-dim">Dim: ~8 ft × 6 ft to 11 ft × 6 ft (9.5 ft H)</div>
                             <ul class="size-guide-fits">
                                 <li><span class="material-symbols-rounded">check</span> Complete 1 BHK apartment contents</li>
                                 <li><span class="material-symbols-rounded">check</span> 1 double bed, mattress &amp; 3-seater sofa</li>
-                                <li><span class="material-symbols-rounded">check</span> Refrigerator, washing machine &amp; TV</li>
-                                <li><span class="material-symbols-rounded">check</span> 15–20 packed moving cartons</li>
+                                <li><span class="material-symbols-rounded">check</span> Refrigerator, washing machine, TV &amp; microwave</li>
+                                <li><span class="material-symbols-rounded">check</span> 12–18 packed moving cartons &amp; suitcases</li>
                             </ul>
                         </div>
-                        <button type="button" class="size-guide-btn" style="background: var(--primary); color: #ffffff;" onclick="openQuoteModal('Small Private Room (50-75 sq ft)')">
-                            Select This Size <span class="material-symbols-rounded" style="font-size: 16px;">arrow_forward</span>
+                        <button type="button" class="size-guide-btn" onclick="openQuoteModal('Tier 2 - Standard (45-68 sq ft)')">
+                            Select Tier 2 <span class="material-symbols-rounded" style="font-size: 16px;">arrow_forward</span>
                         </button>
                     </div>
 
-                    <!-- Tier 3: Mid-Sized Room -->
-                    <div class="size-guide-card">
+                    <!-- Tier 3: Large -->
+                    <div class="size-guide-card" style="border-color: rgba(37, 99, 235, 0.4); box-shadow: 0 4px 16px rgba(37, 99, 235, 0.08);">
                         <div>
-                            <span class="size-guide-badge">Ideal for 2 BHK</span>
-                            <h3 class="size-guide-title">Mid-Sized Room</h3>
-                            <div class="size-guide-sqft">76 – 149 sq. ft.</div>
-                            <div class="size-guide-dim">Dim: ~10 ft × 12 ft × 9.5 ft H</div>
+                            <span class="size-guide-badge" style="color: var(--primary); font-weight: 700;">Most Popular for 2 BHK</span>
+                            <h3 class="size-guide-title">Tier 3 - Large</h3>
+                            <div class="size-guide-sqft">70 – 102 sq. ft.</div>
+                            <div class="size-guide-dim">Dim: ~10 ft × 8 ft to 13 ft × 7 ft (9.5 ft H)</div>
                             <ul class="size-guide-fits">
-                                <li><span class="material-symbols-rounded">check</span> Full 2 BHK home furniture</li>
-                                <li><span class="material-symbols-rounded">check</span> 2 double beds, wardrobes &amp; dining set</li>
-                                <li><span class="material-symbols-rounded">check</span> Full living room set &amp; major appliances</li>
-                                <li><span class="material-symbols-rounded">check</span> 25–35 packed cartons with aisle space</li>
+                                <li><span class="material-symbols-rounded">check</span> Full 2 BHK home furniture &amp; appliances</li>
+                                <li><span class="material-symbols-rounded">check</span> 2 double beds, 2 almirahs &amp; 4-seat dining</li>
+                                <li><span class="material-symbols-rounded">check</span> 3+2 sofa set, TV unit, 2 ACs &amp; pooja mandir</li>
+                                <li><span class="material-symbols-rounded">check</span> 25–35 packed cartons, steel peti &amp; luggage</li>
                             </ul>
                         </div>
-                        <button type="button" class="size-guide-btn" onclick="openQuoteModal('Mid-Sized Room (76-149 sq ft)')">
-                            Select This Size <span class="material-symbols-rounded" style="font-size: 16px;">arrow_forward</span>
+                        <button type="button" class="size-guide-btn" style="background: var(--primary); color: #ffffff;" onclick="openQuoteModal('Tier 3 - Large (70-102 sq ft)')">
+                            Select Tier 3 <span class="material-symbols-rounded" style="font-size: 16px;">arrow_forward</span>
                         </button>
                     </div>
 
-                    <!-- Tier 4: Large Room -->
+                    <!-- Tier 4: Extra Large -->
                     <div class="size-guide-card">
                         <div>
-                            <span class="size-guide-badge">3 BHK &amp; Commercial</span>
-                            <h3 class="size-guide-title">Large Private Suite</h3>
-                            <div class="size-guide-sqft">150 – 250+ sq. ft.</div>
-                            <div class="size-guide-dim">Dim: ~12 ft × 18 ft × 10 ft H</div>
+                            <span class="size-guide-badge">Ideal for 3 BHK &amp; 4 BHK</span>
+                            <h3 class="size-guide-title">Tier 4 - Extra Large</h3>
+                            <div class="size-guide-sqft">110 – 175 sq. ft.</div>
+                            <div class="size-guide-dim">Dim: ~11 ft × 10 ft to 19 ft × 9 ft (9.5 ft H)</div>
                             <ul class="size-guide-fits">
-                                <li><span class="material-symbols-rounded">check</span> Full 3 BHK / 4 BHK villa furniture</li>
-                                <li><span class="material-symbols-rounded">check</span> Multiple beds, heavy almirahs &amp; electronics</li>
-                                <li><span class="material-symbols-rounded">check</span> 40–60+ moving boxes &amp; appliances</li>
-                                <li><span class="material-symbols-rounded">check</span> Corporate archives &amp; inventory pallets</li>
+                                <li><span class="material-symbols-rounded">check</span> Full 3 BHK or 4 BHK extensive household</li>
+                                <li><span class="material-symbols-rounded">check</span> 3–4 beds, heavy almirahs &amp; 6-seat dining set</li>
+                                <li><span class="material-symbols-rounded">check</span> Sectional sofa, 3-4 ACs, WFH desks &amp; appliances</li>
+                                <li><span class="material-symbols-rounded">check</span> 45–60+ moving cartons, steel trunks &amp; vehicle</li>
                             </ul>
                         </div>
-                        <button type="button" class="size-guide-btn" onclick="openQuoteModal('Large Room (150-250 sq ft)')">
-                            Select This Size <span class="material-symbols-rounded" style="font-size: 16px;">arrow_forward</span>
+                        <button type="button" class="size-guide-btn" onclick="openQuoteModal('Tier 4 - Extra Large (110-175 sq ft)')">
+                            Select Tier 4 <span class="material-symbols-rounded" style="font-size: 16px;">arrow_forward</span>
                         </button>
                     </div>
                 </div>
