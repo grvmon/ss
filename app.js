@@ -913,7 +913,7 @@ if (window.location.pathname.startsWith('/ss')) {
 
 
 // Prevent transition jerk on load
-document.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('load', function() {
     setTimeout(function() {
         document.body.classList.remove('preload');
     }, 50);

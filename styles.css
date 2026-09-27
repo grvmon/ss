@@ -1,4 +1,19 @@
 
+/* Prevent font-loading layout shift (jerk) for material symbols */
+.material-symbols-rounded {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    overflow: hidden;
+    font-size: 24px;
+}
+
 .preload * {
     -webkit-transition: none !important;
     -moz-transition: none !important;
@@ -102,7 +117,8 @@ html {
     scroll-margin-top: 86px;
 }
 
-body {
+html, body {
+    overflow-x: hidden !important;
     font-family: var(--font-body);
     background-color: var(--bg);
     color: var(--text);
@@ -5679,7 +5695,8 @@ h3 {
 }
 
 .household-need__card-body,
-.business-need__card-body {
+.business-need__card-html, body {
+    overflow-x: hidden !important;
     padding: 22px 24px 26px;
     display: flex;
     flex-direction: column;
