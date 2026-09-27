@@ -134,7 +134,7 @@
 
             <!-- Actions & Direct High-Intent Conversion -->
             <div class="nav-actions">
-                <button class="btn btn-primary" onclick="openQuoteModal('Header Navigation')">Start Here</button>
+                <button class="btn btn-primary" onclick="if (window.openAdvisorModal) { window.openAdvisorModal(); } else { openQuoteModal('Header Navigation'); }">Talk to an Advisor</button>
             </div>
         </div>
     </header>
