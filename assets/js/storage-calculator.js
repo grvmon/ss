@@ -58,7 +58,7 @@
     // --- LIVING ROOM ---
     { id: 'sofa_3', name: '3-Seater Living Sofa', cat: 'living', icon: 'weekend', cuFt: 50.4, w: 2.1, d: 0.85, h: 0.8, floorFootprint: 7.5, color: '#3b82f6' },
     { id: 'sofa_2', name: '2-Seater Sofa', cat: 'living', icon: 'weekend', cuFt: 36.0, w: 1.5, d: 0.85, h: 0.8, floorFootprint: 5.5, color: '#60a5fa' },
-    { id: 'sofa_1', name: 'Recliner / Armchair', cat: 'living', icon: 'armchair', cuFt: 21.7, w: 0.85, d: 0.85, h: 0.85, floorFootprint: 4.0, color: '#93c5fd' },
+    { id: 'sofa_1', name: 'Recliner / Armchair', cat: 'living', icon: 'chair', cuFt: 21.7, w: 0.85, d: 0.85, h: 0.85, floorFootprint: 4.0, color: '#93c5fd' },
     { id: 'sofa_l_shape', name: 'L-Shaped Sectional Sofa', cat: 'living', icon: 'weekend', cuFt: 86.8, w: 2.4, d: 1.6, h: 0.8, floorFootprint: 14.0, color: '#2563eb' },
     { id: 'diwan', name: 'Diwan Bed with Storage', cat: 'living', icon: 'bed', cuFt: 29.4, w: 1.85, d: 0.9, h: 0.5, floorFootprint: 8.0, color: '#f59e0b' },
     { id: 'center_table', name: 'Center / Coffee Table', cat: 'living', icon: 'table_restaurant', cuFt: 9.5, w: 1.0, d: 0.6, h: 0.45, floorFootprint: 2.0, color: '#d97706' },
