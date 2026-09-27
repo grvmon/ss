@@ -14,6 +14,10 @@ ErrorDocument 404 /404.html
     RewriteCond %{HTTP:X-Forwarded-Proto} !https
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+    # 301 Redirect old / alternative calculator slugs to /storage-calculator
+    RewriteRule ^storage-calculator-mobile/?$ /storage-calculator [R=301,L]
+    RewriteRule ^self-storage-calculator/?$ /storage-calculator [R=301,L]
+
     # If requested resource exists as a file or directory, serve directly
     RewriteCond %{REQUEST_FILENAME} -f [OR]
     RewriteCond %{REQUEST_FILENAME} -d

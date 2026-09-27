@@ -305,120 +305,414 @@ function showToastNotification() {
    ========================================================================== */
 
 const calcQty = {
-    sofa: 0,
-    bed: 0,
+    bed_king: 0,
+    bed_single: 0,
+    sofa_3: 0,
+    sofa_single: 0,
     table: 0,
     chair: 0,
     wardrobe: 0,
     boxes: 0,
     luggage: 0,
     tv: 0,
+    fridge: 0,
+    washing: 0,
+    ac: 0,
+    desk: 0,
     folder: 0,
-    appliances: 0,
     bicycle: 0,
-    inventory: 0
+    inventory: 0,
+    // Legacy keys for backwards compatibility
+    sofa: 0,
+    bed: 0,
+    appliances: 0
 };
 
 const calcVolumes = {
-    sofa: 15,
-    bed: 20,
+    bed_king: 20,
+    bed_single: 10,
+    sofa_3: 15,
+    sofa_single: 6,
     table: 10,
     chair: 3,
     wardrobe: 15,
     boxes: 2,
     luggage: 3,
     tv: 4,
-    folder: 1,
-    appliances: 12,
+    fridge: 10,
+    washing: 8,
+    ac: 6,
+    desk: 12,
+    folder: 1.5,
     bicycle: 8,
-    inventory: 25
+    inventory: 20,
+    // Legacy keys
+    sofa: 15,
+    bed: 20,
+    appliances: 10
+};
+
+const calcLabels = {
+    bed_king: 'King / Double Bed',
+    bed_single: 'Single Bed',
+    sofa_3: '3-Seater Sofa',
+    sofa_single: 'Armchair / Recliner',
+    table: 'Dining Table',
+    chair: 'Chair',
+    wardrobe: 'Wardrobe / Almirah',
+    boxes: 'Standard Box',
+    luggage: 'Suitcase / Bag',
+    tv: 'TV & Console',
+    fridge: 'Refrigerator',
+    washing: 'Washing Machine',
+    ac: 'AC / Air Cooler',
+    desk: 'Office Desk',
+    folder: 'Document Carton',
+    bicycle: 'Bicycle / Bike',
+    inventory: 'Business Stock / Pallet',
+    sofa: 'Sofa',
+    bed: 'Bed',
+    appliances: 'Appliances'
+};
+
+const calcPresets = {
+    '1bhk': {
+        bed_king: 1,
+        sofa_3: 1,
+        table: 1,
+        chair: 4,
+        wardrobe: 1,
+        boxes: 10,
+        tv: 1,
+        fridge: 1,
+        washing: 1
+    },
+    '2bhk': {
+        bed_king: 2,
+        sofa_3: 1,
+        sofa_single: 2,
+        table: 1,
+        chair: 6,
+        wardrobe: 2,
+        boxes: 20,
+        tv: 2,
+        fridge: 1,
+        washing: 1,
+        ac: 1
+    },
+    '3bhk': {
+        bed_king: 2,
+        bed_single: 1,
+        sofa_3: 2,
+        sofa_single: 2,
+        table: 1,
+        chair: 6,
+        wardrobe: 3,
+        boxes: 30,
+        tv: 2,
+        fridge: 1,
+        washing: 1,
+        ac: 2
+    },
+    'luggage': {
+        luggage: 4,
+        boxes: 8,
+        chair: 1,
+        bicycle: 1
+    },
+    'office': {
+        desk: 3,
+        chair: 6,
+        folder: 25,
+        inventory: 2
+    },
+    'reset': {}
 };
 
 function updateItemQty(itemKey, change) {
-    // 1. Calculate new quantity
-    const newQty = calcQty[itemKey] + change;
-    if (newQty < 0) return; // Prevent negative values
-    
-    // 2. Save state & update display text
+    if (typeof calcQty[itemKey] === 'undefined') {
+        calcQty[itemKey] = 0;
+    }
+    const newQty = Math.max(0, calcQty[itemKey] + change);
     calcQty[itemKey] = newQty;
-    document.getElementById(`qty-${itemKey}`).innerText = newQty;
     
-    // 3. Calculate total volume needed
+    // Update individual display text if element exists
+    const qtyEl = document.getElementById(`qty-${itemKey}`);
+    if (qtyEl) qtyEl.innerText = newQty;
+
+    // Toggle card visual active state
+    const cardEl = document.querySelector(`.calc-item-card[data-item="${itemKey}"]`);
+    if (cardEl) {
+        if (newQty > 0) cardEl.classList.add('has-qty');
+        else cardEl.classList.remove('has-qty');
+    }
+
+    renderCalculatorTotals();
+}
+
+function setItemQtyDirect(itemKey, qty) {
+    calcQty[itemKey] = Math.max(0, qty);
+    const qtyEl = document.getElementById(`qty-${itemKey}`);
+    if (qtyEl) qtyEl.innerText = calcQty[itemKey];
+
+    const cardEl = document.querySelector(`.calc-item-card[data-item="${itemKey}"]`);
+    if (cardEl) {
+        if (calcQty[itemKey] > 0) cardEl.classList.add('has-qty');
+        else cardEl.classList.remove('has-qty');
+    }
+}
+
+function applyCalcPreset(presetKey, btn) {
+    // 1. Update preset button active styling
+    if (btn) {
+        document.querySelectorAll('.calc-preset-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }
+
+    // 2. Clear all quantities first
+    for (const key in calcQty) {
+        setItemQtyDirect(key, 0);
+    }
+
+    // 3. Apply preset values
+    const targetPreset = calcPresets[presetKey] || {};
+    for (const key in targetPreset) {
+        setItemQtyDirect(key, targetPreset[key]);
+    }
+
+    renderCalculatorTotals();
+}
+
+function filterCalcCategory(category, btn) {
+    if (btn) {
+        document.querySelectorAll('.calc-tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }
+
+    const cards = document.querySelectorAll('.calc-item-card');
+    cards.forEach(card => {
+        const itemCat = card.getAttribute('data-category');
+        if (category === 'all' || itemCat === category) {
+            card.style.display = 'flex';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+function removeCalcItem(itemKey) {
+    setItemQtyDirect(itemKey, 0);
+    renderCalculatorTotals();
+}
+
+function getCalculatorTier(sqFt) {
+    if (sqFt === 0) {
+        return {
+            name: 'Select Items',
+            tier: 'None',
+            ideal: 'Select items or choose a 1-click home preset above',
+            price: 'Starting from ₹1,200/mo',
+            dimensions: 'Custom modular sizes available',
+            clearance: '9.5 ft ceiling vertical clearance'
+        };
+    } else if (sqFt <= 40) {
+        return {
+            name: 'Personal Locker',
+            tier: '20 – 40 sq. ft.',
+            ideal: 'Ideal for luggage, study books, documents & 10–15 boxes',
+            price: 'Starting from ₹1,200/mo',
+            dimensions: 'approx. 5 ft × 6 ft × 9.5 ft ceiling',
+            clearance: '9.5 ft ceiling (full height utilization)'
+        };
+    } else if (sqFt <= 75) {
+        return {
+            name: 'Small Private Room',
+            tier: '50 – 75 sq. ft.',
+            ideal: 'Ideal for 1 BHK apartment, double bed, sofa & 15+ cartons',
+            price: 'Starting from ₹4,500/mo',
+            dimensions: 'approx. 7.5 ft × 10 ft × 9.5 ft ceiling',
+            clearance: '9.5 ft ceiling (stacking allowance included)'
+        };
+    } else if (sqFt <= 149) {
+        return {
+            name: 'Mid-Sized Private Room',
+            tier: '76 – 149 sq. ft.',
+            ideal: 'Ideal for 2 BHK home, 2 beds, living room & 25+ cartons',
+            price: 'Starting from ₹7,500/mo',
+            dimensions: 'approx. 10 ft × 12 ft × 9.5 ft ceiling',
+            clearance: '9.5 ft ceiling (walkway & aisle clearance included)'
+        };
+    } else if (sqFt <= 199) {
+        return {
+            name: 'Large Private Room',
+            tier: '150 – 199 sq. ft.',
+            ideal: 'Ideal for 3 BHK home, multiple appliances & 40+ cartons',
+            price: 'Starting from ₹12,000/mo',
+            dimensions: 'approx. 12 ft × 15 ft × 9.5 ft ceiling',
+            clearance: '9.5 ft ceiling (full household capacity)'
+        };
+    } else {
+        return {
+            name: 'Extra Large Commercial Suite',
+            tier: '200 – 300+ sq. ft.',
+            ideal: 'Ideal for large villas, corporate archives & business pallets',
+            price: 'Starting from ₹16,000/mo',
+            dimensions: 'approx. 15 ft × 20 ft × 10 ft ceiling',
+            clearance: '10 ft ceiling (heavy industrial pallet capacity)'
+        };
+    }
+}
+
+function renderCalculatorTotals() {
     let totalVolumeSqFt = 0;
     let totalItemsCount = 0;
+    const activeItems = [];
+
     for (const key in calcQty) {
-        totalVolumeSqFt += calcQty[key] * calcVolumes[key];
-        totalItemsCount += calcQty[key];
+        const qty = calcQty[key] || 0;
+        if (qty > 0) {
+            const vol = calcVolumes[key] || 0;
+            totalVolumeSqFt += qty * vol;
+            totalItemsCount += qty;
+            activeItems.push({
+                key: key,
+                label: calcLabels[key] || key,
+                qty: qty
+            });
+        }
     }
-    
-    // 4. Update the visual storage unit box
-    const maxCapacityVolume = 150; // The threshold where the unit is considered 100% full
-    const fillPercent = Math.min(100, Math.round((totalVolumeSqFt / maxCapacityVolume) * 100));
+
+    const tierInfo = getCalculatorTier(totalVolumeSqFt);
+
+    // 1. Update Visual storage unit fill
+    const maxCapacity = 200;
+    const fillPercent = Math.min(100, Math.round((totalVolumeSqFt / maxCapacity) * 100));
     
     const fillBar = document.getElementById('unit-fill');
     const fillPercentText = document.getElementById('unit-fill-percent');
-    
-    fillBar.style.height = `${fillPercent}%`;
-    fillPercentText.innerText = `${fillPercent}% Full`;
-    
-    // 5. Visual: Update virtual box items inside the visual grid
+    if (fillBar) fillBar.style.height = `${fillPercent}%`;
+    if (fillPercentText) fillPercentText.innerText = `${fillPercent}% Filled`;
+
+    // 2. Update Virtual Unit Grid Items (mini icons)
     const itemGrid = document.getElementById('unit-items-display');
-    itemGrid.innerHTML = ''; // Clear previous items
-    
-    // Populate miniature icons in the virtual unit based on items added
-    for (const key in calcQty) {
-        if (calcQty[key] > 0) {
-            let materialIconName = 'inventory_2';
-            // map keys to icons
-            if (key === 'sofa') materialIconName = 'weekend';
-            else if (key === 'bed') materialIconName = 'bed';
-            else if (key === 'table') materialIconName = 'table_restaurant';
-            else if (key === 'chair') materialIconName = 'chair';
-            else if (key === 'wardrobe') materialIconName = 'dresser';
-            else if (key === 'boxes') materialIconName = 'inventory_2';
-            else if (key === 'luggage') materialIconName = 'luggage';
-            else if (key === 'tv') materialIconName = 'tv';
-            else if (key === 'folder') materialIconName = 'folder';
-            else if (key === 'appliances') materialIconName = 'kitchen';
-            else if (key === 'bicycle') materialIconName = 'pedal_bike';
-            else if (key === 'inventory') materialIconName = 'warehouse';
-            
-            for (let i = 0; i < Math.min(calcQty[key], 6); i++) {
+    if (itemGrid) {
+        itemGrid.innerHTML = '';
+        activeItems.forEach(item => {
+            let iconName = 'inventory_2';
+            if (item.key.includes('bed')) iconName = 'bed';
+            else if (item.key.includes('sofa')) iconName = 'weekend';
+            else if (item.key === 'table') iconName = 'table_restaurant';
+            else if (item.key === 'chair') iconName = 'chair';
+            else if (item.key === 'wardrobe') iconName = 'dresser';
+            else if (item.key === 'luggage') iconName = 'luggage';
+            else if (item.key === 'tv') iconName = 'tv';
+            else if (item.key === 'fridge') iconName = 'kitchen';
+            else if (item.key === 'washing') iconName = 'local_laundry_service';
+            else if (item.key === 'ac') iconName = 'mode_fan';
+            else if (item.key === 'desk') iconName = 'desk';
+            else if (item.key === 'folder') iconName = 'folder';
+            else if (item.key === 'bicycle') iconName = 'pedal_bike';
+            else if (item.key === 'inventory') iconName = 'warehouse';
+
+            for (let i = 0; i < Math.min(item.qty, 4); i++) {
                 const miniIcon = document.createElement('span');
                 miniIcon.className = 'material-symbols-rounded mini-item-visual';
-                miniIcon.innerText = materialIconName;
+                miniIcon.innerText = iconName;
                 itemGrid.appendChild(miniIcon);
             }
+        });
+    }
+
+    // 3. Render Selected Items Chips List
+    const chipsContainer = document.getElementById('calc-selected-chips');
+    if (chipsContainer) {
+        if (activeItems.length === 0) {
+            chipsContainer.innerHTML = '<span class="no-items-label">No items selected yet. Tap + or choose a preset.</span>';
+        } else {
+            chipsContainer.innerHTML = activeItems.map(item => `
+                <span class="calc-item-chip">
+                    ${item.qty}× ${item.label}
+                    <button type="button" onclick="removeCalcItem('${item.key}')" aria-label="Remove ${item.label}">&times;</button>
+                </span>
+            `).join('');
         }
     }
-    
-    // 6. Update Live Result Card Values
+
+    // 4. Update Result Card
     const resultSize = document.getElementById('calc-result-size');
     const resultDesc = document.getElementById('calc-result-desc');
     const resultPrice = document.getElementById('calc-result-price');
-    
-    if (totalVolumeSqFt === 0) {
-        resultSize.innerText = '0 sq ft';
-        resultDesc.innerText = 'Select items to calculate space';
-        resultPrice.innerText = 'Estimated Monthly Plan: Starting from ₹1,200';
-    } else {
-        resultSize.innerText = `${totalVolumeSqFt} sq ft`;
-        
-        let planDescription = 'Ideal for document storage and luggage';
-        let startingPriceVal = 1200 + (totalVolumeSqFt * 75);
-        
-        if (totalVolumeSqFt <= 15) {
-            planDescription = 'Locker (ideal for luggage, documents)';
-        } else if (totalVolumeSqFt <= 45) {
-            planDescription = 'Small Room (ideal for 1BHK / Studio items)';
-        } else if (totalVolumeSqFt <= 90) {
-            planDescription = 'Medium Room (ideal for 2BHK furniture)';
+    const resultTier = document.getElementById('calc-result-tier');
+    const resultDim = document.getElementById('calc-result-dimensions');
+    const ctaBtnText = document.getElementById('calc-cta-text');
+
+    if (resultSize) resultSize.innerText = `${totalVolumeSqFt} sq ft`;
+    if (resultDesc) resultDesc.innerText = tierInfo.ideal;
+    if (resultPrice) resultPrice.innerText = `Est. Plan: ${tierInfo.price}`;
+    if (resultTier) resultTier.innerText = tierInfo.name;
+    if (resultDim) resultDim.innerText = tierInfo.dimensions;
+
+    if (ctaBtnText) {
+        if (totalVolumeSqFt > 0) {
+            ctaBtnText.innerText = `Get Instant Quote for ${totalVolumeSqFt} sq ft (${tierInfo.name})`;
         } else {
-            planDescription = 'Large Room (ideal for 3BHK+ / Startup inventory)';
+            ctaBtnText.innerText = 'Select Items to Estimate Quote';
         }
-        
-        resultDesc.innerText = `Ideal for: ${planDescription}`;
-        resultPrice.innerText = `Estimated Monthly Plan: Starting from ₹${startingPriceVal.toLocaleString('en-IN')}`;
+    }
+
+    // 5. Update Mobile Sticky Floating Bar
+    const mobileBar = document.getElementById('calc-mobile-bar');
+    const mobileSqFt = document.getElementById('calc-mobile-sqft');
+    const mobileTier = document.getElementById('calc-mobile-tier');
+    if (mobileBar) {
+        if (totalVolumeSqFt > 0) {
+            mobileBar.classList.add('visible');
+            if (mobileSqFt) mobileSqFt.innerText = `${totalVolumeSqFt} sq ft`;
+            if (mobileTier) mobileTier.innerText = tierInfo.name;
+        } else {
+            mobileBar.classList.remove('visible');
+        }
+    }
+}
+
+function handleCalculatorQuote() {
+    let totalVolumeSqFt = 0;
+    const selectedItems = [];
+
+    for (const key in calcQty) {
+        const qty = calcQty[key] || 0;
+        if (qty > 0) {
+            const vol = calcVolumes[key] || 0;
+            totalVolumeSqFt += qty * vol;
+            selectedItems.push(`${qty}x ${calcLabels[key] || key}`);
+        }
+    }
+
+    const tierInfo = getCalculatorTier(totalVolumeSqFt);
+    const planName = totalVolumeSqFt > 0
+        ? `${totalVolumeSqFt} sq ft (${tierInfo.name})`
+        : 'Storage Calculator Inquiry';
+
+    const prefDescription = totalVolumeSqFt > 0
+        ? `Storage Calculator: ${planName} | Items: ${selectedItems.join(', ')}`
+        : 'Storage Calculator Inquiry';
+
+    // 1. Update hidden Description field
+    const sizeInput = document.getElementById('storage-size');
+    if (sizeInput) sizeInput.value = prefDescription;
+
+    // 2. Open quote modal
+    openQuoteModal(prefDescription);
+
+    // 3. Customize modal heading for maximum relevance
+    const headingEl = document.getElementById('lfMainHeading');
+    const subHeadingEl = document.getElementById('lfSubHeading');
+    if (headingEl && totalVolumeSqFt > 0) {
+        headingEl.textContent = `Get Free Quote for ${planName}`;
+    }
+    if (subHeadingEl && totalVolumeSqFt > 0) {
+        const itemSummary = selectedItems.slice(0, 3).join(', ') + (selectedItems.length > 3 ? '...' : '');
+        subHeadingEl.textContent = `We have reserved space recommendations ready for your items (${itemSummary}).`;
     }
 }
 

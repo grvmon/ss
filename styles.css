@@ -2193,6 +2193,583 @@ h3 {
     box-shadow: 0 6px 18px rgba(24, 108, 236, 0.15);
 }
 
+/* 1. Preset Selector Bar */
+.calc-preset-wrapper {
+    margin-bottom: 24px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.calc-preset-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.calc-preset-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.calc-preset-btn {
+    appearance: none;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    padding: 8px 16px;
+    border-radius: var(--radius-pill);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.calc-preset-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(24, 108, 236, 0.08);
+}
+
+.calc-preset-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(24, 108, 236, 0.25);
+}
+
+.calc-preset-btn.btn-reset {
+    color: #ef4444;
+    border-color: #fee2e2;
+    background: #fef2f2;
+}
+
+.calc-preset-btn.btn-reset:hover {
+    background: #ef4444;
+    color: #ffffff;
+    border-color: #ef4444;
+}
+
+/* 2. Category Filter Tabs */
+.calc-filter-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+}
+
+.calc-tab-btn {
+    appearance: none;
+    background: transparent;
+    border: none;
+    padding: 8px 16px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.calc-tab-btn:hover {
+    color: var(--primary);
+    background: rgba(37, 99, 235, 0.06);
+}
+
+.calc-tab-btn.active {
+    color: #ffffff;
+    background: var(--primary);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+}
+
+/* 3. Item Card Active & Control Styles */
+.calc-item-card.has-qty {
+    border-color: var(--primary);
+    background: #f8fbff;
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.1);
+}
+
+.calc-item-card.has-qty .card-icon-title span:not(.material-symbols-rounded) {
+    color: var(--primary);
+}
+
+.calc-item-card.has-qty .card-controls {
+    background: rgba(37, 99, 235, 0.12);
+}
+
+.calc-item-card.has-qty .qty-display {
+    color: var(--primary);
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+/* 4. Selected Chips Summary */
+.calc-selected-chips-wrap {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--border);
+}
+
+.calc-selected-chips-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.calc-selected-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.calc-item-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--radius-pill);
+    padding: 3px 10px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.calc-item-chip button {
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.15s ease;
+}
+
+.calc-item-chip button:hover {
+    color: #ef4444;
+}
+
+.no-items-label {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    font-style: italic;
+}
+
+/* 5. Live Result Card & Tier Details */
+.result-tier-badge {
+    display: inline-block;
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    margin-bottom: 8px;
+}
+
+.cta-btn-calc {
+    background: #FF9600;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 20px;
+    border: none;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(255, 150, 0, 0.3);
+}
+
+.cta-btn-calc:hover {
+    background: #e68700;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 150, 0, 0.4);
+    color: #ffffff;
+}
+
+.calc-call-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.calc-call-link:hover {
+    color: var(--primary);
+}
+
+/* 6. Sticky Mobile Floating Bar */
+.calc-mobile-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-top: 2px solid var(--primary);
+    box-shadow: 0 -6px 24px rgba(0,0,0,0.12);
+    z-index: 999;
+    padding: 12px 18px;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 900px) {
+    .calc-mobile-bar.visible {
+        display: flex;
+    }
+    body.has-calc-bar {
+        padding-bottom: 70px;
+    }
+}
+
+.calc-mobile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.calc-mobile-sqft {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.calc-mobile-tier {
+    font-size: 0.78rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.calc-mobile-btn {
+    background: #FF9600;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: var(--radius-pill);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(255, 150, 0, 0.3);
+}
+
+/* 7. Size Comparison Guide Section */
+.size-guide-section {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.size-guide-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.size-guide-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.size-guide-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+    box-shadow: 0 12px 30px rgba(24, 108, 236, 0.08);
+}
+
+.size-guide-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--primary);
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.size-guide-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+
+.size-guide-sqft {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #FF9600;
+    margin-bottom: 12px;
+}
+
+.size-guide-dim {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    background: var(--surface);
+    padding: 6px 10px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.size-guide-fits {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-grow: 1;
+}
+
+.size-guide-fits li {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    line-height: 1.4;
+}
+
+.size-guide-fits li .material-symbols-rounded {
+    color: var(--success);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.size-guide-btn {
+    appearance: none;
+    background: transparent;
+    border: 1.5px solid var(--primary);
+    color: var(--primary);
+    padding: 10px 16px;
+    border-radius: var(--radius-pill);
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.size-guide-btn:hover {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+    .size-guide-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .size-guide-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 8. How We Calculate (Trust & Tips) */
+.calc-how-section {
+    padding: 70px 0;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.calc-how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 36px;
+}
+
+.calc-how-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.calc-how-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calc-how-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0;
+}
+
+.calc-how-card p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .calc-how-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 9. Expert Sizing Banner */
+.calc-expert-strip {
+    background: linear-gradient(135deg, #0e223b 0%, #1e3a5f 100%);
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 36px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 60px;
+}
+
+.calc-expert-content h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.calc-expert-content p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.85);
+    margin: 0;
+}
+
+.calc-expert-actions {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.btn-calc-expert-call {
+    background: #FF9600;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 12px 20px;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-calc-expert-call:hover {
+    background: #e68700;
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+.btn-calc-expert-wa {
+    background: #25D366;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 12px 20px;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-calc-expert-wa:hover {
+    background: #20bd5a;
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+@media (max-width: 900px) {
+    .calc-expert-strip {
+        flex-direction: column;
+        text-align: center;
+        padding: 28px 20px;
+    }
+    .calc-expert-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+    .calc-expert-actions a {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 .calc-trust-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
