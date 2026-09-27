@@ -8,9 +8,16 @@
   'use strict';
 
   // =========================================================================
-  // 1. DATA: 33 SSI FACILITY UNITS (STARTING FROM TIER 2 - STANDARD 48 SQ FT)
+  // 1. DATA: SSI FACILITY UNITS (TIER 1 THROUGH TIER 4: 24 TO 187 SQ FT)
   // =========================================================================
   const SSI_UNITS = [
+    // Tier 1: Personal Locker / Mini Room (15–44 sq ft)
+    { id: 'u_6x4', name: 'Mini Locker 6 X 4', w: 6, d: 4, h: 8, area: 24, vol: 192, tier: 'Tier 1 - Personal / Locker', price: 2000 },
+    { id: 'u_8x4', name: 'Small Room 8 X 4', w: 8, d: 4, h: 8, area: 32, vol: 256, tier: 'Tier 1 - Personal / Locker', price: 2600 },
+    { id: 'u_9x4', name: 'Small Room 9 X 4', w: 9, d: 4, h: 8, area: 36, vol: 288, tier: 'Tier 1 - Personal / Locker', price: 2900 },
+    { id: 'u_8x5', name: 'Small Room 8 X 5', w: 8, d: 5, h: 8, area: 40, vol: 320, tier: 'Tier 1 - Personal / Locker', price: 3200 },
+    { id: 'u_11x4', name: 'Small Room 11 X 4', w: 11, d: 4, h: 8, area: 44, vol: 352, tier: 'Tier 1 - Personal / Locker', price: 3500 },
+
     // Tier 2: Standard (45–68 sq ft)
     { id: 'u_8x6', name: 'Standard 8 X 6', w: 8, d: 6, h: 8, area: 48, vol: 384, tier: 'Tier 2 - Standard', price: 3800 },
     { id: 'u_7x7', name: 'Standard 7 X 7', w: 7, d: 7, h: 8, area: 49, vol: 392, tier: 'Tier 2 - Standard', price: 3900 },
@@ -371,14 +378,14 @@
 
     let statusText = 'Comfortable fit with room for access walkways.';
     let statusCode = 'good';
-    if (inventoryData.totalItems <= 6 && totalCuFt < 45) {
-      statusText = 'Entry private room size (48 sq ft). For smaller personal box or luggage lots, ask us about shared box storage plans!';
-      statusCode = 'roomy';
+    if (matchedUnit.area <= 44) {
+      statusText = 'Ideal for personal boxes, luggage, or studio essentials.';
+      statusCode = 'good';
     } else if (utilizationPct > 88) {
       statusText = 'Packed near capacity. Consider next size up for easier item retrieval.';
       statusCode = 'tight';
-    } else if (utilizationPct > 78) {
-      statusText = 'High density fit; vertical stacking recommended to preserve walkway.';
+    } else if (utilizationPct > 75) {
+      statusText = 'Optimal fit; vertical stacking recommended to preserve walkway.';
       statusCode = 'optimal';
     } else if (utilizationPct < 45) {
       statusText = 'Spacious unit with extra buffer for future additions.';
@@ -645,8 +652,8 @@
     const x = p.x + offsetX - pillW / 2;
     const y = p.y + offsetY - pillH / 2;
 
-    ctx.beginPath();
-    ctx.roundRect ? ctx.roundRect(x, y, pillW, pillH, 99) : ctx.rect(x, y, pillW, pillH);
+    const r = Math.min(pillW, pillH) / 2;
+    ctx.roundRect ? ctx.roundRect(x, y, pillW, pillH, r) : ctx.rect(x, y, pillW, pillH);
     ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
     ctx.fill();
     ctx.strokeStyle = '#cbd5e1';
@@ -1012,7 +1019,7 @@
         }
       }
       if (unitAreaEl) unitAreaEl.innerText = `${result.unit.area} sq ft`;
-      if (unitVolEl) unitVolEl.innerText = `${result.unit.vol} cu ft`;
+      if (unitVolEl) unitVolEl.innerText = `${result.unit.vol} cu ft room (${Math.round(totalCuFt)} cu ft goods)`;
       if (unitPriceEl) unitPriceEl.innerText = 'Flexible monthly rental · Zero lock-ins';
       if (utilBarEl) {
         utilBarEl.style.width = `${result.utilizationPct}%`;
@@ -1028,9 +1035,9 @@
       if (statusNoteEl) statusNoteEl.innerText = result.statusText;
       if (ctaBtnText) ctaBtnText.innerText = `Book ${result.unit.tier} (${result.unit.area} sq ft) →`;
     } else {
-      if (tierBadgeEl) tierBadgeEl.innerText = 'Tier 2 - Standard';
+      if (tierBadgeEl) tierBadgeEl.innerText = 'Select Items';
       if (unitNameEl) unitNameEl.innerText = 'Select Items or Preset';
-      if (unitDimEl) unitDimEl.innerText = 'Standard facility rooms (48–187 sq ft)';
+      if (unitDimEl) unitDimEl.innerText = 'Facility units available from 24 to 187+ sq ft';
       if (unitAreaEl) unitAreaEl.innerText = '0 sq ft';
       if (unitVolEl) unitVolEl.innerText = '0 cu ft';
       if (unitPriceEl) unitPriceEl.innerText = 'Flexible monthly rental · Zero lock-ins';
@@ -1135,6 +1142,10 @@
       renderAll();
     },
 
+    reset: function () {
+      this.resetAll();
+    },
+
     filterCategory: function (cat, btn) {
       state.activeCategory = cat;
       if (btn) {
@@ -1237,10 +1248,9 @@
   // =========================================================================
   // 9. DOM INITIALIZATION
   // =========================================================================
-  document.addEventListener('DOMContentLoaded', function () {
-    // Generate Item Cards HTML
+  function initCalculator() {
     const gridEl = document.getElementById('calc-items-grid-container');
-    if (gridEl) {
+    if (gridEl && (!gridEl.children || gridEl.children.length === 0)) {
       gridEl.innerHTML = INDIAN_ITEMS.map(it => `
         <div class="calc-inv-card" id="item-card-${it.id}" data-id="${it.id}" data-cat="${it.cat}" data-name="${it.name}">
           <div class="inv-card-header">
@@ -1259,6 +1269,12 @@
     }
 
     renderAll();
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCalculator);
+  } else {
+    initCalculator();
+  }
 
 })();
