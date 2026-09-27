@@ -1012,7 +1012,7 @@
       }
       if (utilPctEl) utilPctEl.innerText = `${result.utilizationPct}% Filled`;
       if (statusNoteEl) statusNoteEl.innerText = result.statusText;
-      if (ctaBtnText) ctaBtnText.innerText = `Book ${result.unit.area} sq ft Unit →`;
+      if (ctaBtnText) ctaBtnText.innerText = 'Calculate Price';
     } else {
       if (tierBadgeEl) tierBadgeEl.style.display = 'none';
       if (unitNameEl) unitNameEl.innerText = 'Select Items or Preset';
@@ -1026,7 +1026,7 @@
       }
       if (utilPctEl) utilPctEl.innerText = '0% Filled';
       if (statusNoteEl) statusNoteEl.innerText = 'Tap + on items or choose a 1-click home/office preset below.';
-      if (ctaBtnText) ctaBtnText.innerText = 'Select Items or Request Free Sizing Advice';
+      if (ctaBtnText) ctaBtnText.innerText = 'Calculate Price';
     }
 
     // 2. Render item counter badges on cards
