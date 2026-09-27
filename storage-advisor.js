@@ -456,7 +456,7 @@
             '</div>' +
             '<div class="advisor-header-text">' +
               '<h2 class="advisor-modal-title" id="advisorHeading">Talk to Abha</h2>' +
-              '<p class="advisor-modal-subtitle" id="advisorSubheading">Personal Storage Advisor • Quick 2-min response</p>' +
+              '<p class="advisor-modal-subtitle" id="advisorSubheading">Personal Storage Advisor</p>' +
             '</div>' +
           '</div>' +
           '<form class="lf-form" id="advisorForm" novalidate>' +

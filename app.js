@@ -905,7 +905,7 @@ if (window.location.pathname.startsWith('/ss')) {
 
     if (!document.querySelector('script[src*="storage-advisor"]')) {
         var s = document.createElement('script');
-        s.src = root + 'storage-advisor.min.js?v=5.5';
+        s.src = root + 'storage-advisor.min.js?v=5.6';
         s.defer = true;
         (document.body || document.head || document.documentElement).appendChild(s);
     }
