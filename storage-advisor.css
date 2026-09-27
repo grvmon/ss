@@ -346,7 +346,7 @@ body.has-calc-bar .advisor-floating-unit,
   max-width: 68px !important;
   cursor: pointer !important;
   background: #FFFFFF !important;
-  border: 2px solid #FFFFFF !important;
+  border: 4px solid #E5BF84 !important;
   box-shadow: 0 10px 28px rgba(0, 43, 73, 0.22), 0 3px 10px rgba(0, 43, 73, 0.08) !important;
   display: flex !important;
   align-items: center !important;
@@ -356,24 +356,25 @@ body.has-calc-bar .advisor-floating-unit,
 }
 
 .advisor-floating-unit.is-minimized .advisor-main-card:hover {
-  transform: scale(1.08) !important;
-  box-shadow: 0 14px 34px rgba(0, 43, 73, 0.28), 0 0 0 3px rgba(255, 150, 0, 0.45) !important;
+  transform: scale(1.06) !important;
+  box-shadow: 0 14px 34px rgba(0, 43, 73, 0.28) !important;
 }
 
 .advisor-floating-unit.is-minimized .advisor-avatar-wrap {
-  width: 68px !important;
-  height: 68px !important;
+  width: 100% !important;
+  height: 100% !important;
   flex-shrink: 0 !important;
   position: relative !important;
   margin: 0 !important;
 }
 
 .advisor-floating-unit.is-minimized .advisor-avatar-img {
-  width: 68px !important;
-  height: 68px !important;
+  width: 100% !important;
+  height: 100% !important;
   border-radius: 50% !important;
   box-shadow: none !important;
   display: block !important;
+  object-fit: cover !important;
 }
 
 .advisor-floating-unit.is-minimized .advisor-card-content {
@@ -381,11 +382,14 @@ body.has-calc-bar .advisor-floating-unit,
 }
 
 .advisor-floating-unit.is-minimized .advisor-status-dot {
-  bottom: 2px !important;
-  right: 2px !important;
-  width: 18px !important;
-  height: 18px !important;
-  border: 2.5px solid #FFFFFF !important;
+  bottom: 0px !important;
+  right: 0px !important;
+  width: 20px !important;
+  height: 20px !important;
+  background: #00A844 !important;
+  border: 3px solid #FFFFFF !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22) !important;
+  z-index: 5 !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -1104,19 +1108,20 @@ body.has-calc-bar .advisor-floating-unit,
     min-width: 58px !important;
     min-height: 58px !important;
     max-width: 58px !important;
+    border: 3.5px solid #E5BF84 !important;
   }
 
   .advisor-floating-unit.is-minimized .advisor-avatar-wrap,
   .advisor-floating-unit.is-minimized .advisor-avatar-img {
-    width: 58px !important;
-    height: 58px !important;
+    width: 100% !important;
+    height: 100% !important;
   }
 
   .advisor-floating-unit.is-minimized .advisor-status-dot {
-    width: 16px !important;
-    height: 16px !important;
-    bottom: 1px !important;
-    right: 1px !important;
-    border-width: 2px !important;
+    width: 17px !important;
+    height: 17px !important;
+    bottom: -1px !important;
+    right: -1px !important;
+    border: 2.5px solid #FFFFFF !important;
   }
 }

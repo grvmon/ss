@@ -1066,10 +1066,12 @@
     if (mobileBar) {
       if (totalCuFt > 0 && result.unit) {
         mobileBar.classList.add('visible');
+        document.body.classList.add('has-calc-bar');
         if (mobileSqFt) mobileSqFt.innerText = `${result.unit.area} sq ft`;
         if (mobileTier) mobileTier.innerText = result.unit.name;
       } else {
         mobileBar.classList.remove('visible');
+        document.body.classList.remove('has-calc-bar');
       }
     }
 

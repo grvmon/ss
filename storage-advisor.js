@@ -23,7 +23,7 @@
   })();
   var CHIME_URL = basePath + 'assets/advisor-chime.wav';
   var AVATAR_URL = basePath + 'assets/advisor-abha.webp';
-  var CSS_URL = basePath + 'storage-advisor.min.css?v=5.4';
+  var CSS_URL = basePath + 'storage-advisor.min.css?v=5.5';
 
   var STRINGS = {
     btnSubmit: "Start Chat",
@@ -899,8 +899,7 @@
         if (floatingUnit && floatingUnit.classList.contains("is-minimized")) {
           e.preventDefault();
           e.stopPropagation();
-          floatingUnit.classList.remove("is-minimized");
-          Store.set("advisor_minimized", "0");
+          openTheForm(e);
           return;
         }
         openTheForm(e);
@@ -913,8 +912,7 @@
         if (floatingUnit && floatingUnit.classList.contains("is-minimized")) {
           e.preventDefault();
           e.stopPropagation();
-          floatingUnit.classList.remove("is-minimized");
-          Store.set("advisor_minimized", "0");
+          openTheForm(e);
           return;
         }
         openTheForm(e);
@@ -1052,8 +1050,22 @@
       }
     });
 
-    /* Fresh start on new page views so Abha is visible and ready to assist */
-    Store.set("advisor_minimized", "0");
+    /* Start collapsed on calculator page or when advisorStartMinimized is set */
+    var isCalcPage = (typeof window.advisorStartMinimized !== 'undefined') ?
+      Boolean(window.advisorStartMinimized) :
+      (window.location.pathname.indexOf('storage-calculator') !== -1 ||
+       !!document.querySelector('.storage-calculator-section') ||
+       !!document.getElementById('ssiCalcApp') ||
+       document.body.classList.contains('page-storage-calculator'));
+
+    if (isCalcPage) {
+      if (floatingUnit) {
+        floatingUnit.classList.add("is-minimized");
+      }
+      Store.set("advisor_minimized", "1");
+    } else {
+      Store.set("advisor_minimized", "0");
+    }
 
     /* Timed entrance animation - smooth, prompt 350ms entrance */
     setTimeout(function() {
