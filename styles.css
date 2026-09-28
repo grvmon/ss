@@ -9570,3 +9570,31 @@ body.quote-modal-open .advisor-floating-unit,
         letter-spacing: -0.01em !important;
     }
 }
+
+@media (max-width: 1024px) {
+    .nav-links .dropdown-info p {
+        font-size: clamp(10px, 3.2vw, 12px) !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+    
+    .nav-links .dropdown-item {
+        padding: 10px 8px !important;
+        gap: 10px !important;
+    }
+    
+    .nav-links .dropdown-icon {
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 1.25rem !important;
+        flex-shrink: 0 !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .nav-links .dropdown-info p {
+        font-size: clamp(9px, 2.9vw, 11px) !important;
+        letter-spacing: -0.02em !important;
+    }
+}
