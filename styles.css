@@ -6033,7 +6033,7 @@ h3 {
 
 .ssi-noida-blog h2.article-main-title {
     font-family: var(--font-heading);
-    font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
     font-weight: 700;
     color: var(--text);
     margin-bottom: 16px;
@@ -6043,7 +6043,7 @@ h3 {
 
 .ssi-noida-blog h2.article-section-title {
     font-family: var(--font-heading);
-    font-size: 17px;
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
     font-weight: 600;
     color: var(--text);
     margin: 26px 0 12px 0;
@@ -6067,7 +6067,7 @@ h3 {
 .ssi-noida-blog p {
     margin-bottom: 18px;
     color: #475569;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.75;
 }
 
@@ -6799,7 +6799,7 @@ h3 {
 }
 
 .article-content h2 {
-    font-size: 1.35rem;
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
     font-weight: 600;
     color: var(--primary, #186CEC);
     margin: 36px 0 12px;
@@ -7394,7 +7394,7 @@ h3 {
 }
 
 .ceo-story-card h2 {
-    font-size: 1.45rem;
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
     font-weight: 700;
     color: #0f172a;
     line-height: 1.25;
@@ -7474,14 +7474,14 @@ h3 {
 }
 
 .values-section-head h2 {
-    font-size: clamp(1.8rem, 2.6vw, 2.3rem);
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
     font-weight: 800;
     color: #0f172a;
     margin-bottom: 12px;
 }
 
 .values-section-head p {
-    font-size: 1rem;
+    font-size: 17px;
     color: #64748b;
     line-height: 1.6;
 }
@@ -7870,7 +7870,7 @@ body.quote-modal-open .advisor-floating-unit {
 
 .advisor-modal-head h2 {
     font-family: 'Playfair Display', Georgia, 'Plus Jakarta Sans', serif;
-    font-size: 27px;
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
     font-weight: 500;
     color: #0F172A;
     margin: 0 0 8px 0;
@@ -8086,7 +8086,7 @@ body.quote-modal-open .advisor-floating-unit {
         margin: 12px;
     }
     .advisor-modal-head h2 {
-        font-size: 22px;
+        font-size: 1.45rem;
     }
     .advisor-modal-head p {
         font-size: 13px;
