@@ -1,7 +1,7 @@
 import re
 import json
 
-with open("business-storage/index.html", "r", encoding="utf-8") as f:
+with open("self-storage-gurugram/index.html", "r", encoding="utf-8") as f:
     html = f.read()
 
 print("## SEO & Meta Tags")
@@ -41,7 +41,5 @@ for match in re.finditer(r'<script\s+type="application/ld\+json">([\s\S]*?)</scr
     try:
         data = json.loads(match.group(1))
         print(f"- Found Schema: {data.get('@type', 'Unknown Type')}")
-        if 'logo' in data:
-            print(f"  - Logo URL: {data['logo']}")
     except:
         print("- Found Schema, but invalid JSON format")
