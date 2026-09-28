@@ -9553,3 +9553,20 @@ body.quote-modal-open .advisor-floating-unit,
         letter-spacing: -0.02em !important;
     }
 }
+
+@media (max-width: 768px) {
+    .why-benefit-item {
+        font-size: clamp(9px, 3.1vw, 13px) !important;
+        white-space: nowrap !important;
+        gap: 6px !important;
+    }
+    .why-benefit-item .check-icon {
+        font-size: clamp(14px, 4.5vw, 18px) !important;
+    }
+}
+@media (max-width: 360px) {
+    .why-benefit-item {
+        font-size: clamp(8px, 3vw, 11px) !important;
+        letter-spacing: -0.01em !important;
+    }
+}
