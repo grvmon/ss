@@ -81,6 +81,7 @@
     --space-md: 12px;
     --space-lg: 16px;
     --space-xl: 24px;
+    --space-content-gutter: calc(var(--space-xl) + 5px);
     --space-2xl: 32px;
     --space-3xl: 48px;
     --space-4xl: 64px;
@@ -151,7 +152,7 @@ a {
 .container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 var(--space-xl);
+    padding: 0 var(--space-content-gutter);
 }
 
 /* Typography styles */
@@ -603,7 +604,7 @@ h3 {
 .hero-content-wrapper {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 20px var(--space-xl) 28px;
+    padding: 20px var(--space-content-gutter) 28px;
     display: grid;
     grid-template-columns: 52% 48%;
     gap: var(--space-2xl);
@@ -881,7 +882,7 @@ h3 {
 .trust-bar-container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 var(--space-xl);
+    padding: 0 var(--space-content-gutter);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1011,7 +1012,7 @@ h3 {
 .features-strip-container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 var(--space-xl);
+    padding: 0 var(--space-content-gutter);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: var(--space-xl);
@@ -1729,7 +1730,7 @@ h3 {
     gap: var(--space-3xl);
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 var(--space-xl);
+    padding: 0 var(--space-content-gutter);
     position: relative;
 }
 
@@ -2070,7 +2071,7 @@ h3 {
     gap: var(--space-3xl);
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 var(--space-xl);
+    padding: 0 var(--space-content-gutter);
     align-items: start;
 }
 
@@ -3249,7 +3250,7 @@ h3 {
 .locations-map-container {
     max-width: 1280px;
     margin: var(--space-3xl) auto 0;
-    padding: 0 var(--space-xl);
+    padding: 0 var(--space-content-gutter);
 }
 
 .map-header {
@@ -3692,7 +3693,7 @@ h3 {
     .offerings-grid {
         grid-template-columns: 1fr; /* Mobile: One column */
         gap: 24px;
-        padding: 0 16px;
+        padding: 0 var(--space-content-gutter);
     }
     
     .offering-image-container {
@@ -4051,7 +4052,7 @@ h3 {
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
-    padding: 0 var(--space-xl);
+    padding: 0 var(--space-content-gutter);
 }
 
 .faq-accordion-item {
@@ -4489,7 +4490,7 @@ h3 {
 .section-container-why {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 var(--space-xl);
+    padding: 0 var(--space-content-gutter);
     position: relative;
     z-index: 2;
 }
@@ -5073,7 +5074,7 @@ h3 {
 .ncr-container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 var(--space-xl);
+    padding: 0 var(--space-content-gutter);
 }
 
 .ncr-blog-layout {
@@ -5243,6 +5244,7 @@ h3 {
 .footer-container {
     max-width: 1280px;
     margin: 0 auto;
+    padding: 0 var(--space-content-gutter);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -5390,7 +5392,7 @@ h3 {
 
 @media (max-width: 768px) {
     .site-footer {
-        padding: 40px 20px 30px;
+        padding: 40px 0 30px;
     }
 
     .footer-nav {
@@ -5652,7 +5654,7 @@ h3 {
 .business-need__container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 var(--space-xl);
+    padding: 0 var(--space-content-gutter);
 }
 
 .household-need__grid,
@@ -5752,7 +5754,7 @@ h3 {
 .pricing-table-container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 var(--space-content-gutter);
 }
 .pricing-table-grid {
     display: grid;
@@ -5982,7 +5984,7 @@ h3 {
 .seo-details-section__container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 var(--space-content-gutter);
     text-align: left;
 }
 .seo-details-section h2 {
@@ -6559,12 +6561,12 @@ h3 {
 .blog-detail-container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 92px var(--space-xl) 70px;
+    padding: 92px var(--space-content-gutter) 70px;
 }
 
 @media (max-width: 768px) {
     .blog-detail-container {
-        padding: 84px var(--space-xl) 50px;
+        padding: 84px var(--space-content-gutter) 50px;
     }
 }
 
@@ -7209,7 +7211,7 @@ h3 {
 .ceo-page-container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 56px var(--space-xl) var(--space-3xl);
+    padding: 56px var(--space-content-gutter) var(--space-3xl);
 }
 
 .ceo-hero-grid {
@@ -7934,7 +7936,7 @@ body.quote-modal-open .advisor-floating-unit {
     position: relative;
     border: 1.5px solid #E2E8F0;
     border-radius: 12px;
-    padding: 0 16px;
+    padding: 0 var(--space-content-gutter);
     height: 52px;
     display: flex;
     align-items: center;
@@ -8343,7 +8345,7 @@ body.quote-modal-open .advisor-floating-unit {
   background: var(--lf-bg-surface);
   display: flex;
   align-items: center;
-  padding: 0 16px !important;
+  padding: 0 var(--space-content-gutter) !important;
   transition: border-color .2s, background-color .2s, box-shadow .2s;
 }
 
@@ -8919,6 +8921,7 @@ body.quote-modal-open .advisor-floating-unit,
     :root {
         --space-section: 44px;
         --space-xl: 16px;
+        --space-content-gutter: calc(var(--space-xl) + 5px);
         --space-2xl: 20px;
         --space-3xl: 28px;
     }
@@ -9098,7 +9101,7 @@ body.quote-modal-open .advisor-floating-unit,
         display: flex !important;
         flex-direction: column !important;
         gap: 18px !important;
-        padding: 0 16px !important;
+        padding: 0 var(--space-content-gutter) !important;
     }
 
     .hero-text-block {
@@ -9199,7 +9202,7 @@ body.quote-modal-open .advisor-floating-unit,
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 12px 10px !important;
-        padding: 0 16px !important;
+        padding: 0 var(--space-content-gutter) !important;
         margin: 0 !important;
         border-top: none !important;
     }
@@ -9399,7 +9402,7 @@ body.quote-modal-open .advisor-floating-unit,
         grid-template-columns: repeat(2, 1fr) !important;
         grid-template-rows: auto !important;
         gap: 8px !important;
-        padding: 0 16px !important;
+        padding: 0 var(--space-content-gutter) !important;
         border-radius: 12px !important;
     }
 
