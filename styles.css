@@ -9520,3 +9520,11 @@ body.quote-modal-open .advisor-floating-unit,
 .breadcrumb-list a:hover {
     text-decoration: underline;
 }
+
+/* Fix for Editorial Headings Accent Colors */
+.ncr-blog-layout h2 {
+    color: var(--text) !important;
+}
+.ncr-blog-layout h2 .accent-word {
+    color: var(--primary) !important;
+}
