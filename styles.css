@@ -158,7 +158,7 @@ a {
 h1 {
     font-family: var(--font-heading);
     font-weight: 500;
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
     line-height: 1.18;
     letter-spacing: -0.01em;
     color: var(--text);
@@ -166,10 +166,10 @@ h1 {
 
 h2 {
     font-family: var(--font-heading);
-    font-weight: 600;
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    font-weight: 500;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    line-height: 1.18;
+    letter-spacing: -0.01em;
     color: var(--text);
 }
 
@@ -197,9 +197,9 @@ h2 {
 
 h3 {
     font-family: var(--font-heading);
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1.15rem;
-    line-height: 1.3;
+    line-height: 1.18;
     letter-spacing: -0.01em;
     color: var(--text);
 }
@@ -638,7 +638,7 @@ h3 {
 }
 
 .hero-main-title {
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
     line-height: 1.15;
     white-space: nowrap;
     margin-top: 0;
@@ -1071,13 +1071,13 @@ h3 {
 
 .section-header-centered h1,
 .section-header-centered h2 {
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
-    font-weight: 600;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 500;
     color: var(--text);
     margin-top: 0;
     margin-bottom: 10px;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
+    letter-spacing: -0.01em;
+    line-height: 1.18;
 }
 
 .section-header-centered p {
@@ -1223,10 +1223,10 @@ h3 {
 
 .sense-card-content h3 {
     font-size: 0.98rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text);
     margin: 0;
-    line-height: 1.3;
+    line-height: 1.18;
 }
 
 .sense-card-content p {
@@ -1790,13 +1790,13 @@ h3 {
 }
 
 .why-editorial-header h2 {
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
-    font-weight: 700;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 500;
     color: var(--text);
     margin-top: var(--space-xs);
     margin-bottom: var(--space-sm);
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    line-height: 1.18;
+    letter-spacing: -0.01em;
 }
 
 .why-editorial-header .supporting-text {
@@ -1817,7 +1817,7 @@ h3 {
 
 .editorial-block h3 {
     font-size: 1.35rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text);
     margin-bottom: var(--space-sm);
 }
@@ -1983,11 +1983,11 @@ h3 {
 }
 
 .editorial-cta h2 {
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
-    font-weight: 700;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 500;
     margin-bottom: var(--space-xs);
     max-width: 650px;
-    line-height: 1.3;
+    line-height: 1.18;
     color: var(--text);
 }
 
@@ -2028,7 +2028,7 @@ h3 {
         padding: var(--space-xl);
     }
     .editorial-cta h2 {
-        font-size: clamp(1.3rem, 2vw, 1.7rem);
+        font-size: clamp(1.2rem, 2vw, 1.6rem);
     }
     .editorial-cta-actions {
         flex-direction: column;
@@ -2815,7 +2815,7 @@ h3 {
 
 .calc-how-card h3 {
     font-size: 1.1rem;
-    font-weight: 700;
+    font-weight: 500;
     color: var(--text);
     margin: 0;
 }
@@ -2848,7 +2848,7 @@ h3 {
 
 .calc-expert-content h3 {
     font-size: 1.4rem;
-    font-weight: 700;
+    font-weight: 500;
     color: #ffffff;
     margin-bottom: 6px;
 }
@@ -2974,7 +2974,7 @@ h3 {
 .cta-panel-content h3 {
     color: #ffffff;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 8px;
 }
 
@@ -3186,7 +3186,7 @@ h3 {
 
 .loc-details h3 {
     font-size: 1.15rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text);
     margin-bottom: 4px;
 }
@@ -3264,7 +3264,7 @@ h3 {
 
 .map-header h3 {
     font-size: 1.3rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text);
     margin-top: 4px;
 }
@@ -3336,7 +3336,7 @@ h3 {
 
 .banner-text h3 {
     font-size: 1.45rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text);
     margin-bottom: 6px;
 }
@@ -3945,11 +3945,11 @@ h3 {
 }
 
 .cta-box h2 {
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
-    font-weight: 700;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 500;
     margin-bottom: var(--space-xs);
     max-width: 700px;
-    line-height: 1.3;
+    line-height: 1.18;
     color: var(--text);
 }
 
@@ -4027,7 +4027,7 @@ h3 {
         padding: var(--space-2xl) var(--space-xl);
     }
     .cta-box h2 {
-        font-size: clamp(1.3rem, 2vw, 1.7rem);
+        font-size: clamp(1.2rem, 2vw, 1.6rem);
     }
     .cta-actions {
         flex-direction: column;
@@ -4158,8 +4158,8 @@ h3 {
 }
 
 .faq-cta-content h3 {
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
-    font-weight: 600;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 500;
     color: var(--text);
     margin-bottom: 4px;
 }
@@ -4249,8 +4249,8 @@ h3 {
 
 .works-card h3 {
     font-size: 1.25rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-weight: 500;
+    letter-spacing: -0.01em;
     color: var(--text);
     margin-bottom: var(--space-xs);
 }
@@ -4400,11 +4400,11 @@ h3 {
 }
 
 .works-cta h2 {
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
-    font-weight: 700;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 500;
     margin-bottom: var(--space-xs);
     max-width: 650px;
-    line-height: 1.3;
+    line-height: 1.18;
     color: var(--text);
 }
 
@@ -4436,7 +4436,7 @@ h3 {
         padding: var(--space-xl);
     }
     .works-cta h2 {
-        font-size: clamp(1.3rem, 2vw, 1.7rem);
+        font-size: clamp(1.2rem, 2vw, 1.6rem);
     }
     .works-cta-actions {
         flex-direction: column;
@@ -4518,11 +4518,11 @@ h3 {
 
 .intro-header-block h2 {
     font-family: var(--font-heading);
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
-    font-weight: 600;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 500;
     color: var(--text);
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    line-height: 1.18;
+    letter-spacing: -0.01em;
     margin-bottom: 14px;
 }
 
@@ -4687,7 +4687,7 @@ h3 {
 .benefit-card-item h3 {
     font-family: var(--font-heading);
     font-size: 0.98rem;
-    font-weight: 700;
+    font-weight: 500;
     color: var(--text);
     margin-bottom: 0;
 }
@@ -4743,11 +4743,11 @@ h3 {
 .cta-text-block h3 {
     font-family: var(--font-heading);
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text);
-    line-height: 1.2;
+    line-height: 1.18;
     margin-bottom: 12px;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.01em;
 }
 
 .cta-text-block p {
@@ -5005,7 +5005,7 @@ h3 {
 .trust-title-row h3 {
     font-family: var(--font-heading);
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: -0.01em;
     color: #ffffff;
     margin: 0;
@@ -5084,10 +5084,10 @@ h3 {
 
 .ncr-blog-layout h2 {
     font-family: var(--font-heading), sans-serif;
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
-    font-weight: 700;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 500;
     color: var(--primary);
-    line-height: 1.3;
+    line-height: 1.18;
     letter-spacing: -0.01em;
     margin: 0 0 20px 0;
 }
@@ -5155,8 +5155,8 @@ h3 {
 
 .gallery-strip-header h2,
     .ncr-blog-layout h2 {
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
-    font-weight: 700;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 500;
     color: var(--text);
     letter-spacing: -0.01em;
     margin: 0;
@@ -5470,8 +5470,8 @@ h3 {
 
 .calc-banner-header h2 {
     font-family: var(--font-heading);
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
-    font-weight: 600;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 500;
     color: var(--text);
     letter-spacing: -0.01em;
     margin-bottom: 8px;
@@ -5796,7 +5796,7 @@ h3 {
 .pricing-card h3 {
     font-family: var(--font-heading);
     font-size: 1.15rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text);
     margin-bottom: 6px;
     min-height: 2.7rem;
@@ -5881,7 +5881,7 @@ h3 {
 .process-step-card h3 {
     font-family: var(--font-heading);
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text);
     margin-bottom: 10px;
 }
@@ -5938,7 +5938,7 @@ h3 {
 .coverage-card h3 {
     font-family: var(--font-heading);
     font-size: 1.05rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text);
     margin: 0;
 }
@@ -5988,11 +5988,11 @@ h3 {
 .seo-details-section h2 {
     color: var(--primary);
     font-family: var(--font-heading);
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
-    font-weight: 600;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 500;
     margin-top: 28px;
     margin-bottom: 12px;
-    line-height: 1.3;
+    line-height: 1.18;
 }
 .seo-details-section h2:first-of-type {
     margin-top: 0;
@@ -6033,21 +6033,21 @@ h3 {
 
 .ssi-noida-blog h2.article-main-title {
     font-family: var(--font-heading);
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
-    font-weight: 700;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 500;
     color: var(--text);
     margin-bottom: 16px;
-    line-height: 1.3;
+    line-height: 1.18;
     letter-spacing: -0.01em;
 }
 
 .ssi-noida-blog h2.article-section-title {
     font-family: var(--font-heading);
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
-    font-weight: 600;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 500;
     color: var(--text);
     margin: 26px 0 12px 0;
-    line-height: 1.4;
+    line-height: 1.18;
     letter-spacing: -0.01em;
     display: flex;
     align-items: center;
@@ -6799,23 +6799,23 @@ h3 {
 }
 
 .article-content h2 {
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
-    font-weight: 600;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 500;
     color: var(--primary, #186CEC);
     margin: 36px 0 12px;
     padding-bottom: 0;
     border-bottom: none;
-    line-height: 1.35;
-    letter-spacing: -0.3px;
+    line-height: 1.18;
+    letter-spacing: -0.01em;
     scroll-margin-top: 100px;
 }
 
 .article-content h3 {
     font-size: 1.08rem;
-    font-weight: 600;
+    font-weight: 500;
     color: #1E293B;
     margin: 20px 0 10px;
-    line-height: 1.4;
+    line-height: 1.18;
     scroll-margin-top: 100px;
 }
 
@@ -7394,10 +7394,10 @@ h3 {
 }
 
 .ceo-story-card h2 {
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
-    font-weight: 700;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 500;
     color: #0f172a;
-    line-height: 1.25;
+    line-height: 1.18;
     margin-bottom: 16px;
 }
 
@@ -7474,8 +7474,8 @@ h3 {
 }
 
 .values-section-head h2 {
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
-    font-weight: 800;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 500;
     color: #0f172a;
     margin-bottom: 12px;
 }
@@ -7526,10 +7526,10 @@ h3 {
 
 .value-feature-card h3 {
     font-size: 1.1rem;
-    font-weight: 700;
+    font-weight: 500;
     color: #0f172a;
     margin-bottom: 10px;
-    line-height: 1.3;
+    line-height: 1.18;
 }
 
 .value-feature-card p {
@@ -7554,7 +7554,7 @@ h3 {
 
 .accreditation-content h3 {
     font-size: 1.25rem;
-    font-weight: 700;
+    font-weight: 500;
     color: #0f172a;
     margin-bottom: 8px;
 }
@@ -7729,10 +7729,10 @@ h3 {
 .cta-copy h3 {
     font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
     font-size: 1.25rem;
-    font-weight: 700;
+    font-weight: 500;
     color: #0F172A;
     margin: 0 0 6px;
-    line-height: 1.3;
+    line-height: 1.18;
 }
 
 .cta-copy p {
@@ -7870,11 +7870,11 @@ body.quote-modal-open .advisor-floating-unit {
 
 .advisor-modal-head h2 {
     font-family: 'Playfair Display', Georgia, 'Plus Jakarta Sans', serif;
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
     font-weight: 500;
     color: #0F172A;
     margin: 0 0 8px 0;
-    line-height: 1.25;
+    line-height: 1.18;
     letter-spacing: -0.01em;
 }
 
@@ -8293,7 +8293,7 @@ body.quote-modal-open .advisor-floating-unit {
 
 .lf-main-heading {
   font-family: var(--lf-font-sans);
-  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
   font-weight: 700;
   margin-bottom: 8px;
   color: var(--lf-ink);
@@ -8315,7 +8315,7 @@ body.quote-modal-open .advisor-floating-unit {
     margin-bottom: 18px;
   }
   .lf-main-heading {
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
   }
   .lf-sub-heading {
     font-size: 13px;
@@ -9070,9 +9070,9 @@ body.quote-modal-open .advisor-floating-unit,
     .works-cta h2,
     .gallery-strip-header h2,
     .ncr-blog-layout h2 {
-        font-size: clamp(1.3rem, 2vw, 1.7rem) !important;
+        font-size: clamp(1.2rem, 2vw, 1.6rem) !important;
         line-height: 1.22 !important;
-        letter-spacing: -0.02em !important;
+        letter-spacing: -0.01em !important;
         margin-top: 0 !important;
         margin-bottom: 8px !important;
         font-weight: 700 !important;
@@ -9116,9 +9116,9 @@ body.quote-modal-open .advisor-floating-unit,
 
     .hero-main-title {
         font-size: clamp(12px, 4.5vw, 1.6rem) !important; white-space: nowrap !important;
-        line-height: 1.2 !important;
+        line-height: 1.18 !important;
         margin-bottom: 10px !important;
-        letter-spacing: -0.02em !important;
+        letter-spacing: -0.01em !important;
     }
 
     .hero-paragraph {
@@ -9222,7 +9222,7 @@ body.quote-modal-open .advisor-floating-unit,
 
     .trust-text h4 {
         font-size: 0.80rem !important;
-        line-height: 1.2 !important;
+        line-height: 1.18 !important;
         white-space: normal !important;
         margin-bottom: 2px !important;
     }
