@@ -5106,12 +5106,13 @@ h3 {
 }
 
 .blog-features-list {
-    list-style-type: none;
+    list-style-type: none !important;
     padding: 0;
     margin: 0 0 24px 0;
 }
 
 .blog-features-list li {
+    list-style-type: none !important;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     line-height: 1.75;
