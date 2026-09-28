@@ -402,15 +402,6 @@
 
     var unitHtml = '' +
       '<aside class="advisor-floating-unit" id="advisorFloatingUnit" aria-label="Personal Storage Advisor">' +
-        
-          '<div class="advisor-speech-desc">Need help calculating storage space?</div>' +
-          '<div class="advisor-bubble-tail" aria-hidden="true">' +
-            '<svg width="16" height="9" viewBox="0 0 16 9" fill="none">' +
-              '<path d="M0 0H16L8.8 7.6C8.4 8 7.6 8 7.2 7.6L0 0Z" fill="#FFFFFF"></path>' +
-              '<path d="M0 0L7.2 7.6C7.6 8 8.4 8 8.8 7.6L16 0" stroke="rgba(0, 43, 73, 0.12)" stroke-width="1" fill="none"></path>' +
-            '</svg>' +
-          '</div>' +
-        '</div>' +
         '<div class="advisor-main-card" id="advisorMainCard">' +
           '<div class="advisor-avatar-wrap">' +
             '<img src="' + AVATAR_URL + '" alt="Abha - Personal Storage Advisor" class="advisor-avatar-img" width="82" height="82" loading="lazy">' +
