@@ -6361,7 +6361,7 @@ h3 {
 .ssi-delhi-contact-heading {
   font-family: var(--font-heading);
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--ssi-delhi-blue); 
   margin-bottom: 2px;
 }
@@ -8294,7 +8294,7 @@ body.quote-modal-open .advisor-floating-unit {
 .lf-main-heading {
   font-family: var(--lf-font-sans);
   font-size: clamp(1.2rem, 2vw, 1.6rem);
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 8px;
   color: var(--lf-ink);
   letter-spacing: -0.01em;
