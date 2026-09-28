@@ -8,8 +8,8 @@
 
   var ZOHO_WEB_TO_LEAD = {
     action: 'https://crm.zoho.in/crm/WebToLeadForm',
-    xnQsjsdp: 'a979ecd831c0e0cc3021561407927e41ccad53ba7f9728c54ff061b222e0eb6c',
-    xmIwtLD: '0554b4515d63426b46b3bc2afad2cbd7fb8d66685ba40768b173c282051a2e9df93658768a3fc0ab3706c8f4d36586b4',
+    xnQsjsdp: '7546ce5237fb71a5aec0c5ef5c56c4a8660ef9e244b3113358fe7964b5f28eb5',
+    xmIwtLD: 'fca10274295c5074a3d86ccea7a46cf2b85f39e880b5a44293827267958b1c2d7ac70e90da677cefd7a7ce1ae0627bf1',
     actionType: 'TGVhZHM=',
     wFaTrisJS: 'true'
   };
