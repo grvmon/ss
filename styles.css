@@ -1696,6 +1696,8 @@ h3 {
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        gap: 0;
+        padding: 0;
         flex-shrink: 0;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
