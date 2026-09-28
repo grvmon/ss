@@ -11,7 +11,7 @@
     xnQsjsdp: '7546ce5237fb71a5aec0c5ef5c56c4a8660ef9e244b3113358fe7964b5f28eb5',
     xmIwtLD: 'fca10274295c5074a3d86ccea7a46cf2b85f39e880b5a44293827267958b1c2d7ac70e90da677cefd7a7ce1ae0627bf1',
     actionType: 'TGVhZHM=',
-    wFaTrisJS: 'true'
+    
   };
 
   var COOLDOWN_SECONDS = 15;
@@ -905,7 +905,7 @@
     formData.append('xmIwtLD', ZOHO_WEB_TO_LEAD.xmIwtLD);
     formData.append('actionType', ZOHO_WEB_TO_LEAD.actionType);
     formData.append('returnURL', returnUrl);
-    formData.append('wFaTrisJS', ZOHO_WEB_TO_LEAD.wFaTrisJS);
+    
     formData.append('aG9uZXlwb3Q', '');
     formData.append('zc_gad', gclidVal || '');
     formData.append('ldeskuid', '');

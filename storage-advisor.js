@@ -779,7 +779,7 @@
     formData.append('xmIwtLD', ZOHO_WEB_TO_LEAD.xmIwtLD);
     formData.append('actionType', ZOHO_WEB_TO_LEAD.actionType);
     formData.append('returnURL', REDIRECT_URL);
-    formData.append('wFaTrisJS', ZOHO_WEB_TO_LEAD.wFaTrisJS);
+    
     formData.append('aG9uZXlwb3Q', '');
     formData.append('zc_gad', tracking.gclid || '');
     formData.append('ldeskuid', '');
