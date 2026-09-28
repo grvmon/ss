@@ -402,8 +402,7 @@
 
     var unitHtml = '' +
       '<aside class="advisor-floating-unit" id="advisorFloatingUnit" aria-label="Personal Storage Advisor">' +
-        '<div class="advisor-speech-bubble" id="advisorSpeechBubble" role="status" aria-live="polite" title="Chat with Abha">' +
-          '<div class="advisor-speech-title">Hi! I\'m Abha</div>' +
+        
           '<div class="advisor-speech-desc">Need help calculating storage space?</div>' +
           '<div class="advisor-bubble-tail" aria-hidden="true">' +
             '<svg width="16" height="9" viewBox="0 0 16 9" fill="none">' +
@@ -1056,8 +1055,7 @@
       (window.location.pathname.indexOf('storage-calculator') !== -1 ||
        !!document.querySelector('.storage-calculator-section') ||
        !!document.getElementById('ssiCalcApp') ||
-       document.body.classList.contains('page-storage-calculator') ||
-       window.innerWidth <= 768);
+       document.body.classList.contains('page-storage-calculator'));
 
     if (startMinimized) {
       if (floatingUnit) {
