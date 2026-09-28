@@ -769,3 +769,21 @@
     border-color: transparent;
   }
 }
+
+/* Fix for Preset Title Alignment and Styling */
+.calc-preset-title {
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  color: var(--text) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  flex-shrink: 0 !important;
+  margin-right: 4px !important;
+  height: 100% !important;
+}
+.calc-preset-title .material-symbols-rounded {
+  font-size: 18px !important;
+}
