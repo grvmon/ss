@@ -1,18 +1,31 @@
 import re
 
-with open("styles.css", "r", encoding="utf-8") as f:
+with open("assets/css/storage-calculator.css", "r", encoding="utf-8") as f:
     css = f.read()
 
-# Fix .household-need__container padding
-css = re.sub(r'(\.household-need__container,\s*\.business-need__container\s*\{[^}]*?)padding:\s*0 24px;', r'\1padding: 0 var(--space-xl);', css, flags=re.DOTALL)
+# I will append new styles to the end to ensure they override earlier ones.
+new_styles = """
+/* Fix for Vertical Spacing inside Preset Wrapper */
+.calc-preset-wrapper {
+  padding: 10px 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+}
+.calc-preset-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.calc-preset-title {
+  height: auto !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  line-height: 1 !important;
+}
+"""
 
-# Fix .blog-detail-container padding
-css = re.sub(r'(\.blog-detail-container\s*\{[^}]*?)padding:\s*92px 24px 70px;', r'\1padding: 92px var(--space-xl) 70px;', css, flags=re.DOTALL)
+with open("assets/css/storage-calculator.css", "a", encoding="utf-8") as f:
+    f.write(new_styles)
 
-# Fix .blog-detail-container mobile padding
-css = re.sub(r'(\.blog-detail-container\s*\{[^}]*?)padding:\s*84px 16px 50px;', r'\1padding: 84px var(--space-xl) 50px;', css, flags=re.DOTALL)
-
-with open("styles.css", "w", encoding="utf-8") as f:
-    f.write(css)
-
-print("Standardized container horizontal padding.")
+print("Patched calc-preset-wrapper padding.")
