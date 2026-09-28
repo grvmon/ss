@@ -5697,7 +5697,7 @@ h3 {
 }
 
 .household-need__card-body,
-.business-need__card-html, body {
+.business-need__card-body {
     overflow-x: hidden !important;
     padding: 22px 24px 26px;
     display: flex;
