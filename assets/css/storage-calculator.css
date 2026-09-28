@@ -73,8 +73,8 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  white-space: nowrap;
 }
+
 
 .calc-preset-bar {
   flex: 1;
@@ -98,8 +98,8 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  white-space: nowrap;
 }
+
 
 .calc-preset-pill:hover {
   border-color: var(--primary);
@@ -606,12 +606,13 @@
 /* Responsive Styles */
 @media (max-width: 1024px) {
   .calc-container {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column-reverse;
     gap: 20px;
   }
 
   .calc-visual-column {
-    display: none !important;
+    position: relative; top: 0;
   }
 
   .calc-trust-grid {
