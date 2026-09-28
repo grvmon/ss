@@ -817,3 +817,11 @@
   padding: 0 !important; /* Remove padding since we are using flex and fixed w/h */
   flex-shrink: 0 !important;
 }
+
+/* Fix for mobile horizontal overflow bleeding */
+.calc-items-column, .calc-visual-column {
+    min-width: 0;
+}
+.calc-preset-bar {
+    min-width: 0;
+}
