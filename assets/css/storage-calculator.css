@@ -825,3 +825,50 @@
 .calc-preset-bar {
     min-width: 0;
 }
+
+/* =====================================================
+   CRITICAL MOBILE OVERFLOW FIX
+   Prevent any child element from inflating page width
+   ===================================================== */
+@media (max-width: 1024px) {
+  #native-calculator-view {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .calc-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .calc-items-column,
+  .calc-visual-column {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .calc-preset-wrapper {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Prevent search input from pushing layout */
+  .calc-search-row {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  /* Prevent category tabs from inflating parent */
+  .calc-cat-tabs {
+    max-width: 100%;
+  }
+
+  /* Prevent item grid from overflowing */
+  #calc-items-grid-container {
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
