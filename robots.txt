@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /
+Disallow: /thank-you/
+
+Sitemap: https://selfstorageindia.com/sitemap.xml
