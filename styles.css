@@ -422,7 +422,7 @@ h3 {
     border-color: var(--primary);
 }
 
-.dropdown-info h6 {
+.dropdown-info .dropdown-title {
     font-family: var(--font-heading);
     font-weight: 700;
     font-size: 0.9rem;
