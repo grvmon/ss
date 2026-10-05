@@ -9672,3 +9672,14 @@ body {
     overflow-wrap: break-word;
     word-break: break-word;
 }
+
+@media (max-width: 1024px) {
+    .page-home .nav-actions .btn-primary {
+        display: none !important;
+    }
+}
+@media (max-width: 768px) {
+    .page-home .nav-actions .btn-primary {
+        display: none !important;
+    }
+}
