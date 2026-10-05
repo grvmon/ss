@@ -9543,7 +9543,7 @@ body.quote-modal-open .advisor-floating-unit,
 
 @media (max-width: 768px) {
     .calc-banner-features {
-        flex-wrap: nowrap !important;
+        flex-wrap: wrap !important;
         gap: 6px !important;
         width: 100%;
         justify-content: center;
