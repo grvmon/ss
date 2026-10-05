@@ -1693,7 +1693,7 @@ h3 {
         border-radius: 50%;
         background: var(--primary);
         box-shadow: 0 4px 12px rgba(24, 108, 236, 0.25);
-        display: inline-flex;
+        display: flex;
         align-items: center;
         justify-content: center;
         gap: 0;
@@ -1705,6 +1705,10 @@ h3 {
         font-size: 22px;
         color: #ffffff;
         margin: 0;
+        line-height: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .phone-link:active {
         transform: scale(0.95);

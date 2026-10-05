@@ -7,7 +7,7 @@
   'use strict';
 
   var ZOHO_WEB_TO_LEAD = {
-    action: 'https://crm.zoho.in/crm/WebToLeadForm',
+    action: 'https://zoho-lead-proxy.rajeev-c18.workers.dev/',
     xnQsjsdp: 'f16e947a58c920d3d9bbb4b80e92c047ca04ed4d68bb240204297c44c42d8001',
     xmIwtLD: 'e9726bf6b19e499bf582aa195c8e5d128958792568633ff8fe046537f9cb109d26d208f333e4ee6aef5c1bebc25b1097',
     actionType: 'TGVhZHM=',
@@ -901,9 +901,9 @@
     if (fclidVal)    descParts.push('FCLID: ' + fclidVal);
 
     var formData = new FormData();
-    formData.append('xnQsjsdp', ZOHO_WEB_TO_LEAD.xnQsjsdp);
-    formData.append('xmIwtLD', ZOHO_WEB_TO_LEAD.xmIwtLD);
-    formData.append('actionType', ZOHO_WEB_TO_LEAD.actionType);
+    
+    
+    
     formData.append('returnURL', returnUrl);
     
     formData.append('aG9uZXlwb3Q', '');
