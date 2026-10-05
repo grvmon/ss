@@ -1624,6 +1624,10 @@ h3 {
     .nav-actions .btn-primary {
         display: none !important;
     }
+    /* Hide phone-link in header on mobile — floating btn handles it */
+    .nav-actions .phone-link {
+        display: none !important;
+    }
 
     /* Zero-exit /store page exception */
     .page-store .mobile-nav-toggle {
@@ -1667,9 +1671,6 @@ h3 {
         gap: 12px;
     }
     .nav-actions .btn-primary {
-        display: none !important;
-    }
-    .page-store .nav-actions .btn-primary {
         display: inline-flex !important;
         padding: 8px 14px;
         font-size: 0.82rem;
@@ -1677,6 +1678,10 @@ h3 {
         border-radius: var(--radius-btn);
         white-space: nowrap;
         line-height: 1;
+    }
+    /* Hide phone-link circular icon in header on mobile — floating call btn handles calls */
+    .nav-actions .phone-link {
+        display: none !important;
     }
     .mobile-nav-toggle {
         display: flex !important;
