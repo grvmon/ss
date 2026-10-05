@@ -455,8 +455,15 @@ h3 {
 .phone-link span {
     display: inline-flex;
     align-items: center;
-    font-size: 1.2rem;
-    color: var(--text-secondary); /* Same color as the text */
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--primary);
+    box-shadow: 0 4px 12px rgba(24, 108, 236, 0.25);
+    font-size: 20px;
+    color: #ffffff;
+    flex-shrink: 0;
 }
 
 .phone-link:hover {
