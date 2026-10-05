@@ -453,9 +453,10 @@ h3 {
 }
 
 .phone-link span {
-    display: none;
+    display: inline-flex;
+    align-items: center;
     font-size: 1.2rem;
-    color: var(--primary);
+    color: var(--text-secondary); /* Same color as the text */
 }
 
 .phone-link:hover {
