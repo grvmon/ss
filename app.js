@@ -931,7 +931,7 @@ window.addEventListener('load', function() {
         var style = document.createElement('style');
         style.innerHTML = '.floating-call-btn{position:fixed;bottom:25px;left:25px;background:linear-gradient(0deg, #0279FF 0%, #00A3F3 100%);color:white;width:55px;height:55px;border-radius:50%;display:none;justify-content:center;align-items:center;box-shadow:0 6px 15px rgba(2,121,255,0.4);z-index:99999;text-decoration:none;transition:transform 0.3s ease;}.floating-call-btn:hover{transform:scale(1.1);}.floating-call-btn svg{width:28px;height:28px;fill:currentColor;} @media(max-width: 768px){ .floating-call-btn{bottom: 15px; left: 15px; width: 50px; height: 50px; display: flex;} .floating-call-btn svg{width: 24px; height: 24px;} }';
         
-        if(window.location.pathname.indexOf('/store') !== -1) { style.innerHTML += ' .floating-call-btn{ display: flex !important; }'; } document.head.appendChild(style);
+        document.head.appendChild(style);
         document.body.appendChild(a);
     });
 })();
