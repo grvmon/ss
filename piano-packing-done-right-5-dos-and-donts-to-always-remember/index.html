@@ -166,6 +166,7 @@
     <meta name="geo.region" content="IN-DL" />
     <meta name="geo.placename" content="Delhi NCR" />
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body class="light-theme preload">
     <div id="scroll-progress-bar" style="position: fixed; top: 0; left: 0; height: 3px; background: #FF9600; width: 0%; z-index: 2000; transition: width 0.1s ease-out;"></div>
@@ -617,7 +618,101 @@
                     <h2 class="lf-main-heading" id="lfMainHeading">Get Your Free Storage Quote</h2>
                     <p class="lf-sub-heading" id="lfSubHeading">Get transparent storage pricing, custom unit sizing, and instant space guidance.</p>
                 </div>
-                <script id='formScript932919000016189095' src='https://crm.zoho.in/crm/WebFormServeServlet?rid=f87f8ad958187952ffcd4e53a71bd02b3b10fd47f0a7fe3ca0f02ccd9630a38accfd1d3b4dad84fe060ca2a20956f8b7gid7d8117022dc9d72282644cd246251f5f80dfb5e9e000c7ad27a77e7682edbcf8&script=$sYG'></script>
+                <form class="lf-form" id="lfForm" novalidate action="" method="POST" accept-charset="UTF-8">
+                    <!-- Zoho CRM Hidden Fields -->
+                    <input type="hidden" name="xnQsjsdp" value="bd195846afb64011ff79f94b8dbc5c0afdc7e2650c20303bd3d18ad6d50a58c4">
+                    <input type="hidden" name="xmIwtLD" value="731726f5f4ffa32876e2a1cc06f4d0ec6d1f5e0a5f916e1b90092cc89a47e2538f742d3154220199982b03b394318917">
+                    <input type="hidden" name="actionType" value="TGVhZHM=">
+                    <input type="hidden" name="returnURL" id="zoho_return_url" value="https://grvmon.github.io/ss/thank-you">
+                    <input type="hidden" name="wFaTrisJS" value="true">
+                    <input type="hidden" id="storage-size" name="Description" value="General Inquiry">
+
+                    <!-- Anti-spam & Tracking -->
+                    <input class="lf-hp" type="text" name="website" value="" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <input type="hidden" id="lfGclid" name="gclid">
+                    <input type="hidden" id="zc_gad" name="zc_gad" value=""/>
+                    <input type="hidden" id="lfFclid" name="fclid">
+                    <input type="hidden" id="lfUtmSource" name="utm_source">
+                    <input type="hidden" id="lfUtmMedium" name="utm_medium">
+                    <input type="hidden" id="lfUtmCampaign" name="utm_campaign">
+                    <input type="hidden" id="lfUtmTerm" name="utm_term">
+                    <input type="hidden" id="lfUtmContent" name="utm_content">
+                    <input type="hidden" id="lfSourceUrl" name="source_url">
+                    <input type="hidden" id="lfSubmittedAt" name="submitted_at">
+
+                    <!-- 1. Name Field with Floating Notched Label, Error, Clear & Valid check -->
+                    <div class="lf-field" id="lfNameField">
+                        <div class="lf-input-box">
+                            <label class="lf-label" for="lfName">Full name<span class="lf-req" aria-hidden="true">*</span></label>
+                            <input class="lf-input lf-focusable" type="text" id="lfName" name="Last Name" autocomplete="name" enterkeyhint="next" aria-required="true" tabindex="0" aria-invalid="false" maxlength="60" aria-describedby="lfNameErr">
+                            <span class="lf-valid-icon" aria-hidden="true">
+                                <svg viewBox="0 0 14 14" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M1 7l4 4 8-8"/></svg>
+                            </span>
+                            <button type="button" class="lf-clear-btn lf-focusable" aria-label="Clear name field" tabindex="-1">
+                                <svg viewBox="0 0 10 10" fill="none"><path stroke="currentColor" stroke-width="1.2" stroke-linecap="round" d="M1 1l8 8M9 1L1 9"/></svg>
+                            </button>
+                        </div>
+                        <div class="lf-err" id="lfNameErr" role="alert"></div>
+                    </div>
+
+                    <!-- 2. Phone Field with Searchable Country Dropdown, Floating Label, Error, Clear & Valid check -->
+                    <div class="lf-field lf-field-phone" id="lfPhoneField">
+                        <div class="lf-input-box">
+                            <label class="lf-label" id="lfPhoneLbl" for="lfPhone">Mobile<span class="lf-req" aria-hidden="true">*</span></label>
+                            <div class="lf-phone-row">
+                                <button type="button" class="lf-cc-trigger lf-focusable" id="lfCcTrigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="lfCcPanel" aria-label="Select country dial code" tabindex="0">
+                                    <span id="lfCcDisplay">+91</span>
+                                    <svg class="lf-cc-arrow" viewBox="0 8 5" fill="none"><path stroke="currentColor" stroke-width="1.2" stroke-linecap="round" d="M1 1l3 3 3-3"/></svg>
+                                </button>
+                                <div class="lf-cc-panel" id="lfCcPanel" role="listbox" aria-labelledby="lfPhoneLbl">
+                                    <input class="lf-cc-search lf-focusable" type="text" id="lfCcSearch" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-controls="lfCcList" placeholder="Search country..." autocomplete="off" aria-label="Search countries by name or code" tabindex="-1">
+                                    <div class="lf-cc-list" id="lfCcList"></div>
+                                </div>
+                                <input type="hidden" id="lfCcVal" name="country_code" value="+91">
+                                <div class="lf-divider"></div>
+                                <input class="lf-input lf-focusable" type="tel" id="lfPhone" name="Phone" inputmode="numeric" autocomplete="tel" enterkeyhint="next" aria-required="true" tabindex="0" aria-invalid="false" maxlength="15" aria-describedby="lfPhoneErr">
+                                <span class="lf-valid-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 14 14" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M1 7l4 4 8-8"/></svg>
+                                </span>
+                                <button type="button" class="lf-clear-btn lf-focusable" id="lfPhoneClearBtn" aria-label="Clear mobile number field" tabindex="-1">
+                                    <svg viewBox="0 0 10 10" fill="none"><path stroke="currentColor" stroke-width="1.2" stroke-linecap="round" d="M1 1l8 8M9 1L1 9"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="lf-err" id="lfPhoneErr" role="alert"></div>
+                    </div>
+
+                    <!-- 3. Email Field with Floating Label, Error, Clear & Valid check -->
+                    <div class="lf-field" id="lfEmailField">
+                        <div class="lf-input-box">
+                            <label class="lf-label" for="lfEmail">Email<span class="lf-req" aria-hidden="true">*</span></label>
+                            <input class="lf-input lf-focusable" type="email" id="lfEmail" name="Email" autocomplete="email" enterkeyhint="done" aria-required="true" tabindex="0" aria-invalid="false" maxlength="120" aria-describedby="lfEmailErr">
+                            <span class="lf-valid-icon" aria-hidden="true">
+                                <svg viewBox="0 0 14 14" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M1 7l4 4 8-8"/></svg>
+                            </span>
+                            <button type="button" class="lf-clear-btn lf-focusable" aria-label="Clear email field" tabindex="-1">
+                                <svg viewBox="0 0 10 10" fill="none"><path stroke="currentColor" stroke-width="1.2" stroke-linecap="round" d="M1 1l8 8M9 1L1 9"/></svg>
+                            </button>
+                        </div>
+                        <div class="lf-err" id="lfEmailErr" role="alert"></div>
+                    </div>
+
+                    <!-- Submit Button with Spinner & Arrow Badge -->
+                    <div class="g-recaptcha" data-sitekey="6Le3zt8tAAAAAIjt9FtWdfrGKz4i2zWYCKsAskqR" style="margin-bottom:15px;display:flex;justify-content:center;"></div>
+                    <div class="lf-submit-wrap">
+                        <button type="submit" class="lf-btn lf-focusable primary-cta-btn" id="lfSubmitBtn" tabindex="0">
+                            <div class="lf-spinner"></div>
+                            <span id="lfBtnText">Request Callback</span>
+                            <span class="cta-arrow-badge" aria-hidden="true">
+                                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4.5" y1="11.5" x2="11.5" y2="4.5"></line><polyline points="6.5 4.5 11.5 4.5 11.5 9.5"></polyline></svg>
+                            </span>
+                        </button>
+                        <p class="lf-privacy-consent">
+                            By submitting your details, you agree to our <a href="javascript:void(0)" onclick="openPrivacyModal()">Privacy Policy</a>.
+                        </p>
+                        <p class="lf-global-err" id="lfGlobalErr" role="alert" aria-live="assertive" aria-atomic="true">Connection issue. Your details are safely held. Please click Request Callback once more to retry or reach out to support.</p>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
