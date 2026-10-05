@@ -23,7 +23,7 @@
 
   var STRINGS = {
     btnSubmit:        "Request Callback",
-    btnSending:       "Connecting with Advisor...",
+    btnSending:       "Connecting with Advisor…",
     errNameRequired:  "Name is required",
     errNameInvalid:   "Enter a valid name",
     errPhoneRequired: "Mobile number is required",
