@@ -9683,3 +9683,21 @@ body {
         display: none !important;
     }
 }
+
+/* Calculator specific mobile header/floating rules */
+@media (max-width: 1024px) {
+    .page-calculator .nav-actions .phone-link {
+        display: inline-flex !important;
+    }
+    .page-calculator .floating-call-btn {
+        display: none !important;
+    }
+}
+@media (max-width: 768px) {
+    .page-calculator .nav-actions .phone-link {
+        display: inline-flex !important;
+    }
+    .page-calculator .floating-call-btn {
+        display: none !important;
+    }
+}
