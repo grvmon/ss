@@ -3223,7 +3223,7 @@ h3 {
 
 .loc-chips {
     display: flex;
-    flex-wrap: nowrap; /* Force all chips onto a single line */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
     gap: 6px;
     margin-bottom: var(--space-lg);
 }
