@@ -117,9 +117,9 @@ function closeVideoModal(event) {
 
 // 4. Conversion Form Submission Logic (Zoho CRM Web-to-Lead Integration)
 const ZOHO_WEB_TO_LEAD = {
-    action: 'https://zoho-lead-proxy.rajeev-c18.workers.dev/',
-    xnQsjsdp: 'f16e947a58c920d3d9bbb4b80e92c047ca04ed4d68bb240204297c44c42d8001',
-    xmIwtLD: 'e9726bf6b19e499bf582aa195c8e5d128958792568633ff8fe046537f9cb109d26d208f333e4ee6aef5c1bebc25b1097',
+    action: 'https://crm.zoho.in/crm/WebToLeadForm',
+    xnQsjsdp: 'ecb154d42f1b846df0927acffa26e37579f01023755e425fa43cbe26ffa05991',
+    xmIwtLD: 'db48556d6f91a0df06bd7556cda4884937ab3db875922c176ac957abfe8e85cd89d9f1a3ea0b7faeecd867a4e8700d06',
     actionType: 'TGVhZHM=',
     
 };
@@ -197,9 +197,9 @@ async function handleFormSubmit(event) {
     if (fclidVal)    descParts.push('FCLID: ' + fclidVal);
 
     var formData = new FormData();
-    
-    
-    
+    formData.append('xnQsjsdp', ZOHO_WEB_TO_LEAD.xnQsjsdp);
+    formData.append('xmIwtLD', ZOHO_WEB_TO_LEAD.xmIwtLD);
+    formData.append('actionType', ZOHO_WEB_TO_LEAD.actionType);
     formData.append('returnURL', returnUrl);
     
     formData.append('aG9uZXlwb3Q', '');
@@ -266,9 +266,9 @@ window.sendAdvisorData = async function(payload) {
     if (!payload) return;
     var returnUrl = getThankYouUrl();
     var formData = new FormData();
-    
-    
-    
+    formData.append('xnQsjsdp', ZOHO_WEB_TO_LEAD.xnQsjsdp);
+    formData.append('xmIwtLD', ZOHO_WEB_TO_LEAD.xmIwtLD);
+    formData.append('actionType', ZOHO_WEB_TO_LEAD.actionType);
     formData.append('returnURL', returnUrl);
     
     formData.append('aG9uZXlwb3Q', '');
