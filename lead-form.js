@@ -351,7 +351,9 @@
       submitBtn.disabled = false;
       submitBtn.classList.remove("lf-loading");
     }
-    if (btnText) btnText.textContent = STRINGS.btnSubmit;
+    if (btnText) {
+      btnText.textContent = (document.body && document.body.classList.contains('page-calculator')) ? "View Quote" : STRINGS.btnSubmit;
+    }
   }
 
   function startPhoneAutofillWatch() {
