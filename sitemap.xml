@@ -1,14 +1,11 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
   <url>
     <loc>https://selfstorageindia.com/</loc>
     <lastmod>2026-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  
   <url>
     <loc>https://selfstorageindia.com/household-goods-storage</loc>
     <lastmod>2026-09-23</lastmod>
@@ -21,8 +18,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
-  
   <url>
     <loc>https://selfstorageindia.com/self-storage-delhi</loc>
     <lastmod>2026-09-23</lastmod>
@@ -41,8 +36,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
-  
   <url>
     <loc>https://selfstorageindia.com/offering-private-rooms</loc>
     <lastmod>2026-09-23</lastmod>
@@ -55,16 +48,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  
   <url>
     <loc>https://selfstorageindia.com/self-storage-calculator/</loc>
     <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  
   <url>
     <loc>https://selfstorageindia.com/about-ceo-manjali-khosla</loc>
     <lastmod>2026-09-23</lastmod>
@@ -77,8 +66,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  
   <url>
     <loc>https://selfstorageindia.com/terms-and-conditions</loc>
     <lastmod>2026-09-23</lastmod>
@@ -1368,5 +1355,95 @@
     <lastmod>2024-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://selfstorageindia.com/trust_bar_hgs/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://selfstorageindia.com/replacement/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://selfstorageindia.com/trust_bar/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://selfstorageindia.com/test-abha/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://selfstorageindia.com/locations-self-storage-near-me/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://selfstorageindia.com/thank-you/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://selfstorageindia.com/self-storage-in-noida/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://selfstorageindia.com/luggage-storage-2/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://selfstorageindia.com/self-storage-business/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://selfstorageindia.com/about-self-storage-india/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://selfstorageindia.com/about-self-storage-india/about-ceo-manjali-khosla/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://selfstorageindia.com/luggage-storage-mobile/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://selfstorageindia.com/self-storage-in-gurugram/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://selfstorageindia.com/self-storage-in-delhi/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://selfstorageindia.com/store/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.64</priority>
   </url>
 </urlset>
