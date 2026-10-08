@@ -670,8 +670,9 @@ input:-webkit-autofill {
   gap: 0 !important;
   width: auto !important;
   flex: 0 0 auto !important;
-  line-height: 1 !important;
-  white-space: nowrap !important;
+  line-height: 1.2 !important;
+  white-space: normal !important;
+  text-align: center !important;
 }
 
 .lf-btn .cta-arrow-badge {
@@ -811,19 +812,17 @@ body.quote-modal-open .advisor-floating-unit,
   display: none !important;
 }
 
-/* Force 1-line fitting for headings */
+/* Force 1-line fitting for headings - Changed to wrap for better mobile visibility */
 .lf-main-heading {
-  white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
+  white-space: normal !important;
   font-size: clamp(14px, 5.5vw, 24px) !important;
+  text-wrap: balance !important;
 }
 
 .lf-sub-heading {
-  white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
+  white-space: normal !important;
   font-size: clamp(11px, 3.3vw, 13.5px) !important;
+  text-wrap: balance !important;
   max-width: none !important;
 }
 
