@@ -2,23 +2,52 @@
 # Self Storage India — LiteSpeed & Apache Production Configuration
 # ----------------------------------------------------------------------
 
-# 1. Custom 404 Error Document (Serves branded 404 page with 404 HTTP status)
+# 1. Custom 404 Error Document (Serves branded 404 page with HTTP 404 status)
 ErrorDocument 404 /404.html
+
+# 2. HTTP Security Headers
+<IfModule mod_headers.c>
+    # Enforce HTTPS via HSTS
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# 3. Server 301 Permanent Redirects for Legacy / Old Slugs
+Redirect 301 /self-storage-in-gurugram/ https://selfstorageindia.com/self-storage-gurugram/
+Redirect 301 /self-storage-in-delhi/ https://selfstorageindia.com/self-storage-delhi/
+Redirect 301 /self-storage-in-noida/ https://selfstorageindia.com/self-storage-noida/
+Redirect 301 /locations-self-storage-near-me/ https://selfstorageindia.com/
+Redirect 301 /about-self-storage-india/ https://selfstorageindia.com/about-ceo-manjali-khosla/
+Redirect 301 /self-storage-business/ https://selfstorageindia.com/business-storage/
+Redirect 301 /luggage-storage-2/ https://selfstorageindia.com/offering-box-storage/
+Redirect 301 /luggage-storage-mobile/ https://selfstorageindia.com/offering-box-storage/
+Redirect 301 /delhi-ncr/ https://selfstorageindia.com/#locations
+Redirect 301 /locations/ https://selfstorageindia.com/#locations
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
 
-    # Ensure HTTPS
+    # 4. Canonical Domain & HTTPS Redirection
+    # Redirect www.selfstorageindia.com/* or http://* to https://selfstorageindia.com/*
+    RewriteCond %{HTTP_HOST} ^www\.selfstorageindia\.com$ [NC,OR]
     RewriteCond %{HTTPS} off
     RewriteCond %{HTTP:X-Forwarded-Proto} !https
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    RewriteRule ^(.*)$ https://selfstorageindia.com/$1 [L,R=301]
 
-    # 301 Redirect old / alternative calculator slugs to /self-storage-calculator/
+    # Additional rewrite rules for legacy paths without trailing slashes
+    RewriteRule ^self-storage-in-gurugram/?$ /self-storage-gurugram/ [R=301,L]
+    RewriteRule ^self-storage-in-delhi/?$ /self-storage-delhi/ [R=301,L]
+    RewriteRule ^self-storage-in-noida/?$ /self-storage-noida/ [R=301,L]
+    RewriteRule ^locations-self-storage-near-me/?$ / [R=301,L]
+    RewriteRule ^about-self-storage-india(/.*)?$ /about-ceo-manjali-khosla/ [R=301,L]
+    RewriteRule ^self-storage-business/?$ /business-storage/ [R=301,L]
+    RewriteRule ^luggage-storage-2/?$ /offering-box-storage/ [R=301,L]
+    RewriteRule ^luggage-storage-mobile/?$ /offering-box-storage/ [R=301,L]
+    RewriteRule ^delhi-ncr/?$ /#locations [R=301,L,NE]
+    RewriteRule ^locations/?$ /#locations [R=301,L,NE]
     RewriteRule ^storage-calculator-mobile/?$ /self-storage-calculator/ [R=301,L]
-    RewriteRule ^self-storage-calculator/?$ /self-storage-calculator/ [R=301,L]
 
-    # If requested resource exists as a file or directory, serve directly
+    # If requested resource exists as a physical file or directory, serve directly
     RewriteCond %{REQUEST_FILENAME} -f [OR]
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteRule ^ - [L]
@@ -31,8 +60,8 @@ ErrorDocument 404 /404.html
     RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
     RewriteRule ^([^/]+)/?$ $1/index.html [L]
 
-    # Any other non-existent route goes to /404.html
+    # 5. Non-existent routes return HTTP 404 (Triggers ErrorDocument 404 with 404 status)
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule . /404.html [L]
+    RewriteRule . - [R=404,L]
 </IfModule>
